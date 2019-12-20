@@ -1,26 +1,24 @@
-const browserTab = browser.tabs.query({
-  //currentWindow: true,
-  active: true,
-});
+let SYARIAH_COMPLIANCE_LIST = []
 
-const SYARIAH_COMPLIANCE_LIST = fetch('./syariah-compliance-list.json').then(i => i.json());
+fetch('./stock-list.json')
+  .then(i => i.json())
+  .then(list => {
+    SYARIAH_COMPLIANCE_LIST = list
+    browser.runtime.onMessage.addListener(onMessage)
+  })
 
-Promise.all([
-  browserTab,
-  SYARIAH_COMPLIANCE_LIST,
-]).then(([tabs, json]) => {
-  for(const tab of tabs) {
-    browser.tabs.sendMessage(tab.id, {
-      json
-    });
-  }
-});
+function onMessage(e) {
+  console.log('>>> Get msg from content_script', e)
 
-
-const CSS = "body { border: 20px solid blue }";
-const TITLE_APPLY = "Apply CSS";
-const TITLE_REMOVE = "Remove CSS";
-const APPLICABLE_PROTOCOLS = ["http:", "https:"];
+  browser.tabs.query({
+    active: true,
+    currentWindow: true,
+  }).then((tabs) => {
+    for(const tab of tabs) {
+      browser.tabs.sendMessage(tab.id, { list: SYARIAH_COMPLIANCE_LIST })
+    }
+  })
+}
 
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.

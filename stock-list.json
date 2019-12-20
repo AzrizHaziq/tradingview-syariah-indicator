@@ -1,0 +1,4652 @@
+[
+  {
+    "id": "AASIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ABLEGRP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AFUJIYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ANCOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ACME",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ACOSTEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ADVENTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AEMULUS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AEON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASIAFLE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "APOLLO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AFFIN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AIM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ALLIANZ",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AIRASIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AAX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AISB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AJI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AJIYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ALAM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AMPROP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AMBANK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AMTEL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AMWAY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ANCOMLB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AEONCR",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ANNJOO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ANALABS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ANZO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "APB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AHEALTH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "APEX",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "APFT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASIAPAC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "APM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "APPASIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ADVPKG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ARK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ARANK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASDION",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASIABRN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AMEDIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASIAPLY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ASTRO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ATLAN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ASTINO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ATTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AWC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AXIATA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AYS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AZRB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BARAKAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BAT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BCB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BDB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BENALEC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BJASSET",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BERTAM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BJCORP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BJCORP-OA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BRAHIMS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BHIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BIG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BIMB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BIOHLDG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BJFOOD",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BINTAI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BJLAND",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BLDPLNT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BURSA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BOILERM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BONIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BPLANT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BSTEAD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BRIGHT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BOXPAK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BIPORT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BPPLAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BPURI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BREM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BORNOIL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BSLCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BJTOTO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "BKAWAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BTM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ARMADA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CAB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CAELY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CAREPLS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CARING",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CARIMIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CBIP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CARLSBG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CCK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "COCOLND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CONNECT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHEETAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CFM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHINHIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHOOBEE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHUAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CIHLDG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CIMB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CCM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CME",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "COMCORP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CMSB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CNASIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CNI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CANONE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CENSOF",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "COMFORT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CEPCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CNOUHUA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "COMPUGT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "COMPLET",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CEPAT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CRESNDO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CRESBLD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CAMRES",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CSCENIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CSCSTEL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "COASTAL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CHINTEK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CUSCAPI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CVIEW",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHINWEL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CCB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CYL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CYMAO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CYPARK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DATAPRP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DAYA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "DBE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DLADY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DEGEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DAYANG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DKSH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DESTINI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DGSB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DIALOG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DIGISTA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IDMENSN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DKLS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DELEUM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DNONCE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DNEX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DOLMITE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "DOLPHIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DOMINAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "D&O",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DPS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DRBHCOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DIGI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DSONIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DUFU",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DUTALND",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "EAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EASTLND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EATECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EFFICEN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ECOFIRS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ECONBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ECOWLD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EDEN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "EDARAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EDUSPEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EITA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EKA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EKOVEST",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EKSONS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ELKDESA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ELSOFT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EMICO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ENCORP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ENGKAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "E&O",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ENRA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EMETALL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EPMB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EURO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EUROSP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SENDAI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ESCERAM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "EIG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ENGTEX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EUPE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EVERGRN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EWEIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EFORCE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FACBIND",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FAJAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FOCUS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FCW",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FAREAST",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FGV",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FIAMMA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FIBON",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FIMACOR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FITTERS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FARLIM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FREIGHT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FLBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FOCUSP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FPI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "F&N",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FRONTKN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FSBM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FAVCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GADANG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GAMUDA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GBGAQRS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GASMSIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GDEX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GENM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GENP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GENTING",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GESHEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GHLSYS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HOOVER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GKENT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GOB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GLOMAC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GLOTEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GMUTUAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GTRONIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GOCEAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GLBHD",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GOPENG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GPA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GCE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GRANFLO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GPACKET",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GPHAROS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GREENYB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GSB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GENETEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GUH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GUNUNG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GUOCO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "GOODWAY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HAIO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HSPLANT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HAPSENG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HARBOUR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HBGLOB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HCK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HEIM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HTPADU",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HHGROUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HEVEA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HOHUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HHHCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HIBISCS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HIL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HLBANK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HLFG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HARNLEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HLIND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HOKHENG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HOMERIZ",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HWGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HUPSENG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HSL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HARISON",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HARTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HIAPTEK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HUAYANG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HUBLINE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HUMEIND",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HWATAI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HEXZA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IBRACO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ICAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ICON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IFCAMSC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IHH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IJMPLNT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IJM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INCKEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IKHMAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ILB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IMASPRO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INARI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ITRONIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INIX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INNO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INNITY",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "INSAS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IOICORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IOIPG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IPMUDA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IQGROUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IRIS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IREKA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IDEAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IVORY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IWCITY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JADI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JAG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JAKS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JAYCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JCBNEXT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "JCY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JERASIA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "JETSON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JFTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JOHAN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "JHM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JOHOTIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JIANKUN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JASKITA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "JKGLAND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JTIASA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KANGER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KAREX",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KARYON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KUCHAI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KEINHIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KESM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KFIMA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KGROUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KHEESAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KHIND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HIGHTEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KIALIM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KIMLUN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KIMHIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KMLOONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KTC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KKB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KLK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KLUANG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KAMDAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KNM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KENANGA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KNUSFOR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KOBAY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KOTRA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KOMARK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "K1",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KPJ",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KPOWER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KPS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KPSCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KERJAYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KRETAM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KOSSAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KRONO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KSL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KSENG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KSSC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KINSTEL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KTB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KSTAR",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KUB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KWANTAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KAWAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KEYASIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KYM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "L&G",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LAYHONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LBALUM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LBICAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LBS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LUXCHEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LSTEEL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LEBTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LEONFB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LEWEKO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LFECORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LIENHOE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LIIHEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LEESK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LKL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LIONIND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LANDMRK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LONBISC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LPI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LUSTER",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LATITUD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LITRAK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LTKM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LYSAGHT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MAA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MAGNUM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MAGNA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AIRPORT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MAHSING",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MALAKOF",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MPAY",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MAGNI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MATRIX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MAYBANK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MAYBULK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MBMR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MBSB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MBWORLD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MCEHLDG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MCLEAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MICROLN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MCT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MEDIAC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MFCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MELATI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MERCURY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MENTIGA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MESB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MEGASUN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MKH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MFLOUR",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MGRC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MALPAC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MHC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MIECO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MIKROMB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MILUX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MBG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MISC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MULPHA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MITRA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MJPERAK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MUDAJYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MKLAND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MLAB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MALTON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MMAG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MMCCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MMSV",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MENANG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MNC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MSNIAGA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MINHO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MANULFE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MNRB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MINETEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MPHBCAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MPI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MPCORP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MEDIA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MQTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MARCO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "METROD",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MSC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MSM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MELEWAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MASTER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MASTEEL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "M3TECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MTDACPI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MTRONIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MTOUCHE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MBL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MUDA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MUH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MUHIBAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MUIIND",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MUIPROP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MAXIS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MYCRON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MYEG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MRCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NAIM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NESTLE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NEXGRAM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NATWIDE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NHFATT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NIHSIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NICE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NYLEX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "N2N",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NOVAMSC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NPC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NSOP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "NTPM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NOTION",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NWP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OCNCASH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OCK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OFI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OIB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OKA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OLYMPIA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "OMESTI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OWG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "OPCOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OPENSYS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ORION",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ORNA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "OSK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "OSKVI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ORIENT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "OVERSEA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "P&O",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PANSAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PAOS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PASUKGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PBA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PCCS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PCHEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PASDEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PADINI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PDZ",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PECCA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PESTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PELIKAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PENSONI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PPB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRKCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PESONA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PETDAG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PETGAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "POLY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PMHLDG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PARAGON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PICORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PHARMA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "POHUAT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PIE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PINEAPP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PTARAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PINEPAC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PJBUMI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PLB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PLENITU",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PLABS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PLS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PTB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PENTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PMBTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PMCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PMETAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PERMAJU",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PANAMY",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PNEPCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PUNCAK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PANTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "POHKONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PWROOT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PPG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PPHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PERISAI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PRG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PARKSON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PARAMON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRIVA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRTASCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "POS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRESBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PERSTIM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRESTAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PETRONM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PENERGY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PBBANK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PWF",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PWORTH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PRLEXUS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "QUALITY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "QL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RALCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RANHILL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RAPID",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "RSENA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "RCECAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "REACH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RESINTC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "REV",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "REX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "REXIT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "RGB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "RSAWIT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "REDTONE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "RUBEREX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RVIEW",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCABLE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAMCHEM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SASBADI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SANICHI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SALUTE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SNC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAPIND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAUDEE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SBAGAN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SUCCESS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SCICOM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SEACERA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCOMIES",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCGM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEEHUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SCIB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUNCON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCOMI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCOPE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCBUILD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCOMNET",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SCNWOLF",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SDRED",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEDANIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SJC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SPSETIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SIGN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SHCHAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SHANG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SHH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SHL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SBCCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SIGGAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SIME",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SINOTOP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SRIDGE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SKBSHUT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SERNKOU",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SKPRES",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SALCON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SOLUTN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEALINK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SLP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SMISCOR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SMI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SMRT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SMTRACK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HUAAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SNTORIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SOLID",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SOP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUPERLN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SWKPLNT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SPRITZER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SAPRES",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SERSOL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "STAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SSTEEL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SCIENTX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUBUR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUNSURIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUPERMX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SURIA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUMATEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUNWAY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SWSCAP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SYCAL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SYF",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SYMLIFE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SYSCORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SYSTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SUNZEN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TAANN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TADMAX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TAFI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TAGB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TAKAFUL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TALAMT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TAMBUN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TANCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TASCO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TECFAST",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TIMECOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TDM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TENAGA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TEXCHEM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TFP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TGUAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TGL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TECGUAN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "3A",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "THETA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "THHEAVY",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "THPLANT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TONGHER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "THRIVEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TIGER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TITIJYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TASEK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TMCLIFE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TOMEI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TCHONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TNLOGIS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TOCEAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TDEX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TOMYPAK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TOYOINK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TPC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TOPGLOV",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TRC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TROP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TEOSENG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TEKSENG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TSH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TSRCAP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TUNEPRO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TURBO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TURIYA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TIMWELL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TAWIN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TIENWAH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TALIWRK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TEXCYCL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UCHITEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EDGENTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UNIMECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UMCCA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UEMS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UMS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UMSNGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UMW",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UNISEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UOADEV",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UPA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UTDPLT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ULICORP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UZMA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VIVOCOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VIS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VSOLAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VERSATL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VITROX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WASEONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WATTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WARISAN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "WELLCAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WCT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WONG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WANGZNG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "WTHORSE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WIDETEC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "WOODLAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WILLOW",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WPRTS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WTK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WZSATU",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "XIANLNG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "XDL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "XINGHE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "XINHWA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "XOX",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "Y&G",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YGL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YOCB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YINSON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YKGI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YILAI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YEELEE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YLI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YNHPROP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YONGTAI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YSPSAH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YTLPOWR",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "YTL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ZECON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ZHULIAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ZELAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WCEHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NETX",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TRIVE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GNB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VIZIONE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BAUTO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "T7GLOBAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RHBBANK",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HLT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BCMALL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DANCO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FPGROUP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GFM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HLCAP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HSSEB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MSPORTS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PTRANS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PETONE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PERDANA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RHONEMA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "WINTONI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MATANG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SERBADK",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HENGYUAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ROHAS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "EWINT",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SAPNRG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ESAFE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "INTA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CABNET",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "G3",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SMCAP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LCTITAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "STRAITS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ADVCON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PUC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "M&G",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CWG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WMG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GETS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AVI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ABMB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PARLO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CLOUD",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "REDIDEA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AMVERTON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "KAB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SIMEPLT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SIMEPROP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UCREST",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NGGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VERTICE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "FINTEC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MYNEWS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "OCR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AYER",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BINACOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JMEDU",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MINDA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MHCARE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WEGMANS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NPS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "QES",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GDB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IGBB",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "PGLOBE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "POLYMER",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FIHB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "PEB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LAMBO",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TRIMODE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SLIC",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CJCEN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VELESTO",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DAIBOCI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SEERS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "REVENUE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "NOVA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RGTECH",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ATAIMS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ALCOM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CHGP",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "YBS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "VC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AMLEX",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MYKRIS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SMETRIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TOPVISN",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CRG",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TECHBND",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BAHVEST",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MFGROUP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "VSTECS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "WIDAD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ECOHLDS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "RGTBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DPIH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "NADIBHD",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MI",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UNIWALL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "SUPREME",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LYC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DYNACIA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "DPHARMA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ETH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MYSCM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "DWL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MERIDIAN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "IMPIANA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MACPIE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SMILE",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ARBB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "TTV",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LHI",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "FBBHD",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MPSOL",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HEXTAR",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GREATEC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "HPMT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MESTRON",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "CETECH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "CGB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MCOM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "KHJB",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "UWC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ISTONE",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "BABA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "TASHIN",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "ENEST",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "HANDAL",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "JADEM",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MMIS",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ICONIC",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "MTAG",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "GPP",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IDBTECH",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "MCEMENT",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SDS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "LOTUS",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "AME",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "STELLA",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SPRING",
+    "board": "MAIN",
+    "syariah": "Yes"
+  },
+  {
+    "id": "SLVEST",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ASTRA",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "AGES",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "LIONPSIM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "ECM",
+    "board": "MAIN",
+    "syariah": "No"
+  },
+  {
+    "id": "IQZAN",
+    "board": "MAIN",
+    "syariah": "No"
+  }
+]

@@ -1,16 +1,23 @@
 {
-  "name": "apply-css",
+  "name": "tradingview-syariah-indicator",
   "version": "1.0.0",
-  "description": "**This add-on injects CSS into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**",
+  "description": "Trading view syariah indictor",
   "main": "background.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "web-ext run -v"
+    "start": "web-ext run -v",
+    "update-data": "node ./update-data"
+  },
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.13.4"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "node-fetch": "^2.6.0",
     "webextension-polyfill": "^0.5.0"
   }
 }
