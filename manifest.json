@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.tradingview.com/chart/*"
+        "*://*.tradingview.com/chart/*"
       ],
       "js": [
         "chart.js"
@@ -21,7 +21,7 @@
     },
     {
       "matches": [
-        "*://www.tradingview.com/screener/*"
+        "*://*.tradingview.com/screener/*"
       ],
       "js": [
         "screener.js"

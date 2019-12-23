@@ -9,8 +9,8 @@ fetch('./stock-list.json')
 
 browser.tabs.onUpdated.addListener(listener, filter = {
   urls: [
-    '*://www.tradingview.com/screener/*',
-    '*://www.tradingview.com/chart/*'
+    '*://*.tradingview.com/screener/*',
+    '*://*.tradingview.com/chart/*'
   ],
   windowId: browser.windows.WINDOW_ID_CURRENT
 })
