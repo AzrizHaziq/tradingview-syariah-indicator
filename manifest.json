@@ -12,8 +12,20 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.tradingview.com/*"],
-      "js": ["main.js"]
+      "matches": [
+        "*://www.tradingview.com/chart/*"
+      ],
+      "js": [
+        "chart.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.tradingview.com/screener/*"
+      ],
+      "js": [
+        "screener.js"
+      ]
     }
   ],
   "page_action": {

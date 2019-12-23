@@ -1,4652 +1,4652 @@
 [
   {
-    "id": "AASIA",
+    "id": "MYX:AASIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ABLEGRP",
+    "id": "MYX:ABLEGRP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AFUJIYA",
+    "id": "MYX:AFUJIYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ANCOM",
+    "id": "MYX:ANCOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ACME",
+    "id": "MYX:ACME",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ACOSTEC",
+    "id": "MYX:ACOSTEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASB",
+    "id": "MYX:ASB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ADVENTA",
+    "id": "MYX:ADVENTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AEMULUS",
+    "id": "MYX:AEMULUS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AEM",
+    "id": "MYX:AEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AEON",
+    "id": "MYX:AEON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASIAFLE",
+    "id": "MYX:ASIAFLE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "APOLLO",
+    "id": "MYX:APOLLO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AFFIN",
+    "id": "MYX:AFFIN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AIM",
+    "id": "MYX:AIM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ALLIANZ",
+    "id": "MYX:ALLIANZ",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AIRASIA",
+    "id": "MYX:AIRASIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AAX",
+    "id": "MYX:AAX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AISB",
+    "id": "MYX:AISB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AJI",
+    "id": "MYX:AJI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AJIYA",
+    "id": "MYX:AJIYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ALAM",
+    "id": "MYX:ALAM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AMPROP",
+    "id": "MYX:AMPROP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AMBANK",
+    "id": "MYX:AMBANK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AMTEL",
+    "id": "MYX:AMTEL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AMWAY",
+    "id": "MYX:AMWAY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ANCOMLB",
+    "id": "MYX:ANCOMLB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AEONCR",
+    "id": "MYX:AEONCR",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ANNJOO",
+    "id": "MYX:ANNJOO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ANALABS",
+    "id": "MYX:ANALABS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ANZO",
+    "id": "MYX:ANZO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "APB",
+    "id": "MYX:APB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AHEALTH",
+    "id": "MYX:AHEALTH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "APEX",
+    "id": "MYX:APEX",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "APFT",
+    "id": "MYX:APFT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASIAPAC",
+    "id": "MYX:ASIAPAC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "APM",
+    "id": "MYX:APM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "APPASIA",
+    "id": "MYX:APPASIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ADVPKG",
+    "id": "MYX:ADVPKG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ARK",
+    "id": "MYX:ARK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ARANK",
+    "id": "MYX:ARANK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AHB",
+    "id": "MYX:AHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASDION",
+    "id": "MYX:ASDION",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASIABRN",
+    "id": "MYX:ASIABRN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AMEDIA",
+    "id": "MYX:AMEDIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASIAPLY",
+    "id": "MYX:ASIAPLY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ASTRO",
+    "id": "MYX:ASTRO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ATLAN",
+    "id": "MYX:ATLAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ASTINO",
+    "id": "MYX:ASTINO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AT",
+    "id": "MYX:AT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ATTA",
+    "id": "MYX:ATTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AWC",
+    "id": "MYX:AWC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AXIATA",
+    "id": "MYX:AXIATA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AYS",
+    "id": "MYX:AYS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AZRB",
+    "id": "MYX:AZRB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BARAKAH",
+    "id": "MYX:BARAKAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BAT",
+    "id": "MYX:BAT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BCB",
+    "id": "MYX:BCB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BDB",
+    "id": "MYX:BDB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BTECH",
+    "id": "MYX:BTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BENALEC",
+    "id": "MYX:BENALEC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BJASSET",
+    "id": "MYX:BJASSET",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BERTAM",
+    "id": "MYX:BERTAM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BJCORP",
+    "id": "MYX:BJCORP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BJCORP-OA",
+    "id": "MYX:BJCORP-OA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BRAHIMS",
+    "id": "MYX:BRAHIMS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BHIC",
+    "id": "MYX:BHIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BIG",
+    "id": "MYX:BIG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BIMB",
+    "id": "MYX:BIMB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BIOHLDG",
+    "id": "MYX:BIOHLDG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BJFOOD",
+    "id": "MYX:BJFOOD",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BINTAI",
+    "id": "MYX:BINTAI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BJLAND",
+    "id": "MYX:BJLAND",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BLDPLNT",
+    "id": "MYX:BLDPLNT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BURSA",
+    "id": "MYX:BURSA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BOILERM",
+    "id": "MYX:BOILERM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BONIA",
+    "id": "MYX:BONIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BPLANT",
+    "id": "MYX:BPLANT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BSTEAD",
+    "id": "MYX:BSTEAD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BRIGHT",
+    "id": "MYX:BRIGHT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BOXPAK",
+    "id": "MYX:BOXPAK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BIPORT",
+    "id": "MYX:BIPORT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BPPLAS",
+    "id": "MYX:BPPLAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BPURI",
+    "id": "MYX:BPURI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BREM",
+    "id": "MYX:BREM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BORNOIL",
+    "id": "MYX:BORNOIL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BSLCORP",
+    "id": "MYX:BSLCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BJTOTO",
+    "id": "MYX:BJTOTO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "BKAWAN",
+    "id": "MYX:BKAWAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BTM",
+    "id": "MYX:BTM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ARMADA",
+    "id": "MYX:ARMADA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CAB",
+    "id": "MYX:CAB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CAELY",
+    "id": "MYX:CAELY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CAP",
+    "id": "MYX:CAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CAREPLS",
+    "id": "MYX:CAREPLS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CARING",
+    "id": "MYX:CARING",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CARIMIN",
+    "id": "MYX:CARIMIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CBIP",
+    "id": "MYX:CBIP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CARLSBG",
+    "id": "MYX:CARLSBG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CCK",
+    "id": "MYX:CCK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "COCOLND",
+    "id": "MYX:COCOLND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CONNECT",
+    "id": "MYX:CONNECT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHEETAH",
+    "id": "MYX:CHEETAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CFM",
+    "id": "MYX:CFM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHHB",
+    "id": "MYX:CHHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHINHIN",
+    "id": "MYX:CHINHIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHOOBEE",
+    "id": "MYX:CHOOBEE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHUAN",
+    "id": "MYX:CHUAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CIHLDG",
+    "id": "MYX:CIHLDG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CIMB",
+    "id": "MYX:CIMB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CCM",
+    "id": "MYX:CCM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CME",
+    "id": "MYX:CME",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "COMCORP",
+    "id": "MYX:COMCORP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CMSB",
+    "id": "MYX:CMSB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CNASIA",
+    "id": "MYX:CNASIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CNI",
+    "id": "MYX:CNI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CANONE",
+    "id": "MYX:CANONE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CENSOF",
+    "id": "MYX:CENSOF",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "COMFORT",
+    "id": "MYX:COMFORT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CEPCO",
+    "id": "MYX:CEPCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CNOUHUA",
+    "id": "MYX:CNOUHUA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "COMPUGT",
+    "id": "MYX:COMPUGT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "COMPLET",
+    "id": "MYX:COMPLET",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CEPAT",
+    "id": "MYX:CEPAT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CRESNDO",
+    "id": "MYX:CRESNDO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CRESBLD",
+    "id": "MYX:CRESBLD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CAMRES",
+    "id": "MYX:CAMRES",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CSCENIC",
+    "id": "MYX:CSCENIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CSCSTEL",
+    "id": "MYX:CSCSTEL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "COASTAL",
+    "id": "MYX:COASTAL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CHINTEK",
+    "id": "MYX:CHINTEK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CUSCAPI",
+    "id": "MYX:CUSCAPI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CVIEW",
+    "id": "MYX:CVIEW",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHINWEL",
+    "id": "MYX:CHINWEL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CCB",
+    "id": "MYX:CCB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CYL",
+    "id": "MYX:CYL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CYMAO",
+    "id": "MYX:CYMAO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CYPARK",
+    "id": "MYX:CYPARK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DBHD",
+    "id": "MYX:DBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DATAPRP",
+    "id": "MYX:DATAPRP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DAYA",
+    "id": "MYX:DAYA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "DBE",
+    "id": "MYX:DBE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DLADY",
+    "id": "MYX:DLADY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DEGEM",
+    "id": "MYX:DEGEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DAYANG",
+    "id": "MYX:DAYANG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DKSH",
+    "id": "MYX:DKSH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DESTINI",
+    "id": "MYX:DESTINI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DGB",
+    "id": "MYX:DGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DGSB",
+    "id": "MYX:DGSB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DIALOG",
+    "id": "MYX:DIALOG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DIGISTA",
+    "id": "MYX:DIGISTA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IDMENSN",
+    "id": "MYX:IDMENSN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DKLS",
+    "id": "MYX:DKLS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DELEUM",
+    "id": "MYX:DELEUM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DNONCE",
+    "id": "MYX:DNONCE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DNEX",
+    "id": "MYX:DNEX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DOLMITE",
+    "id": "MYX:DOLMITE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "DOLPHIN",
+    "id": "MYX:DOLPHIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DOMINAN",
+    "id": "MYX:DOMINAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "D&O",
+    "id": "MYX:D&O",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DPS",
+    "id": "MYX:DPS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DRBHCOM",
+    "id": "MYX:DRBHCOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DIGI",
+    "id": "MYX:DIGI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DSONIC",
+    "id": "MYX:DSONIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DUFU",
+    "id": "MYX:DUFU",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DUTALND",
+    "id": "MYX:DUTALND",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "EAH",
+    "id": "MYX:EAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EASTLND",
+    "id": "MYX:EASTLND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EATECH",
+    "id": "MYX:EATECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EFFICEN",
+    "id": "MYX:EFFICEN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ECOFIRS",
+    "id": "MYX:ECOFIRS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ECONBHD",
+    "id": "MYX:ECONBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ECOWLD",
+    "id": "MYX:ECOWLD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EDEN",
+    "id": "MYX:EDEN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "EDARAN",
+    "id": "MYX:EDARAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EDUSPEC",
+    "id": "MYX:EDUSPEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EG",
+    "id": "MYX:EG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EITA",
+    "id": "MYX:EITA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EKA",
+    "id": "MYX:EKA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EKOVEST",
+    "id": "MYX:EKOVEST",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EKSONS",
+    "id": "MYX:EKSONS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ELKDESA",
+    "id": "MYX:ELKDESA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ELSOFT",
+    "id": "MYX:ELSOFT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EMICO",
+    "id": "MYX:EMICO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ENCORP",
+    "id": "MYX:ENCORP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ENGKAH",
+    "id": "MYX:ENGKAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "E&O",
+    "id": "MYX:E&O",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ENRA",
+    "id": "MYX:ENRA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EMETALL",
+    "id": "MYX:EMETALL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EPMB",
+    "id": "MYX:EPMB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EURO",
+    "id": "MYX:EURO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EUROSP",
+    "id": "MYX:EUROSP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SENDAI",
+    "id": "MYX:SENDAI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ESCERAM",
+    "id": "MYX:ESCERAM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "EIG",
+    "id": "MYX:EIG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ENGTEX",
+    "id": "MYX:ENGTEX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EUPE",
+    "id": "MYX:EUPE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EVERGRN",
+    "id": "MYX:EVERGRN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EWEIN",
+    "id": "MYX:EWEIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EFORCE",
+    "id": "MYX:EFORCE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FACBIND",
+    "id": "MYX:FACBIND",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FAJAR",
+    "id": "MYX:FAJAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FOCUS",
+    "id": "MYX:FOCUS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FCW",
+    "id": "MYX:FCW",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FAREAST",
+    "id": "MYX:FAREAST",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FGV",
+    "id": "MYX:FGV",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FIAMMA",
+    "id": "MYX:FIAMMA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FIBON",
+    "id": "MYX:FIBON",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FIMACOR",
+    "id": "MYX:FIMACOR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FITTERS",
+    "id": "MYX:FITTERS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FARLIM",
+    "id": "MYX:FARLIM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FREIGHT",
+    "id": "MYX:FREIGHT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FLBHD",
+    "id": "MYX:FLBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FOCUSP",
+    "id": "MYX:FOCUSP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FPI",
+    "id": "MYX:FPI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "F&N",
+    "id": "MYX:F&N",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FRONTKN",
+    "id": "MYX:FRONTKN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FSBM",
+    "id": "MYX:FSBM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FAVCO",
+    "id": "MYX:FAVCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GADANG",
+    "id": "MYX:GADANG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GAMUDA",
+    "id": "MYX:GAMUDA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GBGAQRS",
+    "id": "MYX:GBGAQRS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GASMSIA",
+    "id": "MYX:GASMSIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GDEX",
+    "id": "MYX:GDEX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GENM",
+    "id": "MYX:GENM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GENP",
+    "id": "MYX:GENP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GENTING",
+    "id": "MYX:GENTING",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GESHEN",
+    "id": "MYX:GESHEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GHLSYS",
+    "id": "MYX:GHLSYS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HOOVER",
+    "id": "MYX:HOOVER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GKENT",
+    "id": "MYX:GKENT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GOB",
+    "id": "MYX:GOB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GLOMAC",
+    "id": "MYX:GLOMAC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GLOTEC",
+    "id": "MYX:GLOTEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GMUTUAL",
+    "id": "MYX:GMUTUAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GCB",
+    "id": "MYX:GCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GTRONIC",
+    "id": "MYX:GTRONIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GOCEAN",
+    "id": "MYX:GOCEAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GLBHD",
+    "id": "MYX:GLBHD",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GOPENG",
+    "id": "MYX:GOPENG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GPA",
+    "id": "MYX:GPA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GCE",
+    "id": "MYX:GCE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GRANFLO",
+    "id": "MYX:GRANFLO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GPACKET",
+    "id": "MYX:GPACKET",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GPHAROS",
+    "id": "MYX:GPHAROS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GREENYB",
+    "id": "MYX:GREENYB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GSB",
+    "id": "MYX:GSB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GENETEC",
+    "id": "MYX:GENETEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GUH",
+    "id": "MYX:GUH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GUNUNG",
+    "id": "MYX:GUNUNG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GUOCO",
+    "id": "MYX:GUOCO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "GOODWAY",
+    "id": "MYX:GOODWAY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HAIO",
+    "id": "MYX:HAIO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HSPLANT",
+    "id": "MYX:HSPLANT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HAPSENG",
+    "id": "MYX:HAPSENG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HARBOUR",
+    "id": "MYX:HARBOUR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HBGLOB",
+    "id": "MYX:HBGLOB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HCK",
+    "id": "MYX:HCK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HEIM",
+    "id": "MYX:HEIM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HTPADU",
+    "id": "MYX:HTPADU",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HHGROUP",
+    "id": "MYX:HHGROUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HEVEA",
+    "id": "MYX:HEVEA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HOHUP",
+    "id": "MYX:HOHUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HHHCORP",
+    "id": "MYX:HHHCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HIBISCS",
+    "id": "MYX:HIBISCS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HIL",
+    "id": "MYX:HIL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HLBANK",
+    "id": "MYX:HLBANK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HLFG",
+    "id": "MYX:HLFG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HARNLEN",
+    "id": "MYX:HARNLEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HLIND",
+    "id": "MYX:HLIND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HOKHENG",
+    "id": "MYX:HOKHENG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HOMERIZ",
+    "id": "MYX:HOMERIZ",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HWGB",
+    "id": "MYX:HWGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HUPSENG",
+    "id": "MYX:HUPSENG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HSL",
+    "id": "MYX:HSL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HARISON",
+    "id": "MYX:HARISON",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HARTA",
+    "id": "MYX:HARTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HIAPTEK",
+    "id": "MYX:HIAPTEK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HUAYANG",
+    "id": "MYX:HUAYANG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HUBLINE",
+    "id": "MYX:HUBLINE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HUMEIND",
+    "id": "MYX:HUMEIND",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HWATAI",
+    "id": "MYX:HWATAI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HEXZA",
+    "id": "MYX:HEXZA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IBHD",
+    "id": "MYX:IBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IBRACO",
+    "id": "MYX:IBRACO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ICAP",
+    "id": "MYX:ICAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ICON",
+    "id": "MYX:ICON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IFCAMSC",
+    "id": "MYX:IFCAMSC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IHH",
+    "id": "MYX:IHH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IJMPLNT",
+    "id": "MYX:IJMPLNT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IJM",
+    "id": "MYX:IJM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INCKEN",
+    "id": "MYX:INCKEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IKHMAS",
+    "id": "MYX:IKHMAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ILB",
+    "id": "MYX:ILB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IMASPRO",
+    "id": "MYX:IMASPRO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INARI",
+    "id": "MYX:INARI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ITRONIC",
+    "id": "MYX:ITRONIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INIX",
+    "id": "MYX:INIX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INNO",
+    "id": "MYX:INNO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INNITY",
+    "id": "MYX:INNITY",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "INSAS",
+    "id": "MYX:INSAS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IOICORP",
+    "id": "MYX:IOICORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IOIPG",
+    "id": "MYX:IOIPG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IPMUDA",
+    "id": "MYX:IPMUDA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IQGROUP",
+    "id": "MYX:IQGROUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IRIS",
+    "id": "MYX:IRIS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IREKA",
+    "id": "MYX:IREKA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IDEAL",
+    "id": "MYX:IDEAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IVORY",
+    "id": "MYX:IVORY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IWCITY",
+    "id": "MYX:IWCITY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JADI",
+    "id": "MYX:JADI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JAG",
+    "id": "MYX:JAG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JAKS",
+    "id": "MYX:JAKS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JAYCORP",
+    "id": "MYX:JAYCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JCBNEXT",
+    "id": "MYX:JCBNEXT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "JCY",
+    "id": "MYX:JCY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JERASIA",
+    "id": "MYX:JERASIA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "JETSON",
+    "id": "MYX:JETSON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JFTECH",
+    "id": "MYX:JFTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JOHAN",
+    "id": "MYX:JOHAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "JHM",
+    "id": "MYX:JHM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JOHOTIN",
+    "id": "MYX:JOHOTIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JIANKUN",
+    "id": "MYX:JIANKUN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JASKITA",
+    "id": "MYX:JASKITA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "JKGLAND",
+    "id": "MYX:JKGLAND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JTIASA",
+    "id": "MYX:JTIASA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KANGER",
+    "id": "MYX:KANGER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KAREX",
+    "id": "MYX:KAREX",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KARYON",
+    "id": "MYX:KARYON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KUCHAI",
+    "id": "MYX:KUCHAI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KEINHIN",
+    "id": "MYX:KEINHIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KGB",
+    "id": "MYX:KGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KEN",
+    "id": "MYX:KEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KESM",
+    "id": "MYX:KESM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KFIMA",
+    "id": "MYX:KFIMA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KGROUP",
+    "id": "MYX:KGROUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KHEESAN",
+    "id": "MYX:KHEESAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KHIND",
+    "id": "MYX:KHIND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HIGHTEC",
+    "id": "MYX:HIGHTEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KIALIM",
+    "id": "MYX:KIALIM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KIMLUN",
+    "id": "MYX:KIMLUN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KIMHIN",
+    "id": "MYX:KIMHIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KMLOONG",
+    "id": "MYX:KMLOONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KTC",
+    "id": "MYX:KTC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KKB",
+    "id": "MYX:KKB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KLK",
+    "id": "MYX:KLK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KLUANG",
+    "id": "MYX:KLUANG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KAMDAR",
+    "id": "MYX:KAMDAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KNM",
+    "id": "MYX:KNM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KENANGA",
+    "id": "MYX:KENANGA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KNUSFOR",
+    "id": "MYX:KNUSFOR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KOBAY",
+    "id": "MYX:KOBAY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KOTRA",
+    "id": "MYX:KOTRA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KOMARK",
+    "id": "MYX:KOMARK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "K1",
+    "id": "MYX:K1",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KPJ",
+    "id": "MYX:KPJ",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KPOWER",
+    "id": "MYX:KPOWER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KPS",
+    "id": "MYX:KPS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KPSCB",
+    "id": "MYX:KPSCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KERJAYA",
+    "id": "MYX:KERJAYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KRETAM",
+    "id": "MYX:KRETAM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KOSSAN",
+    "id": "MYX:KOSSAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KRONO",
+    "id": "MYX:KRONO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KSL",
+    "id": "MYX:KSL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KSENG",
+    "id": "MYX:KSENG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KSSC",
+    "id": "MYX:KSSC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KINSTEL",
+    "id": "MYX:KINSTEL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KTB",
+    "id": "MYX:KTB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KSTAR",
+    "id": "MYX:KSTAR",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KUB",
+    "id": "MYX:KUB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KWANTAS",
+    "id": "MYX:KWANTAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KAWAN",
+    "id": "MYX:KAWAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KEYASIC",
+    "id": "MYX:KEYASIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KYM",
+    "id": "MYX:KYM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "L&G",
+    "id": "MYX:L&G",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LAYHONG",
+    "id": "MYX:LAYHONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LBALUM",
+    "id": "MYX:LBALUM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LBICAP",
+    "id": "MYX:LBICAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LBS",
+    "id": "MYX:LBS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LUXCHEM",
+    "id": "MYX:LUXCHEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LSTEEL",
+    "id": "MYX:LSTEEL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LEBTECH",
+    "id": "MYX:LEBTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LEONFB",
+    "id": "MYX:LEONFB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LEWEKO",
+    "id": "MYX:LEWEKO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LFECORP",
+    "id": "MYX:LFECORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LIENHOE",
+    "id": "MYX:LIENHOE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LIIHEN",
+    "id": "MYX:LIIHEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LEESK",
+    "id": "MYX:LEESK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LKL",
+    "id": "MYX:LKL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LIONIND",
+    "id": "MYX:LIONIND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LANDMRK",
+    "id": "MYX:LANDMRK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LONBISC",
+    "id": "MYX:LONBISC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LPI",
+    "id": "MYX:LPI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LUSTER",
+    "id": "MYX:LUSTER",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LATITUD",
+    "id": "MYX:LATITUD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LITRAK",
+    "id": "MYX:LITRAK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LTKM",
+    "id": "MYX:LTKM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LYSAGHT",
+    "id": "MYX:LYSAGHT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MAA",
+    "id": "MYX:MAA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MAGNUM",
+    "id": "MYX:MAGNUM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MAGNA",
+    "id": "MYX:MAGNA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AIRPORT",
+    "id": "MYX:AIRPORT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MAHSING",
+    "id": "MYX:MAHSING",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MALAKOF",
+    "id": "MYX:MALAKOF",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MPAY",
+    "id": "MYX:MPAY",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MAGNI",
+    "id": "MYX:MAGNI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MATRIX",
+    "id": "MYX:MATRIX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MAYBANK",
+    "id": "MYX:MAYBANK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MAYBULK",
+    "id": "MYX:MAYBULK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MBMR",
+    "id": "MYX:MBMR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MBSB",
+    "id": "MYX:MBSB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MBWORLD",
+    "id": "MYX:MBWORLD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MCEHLDG",
+    "id": "MYX:MCEHLDG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MCLEAN",
+    "id": "MYX:MCLEAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MICROLN",
+    "id": "MYX:MICROLN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MCT",
+    "id": "MYX:MCT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MEDIAC",
+    "id": "MYX:MEDIAC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MFCB",
+    "id": "MYX:MFCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MELATI",
+    "id": "MYX:MELATI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MERCURY",
+    "id": "MYX:MERCURY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MENTIGA",
+    "id": "MYX:MENTIGA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MESB",
+    "id": "MYX:MESB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MEGASUN",
+    "id": "MYX:MEGASUN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MKH",
+    "id": "MYX:MKH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MFLOUR",
+    "id": "MYX:MFLOUR",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MGRC",
+    "id": "MYX:MGRC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MALPAC",
+    "id": "MYX:MALPAC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MHC",
+    "id": "MYX:MHC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MHB",
+    "id": "MYX:MHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MIECO",
+    "id": "MYX:MIECO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MIKROMB",
+    "id": "MYX:MIKROMB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MILUX",
+    "id": "MYX:MILUX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MBG",
+    "id": "MYX:MBG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MISC",
+    "id": "MYX:MISC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MULPHA",
+    "id": "MYX:MULPHA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MITRA",
+    "id": "MYX:MITRA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MJPERAK",
+    "id": "MYX:MJPERAK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MUDAJYA",
+    "id": "MYX:MUDAJYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MKLAND",
+    "id": "MYX:MKLAND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MLAB",
+    "id": "MYX:MLAB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MALTON",
+    "id": "MYX:MALTON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MMAG",
+    "id": "MYX:MMAG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MMCCORP",
+    "id": "MYX:MMCCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MMSV",
+    "id": "MYX:MMSV",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MENANG",
+    "id": "MYX:MENANG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MNC",
+    "id": "MYX:MNC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MSNIAGA",
+    "id": "MYX:MSNIAGA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MINHO",
+    "id": "MYX:MINHO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MANULFE",
+    "id": "MYX:MANULFE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MNRB",
+    "id": "MYX:MNRB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MINETEC",
+    "id": "MYX:MINETEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MPHBCAP",
+    "id": "MYX:MPHBCAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MPI",
+    "id": "MYX:MPI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MPCORP",
+    "id": "MYX:MPCORP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MEDIA",
+    "id": "MYX:MEDIA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MQTECH",
+    "id": "MYX:MQTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MARCO",
+    "id": "MYX:MARCO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "METROD",
+    "id": "MYX:METROD",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MSC",
+    "id": "MYX:MSC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MSM",
+    "id": "MYX:MSM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MELEWAR",
+    "id": "MYX:MELEWAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MASTER",
+    "id": "MYX:MASTER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MASTEEL",
+    "id": "MYX:MASTEEL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "M3TECH",
+    "id": "MYX:M3TECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MTDACPI",
+    "id": "MYX:MTDACPI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MTRONIC",
+    "id": "MYX:MTRONIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MTOUCHE",
+    "id": "MYX:MTOUCHE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MBL",
+    "id": "MYX:MBL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MUDA",
+    "id": "MYX:MUDA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MUH",
+    "id": "MYX:MUH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MUHIBAH",
+    "id": "MYX:MUHIBAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MUIIND",
+    "id": "MYX:MUIIND",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MUIPROP",
+    "id": "MYX:MUIPROP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MAXIS",
+    "id": "MYX:MAXIS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MYCRON",
+    "id": "MYX:MYCRON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MYEG",
+    "id": "MYX:MYEG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MRCB",
+    "id": "MYX:MRCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NAIM",
+    "id": "MYX:NAIM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NESTLE",
+    "id": "MYX:NESTLE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NEXGRAM",
+    "id": "MYX:NEXGRAM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NATWIDE",
+    "id": "MYX:NATWIDE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NHFATT",
+    "id": "MYX:NHFATT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NIHSIN",
+    "id": "MYX:NIHSIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NICE",
+    "id": "MYX:NICE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NYLEX",
+    "id": "MYX:NYLEX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "N2N",
+    "id": "MYX:N2N",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NOVAMSC",
+    "id": "MYX:NOVAMSC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NPC",
+    "id": "MYX:NPC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NSOP",
+    "id": "MYX:NSOP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "NTPM",
+    "id": "MYX:NTPM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NOTION",
+    "id": "MYX:NOTION",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NWP",
+    "id": "MYX:NWP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OCB",
+    "id": "MYX:OCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OCNCASH",
+    "id": "MYX:OCNCASH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OCK",
+    "id": "MYX:OCK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OFI",
+    "id": "MYX:OFI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OIB",
+    "id": "MYX:OIB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OKA",
+    "id": "MYX:OKA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OLYMPIA",
+    "id": "MYX:OLYMPIA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "OMESTI",
+    "id": "MYX:OMESTI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OWG",
+    "id": "MYX:OWG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "OPCOM",
+    "id": "MYX:OPCOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OPENSYS",
+    "id": "MYX:OPENSYS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ORION",
+    "id": "MYX:ORION",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ORNA",
+    "id": "MYX:ORNA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "OSK",
+    "id": "MYX:OSK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "OSKVI",
+    "id": "MYX:OSKVI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ORIENT",
+    "id": "MYX:ORIENT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "OVERSEA",
+    "id": "MYX:OVERSEA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "P&O",
+    "id": "MYX:P&O",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PANSAR",
+    "id": "MYX:PANSAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PAOS",
+    "id": "MYX:PAOS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PA",
+    "id": "MYX:PA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PASUKGB",
+    "id": "MYX:PASUKGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PBA",
+    "id": "MYX:PBA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PCCS",
+    "id": "MYX:PCCS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PCHEM",
+    "id": "MYX:PCHEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PASDEC",
+    "id": "MYX:PASDEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PADINI",
+    "id": "MYX:PADINI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PDZ",
+    "id": "MYX:PDZ",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PECCA",
+    "id": "MYX:PECCA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PESTECH",
+    "id": "MYX:PESTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PELIKAN",
+    "id": "MYX:PELIKAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PENSONI",
+    "id": "MYX:PENSONI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PPB",
+    "id": "MYX:PPB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRKCORP",
+    "id": "MYX:PRKCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PESONA",
+    "id": "MYX:PESONA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PETDAG",
+    "id": "MYX:PETDAG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PETGAS",
+    "id": "MYX:PETGAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "POLY",
+    "id": "MYX:POLY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PMHLDG",
+    "id": "MYX:PMHLDG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PARAGON",
+    "id": "MYX:PARAGON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PICORP",
+    "id": "MYX:PICORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PHARMA",
+    "id": "MYX:PHARMA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "POHUAT",
+    "id": "MYX:POHUAT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PIE",
+    "id": "MYX:PIE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PINEAPP",
+    "id": "MYX:PINEAPP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PTARAS",
+    "id": "MYX:PTARAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PINEPAC",
+    "id": "MYX:PINEPAC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PJBUMI",
+    "id": "MYX:PJBUMI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PLB",
+    "id": "MYX:PLB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PLENITU",
+    "id": "MYX:PLENITU",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PLABS",
+    "id": "MYX:PLABS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PLS",
+    "id": "MYX:PLS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PTB",
+    "id": "MYX:PTB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PENTA",
+    "id": "MYX:PENTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PMBTECH",
+    "id": "MYX:PMBTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PMCORP",
+    "id": "MYX:PMCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PMETAL",
+    "id": "MYX:PMETAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PERMAJU",
+    "id": "MYX:PERMAJU",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PANAMY",
+    "id": "MYX:PANAMY",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PNEPCB",
+    "id": "MYX:PNEPCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PUNCAK",
+    "id": "MYX:PUNCAK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PANTECH",
+    "id": "MYX:PANTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "POHKONG",
+    "id": "MYX:POHKONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PWROOT",
+    "id": "MYX:PWROOT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PPG",
+    "id": "MYX:PPG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PPHB",
+    "id": "MYX:PPHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PERISAI",
+    "id": "MYX:PERISAI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PRG",
+    "id": "MYX:PRG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PARKSON",
+    "id": "MYX:PARKSON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PARAMON",
+    "id": "MYX:PARAMON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRIVA",
+    "id": "MYX:PRIVA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRTASCO",
+    "id": "MYX:PRTASCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "POS",
+    "id": "MYX:POS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRESBHD",
+    "id": "MYX:PRESBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PERSTIM",
+    "id": "MYX:PERSTIM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRESTAR",
+    "id": "MYX:PRESTAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PETRONM",
+    "id": "MYX:PETRONM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PENERGY",
+    "id": "MYX:PENERGY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PBBANK",
+    "id": "MYX:PBBANK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PWF",
+    "id": "MYX:PWF",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PWORTH",
+    "id": "MYX:PWORTH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PRLEXUS",
+    "id": "MYX:PRLEXUS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "QUALITY",
+    "id": "MYX:QUALITY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "QL",
+    "id": "MYX:QL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RALCO",
+    "id": "MYX:RALCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RANHILL",
+    "id": "MYX:RANHILL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RAPID",
+    "id": "MYX:RAPID",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "RSENA",
+    "id": "MYX:RSENA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "RCECAP",
+    "id": "MYX:RCECAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "REACH",
+    "id": "MYX:REACH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RESINTC",
+    "id": "MYX:RESINTC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "REV",
+    "id": "MYX:REV",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "REX",
+    "id": "MYX:REX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "REXIT",
+    "id": "MYX:REXIT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "RGB",
+    "id": "MYX:RGB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "RSAWIT",
+    "id": "MYX:RSAWIT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "REDTONE",
+    "id": "MYX:REDTONE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "RUBEREX",
+    "id": "MYX:RUBEREX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RVIEW",
+    "id": "MYX:RVIEW",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCABLE",
+    "id": "MYX:SCABLE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAM",
+    "id": "MYX:SAM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAMCHEM",
+    "id": "MYX:SAMCHEM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SASBADI",
+    "id": "MYX:SASBADI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SANICHI",
+    "id": "MYX:SANICHI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SALUTE",
+    "id": "MYX:SALUTE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SNC",
+    "id": "MYX:SNC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAPIND",
+    "id": "MYX:SAPIND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAUDEE",
+    "id": "MYX:SAUDEE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SBAGAN",
+    "id": "MYX:SBAGAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SUCCESS",
+    "id": "MYX:SUCCESS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCC",
+    "id": "MYX:SCC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SCICOM",
+    "id": "MYX:SCICOM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SEACERA",
+    "id": "MYX:SEACERA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCOMIES",
+    "id": "MYX:SCOMIES",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCGM",
+    "id": "MYX:SCGM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEEHUP",
+    "id": "MYX:SEEHUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCH",
+    "id": "MYX:SCH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SCIB",
+    "id": "MYX:SCIB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUNCON",
+    "id": "MYX:SUNCON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCOMI",
+    "id": "MYX:SCOMI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCOPE",
+    "id": "MYX:SCOPE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCBUILD",
+    "id": "MYX:SCBUILD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCOMNET",
+    "id": "MYX:SCOMNET",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SCNWOLF",
+    "id": "MYX:SCNWOLF",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SDRED",
+    "id": "MYX:SDRED",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEAL",
+    "id": "MYX:SEAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEDANIA",
+    "id": "MYX:SEDANIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEG",
+    "id": "MYX:SEG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SJC",
+    "id": "MYX:SJC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEB",
+    "id": "MYX:SEB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SPSETIA",
+    "id": "MYX:SPSETIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEM",
+    "id": "MYX:SEM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SIGN",
+    "id": "MYX:SIGN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SHCHAN",
+    "id": "MYX:SHCHAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SHANG",
+    "id": "MYX:SHANG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SHH",
+    "id": "MYX:SHH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SHL",
+    "id": "MYX:SHL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SBCCORP",
+    "id": "MYX:SBCCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SIGGAS",
+    "id": "MYX:SIGGAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SIME",
+    "id": "MYX:SIME",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SINOTOP",
+    "id": "MYX:SINOTOP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SRIDGE",
+    "id": "MYX:SRIDGE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SKBSHUT",
+    "id": "MYX:SKBSHUT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SERNKOU",
+    "id": "MYX:SERNKOU",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SKPRES",
+    "id": "MYX:SKPRES",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SALCON",
+    "id": "MYX:SALCON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SOLUTN",
+    "id": "MYX:SOLUTN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEALINK",
+    "id": "MYX:SEALINK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SLP",
+    "id": "MYX:SLP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SMISCOR",
+    "id": "MYX:SMISCOR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SMI",
+    "id": "MYX:SMI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SMRT",
+    "id": "MYX:SMRT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SMTRACK",
+    "id": "MYX:SMTRACK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HUAAN",
+    "id": "MYX:HUAAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SNTORIA",
+    "id": "MYX:SNTORIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SOLID",
+    "id": "MYX:SOLID",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SOP",
+    "id": "MYX:SOP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAB",
+    "id": "MYX:SAB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUPERLN",
+    "id": "MYX:SUPERLN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SWKPLNT",
+    "id": "MYX:SWKPLNT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SPRITZER",
+    "id": "MYX:SPRITZER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SAPRES",
+    "id": "MYX:SAPRES",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SERSOL",
+    "id": "MYX:SERSOL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "STAR",
+    "id": "MYX:STAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SSTEEL",
+    "id": "MYX:SSTEEL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SCIENTX",
+    "id": "MYX:SCIENTX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUBUR",
+    "id": "MYX:SUBUR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUNSURIA",
+    "id": "MYX:SUNSURIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUPERMX",
+    "id": "MYX:SUPERMX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SURIA",
+    "id": "MYX:SURIA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUMATEC",
+    "id": "MYX:SUMATEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUNWAY",
+    "id": "MYX:SUNWAY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SWSCAP",
+    "id": "MYX:SWSCAP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SYCAL",
+    "id": "MYX:SYCAL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SYF",
+    "id": "MYX:SYF",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SYMLIFE",
+    "id": "MYX:SYMLIFE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SYSCORP",
+    "id": "MYX:SYSCORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SYSTECH",
+    "id": "MYX:SYSTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SUNZEN",
+    "id": "MYX:SUNZEN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TAANN",
+    "id": "MYX:TAANN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TADMAX",
+    "id": "MYX:TADMAX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TA",
+    "id": "MYX:TA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TAFI",
+    "id": "MYX:TAFI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TAGB",
+    "id": "MYX:TAGB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TAKAFUL",
+    "id": "MYX:TAKAFUL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TALAMT",
+    "id": "MYX:TALAMT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TAMBUN",
+    "id": "MYX:TAMBUN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TANCO",
+    "id": "MYX:TANCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TASCO",
+    "id": "MYX:TASCO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TECFAST",
+    "id": "MYX:TECFAST",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TIMECOM",
+    "id": "MYX:TIMECOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TDM",
+    "id": "MYX:TDM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TENAGA",
+    "id": "MYX:TENAGA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TEXCHEM",
+    "id": "MYX:TEXCHEM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TFP",
+    "id": "MYX:TFP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TGUAN",
+    "id": "MYX:TGUAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TGL",
+    "id": "MYX:TGL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TECGUAN",
+    "id": "MYX:TECGUAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "3A",
+    "id": "MYX:3A",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "THETA",
+    "id": "MYX:THETA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "THHEAVY",
+    "id": "MYX:THHEAVY",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "THPLANT",
+    "id": "MYX:THPLANT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TONGHER",
+    "id": "MYX:TONGHER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "THRIVEN",
+    "id": "MYX:THRIVEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TIGER",
+    "id": "MYX:TIGER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TITIJYA",
+    "id": "MYX:TITIJYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TASEK",
+    "id": "MYX:TASEK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TM",
+    "id": "MYX:TM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TMCLIFE",
+    "id": "MYX:TMCLIFE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TOMEI",
+    "id": "MYX:TOMEI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TCHONG",
+    "id": "MYX:TCHONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TNLOGIS",
+    "id": "MYX:TNLOGIS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TOCEAN",
+    "id": "MYX:TOCEAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TDEX",
+    "id": "MYX:TDEX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TOMYPAK",
+    "id": "MYX:TOMYPAK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TOYOINK",
+    "id": "MYX:TOYOINK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TPC",
+    "id": "MYX:TPC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TOPGLOV",
+    "id": "MYX:TOPGLOV",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TRC",
+    "id": "MYX:TRC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TROP",
+    "id": "MYX:TROP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TEOSENG",
+    "id": "MYX:TEOSENG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TEKSENG",
+    "id": "MYX:TEKSENG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TSH",
+    "id": "MYX:TSH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TAS",
+    "id": "MYX:TAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TSRCAP",
+    "id": "MYX:TSRCAP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TUNEPRO",
+    "id": "MYX:TUNEPRO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TURBO",
+    "id": "MYX:TURBO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TURIYA",
+    "id": "MYX:TURIYA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TIMWELL",
+    "id": "MYX:TIMWELL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TAWIN",
+    "id": "MYX:TAWIN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TIENWAH",
+    "id": "MYX:TIENWAH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TALIWRK",
+    "id": "MYX:TALIWRK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TEXCYCL",
+    "id": "MYX:TEXCYCL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UCHITEC",
+    "id": "MYX:UCHITEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EDGENTA",
+    "id": "MYX:EDGENTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UNIMECH",
+    "id": "MYX:UNIMECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UMCCA",
+    "id": "MYX:UMCCA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UEMS",
+    "id": "MYX:UEMS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UMS",
+    "id": "MYX:UMS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UMSNGB",
+    "id": "MYX:UMSNGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UMW",
+    "id": "MYX:UMW",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UNISEM",
+    "id": "MYX:UNISEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UOADEV",
+    "id": "MYX:UOADEV",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UPA",
+    "id": "MYX:UPA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UTDPLT",
+    "id": "MYX:UTDPLT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ULICORP",
+    "id": "MYX:ULICORP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UZMA",
+    "id": "MYX:UZMA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VIVOCOM",
+    "id": "MYX:VIVOCOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VIS",
+    "id": "MYX:VIS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VS",
+    "id": "MYX:VS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VSOLAR",
+    "id": "MYX:VSOLAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VERSATL",
+    "id": "MYX:VERSATL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VITROX",
+    "id": "MYX:VITROX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WASEONG",
+    "id": "MYX:WASEONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WATTA",
+    "id": "MYX:WATTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WARISAN",
+    "id": "MYX:WARISAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "WELLCAL",
+    "id": "MYX:WELLCAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WCT",
+    "id": "MYX:WCT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WONG",
+    "id": "MYX:WONG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WANGZNG",
+    "id": "MYX:WANGZNG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "WTHORSE",
+    "id": "MYX:WTHORSE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WIDETEC",
+    "id": "MYX:WIDETEC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "WOODLAN",
+    "id": "MYX:WOODLAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WILLOW",
+    "id": "MYX:WILLOW",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WPRTS",
+    "id": "MYX:WPRTS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WTK",
+    "id": "MYX:WTK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WZSATU",
+    "id": "MYX:WZSATU",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "XIANLNG",
+    "id": "MYX:XIANLNG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "XDL",
+    "id": "MYX:XDL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "XINGHE",
+    "id": "MYX:XINGHE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "XINHWA",
+    "id": "MYX:XINHWA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "XOX",
+    "id": "MYX:XOX",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "Y&G",
+    "id": "MYX:Y&G",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YGL",
+    "id": "MYX:YGL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YOCB",
+    "id": "MYX:YOCB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YINSON",
+    "id": "MYX:YINSON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YKGI",
+    "id": "MYX:YKGI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YILAI",
+    "id": "MYX:YILAI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YEELEE",
+    "id": "MYX:YEELEE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YLI",
+    "id": "MYX:YLI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YNHPROP",
+    "id": "MYX:YNHPROP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YONGTAI",
+    "id": "MYX:YONGTAI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YSPSAH",
+    "id": "MYX:YSPSAH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YTLPOWR",
+    "id": "MYX:YTLPOWR",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "YTL",
+    "id": "MYX:YTL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ZECON",
+    "id": "MYX:ZECON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ZHULIAN",
+    "id": "MYX:ZHULIAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ZELAN",
+    "id": "MYX:ZELAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WCEHB",
+    "id": "MYX:WCEHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NETX",
+    "id": "MYX:NETX",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TRIVE",
+    "id": "MYX:TRIVE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GNB",
+    "id": "MYX:GNB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VIZIONE",
+    "id": "MYX:VIZIONE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BAUTO",
+    "id": "MYX:BAUTO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "T7GLOBAL",
+    "id": "MYX:T7GLOBAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RHBBANK",
+    "id": "MYX:RHBBANK",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HLT",
+    "id": "MYX:HLT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BCMALL",
+    "id": "MYX:BCMALL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DANCO",
+    "id": "MYX:DANCO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FPGROUP",
+    "id": "MYX:FPGROUP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GFM",
+    "id": "MYX:GFM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HLCAP",
+    "id": "MYX:HLCAP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HSSEB",
+    "id": "MYX:HSSEB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MSPORTS",
+    "id": "MYX:MSPORTS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PTRANS",
+    "id": "MYX:PTRANS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PETONE",
+    "id": "MYX:PETONE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PERDANA",
+    "id": "MYX:PERDANA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RHONEMA",
+    "id": "MYX:RHONEMA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "WINTONI",
+    "id": "MYX:WINTONI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MATANG",
+    "id": "MYX:MATANG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SERBADK",
+    "id": "MYX:SERBADK",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HENGYUAN",
+    "id": "MYX:HENGYUAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ROHAS",
+    "id": "MYX:ROHAS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "EWINT",
+    "id": "MYX:EWINT",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SAPNRG",
+    "id": "MYX:SAPNRG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ESAFE",
+    "id": "MYX:ESAFE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "INTA",
+    "id": "MYX:INTA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CABNET",
+    "id": "MYX:CABNET",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "G3",
+    "id": "MYX:G3",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SMCAP",
+    "id": "MYX:SMCAP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LCTITAN",
+    "id": "MYX:LCTITAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "STRAITS",
+    "id": "MYX:STRAITS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ADVCON",
+    "id": "MYX:ADVCON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PUC",
+    "id": "MYX:PUC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "M&G",
+    "id": "MYX:M&G",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CWG",
+    "id": "MYX:CWG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WMG",
+    "id": "MYX:WMG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GETS",
+    "id": "MYX:GETS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AVI",
+    "id": "MYX:AVI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ABMB",
+    "id": "MYX:ABMB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PARLO",
+    "id": "MYX:PARLO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CLOUD",
+    "id": "MYX:CLOUD",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "REDIDEA",
+    "id": "MYX:REDIDEA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AMVERTON",
+    "id": "MYX:AMVERTON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "KAB",
+    "id": "MYX:KAB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SIMEPLT",
+    "id": "MYX:SIMEPLT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SIMEPROP",
+    "id": "MYX:SIMEPROP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UCREST",
+    "id": "MYX:UCREST",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NGGB",
+    "id": "MYX:NGGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VERTICE",
+    "id": "MYX:VERTICE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "FINTEC",
+    "id": "MYX:FINTEC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MYNEWS",
+    "id": "MYX:MYNEWS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "OCR",
+    "id": "MYX:OCR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AYER",
+    "id": "MYX:AYER",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MGB",
+    "id": "MYX:MGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BINACOM",
+    "id": "MYX:BINACOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JMEDU",
+    "id": "MYX:JMEDU",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MINDA",
+    "id": "MYX:MINDA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MHCARE",
+    "id": "MYX:MHCARE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PHB",
+    "id": "MYX:PHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WEGMANS",
+    "id": "MYX:WEGMANS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NPS",
+    "id": "MYX:NPS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "QES",
+    "id": "MYX:QES",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GDB",
+    "id": "MYX:GDB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IGBB",
+    "id": "MYX:IGBB",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "PGLOBE",
+    "id": "MYX:PGLOBE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "POLYMER",
+    "id": "MYX:POLYMER",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FIHB",
+    "id": "MYX:FIHB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "PEB",
+    "id": "MYX:PEB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LAMBO",
+    "id": "MYX:LAMBO",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TRIMODE",
+    "id": "MYX:TRIMODE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SLIC",
+    "id": "MYX:SLIC",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CJCEN",
+    "id": "MYX:CJCEN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VELESTO",
+    "id": "MYX:VELESTO",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DAIBOCI",
+    "id": "MYX:DAIBOCI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SEERS",
+    "id": "MYX:SEERS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "REVENUE",
+    "id": "MYX:REVENUE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "NOVA",
+    "id": "MYX:NOVA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RGTECH",
+    "id": "MYX:RGTECH",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ATAIMS",
+    "id": "MYX:ATAIMS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ALCOM",
+    "id": "MYX:ALCOM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CHGP",
+    "id": "MYX:CHGP",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "YBS",
+    "id": "MYX:YBS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "VC",
+    "id": "MYX:VC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AMLEX",
+    "id": "MYX:AMLEX",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MYKRIS",
+    "id": "MYX:MYKRIS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SMETRIC",
+    "id": "MYX:SMETRIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TOPVISN",
+    "id": "MYX:TOPVISN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CRG",
+    "id": "MYX:CRG",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TECHBND",
+    "id": "MYX:TECHBND",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BAHVEST",
+    "id": "MYX:BAHVEST",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MFGROUP",
+    "id": "MYX:MFGROUP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "VSTECS",
+    "id": "MYX:VSTECS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "WIDAD",
+    "id": "MYX:WIDAD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ECOHLDS",
+    "id": "MYX:ECOHLDS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "RGTBHD",
+    "id": "MYX:RGTBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DPIH",
+    "id": "MYX:DPIH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "NADIBHD",
+    "id": "MYX:NADIBHD",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MI",
+    "id": "MYX:MI",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UNIWALL",
+    "id": "MYX:UNIWALL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "SUPREME",
+    "id": "MYX:SUPREME",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LYC",
+    "id": "MYX:LYC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DYNACIA",
+    "id": "MYX:DYNACIA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "DPHARMA",
+    "id": "MYX:DPHARMA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ETH",
+    "id": "MYX:ETH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MYSCM",
+    "id": "MYX:MYSCM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "DWL",
+    "id": "MYX:DWL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MERIDIAN",
+    "id": "MYX:MERIDIAN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "IMPIANA",
+    "id": "MYX:IMPIANA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MACPIE",
+    "id": "MYX:MACPIE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SMILE",
+    "id": "MYX:SMILE",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ARBB",
+    "id": "MYX:ARBB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "TTV",
+    "id": "MYX:TTV",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LHI",
+    "id": "MYX:LHI",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "FBBHD",
+    "id": "MYX:FBBHD",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MPSOL",
+    "id": "MYX:MPSOL",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HEXTAR",
+    "id": "MYX:HEXTAR",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GREATEC",
+    "id": "MYX:GREATEC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "HPMT",
+    "id": "MYX:HPMT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MESTRON",
+    "id": "MYX:MESTRON",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "CETECH",
+    "id": "MYX:CETECH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "CGB",
+    "id": "MYX:CGB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MCOM",
+    "id": "MYX:MCOM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "KHJB",
+    "id": "MYX:KHJB",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "UWC",
+    "id": "MYX:UWC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ISTONE",
+    "id": "MYX:ISTONE",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "BABA",
+    "id": "MYX:BABA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "TASHIN",
+    "id": "MYX:TASHIN",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "ENEST",
+    "id": "MYX:ENEST",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "HANDAL",
+    "id": "MYX:HANDAL",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "JADEM",
+    "id": "MYX:JADEM",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MMIS",
+    "id": "MYX:MMIS",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ICONIC",
+    "id": "MYX:ICONIC",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "MTAG",
+    "id": "MYX:MTAG",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "GPP",
+    "id": "MYX:GPP",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IDBTECH",
+    "id": "MYX:IDBTECH",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "MCEMENT",
+    "id": "MYX:MCEMENT",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SDS",
+    "id": "MYX:SDS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "LOTUS",
+    "id": "MYX:LOTUS",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "AME",
+    "id": "MYX:AME",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "STELLA",
+    "id": "MYX:STELLA",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SPRING",
+    "id": "MYX:SPRING",
     "board": "MAIN",
-    "syariah": "Yes"
+    "syariah": true
   },
   {
-    "id": "SLVEST",
+    "id": "MYX:SLVEST",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ASTRA",
+    "id": "MYX:ASTRA",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "AGES",
+    "id": "MYX:AGES",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "LIONPSIM",
+    "id": "MYX:LIONPSIM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "ECM",
+    "id": "MYX:ECM",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   },
   {
-    "id": "IQZAN",
+    "id": "MYX:IQZAN",
     "board": "MAIN",
-    "syariah": "No"
+    "syariah": false
   }
 ]

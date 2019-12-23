@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<circle style="fill:#14A085;" cx="28" cy="28" r="28"/>
+<path style="fill:#FFFFFF;" d="M20,28c0-8.938,5.895-16.523,14-19.078C32.105,8.325,30.09,8,28,8C16.972,8,8,16.972,8,28
+	s8.972,20,20,20c2.09,0,4.105-0.325,6-0.922C25.895,44.523,20,36.938,20,28z"/>
+<polygon style="fill:#FFFFFF;" points="38,20.398 40.528,25.52 46.181,26.342 42.091,30.329 43.056,35.959 38,33.301 32.944,35.959 
+	33.909,30.329 29.819,26.342 35.472,25.52 "/>
+</svg>
