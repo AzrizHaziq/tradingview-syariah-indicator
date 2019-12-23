@@ -26,6 +26,14 @@
       "js": [
         "screener.js"
       ]
+    },
+    {
+      "matches": [
+        "*://*.tradingview.com/symbols/*"
+      ],
+      "js": [
+        "symbols.js"
+      ]
     }
   ],
   "page_action": {
