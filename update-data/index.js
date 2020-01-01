@@ -1,7 +1,8 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 const STOCK_LIST_FILENAME = 'stock-list.json'
-const TRADING_VIEW_MYR = 'MYX';
+const TRADING_VIEW_MYR = 'MYX'
+const SAVE_STOCK_PATH = `background/${STOCK_LIST_FILENAME}`;
 
 (async function () {
   try {
@@ -13,7 +14,7 @@ const TRADING_VIEW_MYR = 'MYX';
       syariah: $shariah === 'Yes',
     }))
 
-    fs.writeFile(STOCK_LIST_FILENAME, JSON.stringify(stockList, null, 2), function (err) {
+    fs.writeFile(SAVE_STOCK_PATH, JSON.stringify(stockList, null, 2), function (err) {
       if (err) {
         throw Error(`Unable to write to file ${ STOCK_LIST_FILENAME }`)
       }
