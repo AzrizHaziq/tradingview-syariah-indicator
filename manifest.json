@@ -16,6 +16,7 @@
         "*://*.tradingview.com/chart/*"
       ],
       "js": [
+        "helpers/index.js",
         "pages/chart.js"
       ]
     },
@@ -24,6 +25,7 @@
         "*://*.tradingview.com/screener/*"
       ],
       "js": [
+        "helpers/index.js",
         "pages/screener.js"
       ]
     },
@@ -32,6 +34,7 @@
         "*://*.tradingview.com/symbols/*"
       ],
       "js": [
+        "helpers/index.js",
         "pages/symbols.js"
       ]
     }
