@@ -2,40 +2,86 @@ const TRADING_VIEW_MYR = 'MYX'
 const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
 
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
+let isObservingFlagChanges = false;
+let isObservingTableChanges = false;
+
+if(browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('CHART: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
 }
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  // check if market is not MY
-  if (!document.querySelector('.tv-flag-country.tv-flag-country--my[alt="my"]')) {
+function observeCurrentMarket() {
+  if(isObservingFlagChanges) {
     return ;
   }
 
-  const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+  const MYFlagNode = document.querySelector('.tv-flag-country.tv-flag-country--my[alt="my"]')
 
-  // Create an observer instance linked to the callback function
-  const observer = new MutationObserver(function (mutations) {
-    // Use traditional 'for loops' for IE 11
-    console.log('mutations', mutations)
+  if(MYFlagNode) {
+    console.log('Already malaysian flag')
+    observedTableChanges()
+  }
 
-    for (let mutation of mutations) {
-      if (mutation.type === 'childList') {
-        console.log('A child node has been added or removed.')
-      } else if (mutation.type === 'attributes') {
-        console.log('The ' + mutation.attributeName + ' attribute was modified.')
+  const observer = new MutationObserver(function(mutations) {
+    for(let mutation of mutations) {
+      if(mutation.type === 'childList') {
+        mutation.addedNodes.forEach(node => {
+          // if other dom get fired, ignored it
+          if(!node.classList.contains('tv-flag-country')) {
+            return
+          }
+
+          if(node.classList.contains('tv-flag-country--my')) {
+            // console.log('malaysia')
+            observedTableChanges()
+          } else {
+            console.log('delete Syariah icon')
+            // deleteSyariahIcon()
+          }
+        })
       }
     }
   })
 
-  // Start observing the target node for configured mutations
-  observer.observe(tableNode, { childList: true, subtree: true })
-  console.log('observed')
-  // const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbols() }`)
+  observer.observe(
+    document.querySelector('.tv-screener-market-select'),
+    {
+      childList: true,
+      subtree: true,
+    },
+  )
 
+  isObservingFlagChanges = true;
+}
+
+function observedTableChanges() {
+  if(isObservingTableChanges) {
+    return ;
+  }
+
+  console.log('start observe table')
+
+  const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+
+  // Create an observer instance linked to the callback function
+  const observer = new MutationObserver(([mutation]) => {
+    mutation.target.childNodes.forEach(child => {
+      child.children[0].children[0].children[1].childNodes[1].append(syariahIcon({ width: 10, top: '1px' }))
+    })
+  })
+
+  // Start observing the target node for configured mutations
+  observer.observe(tableNode, { childList: true, })
+
+  isObservingTableChanges = true;
+}
+
+function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
+  observeCurrentMarket()
+
+  // const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbols() }`)
   // if (!found) {
   //   // didnt found symbol within malaysian stocks
   //   deleteSyariahIcon()
@@ -66,17 +112,17 @@ function getSymbols() {
   return /\w+/.exec(domTittleName)[0]
 }
 
-function syariahIcon(styles = { top: 0, marginLeft: '3px', position: 'relative' }) {
+function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position=  'relative' }) {
   const img = document.createElement('img')
   img.setAttribute(attributeName, extensionName)
   img.src = browser.extension.getURL('syariah-icon.svg')
   img.alt = 'Malaysia Syariah Compliance'
   img.title = 'Malaysia Syariah Compliance'
 
-  img.width = 15
-  img.style.top = styles.top
-  img.style.marginLeft = styles.marginLeft
-  img.style.position = styles.position
+  img.width = width
+  img.style.top = top
+  img.style.marginLeft = marginLeft
+  img.style.position = position
 
   return img
 }
