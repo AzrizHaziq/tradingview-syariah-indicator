@@ -6,7 +6,7 @@ let isObservingFlagChanges = false;
 let isObservingTableChanges = false;
 
 if(browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('CHART: Registered listener')
+  console.log('SCREENER: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
 }
 

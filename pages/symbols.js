@@ -3,7 +3,7 @@ const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
 
 if(browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('CHART: Registered listener')
+  console.log('SYMBOLS: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
 }
 
