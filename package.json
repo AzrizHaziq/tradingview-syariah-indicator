@@ -5,8 +5,7 @@
   "main": "background.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "web-ext run",
+    "start": "web-ext run --firefox=\"/Applications/Firefox.app/Contents/MacOS/firefox-bin\" --start-url www.tradingview.com/screener",
     "update-data": "node ./update-data"
   },
   "engines": {
