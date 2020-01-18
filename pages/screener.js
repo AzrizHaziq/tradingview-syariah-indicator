@@ -79,7 +79,7 @@ function observedTableChanges() {
   })
 
   // Start observing the target node for configured mutations
-  observer.observe(tableNode, { subtree: true, childList: true })
+  observer.observe(tableNode, { childList: true })
 
   isObservingTableChanges = true
 }
