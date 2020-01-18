@@ -1,5 +1,6 @@
-let isObservingFlagChanges = false;
-let isObservingTableChanges = false;
+let isObservingFlagChanges = false
+let isObservingTableChanges = false
+let SYARIAH_COMPLIANCE_LIST = []
 
 if(browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SCREENER: Registered listener')
@@ -10,13 +11,13 @@ browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
 function observeCurrentMarket() {
   if(isObservingFlagChanges) {
-    return ;
+    console.log('Already observe market')
+    return
   }
 
   const MYFlagNode = document.querySelector('.tv-flag-country.tv-flag-country--my[alt="my"]')
 
   if(MYFlagNode) {
-    console.log('Already malaysian flag')
     observedTableChanges()
   }
 
@@ -49,31 +50,45 @@ function observeCurrentMarket() {
     },
   )
 
-  isObservingFlagChanges = true;
+  isObservingFlagChanges = true
 }
 
 function observedTableChanges() {
   if(isObservingTableChanges) {
-    return ;
+    console.log('Already observe table')
+    return
   }
-
-  console.log('start observe table')
 
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
   // Create an observer instance linked to the callback function
   const observer = new MutationObserver(([mutation]) => {
-    mutation.target.childNodes.forEach(child => {
-      child.children[0].children[0].children[1].childNodes[1].append(syariahIcon({ width: 10, top: '1px' }))
+    Array.from(mutation.target.children).forEach((child, i) => {
+      const rowSymbol = child.getAttribute('data-symbol')
+      const isSyariah = SYARIAH_COMPLIANCE_LIST[rowSymbol]
+
+      if(isSyariah) {
+        const dom = child.querySelector('.tv-screener-table__symbol-right-part span')
+        if(isSyariahIconExist(dom)) {
+          // if icon already exist dont do anything
+        } else {
+          dom.insertAdjacentElement('beforeend', syariahIcon({ width: 10, top: '1px' }))
+        }
+      }
     })
   })
 
   // Start observing the target node for configured mutations
-  observer.observe(tableNode, { childList: true, })
+  observer.observe(tableNode, { subtree: true, childList: true })
 
-  isObservingTableChanges = true;
+  isObservingTableChanges = true
 }
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
+function receiveSignalFromBgScript({ list }) {
+  SYARIAH_COMPLIANCE_LIST = list.reduce((acc, cur) => ({
+    ...acc,
+    [cur.id]: cur.syariah,
+  }), {})
+
   observeCurrentMarket()
 }
