@@ -15,7 +15,7 @@ function deleteSyariahIcon() {
   document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
 }
 
-function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position = 'relative' }) {
+function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position = 'relative', marginRight = '0'}) {
   const img = document.createElement('img')
   img.setAttribute(attributeName, extensionName)
   img.src = browser.extension.getURL('assets/syariah-icon.svg')
@@ -26,6 +26,7 @@ function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position = 're
   img.style.top = top
   img.style.position = position
   img.style.marginLeft = marginLeft
+  img.style.marginRight = marginRight
 
   return img
 }
