@@ -18,7 +18,7 @@ function deleteSyariahIcon() {
 function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position = 'relative' }) {
   const img = document.createElement('img')
   img.setAttribute(attributeName, extensionName)
-  img.src = browser.extension.getURL('syariah-icon.svg')
+  img.src = browser.extension.getURL('assets/syariah-icon.svg')
   img.alt = 'Syariah Compliance'
   img.title = 'Syariah Compliance'
 

@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "web-ext run --firefox=\"/Applications/Firefox.app/Contents/MacOS/firefox-bin\" --start-url www.tradingview.com/screener",
+    "build": "web-ext build --ignore-files ./update-data/index.js",
     "update-data": "node ./update-data"
   },
   "engines": {
