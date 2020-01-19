@@ -13,7 +13,12 @@
     "node": "12.14.0",
     "npm": "6.13.4"
   },
-  "keywords": [],
+  "keywords": [
+    "Syariah Stock in Malaysia",
+    "Malaysia",
+    "Stock",
+    "Bursa Malaysia"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
