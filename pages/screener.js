@@ -8,6 +8,8 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
+addStaticSyariahIcon()
+
 // turn from array of stock list into object { [MYX:Symbol]: boolean }.
 function receiveSignalFromBgScript({ list }) {
   SYARIAH_COMPLIANCE_LIST = list.reduce((acc, cur) => ({
@@ -44,7 +46,7 @@ function observedTableChanges() {
           // if icon already exist dont do anything
         } else {
           const domToBeAdded = child.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
-          domToBeAdded.insertAdjacentElement('afterend', syariahIcon({ width: 10, marginRight: '5px' }))
+          domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
         }
       }
     })

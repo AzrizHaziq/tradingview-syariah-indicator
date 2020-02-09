@@ -5,6 +5,8 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
+addStaticSyariahIcon()
+
 function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
 
   const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbols() }`)
@@ -23,7 +25,7 @@ function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
       return
     }
 
-    element.parentElement.prepend(syariahIcon({ top: 0, marginLeft: '3px', position: 'relative' }))
+    element.parentElement.prepend(createIcon({ width: 15, height: 15 }))
   } else {
     // if not syariah delete all icon
     deleteSyariahIcon()

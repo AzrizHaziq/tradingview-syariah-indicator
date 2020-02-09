@@ -1,6 +1,7 @@
 const TRADING_VIEW_MYR = 'MYX'
 const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
+const parser = new DOMParser()
 
 function getSymbols() {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
@@ -15,23 +16,6 @@ function deleteSyariahIcon() {
   document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
 }
 
-function syariahIcon({ width = 15, top = '0', marginLeft = '3px', position = 'relative', marginRight = '0'}) {
-  const img = document.createElement('img')
-  img.setAttribute(attributeName, extensionName)
-  img.src = browser.extension.getURL('assets/syariah-icon.svg')
-  img.alt = 'Syariah Compliance'
-  img.title = 'Syariah Compliance'
-
-  img.width = width
-  img.style.top = top
-  img.style.position = position
-  img.style.marginLeft = marginLeft
-  img.style.marginRight = marginRight
-
-  return img
-}
-
-const parser = new DOMParser()
 
 /**
  * All icon will be references in document.body.svg below 'addStaticSyariahIcon'
