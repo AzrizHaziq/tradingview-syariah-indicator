@@ -5,14 +5,7 @@ fetch('/background/stock-list.json')
   .then(list => SYARIAH_COMPLIANCE_LIST = list)
   .catch(e => console.error('Something when wrong', e))
 
-browser.tabs.onUpdated.addListener(listener, filter = {
-  urls: [
-    '*://*.tradingview.com/screener/*',
-    '*://*.tradingview.com/chart/*',
-    '*://*.tradingview.com/symbols/*'
-  ],
-  windowId: browser.windows.WINDOW_ID_CURRENT
-})
+browser.tabs.onUpdated.addListener(listener)
 
 function listener(id) {
   try {

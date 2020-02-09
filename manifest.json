@@ -6,7 +6,7 @@
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
   "background": {
     "scripts": [
-      "node_modules/webextension-polyfill/dist/browser-polyfill.js",
+      "browser-polyfill.js",
       "background/script.js"
     ]
   },
@@ -16,6 +16,7 @@
         "*://*.tradingview.com/chart/*"
       ],
       "js": [
+        "browser-polyfill.js",
         "helpers/index.js",
         "pages/chart.js"
       ]
@@ -25,6 +26,7 @@
         "*://*.tradingview.com/screener/*"
       ],
       "js": [
+        "browser-polyfill.js",
         "helpers/index.js",
         "pages/screener.js"
       ]
@@ -34,6 +36,7 @@
         "*://*.tradingview.com/symbols/*"
       ],
       "js": [
+        "browser-polyfill.js",
         "helpers/index.js",
         "pages/symbols.js"
       ]
