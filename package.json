@@ -4,7 +4,7 @@
   "description": "Trading view syariah indicator",
   "private": true,
   "scripts": {
-    "start": "web-ext run --firefox=\"/Applications/Firefox.app/Contents/MacOS/firefox-bin\" --start-url www.tradingview.com/screener",
+    "start": "web-ext run --firefox=\"/Applications/Firefox.app/Contents/MacOS/firefox-bin\" --start-url https://my.tradingview.com/symbols/MYX-FRONTKN/",
     "start:chrome": "web-ext run --target chromium --start-url www.tradingview.com/screener",
     "prebuild": "rimraf ./web-ext-artifacts/",
     "build": "web-ext build --ignore-files ./update-data/index.js",
