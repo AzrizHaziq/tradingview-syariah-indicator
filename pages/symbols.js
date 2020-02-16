@@ -7,8 +7,14 @@ browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
 addStaticSyariahIcon();
 
+function getSymbol() {
+  return  document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
+    .getAttribute('data-symbol')
+}
+
 function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbols() }`)
+  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ getSymbol() }`)
+  console.log(SYARIAH_COMPLIANCE_LIST, getSymbol(), found)
 
   if (found.syariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')

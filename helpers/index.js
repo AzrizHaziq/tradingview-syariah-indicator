@@ -3,11 +3,6 @@ const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
 const parser = new DOMParser()
 
-function getSymbols() {
-  const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+/.exec(domTittleName)[0]
-}
-
 function isSyariahIconExist(element) {
   return element.querySelector(`[${ attributeName }="${ extensionName }"]`)
 }

@@ -7,9 +7,13 @@ browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
 addStaticSyariahIcon()
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
+function getSymbolsFromTitle() {
+  const domTittleName = document.getElementsByTagName('title')[0].innerText
+  return /\w+(-\w+)?/.exec(domTittleName)[0]  // also cover syntax like warrant
+}
 
-  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbols() }`)
+function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
+  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (!found) {
     // didnt found symbol within malaysian stocks
