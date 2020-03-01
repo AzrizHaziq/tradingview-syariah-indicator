@@ -8,7 +8,8 @@
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-FRONTKN/",
     "prebuild": "rimraf ./web-ext-artifacts/",
     "build": "web-ext build --ignore-files ./update-data/index.js",
-    "update-data": "node ./update-data"
+    "update-data": "node ./update-data",
+    "scrapping": "node ./update-data/scrapping.js"
   },
   "engines": {
     "node": "12.14.0",
@@ -24,6 +25,7 @@
   "license": "ISC",
   "devDependencies": {
     "node-fetch": "^2.6.0",
+    "playwright": "^0.11.1",
     "rimraf": "^3.0.0",
     "web-ext": "^3.2.1",
     "webextension-polyfill": "^0.5.0"
