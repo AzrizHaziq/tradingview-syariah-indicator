@@ -1,5 +1,5 @@
 let isObservingTableChanges = false
-let SYARIAH_COMPLIANCE_LIST = []
+let SYARIAH_COMPLIANCE_LIST = {}
 
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SCREENER: Registered listener')
@@ -12,10 +12,7 @@ addStaticSyariahIcon()
 
 // turn from array of stock list into object { [MYX:Symbol]: boolean }.
 function receiveSignalFromBgScript({ list }) {
-  SYARIAH_COMPLIANCE_LIST = list.reduce((acc, cur) => ({
-    ...acc,
-    [cur.id]: cur.syariah,
-  }), {})
+  SYARIAH_COMPLIANCE_LIST = list;
 
   observedTableChanges()
 }
@@ -38,6 +35,7 @@ function observedTableChanges() {
 
     Array.from(mutation.target.children).forEach(child => {
       const rowSymbol = child.getAttribute('data-symbol')
+
       const isSyariah = SYARIAH_COMPLIANCE_LIST[rowSymbol]
 
       if (isSyariah) {

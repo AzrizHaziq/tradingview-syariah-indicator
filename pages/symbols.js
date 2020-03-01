@@ -13,10 +13,9 @@ function getSymbol() {
 }
 
 function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ getSymbol() }`)
-  console.log(SYARIAH_COMPLIANCE_LIST, getSymbol(), found)
+  const isSyariah = SYARIAH_COMPLIANCE_LIST[`${ getSymbol() }`]
 
-  if (found.syariah) {
+  if (isSyariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
     const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
 

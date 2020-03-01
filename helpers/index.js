@@ -11,7 +11,6 @@ function deleteSyariahIcon() {
   document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
 }
 
-
 /**
  * All icon will be references in document.body.svg below 'addStaticSyariahIcon'
  * @param width

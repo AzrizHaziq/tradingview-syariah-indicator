@@ -1,4652 +1,924 @@
-[
-  {
-    "id": "MYX:AASIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ABLEGRP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AFUJIYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ANCOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ACME",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ACOSTEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ADVENTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AEMULUS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AEON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASIAFLE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:APOLLO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AFFIN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AIM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ALLIANZ",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AIRASIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AAX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AISB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AJI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AJIYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ALAM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AMPROP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AMBANK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AMTEL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AMWAY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ANCOMLB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AEONCR",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ANNJOO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ANALABS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ANZO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:APB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AHEALTH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:APEX",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:APFT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASIAPAC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:APM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:APPASIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ADVPKG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ARK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ARANK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASDION",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASIABRN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AMEDIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASIAPLY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ASTRO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ATLAN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ASTINO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ATTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AWC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AXIATA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AYS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AZRB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BARAKAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BAT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BCB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BDB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BENALEC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BJASSET",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BERTAM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BJCORP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BJCORP-OA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BRAHIMS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BHIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BIG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BIMB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BIOHLDG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BJFOOD",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BINTAI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BJLAND",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BLDPLNT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BURSA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BOILERM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BONIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BPLANT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BSTEAD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BRIGHT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BOXPAK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BIPORT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BPPLAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BPURI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BREM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BORNOIL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BSLCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BJTOTO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:BKAWAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BTM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ARMADA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CAB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CAELY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CAREPLS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CARING",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CARIMIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CBIP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CARLSBG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CCK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:COCOLND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CONNECT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHEETAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CFM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHINHIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHOOBEE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHUAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CIHLDG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CIMB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CCM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CME",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:COMCORP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CMSB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CNASIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CNI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CANONE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CENSOF",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:COMFORT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CEPCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CNOUHUA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:COMPUGT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:COMPLET",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CEPAT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CRESNDO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CRESBLD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CAMRES",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CSCENIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CSCSTEL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:COASTAL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CHINTEK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CUSCAPI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CVIEW",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHINWEL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CCB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CYL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CYMAO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CYPARK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DATAPRP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DAYA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:DBE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DLADY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DEGEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DAYANG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DKSH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DESTINI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DGSB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DIALOG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DIGISTA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IDMENSN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DKLS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DELEUM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DNONCE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DNEX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DOLMITE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:DOLPHIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DOMINAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:D&O",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DPS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DRBHCOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DIGI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DSONIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DUFU",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DUTALND",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:EAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EASTLND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EATECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EFFICEN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ECOFIRS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ECONBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ECOWLD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EDEN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:EDARAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EDUSPEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EITA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EKA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EKOVEST",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EKSONS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ELKDESA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ELSOFT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EMICO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ENCORP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ENGKAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:E&O",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ENRA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EMETALL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EPMB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EURO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EUROSP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SENDAI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ESCERAM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:EIG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ENGTEX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EUPE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EVERGRN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EWEIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EFORCE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FACBIND",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FAJAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FOCUS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FCW",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FAREAST",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FGV",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FIAMMA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FIBON",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FIMACOR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FITTERS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FARLIM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FREIGHT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FLBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FOCUSP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FPI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:F&N",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FRONTKN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FSBM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FAVCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GADANG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GAMUDA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GBGAQRS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GASMSIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GDEX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GENM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GENP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GENTING",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GESHEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GHLSYS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HOOVER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GKENT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GOB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GLOMAC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GLOTEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GMUTUAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GTRONIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GOCEAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GLBHD",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GOPENG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GPA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GCE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GRANFLO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GPACKET",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GPHAROS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GREENYB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GSB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GENETEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GUH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GUNUNG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GUOCO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:GOODWAY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HAIO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HSPLANT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HAPSENG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HARBOUR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HBGLOB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HCK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HEIM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HTPADU",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HHGROUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HEVEA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HOHUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HHHCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HIBISCS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HIL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HLBANK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HLFG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HARNLEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HLIND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HOKHENG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HOMERIZ",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HWGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HUPSENG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HSL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HARISON",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HARTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HIAPTEK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HUAYANG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HUBLINE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HUMEIND",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HWATAI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HEXZA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IBRACO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ICAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ICON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IFCAMSC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IHH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IJMPLNT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IJM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INCKEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IKHMAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ILB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IMASPRO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INARI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ITRONIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INIX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INNO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INNITY",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:INSAS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IOICORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IOIPG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IPMUDA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IQGROUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IRIS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IREKA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IDEAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IVORY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IWCITY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JADI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JAG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JAKS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JAYCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JCBNEXT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:JCY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JERASIA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:JETSON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JFTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JOHAN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:JHM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JOHOTIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JIANKUN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JASKITA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:JKGLAND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JTIASA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KANGER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KAREX",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KARYON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KUCHAI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KEINHIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KESM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KFIMA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KGROUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KHEESAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KHIND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HIGHTEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KIALIM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KIMLUN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KIMHIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KMLOONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KTC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KKB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KLK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KLUANG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KAMDAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KNM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KENANGA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KNUSFOR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KOBAY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KOTRA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KOMARK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:K1",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KPJ",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KPOWER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KPS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KPSCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KERJAYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KRETAM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KOSSAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KRONO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KSL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KSENG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KSSC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KINSTEL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KTB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KSTAR",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KUB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KWANTAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KAWAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KEYASIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KYM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:L&G",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LAYHONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LBALUM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LBICAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LBS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LUXCHEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LSTEEL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LEBTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LEONFB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LEWEKO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LFECORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LIENHOE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LIIHEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LEESK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LKL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LIONIND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LANDMRK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LONBISC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LPI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LUSTER",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LATITUD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LITRAK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LTKM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LYSAGHT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MAA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MAGNUM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MAGNA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AIRPORT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MAHSING",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MALAKOF",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MPAY",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MAGNI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MATRIX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MAYBANK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MAYBULK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MBMR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MBSB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MBWORLD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MCEHLDG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MCLEAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MICROLN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MCT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MEDIAC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MFCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MELATI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MERCURY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MENTIGA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MESB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MEGASUN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MKH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MFLOUR",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MGRC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MALPAC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MHC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MIECO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MIKROMB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MILUX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MBG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MISC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MULPHA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MITRA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MJPERAK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MUDAJYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MKLAND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MLAB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MALTON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MMAG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MMCCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MMSV",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MENANG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MNC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MSNIAGA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MINHO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MANULFE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MNRB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MINETEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MPHBCAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MPI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MPCORP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MEDIA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MQTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MARCO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:METROD",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MSC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MSM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MELEWAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MASTER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MASTEEL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:M3TECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MTDACPI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MTRONIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MTOUCHE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MBL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MUDA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MUH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MUHIBAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MUIIND",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MUIPROP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MAXIS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MYCRON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MYEG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MRCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NAIM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NESTLE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NEXGRAM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NATWIDE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NHFATT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NIHSIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NICE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NYLEX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:N2N",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NOVAMSC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NPC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NSOP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:NTPM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NOTION",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NWP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OCNCASH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OCK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OFI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OIB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OKA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OLYMPIA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:OMESTI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OWG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:OPCOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OPENSYS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ORION",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ORNA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:OSK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:OSKVI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ORIENT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:OVERSEA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:P&O",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PANSAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PAOS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PASUKGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PBA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PCCS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PCHEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PASDEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PADINI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PDZ",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PECCA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PESTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PELIKAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PENSONI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PPB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRKCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PESONA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PETDAG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PETGAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:POLY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PMHLDG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PARAGON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PICORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PHARMA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:POHUAT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PIE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PINEAPP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PTARAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PINEPAC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PJBUMI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PLB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PLENITU",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PLABS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PLS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PTB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PENTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PMBTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PMCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PMETAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PERMAJU",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PANAMY",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PNEPCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PUNCAK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PANTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:POHKONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PWROOT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PPG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PPHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PERISAI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PRG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PARKSON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PARAMON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRIVA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRTASCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:POS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRESBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PERSTIM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRESTAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PETRONM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PENERGY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PBBANK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PWF",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PWORTH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PRLEXUS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:QUALITY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:QL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RALCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RANHILL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RAPID",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:RSENA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:RCECAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:REACH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RESINTC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:REV",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:REX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:REXIT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:RGB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:RSAWIT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:REDTONE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:RUBEREX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RVIEW",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCABLE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAMCHEM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SASBADI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SANICHI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SALUTE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SNC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAPIND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAUDEE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SBAGAN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SUCCESS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SCICOM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SEACERA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCOMIES",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCGM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEEHUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SCIB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUNCON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCOMI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCOPE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCBUILD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCOMNET",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SCNWOLF",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SDRED",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEDANIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SJC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SPSETIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SIGN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SHCHAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SHANG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SHH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SHL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SBCCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SIGGAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SIME",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SINOTOP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SRIDGE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SKBSHUT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SERNKOU",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SKPRES",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SALCON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SOLUTN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEALINK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SLP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SMISCOR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SMI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SMRT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SMTRACK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HUAAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SNTORIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SOLID",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SOP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUPERLN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SWKPLNT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SPRITZER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SAPRES",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SERSOL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:STAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SSTEEL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SCIENTX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUBUR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUNSURIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUPERMX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SURIA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUMATEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUNWAY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SWSCAP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SYCAL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SYF",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SYMLIFE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SYSCORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SYSTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SUNZEN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TAANN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TADMAX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TAFI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TAGB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TAKAFUL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TALAMT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TAMBUN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TANCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TASCO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TECFAST",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TIMECOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TDM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TENAGA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TEXCHEM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TFP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TGUAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TGL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TECGUAN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:3A",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:THETA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:THHEAVY",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:THPLANT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TONGHER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:THRIVEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TIGER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TITIJYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TASEK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TMCLIFE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TOMEI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TCHONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TNLOGIS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TOCEAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TDEX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TOMYPAK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TOYOINK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TPC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TOPGLOV",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TRC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TROP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TEOSENG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TEKSENG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TSH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TSRCAP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TUNEPRO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TURBO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TURIYA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TIMWELL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TAWIN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TIENWAH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TALIWRK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TEXCYCL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UCHITEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EDGENTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UNIMECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UMCCA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UEMS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UMS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UMSNGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UMW",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UNISEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UOADEV",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UPA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UTDPLT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ULICORP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UZMA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VIVOCOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VIS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VSOLAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VERSATL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VITROX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WASEONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WATTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WARISAN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:WELLCAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WCT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WONG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WANGZNG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:WTHORSE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WIDETEC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:WOODLAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WILLOW",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WPRTS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WTK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WZSATU",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:XIANLNG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:XDL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:XINGHE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:XINHWA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:XOX",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:Y&G",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YGL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YOCB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YINSON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YKGI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YILAI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YEELEE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YLI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YNHPROP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YONGTAI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YSPSAH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YTLPOWR",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:YTL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ZECON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ZHULIAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ZELAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WCEHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NETX",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TRIVE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GNB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VIZIONE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BAUTO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:T7GLOBAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RHBBANK",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HLT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BCMALL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DANCO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FPGROUP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GFM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HLCAP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HSSEB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MSPORTS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PTRANS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PETONE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PERDANA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RHONEMA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:WINTONI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MATANG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SERBADK",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HENGYUAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ROHAS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:EWINT",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SAPNRG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ESAFE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:INTA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CABNET",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:G3",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SMCAP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LCTITAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:STRAITS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ADVCON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PUC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:M&G",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CWG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WMG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GETS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AVI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ABMB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PARLO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CLOUD",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:REDIDEA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AMVERTON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:KAB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SIMEPLT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SIMEPROP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UCREST",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NGGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VERTICE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:FINTEC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MYNEWS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:OCR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AYER",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BINACOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JMEDU",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MINDA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MHCARE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WEGMANS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NPS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:QES",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GDB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IGBB",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:PGLOBE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:POLYMER",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FIHB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:PEB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LAMBO",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TRIMODE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SLIC",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CJCEN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VELESTO",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DAIBOCI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SEERS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:REVENUE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:NOVA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RGTECH",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ATAIMS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ALCOM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CHGP",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:YBS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:VC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AMLEX",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MYKRIS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SMETRIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TOPVISN",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CRG",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TECHBND",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BAHVEST",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MFGROUP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:VSTECS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:WIDAD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ECOHLDS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:RGTBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DPIH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:NADIBHD",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MI",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UNIWALL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:SUPREME",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LYC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DYNACIA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:DPHARMA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ETH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MYSCM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:DWL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MERIDIAN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:IMPIANA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MACPIE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SMILE",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ARBB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:TTV",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LHI",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:FBBHD",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MPSOL",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HEXTAR",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GREATEC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:HPMT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MESTRON",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:CETECH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:CGB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MCOM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:KHJB",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:UWC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ISTONE",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:BABA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:TASHIN",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:ENEST",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:HANDAL",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:JADEM",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MMIS",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ICONIC",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:MTAG",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:GPP",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IDBTECH",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:MCEMENT",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SDS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:LOTUS",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:AME",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:STELLA",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SPRING",
-    "board": "MAIN",
-    "syariah": true
-  },
-  {
-    "id": "MYX:SLVEST",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ASTRA",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:AGES",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:LIONPSIM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:ECM",
-    "board": "MAIN",
-    "syariah": false
-  },
-  {
-    "id": "MYX:IQZAN",
-    "board": "MAIN",
-    "syariah": false
-  }
-]
+{
+  "MYX:SAPNRG": true,
+  "MYX:XOX": true,
+  "MYX:AIRASIA": true,
+  "MYX:DSONIC": true,
+  "MYX:TIGER": true,
+  "MYX:MYEG": true,
+  "MYX:AVI": true,
+  "MYX:PWORTH": true,
+  "MYX:SAPNRG-WA": true,
+  "MYX:DSONIC-WA": true,
+  "MYX:JAKS": true,
+  "MYX:JAG": true,
+  "MYX:EKOVEST": true,
+  "MYX:ALAM": true,
+  "MYX:JCY": true,
+  "MYX:VELESTO": true,
+  "MYX:DGB": true,
+  "MYX:ANZO": true,
+  "MYX:INARI": true,
+  "MYX:PUC": true,
+  "MYX:NOTION": true,
+  "MYX:FPGROUP": true,
+  "MYX:MRCB": true,
+  "MYX:KRONO": true,
+  "MYX:MI": true,
+  "MYX:GAMUDA": true,
+  "MYX:ISTONE": true,
+  "MYX:AT": true,
+  "MYX:APFT": true,
+  "MYX:DAYANG": true,
+  "MYX:DBE": true,
+  "MYX:PDZ": true,
+  "MYX:HUBLINE": true,
+  "MYX:VELESTO-WA": true,
+  "MYX:HIBISCS": true,
+  "MYX:RGTECH": true,
+  "MYX:PCHEM": true,
+  "MYX:GAMUDA-WE": true,
+  "MYX:NOVAMSC": true,
+  "MYX:BINACOM": true,
+  "MYX:FGV": true,
+  "MYX:SUPERMX": true,
+  "MYX:PERDANA": true,
+  "MYX:ICON": true,
+  "MYX:PTRANS": true,
+  "MYX:SLVEST": true,
+  "MYX:ALAM-WA": true,
+  "MYX:NEXGRAM": true,
+  "MYX:MCLEAN": true,
+  "MYX:MINETEC": true,
+  "MYX:MISC": true,
+  "MYX:HARTA": true,
+  "MYX:VIVOCOM": true,
+  "MYX:IOIPG": true,
+  "MYX:SERBADK-WA": true,
+  "MYX:AAX": true,
+  "MYX:TOPGLOV": true,
+  "MYX:YONGTAI": true,
+  "MYX:DNONCE": true,
+  "MYX:WIDAD": true,
+  "MYX:GDB": true,
+  "MYX:BPURI-WA": true,
+  "MYX:REVENUE-WA": true,
+  "MYX:SIME": true,
+  "MYX:OMESTI": true,
+  "MYX:IRIS": true,
+  "MYX:HUAAN": true,
+  "MYX:TENAGA": true,
+  "MYX:MTAG": true,
+  "MYX:IMPIANA": true,
+  "MYX:SIMEPLT": true,
+  "MYX:ECOWLD": true,
+  "MYX:PHB": true,
+  "MYX:CAREPLS": true,
+  "MYX:REVENUE": true,
+  "MYX:PELIKAN": true,
+  "MYX:OPENSYS": true,
+  "MYX:IWCITY": true,
+  "MYX:UWC": true,
+  "MYX:PMHLDG": true,
+  "MYX:VSOLAR": true,
+  "MYX:SERBADK": true,
+  "MYX:KANGER": true,
+  "MYX:GREATEC": true,
+  "MYX:DOLPHIN": true,
+  "MYX:PTRANS-WA": true,
+  "MYX:PANSAR": true,
+  "MYX:THRIVEN": true,
+  "MYX:JTIASA": true,
+  "MYX:VIS": true,
+  "MYX:RSAWIT": true,
+  "MYX:IJM": true,
+  "MYX:MERIDIAN": true,
+  "MYX:BORNOIL-WC": true,
+  "MYX:SEDANIA": true,
+  "MYX:XINHWA": true,
+  "MYX:PDZ-WB": true,
+  "MYX:DIGI": true,
+  "MYX:BAHVEST": true,
+  "MYX:AXIATA": true,
+  "MYX:NAIM": true,
+  "MYX:OPCOM": true,
+  "MYX:RUBEREX": true,
+  "MYX:TECFAST": true,
+  "MYX:COMFORT": true,
+  "MYX:SKPRES": true,
+  "MYX:WCT": true,
+  "MYX:ICONIC": true,
+  "MYX:WPRTS": true,
+  "MYX:SUNWAY": true,
+  "MYX:POS": true,
+  "MYX:MEDIAC": true,
+  "MYX:DNEX": true,
+  "MYX:THHEAVY": true,
+  "MYX:HIBISCS-WC": true,
+  "MYX:VS": true,
+  "MYX:BAHVEST-WA": true,
+  "MYX:SPSETIA": true,
+  "MYX:UZMA": true,
+  "MYX:ECONBHD": true,
+  "MYX:SCOMI": true,
+  "MYX:DUFU": true,
+  "MYX:DGSB": true,
+  "MYX:CME": true,
+  "MYX:IHH": true,
+  "MYX:JKGLAND": true,
+  "MYX:REACH": true,
+  "MYX:PPHB": true,
+  "MYX:STRAITS": true,
+  "MYX:T7GLOBAL": true,
+  "MYX:KAB": true,
+  "MYX:L&G": true,
+  "MYX:REACH-WA": true,
+  "MYX:VC": true,
+  "MYX:QES": true,
+  "MYX:UCREST": true,
+  "MYX:KGROUP": true,
+  "MYX:IOICORP": true,
+  "MYX:MGRC": true,
+  "MYX:BIOHLDG": true,
+  "MYX:MAXIS": true,
+  "MYX:ARBB": true,
+  "MYX:FOCUSP": true,
+  "MYX:ORION": true,
+  "MYX:EFORCE": true,
+  "MYX:GCB": true,
+  "MYX:FRONTKN": true,
+  "MYX:BPURI": true,
+  "MYX:BRAHIMS": true,
+  "MYX:D&O": true,
+  "MYX:NOTION-WC": true,
+  "MYX:DATAPRP": true,
+  "MYX:INNATURE": true,
+  "MYX:VIS-WB": true,
+  "MYX:THRIVEN-WB": true,
+  "MYX:KPJ": true,
+  "MYX:K1": true,
+  "MYX:SIMEPROP": true,
+  "MYX:BIMB-WA": true,
+  "MYX:IKHMAS": true,
+  "MYX:PCCS-WA": true,
+  "MYX:GHLSYS": true,
+  "MYX:MELEWAR": true,
+  "MYX:LAYHONG": true,
+  "MYX:GADANG": true,
+  "MYX:DESTINI": true,
+  "MYX:GDEX": true,
+  "MYX:STAR": true,
+  "MYX:MINHO-WC": true,
+  "MYX:SALUTE": true,
+  "MYX:DRBHCOM": true,
+  "MYX:MASTEEL": true,
+  "MYX:PMETAL": true,
+  "MYX:UMW": true,
+  "MYX:JOHOTIN": true,
+  "MYX:WIDAD-WA": true,
+  "MYX:LOTUS": true,
+  "MYX:KOSSAN": true,
+  "MYX:GUNUNG": true,
+  "MYX:LKL": true,
+  "MYX:AWC": true,
+  "MYX:SALCON-WB": true,
+  "MYX:PERMAJU": true,
+  "MYX:GTRONIC": true,
+  "MYX:SEALINK": true,
+  "MYX:TM": true,
+  "MYX:AZRB": true,
+  "MYX:STRAITS-WA": true,
+  "MYX:BORNOIL": true,
+  "MYX:PESONA": true,
+  "MYX:LAYHONG-WA": true,
+  "MYX:HLT": true,
+  "MYX:MASTER": true,
+  "MYX:MUIPROP": true,
+  "MYX:IBHD": true,
+  "MYX:CMSB": true,
+  "MYX:PCCS": true,
+  "MYX:ROHAS": true,
+  "MYX:SALCON": true,
+  "MYX:HEVEA": true,
+  "MYX:DNEX-WD": true,
+  "MYX:PRESBHD": true,
+  "MYX:PA": true,
+  "MYX:LCTITAN": true,
+  "MYX:ORION-WA": true,
+  "MYX:VIZIONE": true,
+  "MYX:WASEONG": true,
+  "MYX:MMCCORP": true,
+  "MYX:LIONIND": true,
+  "MYX:COMPUGT": true,
+  "MYX:FITTERS": true,
+  "MYX:KHEESAN": true,
+  "MYX:MESTRON": true,
+  "MYX:AEMULUS": true,
+  "MYX:AGES": true,
+  "MYX:AXREIT": true,
+  "MYX:MAHSING": true,
+  "MYX:SOLID-WA": true,
+  "MYX:OCNCASH": true,
+  "MYX:OCR": true,
+  "MYX:GENP": true,
+  "MYX:EATECH": true,
+  "MYX:POHKONG": true,
+  "MYX:KLK": true,
+  "MYX:HOHUP": true,
+  "MYX:KERJAYA": true,
+  "MYX:INIX": true,
+  "MYX:SUCCESS": true,
+  "MYX:JHM": true,
+  "MYX:MCT": true,
+  "MYX:CYPARK": true,
+  "MYX:HANDAL": true,
+  "MYX:HLT-WA": true,
+  "MYX:HIAPTEK": true,
+  "MYX:GKENT": true,
+  "MYX:EURO": true,
+  "MYX:EVERGRN": true,
+  "MYX:EG": true,
+  "MYX:DPHARMA": true,
+  "MYX:JAKS-WB": true,
+  "MYX:GOCEAN": true,
+  "MYX:INTA": true,
+  "MYX:YINSON": true,
+  "MYX:KANGER-WA": true,
+  "MYX:CCK": true,
+  "MYX:TGUAN": true,
+  "MYX:BPLANT": true,
+  "MYX:LUXCHEM": true,
+  "MYX:GOLDETF": true,
+  "MYX:AEON": true,
+  "MYX:TAMBUN": true,
+  "MYX:PETGAS": true,
+  "MYX:MALAKOF": true,
+  "MYX:QL": true,
+  "MYX:ORNA": true,
+  "MYX:SMTRACK": true,
+  "MYX:JFTECH": true,
+  "MYX:CHINHIN": true,
+  "MYX:SRIDGE": true,
+  "MYX:JADI": true,
+  "MYX:HWGB": true,
+  "MYX:AASIA": true,
+  "MYX:CARIMIN": true,
+  "MYX:PADINI": true,
+  "MYX:SEACERA": true,
+  "MYX:GFM": true,
+  "MYX:MFCB": true,
+  "MYX:MMSV": true,
+  "MYX:YBS": true,
+  "MYX:WZSATU": true,
+  "MYX:GUNUNG-WB": true,
+  "MYX:ELSOFT": true,
+  "MYX:ICON-WA": true,
+  "MYX:TEKSENG": true,
+  "MYX:TADMAX": true,
+  "MYX:MUHIBAH": true,
+  "MYX:MCEMENT": true,
+  "MYX:FPI": true,
+  "MYX:MITRA": true,
+  "MYX:MBMR": true,
+  "MYX:GADANG-WB": true,
+  "MYX:MINHO": true,
+  "MYX:SOLID": true,
+  "MYX:SCNWOLF": true,
+  "MYX:VSTECS": true,
+  "MYX:MIECO": true,
+  "MYX:PRLEXUS-WA": true,
+  "MYX:PRTASCO": true,
+  "MYX:SCGM": true,
+  "MYX:BAUTO": true,
+  "MYX:KEYASIC": true,
+  "MYX:GBGAQRS-WB": true,
+  "MYX:EWEIN": true,
+  "MYX:GCB-WB": true,
+  "MYX:NADIBHD": true,
+  "MYX:MRCB-WB": true,
+  "MYX:TAKAFUL": true,
+  "MYX:LBS": true,
+  "MYX:SRIDGE-WA": true,
+  "MYX:LOTUS-WB": true,
+  "MYX:TFP": true,
+  "MYX:MELEWAR-WB": true,
+  "MYX:MALTON": true,
+  "MYX:TITIJYA-PA": true,
+  "MYX:SCABLE": true,
+  "MYX:BORNOIL-WD": true,
+  "MYX:HOMERIZ-WB": true,
+  "MYX:ASIAPAC": true,
+  "MYX:SPRING": true,
+  "MYX:EWEIN-WB": true,
+  "MYX:MUDA": true,
+  "MYX:UNISEM": true,
+  "MYX:LFECORP": true,
+  "MYX:MQTECH": true,
+  "MYX:KLCC": true,
+  "MYX:PARAMON": true,
+  "MYX:BCMALL": true,
+  "MYX:PRG": true,
+  "MYX:SIGGAS": true,
+  "MYX:NICE": true,
+  "MYX:ANCOM": true,
+  "MYX:DGB-WB": true,
+  "MYX:BURSA": true,
+  "MYX:NIHSIN-WB": true,
+  "MYX:PASUKGB": true,
+  "MYX:NWP": true,
+  "MYX:K1-WC": true,
+  "MYX:HENGYUAN": true,
+  "MYX:SUNCON": true,
+  "MYX:SUNWAY-WB": true,
+  "MYX:KGB": true,
+  "MYX:MIKROMB": true,
+  "MYX:ECONBHD-WA": true,
+  "MYX:SASBADI": true,
+  "MYX:UEMS": true,
+  "MYX:PARLO": true,
+  "MYX:AME": true,
+  "MYX:PETDAG": true,
+  "MYX:TOYOINK-WB": true,
+  "MYX:NGGB": true,
+  "MYX:EDUSPEC": true,
+  "MYX:MATRIX": true,
+  "MYX:TRIVE": true,
+  "MYX:SCOMNET": true,
+  "MYX:PIE": true,
+  "MYX:KARYON": true,
+  "MYX:BIOHLDG-WA": true,
+  "MYX:LYC": true,
+  "MYX:CAB": true,
+  "MYX:MINDA": true,
+  "MYX:HEXTAR": true,
+  "MYX:HTPADU": true,
+  "MYX:GBGAQRS": true,
+  "MYX:KPOWER": true,
+  "MYX:MATRIX-WA": true,
+  "MYX:GOODWAY": true,
+  "MYX:WEGMANS": true,
+  "MYX:NOVA": true,
+  "MYX:MAGNI": true,
+  "MYX:TECHBND": true,
+  "MYX:E&O": true,
+  "MYX:GNB": true,
+  "MYX:HPMT": true,
+  "MYX:TITIJYA": true,
+  "MYX:XIANLNG": true,
+  "MYX:MCLEAN-WB": true,
+  "MYX:SMRT": true,
+  "MYX:CENSOF": true,
+  "MYX:SNTORIA": true,
+  "MYX:KKB": true,
+  "MYX:TAS": true,
+  "MYX:WTK": true,
+  "MYX:PRIVA": true,
+  "MYX:SYSCORP": true,
+  "MYX:RGTBHD-WB": true,
+  "MYX:ANNJOO": true,
+  "MYX:RGTBHD": true,
+  "MYX:PTB": true,
+  "MYX:MMAG-WB": true,
+  "MYX:EMICO": true,
+  "MYX:TALIWRK": true,
+  "MYX:KPS": true,
+  "MYX:ECOWLD-WA": true,
+  "MYX:HIAPTEK-WB": true,
+  "MYX:WCT-WE": true,
+  "MYX:ASIAPLY": true,
+  "MYX:NIHSIN": true,
+  "MYX:TROP": true,
+  "MYX:PWROOT": true,
+  "MYX:PARKSON": true,
+  "MYX:KUB": true,
+  "MYX:KIMLUN": true,
+  "MYX:SENDAI": true,
+  "MYX:KRETAM": true,
+  "MYX:ENGTEX": true,
+  "MYX:CHINWEL": true,
+  "MYX:PUC-WA": true,
+  "MYX:HIL": true,
+  "MYX:PARAMON-WA": true,
+  "MYX:SYMLIFE": true,
+  "MYX:MSM": true,
+  "MYX:OKA": true,
+  "MYX:PRLEXUS": true,
+  "MYX:GOB": true,
+  "MYX:AWC-WA": true,
+  "MYX:WEGMANS-WA": true,
+  "MYX:BTECH": true,
+  "MYX:SYF": true,
+  "MYX:PUNCAK": true,
+  "MYX:HSL": true,
+  "MYX:TSRCAP-WB": true,
+  "MYX:HOMERIZ": true,
+  "MYX:BARAKAH": true,
+  "MYX:VITROX": true,
+  "MYX:PESTECH": true,
+  "MYX:YOCB": true,
+  "MYX:SMI": true,
+  "MYX:PANTECH": true,
+  "MYX:GREENYB": true,
+  "MYX:MACPIE-WA": true,
+  "MYX:DWL": true,
+  "MYX:MKLAND": true,
+  "MYX:CRG": true,
+  "MYX:UCHITEC": true,
+  "MYX:CHGP-WA": true,
+  "MYX:MEGASUN": true,
+  "MYX:GLOTEC": true,
+  "MYX:ULICORP": true,
+  "MYX:3A": true,
+  "MYX:TASHIN": true,
+  "MYX:KTB": true,
+  "MYX:ECOFIRS": true,
+  "MYX:CCK-WA": true,
+  "MYX:HUPSENG": true,
+  "MYX:HWGB-WD": true,
+  "MYX:DANCO": true,
+  "MYX:APPASIA": true,
+  "MYX:TEOSENG": true,
+  "MYX:KOMARK": true,
+  "MYX:DELEUM": true,
+  "MYX:SCIB": true,
+  "MYX:MHB": true,
+  "MYX:DAIBOCI-WB": true,
+  "MYX:ZECON": true,
+  "MYX:CONNECT": true,
+  "MYX:GRANFLO": true,
+  "MYX:SCOMIES": true,
+  "MYX:CHGP": true,
+  "MYX:TEXCYCL": true,
+  "MYX:EG-WC": true,
+  "MYX:CANONE": true,
+  "MYX:MKH": true,
+  "MYX:IMASPRO": true,
+  "MYX:LBALUM": true,
+  "MYX:UOADEV": true,
+  "MYX:TANCO": true,
+  "MYX:NATWIDE": true,
+  "MYX:CSCSTEL": true,
+  "MYX:YONGTAI-PA": true,
+  "MYX:PHARMA": true,
+  "MYX:DPS": true,
+  "MYX:SEG": true,
+  "MYX:KAWAN": true,
+  "MYX:KHJB": true,
+  "MYX:HHHCORP": true,
+  "MYX:MTRONIC": true,
+  "MYX:APPASIA-WA": true,
+  "MYX:SYSTECH": true,
+  "MYX:BSTEAD": true,
+  "MYX:SUPERLN": true,
+  "MYX:EMETALL": true,
+  "MYX:PECCA": true,
+  "MYX:HUAYANG": true,
+  "MYX:EDGENTA": true,
+  "MYX:SDS": true,
+  "MYX:GETS": true,
+  "MYX:EASTLND": true,
+  "MYX:TRC": true,
+  "MYX:LEWEKO": true,
+  "MYX:FAJAR": true,
+  "MYX:ANZO-WB": true,
+  "MYX:IDMENSN": true,
+  "MYX:LIIHEN": true,
+  "MYX:OCR-WD": true,
+  "MYX:WELLCAL": true,
+  "MYX:PETRONM": true,
+  "MYX:FIHB": true,
+  "MYX:SOP": true,
+  "MYX:MBG": true,
+  "MYX:EDUSPEC-WB": true,
+  "MYX:BOILERM": true,
+  "MYX:NTPM": true,
+  "MYX:KSL": true,
+  "MYX:SERNKOU": true,
+  "MYX:N2N": true,
+  "MYX:F&N": true,
+  "MYX:BINTAI": true,
+  "MYX:SCBUILD": true,
+  "MYX:ADVCON": true,
+  "MYX:KPPROP": true,
+  "MYX:YSPSAH": true,
+  "MYX:TIMECOM": true,
+  "MYX:PA-WB": true,
+  "MYX:SCIENTX": true,
+  "MYX:MAGNA": true,
+  "MYX:CJCEN": true,
+  "MYX:MBL": true,
+  "MYX:APB": true,
+  "MYX:BIG": true,
+  "MYX:PENERGY": true,
+  "MYX:AEM": true,
+  "MYX:THPLANT": true,
+  "MYX:IQZAN": true,
+  "MYX:NESTLE": true,
+  "MYX:DBHD": true,
+  "MYX:YGL": true,
+  "MYX:SEAL": true,
+  "MYX:SLP": true,
+  "MYX:GENETEC": true,
+  "MYX:OFI": true,
+  "MYX:DBHD-WA": true,
+  "MYX:SCOPE": true,
+  "MYX:PNEPCB": true,
+  "MYX:ARANK": true,
+  "MYX:RANHILL": true,
+  "MYX:LITRAK": true,
+  "MYX:DWL-WA": true,
+  "MYX:NICE-WB": true,
+  "MYX:BTM-WB": true,
+  "MYX:TOMYPAK": true,
+  "MYX:PRESTAR": true,
+  "MYX:TNLOGIS": true,
+  "MYX:MSC": true,
+  "MYX:CRESBLD": true,
+  "MYX:VERTICE": true,
+  "MYX:APM": true,
+  "MYX:SINOTOP": true,
+  "MYX:SERNKOU-WA": true,
+  "MYX:FAVCO": true,
+  "MYX:PINEPAC": true,
+  "MYX:HSSEB": true,
+  "MYX:PICORP": true,
+  "MYX:WONG": true,
+  "MYX:KMLOONG": true,
+  "MYX:ZELAN": true,
+  "MYX:FREIGHT": true,
+  "MYX:PRTASCO-WA": true,
+  "MYX:TSH": true,
+  "MYX:DAIBOCI": true,
+  "MYX:KESM": true,
+  "MYX:POHUAT": true,
+  "MYX:ATAIMS": true,
+  "MYX:AHB": true,
+  "MYX:GFM-WC": true,
+  "MYX:DEGEM": true,
+  "MYX:CBIP": true,
+  "MYX:ASIAPLY-WB": true,
+  "MYX:JIANKUN": true,
+  "MYX:BIMB": true,
+  "MYX:CHUAN": true,
+  "MYX:MBL-WA": true,
+  "MYX:VERSATL": true,
+  "MYX:NGGB-WA": true,
+  "MYX:IDEAL": true,
+  "MYX:ABLEGRP": true,
+  "MYX:SWSCAP": true,
+  "MYX:KERJAYA-WB": true,
+  "MYX:ZHULIAN": true,
+  "MYX:SPSETIA-PB": true,
+  "MYX:SEACERA-WC": true,
+  "MYX:LEESK": true,
+  "MYX:AZRB-WA": true,
+  "MYX:ASDION": true,
+  "MYX:BDB": true,
+  "MYX:DANCO-WA": true,
+  "MYX:MYETFID": true,
+  "MYX:IVORY": true,
+  "MYX:FLBHD": true,
+  "MYX:PMBTECH": true,
+  "MYX:SIGN": true,
+  "MYX:ADVENTA": true,
+  "MYX:MYCRON": true,
+  "MYX:SCOPE-WA": true,
+  "MYX:UNIMECH": true,
+  "MYX:MTDACPI": true,
+  "MYX:KOBAY": true,
+  "MYX:CNI": true,
+  "MYX:DNONCE-WA": true,
+  "MYX:MENANG": true,
+  "MYX:TAANN": true,
+  "MYX:ASTINO": true,
+  "MYX:MAGNA-WB": true,
+  "MYX:HOKHENG": true,
+  "MYX:CCM": true,
+  "MYX:COCOLND": true,
+  "MYX:SCOMNET-WA": true,
+  "MYX:DKSH": true,
+  "MYX:PANTECH-WA": true,
+  "MYX:CSCENIC": true,
+  "MYX:TONGHER": true,
+  "MYX:SMCAP-WC": true,
+  "MYX:BTM": true,
+  "MYX:EUPE": true,
+  "MYX:SAM": true,
+  "MYX:PWROOT-WA": true,
+  "MYX:VC-WB": true,
+  "MYX:DOLPHIN-WA": true,
+  "MYX:ANCOMLB": true,
+  "MYX:ESAFE": true,
+  "MYX:AJIYA": true,
+  "MYX:SYMLIFE-WB": true,
+  "MYX:DWL-PA": true,
+  "MYX:MERIDIAN-WB": true,
+  "MYX:SPSETIA-PA": true,
+  "MYX:SWKPLNT": true,
+  "MYX:VIVOCOM-WE": true,
+  "MYX:MHC": true,
+  "MYX:INCKEN": true,
+  "MYX:SMCAP": true,
+  "MYX:FIAMMA": true,
+  "MYX:SCOMI-WB": true,
+  "MYX:TALAMT": true,
+  "MYX:HARNLEN-WB": true,
+  "MYX:PMBTECH-WA": true,
+  "MYX:ASIAPAC-WB": true,
+  "MYX:HIAPTEK-LA": true,
+  "MYX:NYLEX": true,
+  "MYX:CHOOBEE": true,
+  "MYX:AMVERTON": true,
+  "MYX:SERSOL": true,
+  "MYX:ENGKAH": true,
+  "MYX:DPS-WB": true,
+  "MYX:EDARAN": true,
+  "MYX:GUH": true,
+  "MYX:SUNSURIA": true,
+  "MYX:ACME-WA": true,
+  "MYX:WMG": true,
+  "MYX:MMAG": true,
+  "MYX:HSPLANT": true,
+  "MYX:GASMSIA": true,
+  "MYX:YNHPROP": true,
+  "MYX:SERSOL-WA": true,
+  "MYX:PWF": true,
+  "MYX:GESHEN": true,
+  "MYX:SURIA": true,
+  "MYX:MACPIE": true,
+  "MYX:YILAI": true,
+  "MYX:INNO": true,
+  "MYX:IPMUDA": true,
+  "MYX:CEPAT": true,
+  "MYX:MICROLN": true,
+  "MYX:N2N-WB": true,
+  "MYX:FIMACOR": true,
+  "MYX:MESB": true,
+  "MYX:IQGROUP": true,
+  "MYX:ALAQAR": true,
+  "MYX:SHH": true,
+  "MYX:CEPCO": true,
+  "MYX:JAYCORP": true,
+  "MYX:CAELY": true,
+  "MYX:PTARAS": true,
+  "MYX:AISB": true,
+  "MYX:TIGER-WC": true,
+  "MYX:AYER": true,
+  "MYX:THETA": true,
+  "MYX:PMCORP": true,
+  "MYX:AHEALTH": true,
+  "MYX:METFUS50": true,
+  "MYX:PLS": true,
+  "MYX:POHUAT-WB": true,
+  "MYX:CAELY-WA": true,
+  "MYX:DOMINAN": true,
+  "MYX:HSSEB-WA": true,
+  "MYX:PASDEC": true,
+  "MYX:COMPLET": true,
+  "MYX:FIHB-PA": true,
+  "MYX:SAUDEE": true,
+  "MYX:VERTICE-WA": true,
+  "MYX:KOTRA": true,
+  "MYX:RESINTC": true,
+  "MYX:UMCCA": true,
+  "MYX:IDEAL-WB": true,
+  "MYX:CONNECT-WB": true,
+  "MYX:OCB": true,
+  "MYX:AJIYA-WA": true,
+  "MYX:MFCB-WA": true,
+  "MYX:SNC": true,
+  "MYX:PANSAR-WA": true,
+  "MYX:PHB-WB": true,
+  "MYX:AJI": true,
+  "MYX:HLIND": true,
+  "MYX:BONIA": true,
+  "MYX:GLOMAC": true,
+  "MYX:WZSATU-WA": true,
+  "MYX:GMUTUAL": true,
+  "MYX:CARING": true,
+  "MYX:PERSTIM": true,
+  "MYX:CWG": true,
+  "MYX:KPSCB": true,
+  "MYX:PEB": true,
+  "MYX:LTKM": true,
+  "MYX:VIZIONE-WC": true,
+  "MYX:UTDPLT": true,
+  "MYX:AMWAY": true,
+  "MYX:ASIAFLE": true,
+  "MYX:TRIMODE": true,
+  "MYX:TANCO-WB": true,
+  "MYX:CABNET": true,
+  "MYX:MENTIGA": true,
+  "MYX:PARAGON": true,
+  "MYX:SJC": true,
+  "MYX:TOYOINK": true,
+  "MYX:CRESNDO": true,
+  "MYX:YLI": true,
+  "MYX:BPPLAS": true,
+  "MYX:KFIMA": true,
+  "MYX:DBE-WB": true,
+  "MYX:IBRACO": true,
+  "MYX:TDEX": true,
+  "MYX:APOLLO": true,
+  "MYX:LATITUD": true,
+  "MYX:ADVPKG": true,
+  "MYX:MGB": true,
+  "MYX:PAOS-WA": true,
+  "MYX:OIB": true,
+  "MYX:ACOSTEC": true,
+  "MYX:HARBOUR": true,
+  "MYX:SAPRES": true,
+  "MYX:CABNET-WA": true,
+  "MYX:LBS-WB": true,
+  "MYX:M3TECH": true,
+  "MYX:MYCRON-WA": true,
+  "MYX:YONGTAI-WA": true,
+  "MYX:GPHAROS": true,
+  "MYX:MPI": true,
+  "MYX:PWF-WA": true,
+  "MYX:EITA": true,
+  "MYX:CAMRES": true,
+  "MYX:MERIDIAN-WA": true,
+  "MYX:SAB": true,
+  "MYX:STELLA": true,
+  "MYX:TSRCAP": true,
+  "MYX:PBA": true,
+  "MYX:WTHORSE": true,
+  "MYX:SPRITZER": true,
+  "MYX:HWATAI": true,
+  "MYX:CHHB-WB": true,
+  "MYX:GLOTEC-WA": true,
+  "MYX:SHL": true,
+  "MYX:TURIYA": true,
+  "MYX:DLADY": true,
+  "MYX:ITRONIC": true,
+  "MYX:KWANTAS": true,
+  "MYX:MILUX": true,
+  "MYX:MYETFDJ": true,
+  "MYX:PASDEC-WA": true,
+  "MYX:PJBUMI": true,
+  "MYX:YEELEE": true,
+  "MYX:KSSC": true,
+  "MYX:KMLOONG-WB": true,
+  "MYX:LIONPSIM": true,
+  "MYX:GOPENG": true,
+  "MYX:MBWORLD": true,
+  "MYX:SUBUR": true,
+  "MYX:UMS": true,
+  "MYX:POLY": true,
+  "MYX:PAOS": true,
+  "MYX:WATTA": true,
+  "MYX:BSLCORP": true,
+  "MYX:DKLS": true,
+  "MYX:KNUSFOR": true,
+  "MYX:TPC": true,
+  "MYX:LBS-PA": true,
+  "MYX:REX": true,
+  "MYX:SDRED": true,
+  "MYX:UPA": true,
+  "MYX:METFSID": true,
+  "MYX:MESB-WA": true,
+  "MYX:MSNIAGA": true,
+  "MYX:BIPORT": true,
+  "MYX:BKAWAN": true,
+  "MYX:HOOVER": true,
+  "MYX:QUALITY": true,
+  "MYX:ECOHLDS": true,
+  "MYX:RVIEW": true,
+  "MYX:Y&G": true,
+  "MYX:KIALIM": true,
+  "MYX:PINEAPP": true,
+  "MYX:HARNLEN": true,
+  "MYX:BHIC": true,
+  "MYX:AAX-WA": true,
+  "MYX:DIN040000223": true,
+  "MYX:MYSCM": true,
+  "MYX:MYSCM-WA": true,
+  "MYX:ACME": true,
+  "MYX:AFUJIYA": true,
+  "MYX:AIM": true,
+  "MYX:ALSREIT": true,
+  "MYX:AMLEX": true,
+  "MYX:ANALABS": true,
+  "MYX:ANZO-WC": true,
+  "MYX:ARK": true,
+  "MYX:ARK-WB": true,
+  "MYX:ASIABRN": true,
+  "MYX:ASIAPLY-PA": true,
+  "MYX:ASIAPLY-WA": true,
+  "MYX:ATTA": true,
+  "MYX:ATTA-WB": true,
+  "MYX:ATTA-WC": true,
+  "MYX:BABA": true,
+  "MYX:BINTAI-WA": true,
+  "MYX:BLDPLNT": true,
+  "MYX:CFM": true,
+  "MYX:CGB": true,
+  "MYX:CHEETAH": true,
+  "MYX:CHHB": true,
+  "MYX:CLOUD": true,
+  "MYX:CME-WA": true,
+  "MYX:CONNECT-WA": true,
+  "MYX:CVIEW": true,
+  "MYX:CYL": true,
+  "MYX:CYMAO": true,
+  "MYX:DIN042300721": true,
+  "MYX:DIN045801028": true,
+  "MYX:DOMINAN-WA": true,
+  "MYX:EIG": true,
+  "MYX:EKA": true,
+  "MYX:ENRA": true,
+  "MYX:EPMB": true,
+  "MYX:EUROSP": true,
+  "MYX:FAREAST": true,
+  "MYX:FBBHD": true,
+  "MYX:FIHB-PB": true,
+  "MYX:HARBOUR-WC": true,
+  "MYX:HEVEA-WB": true,
+  "MYX:HHGROUP": true,
+  "MYX:HIGHTEC": true,
+  "MYX:HIL-WB": true,
+  "MYX:HOMERIZ-WA": true,
+  "MYX:HUBLINE-WB": true,
+  "MYX:HUBLINE-WC": true,
+  "MYX:IDMENSN-WA": true,
+  "MYX:IHS046000824": true,
+  "MYX:INIX-WA": true,
+  "MYX:IREKA": true,
+  "MYX:JADEM": true,
+  "MYX:JAG-WB": true,
+  "MYX:JETSON": true,
+  "MYX:JIANKUN-WA": true,
+  "MYX:JMEDU": true,
+  "MYX:KAMDAR": true,
+  "MYX:KEINHIN": true,
+  "MYX:KEN": true,
+  "MYX:KGROUP-WB": true,
+  "MYX:KHIND": true,
+  "MYX:KIMHIN": true,
+  "MYX:KIMLUN-WA": true,
+  "MYX:KYM": true,
+  "MYX:LEBTECH": true,
+  "MYX:LEWEKO-WB": true,
+  "MYX:MCEHLDG": true,
+  "MYX:MCOM": true,
+  "MYX:MELATI": true,
+  "MYX:MERCURY": true,
+  "MYX:MERIDIAN-WC": true,
+  "MYX:METFAPA": true,
+  "MYX:MFGROUP": true,
+  "MYX:MHCARE": true,
+  "MYX:MITRA-WD": true,
+  "MYX:MITRA-WE": true,
+  "MYX:MQTECH-WA": true,
+  "MYX:MTRONIC-WA": true,
+  "MYX:MUH": true,
+  "MYX:NEXGRAM-WA": true,
+  "MYX:NEXGRAM-WB": true,
+  "MYX:NEXGRAM-WC": true,
+  "MYX:NHFATT": true,
+  "MYX:NPC": true,
+  "MYX:NPS": true,
+  "MYX:OCR-PA": true,
+  "MYX:OCR-WC": true,
+  "MYX:PANTECH-WB": true,
+  "MYX:PGLOBE": true,
+  "MYX:PGLOBE-WA": true,
+  "MYX:PJBUMI-WA": true,
+  "MYX:PNEPCB-WA": true,
+  "MYX:POLYMER": true,
+  "MYX:PPG": true,
+  "MYX:RALCO": true,
+  "MYX:SAPIND": true,
+  "MYX:SAPNRG-PA": true,
+  "MYX:SAUDEE-WA": true,
+  "MYX:SBCCORP": true,
+  "MYX:SCGM-WA": true,
+  "MYX:SEEHUP": true,
+  "MYX:SEERS": true,
+  "MYX:SHCHAN": true,
+  "MYX:SIGN-WA": true,
+  "MYX:SKBSHUT": true,
+  "MYX:SLIC": true,
+  "MYX:SMILE": true,
+  "MYX:SMISCOR": true,
+  "MYX:SNTORIA-WB": true,
+  "MYX:SUMATEC": true,
+  "MYX:SUMATEC-WA": true,
+  "MYX:SUNSURIA-WA": true,
+  "MYX:SUPREME": true,
+  "MYX:SWSCAP-WB": true,
+  "MYX:TAFI": true,
+  "MYX:TASEK": true,
+  "MYX:TGL": true,
+  "MYX:THHEAVY-PB": true,
+  "MYX:TIMWELL": true,
+  "MYX:TOCEAN": true,
+  "MYX:TOMYPAK-WA": true,
+  "MYX:TPC-WA": true,
+  "MYX:TRIVE-WB": true,
+  "MYX:TTV": true,
+  "MYX:UMSNGB": true,
+  "MYX:UNIWALL": true,
+  "MYX:VIVOCOM-WD": true,
+  "MYX:WOODLAN": true
+}

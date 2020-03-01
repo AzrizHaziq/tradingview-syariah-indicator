@@ -13,15 +13,15 @@ function getSymbolsFromTitle() {
 }
 
 function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const found = SYARIAH_COMPLIANCE_LIST.find(i => i.id === `${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
+  const isSyariah = SYARIAH_COMPLIANCE_LIST[`${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`]
 
-  if (!found) {
+  if (!isSyariah) {
     // didnt found symbol within malaysian stocks
     deleteSyariahIcon()
     return
   }
 
-  if (found.syariah) {
+  if (isSyariah) {
     const element = document.querySelector('[data-name="legend-source-title"]')
 
     // if icon already exist dont do anything
