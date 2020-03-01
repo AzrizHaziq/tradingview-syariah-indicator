@@ -1,4 +1,9 @@
+const fs = require('fs');
 const { chromium } = require('playwright');
+
+const STOCK_LIST_FILENAME = 'stock-list.json'
+const TRADING_VIEW_MYR = 'MYX'
+const SAVE_STOCK_PATH = `background/${STOCK_LIST_FILENAME}`;
 
 (async () => {
   const browser = await chromium.launch()
@@ -17,13 +22,13 @@ const { chromium } = require('playwright');
     return Math.max(...paginationBtn)
   })
 
-  const temp = []
+  const syariahList = []
 
   // grab all syariah list and navigate to each pages.
   for(let i = 1; i <= maxPageNumbers; i++) {
     await page.goto(initUrl({ page: i, per_page: 50 }))
 
-    const syariahList = await page.evaluate(() => {
+    const temp = await page.evaluate(() => {
       const pipe = (...fn) => (initialVal) => fn.reduce((acc, fn) => fn(acc), initialVal)
 
       const removeSpacesAndSyariahSymbol = pipe(
@@ -35,12 +40,27 @@ const { chromium } = require('playwright');
         .map(name => removeSpacesAndSyariahSymbol(name.textContent))
     })
 
-    temp.push(...syariahList)
+    syariahList.push(...temp)
   }
 
-  console.log(temp, temp.length)
-
   await browser.close()
+
+  console.log("found: ", syariahList.length)
+  console.log(syariahList)
+  
+  const SYARIAH_LIST = syariahList.reduce((acc, name) => {
+    return {
+      ...acc,
+      [`${TRADING_VIEW_MYR}:${name}`]: true
+    }
+  }, {})
+
+  fs.writeFile(SAVE_STOCK_PATH, JSON.stringify(SYARIAH_LIST, null, 2), function (err) {
+    if (err) {
+      throw Error(`Unable to write to file ${ STOCK_LIST_FILENAME }`)
+    }
+  })
+
 })()
 
 const initUrl = ({ per_page, page } = { per_page: 50, page: 1 }) =>
