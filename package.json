@@ -1,7 +1,7 @@
 {
   "name": "tradingview-syariah-indicator",
   "version": "1.0.0",
-  "description": "Trading view syariah indicator",
+  "description": "Trading view syariah indicator, currently only cover Malaysian stocks",
   "private": true,
   "scripts": {
     "start": "web-ext run --firefox=\"/Applications/Firefox.app/Contents/MacOS/firefox-bin\" --start-url https://tradingview.com/symbols/MYX-FRONTKN/",
