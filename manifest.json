@@ -2,8 +2,8 @@
   "description": "Add small indicator to stock list in tradingview(MY)",
   "manifest_version": 2,
   "name": "tradingview-syariah-indicator",
-  "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
+  "version": "1.0.1",
+  "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
   "background": {
     "scripts": [
       "browser-polyfill.js",

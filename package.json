@@ -1,6 +1,6 @@
 {
   "name": "tradingview-syariah-indicator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trading view syariah indicator, currently only cover Malaysian stocks",
   "private": true,
   "scripts": {
