@@ -3,6 +3,9 @@
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
 
+inspired from
+https://github.com/amree/tradingview-shariah-indicators
+
 ## Chrome Extension:
 https://chrome.google.com/webstore/detail/tradingview-syariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf/related
 
