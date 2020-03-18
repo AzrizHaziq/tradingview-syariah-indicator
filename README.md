@@ -28,3 +28,17 @@ https://chrome.google.com/webstore/detail/tradingview-syariah-indic/eogackkjbjbb
 
 Feel free to contact me if any bug or more features here  
 [azrizhaziq@gmail.com](mailto:azrizhaziq@gmail.com)
+
+## Developers
+1. Need to have node and npm (please look at package.json > engine)
+2. Type in terminal `$ npm install`
+3. Type in terminal 
+    Firefox: `$ npm run start` 
+    Chrome: `$ npm run start:chrome`
+    
+## Generate Production ready extension
+1. Type in terminal `$ npm run build`
+
+## Update Stock list data (will take a few X minutes)
+1. Type in terminal `$ npm run scrapping`
+    
