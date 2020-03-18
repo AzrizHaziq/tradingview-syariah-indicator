@@ -47,7 +47,7 @@ const SAVE_STOCK_PATH = `background/${STOCK_LIST_FILENAME}`;
 
   console.log("found: ", syariahList.length)
   console.log(syariahList)
-  
+
   const SYARIAH_LIST = syariahList.reduce((acc, name) => {
     return {
       ...acc,
@@ -64,4 +64,4 @@ const SAVE_STOCK_PATH = `background/${STOCK_LIST_FILENAME}`;
 })()
 
 const initUrl = ({ per_page, page } = { per_page: 50, page: 1 }) =>
-  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&page=${ page }&per_page=${ per_page }`
+  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${ page }&per_page=${ per_page }`
