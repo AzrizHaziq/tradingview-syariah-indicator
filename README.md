@@ -3,6 +3,9 @@
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
 
+source data:
+[bursa malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
+
 inspired from
 https://github.com/amree/tradingview-shariah-indicators
 
