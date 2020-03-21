@@ -43,7 +43,8 @@
     }
   ],
   "permissions": [
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "icons": {
     "16": "./assets/syariah-icon-16.png",

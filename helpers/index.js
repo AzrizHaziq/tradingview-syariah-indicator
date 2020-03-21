@@ -35,7 +35,7 @@ function addStaticSyariahIcon() {
   if (document.body.querySelector(`[${ attributeName }="root-${ extensionName }]`)) {
     return ;
   }
-  
+
   const rootIcon = `
      <svg ${ attributeName }="root-${ extensionName }" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="15px" style="position: absolute">
        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="-12 0 512 512.001" id="syariah-icon">
@@ -54,4 +54,14 @@ function addStaticSyariahIcon() {
   const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
 
   document.body.prepend(rootSvg)
+}
+
+function addStyle(css) {
+  const head = document.head || document.getElementsByTagName('head')[0]
+  const style = document.createElement('style')
+  style.type = 'text/css'
+
+  style.appendChild(document.createTextNode(css))
+
+  head.appendChild(style)
 }
