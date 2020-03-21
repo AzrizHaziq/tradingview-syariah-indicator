@@ -28,11 +28,16 @@ async function receiveSignalFromBgScript({ list }) {
     onlyFilterSyariahStocks = bool
     SYARIAH_COMPLIANCE_LIST = list
 
-    addStaticSyariahIcon()
-    observedTableChanges()
-    setupFilterSyariahBtn()
-    observedCountryFlagChanges()
-    forceMutationChanges()
+    // waiting for table to fully rendered
+    const tempTimeout = setTimeout(() => {
+      addStaticSyariahIcon()
+      observedTableChanges()
+      setupFilterSyariahBtn()
+      observedCountryFlagChanges()
+      forceMutationChanges()
+
+      clearTimeout(tempTimeout)
+    }, 500)
   } catch (e) {
     console.error('Error read storage', e)
   }
