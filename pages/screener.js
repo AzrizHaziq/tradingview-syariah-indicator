@@ -2,17 +2,10 @@ const checkBoxAttribute = `${ attributeName }-filter-checkbox`
 const checkBoxExtension = `${ attributeName }-filter-checkbox`
 const syariahIconAttribute = `${ attributeName }-filter-icon`
 const syariahIconValue = `${ extensionName }-filter-icon`
+const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
 let SYARIAH_COMPLIANCE_LIST = {}
 let onlyFilterSyariahStocks = false
-
-function receiveSignalFromBgScript({ list }) {
-  SYARIAH_COMPLIANCE_LIST = list
-
-  addStaticSyariahIcon()
-  setupFilterSyariahBtn()
-  observedTableChanges()
-}
 
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SCREENER: Registered listener')
@@ -20,6 +13,19 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 }
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
+
+function receiveSignalFromBgScript({ list }) {
+  onlyFilterSyariahStocks = localStorage.getItem(uniqueKey)
+    ? JSON.parse(localStorage.getItem(uniqueKey))
+    : false
+
+  SYARIAH_COMPLIANCE_LIST = list
+
+  observedTableChanges()
+  addStaticSyariahIcon()
+  setupFilterSyariahBtn()
+  forceMutationChanges()
+}
 
 // turn from array of stock list into object { [MYX:Symbol]: boolean }.
 function observedTableChanges() {
@@ -40,9 +46,8 @@ function observedTableChanges() {
       return
     }
 
-    Array.from(mutation.target.children).forEach(tr => {
+    Array.from(mutation.target.children).forEach((tr, i) => {
       const rowSymbol = tr.getAttribute('data-symbol')
-
       const isSyariah = SYARIAH_COMPLIANCE_LIST[rowSymbol]
 
       if (isSyariah) {
@@ -54,14 +59,13 @@ function observedTableChanges() {
           domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
         }
       } else if (onlyFilterSyariahStocks) {
-        // hide all non-syariah
         tr.style.display = 'none'
       }
     })
   })
 
   // Start observing the target node for configured mutations
-  observer.observe(tableNode, { childList: true, subtree: true })
+  observer.observe(tableNode, { childList: true })
 }
 
 function setupFilterSyariahBtn() {
@@ -88,13 +92,16 @@ function setupFilterSyariahBtn() {
 
   const refreshDomeNode = document.querySelector('.tv-screener-toolbar__button--refresh')
 
+  // create a checkbox filter btn
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
   checkbox.style.display = 'none'
-  checkbox.setAttribute('id', `${ checkBoxAttribute }-${ checkBoxExtension }`)
+  checkbox.checked = onlyFilterSyariahStocks
+  checkbox.setAttribute('id', uniqueKey)
 
   checkbox.addEventListener('change', function (e) {
     onlyFilterSyariahStocks = e.target.checked
+    localStorage.setItem(uniqueKey, e.target.checked.toString())
 
     const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
@@ -116,6 +123,7 @@ function setupFilterSyariahBtn() {
     })
   })
 
+  // create a filter btn
   const syariahFilterNode = document.createElement('label')
   syariahFilterNode.style.padding = '0'
   syariahFilterNode.style.display = 'flex'
@@ -123,11 +131,24 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.style.justifyContent = 'center'
   syariahFilterNode.className = refreshDomeNode.className
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
-  syariahFilterNode.setAttribute('for', `${ checkBoxAttribute }-${ checkBoxExtension }`)
+  syariahFilterNode.setAttribute('for', uniqueKey)
 
   const icon = createIcon({ width: 17, height: 17 })
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
   syariahFilterNode.prepend(icon)
   refreshDomeNode.parentElement.prepend(checkbox, syariahFilterNode)
+}
+
+function forceMutationChanges() {
+  // have to put this to trigger the first mutationObserver
+  const tempInterval = setInterval(() => {
+    const fakeDiv = document.createElement('div')
+    document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody').append(fakeDiv)
+    fakeDiv.remove()
+
+    if (document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).length > 10) {
+      clearInterval(tempInterval)
+    }
+  }, 200)
 }
