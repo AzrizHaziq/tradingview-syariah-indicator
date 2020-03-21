@@ -63,15 +63,27 @@ function setupFilterSyariahBtn() {
   checkbox.checked = onlyFilterSyariahStocks
   checkbox.setAttribute('id', uniqueKey)
 
+  // create a filter btn
+  const syariahFilterNode = document.createElement('label')
+  syariahFilterNode.style.padding = '0'
+  syariahFilterNode.style.display = 'flex'
+  syariahFilterNode.style.alignItems = 'center'
+  syariahFilterNode.style.justifyContent = 'center'
+  syariahFilterNode.className = refreshDomeNode.className
+  syariahFilterNode.setAttribute('for', uniqueKey)
+  syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
+  syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
+
   checkbox.addEventListener('change', async function (e) {
     try {
       onlyFilterSyariahStocks = e.target.checked
-
       await browser.storage.local.set({
         [`${ extensionName }`]: {
           onlyFilterSyariahStocks: e.target.checked,
         },
       })
+
+      syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
@@ -96,22 +108,16 @@ function setupFilterSyariahBtn() {
     }
   })
 
-  // create a filter btn
-  const syariahFilterNode = document.createElement('label')
-  syariahFilterNode.style.padding = '0'
-  syariahFilterNode.style.display = 'flex'
-  syariahFilterNode.style.alignItems = 'center'
-  syariahFilterNode.style.justifyContent = 'center'
-  syariahFilterNode.className = refreshDomeNode.className
-  syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
-  syariahFilterNode.setAttribute('for', uniqueKey)
-
   const icon = createIcon({ width: 17, height: 17 })
   icon.removeAttribute(attributeName)
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
   syariahFilterNode.prepend(icon)
   refreshDomeNode.parentElement.prepend(checkbox, syariahFilterNode)
+
+  if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
+    syariahFilterNode.style.display = 'none'
+  }
 }
 
 function forceMutationChanges() {
