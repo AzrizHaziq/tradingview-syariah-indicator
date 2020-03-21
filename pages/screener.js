@@ -20,6 +20,8 @@ async function receiveSignalFromBgScript({ list }) {
     const {
       [`${ extensionName }`]: {
         onlyFilterSyariahStocks: bool,
+      } = {
+        onlyFilterSyariahStocks: false,  // default value
       },
     } = await browser.storage.local.get(extensionName)
 
