@@ -1,8 +1,8 @@
 {
-  "description": "Add small indicator to stock list in tradingview(MY)",
   "manifest_version": 2,
+  "version": "1.0.2",
   "name": "tradingview-syariah-indicator",
-  "version": "1.0.1",
+  "description": "Add small shariah indicator to stock list in tradingview(MY)",
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
   "background": {
     "scripts": [
@@ -44,7 +44,8 @@
   ],
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "*://*.tradingview.com/*"
   ],
   "icons": {
     "16": "./assets/syariah-icon-16.png",
