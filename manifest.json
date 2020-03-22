@@ -51,5 +51,9 @@
     "16": "./assets/syariah-icon-16.png",
     "48": "./assets/syariah-icon-48.png",
     "128": "./assets/syariah-icon-128.png"
+  },
+  "developer": {
+    "name": "Azriz Haziq Jasni",
+    "url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator"
   }
 }
