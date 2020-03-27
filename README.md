@@ -26,13 +26,13 @@ https://chrome.google.com/webstore/detail/tradingview-syariah-indic/eogackkjbjbb
 
 
 ## Symbol Page
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/symbol.png?raw=true)
+![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_symbol.png?raw=true)
 
 ## Chart page
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/chart.png?raw=true)
+![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_chart.png?raw=true)
 
 ## Screener page
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/screener.png?raw=true)
+![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_screener.png?raw=true)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
