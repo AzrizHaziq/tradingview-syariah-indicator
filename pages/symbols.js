@@ -1,3 +1,5 @@
+/* global lookForShariah addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
+
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SYMBOLS: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
@@ -5,24 +7,24 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-addStaticSyariahIcon();
+addStaticSyariahIcon()
 
 function getSymbol() {
-  return  document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol')
+  return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
+    .getAttribute('data-symbol').trim()
 }
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const isSyariah = SYARIAH_COMPLIANCE_LIST[`${ getSymbol() }`]
+function receiveSignalFromBgScript() {
+  const { s: isShariah } = lookForShariah(getSymbol())
 
-  if (isSyariah) {
+  if (isShariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
     const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
 
     if (isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
-      const icon = createIcon();
+      const icon = createIcon()
       icon.style.marginLeft = '5px'
       icon.style.display = 'inline'
       icon.style.position = 'relative'
@@ -34,8 +36,8 @@ function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
     if (isSyariahIconExist(largeResoDom.parentElement)) {
       // if icon already exist dont do anything
     } else {
-      const icon = createIcon({ width: 15, height: 15 });
-      icon.style.marginLeft = '5px';
+      const icon = createIcon({ width: 15, height: 15 })
+      icon.style.marginLeft = '5px'
       largeResoDom.insertAdjacentElement('afterend', icon)
     }
 

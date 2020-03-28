@@ -1,930 +1,2786 @@
 {
-  "MYX:3A": true,
-  "MYX:AASIA": true,
-  "MYX:AAX": true,
-  "MYX:AAX-WA": true,
-  "MYX:ABLEGRP": true,
-  "MYX:ACME": true,
-  "MYX:ACME-WA": true,
-  "MYX:ACO": true,
-  "MYX:ACOSTEC": true,
-  "MYX:ADVCON": true,
-  "MYX:ADVENTA": true,
-  "MYX:ADVPKG": true,
-  "MYX:AEM": true,
-  "MYX:AEMULUS": true,
-  "MYX:AEON": true,
-  "MYX:AFUJIYA": true,
-  "MYX:AGES": true,
-  "MYX:AHB": true,
-  "MYX:AHEALTH": true,
-  "MYX:AIM": true,
-  "MYX:AIRASIA": true,
-  "MYX:AISB": true,
-  "MYX:AJI": true,
-  "MYX:AJIYA": true,
-  "MYX:AJIYA-WA": true,
-  "MYX:ALAM": true,
-  "MYX:ALAM-WA": true,
-  "MYX:ALAQAR": true,
-  "MYX:ALSREIT": true,
-  "MYX:AME": true,
-  "MYX:AMLEX": true,
-  "MYX:AMVERTON": true,
-  "MYX:AMWAY": true,
-  "MYX:ANALABS": true,
-  "MYX:ANCOM": true,
-  "MYX:ANCOMLB": true,
-  "MYX:ANNJOO": true,
-  "MYX:ANZO": true,
-  "MYX:ANZO-WB": true,
-  "MYX:ANZO-WC": true,
-  "MYX:APB": true,
-  "MYX:APFT": true,
-  "MYX:APM": true,
-  "MYX:APOLLO": true,
-  "MYX:APPASIA": true,
-  "MYX:APPASIA-WA": true,
-  "MYX:ARANK": true,
-  "MYX:ARBB": true,
-  "MYX:ARK": true,
-  "MYX:ARK-WB": true,
-  "MYX:ASDION": true,
-  "MYX:ASIABRN": true,
-  "MYX:ASIAFLE": true,
-  "MYX:ASIAPAC": true,
-  "MYX:ASIAPAC-WB": true,
-  "MYX:ASIAPLY": true,
-  "MYX:ASIAPLY-PA": true,
-  "MYX:ASIAPLY-WA": true,
-  "MYX:ASIAPLY-WB": true,
-  "MYX:ASTINO": true,
-  "MYX:AT": true,
-  "MYX:AT-OR": true,
-  "MYX:ATAIMS": true,
-  "MYX:ATTA": true,
-  "MYX:ATTA-WB": true,
-  "MYX:ATTA-WC": true,
-  "MYX:AVI": true,
-  "MYX:AWC": true,
-  "MYX:AWC-WA": true,
-  "MYX:AXIATA": true,
-  "MYX:AXREIT": true,
-  "MYX:AYER": true,
-  "MYX:AZRB": true,
-  "MYX:AZRB-WA": true,
-  "MYX:BABA": true,
-  "MYX:BAHVEST": true,
-  "MYX:BAHVEST-WA": true,
-  "MYX:BARAKAH": true,
-  "MYX:BAUTO": true,
-  "MYX:BCMALL": true,
-  "MYX:BDB": true,
-  "MYX:BHIC": true,
-  "MYX:BIG": true,
-  "MYX:BIMB": true,
-  "MYX:BIMB-WA": true,
-  "MYX:BINACOM": true,
-  "MYX:BINTAI": true,
-  "MYX:BINTAI-WA": true,
-  "MYX:BIOHLDG": true,
-  "MYX:BIOHLDG-WA": true,
-  "MYX:BIPORT": true,
-  "MYX:BKAWAN": true,
-  "MYX:BLDPLNT": true,
-  "MYX:BOILERM": true,
-  "MYX:BONIA": true,
-  "MYX:BORNOIL": true,
-  "MYX:BORNOIL-WC": true,
-  "MYX:BORNOIL-WD": true,
-  "MYX:BPLANT": true,
-  "MYX:BPPLAS": true,
-  "MYX:BPURI": true,
-  "MYX:BPURI-WA": true,
-  "MYX:BRAHIMS": true,
-  "MYX:BSLCORP": true,
-  "MYX:BSTEAD": true,
-  "MYX:BTECH": true,
-  "MYX:BTM": true,
-  "MYX:BTM-WB": true,
-  "MYX:BURSA": true,
-  "MYX:CAB": true,
-  "MYX:CABNET": true,
-  "MYX:CABNET-WA": true,
-  "MYX:CAELY": true,
-  "MYX:CAELY-WA": true,
-  "MYX:CAMRES": true,
-  "MYX:CANONE": true,
-  "MYX:CAREPLS": true,
-  "MYX:CARIMIN": true,
-  "MYX:CARING": true,
-  "MYX:CBIP": true,
-  "MYX:CCK": true,
-  "MYX:CCK-WA": true,
-  "MYX:CCM": true,
-  "MYX:CENSOF": true,
-  "MYX:CEPAT": true,
-  "MYX:CEPCO": true,
-  "MYX:CFM": true,
-  "MYX:CGB": true,
-  "MYX:CHEETAH": true,
-  "MYX:CHGP": true,
-  "MYX:CHGP-WA": true,
-  "MYX:CHHB": true,
-  "MYX:CHHB-WB": true,
-  "MYX:CHINHIN": true,
-  "MYX:CHINWEL": true,
-  "MYX:CHOOBEE": true,
-  "MYX:CHUAN": true,
-  "MYX:CJCEN": true,
-  "MYX:CLOUD": true,
-  "MYX:CME": true,
-  "MYX:CME-WA": true,
-  "MYX:CMSB": true,
-  "MYX:CNI": true,
-  "MYX:COCOLND": true,
-  "MYX:COMFORT": true,
-  "MYX:COMPLET": true,
-  "MYX:COMPUGT": true,
-  "MYX:CONNECT": true,
-  "MYX:CONNECT-WA": true,
-  "MYX:CONNECT-WB": true,
-  "MYX:CRESBLD": true,
-  "MYX:CRESNDO": true,
-  "MYX:CRG": true,
-  "MYX:CSCENIC": true,
-  "MYX:CSCSTEL": true,
-  "MYX:CVIEW": true,
-  "MYX:CWG": true,
-  "MYX:CYL": true,
-  "MYX:CYMAO": true,
-  "MYX:CYPARK": true,
-  "MYX:D&O": true,
-  "MYX:DAIBOCI": true,
-  "MYX:DAIBOCI-WB": true,
-  "MYX:DANCO": true,
-  "MYX:DANCO-WA": true,
-  "MYX:DATAPRP": true,
-  "MYX:DAYANG": true,
-  "MYX:DBE": true,
-  "MYX:DBE-WB": true,
-  "MYX:DBHD": true,
-  "MYX:DBHD-WA": true,
-  "MYX:DEGEM": true,
-  "MYX:DELEUM": true,
-  "MYX:DESTINI": true,
-  "MYX:DGB": true,
-  "MYX:DGB-WB": true,
-  "MYX:DGSB": true,
-  "MYX:DIALOG": true,
-  "MYX:DIGI": true,
-  "MYX:DIN040000223": true,
-  "MYX:DIN042300721": true,
-  "MYX:DIN045801028": true,
-  "MYX:DKLS": true,
-  "MYX:DKSH": true,
-  "MYX:DLADY": true,
-  "MYX:DNEX": true,
-  "MYX:DNEX-WD": true,
-  "MYX:DNONCE": true,
-  "MYX:DNONCE-WA": true,
-  "MYX:DOLPHIN": true,
-  "MYX:DOLPHIN-WA": true,
-  "MYX:DOMINAN": true,
-  "MYX:DOMINAN-WA": true,
-  "MYX:DPHARMA": true,
-  "MYX:DPS": true,
-  "MYX:DPS-WB": true,
-  "MYX:DRBHCOM": true,
-  "MYX:DSONIC": true,
-  "MYX:DSONIC-WA": true,
-  "MYX:DUFU": true,
-  "MYX:DWL": true,
-  "MYX:DWL-PA": true,
-  "MYX:DWL-WA": true,
-  "MYX:E&O": true,
-  "MYX:EASTLND": true,
-  "MYX:EATECH": true,
-  "MYX:ECOFIRS": true,
-  "MYX:ECOHLDS": true,
-  "MYX:ECONBHD": true,
-  "MYX:ECONBHD-WA": true,
-  "MYX:ECOWLD": true,
-  "MYX:ECOWLD-WA": true,
-  "MYX:EDARAN": true,
-  "MYX:EDGENTA": true,
-  "MYX:EDUSPEC": true,
-  "MYX:EDUSPEC-WB": true,
-  "MYX:EFORCE": true,
-  "MYX:EG": true,
-  "MYX:EG-WC": true,
-  "MYX:EIG": true,
-  "MYX:EITA": true,
-  "MYX:EKA": true,
-  "MYX:EKOVEST": true,
-  "MYX:ELSOFT": true,
-  "MYX:EMETALL": true,
-  "MYX:EMICO": true,
-  "MYX:ENGKAH": true,
-  "MYX:ENGTEX": true,
-  "MYX:ENRA": true,
-  "MYX:EPMB": true,
-  "MYX:ESAFE": true,
-  "MYX:EUPE": true,
-  "MYX:EURO": true,
-  "MYX:EUROSP": true,
-  "MYX:EVERGRN": true,
-  "MYX:EWEIN": true,
-  "MYX:EWEIN-WB": true,
-  "MYX:F&N": true,
-  "MYX:FAJAR": true,
-  "MYX:FAREAST": true,
-  "MYX:FAVCO": true,
-  "MYX:FBBHD": true,
-  "MYX:FGV": true,
-  "MYX:FIAMMA": true,
-  "MYX:FIHB": true,
-  "MYX:FIHB-PA": true,
-  "MYX:FIHB-PB": true,
-  "MYX:FIMACOR": true,
-  "MYX:FITTERS": true,
-  "MYX:FLBHD": true,
-  "MYX:FOCUSP": true,
-  "MYX:FPGROUP": true,
-  "MYX:FPI": true,
-  "MYX:FREIGHT": true,
-  "MYX:FRONTKN": true,
-  "MYX:GADANG": true,
-  "MYX:GADANG-WB": true,
-  "MYX:GAMUDA": true,
-  "MYX:GAMUDA-WE": true,
-  "MYX:GASMSIA": true,
-  "MYX:GBGAQRS": true,
-  "MYX:GBGAQRS-WB": true,
-  "MYX:GCB": true,
-  "MYX:GCB-WB": true,
-  "MYX:GDB": true,
-  "MYX:GDEX": true,
-  "MYX:GENETEC": true,
-  "MYX:GENP": true,
-  "MYX:GESHEN": true,
-  "MYX:GETS": true,
-  "MYX:GFM": true,
-  "MYX:GFM-WC": true,
-  "MYX:GHLSYS": true,
-  "MYX:GKENT": true,
-  "MYX:GLOMAC": true,
-  "MYX:GLOTEC": true,
-  "MYX:GLOTEC-WA": true,
-  "MYX:GMUTUAL": true,
-  "MYX:GNB": true,
-  "MYX:GOB": true,
-  "MYX:GOCEAN": true,
-  "MYX:GOLDETF": true,
-  "MYX:GOODWAY": true,
-  "MYX:GOPENG": true,
-  "MYX:GPHAROS": true,
-  "MYX:GRANFLO": true,
-  "MYX:GREATEC": true,
-  "MYX:GREENYB": true,
-  "MYX:GTRONIC": true,
-  "MYX:GUH": true,
-  "MYX:GUNUNG": true,
-  "MYX:GUNUNG-WB": true,
-  "MYX:HANDAL": true,
-  "MYX:HARBOUR": true,
-  "MYX:HARBOUR-WC": true,
-  "MYX:HARNLEN": true,
-  "MYX:HARNLEN-WB": true,
-  "MYX:HARTA": true,
-  "MYX:HENGYUAN": true,
-  "MYX:HEVEA": true,
-  "MYX:HEXTAR": true,
-  "MYX:HHGROUP": true,
-  "MYX:HHHCORP": true,
-  "MYX:HIAPTEK": true,
-  "MYX:HIAPTEK-LA": true,
-  "MYX:HIAPTEK-WB": true,
-  "MYX:HIBISCS": true,
-  "MYX:HIBISCS-WC": true,
-  "MYX:HIGHTEC": true,
-  "MYX:HIL": true,
-  "MYX:HIL-WB": true,
-  "MYX:HLIND": true,
-  "MYX:HLT": true,
-  "MYX:HLT-WA": true,
-  "MYX:HOHUP": true,
-  "MYX:HOKHENG": true,
-  "MYX:HOMERIZ": true,
-  "MYX:HOMERIZ-WA": true,
-  "MYX:HOMERIZ-WB": true,
-  "MYX:HOOVER": true,
-  "MYX:HPMT": true,
-  "MYX:HSL": true,
-  "MYX:HSPLANT": true,
-  "MYX:HSSEB": true,
-  "MYX:HSSEB-WA": true,
-  "MYX:HTPADU": true,
-  "MYX:HUAAN": true,
-  "MYX:HUAYANG": true,
-  "MYX:HUBLINE": true,
-  "MYX:HUBLINE-WB": true,
-  "MYX:HUBLINE-WC": true,
-  "MYX:HUPSENG": true,
-  "MYX:HWATAI": true,
-  "MYX:HWGB": true,
-  "MYX:HWGB-WD": true,
-  "MYX:IBHD": true,
-  "MYX:IBRACO": true,
-  "MYX:ICON": true,
-  "MYX:ICON-WA": true,
-  "MYX:ICONIC": true,
-  "MYX:IDEAL": true,
-  "MYX:IDEAL-WB": true,
-  "MYX:IDMENSN": true,
-  "MYX:IDMENSN-WA": true,
-  "MYX:IHH": true,
-  "MYX:IHS046000824": true,
-  "MYX:IJM": true,
-  "MYX:IKHMAS": true,
-  "MYX:IMASPRO": true,
-  "MYX:IMPIANA": true,
-  "MYX:INARI": true,
-  "MYX:INCKEN": true,
-  "MYX:INIX": true,
-  "MYX:INIX-WA": true,
-  "MYX:INNATURE": true,
-  "MYX:INNO": true,
-  "MYX:INTA": true,
-  "MYX:IOICORP": true,
-  "MYX:IOIPG": true,
-  "MYX:IPMUDA": true,
-  "MYX:IQGROUP": true,
-  "MYX:IQZAN": true,
-  "MYX:IREKA": true,
-  "MYX:IRIS": true,
-  "MYX:ISTONE": true,
-  "MYX:ITRONIC": true,
-  "MYX:IVORY": true,
-  "MYX:IWCITY": true,
-  "MYX:JADEM": true,
-  "MYX:JADI": true,
-  "MYX:JAG": true,
-  "MYX:JAG-WB": true,
-  "MYX:JAKS": true,
-  "MYX:JAKS-WB": true,
-  "MYX:JAYCORP": true,
-  "MYX:JCY": true,
-  "MYX:JETSON": true,
-  "MYX:JFTECH": true,
-  "MYX:JHM": true,
-  "MYX:JIANKUN": true,
-  "MYX:JIANKUN-WA": true,
-  "MYX:JKGLAND": true,
-  "MYX:JMEDU": true,
-  "MYX:JOHOTIN": true,
-  "MYX:JTIASA": true,
-  "MYX:K1": true,
-  "MYX:K1-WC": true,
-  "MYX:KAB": true,
-  "MYX:KAMDAR": true,
-  "MYX:KANGER": true,
-  "MYX:KANGER-WA": true,
-  "MYX:KARYON": true,
-  "MYX:KAWAN": true,
-  "MYX:KEINHIN": true,
-  "MYX:KEN": true,
-  "MYX:KERJAYA": true,
-  "MYX:KERJAYA-WB": true,
-  "MYX:KESM": true,
-  "MYX:KEYASIC": true,
-  "MYX:KFIMA": true,
-  "MYX:KGB": true,
-  "MYX:KGROUP": true,
-  "MYX:KGROUP-WB": true,
-  "MYX:KHEESAN": true,
-  "MYX:KHIND": true,
-  "MYX:KHJB": true,
-  "MYX:KIALIM": true,
-  "MYX:KIMHIN": true,
-  "MYX:KIMLUN": true,
-  "MYX:KIMLUN-WA": true,
-  "MYX:KKB": true,
-  "MYX:KLCC": true,
-  "MYX:KLK": true,
-  "MYX:KMLOONG": true,
-  "MYX:KMLOONG-WB": true,
-  "MYX:KNUSFOR": true,
-  "MYX:KOBAY": true,
-  "MYX:KOMARK": true,
-  "MYX:KOSSAN": true,
-  "MYX:KOTRA": true,
-  "MYX:KPJ": true,
-  "MYX:KPOWER": true,
-  "MYX:KPPROP": true,
-  "MYX:KPS": true,
-  "MYX:KPSCB": true,
-  "MYX:KRETAM": true,
-  "MYX:KRONO": true,
-  "MYX:KSL": true,
-  "MYX:KSSC": true,
-  "MYX:KTB": true,
-  "MYX:KUB": true,
-  "MYX:KWANTAS": true,
-  "MYX:KYM": true,
-  "MYX:L&G": true,
-  "MYX:LATITUD": true,
-  "MYX:LAYHONG": true,
-  "MYX:LAYHONG-WA": true,
-  "MYX:LBALUM": true,
-  "MYX:LBS": true,
-  "MYX:LBS-PA": true,
-  "MYX:LBS-WB": true,
-  "MYX:LCTITAN": true,
-  "MYX:LEBTECH": true,
-  "MYX:LEESK": true,
-  "MYX:LEWEKO": true,
-  "MYX:LEWEKO-WB": true,
-  "MYX:LFECORP": true,
-  "MYX:LIIHEN": true,
-  "MYX:LIONIND": true,
-  "MYX:LIONPSIM": true,
-  "MYX:LITRAK": true,
-  "MYX:LKL": true,
-  "MYX:LOTUS": true,
-  "MYX:LOTUS-WB": true,
-  "MYX:LTKM": true,
-  "MYX:LUXCHEM": true,
-  "MYX:LYC": true,
-  "MYX:M3TECH": true,
-  "MYX:MACPIE": true,
-  "MYX:MACPIE-WA": true,
-  "MYX:MAGNA": true,
-  "MYX:MAGNA-WB": true,
-  "MYX:MAGNI": true,
-  "MYX:MAHSING": true,
-  "MYX:MALAKOF": true,
-  "MYX:MALTON": true,
-  "MYX:MASTEEL": true,
-  "MYX:MASTER": true,
-  "MYX:MATRIX": true,
-  "MYX:MATRIX-WA": true,
-  "MYX:MAXIS": true,
-  "MYX:MBG": true,
-  "MYX:MBL": true,
-  "MYX:MBL-WA": true,
-  "MYX:MBMR": true,
-  "MYX:MBWORLD": true,
-  "MYX:MCEHLDG": true,
-  "MYX:MCEMENT": true,
-  "MYX:MCLEAN": true,
-  "MYX:MCLEAN-WB": true,
-  "MYX:MCOM": true,
-  "MYX:MCT": true,
-  "MYX:MEDIAC": true,
-  "MYX:MEGASUN": true,
-  "MYX:MELATI": true,
-  "MYX:MELEWAR": true,
-  "MYX:MELEWAR-WB": true,
-  "MYX:MENANG": true,
-  "MYX:MENTIGA": true,
-  "MYX:MERCURY": true,
-  "MYX:MERIDIAN": true,
-  "MYX:MERIDIAN-WA": true,
-  "MYX:MERIDIAN-WB": true,
-  "MYX:MERIDIAN-WC": true,
-  "MYX:MESB": true,
-  "MYX:MESB-WA": true,
-  "MYX:MESTRON": true,
-  "MYX:METFAPA": true,
-  "MYX:METFSID": true,
-  "MYX:METFUS50": true,
-  "MYX:MFCB": true,
-  "MYX:MFCB-WA": true,
-  "MYX:MFGROUP": true,
-  "MYX:MGB": true,
-  "MYX:MGRC": true,
-  "MYX:MHB": true,
-  "MYX:MHC": true,
-  "MYX:MHCARE": true,
-  "MYX:MI": true,
-  "MYX:MICROLN": true,
-  "MYX:MIECO": true,
-  "MYX:MIKROMB": true,
-  "MYX:MILUX": true,
-  "MYX:MINDA": true,
-  "MYX:MINETEC": true,
-  "MYX:MINHO": true,
-  "MYX:MINHO-WC": true,
-  "MYX:MISC": true,
-  "MYX:MITRA": true,
-  "MYX:MITRA-WD": true,
-  "MYX:MITRA-WE": true,
-  "MYX:MKH": true,
-  "MYX:MKLAND": true,
-  "MYX:MMAG": true,
-  "MYX:MMAG-WB": true,
-  "MYX:MMCCORP": true,
-  "MYX:MMSV": true,
-  "MYX:MPI": true,
-  "MYX:MQTECH": true,
-  "MYX:MQTECH-WA": true,
-  "MYX:MRCB": true,
-  "MYX:MRCB-WB": true,
-  "MYX:MSC": true,
-  "MYX:MSM": true,
-  "MYX:MSNIAGA": true,
-  "MYX:MTAG": true,
-  "MYX:MTDACPI": true,
-  "MYX:MTRONIC": true,
-  "MYX:MTRONIC-WA": true,
-  "MYX:MUDA": true,
-  "MYX:MUH": true,
-  "MYX:MUHIBAH": true,
-  "MYX:MUIPROP": true,
-  "MYX:MYCRON": true,
-  "MYX:MYCRON-WA": true,
-  "MYX:MYEG": true,
-  "MYX:MYETFDJ": true,
-  "MYX:MYETFID": true,
-  "MYX:MYSCM": true,
-  "MYX:MYSCM-WA": true,
-  "MYX:N2N": true,
-  "MYX:N2N-WB": true,
-  "MYX:NADIBHD": true,
-  "MYX:NAIM": true,
-  "MYX:NATWIDE": true,
-  "MYX:NESTLE": true,
-  "MYX:NEXGRAM": true,
-  "MYX:NEXGRAM-WA": true,
-  "MYX:NEXGRAM-WB": true,
-  "MYX:NEXGRAM-WC": true,
-  "MYX:NGGB": true,
-  "MYX:NGGB-WA": true,
-  "MYX:NHFATT": true,
-  "MYX:NICE": true,
-  "MYX:NICE-WB": true,
-  "MYX:NIHSIN": true,
-  "MYX:NIHSIN-WB": true,
-  "MYX:NOTION": true,
-  "MYX:NOTION-WC": true,
-  "MYX:NOVA": true,
-  "MYX:NOVAMSC": true,
-  "MYX:NPC": true,
-  "MYX:NPS": true,
-  "MYX:NTPM": true,
-  "MYX:NWP": true,
-  "MYX:NYLEX": true,
-  "MYX:OCB": true,
-  "MYX:OCNCASH": true,
-  "MYX:OCR": true,
-  "MYX:OCR-PA": true,
-  "MYX:OCR-WC": true,
-  "MYX:OCR-WD": true,
-  "MYX:OFI": true,
-  "MYX:OIB": true,
-  "MYX:OKA": true,
-  "MYX:OMESTI": true,
-  "MYX:OPCOM": true,
-  "MYX:OPENSYS": true,
-  "MYX:ORION": true,
-  "MYX:ORION-WA": true,
-  "MYX:ORNA": true,
-  "MYX:PA": true,
-  "MYX:PA-WB": true,
-  "MYX:PADINI": true,
-  "MYX:PANSAR": true,
-  "MYX:PANSAR-WA": true,
-  "MYX:PANTECH": true,
-  "MYX:PANTECH-WA": true,
-  "MYX:PANTECH-WB": true,
-  "MYX:PAOS": true,
-  "MYX:PAOS-WA": true,
-  "MYX:PARAGON": true,
-  "MYX:PARAMON": true,
-  "MYX:PARAMON-WA": true,
-  "MYX:PARKSON": true,
-  "MYX:PARLO": true,
-  "MYX:PASDEC": true,
-  "MYX:PASDEC-WA": true,
-  "MYX:PASUKGB": true,
-  "MYX:PBA": true,
-  "MYX:PCCS": true,
-  "MYX:PCCS-WA": true,
-  "MYX:PCHEM": true,
-  "MYX:PDZ": true,
-  "MYX:PDZ-WB": true,
-  "MYX:PEB": true,
-  "MYX:PECCA": true,
-  "MYX:PELIKAN": true,
-  "MYX:PENERGY": true,
-  "MYX:PERDANA": true,
-  "MYX:PERMAJU": true,
-  "MYX:PERSTIM": true,
-  "MYX:PESONA": true,
-  "MYX:PESTECH": true,
-  "MYX:PETDAG": true,
-  "MYX:PETGAS": true,
-  "MYX:PETRONM": true,
-  "MYX:PGLOBE": true,
-  "MYX:PGLOBE-WA": true,
-  "MYX:PHARMA": true,
-  "MYX:PHB": true,
-  "MYX:PHB-WB": true,
-  "MYX:PICORP": true,
-  "MYX:PIE": true,
-  "MYX:PINEAPP": true,
-  "MYX:PINEPAC": true,
-  "MYX:PJBUMI": true,
-  "MYX:PJBUMI-WA": true,
-  "MYX:PLS": true,
-  "MYX:PLS-WA": true,
-  "MYX:PMBTECH": true,
-  "MYX:PMBTECH-WA": true,
-  "MYX:PMCORP": true,
-  "MYX:PMETAL": true,
-  "MYX:PMHLDG": true,
-  "MYX:PNEPCB": true,
-  "MYX:PNEPCB-WA": true,
-  "MYX:POHKONG": true,
-  "MYX:POHUAT": true,
-  "MYX:POHUAT-WB": true,
-  "MYX:POLY": true,
-  "MYX:POLYMER": true,
-  "MYX:POS": true,
-  "MYX:PPB": true,
-  "MYX:PPG": true,
-  "MYX:PPHB": true,
-  "MYX:PRESBHD": true,
-  "MYX:PRESTAR": true,
-  "MYX:PRG": true,
-  "MYX:PRIVA": true,
-  "MYX:PRLEXUS": true,
-  "MYX:PRLEXUS-WA": true,
-  "MYX:PRTASCO": true,
-  "MYX:PRTASCO-WA": true,
-  "MYX:PTARAS": true,
-  "MYX:PTB": true,
-  "MYX:PTRANS": true,
-  "MYX:PTRANS-WA": true,
-  "MYX:PUC": true,
-  "MYX:PUC-WA": true,
-  "MYX:PUNCAK": true,
-  "MYX:PWF": true,
-  "MYX:PWF-WA": true,
-  "MYX:PWORTH": true,
-  "MYX:PWROOT": true,
-  "MYX:PWROOT-WA": true,
-  "MYX:QES": true,
-  "MYX:QL": true,
-  "MYX:QUALITY": true,
-  "MYX:RALCO": true,
-  "MYX:RANHILL": true,
-  "MYX:REACH": true,
-  "MYX:REACH-WA": true,
-  "MYX:RESINTC": true,
-  "MYX:REVENUE": true,
-  "MYX:REVENUE-WA": true,
-  "MYX:REX": true,
-  "MYX:RGTBHD": true,
-  "MYX:RGTBHD-WB": true,
-  "MYX:RGTECH": true,
-  "MYX:ROHAS": true,
-  "MYX:RSAWIT": true,
-  "MYX:RUBEREX": true,
-  "MYX:RVIEW": true,
-  "MYX:SAB": true,
-  "MYX:SALCON": true,
-  "MYX:SALCON-WB": true,
-  "MYX:SALUTE": true,
-  "MYX:SAM": true,
-  "MYX:SAPIND": true,
-  "MYX:SAPNRG": true,
-  "MYX:SAPNRG-PA": true,
-  "MYX:SAPNRG-WA": true,
-  "MYX:SAPRES": true,
-  "MYX:SASBADI": true,
-  "MYX:SAUDEE": true,
-  "MYX:SAUDEE-WA": true,
-  "MYX:SBCCORP": true,
-  "MYX:SCABLE": true,
-  "MYX:SCBUILD": true,
-  "MYX:SCGM": true,
-  "MYX:SCGM-WA": true,
-  "MYX:SCIB": true,
-  "MYX:SCIENTX": true,
-  "MYX:SCNWOLF": true,
-  "MYX:SCOMI": true,
-  "MYX:SCOMI-WB": true,
-  "MYX:SCOMIES": true,
-  "MYX:SCOMNET": true,
-  "MYX:SCOMNET-WA": true,
-  "MYX:SCOPE": true,
-  "MYX:SCOPE-WA": true,
-  "MYX:SDRED": true,
-  "MYX:SDS": true,
-  "MYX:SEACERA": true,
-  "MYX:SEACERA-WC": true,
-  "MYX:SEAL": true,
-  "MYX:SEALINK": true,
-  "MYX:SEDANIA": true,
-  "MYX:SEEHUP": true,
-  "MYX:SEERS": true,
-  "MYX:SEG": true,
-  "MYX:SENDAI": true,
-  "MYX:SERBADK": true,
-  "MYX:SERBADK-WA": true,
-  "MYX:SERNKOU": true,
-  "MYX:SERNKOU-WA": true,
-  "MYX:SERSOL": true,
-  "MYX:SERSOL-WA": true,
-  "MYX:SHCHAN": true,
-  "MYX:SHH": true,
-  "MYX:SHL": true,
-  "MYX:SIGGAS": true,
-  "MYX:SIGN": true,
-  "MYX:SIGN-WA": true,
-  "MYX:SIME": true,
-  "MYX:SIMEPLT": true,
-  "MYX:SIMEPROP": true,
-  "MYX:SINOTOP": true,
-  "MYX:SJC": true,
-  "MYX:SKBSHUT": true,
-  "MYX:SKPRES": true,
-  "MYX:SLIC": true,
-  "MYX:SLP": true,
-  "MYX:SLVEST": true,
-  "MYX:SMCAP": true,
-  "MYX:SMCAP-WC": true,
-  "MYX:SMI": true,
-  "MYX:SMILE": true,
-  "MYX:SMISCOR": true,
-  "MYX:SMRT": true,
-  "MYX:SMTRACK": true,
-  "MYX:SNC": true,
-  "MYX:SNTORIA": true,
-  "MYX:SNTORIA-WB": true,
-  "MYX:SOLID": true,
-  "MYX:SOLID-WA": true,
-  "MYX:SOP": true,
-  "MYX:SPRING": true,
-  "MYX:SPRITZER": true,
-  "MYX:SPSETIA": true,
-  "MYX:SPSETIA-PA": true,
-  "MYX:SPSETIA-PB": true,
-  "MYX:SRIDGE": true,
-  "MYX:SRIDGE-WA": true,
-  "MYX:STAR": true,
-  "MYX:STELLA": true,
-  "MYX:STRAITS": true,
-  "MYX:STRAITS-WA": true,
-  "MYX:SUBUR": true,
-  "MYX:SUCCESS": true,
-  "MYX:SUMATEC": true,
-  "MYX:SUMATEC-WA": true,
-  "MYX:SUNCON": true,
-  "MYX:SUNSURIA": true,
-  "MYX:SUNSURIA-WA": true,
-  "MYX:SUNWAY": true,
-  "MYX:SUNWAY-WB": true,
-  "MYX:SUPERLN": true,
-  "MYX:SUPERMX": true,
-  "MYX:SUPREME": true,
-  "MYX:SURIA": true,
-  "MYX:SWKPLNT": true,
-  "MYX:SWSCAP": true,
-  "MYX:SWSCAP-WB": true,
-  "MYX:SYF": true,
-  "MYX:SYMLIFE": true,
-  "MYX:SYMLIFE-WB": true,
-  "MYX:SYSCORP": true,
-  "MYX:SYSTECH": true,
-  "MYX:T7GLOBAL": true,
-  "MYX:TAANN": true,
-  "MYX:TADMAX": true,
-  "MYX:TAFI": true,
-  "MYX:TAKAFUL": true,
-  "MYX:TALAMT": true,
-  "MYX:TALIWRK": true,
-  "MYX:TAMBUN": true,
-  "MYX:TANCO": true,
-  "MYX:TANCO-WB": true,
-  "MYX:TAS": true,
-  "MYX:TASEK": true,
-  "MYX:TASHIN": true,
-  "MYX:TDEX": true,
-  "MYX:TECFAST": true,
-  "MYX:TECHBND": true,
-  "MYX:TECHBND-WA": true,
-  "MYX:TEKSENG": true,
-  "MYX:TENAGA": true,
-  "MYX:TEOSENG": true,
-  "MYX:TEXCYCL": true,
-  "MYX:TFP": true,
-  "MYX:TGL": true,
-  "MYX:TGUAN": true,
-  "MYX:THETA": true,
-  "MYX:THHEAVY": true,
-  "MYX:THHEAVY-PB": true,
-  "MYX:THPLANT": true,
-  "MYX:THRIVEN": true,
-  "MYX:THRIVEN-WB": true,
-  "MYX:TIGER": true,
-  "MYX:TIGER-WC": true,
-  "MYX:TIMECOM": true,
-  "MYX:TIMWELL": true,
-  "MYX:TITIJYA": true,
-  "MYX:TITIJYA-PA": true,
-  "MYX:TM": true,
-  "MYX:TNLOGIS": true,
-  "MYX:TOCEAN": true,
-  "MYX:TOMYPAK": true,
-  "MYX:TOMYPAK-WA": true,
-  "MYX:TONGHER": true,
-  "MYX:TOPGLOV": true,
-  "MYX:TOYOINK": true,
-  "MYX:TOYOINK-WB": true,
-  "MYX:TPC": true,
-  "MYX:TPC-WA": true,
-  "MYX:TRC": true,
-  "MYX:TRIMODE": true,
-  "MYX:TRIVE": true,
-  "MYX:TRIVE-WB": true,
-  "MYX:TROP": true,
-  "MYX:TSH": true,
-  "MYX:TSRCAP": true,
-  "MYX:TSRCAP-WB": true,
-  "MYX:TTV": true,
-  "MYX:TURIYA": true,
-  "MYX:UCHITEC": true,
-  "MYX:UCREST": true,
-  "MYX:UEMS": true,
-  "MYX:ULICORP": true,
-  "MYX:UMCCA": true,
-  "MYX:UMS": true,
-  "MYX:UMSNGB": true,
-  "MYX:UMW": true,
-  "MYX:UNIMECH": true,
-  "MYX:UNISEM": true,
-  "MYX:UNIWALL": true,
-  "MYX:UOADEV": true,
-  "MYX:UPA": true,
-  "MYX:UTDPLT": true,
-  "MYX:UWC": true,
-  "MYX:UZMA": true,
-  "MYX:VC": true,
-  "MYX:VC-WB": true,
-  "MYX:VELESTO": true,
-  "MYX:VELESTO-WA": true,
-  "MYX:VERSATL": true,
-  "MYX:VERTICE": true,
-  "MYX:VERTICE-WA": true,
-  "MYX:VIS": true,
-  "MYX:VIS-WB": true,
-  "MYX:VITROX": true,
-  "MYX:VIVOCOM": true,
-  "MYX:VIVOCOM-WD": true,
-  "MYX:VIVOCOM-WE": true,
-  "MYX:VIZIONE": true,
-  "MYX:VIZIONE-WC": true,
-  "MYX:VS": true,
-  "MYX:VSOLAR": true,
-  "MYX:VSTECS": true,
-  "MYX:WASEONG": true,
-  "MYX:WATTA": true,
-  "MYX:WCT": true,
-  "MYX:WCT-WE": true,
-  "MYX:WEGMANS": true,
-  "MYX:WEGMANS-WA": true,
-  "MYX:WELLCAL": true,
-  "MYX:WIDAD": true,
-  "MYX:WIDAD-WA": true,
-  "MYX:WMG": true,
-  "MYX:WONG": true,
-  "MYX:WOODLAN": true,
-  "MYX:WPRTS": true,
-  "MYX:WTHORSE": true,
-  "MYX:WTK": true,
-  "MYX:WZSATU": true,
-  "MYX:WZSATU-WA": true,
-  "MYX:XIANLNG": true,
-  "MYX:XINHWA": true,
-  "MYX:XOX": true,
-  "MYX:XOX-WB": true,
-  "MYX:Y&G": true,
-  "MYX:YBS": true,
-  "MYX:YEELEE": true,
-  "MYX:YGL": true,
-  "MYX:YILAI": true,
-  "MYX:YINSON": true,
-  "MYX:YLI": true,
-  "MYX:YNHPROP": true,
-  "MYX:YOCB": true,
-  "MYX:YONGTAI": true,
-  "MYX:YONGTAI-PA": true,
-  "MYX:YONGTAI-WA": true,
-  "MYX:YSPSAH": true,
-  "MYX:ZECON": true,
-  "MYX:ZELAN": true,
-  "MYX:ZHULIAN": true
+  "updatedAt": "2020-03-28T01:40:01.232Z",
+  "list": {
+    "MYX:3A": {
+      "s": true
+    },
+    "MYX:AASIA": {
+      "s": true
+    },
+    "MYX:AAX": {
+      "s": true
+    },
+    "MYX:AAX-WA": {
+      "s": true
+    },
+    "MYX:ABLEGRP": {
+      "s": true
+    },
+    "MYX:ACME": {
+      "s": true
+    },
+    "MYX:ACME-WA": {
+      "s": true
+    },
+    "MYX:ACO": {
+      "s": true
+    },
+    "MYX:ACOSTEC": {
+      "s": true
+    },
+    "MYX:ADVCON": {
+      "s": true
+    },
+    "MYX:ADVENTA": {
+      "s": true
+    },
+    "MYX:ADVPKG": {
+      "s": true
+    },
+    "MYX:AEM": {
+      "s": true
+    },
+    "MYX:AEMULUS": {
+      "s": true
+    },
+    "MYX:AEON": {
+      "s": true
+    },
+    "MYX:AFUJIYA": {
+      "s": true
+    },
+    "MYX:AGES": {
+      "s": true
+    },
+    "MYX:AHB": {
+      "s": true
+    },
+    "MYX:AHEALTH": {
+      "s": true
+    },
+    "MYX:AIM": {
+      "s": true
+    },
+    "MYX:AIRASIA": {
+      "s": true
+    },
+    "MYX:AISB": {
+      "s": true
+    },
+    "MYX:AJI": {
+      "s": true
+    },
+    "MYX:AJIYA": {
+      "s": true
+    },
+    "MYX:AJIYA-WA": {
+      "s": true
+    },
+    "MYX:ALAM": {
+      "s": true
+    },
+    "MYX:ALAM-WA": {
+      "s": true
+    },
+    "MYX:ALAQAR": {
+      "s": true
+    },
+    "MYX:ALSREIT": {
+      "s": true
+    },
+    "MYX:AME": {
+      "s": true
+    },
+    "MYX:AMLEX": {
+      "s": true
+    },
+    "MYX:AMVERTON": {
+      "s": true
+    },
+    "MYX:AMWAY": {
+      "s": true
+    },
+    "MYX:ANALABS": {
+      "s": true
+    },
+    "MYX:ANCOM": {
+      "s": true
+    },
+    "MYX:ANCOMLB": {
+      "s": true
+    },
+    "MYX:ANNJOO": {
+      "s": true
+    },
+    "MYX:ANZO": {
+      "s": true
+    },
+    "MYX:ANZO-WB": {
+      "s": true
+    },
+    "MYX:ANZO-WC": {
+      "s": true
+    },
+    "MYX:APB": {
+      "s": true
+    },
+    "MYX:APFT": {
+      "s": true
+    },
+    "MYX:APM": {
+      "s": true
+    },
+    "MYX:APOLLO": {
+      "s": true
+    },
+    "MYX:APPASIA": {
+      "s": true
+    },
+    "MYX:APPASIA-WA": {
+      "s": true
+    },
+    "MYX:ARANK": {
+      "s": true
+    },
+    "MYX:ARBB": {
+      "s": true
+    },
+    "MYX:ARK": {
+      "s": true
+    },
+    "MYX:ARK-WB": {
+      "s": true
+    },
+    "MYX:ASDION": {
+      "s": true
+    },
+    "MYX:ASIABRN": {
+      "s": true
+    },
+    "MYX:ASIAFLE": {
+      "s": true
+    },
+    "MYX:ASIAPAC": {
+      "s": true
+    },
+    "MYX:ASIAPAC-WB": {
+      "s": true
+    },
+    "MYX:ASIAPLY": {
+      "s": true
+    },
+    "MYX:ASIAPLY-PA": {
+      "s": true
+    },
+    "MYX:ASIAPLY-WA": {
+      "s": true
+    },
+    "MYX:ASIAPLY-WB": {
+      "s": true
+    },
+    "MYX:ASTINO": {
+      "s": true
+    },
+    "MYX:AT": {
+      "s": true
+    },
+    "MYX:ATAIMS": {
+      "s": true
+    },
+    "MYX:ATTA": {
+      "s": true
+    },
+    "MYX:ATTA-WB": {
+      "s": true
+    },
+    "MYX:ATTA-WC": {
+      "s": true
+    },
+    "MYX:AVI": {
+      "s": true
+    },
+    "MYX:AWC": {
+      "s": true
+    },
+    "MYX:AWC-WA": {
+      "s": true
+    },
+    "MYX:AXIATA": {
+      "s": true
+    },
+    "MYX:AXREIT": {
+      "s": true
+    },
+    "MYX:AYER": {
+      "s": true
+    },
+    "MYX:AZRB": {
+      "s": true
+    },
+    "MYX:AZRB-WA": {
+      "s": true
+    },
+    "MYX:BABA": {
+      "s": true
+    },
+    "MYX:BAHVEST": {
+      "s": true
+    },
+    "MYX:BAHVEST-WA": {
+      "s": true
+    },
+    "MYX:BARAKAH": {
+      "s": true
+    },
+    "MYX:BAUTO": {
+      "s": true
+    },
+    "MYX:BCMALL": {
+      "s": true
+    },
+    "MYX:BDB": {
+      "s": true
+    },
+    "MYX:BHIC": {
+      "s": true
+    },
+    "MYX:BIG": {
+      "s": true
+    },
+    "MYX:BIMB": {
+      "s": true
+    },
+    "MYX:BIMB-WA": {
+      "s": true
+    },
+    "MYX:BINACOM": {
+      "s": true
+    },
+    "MYX:BINTAI": {
+      "s": true
+    },
+    "MYX:BINTAI-WA": {
+      "s": true
+    },
+    "MYX:BIOHLDG": {
+      "s": true
+    },
+    "MYX:BIOHLDG-WA": {
+      "s": true
+    },
+    "MYX:BIPORT": {
+      "s": true
+    },
+    "MYX:BKAWAN": {
+      "s": true
+    },
+    "MYX:BLDPLNT": {
+      "s": true
+    },
+    "MYX:BOILERM": {
+      "s": true
+    },
+    "MYX:BONIA": {
+      "s": true
+    },
+    "MYX:BORNOIL": {
+      "s": true
+    },
+    "MYX:BORNOIL-WC": {
+      "s": true
+    },
+    "MYX:BORNOIL-WD": {
+      "s": true
+    },
+    "MYX:BPLANT": {
+      "s": true
+    },
+    "MYX:BPPLAS": {
+      "s": true
+    },
+    "MYX:BPURI": {
+      "s": true
+    },
+    "MYX:BPURI-WA": {
+      "s": true
+    },
+    "MYX:BRAHIMS": {
+      "s": true
+    },
+    "MYX:BSLCORP": {
+      "s": true
+    },
+    "MYX:BSTEAD": {
+      "s": true
+    },
+    "MYX:BTECH": {
+      "s": true
+    },
+    "MYX:BTM": {
+      "s": true
+    },
+    "MYX:BTM-WB": {
+      "s": true
+    },
+    "MYX:BURSA": {
+      "s": true
+    },
+    "MYX:CAB": {
+      "s": true
+    },
+    "MYX:CABNET": {
+      "s": true
+    },
+    "MYX:CABNET-WA": {
+      "s": true
+    },
+    "MYX:CAELY": {
+      "s": true
+    },
+    "MYX:CAELY-WA": {
+      "s": true
+    },
+    "MYX:CAMRES": {
+      "s": true
+    },
+    "MYX:CANONE": {
+      "s": true
+    },
+    "MYX:CAREPLS": {
+      "s": true
+    },
+    "MYX:CARIMIN": {
+      "s": true
+    },
+    "MYX:CARING": {
+      "s": true
+    },
+    "MYX:CBIP": {
+      "s": true
+    },
+    "MYX:CCK": {
+      "s": true
+    },
+    "MYX:CCK-WA": {
+      "s": true
+    },
+    "MYX:CCM": {
+      "s": true
+    },
+    "MYX:CENSOF": {
+      "s": true
+    },
+    "MYX:CEPAT": {
+      "s": true
+    },
+    "MYX:CEPCO": {
+      "s": true
+    },
+    "MYX:CFM": {
+      "s": true
+    },
+    "MYX:CGB": {
+      "s": true
+    },
+    "MYX:CHEETAH": {
+      "s": true
+    },
+    "MYX:CHGP": {
+      "s": true
+    },
+    "MYX:CHGP-WA": {
+      "s": true
+    },
+    "MYX:CHHB": {
+      "s": true
+    },
+    "MYX:CHHB-WB": {
+      "s": true
+    },
+    "MYX:CHINHIN": {
+      "s": true
+    },
+    "MYX:CHINWEL": {
+      "s": true
+    },
+    "MYX:CHOOBEE": {
+      "s": true
+    },
+    "MYX:CHUAN": {
+      "s": true
+    },
+    "MYX:CJCEN": {
+      "s": true
+    },
+    "MYX:CLOUD": {
+      "s": true
+    },
+    "MYX:CME": {
+      "s": true
+    },
+    "MYX:CME-WA": {
+      "s": true
+    },
+    "MYX:CMSB": {
+      "s": true
+    },
+    "MYX:CNI": {
+      "s": true
+    },
+    "MYX:COCOLND": {
+      "s": true
+    },
+    "MYX:COMFORT": {
+      "s": true
+    },
+    "MYX:COMPLET": {
+      "s": true
+    },
+    "MYX:COMPUGT": {
+      "s": true
+    },
+    "MYX:CONNECT": {
+      "s": true
+    },
+    "MYX:CONNECT-WA": {
+      "s": true
+    },
+    "MYX:CONNECT-WB": {
+      "s": true
+    },
+    "MYX:CRESBLD": {
+      "s": true
+    },
+    "MYX:CRESNDO": {
+      "s": true
+    },
+    "MYX:CRG": {
+      "s": true
+    },
+    "MYX:CSCENIC": {
+      "s": true
+    },
+    "MYX:CSCSTEL": {
+      "s": true
+    },
+    "MYX:CVIEW": {
+      "s": true
+    },
+    "MYX:CWG": {
+      "s": true
+    },
+    "MYX:CYL": {
+      "s": true
+    },
+    "MYX:CYMAO": {
+      "s": true
+    },
+    "MYX:CYPARK": {
+      "s": true
+    },
+    "MYX:D&O": {
+      "s": true
+    },
+    "MYX:DAIBOCI": {
+      "s": true
+    },
+    "MYX:DAIBOCI-WB": {
+      "s": true
+    },
+    "MYX:DANCO": {
+      "s": true
+    },
+    "MYX:DANCO-WA": {
+      "s": true
+    },
+    "MYX:DATAPRP": {
+      "s": true
+    },
+    "MYX:DAYANG": {
+      "s": true
+    },
+    "MYX:DBE": {
+      "s": true
+    },
+    "MYX:DBE-WB": {
+      "s": true
+    },
+    "MYX:DBHD": {
+      "s": true
+    },
+    "MYX:DBHD-WA": {
+      "s": true
+    },
+    "MYX:DEGEM": {
+      "s": true
+    },
+    "MYX:DELEUM": {
+      "s": true
+    },
+    "MYX:DESTINI": {
+      "s": true
+    },
+    "MYX:DGB": {
+      "s": true
+    },
+    "MYX:DGB-WB": {
+      "s": true
+    },
+    "MYX:DGSB": {
+      "s": true
+    },
+    "MYX:DIALOG": {
+      "s": true
+    },
+    "MYX:DIGI": {
+      "s": true
+    },
+    "MYX:DIN040000223": {
+      "s": true
+    },
+    "MYX:DIN042300721": {
+      "s": true
+    },
+    "MYX:DIN045801028": {
+      "s": true
+    },
+    "MYX:DKLS": {
+      "s": true
+    },
+    "MYX:DKSH": {
+      "s": true
+    },
+    "MYX:DLADY": {
+      "s": true
+    },
+    "MYX:DNEX": {
+      "s": true
+    },
+    "MYX:DNEX-WD": {
+      "s": true
+    },
+    "MYX:DNONCE": {
+      "s": true
+    },
+    "MYX:DNONCE-WA": {
+      "s": true
+    },
+    "MYX:DOLPHIN": {
+      "s": true
+    },
+    "MYX:DOLPHIN-WA": {
+      "s": true
+    },
+    "MYX:DOMINAN": {
+      "s": true
+    },
+    "MYX:DOMINAN-WA": {
+      "s": true
+    },
+    "MYX:DPHARMA": {
+      "s": true
+    },
+    "MYX:DPS": {
+      "s": true
+    },
+    "MYX:DPS-WB": {
+      "s": true
+    },
+    "MYX:DRBHCOM": {
+      "s": true
+    },
+    "MYX:DSONIC": {
+      "s": true
+    },
+    "MYX:DSONIC-WA": {
+      "s": true
+    },
+    "MYX:DUFU": {
+      "s": true
+    },
+    "MYX:DWL": {
+      "s": true
+    },
+    "MYX:DWL-PA": {
+      "s": true
+    },
+    "MYX:DWL-WA": {
+      "s": true
+    },
+    "MYX:E&O": {
+      "s": true
+    },
+    "MYX:EASTLND": {
+      "s": true
+    },
+    "MYX:EATECH": {
+      "s": true
+    },
+    "MYX:ECOFIRS": {
+      "s": true
+    },
+    "MYX:ECOHLDS": {
+      "s": true
+    },
+    "MYX:ECONBHD": {
+      "s": true
+    },
+    "MYX:ECONBHD-WA": {
+      "s": true
+    },
+    "MYX:ECOWLD": {
+      "s": true
+    },
+    "MYX:ECOWLD-WA": {
+      "s": true
+    },
+    "MYX:EDARAN": {
+      "s": true
+    },
+    "MYX:EDGENTA": {
+      "s": true
+    },
+    "MYX:EDUSPEC": {
+      "s": true
+    },
+    "MYX:EDUSPEC-WB": {
+      "s": true
+    },
+    "MYX:EFORCE": {
+      "s": true
+    },
+    "MYX:EG": {
+      "s": true
+    },
+    "MYX:EG-WC": {
+      "s": true
+    },
+    "MYX:EIG": {
+      "s": true
+    },
+    "MYX:EITA": {
+      "s": true
+    },
+    "MYX:EKA": {
+      "s": true
+    },
+    "MYX:EKOVEST": {
+      "s": true
+    },
+    "MYX:ELSOFT": {
+      "s": true
+    },
+    "MYX:EMETALL": {
+      "s": true
+    },
+    "MYX:EMICO": {
+      "s": true
+    },
+    "MYX:ENGKAH": {
+      "s": true
+    },
+    "MYX:ENGTEX": {
+      "s": true
+    },
+    "MYX:ENRA": {
+      "s": true
+    },
+    "MYX:EPMB": {
+      "s": true
+    },
+    "MYX:ESAFE": {
+      "s": true
+    },
+    "MYX:EUPE": {
+      "s": true
+    },
+    "MYX:EURO": {
+      "s": true
+    },
+    "MYX:EUROSP": {
+      "s": true
+    },
+    "MYX:EVERGRN": {
+      "s": true
+    },
+    "MYX:EWEIN": {
+      "s": true
+    },
+    "MYX:EWEIN-WB": {
+      "s": true
+    },
+    "MYX:F&N": {
+      "s": true
+    },
+    "MYX:FAJAR": {
+      "s": true
+    },
+    "MYX:FAREAST": {
+      "s": true
+    },
+    "MYX:FAVCO": {
+      "s": true
+    },
+    "MYX:FBBHD": {
+      "s": true
+    },
+    "MYX:FGV": {
+      "s": true
+    },
+    "MYX:FIAMMA": {
+      "s": true
+    },
+    "MYX:FIHB": {
+      "s": true
+    },
+    "MYX:FIHB-PA": {
+      "s": true
+    },
+    "MYX:FIHB-PB": {
+      "s": true
+    },
+    "MYX:FIMACOR": {
+      "s": true
+    },
+    "MYX:FITTERS": {
+      "s": true
+    },
+    "MYX:FLBHD": {
+      "s": true
+    },
+    "MYX:FOCUSP": {
+      "s": true
+    },
+    "MYX:FPGROUP": {
+      "s": true
+    },
+    "MYX:FPI": {
+      "s": true
+    },
+    "MYX:FREIGHT": {
+      "s": true
+    },
+    "MYX:FRONTKN": {
+      "s": true
+    },
+    "MYX:GADANG": {
+      "s": true
+    },
+    "MYX:GADANG-WB": {
+      "s": true
+    },
+    "MYX:GAMUDA": {
+      "s": true
+    },
+    "MYX:GAMUDA-WE": {
+      "s": true
+    },
+    "MYX:GASMSIA": {
+      "s": true
+    },
+    "MYX:GBGAQRS": {
+      "s": true
+    },
+    "MYX:GBGAQRS-WB": {
+      "s": true
+    },
+    "MYX:GCB": {
+      "s": true
+    },
+    "MYX:GCB-WB": {
+      "s": true
+    },
+    "MYX:GDB": {
+      "s": true
+    },
+    "MYX:GDEX": {
+      "s": true
+    },
+    "MYX:GENETEC": {
+      "s": true
+    },
+    "MYX:GENP": {
+      "s": true
+    },
+    "MYX:GESHEN": {
+      "s": true
+    },
+    "MYX:GETS": {
+      "s": true
+    },
+    "MYX:GFM": {
+      "s": true
+    },
+    "MYX:GFM-WC": {
+      "s": true
+    },
+    "MYX:GHLSYS": {
+      "s": true
+    },
+    "MYX:GKENT": {
+      "s": true
+    },
+    "MYX:GLOMAC": {
+      "s": true
+    },
+    "MYX:GLOTEC": {
+      "s": true
+    },
+    "MYX:GLOTEC-WA": {
+      "s": true
+    },
+    "MYX:GMUTUAL": {
+      "s": true
+    },
+    "MYX:GNB": {
+      "s": true
+    },
+    "MYX:GOB": {
+      "s": true
+    },
+    "MYX:GOCEAN": {
+      "s": true
+    },
+    "MYX:GOLDETF": {
+      "s": true
+    },
+    "MYX:GOODWAY": {
+      "s": true
+    },
+    "MYX:GOPENG": {
+      "s": true
+    },
+    "MYX:GPHAROS": {
+      "s": true
+    },
+    "MYX:GRANFLO": {
+      "s": true
+    },
+    "MYX:GREATEC": {
+      "s": true
+    },
+    "MYX:GREENYB": {
+      "s": true
+    },
+    "MYX:GTRONIC": {
+      "s": true
+    },
+    "MYX:GUH": {
+      "s": true
+    },
+    "MYX:GUNUNG": {
+      "s": true
+    },
+    "MYX:GUNUNG-WB": {
+      "s": true
+    },
+    "MYX:HANDAL": {
+      "s": true
+    },
+    "MYX:HARBOUR": {
+      "s": true
+    },
+    "MYX:HARBOUR-WC": {
+      "s": true
+    },
+    "MYX:HARNLEN": {
+      "s": true
+    },
+    "MYX:HARNLEN-WB": {
+      "s": true
+    },
+    "MYX:HARTA": {
+      "s": true
+    },
+    "MYX:HENGYUAN": {
+      "s": true
+    },
+    "MYX:HEVEA": {
+      "s": true
+    },
+    "MYX:HEXTAR": {
+      "s": true
+    },
+    "MYX:HHGROUP": {
+      "s": true
+    },
+    "MYX:HHHCORP": {
+      "s": true
+    },
+    "MYX:HIAPTEK": {
+      "s": true
+    },
+    "MYX:HIAPTEK-LA": {
+      "s": true
+    },
+    "MYX:HIAPTEK-WB": {
+      "s": true
+    },
+    "MYX:HIBISCS": {
+      "s": true
+    },
+    "MYX:HIBISCS-WC": {
+      "s": true
+    },
+    "MYX:HIGHTEC": {
+      "s": true
+    },
+    "MYX:HIL": {
+      "s": true
+    },
+    "MYX:HIL-WB": {
+      "s": true
+    },
+    "MYX:HLIND": {
+      "s": true
+    },
+    "MYX:HLT": {
+      "s": true
+    },
+    "MYX:HLT-WA": {
+      "s": true
+    },
+    "MYX:HOHUP": {
+      "s": true
+    },
+    "MYX:HOKHENG": {
+      "s": true
+    },
+    "MYX:HOMERIZ": {
+      "s": true
+    },
+    "MYX:HOMERIZ-WA": {
+      "s": true
+    },
+    "MYX:HOMERIZ-WB": {
+      "s": true
+    },
+    "MYX:HOOVER": {
+      "s": true
+    },
+    "MYX:HPMT": {
+      "s": true
+    },
+    "MYX:HSL": {
+      "s": true
+    },
+    "MYX:HSPLANT": {
+      "s": true
+    },
+    "MYX:HSSEB": {
+      "s": true
+    },
+    "MYX:HSSEB-WA": {
+      "s": true
+    },
+    "MYX:HTPADU": {
+      "s": true
+    },
+    "MYX:HUAAN": {
+      "s": true
+    },
+    "MYX:HUAYANG": {
+      "s": true
+    },
+    "MYX:HUBLINE": {
+      "s": true
+    },
+    "MYX:HUBLINE-WB": {
+      "s": true
+    },
+    "MYX:HUBLINE-WC": {
+      "s": true
+    },
+    "MYX:HUPSENG": {
+      "s": true
+    },
+    "MYX:HWATAI": {
+      "s": true
+    },
+    "MYX:HWGB": {
+      "s": true
+    },
+    "MYX:HWGB-WD": {
+      "s": true
+    },
+    "MYX:IBHD": {
+      "s": true
+    },
+    "MYX:IBRACO": {
+      "s": true
+    },
+    "MYX:ICON": {
+      "s": true
+    },
+    "MYX:ICON-WA": {
+      "s": true
+    },
+    "MYX:ICONIC": {
+      "s": true
+    },
+    "MYX:IDEAL": {
+      "s": true
+    },
+    "MYX:IDEAL-WB": {
+      "s": true
+    },
+    "MYX:IDMENSN": {
+      "s": true
+    },
+    "MYX:IDMENSN-WA": {
+      "s": true
+    },
+    "MYX:IHH": {
+      "s": true
+    },
+    "MYX:IHS046000824": {
+      "s": true
+    },
+    "MYX:IJM": {
+      "s": true
+    },
+    "MYX:IKHMAS": {
+      "s": true
+    },
+    "MYX:IMASPRO": {
+      "s": true
+    },
+    "MYX:IMPIANA": {
+      "s": true
+    },
+    "MYX:INARI": {
+      "s": true
+    },
+    "MYX:INCKEN": {
+      "s": true
+    },
+    "MYX:INIX": {
+      "s": true
+    },
+    "MYX:INIX-WA": {
+      "s": true
+    },
+    "MYX:INNATURE": {
+      "s": true
+    },
+    "MYX:INNO": {
+      "s": true
+    },
+    "MYX:INTA": {
+      "s": true
+    },
+    "MYX:IOICORP": {
+      "s": true
+    },
+    "MYX:IOIPG": {
+      "s": true
+    },
+    "MYX:IPMUDA": {
+      "s": true
+    },
+    "MYX:IQGROUP": {
+      "s": true
+    },
+    "MYX:IQZAN": {
+      "s": true
+    },
+    "MYX:IREKA": {
+      "s": true
+    },
+    "MYX:IRIS": {
+      "s": true
+    },
+    "MYX:ISTONE": {
+      "s": true
+    },
+    "MYX:ITRONIC": {
+      "s": true
+    },
+    "MYX:IVORY": {
+      "s": true
+    },
+    "MYX:IWCITY": {
+      "s": true
+    },
+    "MYX:JADEM": {
+      "s": true
+    },
+    "MYX:JADI": {
+      "s": true
+    },
+    "MYX:JAG": {
+      "s": true
+    },
+    "MYX:JAG-WB": {
+      "s": true
+    },
+    "MYX:JAKS": {
+      "s": true
+    },
+    "MYX:JAKS-WB": {
+      "s": true
+    },
+    "MYX:JAYCORP": {
+      "s": true
+    },
+    "MYX:JCY": {
+      "s": true
+    },
+    "MYX:JETSON": {
+      "s": true
+    },
+    "MYX:JFTECH": {
+      "s": true
+    },
+    "MYX:JHM": {
+      "s": true
+    },
+    "MYX:JIANKUN": {
+      "s": true
+    },
+    "MYX:JIANKUN-WA": {
+      "s": true
+    },
+    "MYX:JKGLAND": {
+      "s": true
+    },
+    "MYX:JMEDU": {
+      "s": true
+    },
+    "MYX:JOHOTIN": {
+      "s": true
+    },
+    "MYX:JTIASA": {
+      "s": true
+    },
+    "MYX:K1": {
+      "s": true
+    },
+    "MYX:K1-WC": {
+      "s": true
+    },
+    "MYX:KAB": {
+      "s": true
+    },
+    "MYX:KAMDAR": {
+      "s": true
+    },
+    "MYX:KANGER": {
+      "s": true
+    },
+    "MYX:KANGER-WA": {
+      "s": true
+    },
+    "MYX:KARYON": {
+      "s": true
+    },
+    "MYX:KAWAN": {
+      "s": true
+    },
+    "MYX:KEINHIN": {
+      "s": true
+    },
+    "MYX:KEN": {
+      "s": true
+    },
+    "MYX:KERJAYA": {
+      "s": true
+    },
+    "MYX:KERJAYA-WB": {
+      "s": true
+    },
+    "MYX:KESM": {
+      "s": true
+    },
+    "MYX:KEYASIC": {
+      "s": true
+    },
+    "MYX:KFIMA": {
+      "s": true
+    },
+    "MYX:KGB": {
+      "s": true
+    },
+    "MYX:KGROUP": {
+      "s": true
+    },
+    "MYX:KGROUP-WB": {
+      "s": true
+    },
+    "MYX:KHEESAN": {
+      "s": true
+    },
+    "MYX:KHIND": {
+      "s": true
+    },
+    "MYX:KHJB": {
+      "s": true
+    },
+    "MYX:KIALIM": {
+      "s": true
+    },
+    "MYX:KIMHIN": {
+      "s": true
+    },
+    "MYX:KIMLUN": {
+      "s": true
+    },
+    "MYX:KIMLUN-WA": {
+      "s": true
+    },
+    "MYX:KKB": {
+      "s": true
+    },
+    "MYX:KLCC": {
+      "s": true
+    },
+    "MYX:KLK": {
+      "s": true
+    },
+    "MYX:KMLOONG": {
+      "s": true
+    },
+    "MYX:KMLOONG-WB": {
+      "s": true
+    },
+    "MYX:KNUSFOR": {
+      "s": true
+    },
+    "MYX:KOBAY": {
+      "s": true
+    },
+    "MYX:KOMARK": {
+      "s": true
+    },
+    "MYX:KOSSAN": {
+      "s": true
+    },
+    "MYX:KOTRA": {
+      "s": true
+    },
+    "MYX:KPJ": {
+      "s": true
+    },
+    "MYX:KPOWER": {
+      "s": true
+    },
+    "MYX:KPPROP": {
+      "s": true
+    },
+    "MYX:KPS": {
+      "s": true
+    },
+    "MYX:KPSCB": {
+      "s": true
+    },
+    "MYX:KRETAM": {
+      "s": true
+    },
+    "MYX:KRONO": {
+      "s": true
+    },
+    "MYX:KSL": {
+      "s": true
+    },
+    "MYX:KSSC": {
+      "s": true
+    },
+    "MYX:KTB": {
+      "s": true
+    },
+    "MYX:KUB": {
+      "s": true
+    },
+    "MYX:KWANTAS": {
+      "s": true
+    },
+    "MYX:KYM": {
+      "s": true
+    },
+    "MYX:L&G": {
+      "s": true
+    },
+    "MYX:LATITUD": {
+      "s": true
+    },
+    "MYX:LAYHONG": {
+      "s": true
+    },
+    "MYX:LAYHONG-WA": {
+      "s": true
+    },
+    "MYX:LBALUM": {
+      "s": true
+    },
+    "MYX:LBS": {
+      "s": true
+    },
+    "MYX:LBS-PA": {
+      "s": true
+    },
+    "MYX:LBS-WB": {
+      "s": true
+    },
+    "MYX:LCTITAN": {
+      "s": true
+    },
+    "MYX:LEBTECH": {
+      "s": true
+    },
+    "MYX:LEESK": {
+      "s": true
+    },
+    "MYX:LEWEKO": {
+      "s": true
+    },
+    "MYX:LEWEKO-WB": {
+      "s": true
+    },
+    "MYX:LFECORP": {
+      "s": true
+    },
+    "MYX:LIIHEN": {
+      "s": true
+    },
+    "MYX:LIONIND": {
+      "s": true
+    },
+    "MYX:LIONPSIM": {
+      "s": true
+    },
+    "MYX:LITRAK": {
+      "s": true
+    },
+    "MYX:LKL": {
+      "s": true
+    },
+    "MYX:LOTUS": {
+      "s": true
+    },
+    "MYX:LOTUS-WB": {
+      "s": true
+    },
+    "MYX:LTKM": {
+      "s": true
+    },
+    "MYX:LUXCHEM": {
+      "s": true
+    },
+    "MYX:LYC": {
+      "s": true
+    },
+    "MYX:M3TECH": {
+      "s": true
+    },
+    "MYX:MACPIE": {
+      "s": true
+    },
+    "MYX:MACPIE-WA": {
+      "s": true
+    },
+    "MYX:MAGNA": {
+      "s": true
+    },
+    "MYX:MAGNA-WB": {
+      "s": true
+    },
+    "MYX:MAGNI": {
+      "s": true
+    },
+    "MYX:MAHSING": {
+      "s": true
+    },
+    "MYX:MALAKOF": {
+      "s": true
+    },
+    "MYX:MALTON": {
+      "s": true
+    },
+    "MYX:MASTEEL": {
+      "s": true
+    },
+    "MYX:MASTER": {
+      "s": true
+    },
+    "MYX:MATRIX": {
+      "s": true
+    },
+    "MYX:MATRIX-WA": {
+      "s": true
+    },
+    "MYX:MAXIS": {
+      "s": true
+    },
+    "MYX:MBG": {
+      "s": true
+    },
+    "MYX:MBL": {
+      "s": true
+    },
+    "MYX:MBL-WA": {
+      "s": true
+    },
+    "MYX:MBMR": {
+      "s": true
+    },
+    "MYX:MBWORLD": {
+      "s": true
+    },
+    "MYX:MCEHLDG": {
+      "s": true
+    },
+    "MYX:MCEMENT": {
+      "s": true
+    },
+    "MYX:MCLEAN": {
+      "s": true
+    },
+    "MYX:MCLEAN-WB": {
+      "s": true
+    },
+    "MYX:MCOM": {
+      "s": true
+    },
+    "MYX:MCT": {
+      "s": true
+    },
+    "MYX:MEDIAC": {
+      "s": true
+    },
+    "MYX:MEGASUN": {
+      "s": true
+    },
+    "MYX:MELATI": {
+      "s": true
+    },
+    "MYX:MELEWAR": {
+      "s": true
+    },
+    "MYX:MELEWAR-WB": {
+      "s": true
+    },
+    "MYX:MENANG": {
+      "s": true
+    },
+    "MYX:MENTIGA": {
+      "s": true
+    },
+    "MYX:MERCURY": {
+      "s": true
+    },
+    "MYX:MERIDIAN": {
+      "s": true
+    },
+    "MYX:MERIDIAN-WA": {
+      "s": true
+    },
+    "MYX:MERIDIAN-WB": {
+      "s": true
+    },
+    "MYX:MERIDIAN-WC": {
+      "s": true
+    },
+    "MYX:MESB": {
+      "s": true
+    },
+    "MYX:MESB-WA": {
+      "s": true
+    },
+    "MYX:MESTRON": {
+      "s": true
+    },
+    "MYX:METFAPA": {
+      "s": true
+    },
+    "MYX:METFSID": {
+      "s": true
+    },
+    "MYX:METFUS50": {
+      "s": true
+    },
+    "MYX:MFCB": {
+      "s": true
+    },
+    "MYX:MFCB-WA": {
+      "s": true
+    },
+    "MYX:MFGROUP": {
+      "s": true
+    },
+    "MYX:MGB": {
+      "s": true
+    },
+    "MYX:MGRC": {
+      "s": true
+    },
+    "MYX:MHB": {
+      "s": true
+    },
+    "MYX:MHC": {
+      "s": true
+    },
+    "MYX:MHCARE": {
+      "s": true
+    },
+    "MYX:MI": {
+      "s": true
+    },
+    "MYX:MICROLN": {
+      "s": true
+    },
+    "MYX:MIECO": {
+      "s": true
+    },
+    "MYX:MIKROMB": {
+      "s": true
+    },
+    "MYX:MILUX": {
+      "s": true
+    },
+    "MYX:MINDA": {
+      "s": true
+    },
+    "MYX:MINETEC": {
+      "s": true
+    },
+    "MYX:MINHO": {
+      "s": true
+    },
+    "MYX:MINHO-WC": {
+      "s": true
+    },
+    "MYX:MISC": {
+      "s": true
+    },
+    "MYX:MITRA": {
+      "s": true
+    },
+    "MYX:MITRA-WD": {
+      "s": true
+    },
+    "MYX:MITRA-WE": {
+      "s": true
+    },
+    "MYX:MKH": {
+      "s": true
+    },
+    "MYX:MKLAND": {
+      "s": true
+    },
+    "MYX:MMAG": {
+      "s": true
+    },
+    "MYX:MMAG-WB": {
+      "s": true
+    },
+    "MYX:MMCCORP": {
+      "s": true
+    },
+    "MYX:MMSV": {
+      "s": true
+    },
+    "MYX:MPI": {
+      "s": true
+    },
+    "MYX:MQTECH": {
+      "s": true
+    },
+    "MYX:MQTECH-WA": {
+      "s": true
+    },
+    "MYX:MRCB": {
+      "s": true
+    },
+    "MYX:MRCB-WB": {
+      "s": true
+    },
+    "MYX:MSC": {
+      "s": true
+    },
+    "MYX:MSM": {
+      "s": true
+    },
+    "MYX:MSNIAGA": {
+      "s": true
+    },
+    "MYX:MTAG": {
+      "s": true
+    },
+    "MYX:MTDACPI": {
+      "s": true
+    },
+    "MYX:MTRONIC": {
+      "s": true
+    },
+    "MYX:MTRONIC-WA": {
+      "s": true
+    },
+    "MYX:MUDA": {
+      "s": true
+    },
+    "MYX:MUH": {
+      "s": true
+    },
+    "MYX:MUHIBAH": {
+      "s": true
+    },
+    "MYX:MUIPROP": {
+      "s": true
+    },
+    "MYX:MYCRON": {
+      "s": true
+    },
+    "MYX:MYCRON-WA": {
+      "s": true
+    },
+    "MYX:MYEG": {
+      "s": true
+    },
+    "MYX:MYETFDJ": {
+      "s": true
+    },
+    "MYX:MYETFID": {
+      "s": true
+    },
+    "MYX:MYSCM": {
+      "s": true
+    },
+    "MYX:MYSCM-WA": {
+      "s": true
+    },
+    "MYX:N2N": {
+      "s": true
+    },
+    "MYX:N2N-WB": {
+      "s": true
+    },
+    "MYX:NADIBHD": {
+      "s": true
+    },
+    "MYX:NAIM": {
+      "s": true
+    },
+    "MYX:NATWIDE": {
+      "s": true
+    },
+    "MYX:NESTLE": {
+      "s": true
+    },
+    "MYX:NEXGRAM": {
+      "s": true
+    },
+    "MYX:NEXGRAM-WA": {
+      "s": true
+    },
+    "MYX:NEXGRAM-WB": {
+      "s": true
+    },
+    "MYX:NEXGRAM-WC": {
+      "s": true
+    },
+    "MYX:NGGB": {
+      "s": true
+    },
+    "MYX:NGGB-WA": {
+      "s": true
+    },
+    "MYX:NHFATT": {
+      "s": true
+    },
+    "MYX:NICE": {
+      "s": true
+    },
+    "MYX:NICE-WB": {
+      "s": true
+    },
+    "MYX:NIHSIN": {
+      "s": true
+    },
+    "MYX:NIHSIN-WB": {
+      "s": true
+    },
+    "MYX:NOTION": {
+      "s": true
+    },
+    "MYX:NOTION-WC": {
+      "s": true
+    },
+    "MYX:NOVA": {
+      "s": true
+    },
+    "MYX:NOVAMSC": {
+      "s": true
+    },
+    "MYX:NPC": {
+      "s": true
+    },
+    "MYX:NPS": {
+      "s": true
+    },
+    "MYX:NTPM": {
+      "s": true
+    },
+    "MYX:NWP": {
+      "s": true
+    },
+    "MYX:NYLEX": {
+      "s": true
+    },
+    "MYX:OCB": {
+      "s": true
+    },
+    "MYX:OCNCASH": {
+      "s": true
+    },
+    "MYX:OCR": {
+      "s": true
+    },
+    "MYX:OCR-PA": {
+      "s": true
+    },
+    "MYX:OCR-WC": {
+      "s": true
+    },
+    "MYX:OCR-WD": {
+      "s": true
+    },
+    "MYX:OFI": {
+      "s": true
+    },
+    "MYX:OIB": {
+      "s": true
+    },
+    "MYX:OKA": {
+      "s": true
+    },
+    "MYX:OMESTI": {
+      "s": true
+    },
+    "MYX:OPCOM": {
+      "s": true
+    },
+    "MYX:OPENSYS": {
+      "s": true
+    },
+    "MYX:ORION": {
+      "s": true
+    },
+    "MYX:ORION-WA": {
+      "s": true
+    },
+    "MYX:ORNA": {
+      "s": true
+    },
+    "MYX:PA": {
+      "s": true
+    },
+    "MYX:PA-WB": {
+      "s": true
+    },
+    "MYX:PADINI": {
+      "s": true
+    },
+    "MYX:PANSAR": {
+      "s": true
+    },
+    "MYX:PANSAR-WA": {
+      "s": true
+    },
+    "MYX:PANTECH": {
+      "s": true
+    },
+    "MYX:PANTECH-WA": {
+      "s": true
+    },
+    "MYX:PANTECH-WB": {
+      "s": true
+    },
+    "MYX:PAOS": {
+      "s": true
+    },
+    "MYX:PAOS-WA": {
+      "s": true
+    },
+    "MYX:PARAGON": {
+      "s": true
+    },
+    "MYX:PARAMON": {
+      "s": true
+    },
+    "MYX:PARAMON-WA": {
+      "s": true
+    },
+    "MYX:PARKSON": {
+      "s": true
+    },
+    "MYX:PARLO": {
+      "s": true
+    },
+    "MYX:PASDEC": {
+      "s": true
+    },
+    "MYX:PASDEC-WA": {
+      "s": true
+    },
+    "MYX:PASUKGB": {
+      "s": true
+    },
+    "MYX:PBA": {
+      "s": true
+    },
+    "MYX:PCCS": {
+      "s": true
+    },
+    "MYX:PCCS-WA": {
+      "s": true
+    },
+    "MYX:PCHEM": {
+      "s": true
+    },
+    "MYX:PDZ": {
+      "s": true
+    },
+    "MYX:PDZ-WB": {
+      "s": true
+    },
+    "MYX:PEB": {
+      "s": true
+    },
+    "MYX:PECCA": {
+      "s": true
+    },
+    "MYX:PELIKAN": {
+      "s": true
+    },
+    "MYX:PENERGY": {
+      "s": true
+    },
+    "MYX:PERDANA": {
+      "s": true
+    },
+    "MYX:PERMAJU": {
+      "s": true
+    },
+    "MYX:PERSTIM": {
+      "s": true
+    },
+    "MYX:PESONA": {
+      "s": true
+    },
+    "MYX:PESTECH": {
+      "s": true
+    },
+    "MYX:PETDAG": {
+      "s": true
+    },
+    "MYX:PETGAS": {
+      "s": true
+    },
+    "MYX:PETRONM": {
+      "s": true
+    },
+    "MYX:PGLOBE": {
+      "s": true
+    },
+    "MYX:PGLOBE-WA": {
+      "s": true
+    },
+    "MYX:PHARMA": {
+      "s": true
+    },
+    "MYX:PHB": {
+      "s": true
+    },
+    "MYX:PHB-WB": {
+      "s": true
+    },
+    "MYX:PICORP": {
+      "s": true
+    },
+    "MYX:PIE": {
+      "s": true
+    },
+    "MYX:PINEAPP": {
+      "s": true
+    },
+    "MYX:PINEPAC": {
+      "s": true
+    },
+    "MYX:PJBUMI": {
+      "s": true
+    },
+    "MYX:PJBUMI-WA": {
+      "s": true
+    },
+    "MYX:PLS": {
+      "s": true
+    },
+    "MYX:PLS-WA": {
+      "s": true
+    },
+    "MYX:PMBTECH": {
+      "s": true
+    },
+    "MYX:PMBTECH-WA": {
+      "s": true
+    },
+    "MYX:PMCORP": {
+      "s": true
+    },
+    "MYX:PMETAL": {
+      "s": true
+    },
+    "MYX:PMHLDG": {
+      "s": true
+    },
+    "MYX:PNEPCB": {
+      "s": true
+    },
+    "MYX:PNEPCB-WA": {
+      "s": true
+    },
+    "MYX:POHKONG": {
+      "s": true
+    },
+    "MYX:POHUAT": {
+      "s": true
+    },
+    "MYX:POHUAT-WB": {
+      "s": true
+    },
+    "MYX:POLY": {
+      "s": true
+    },
+    "MYX:POLYMER": {
+      "s": true
+    },
+    "MYX:POS": {
+      "s": true
+    },
+    "MYX:PPB": {
+      "s": true
+    },
+    "MYX:PPG": {
+      "s": true
+    },
+    "MYX:PPHB": {
+      "s": true
+    },
+    "MYX:PRESBHD": {
+      "s": true
+    },
+    "MYX:PRESTAR": {
+      "s": true
+    },
+    "MYX:PRG": {
+      "s": true
+    },
+    "MYX:PRIVA": {
+      "s": true
+    },
+    "MYX:PRLEXUS": {
+      "s": true
+    },
+    "MYX:PRLEXUS-WA": {
+      "s": true
+    },
+    "MYX:PRTASCO": {
+      "s": true
+    },
+    "MYX:PRTASCO-WA": {
+      "s": true
+    },
+    "MYX:PTARAS": {
+      "s": true
+    },
+    "MYX:PTB": {
+      "s": true
+    },
+    "MYX:PTRANS": {
+      "s": true
+    },
+    "MYX:PTRANS-WA": {
+      "s": true
+    },
+    "MYX:PUC": {
+      "s": true
+    },
+    "MYX:PUC-WA": {
+      "s": true
+    },
+    "MYX:PUNCAK": {
+      "s": true
+    },
+    "MYX:PWF": {
+      "s": true
+    },
+    "MYX:PWF-WA": {
+      "s": true
+    },
+    "MYX:PWORTH": {
+      "s": true
+    },
+    "MYX:PWROOT": {
+      "s": true
+    },
+    "MYX:PWROOT-WA": {
+      "s": true
+    },
+    "MYX:QES": {
+      "s": true
+    },
+    "MYX:QL": {
+      "s": true
+    },
+    "MYX:QUALITY": {
+      "s": true
+    },
+    "MYX:RALCO": {
+      "s": true
+    },
+    "MYX:RANHILL": {
+      "s": true
+    },
+    "MYX:REACH": {
+      "s": true
+    },
+    "MYX:REACH-WA": {
+      "s": true
+    },
+    "MYX:RESINTC": {
+      "s": true
+    },
+    "MYX:REVENUE": {
+      "s": true
+    },
+    "MYX:REVENUE-WA": {
+      "s": true
+    },
+    "MYX:REX": {
+      "s": true
+    },
+    "MYX:RGTBHD": {
+      "s": true
+    },
+    "MYX:RGTBHD-WB": {
+      "s": true
+    },
+    "MYX:RGTECH": {
+      "s": true
+    },
+    "MYX:ROHAS": {
+      "s": true
+    },
+    "MYX:RSAWIT": {
+      "s": true
+    },
+    "MYX:RUBEREX": {
+      "s": true
+    },
+    "MYX:RVIEW": {
+      "s": true
+    },
+    "MYX:SAB": {
+      "s": true
+    },
+    "MYX:SALCON": {
+      "s": true
+    },
+    "MYX:SALCON-WB": {
+      "s": true
+    },
+    "MYX:SALUTE": {
+      "s": true
+    },
+    "MYX:SAM": {
+      "s": true
+    },
+    "MYX:SAPIND": {
+      "s": true
+    },
+    "MYX:SAPNRG": {
+      "s": true
+    },
+    "MYX:SAPNRG-PA": {
+      "s": true
+    },
+    "MYX:SAPNRG-WA": {
+      "s": true
+    },
+    "MYX:SAPRES": {
+      "s": true
+    },
+    "MYX:SASBADI": {
+      "s": true
+    },
+    "MYX:SAUDEE": {
+      "s": true
+    },
+    "MYX:SAUDEE-WA": {
+      "s": true
+    },
+    "MYX:SBCCORP": {
+      "s": true
+    },
+    "MYX:SCABLE": {
+      "s": true
+    },
+    "MYX:SCBUILD": {
+      "s": true
+    },
+    "MYX:SCGM": {
+      "s": true
+    },
+    "MYX:SCGM-WA": {
+      "s": true
+    },
+    "MYX:SCIB": {
+      "s": true
+    },
+    "MYX:SCIENTX": {
+      "s": true
+    },
+    "MYX:SCNWOLF": {
+      "s": true
+    },
+    "MYX:SCOMI": {
+      "s": true
+    },
+    "MYX:SCOMI-WB": {
+      "s": true
+    },
+    "MYX:SCOMIES": {
+      "s": true
+    },
+    "MYX:SCOMNET": {
+      "s": true
+    },
+    "MYX:SCOMNET-WA": {
+      "s": true
+    },
+    "MYX:SCOPE": {
+      "s": true
+    },
+    "MYX:SCOPE-WA": {
+      "s": true
+    },
+    "MYX:SDRED": {
+      "s": true
+    },
+    "MYX:SDS": {
+      "s": true
+    },
+    "MYX:SEACERA": {
+      "s": true
+    },
+    "MYX:SEACERA-WC": {
+      "s": true
+    },
+    "MYX:SEAL": {
+      "s": true
+    },
+    "MYX:SEALINK": {
+      "s": true
+    },
+    "MYX:SEDANIA": {
+      "s": true
+    },
+    "MYX:SEEHUP": {
+      "s": true
+    },
+    "MYX:SEERS": {
+      "s": true
+    },
+    "MYX:SEG": {
+      "s": true
+    },
+    "MYX:SENDAI": {
+      "s": true
+    },
+    "MYX:SERBADK": {
+      "s": true
+    },
+    "MYX:SERBADK-WA": {
+      "s": true
+    },
+    "MYX:SERNKOU": {
+      "s": true
+    },
+    "MYX:SERNKOU-WA": {
+      "s": true
+    },
+    "MYX:SERSOL": {
+      "s": true
+    },
+    "MYX:SERSOL-WA": {
+      "s": true
+    },
+    "MYX:SHCHAN": {
+      "s": true
+    },
+    "MYX:SHH": {
+      "s": true
+    },
+    "MYX:SHL": {
+      "s": true
+    },
+    "MYX:SIGGAS": {
+      "s": true
+    },
+    "MYX:SIGN": {
+      "s": true
+    },
+    "MYX:SIGN-WA": {
+      "s": true
+    },
+    "MYX:SIME": {
+      "s": true
+    },
+    "MYX:SIMEPLT": {
+      "s": true
+    },
+    "MYX:SIMEPROP": {
+      "s": true
+    },
+    "MYX:SINOTOP": {
+      "s": true
+    },
+    "MYX:SJC": {
+      "s": true
+    },
+    "MYX:SKBSHUT": {
+      "s": true
+    },
+    "MYX:SKPRES": {
+      "s": true
+    },
+    "MYX:SLIC": {
+      "s": true
+    },
+    "MYX:SLP": {
+      "s": true
+    },
+    "MYX:SLVEST": {
+      "s": true
+    },
+    "MYX:SMCAP": {
+      "s": true
+    },
+    "MYX:SMCAP-WC": {
+      "s": true
+    },
+    "MYX:SMI": {
+      "s": true
+    },
+    "MYX:SMILE": {
+      "s": true
+    },
+    "MYX:SMISCOR": {
+      "s": true
+    },
+    "MYX:SMRT": {
+      "s": true
+    },
+    "MYX:SMTRACK": {
+      "s": true
+    },
+    "MYX:SNC": {
+      "s": true
+    },
+    "MYX:SNTORIA": {
+      "s": true
+    },
+    "MYX:SNTORIA-WB": {
+      "s": true
+    },
+    "MYX:SOLID": {
+      "s": true
+    },
+    "MYX:SOLID-WA": {
+      "s": true
+    },
+    "MYX:SOP": {
+      "s": true
+    },
+    "MYX:SPRING": {
+      "s": true
+    },
+    "MYX:SPRITZER": {
+      "s": true
+    },
+    "MYX:SPSETIA": {
+      "s": true
+    },
+    "MYX:SPSETIA-PA": {
+      "s": true
+    },
+    "MYX:SPSETIA-PB": {
+      "s": true
+    },
+    "MYX:SRIDGE": {
+      "s": true
+    },
+    "MYX:SRIDGE-WA": {
+      "s": true
+    },
+    "MYX:STAR": {
+      "s": true
+    },
+    "MYX:STELLA": {
+      "s": true
+    },
+    "MYX:STRAITS": {
+      "s": true
+    },
+    "MYX:STRAITS-WA": {
+      "s": true
+    },
+    "MYX:SUBUR": {
+      "s": true
+    },
+    "MYX:SUCCESS": {
+      "s": true
+    },
+    "MYX:SUMATEC": {
+      "s": true
+    },
+    "MYX:SUMATEC-WA": {
+      "s": true
+    },
+    "MYX:SUNCON": {
+      "s": true
+    },
+    "MYX:SUNSURIA": {
+      "s": true
+    },
+    "MYX:SUNSURIA-WA": {
+      "s": true
+    },
+    "MYX:SUNWAY": {
+      "s": true
+    },
+    "MYX:SUNWAY-WB": {
+      "s": true
+    },
+    "MYX:SUPERLN": {
+      "s": true
+    },
+    "MYX:SUPERMX": {
+      "s": true
+    },
+    "MYX:SUPREME": {
+      "s": true
+    },
+    "MYX:SURIA": {
+      "s": true
+    },
+    "MYX:SWKPLNT": {
+      "s": true
+    },
+    "MYX:SWSCAP": {
+      "s": true
+    },
+    "MYX:SWSCAP-WB": {
+      "s": true
+    },
+    "MYX:SYF": {
+      "s": true
+    },
+    "MYX:SYMLIFE": {
+      "s": true
+    },
+    "MYX:SYMLIFE-WB": {
+      "s": true
+    },
+    "MYX:SYSCORP": {
+      "s": true
+    },
+    "MYX:SYSTECH": {
+      "s": true
+    },
+    "MYX:T7GLOBAL": {
+      "s": true
+    },
+    "MYX:TAANN": {
+      "s": true
+    },
+    "MYX:TADMAX": {
+      "s": true
+    },
+    "MYX:TAFI": {
+      "s": true
+    },
+    "MYX:TAKAFUL": {
+      "s": true
+    },
+    "MYX:TALAMT": {
+      "s": true
+    },
+    "MYX:TALIWRK": {
+      "s": true
+    },
+    "MYX:TAMBUN": {
+      "s": true
+    },
+    "MYX:TANCO": {
+      "s": true
+    },
+    "MYX:TANCO-WB": {
+      "s": true
+    },
+    "MYX:TAS": {
+      "s": true
+    },
+    "MYX:TASEK": {
+      "s": true
+    },
+    "MYX:TASHIN": {
+      "s": true
+    },
+    "MYX:TDEX": {
+      "s": true
+    },
+    "MYX:TECFAST": {
+      "s": true
+    },
+    "MYX:TECHBND": {
+      "s": true
+    },
+    "MYX:TECHBND-WA": {
+      "s": true
+    },
+    "MYX:TEKSENG": {
+      "s": true
+    },
+    "MYX:TENAGA": {
+      "s": true
+    },
+    "MYX:TEOSENG": {
+      "s": true
+    },
+    "MYX:TEXCYCL": {
+      "s": true
+    },
+    "MYX:TFP": {
+      "s": true
+    },
+    "MYX:TGL": {
+      "s": true
+    },
+    "MYX:TGUAN": {
+      "s": true
+    },
+    "MYX:THETA": {
+      "s": true
+    },
+    "MYX:THHEAVY": {
+      "s": true
+    },
+    "MYX:THHEAVY-PB": {
+      "s": true
+    },
+    "MYX:THPLANT": {
+      "s": true
+    },
+    "MYX:THRIVEN": {
+      "s": true
+    },
+    "MYX:THRIVEN-WB": {
+      "s": true
+    },
+    "MYX:TIGER": {
+      "s": true
+    },
+    "MYX:TIGER-WC": {
+      "s": true
+    },
+    "MYX:TIMECOM": {
+      "s": true
+    },
+    "MYX:TIMWELL": {
+      "s": true
+    },
+    "MYX:TITIJYA": {
+      "s": true
+    },
+    "MYX:TITIJYA-PA": {
+      "s": true
+    },
+    "MYX:TM": {
+      "s": true
+    },
+    "MYX:TNLOGIS": {
+      "s": true
+    },
+    "MYX:TOCEAN": {
+      "s": true
+    },
+    "MYX:TOMYPAK": {
+      "s": true
+    },
+    "MYX:TOMYPAK-WA": {
+      "s": true
+    },
+    "MYX:TONGHER": {
+      "s": true
+    },
+    "MYX:TOPGLOV": {
+      "s": true
+    },
+    "MYX:TOYOINK": {
+      "s": true
+    },
+    "MYX:TOYOINK-WB": {
+      "s": true
+    },
+    "MYX:TPC": {
+      "s": true
+    },
+    "MYX:TPC-WA": {
+      "s": true
+    },
+    "MYX:TRC": {
+      "s": true
+    },
+    "MYX:TRIMODE": {
+      "s": true
+    },
+    "MYX:TRIVE": {
+      "s": true
+    },
+    "MYX:TRIVE-WB": {
+      "s": true
+    },
+    "MYX:TROP": {
+      "s": true
+    },
+    "MYX:TSH": {
+      "s": true
+    },
+    "MYX:TSRCAP": {
+      "s": true
+    },
+    "MYX:TSRCAP-WB": {
+      "s": true
+    },
+    "MYX:TTV": {
+      "s": true
+    },
+    "MYX:TURIYA": {
+      "s": true
+    },
+    "MYX:UCHITEC": {
+      "s": true
+    },
+    "MYX:UCREST": {
+      "s": true
+    },
+    "MYX:UEMS": {
+      "s": true
+    },
+    "MYX:ULICORP": {
+      "s": true
+    },
+    "MYX:UMCCA": {
+      "s": true
+    },
+    "MYX:UMS": {
+      "s": true
+    },
+    "MYX:UMSNGB": {
+      "s": true
+    },
+    "MYX:UMW": {
+      "s": true
+    },
+    "MYX:UNIMECH": {
+      "s": true
+    },
+    "MYX:UNISEM": {
+      "s": true
+    },
+    "MYX:UNIWALL": {
+      "s": true
+    },
+    "MYX:UOADEV": {
+      "s": true
+    },
+    "MYX:UPA": {
+      "s": true
+    },
+    "MYX:UTDPLT": {
+      "s": true
+    },
+    "MYX:UWC": {
+      "s": true
+    },
+    "MYX:UZMA": {
+      "s": true
+    },
+    "MYX:VC": {
+      "s": true
+    },
+    "MYX:VC-WB": {
+      "s": true
+    },
+    "MYX:VELESTO": {
+      "s": true
+    },
+    "MYX:VELESTO-WA": {
+      "s": true
+    },
+    "MYX:VERSATL": {
+      "s": true
+    },
+    "MYX:VERTICE": {
+      "s": true
+    },
+    "MYX:VERTICE-WA": {
+      "s": true
+    },
+    "MYX:VIS": {
+      "s": true
+    },
+    "MYX:VIS-WB": {
+      "s": true
+    },
+    "MYX:VITROX": {
+      "s": true
+    },
+    "MYX:VIVOCOM": {
+      "s": true
+    },
+    "MYX:VIVOCOM-WD": {
+      "s": true
+    },
+    "MYX:VIVOCOM-WE": {
+      "s": true
+    },
+    "MYX:VIZIONE": {
+      "s": true
+    },
+    "MYX:VIZIONE-WC": {
+      "s": true
+    },
+    "MYX:VS": {
+      "s": true
+    },
+    "MYX:VSOLAR": {
+      "s": true
+    },
+    "MYX:VSTECS": {
+      "s": true
+    },
+    "MYX:WASEONG": {
+      "s": true
+    },
+    "MYX:WATTA": {
+      "s": true
+    },
+    "MYX:WCT": {
+      "s": true
+    },
+    "MYX:WCT-WE": {
+      "s": true
+    },
+    "MYX:WEGMANS": {
+      "s": true
+    },
+    "MYX:WEGMANS-WA": {
+      "s": true
+    },
+    "MYX:WELLCAL": {
+      "s": true
+    },
+    "MYX:WIDAD": {
+      "s": true
+    },
+    "MYX:WIDAD-WA": {
+      "s": true
+    },
+    "MYX:WMG": {
+      "s": true
+    },
+    "MYX:WONG": {
+      "s": true
+    },
+    "MYX:WOODLAN": {
+      "s": true
+    },
+    "MYX:WPRTS": {
+      "s": true
+    },
+    "MYX:WTHORSE": {
+      "s": true
+    },
+    "MYX:WTK": {
+      "s": true
+    },
+    "MYX:WZSATU": {
+      "s": true
+    },
+    "MYX:WZSATU-WA": {
+      "s": true
+    },
+    "MYX:XIANLNG": {
+      "s": true
+    },
+    "MYX:XINHWA": {
+      "s": true
+    },
+    "MYX:XOX": {
+      "s": true
+    },
+    "MYX:XOX-WB": {
+      "s": true
+    },
+    "MYX:Y&G": {
+      "s": true
+    },
+    "MYX:YBS": {
+      "s": true
+    },
+    "MYX:YEELEE": {
+      "s": true
+    },
+    "MYX:YGL": {
+      "s": true
+    },
+    "MYX:YILAI": {
+      "s": true
+    },
+    "MYX:YINSON": {
+      "s": true
+    },
+    "MYX:YLI": {
+      "s": true
+    },
+    "MYX:YNHPROP": {
+      "s": true
+    },
+    "MYX:YOCB": {
+      "s": true
+    },
+    "MYX:YONGTAI": {
+      "s": true
+    },
+    "MYX:YONGTAI-PA": {
+      "s": true
+    },
+    "MYX:YONGTAI-WA": {
+      "s": true
+    },
+    "MYX:YSPSAH": {
+      "s": true
+    },
+    "MYX:ZECON": {
+      "s": true
+    },
+    "MYX:ZELAN": {
+      "s": true
+    },
+    "MYX:ZHULIAN": {
+      "s": true
+    }
+  }
 }

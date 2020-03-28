@@ -1,3 +1,6 @@
+/* global extensionName attributeName */
+/* global lookForShariah addStaticSyariahIcon addStyle isSyariahIconExist deleteSyariahIcon createIcon */
+
 const ONLY_VALID_COUNTRIES = ['my']
 const checkBoxAttribute = `${ attributeName }-filter-checkbox`
 const checkBoxExtension = `${ attributeName }-filter-checkbox`
@@ -5,7 +8,6 @@ const syariahIconAttribute = `${ attributeName }-filter-icon`
 const syariahIconValue = `${ extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
-let SYARIAH_COMPLIANCE_LIST = {}
 let onlyFilterSyariahStocks = false
 
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
@@ -15,18 +17,15 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-async function receiveSignalFromBgScript({ list }) {
+async function receiveSignalFromBgScript() {
   try {
     const {
       [`${ extensionName }`]: {
         onlyFilterSyariahStocks: bool,
-      } = {
-        onlyFilterSyariahStocks: false,  // default value
       },
     } = await browser.storage.local.get(extensionName)
 
     onlyFilterSyariahStocks = bool
-    SYARIAH_COMPLIANCE_LIST = list
 
     // waiting for table to fully rendered
     const tempTimeout = setTimeout(() => {
@@ -94,8 +93,7 @@ function setupFilterSyariahBtn() {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-
-        const isSyariah = SYARIAH_COMPLIANCE_LIST[rowSymbol]
+        const { s: isSyariah } = lookForShariah(rowSymbol)
 
         if (onlyFilterSyariahStocks) {
           if (isSyariah) {
@@ -157,7 +155,8 @@ function observedTableChanges() {
 
     Array.from(mutation.target.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const isSyariah = SYARIAH_COMPLIANCE_LIST[rowSymbol]
+
+      const { s: isSyariah } = lookForShariah(rowSymbol)
 
       if (isSyariah) {
         const dom = tr.querySelector('.tv-screener-table__symbol-right-part')
@@ -187,7 +186,7 @@ function observedCountryFlagChanges() {
 
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
-  observer = new MutationObserver(_ => {
+  observer = new MutationObserver(() => {
     const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`)
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
 

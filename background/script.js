@@ -1,15 +1,30 @@
-let SYARIAH_COMPLIANCE_LIST = []
+const extensionName = 'tradingview-syariah-indicator'
 
-fetch('/background/stock-list.json')
+fetch('https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/background/stock-list.json')
   .then(i => i.json())
-  .then(list => SYARIAH_COMPLIANCE_LIST = list)
+  .then(async list => {
+    await browser.storage.local.set({
+      [`${ extensionName }`]: {
+        SYARIAH_COMPLIANCE_LIST: list,
+      },
+    })
+
+  })
   .catch(e => console.error('Something when wrong', e))
 
-browser.tabs.onUpdated.addListener(listener)
+browser.tabs.onUpdated.addListener(listener);
 
-function listener(id) {
+async function listener(id) {
   try {
-    browser.tabs.sendMessage(id, {list: SYARIAH_COMPLIANCE_LIST})
+    const {
+      [`${ extensionName }`]: {
+        SYARIAH_COMPLIANCE_LIST,
+      } = {
+        SYARIAH_COMPLIANCE_LIST: {},  // default value
+      },
+    } = await browser.storage.local.get(extensionName)
+
+    browser.tabs.sendMessage(id, { list: SYARIAH_COMPLIANCE_LIST })
   } catch (e) {
     console.error('Error Send message', e)
   }
