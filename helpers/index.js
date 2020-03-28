@@ -9,15 +9,10 @@ const TRADING_VIEW_MYR = 'MYX'
 const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
 
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('SCREENER: Registered listener')
-  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
-}
-
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-function receiveSignalFromBgScript({ list, updatedAt }) {
-  othersInfo = { updatedAt }
+function receiveSignalFromBgScript({ OTHER_INFORMATION, SYARIAH_COMPLIANCE_LIST: list }) {
+  othersInfo = { ...OTHER_INFORMATION }
   SYARIAH_COMPLIANCE_LIST = list
 }
 
