@@ -1,9 +1,31 @@
-/* exported isSyariahIconExist deleteSyariahIcon createIcon addStaticSyariahIcon addStyle TRADING_VIEW_MYR */
+/* exported lookForShariah isSyariahIconExist deleteSyariahIcon createIcon addStaticSyariahIcon addStyle TRADING_VIEW_MYR */
 
+// eslint-disable-next-line no-unused-vars
+let othersInfo = {}
+let SYARIAH_COMPLIANCE_LIST = {}
+
+const parser = new DOMParser()
 const TRADING_VIEW_MYR = 'MYX'
 const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
-const parser = new DOMParser()
+
+if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
+  console.log('SCREENER: Registered listener')
+  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
+}
+
+browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
+
+function receiveSignalFromBgScript({ list, updatedAt }) {
+  othersInfo = { updatedAt }
+  SYARIAH_COMPLIANCE_LIST = list
+}
+
+function lookForShariah(currentSymbol) {
+  return `${ currentSymbol }` in SYARIAH_COMPLIANCE_LIST
+    ? SYARIAH_COMPLIANCE_LIST[currentSymbol]
+    : { s: false } // default for non-shariah
+}
 
 function isSyariahIconExist(element) {
   return element.querySelector(`[${ attributeName }="${ extensionName }"]`)

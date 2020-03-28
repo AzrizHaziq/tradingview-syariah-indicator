@@ -1,4 +1,4 @@
-/* global addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
+/* global lookForShariah addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
 
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SYMBOLS: Registered listener')
@@ -11,13 +11,13 @@ addStaticSyariahIcon()
 
 function getSymbol() {
   return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol')
+    .getAttribute('data-symbol').trim()
 }
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const isSyariah = SYARIAH_COMPLIANCE_LIST[`${ getSymbol() }`]
+function receiveSignalFromBgScript() {
+  const { s: isShariah } = lookForShariah(getSymbol())
 
-  if (isSyariah) {
+  if (isShariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
     const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
 

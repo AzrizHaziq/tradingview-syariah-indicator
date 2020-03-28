@@ -1,5 +1,5 @@
-/* global addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
 /* global TRADING_VIEW_MYR */
+/* global lookForShariah addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
 
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('CHART: Registered listener')
@@ -12,19 +12,19 @@ addStaticSyariahIcon()
 
 function getSymbolsFromTitle() {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+(-\w+)?/.exec(domTittleName)[0]  // also cover syntax like warrant
+  return /\w+(-\w+)?/.exec(domTittleName)[0].trim()  // also cover syntax like warrant
 }
 
-function receiveSignalFromBgScript({ list: SYARIAH_COMPLIANCE_LIST }) {
-  const isSyariah = SYARIAH_COMPLIANCE_LIST[`${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`]
+function receiveSignalFromBgScript() {
+  const { s: isShariah } = lookForShariah(`${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
-  if (!isSyariah) {
+  if (!isShariah) {
     // didnt found symbol within malaysian stocks
     deleteSyariahIcon()
     return
   }
 
-  if (isSyariah) {
+  if (isShariah) {
     const element = document.querySelector('[data-name="legend-source-title"]')
 
     // if icon already exist dont do anything
