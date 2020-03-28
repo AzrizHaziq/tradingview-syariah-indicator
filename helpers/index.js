@@ -33,7 +33,7 @@ function createIcon({ width, height } = { width: 25, height: 25 }) {
 function addStaticSyariahIcon() {
   // only add icon if static icon is not existed yet in DOM
   if (document.body.querySelector(`[${ attributeName }="root-${ extensionName }]`)) {
-    return ;
+    return
   }
 
   const rootIcon = `

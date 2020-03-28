@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "tradingview-syariah-indicator",
   "version": "1.0.2",
   "description": "Trading view syariah indicator, currently only cover Malaysian stocks",
@@ -23,6 +24,7 @@
   "author": "Azriz Haziq <azrizhaziq@gmail.com> (https://azrizhaziq.github.io/portfolio)",
   "license": "ISC",
   "devDependencies": {
+    "cli-progress": "^3.6.0",
     "playwright": "^0.11.1",
     "web-ext": "^4.1.0",
     "webextension-polyfill": "^0.6.0"
