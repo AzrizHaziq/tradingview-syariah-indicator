@@ -1,3 +1,6 @@
+/* global addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
+/* global TRADING_VIEW_MYR */
+
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('CHART: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)

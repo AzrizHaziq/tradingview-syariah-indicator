@@ -1,3 +1,6 @@
+/* global addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
+/* global extensionName attributeName */
+
 const ONLY_VALID_COUNTRIES = ['my']
 const checkBoxAttribute = `${ attributeName }-filter-checkbox`
 const checkBoxExtension = `${ attributeName }-filter-checkbox`
@@ -187,7 +190,7 @@ function observedCountryFlagChanges() {
 
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
-  observer = new MutationObserver(_ => {
+  observer = new MutationObserver(() => {
     const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`)
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
 

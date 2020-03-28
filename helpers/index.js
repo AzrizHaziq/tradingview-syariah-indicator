@@ -1,3 +1,5 @@
+/* exported isSyariahIconExist deleteSyariahIcon createIcon addStaticSyariahIcon addStyle TRADING_VIEW_MYR */
+
 const TRADING_VIEW_MYR = 'MYX'
 const attributeName = 'data-indicator'
 const extensionName = 'tradingview-syariah-indicator'
