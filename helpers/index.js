@@ -1,7 +1,5 @@
 /* exported lookForShariah isSyariahIconExist deleteSyariahIcon createIcon addStaticSyariahIcon addStyle TRADING_VIEW_MYR */
 
-// eslint-disable-next-line no-unused-vars
-let othersInfo = {}
 let SYARIAH_COMPLIANCE_LIST = {}
 
 const parser = new DOMParser()
@@ -11,8 +9,7 @@ const extensionName = 'tradingview-syariah-indicator'
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-function receiveSignalFromBgScript({ OTHER_INFORMATION, SYARIAH_COMPLIANCE_LIST: list }) {
-  othersInfo = { ...OTHER_INFORMATION }
+function receiveSignalFromBgScript({ list }) {
   SYARIAH_COMPLIANCE_LIST = list
 }
 

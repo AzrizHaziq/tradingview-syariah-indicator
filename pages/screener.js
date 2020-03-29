@@ -8,24 +8,14 @@ const syariahIconAttribute = `${ attributeName }-filter-icon`
 const syariahIconValue = `${ extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
-let onlyFilterSyariahStocks = false
-
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('SCREENER: Registered listener')
-  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
-}
+let onlyFilterShariah = false
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
 async function receiveSignalFromBgScript() {
   try {
-    const {
-      [`${ extensionName }`]: {
-        onlyFilterSyariahStocks: bool,
-      },
-    } = await browser.storage.local.get(extensionName)
-
-    onlyFilterSyariahStocks = bool
+    const { ONLY_FILTER_SHARIAH: bool } = (await browser.storage.local.get('ONLY_FILTER_SHARIAH'))
+    onlyFilterShariah = bool
 
     // waiting for table to fully rendered
     const tempTimeout = setTimeout(() => {
@@ -58,13 +48,11 @@ function setupFilterSyariahBtn() {
     }
   `)
 
-  const refreshDomeNode = document.querySelector('.tv-screener-toolbar__button--refresh')
-
   // create a checkbox filter btn
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
   checkbox.style.display = 'none'
-  checkbox.checked = onlyFilterSyariahStocks
+  checkbox.checked = onlyFilterShariah
   checkbox.setAttribute('id', uniqueKey)
 
   // create a filter btn
@@ -73,21 +61,17 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.style.display = 'flex'
   syariahFilterNode.style.alignItems = 'center'
   syariahFilterNode.style.justifyContent = 'center'
-  syariahFilterNode.className = refreshDomeNode.className
   syariahFilterNode.setAttribute('for', uniqueKey)
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
-  syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
+  syariahFilterNode.title = onlyFilterShariah ? 'Syariah: ON' : 'Syariah: OFF'
 
   checkbox.addEventListener('change', async function (e) {
     try {
-      onlyFilterSyariahStocks = e.target.checked
-      await browser.storage.local.set({
-        [`${ extensionName }`]: {
-          onlyFilterSyariahStocks: e.target.checked,
-        },
-      })
+      onlyFilterShariah = e.target.checked
 
-      syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
+      await browser.storage.local.set({ 'ONLY_FILTER_SHARIAH': e.target.checked })
+
+      syariahFilterNode.title = onlyFilterShariah ? 'Syariah: ON' : 'Syariah: OFF'
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
@@ -95,7 +79,7 @@ function setupFilterSyariahBtn() {
         const rowSymbol = tr.getAttribute('data-symbol')
         const { s: isSyariah } = lookForShariah(rowSymbol)
 
-        if (onlyFilterSyariahStocks) {
+        if (onlyFilterShariah) {
           if (isSyariah) {
             // if it is syariah compliance  don't do anything
           } else {
@@ -111,12 +95,20 @@ function setupFilterSyariahBtn() {
     }
   })
 
+  // shariah icon
   const icon = createIcon({ width: 17, height: 17 })
+  icon.style.cursor = 'pointer';
   icon.removeAttribute(attributeName)
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
+  // div wrapper
+  const div = document.createElement('div')
+  div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
+
   syariahFilterNode.prepend(icon)
-  refreshDomeNode.parentElement.prepend(checkbox, syariahFilterNode)
+  div.prepend(checkbox, syariahFilterNode)
+
+  document.querySelector('.tv-screener-toolbar').prepend(div)
 
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
     syariahFilterNode.style.display = 'none'
@@ -166,7 +158,7 @@ function observedTableChanges() {
           const domToBeAdded = tr.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
           domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
         }
-      } else if (onlyFilterSyariahStocks) {
+      } else if (onlyFilterShariah) {
         tr.style.display = 'none'
       }
     })
