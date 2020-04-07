@@ -1,4 +1,4 @@
-browser.tabs.onUpdated.addListener(listener)
+browser.tabs.onUpdated.addListener(debounce(listener))
 
 const fetchData = async () => {
   try {
@@ -13,7 +13,12 @@ async function listener(id) {
   try {
     const { LAST_FETCH_AT } = (await browser.storage.local.get('LAST_FETCH_AT'))
 
-    if (LAST_FETCH_AT) {
+    const currentDate = new Date()
+    const lastFetchAt = new Date(LAST_FETCH_AT)
+
+    const shouldUseCacheValue = dateDiffInDays(currentDate, lastFetchAt) >= 0
+
+    if (shouldUseCacheValue) {
       console.log('Cache >>>')
       const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
       browser.tabs.sendMessage(id, { list: SHARIAH_LIST })
@@ -33,3 +38,43 @@ async function listener(id) {
   }
 }
 
+/**
+ * 0 = same date
+ * +ve = a < b
+ * -ve, a > b
+ *
+ * @param a {Date}
+ * @param b {Date}
+ * @returns {number}
+ */
+function dateDiffInDays(a, b) {
+  const _MS_PER_DAY = 1000 * 60 * 60 * 24
+
+  // Discard the time and time-zone information.
+  const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())
+  const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())
+
+  return Math.floor((utc2 - utc1) / _MS_PER_DAY)
+}
+
+function debounce(func, wait, immediate) {
+  let timeout
+
+  return function executedFunction() {
+    const context = this
+    const args = arguments
+
+    const later = function () {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+
+    const callNow = immediate && !timeout
+
+    clearTimeout(timeout)
+
+    timeout = setTimeout(later, wait = 500)
+
+    if (callNow) func.apply(context, args)
+  }
+}
