@@ -179,11 +179,11 @@ function observedCountryFlagChanges() {
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
   observer = new MutationObserver(() => {
-    const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`)
+    const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`).parentElement
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
 
     if (isCountriesExisted) {
-      filterBtnNode.style.display = 'flex'
+      filterBtnNode.style.display = 'block'
     } else {
       filterBtnNode.style.display = 'none'
     }
