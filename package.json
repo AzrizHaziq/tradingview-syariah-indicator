@@ -2,7 +2,7 @@
   "type": "module",
   "name": "tradingview-syariah-indicator",
   "version": "1.0.2",
-  "description": "Trading view syariah indicator, currently only cover Malaysian stocks",
+  "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
   "scripts": {
     "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-FRONTKN/",

@@ -1,14 +1,16 @@
 {
   "manifest_version": 2,
   "version": "1.0.2",
-  "name": "tradingview-syariah-indicator",
-  "description": "Add small shariah indicator to stock list in tradingview(MY)",
+  "default_locale": "en",
+  "name": "__MSG_ext_extension_name__",
+  "description": "__MSG_ext_extension_description__",
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
   "background": {
     "scripts": [
       "browser-polyfill.js",
       "background/script.js"
-    ]
+    ],
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -55,5 +57,14 @@
   "developer": {
     "name": "Azriz Haziq Jasni",
     "url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator"
+  },
+  "browser_action": {
+    "default_title": "__MSG_ext_extension_name__",
+    "browser_style": true,
+    "default_icon": {
+      "16": "./assets/syariah-icon-16.png",
+      "48": "./assets/syariah-icon-48.png"
+    },
+    "default_popup": "popup/popup.html"
   }
 }
