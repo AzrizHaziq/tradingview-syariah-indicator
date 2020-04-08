@@ -66,9 +66,24 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.style.display = 'flex'
   syariahFilterNode.style.alignItems = 'center'
   syariahFilterNode.style.justifyContent = 'center'
-  syariahFilterNode.title = shariahStatus[`${onlyFilterShariah}`]
   syariahFilterNode.setAttribute('for', uniqueKey)
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
+
+  // shariah icon
+  const icon = createIcon({ width: 17, height: 17 })
+  icon.style.cursor = 'pointer';
+  icon.removeAttribute(attributeName)
+  icon.setAttribute(syariahIconAttribute, syariahIconValue)
+
+  // div wrapper
+  const div = document.createElement('div')
+  div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
+  div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
+
+  syariahFilterNode.prepend(icon)
+  div.prepend(checkbox, syariahFilterNode)
+
+  document.querySelector('.tv-screener-toolbar').prepend(div)
 
   checkbox.addEventListener('change', async function (e) {
     try {
@@ -76,7 +91,7 @@ function setupFilterSyariahBtn() {
 
       await browser.storage.local.set({ 'ONLY_FILTER_SHARIAH': e.target.checked })
 
-      syariahFilterNode.title = shariahStatus[`${onlyFilterShariah}`];
+      div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
@@ -99,21 +114,6 @@ function setupFilterSyariahBtn() {
       console.error('Error set localStorage', e)
     }
   })
-
-  // shariah icon
-  const icon = createIcon({ width: 17, height: 17 })
-  icon.style.cursor = 'pointer';
-  icon.removeAttribute(attributeName)
-  icon.setAttribute(syariahIconAttribute, syariahIconValue)
-
-  // div wrapper
-  const div = document.createElement('div')
-  div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
-
-  syariahFilterNode.prepend(icon)
-  div.prepend(checkbox, syariahFilterNode)
-
-  document.querySelector('.tv-screener-toolbar').prepend(div)
 
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
     div.style.display = 'none'

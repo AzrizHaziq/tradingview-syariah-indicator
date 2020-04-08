@@ -14,7 +14,9 @@ async function listener(id) {
     const { LAST_FETCH_AT } = (await browser.storage.local.get('LAST_FETCH_AT'))
 
     const currentDate = new Date()
-    const lastFetchAt = new Date(LAST_FETCH_AT)
+    const lastFetchAt = isValidDate(LAST_FETCH_AT)
+      ? new Date(LAST_FETCH_AT)
+      : new Date()
 
     const shouldUseCacheValue = dateDiffInDays(currentDate, lastFetchAt) >= 0
 
@@ -28,7 +30,7 @@ async function listener(id) {
 
       await browser.storage.local.set({ 'UPDATED_AT': updatedAt, })
       await browser.storage.local.set({ 'SHARIAH_LIST': list, })
-      await browser.storage.local.set({ 'LAST_FETCH_AT': new Date() })
+      await browser.storage.local.set({ 'LAST_FETCH_AT': new Date().toString() })
 
       browser.tabs.sendMessage(id, { list })
     }
@@ -77,4 +79,9 @@ function debounce(func, wait, immediate) {
 
     if (callNow) func.apply(context, args)
   }
+}
+
+function isValidDate(d) {
+  d = new Date();
+  return d instanceof Date && !isNaN(d);
 }
