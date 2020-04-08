@@ -8,6 +8,11 @@ const syariahIconAttribute = `${ attributeName }-filter-icon`
 const syariahIconValue = `${ extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
+const shariahStatus = {
+  true: browser.i18n.getMessage("js_screener_filter_btn_shariah_on"),
+  false: browser.i18n.getMessage("js_screener_filter_btn_shariah_off"),
+}
+
 let onlyFilterShariah = false
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
@@ -15,7 +20,7 @@ browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 async function receiveSignalFromBgScript() {
   try {
     const { ONLY_FILTER_SHARIAH: bool } = (await browser.storage.local.get('ONLY_FILTER_SHARIAH'))
-    onlyFilterShariah = bool
+    onlyFilterShariah = bool || false
 
     // waiting for table to fully rendered
     const tempTimeout = setTimeout(() => {
@@ -61,9 +66,9 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.style.display = 'flex'
   syariahFilterNode.style.alignItems = 'center'
   syariahFilterNode.style.justifyContent = 'center'
+  syariahFilterNode.title = shariahStatus[`${onlyFilterShariah}`]
   syariahFilterNode.setAttribute('for', uniqueKey)
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
-  syariahFilterNode.title = onlyFilterShariah ? 'Syariah: ON' : 'Syariah: OFF'
 
   checkbox.addEventListener('change', async function (e) {
     try {
@@ -71,7 +76,7 @@ function setupFilterSyariahBtn() {
 
       await browser.storage.local.set({ 'ONLY_FILTER_SHARIAH': e.target.checked })
 
-      syariahFilterNode.title = onlyFilterShariah ? 'Syariah: ON' : 'Syariah: OFF'
+      syariahFilterNode.title = shariahStatus[`${onlyFilterShariah}`];
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
@@ -111,7 +116,7 @@ function setupFilterSyariahBtn() {
   document.querySelector('.tv-screener-toolbar').prepend(div)
 
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-    syariahFilterNode.style.display = 'none'
+    div.style.display = 'none'
   }
 }
 
@@ -153,7 +158,7 @@ function observedTableChanges() {
       if (isSyariah) {
         const dom = tr.querySelector('.tv-screener-table__symbol-right-part')
         if (isSyariahIconExist(dom)) {
-          // if icon already exist dont do anything
+          // if icon already exist don't do anything
         } else {
           const domToBeAdded = tr.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
           domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
@@ -179,13 +184,13 @@ function observedCountryFlagChanges() {
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
   observer = new MutationObserver(() => {
-    const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`).parentElement
+    const filterBtnDiv = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`).parentElement
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
 
     if (isCountriesExisted) {
-      filterBtnNode.style.display = 'block'
+      filterBtnDiv.style.display = 'block'
     } else {
-      filterBtnNode.style.display = 'none'
+      filterBtnDiv.style.display = 'none'
     }
   })
 
