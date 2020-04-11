@@ -1,11 +1,10 @@
-/* global extensionName attributeName */
-/* global lookForShariah addStaticSyariahIcon addStyle isSyariahIconExist deleteSyariahIcon createIcon */
+/* global tsi */
 
 const ONLY_VALID_COUNTRIES = ['my']
-const checkBoxAttribute = `${ attributeName }-filter-checkbox`
-const checkBoxExtension = `${ attributeName }-filter-checkbox`
-const syariahIconAttribute = `${ attributeName }-filter-icon`
-const syariahIconValue = `${ extensionName }-filter-icon`
+const checkBoxAttribute = `${ tsi.attributeName }-filter-checkbox`
+const checkBoxExtension = `${ tsi.attributeName }-filter-checkbox`
+const syariahIconAttribute = `${ tsi.attributeName }-filter-icon`
+const syariahIconValue = `${ tsi.extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
 const shariahStatus = {
@@ -24,7 +23,7 @@ async function receiveSignalFromBgScript() {
 
     // waiting for table to fully rendered
     const tempTimeout = setTimeout(() => {
-      addStaticSyariahIcon()
+      tsi.addStaticSyariahIcon()
       observedTableChanges()
       setupFilterSyariahBtn()
       observedCountryFlagChanges()
@@ -43,7 +42,7 @@ function setupFilterSyariahBtn() {
     return
   }
 
-  addStyle(`
+  tsi.addStyle(`
     [${ checkBoxAttribute }=${ checkBoxExtension }] svg {
      opacity: 0.4;
     }
@@ -70,9 +69,9 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
 
   // shariah icon
-  const icon = createIcon({ width: 17, height: 17 })
+  const icon = tsi.createIcon({ width: 17, height: 17 })
   icon.style.cursor = 'pointer';
-  icon.removeAttribute(attributeName)
+  icon.removeAttribute(tsi.attributeName)
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
   // div wrapper
@@ -97,7 +96,7 @@ function setupFilterSyariahBtn() {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah } = lookForShariah(rowSymbol)
+        const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
 
         if (onlyFilterShariah) {
           if (isSyariah) {
@@ -128,7 +127,7 @@ function forceMutationChanges() {
     fakeDiv.remove()
 
     // assume that if  more than X number of syariah icon, then stop mutating dom
-    if (document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).length > 10) {
+    if (document.querySelectorAll(`[${ tsi.attributeName }="${ tsi.extensionName }"]`).length > 10) {
       clearInterval(tempInterval)
     }
   }, 200)
@@ -146,22 +145,22 @@ function observedTableChanges() {
 
   observer = new MutationObserver(([mutation]) => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-      deleteSyariahIcon()
+      tsi.deleteSyariahIcon()
       return
     }
 
     Array.from(mutation.target.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
 
-      const { s: isSyariah } = lookForShariah(rowSymbol)
+      const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
 
       if (isSyariah) {
         const dom = tr.querySelector('.tv-screener-table__symbol-right-part')
-        if (isSyariahIconExist(dom)) {
+        if (tsi.isSyariahIconExist(dom)) {
           // if icon already exist don't do anything
         } else {
           const domToBeAdded = tr.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
-          domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
+          domToBeAdded.insertAdjacentElement('afterend', tsi.createIcon({ width: 10, height: 10 }))
         }
       } else if (onlyFilterShariah) {
         tr.style.display = 'none'

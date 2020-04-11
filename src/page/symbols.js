@@ -1,5 +1,4 @@
-/* global lookForShariah addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
-
+/* global tsi */
 if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
   console.log('SYMBOLS: Registered listener')
   browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
@@ -7,7 +6,7 @@ if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-addStaticSyariahIcon()
+tsi.addStaticSyariahIcon()
 
 function getSymbol() {
   return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
@@ -15,16 +14,16 @@ function getSymbol() {
 }
 
 function receiveSignalFromBgScript() {
-  const { s: isShariah } = lookForShariah(getSymbol())
+  const { s: isShariah } = tsi.lookForShariah(getSymbol())
 
   if (isShariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
     const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
 
-    if (isSyariahIconExist(smallResoDom)) {
+    if (tsi.isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
-      const icon = createIcon()
+      const icon = tsi.createIcon()
       icon.style.marginLeft = '5px'
       icon.style.display = 'inline'
       icon.style.position = 'relative'
@@ -33,15 +32,15 @@ function receiveSignalFromBgScript() {
       smallResoDom.insertAdjacentElement('beforeend', icon)
     }
 
-    if (isSyariahIconExist(largeResoDom.parentElement)) {
+    if (tsi.isSyariahIconExist(largeResoDom.parentElement)) {
       // if icon already exist dont do anything
     } else {
-      const icon = createIcon({ width: 15, height: 15 })
+      const icon = tsi.createIcon({ width: 15, height: 15 })
       icon.style.marginLeft = '5px'
       largeResoDom.insertAdjacentElement('afterend', icon)
     }
 
   } else {
-    deleteSyariahIcon()
+    tsi.deleteSyariahIcon()
   }
 }

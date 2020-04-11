@@ -7,8 +7,9 @@
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
   "background": {
     "scripts": [
-      "browser-polyfill.js",
-      "background/script.js"
+      "src/browser-polyfill.js",
+      "src/helper.js",
+      "src/bg.js"
     ],
     "persistent": true
   },
@@ -18,9 +19,9 @@
         "*://*.tradingview.com/chart/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/chart.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/chart.js"
       ]
     },
     {
@@ -28,9 +29,9 @@
         "*://*.tradingview.com/screener/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/screener.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/screener.js"
       ]
     },
     {
@@ -38,9 +39,9 @@
         "*://*.tradingview.com/symbols/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/symbols.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/symbols.js"
       ]
     }
   ],
@@ -65,6 +66,7 @@
       "16": "./assets/shariah-icon-16.png",
       "48": "./assets/shariah-icon-48.png"
     },
-    "default_popup": "popup/popup.html"
-  }
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com/analytics.js; img-src 'self'; style-src 'self'; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json; object-src 'self'; default-src 'self'"
 }
