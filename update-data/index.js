@@ -4,7 +4,6 @@ import cliProgress from 'cli-progress'
 
 const TRADING_VIEW_MYR = 'MYX'
 const STOCK_LIST_FILENAME = 'stock-list.json'
-const SAVE_STOCK_PATH = `background/${ STOCK_LIST_FILENAME }`
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
@@ -83,14 +82,14 @@ function merged(SYARIAH_LIST) {
 
 async function writeToFile(data) {
   try {
-    fs.writeFileSync(SAVE_STOCK_PATH, JSON.stringify(data, null, 2), { encoding: 'utf-8' }, function (err) {
+    fs.writeFileSync(STOCK_LIST_FILENAME, JSON.stringify(data, null, 2), { encoding: 'utf-8' }, function (err) {
       if (err) {
         console.log(err)
         throw Error(`Unable to write to file ${ STOCK_LIST_FILENAME }`)
       }
     })
 
-    console.log(`Saved in: ${ SAVE_STOCK_PATH }`)
+    console.log(`Saved in: ${ STOCK_LIST_FILENAME }`)
   } catch (e) {
     console.error('Error write data', e)
     process.exit(1)

@@ -1,9 +1,11 @@
 /*global tsi */
-browser.tabs.onUpdated.addListener(tsi.debounce(listener))
+browser.tabs.onUpdated.addListener(tsi.debounce(listener, 1000, true))
 
 const fetchData = async () => {
+  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+
   try {
-    const res = await fetch('https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json')
+    const res = await fetch(jsonUrl)
     return await res.json()
   } catch (e) {
     console.error('Github json when wrong', e)
