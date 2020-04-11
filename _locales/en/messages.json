@@ -1,0 +1,10 @@
+{
+  "ext_extension_name": { "message": "Tradingview Shariah Indicator" },
+  "ext_extension_description": { "message": "Display small shariah indicator to stock list in tradingview(MY)" },
+  "js_screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
+  "js_screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
+  "js_popup_version": { "message": "version" },
+  "js_popup_email_me": { "message": "Email me" },
+  "js_popup_github_repo": { "message": "Github repository" },
+  "js_popup_my_updated_at": { "message": "\uD83C\uDDF2\uD83C\uDDFE updated at" }
+}

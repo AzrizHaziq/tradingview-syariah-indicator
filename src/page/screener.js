@@ -1,35 +1,29 @@
-/* global extensionName attributeName */
-/* global lookForShariah addStaticSyariahIcon addStyle isSyariahIconExist deleteSyariahIcon createIcon */
+/* global tsi */
 
 const ONLY_VALID_COUNTRIES = ['my']
-const checkBoxAttribute = `${ attributeName }-filter-checkbox`
-const checkBoxExtension = `${ attributeName }-filter-checkbox`
-const syariahIconAttribute = `${ attributeName }-filter-icon`
-const syariahIconValue = `${ extensionName }-filter-icon`
+const checkBoxAttribute = `${ tsi.attributeName }-filter-checkbox`
+const checkBoxExtension = `${ tsi.attributeName }-filter-checkbox`
+const syariahIconAttribute = `${ tsi.attributeName }-filter-icon`
+const syariahIconValue = `${ tsi.extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
-let onlyFilterSyariahStocks = false
-
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('SCREENER: Registered listener')
-  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
+const shariahStatus = {
+  true: browser.i18n.getMessage("js_screener_filter_btn_shariah_on"),
+  false: browser.i18n.getMessage("js_screener_filter_btn_shariah_off"),
 }
+
+let onlyFilterShariah = false
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
 async function receiveSignalFromBgScript() {
   try {
-    const {
-      [`${ extensionName }`]: {
-        onlyFilterSyariahStocks: bool,
-      },
-    } = await browser.storage.local.get(extensionName)
-
-    onlyFilterSyariahStocks = bool
+    const { ONLY_FILTER_SHARIAH: bool } = (await browser.storage.local.get('ONLY_FILTER_SHARIAH'))
+    onlyFilterShariah = bool || false
 
     // waiting for table to fully rendered
     const tempTimeout = setTimeout(() => {
-      addStaticSyariahIcon()
+      tsi.addStaticSyariahIcon()
       observedTableChanges()
       setupFilterSyariahBtn()
       observedCountryFlagChanges()
@@ -48,7 +42,7 @@ function setupFilterSyariahBtn() {
     return
   }
 
-  addStyle(`
+  tsi.addStyle(`
     [${ checkBoxAttribute }=${ checkBoxExtension }] svg {
      opacity: 0.4;
     }
@@ -58,13 +52,11 @@ function setupFilterSyariahBtn() {
     }
   `)
 
-  const refreshDomeNode = document.querySelector('.tv-screener-toolbar__button--refresh')
-
   // create a checkbox filter btn
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
   checkbox.style.display = 'none'
-  checkbox.checked = onlyFilterSyariahStocks
+  checkbox.checked = onlyFilterShariah
   checkbox.setAttribute('id', uniqueKey)
 
   // create a filter btn
@@ -73,29 +65,40 @@ function setupFilterSyariahBtn() {
   syariahFilterNode.style.display = 'flex'
   syariahFilterNode.style.alignItems = 'center'
   syariahFilterNode.style.justifyContent = 'center'
-  syariahFilterNode.className = refreshDomeNode.className
   syariahFilterNode.setAttribute('for', uniqueKey)
   syariahFilterNode.setAttribute(checkBoxAttribute, checkBoxExtension)
-  syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
+
+  // shariah icon
+  const icon = tsi.createIcon({ width: 17, height: 17 })
+  icon.style.cursor = 'pointer';
+  icon.removeAttribute(tsi.attributeName)
+  icon.setAttribute(syariahIconAttribute, syariahIconValue)
+
+  // div wrapper
+  const div = document.createElement('div')
+  div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
+  div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
+
+  syariahFilterNode.prepend(icon)
+  div.prepend(checkbox, syariahFilterNode)
+
+  document.querySelector('.tv-screener-toolbar').prepend(div)
 
   checkbox.addEventListener('change', async function (e) {
     try {
-      onlyFilterSyariahStocks = e.target.checked
-      await browser.storage.local.set({
-        [`${ extensionName }`]: {
-          onlyFilterSyariahStocks: e.target.checked,
-        },
-      })
+      onlyFilterShariah = e.target.checked
 
-      syariahFilterNode.title = onlyFilterSyariahStocks ? 'Syariah: ON' : 'Syariah: OFF'
+      await browser.storage.local.set({ 'ONLY_FILTER_SHARIAH': e.target.checked })
+
+      div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah } = lookForShariah(rowSymbol)
+        const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
 
-        if (onlyFilterSyariahStocks) {
+        if (onlyFilterShariah) {
           if (isSyariah) {
             // if it is syariah compliance  don't do anything
           } else {
@@ -111,15 +114,8 @@ function setupFilterSyariahBtn() {
     }
   })
 
-  const icon = createIcon({ width: 17, height: 17 })
-  icon.removeAttribute(attributeName)
-  icon.setAttribute(syariahIconAttribute, syariahIconValue)
-
-  syariahFilterNode.prepend(icon)
-  refreshDomeNode.parentElement.prepend(checkbox, syariahFilterNode)
-
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-    syariahFilterNode.style.display = 'none'
+    div.style.display = 'none'
   }
 }
 
@@ -131,7 +127,7 @@ function forceMutationChanges() {
     fakeDiv.remove()
 
     // assume that if  more than X number of syariah icon, then stop mutating dom
-    if (document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).length > 10) {
+    if (document.querySelectorAll(`[${ tsi.attributeName }="${ tsi.extensionName }"]`).length > 10) {
       clearInterval(tempInterval)
     }
   }, 200)
@@ -149,24 +145,24 @@ function observedTableChanges() {
 
   observer = new MutationObserver(([mutation]) => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-      deleteSyariahIcon()
+      tsi.deleteSyariahIcon()
       return
     }
 
     Array.from(mutation.target.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
 
-      const { s: isSyariah } = lookForShariah(rowSymbol)
+      const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
 
       if (isSyariah) {
         const dom = tr.querySelector('.tv-screener-table__symbol-right-part')
-        if (isSyariahIconExist(dom)) {
-          // if icon already exist dont do anything
+        if (tsi.isSyariahIconExist(dom)) {
+          // if icon already exist don't do anything
         } else {
           const domToBeAdded = tr.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
-          domToBeAdded.insertAdjacentElement('afterend', createIcon({ width: 10, height: 10 }))
+          domToBeAdded.insertAdjacentElement('afterend', tsi.createIcon({ width: 10, height: 10 }))
         }
-      } else if (onlyFilterSyariahStocks) {
+      } else if (onlyFilterShariah) {
         tr.style.display = 'none'
       }
     })
@@ -187,13 +183,13 @@ function observedCountryFlagChanges() {
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
   observer = new MutationObserver(() => {
-    const filterBtnNode = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`)
+    const filterBtnDiv = document.querySelector(`label[${ checkBoxAttribute }=${ checkBoxExtension }]`).parentElement
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
 
     if (isCountriesExisted) {
-      filterBtnNode.style.display = 'flex'
+      filterBtnDiv.style.display = 'block'
     } else {
-      filterBtnNode.style.display = 'none'
+      filterBtnDiv.style.display = 'none'
     }
   })
 

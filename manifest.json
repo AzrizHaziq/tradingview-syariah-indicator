@@ -1,14 +1,17 @@
 {
   "manifest_version": 2,
   "version": "1.0.2",
-  "name": "tradingview-syariah-indicator",
-  "description": "Add small shariah indicator to stock list in tradingview(MY)",
+  "default_locale": "en",
+  "name": "__MSG_ext_extension_name__",
+  "description": "__MSG_ext_extension_description__",
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
   "background": {
     "scripts": [
-      "browser-polyfill.js",
-      "background/script.js"
-    ]
+      "src/browser-polyfill.js",
+      "src/helper.js",
+      "src/bg.js"
+    ],
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -16,9 +19,9 @@
         "*://*.tradingview.com/chart/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/chart.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/chart.js"
       ]
     },
     {
@@ -26,9 +29,9 @@
         "*://*.tradingview.com/screener/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/screener.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/screener.js"
       ]
     },
     {
@@ -36,9 +39,9 @@
         "*://*.tradingview.com/symbols/*"
       ],
       "js": [
-        "browser-polyfill.js",
-        "helpers/index.js",
-        "pages/symbols.js"
+        "src/browser-polyfill.js",
+        "src/helper.js",
+        "src/page/symbols.js"
       ]
     }
   ],
@@ -48,12 +51,22 @@
     "*://*.tradingview.com/*"
   ],
   "icons": {
-    "16": "./assets/syariah-icon-16.png",
-    "48": "./assets/syariah-icon-48.png",
-    "128": "./assets/syariah-icon-128.png"
+    "16": "./assets/shariah-icon-16.png",
+    "48": "./assets/shariah-icon-48.png",
+    "128": "./assets/shariah-icon-128.png"
   },
   "developer": {
     "name": "Azriz Haziq Jasni",
     "url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator"
-  }
+  },
+  "browser_action": {
+    "default_title": "__MSG_ext_extension_name__",
+    "browser_style": true,
+    "default_icon": {
+      "16": "./assets/shariah-icon-16.png",
+      "48": "./assets/shariah-icon-48.png"
+    },
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com/analytics.js; img-src 'self'; style-src 'self'; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json; object-src 'self'; default-src 'self'"
 }

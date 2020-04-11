@@ -1,14 +1,8 @@
-/* global TRADING_VIEW_MYR */
-/* global lookForShariah addStaticSyariahIcon isSyariahIconExist deleteSyariahIcon createIcon */
-
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('CHART: Registered listener')
-  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
-}
+/* global tsi */
 
 browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
 
-addStaticSyariahIcon()
+tsi.addStaticSyariahIcon()
 
 function getSymbolsFromTitle() {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
@@ -16,11 +10,11 @@ function getSymbolsFromTitle() {
 }
 
 function receiveSignalFromBgScript() {
-  const { s: isShariah } = lookForShariah(`${ TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
+  const { s: isShariah } = tsi.lookForShariah(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (!isShariah) {
     // didnt found symbol within malaysian stocks
-    deleteSyariahIcon()
+    tsi.deleteSyariahIcon()
     return
   }
 
@@ -28,13 +22,13 @@ function receiveSignalFromBgScript() {
     const element = document.querySelector('[data-name="legend-source-title"]')
 
     // if icon already exist dont do anything
-    if (isSyariahIconExist(element.parentElement)) {
+    if (tsi.isSyariahIconExist(element.parentElement)) {
       return
     }
 
-    element.parentElement.prepend(createIcon({ width: 15, height: 15 }))
+    element.parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
   } else {
     // if not syariah delete all icon
-    deleteSyariahIcon()
+    tsi.deleteSyariahIcon()
   }
 }
