@@ -1,5 +1,5 @@
 /*global tsi */
-browser.tabs.onUpdated.addListener(tsi.debounce(listener, 1000, true))
+browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
 const fetchData = async () => {
   const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'

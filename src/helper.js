@@ -35,6 +35,7 @@ const tsi = (function () {
   function createIcon({ width, height } = { width: 25, height: 25 }) {
     const iconInSvgString = `
     <svg ${ attributeName }="${ extensionName }" width="${ width }" height="${ height }">
+      <title>Icon made by flaticon</title>
       <use xlink:href="#shariah-icon"></use>
     </svg>
   `
