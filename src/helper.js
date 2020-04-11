@@ -1,5 +1,4 @@
-/* global ga */
-/* exported tsi TRADING_VIEW_MYR */
+/* exported tsi */
 
 const tsi = (function () {
   'use strict'
@@ -145,59 +144,5 @@ const tsi = (function () {
     extensionName,
   }
 })()
-
-const analytic = (function () {
-  'use strict'
-
-  function initGA() {
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date
-      a = s.createElement(o), m = s.getElementsByTagName(o)[0]
-      a.async = 1
-      a.src = g
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
-  }
-
-  function initAsPromised() {
-    return new Promise(function (res, err) {
-      try {
-        ga('create', 'UA-131038700-1', 'auto')
-        ga('require', 'displayfeatures')
-      } catch (e) {
-        console.error('Failed init analytic')
-        err()
-      }
-      res()
-    })
-  }
-
-  function reportPageView(pageName) {
-    ga('send', 'pageview', pageName)
-  }
-
-  function reportEvent(category, action, label) {
-    ga('send', 'event', category, action, label)
-  }
-
-  function reportException(errorMessage) {
-    ga('send', 'exception', {
-      exDescription: errorMessage,
-      exFatal: false,
-    })
-  }
-
-  return {
-    initGA,
-    initAsPromised,
-    reportPageView,
-    reportEvent,
-    reportException,
-  }
-})();
-
 
 browser.runtime.onMessage.addListener(tsi.receiveSignalFromBgScript)

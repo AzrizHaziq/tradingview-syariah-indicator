@@ -65,5 +65,5 @@
     },
     "default_popup": "src/popup/popup.html"
   },
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com/analytics.js; img-src 'self'; style-src 'self'; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json; object-src 'self'; default-src 'self'"
+  "content_security_policy": "script-src 'self'; img-src 'self'; style-src 'self'; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json; object-src 'self'; default-src 'self'"
 }
