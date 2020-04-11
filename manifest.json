@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "version": "1.0.2",
   "default_locale": "en",
+  "author": "Azriz Haziq Jasni",
   "name": "__MSG_ext_extension_name__",
   "description": "__MSG_ext_extension_description__",
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
@@ -54,10 +55,6 @@
     "16": "./assets/shariah-icon-16.png",
     "48": "./assets/shariah-icon-48.png",
     "128": "./assets/shariah-icon-128.png"
-  },
-  "developer": {
-    "name": "Azriz Haziq Jasni",
-    "url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator"
   },
   "browser_action": {
     "default_title": "__MSG_ext_extension_name__",

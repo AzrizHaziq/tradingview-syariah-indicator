@@ -6,9 +6,9 @@ Array.from(document.querySelectorAll('[data-i18n]')).forEach(item => {
 })
 
 // from manifest.json write to dom
-const { developer: { name: devName }, homepage_url, version, } = browser.runtime.getManifest()
+const { author, homepage_url, version, } = browser.runtime.getManifest()
 
-document.querySelector('[data-tsi=devName]').textContent = devName
+document.querySelector('[data-tsi=devName]').textContent = author
 document.querySelector('[data-tsi=version]').textContent = `(${ version })`
 document.querySelector('[data-tsi=version]').setAttribute('title', 'current version')
 document.querySelector('[data-tsi=homepage_url]').setAttribute('href', homepage_url);
