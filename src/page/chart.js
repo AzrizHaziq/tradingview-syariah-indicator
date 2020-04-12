@@ -1,15 +1,25 @@
 /* global tsi */
-
-browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
-
 tsi.addStaticSyariahIcon()
+
+const receiveSignal = () => tsi.retryFn()(chartScript)
+
+browser.runtime.onMessage.addListener(receiveSignal)
+
+window.addEventListener('load', onLoad)
+
+function onLoad() {
+  browser.runtime.sendMessage({ init: 'page-chart' }).then(() => {
+    receiveSignal()
+    window.removeEventListener('load', onLoad)
+  })
+}
 
 function getSymbolsFromTitle() {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
   return /\w+(-\w+)?/.exec(domTittleName)[0].trim()  // also cover syntax like warrant
 }
 
-function receiveSignalFromBgScript() {
+function chartScript() {
   const { s: isShariah } = tsi.lookForShariah(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (!isShariah) {

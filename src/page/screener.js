@@ -1,4 +1,16 @@
 /* global tsi */
+const receiveSignal = () => tsi.retryFn()(screenerScript)
+
+browser.runtime.onMessage.addListener(receiveSignal)
+
+window.addEventListener('load', onLoad)
+
+function onLoad() {
+  browser.runtime.sendMessage({ init: 'page-screener' }).then(() => {
+    receiveSignal()
+    window.removeEventListener('load', onLoad)
+  })
+}
 
 const ONLY_VALID_COUNTRIES = ['my']
 const checkBoxAttribute = `${ tsi.attributeName }-filter-checkbox`
@@ -8,15 +20,13 @@ const syariahIconValue = `${ tsi.extensionName }-filter-icon`
 const uniqueKey = `${ checkBoxAttribute }-${ checkBoxExtension }`
 
 const shariahStatus = {
-  true: browser.i18n.getMessage("js_screener_filter_btn_shariah_on"),
-  false: browser.i18n.getMessage("js_screener_filter_btn_shariah_off"),
+  true: browser.i18n.getMessage('js_screener_filter_btn_shariah_on'),
+  false: browser.i18n.getMessage('js_screener_filter_btn_shariah_off'),
 }
 
 let onlyFilterShariah = false
 
-browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
-
-async function receiveSignalFromBgScript() {
+async function screenerScript() {
   try {
     const { ONLY_FILTER_SHARIAH: bool } = (await browser.storage.local.get('ONLY_FILTER_SHARIAH'))
     onlyFilterShariah = bool || false
@@ -70,13 +80,13 @@ function setupFilterSyariahBtn() {
 
   // shariah icon
   const icon = tsi.createIcon({ width: 17, height: 17 })
-  icon.style.cursor = 'pointer';
+  icon.style.cursor = 'pointer'
   icon.removeAttribute(tsi.attributeName)
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
   // div wrapper
   const div = document.createElement('div')
-  div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
+  div.setAttribute('title', shariahStatus[`${ onlyFilterShariah }`])
   div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
 
   syariahFilterNode.prepend(icon)
@@ -90,7 +100,7 @@ function setupFilterSyariahBtn() {
 
       await browser.storage.local.set({ 'ONLY_FILTER_SHARIAH': e.target.checked })
 
-      div.setAttribute('title', shariahStatus[`${onlyFilterShariah}`])
+      div.setAttribute('title', shariahStatus[`${ onlyFilterShariah }`])
 
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 

@@ -1,19 +1,25 @@
 /* global tsi */
-if (browser.runtime.onMessage.hasListener(receiveSignalFromBgScript)) {
-  console.log('SYMBOLS: Registered listener')
-  browser.runtime.onMessage.removeListener(receiveSignalFromBgScript)
-}
-
-browser.runtime.onMessage.addListener(receiveSignalFromBgScript)
-
 tsi.addStaticSyariahIcon()
+
+const receiveSignal = () => tsi.retryFn()(symbolScript)
+
+browser.runtime.onMessage.addListener(receiveSignal)
+
+window.addEventListener('load', onLoad)
+
+function onLoad() {
+  browser.runtime.sendMessage({ init: 'page-symbol' }).then(() => {
+    receiveSignal()
+    window.removeEventListener('load', onLoad)
+  })
+}
 
 function getSymbol() {
   return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
     .getAttribute('data-symbol').trim()
 }
 
-function receiveSignalFromBgScript() {
+function symbolScript() {
   const { s: isShariah } = tsi.lookForShariah(getSymbol())
 
   if (isShariah) {

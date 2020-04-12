@@ -128,7 +128,27 @@ const tsi = (function () {
     return d instanceof Date && !isNaN(d)
   }
 
+  function retryFn(until = 10, timeout = 500) {
+    let i = 0
+    return function innerFn(fn) {
+      try {
+        fn()
+      } catch (e) {
+        i++
+        console.log('Retry: ', i)
+
+        if (i < until) {
+          const t = setTimeout(() => {
+            innerFn(fn)
+            clearTimeout(t)
+          }, timeout)
+        }
+      }
+    }
+  }
+
   return {
+    retryFn,
     dateDiffInDays,
     debounce,
     isValidDate,
