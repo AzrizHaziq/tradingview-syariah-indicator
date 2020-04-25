@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-03-28T01:40:01.232Z",
+  "updatedAt": "2020-04-13T12:49:13.391Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -1501,9 +1501,6 @@
     "MYX:MFCB": {
       "s": true
     },
-    "MYX:MFCB-WA": {
-      "s": true
-    },
     "MYX:MFGROUP": {
       "s": true
     },
@@ -1880,9 +1877,6 @@
       "s": true
     },
     "MYX:PGLOBE": {
-      "s": true
-    },
-    "MYX:PGLOBE-WA": {
       "s": true
     },
     "MYX:PHARMA": {

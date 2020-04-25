@@ -1,4 +1,5 @@
 import fs from 'fs'
+import git from 'simple-git'
 import playWright from 'playwright'
 import cliProgress from 'cli-progress'
 
@@ -96,10 +97,39 @@ async function writeToFile(data) {
   }
 }
 
+async function pushChangesIfAny() {
+  const branchName = 'update-data'
+
+  try {
+    await git()
+      .raw(['checkout', branchName], async (err, res) => {
+        if (err) {
+          await git()
+            .raw(['checkout', '-b', branchName], async (err, res) => {
+              if (err) {
+                throw Error('Failed to checkout new branch')
+              }
+
+              await git().raw(['checkout', branchName])
+            })
+        }
+      })
+      .add([STOCK_LIST_FILENAME])
+      .commit('[STOCK_LIST] script_bot: Update with new changes')
+      .pull('origin', 'master', { '--rebase': true })
+      .push('origin', branchName, () => console.log('Done push.'))
+  } catch (e) {
+    console.error('Error: commit and push stock list changes', e)
+    process.exit(1)
+  }
+}
+
+
 (async () => {
   try {
     const SYARIAH_LIST = await scrapBursaMalaysia()
     await writeToFile(merged(SYARIAH_LIST))
+    await pushChangesIfAny()
     process.exit()
   } catch (e) {
     console.error('Something wrong with the whole process', e)
