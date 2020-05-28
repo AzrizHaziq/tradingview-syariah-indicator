@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-04-13T12:49:13.391Z",
+  "updatedAt": "2020-05-28T11:38:49.660Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -94,9 +94,6 @@
     "MYX:AMLEX": {
       "s": true
     },
-    "MYX:AMVERTON": {
-      "s": true
-    },
     "MYX:AMWAY": {
       "s": true
     },
@@ -182,6 +179,9 @@
       "s": true
     },
     "MYX:AT": {
+      "s": true
+    },
+    "MYX:AT-WC": {
       "s": true
     },
     "MYX:ATAIMS": {
@@ -350,9 +350,6 @@
       "s": true
     },
     "MYX:CARIMIN": {
-      "s": true
-    },
-    "MYX:CARING": {
       "s": true
     },
     "MYX:CBIP": {
@@ -1168,9 +1165,6 @@
     "MYX:KANGER": {
       "s": true
     },
-    "MYX:KANGER-WA": {
-      "s": true
-    },
     "MYX:KARYON": {
       "s": true
     },
@@ -1202,9 +1196,6 @@
       "s": true
     },
     "MYX:KGROUP": {
-      "s": true
-    },
-    "MYX:KGROUP-WB": {
       "s": true
     },
     "MYX:KHEESAN": {
