@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-04-13T12:49:13.391Z",
+  "updatedAt": "2020-05-28T11:38:49.660Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -91,10 +91,10 @@
     "MYX:AME": {
       "s": true
     },
-    "MYX:AMLEX": {
+    "MYX:AMEDIA": {
       "s": true
     },
-    "MYX:AMVERTON": {
+    "MYX:AMLEX": {
       "s": true
     },
     "MYX:AMWAY": {
@@ -110,15 +110,6 @@
       "s": true
     },
     "MYX:ANNJOO": {
-      "s": true
-    },
-    "MYX:ANZO": {
-      "s": true
-    },
-    "MYX:ANZO-WB": {
-      "s": true
-    },
-    "MYX:ANZO-WC": {
       "s": true
     },
     "MYX:APB": {
@@ -137,9 +128,6 @@
       "s": true
     },
     "MYX:APPASIA-WA": {
-      "s": true
-    },
-    "MYX:ARANK": {
       "s": true
     },
     "MYX:ARBB": {
@@ -182,6 +170,9 @@
       "s": true
     },
     "MYX:AT": {
+      "s": true
+    },
+    "MYX:AT-WC": {
       "s": true
     },
     "MYX:ATAIMS": {
@@ -271,6 +262,9 @@
     "MYX:BIPORT": {
       "s": true
     },
+    "MYX:BJFOOD": {
+      "s": true
+    },
     "MYX:BKAWAN": {
       "s": true
     },
@@ -325,9 +319,6 @@
     "MYX:BURSA": {
       "s": true
     },
-    "MYX:CAB": {
-      "s": true
-    },
     "MYX:CABNET": {
       "s": true
     },
@@ -350,9 +341,6 @@
       "s": true
     },
     "MYX:CARIMIN": {
-      "s": true
-    },
-    "MYX:CARING": {
       "s": true
     },
     "MYX:CBIP": {
@@ -407,6 +395,9 @@
       "s": true
     },
     "MYX:CHUAN": {
+      "s": true
+    },
+    "MYX:CIHLDG": {
       "s": true
     },
     "MYX:CJCEN": {
@@ -1024,12 +1015,6 @@
     "MYX:IDEAL-WB": {
       "s": true
     },
-    "MYX:IDMENSN": {
-      "s": true
-    },
-    "MYX:IDMENSN-WA": {
-      "s": true
-    },
     "MYX:IHH": {
       "s": true
     },
@@ -1168,9 +1153,6 @@
     "MYX:KANGER": {
       "s": true
     },
-    "MYX:KANGER-WA": {
-      "s": true
-    },
     "MYX:KARYON": {
       "s": true
     },
@@ -1202,9 +1184,6 @@
       "s": true
     },
     "MYX:KGROUP": {
-      "s": true
-    },
-    "MYX:KGROUP-WB": {
       "s": true
     },
     "MYX:KHEESAN": {
@@ -1606,6 +1585,9 @@
     "MYX:MTDACPI": {
       "s": true
     },
+    "MYX:MTOUCHE": {
+      "s": true
+    },
     "MYX:MTRONIC": {
       "s": true
     },
@@ -1700,9 +1682,6 @@
       "s": true
     },
     "MYX:NOTION-WC": {
-      "s": true
-    },
-    "MYX:NOVA": {
       "s": true
     },
     "MYX:NOVAMSC": {
@@ -1852,6 +1831,9 @@
     "MYX:PENERGY": {
       "s": true
     },
+    "MYX:PENTA": {
+      "s": true
+    },
     "MYX:PERDANA": {
       "s": true
     },
@@ -1904,6 +1886,9 @@
       "s": true
     },
     "MYX:PJBUMI-WA": {
+      "s": true
+    },
+    "MYX:PLENITU": {
       "s": true
     },
     "MYX:PLS": {
@@ -2020,6 +2005,9 @@
     "MYX:PWROOT-WA": {
       "s": true
     },
+    "MYX:PWRWELL": {
+      "s": true
+    },
     "MYX:QES": {
       "s": true
     },
@@ -2039,6 +2027,9 @@
       "s": true
     },
     "MYX:REACH-WA": {
+      "s": true
+    },
+    "MYX:REDTONE": {
       "s": true
     },
     "MYX:RESINTC": {
@@ -2126,6 +2117,9 @@
       "s": true
     },
     "MYX:SCGM-WA": {
+      "s": true
+    },
+    "MYX:SCH": {
       "s": true
     },
     "MYX:SCIB": {
@@ -2236,9 +2230,6 @@
     "MYX:SIMEPROP": {
       "s": true
     },
-    "MYX:SINOTOP": {
-      "s": true
-    },
     "MYX:SJC": {
       "s": true
     },
@@ -2329,9 +2320,6 @@
     "MYX:STRAITS-WA": {
       "s": true
     },
-    "MYX:SUBUR": {
-      "s": true
-    },
     "MYX:SUCCESS": {
       "s": true
     },
@@ -2416,12 +2404,6 @@
     "MYX:TAMBUN": {
       "s": true
     },
-    "MYX:TANCO": {
-      "s": true
-    },
-    "MYX:TANCO-WB": {
-      "s": true
-    },
     "MYX:TAS": {
       "s": true
     },
@@ -2435,12 +2417,6 @@
       "s": true
     },
     "MYX:TECFAST": {
-      "s": true
-    },
-    "MYX:TECHBND": {
-      "s": true
-    },
-    "MYX:TECHBND-WA": {
       "s": true
     },
     "MYX:TEKSENG": {
