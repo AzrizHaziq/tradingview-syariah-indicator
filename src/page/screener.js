@@ -165,11 +165,11 @@ function observedTableChanges() {
       const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
 
       if (isSyariah) {
-        const dom = tr.querySelector('.tv-screener-table__symbol-right-part')
-        if (tsi.isSyariahIconExist(dom)) {
+        const firstColumn = tr.querySelector('td div')
+        if (tsi.isSyariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
-          const domToBeAdded = tr.querySelector('.tv-screener-table__symbol-right-part a.tv-screener__symbol')
+          const domToBeAdded = firstColumn.querySelector('a.tv-screener__symbol')
           domToBeAdded.insertAdjacentElement('afterend', tsi.createIcon({ width: 10, height: 10 }))
         }
       } else if (onlyFilterShariah) {
