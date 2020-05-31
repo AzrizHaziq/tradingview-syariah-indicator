@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "tradingview-syariah-indicator",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
   "scripts": {
