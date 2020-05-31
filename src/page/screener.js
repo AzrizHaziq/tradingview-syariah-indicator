@@ -72,6 +72,7 @@ function setupFilterSyariahBtn() {
   // create a filter btn
   const syariahFilterNode = document.createElement('label')
   syariahFilterNode.style.padding = '0'
+  syariahFilterNode.style.height = '100%'
   syariahFilterNode.style.display = 'flex'
   syariahFilterNode.style.alignItems = 'center'
   syariahFilterNode.style.justifyContent = 'center'
@@ -84,17 +85,19 @@ function setupFilterSyariahBtn() {
   icon.removeAttribute(tsi.attributeName)
   icon.setAttribute(syariahIconAttribute, syariahIconValue)
 
-  // div wrapper
+  // div wrapper, just copy paste from refresh btn
   const div = document.createElement('div')
   div.setAttribute('title', shariahStatus[`${ onlyFilterShariah }`])
   div.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
+  div.style.paddingTop = '0'
+  div.style.paddingTop = '0'
 
   syariahFilterNode.prepend(icon)
   div.prepend(checkbox, syariahFilterNode)
 
   document.querySelector('.tv-screener-toolbar').prepend(div)
 
-  checkbox.addEventListener('change', async function (e) {
+  div.addEventListener('change', async function (e) {
     try {
       onlyFilterShariah = e.target.checked
 
