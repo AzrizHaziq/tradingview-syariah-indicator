@@ -22,7 +22,8 @@ and be sure to check the release note!
 https://chrome.google.com/webstore/detail/tradingview-syariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf/related
 
 
-## Firefox Extension(comming soon)
+## Firefox Extension
+https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/
 
 
 ## Symbol Page
