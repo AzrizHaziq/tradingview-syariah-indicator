@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-05-28T11:38:49.660Z",
+  "updatedAt": "2020-06-11T10:34:34.324Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -8,9 +8,6 @@
       "s": true
     },
     "MYX:AAX": {
-      "s": true
-    },
-    "MYX:AAX-WA": {
       "s": true
     },
     "MYX:ABLEGRP": {
@@ -362,6 +359,9 @@
       "s": true
     },
     "MYX:CEPCO": {
+      "s": true
+    },
+    "MYX:CETECH": {
       "s": true
     },
     "MYX:CFM": {
@@ -1009,6 +1009,9 @@
     "MYX:ICONIC": {
       "s": true
     },
+    "MYX:IDBTECH": {
+      "s": true
+    },
     "MYX:IDEAL": {
       "s": true
     },
@@ -1552,6 +1555,9 @@
     "MYX:MMCCORP": {
       "s": true
     },
+    "MYX:MMIS": {
+      "s": true
+    },
     "MYX:MMSV": {
       "s": true
     },
@@ -1586,6 +1592,9 @@
       "s": true
     },
     "MYX:MTOUCHE": {
+      "s": true
+    },
+    "MYX:MTOUCHE-WC": {
       "s": true
     },
     "MYX:MTRONIC": {
@@ -1930,6 +1939,9 @@
     "MYX:POLY": {
       "s": true
     },
+    "MYX:POLYDM": {
+      "s": true
+    },
     "MYX:POLYMER": {
       "s": true
     },
@@ -2120,6 +2132,9 @@
       "s": true
     },
     "MYX:SCH": {
+      "s": true
+    },
+    "MYX:SCH-WA": {
       "s": true
     },
     "MYX:SCIB": {
