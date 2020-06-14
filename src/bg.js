@@ -1,22 +1,36 @@
-/*global tsi */
+/* global tsi */
+browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
+
+const fetchData = async () => {
+  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+
+  try {
+    const res = await fetch(jsonUrl)
+    return await res.json()
+  } catch (e) {
+    console.error('Github json when wrong', e)
+  }
+}
+
+// just trigger get first in bg script
+fetchData().then(console.log)
+
 const validUrls = [
   'tradingview.com/chart',
   'tradingview.com/screener',
   'tradingview.com/symbols'
 ]
 
-browser.webNavigation.onCompleted.addListener(async function (completed) {
-  const { tabId, url } = completed
+async function listener(id, { status }, { url }) {
+  if (status === 'loading') {
+    return
+  }
 
   // filter out invalid url
   if (!validUrls.some(validUrl => new RegExp(validUrl).test(url))) {
     return
   }
 
-  await cacheOrFreshData(tabId)
-})
-
-async function cacheOrFreshData(id) {
   try {
     const { LAST_FETCH_AT } = (await browser.storage.local.get('LAST_FETCH_AT'))
 
@@ -45,16 +59,5 @@ async function cacheOrFreshData(id) {
     return await SHARIAH_LIST
   } catch (e) {
     console.error('Error Send message', e)
-  }
-}
-
-const fetchData = async() => {
-  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
-
-  try {
-    const res = await fetch(jsonUrl)
-    return await res.json()
-  } catch (e) {
-    console.error('Github json when wrong', e)
   }
 }

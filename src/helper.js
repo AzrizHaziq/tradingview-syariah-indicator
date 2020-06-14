@@ -147,6 +147,36 @@ const tsi = (function () {
     }
   }
 
+  function observeNodeChanges(nodeToObserve, cb, options = { childList: true, subtree: true }) {
+    let observer
+
+    if (observer) {
+      console.log(`Already observe ${ nodeToObserve.innerText } changes`)
+      observer.disconnect()
+    }
+
+    observer = new MutationObserver(cb)
+
+    observer.observe(nodeToObserve, options)
+
+    return observer
+  }
+
+  function forceMutationChanges(domNodeFakeChanges) {
+    const appendRemoveNodeWithDomNode = () => appendRemoveNode(domNodeFakeChanges)
+
+    // for (let i = 0; i < 10; i++) {
+      retryFn()(appendRemoveNodeWithDomNode)
+    // }
+  }
+
+  function appendRemoveNode(domNodeFakeChanges) {
+    console.log(domNodeFakeChanges, 'domNodeFakeChanges')
+    const fakeNode = document.createElement('a')
+    domNodeFakeChanges.append(fakeNode)
+    fakeNode.remove()
+  }
+
   return {
     retryFn,
     dateDiffInDays,
@@ -159,6 +189,8 @@ const tsi = (function () {
     addStaticSyariahIcon,
     addStyle,
     receiveSignalFromBgScript,
+    observeNodeChanges,
+    forceMutationChanges,
 
     TRADING_VIEW_MYR,
     attributeName,

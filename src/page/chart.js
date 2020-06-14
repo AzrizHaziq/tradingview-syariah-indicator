@@ -1,22 +1,16 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
+tsi.retryFn()(observeChartChanges)
 
-const receiveSignal = () => tsi.retryFn()(chartScript)
+const symbolNode = document.querySelector('[data-name="legend-series-item"]')
+tsi.forceMutationChanges(symbolNode)
 
-browser.runtime.onMessage.addListener(receiveSignal)
+function observeChartChanges() {
+  // have to target dom like below since this is the most top parent
+  const symbolNode = document.querySelector('[data-name="legend-series-item"]')
 
-window.addEventListener('load', onLoad)
-
-function onLoad() {
-  browser.runtime.sendMessage({ init: 'page-chart' }).then(() => {
-    receiveSignal()
-    window.removeEventListener('load', onLoad)
-  })
-}
-
-function getSymbolsFromTitle() {
-  const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+(-\w+)?/.exec(domTittleName)[0].trim()  // also cover syntax like warrant
+  tsi.observeNodeChanges(symbolNode, chartScript)
+  tsi.forceMutationChanges(symbolNode)
 }
 
 function chartScript() {
@@ -41,4 +35,9 @@ function chartScript() {
     // if not syariah delete all icon
     tsi.deleteSyariahIcon()
   }
+}
+
+function getSymbolsFromTitle() {
+  const domTittleName = document.getElementsByTagName('title')[0].innerText
+  return /\w+(-\w+)?/.exec(domTittleName)[0].trim()  // also cover syntax like warrant
 }

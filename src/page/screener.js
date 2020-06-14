@@ -1,16 +1,12 @@
 /* global tsi */
-const receiveSignal = () => tsi.retryFn()(screenerScript)
-
-browser.runtime.onMessage.addListener(receiveSignal)
-
-window.addEventListener('load', onLoad)
-
-function onLoad() {
+window.addEventListener('load', function onLoad () {
   browser.runtime.sendMessage({ init: 'page-screener' }).then(() => {
-    receiveSignal()
-    window.removeEventListener('load', onLoad)
+    tsi.retryFn()(screenerScript)
+    this.removeEventListener('load', onLoad)
   })
-}
+})
+
+let onlyFilterShariah = false
 
 const ONLY_VALID_COUNTRIES = ['my']
 const checkBoxAttribute = `${ tsi.attributeName }-filter-checkbox`
@@ -23,8 +19,6 @@ const shariahStatus = {
   true: browser.i18n.getMessage('js_screener_filter_btn_shariah_on'),
   false: browser.i18n.getMessage('js_screener_filter_btn_shariah_off'),
 }
-
-let onlyFilterShariah = false
 
 async function screenerScript() {
   try {
@@ -139,7 +133,7 @@ function forceMutationChanges() {
     document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody').append(fakeDiv)
     fakeDiv.remove()
 
-    // assume that if  more than X number of syariah icon, then stop mutating dom
+    // assume that if more than X number of syariah icon, then stop mutating dom, in this case is 10
     if (document.querySelectorAll(`[${ tsi.attributeName }="${ tsi.extensionName }"]`).length > 10) {
       clearInterval(tempInterval)
     }

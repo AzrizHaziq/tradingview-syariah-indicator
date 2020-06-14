@@ -1,17 +1,16 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
+tsi.retryFn()(observeSymbolChanges)
 
-const receiveSignal = () => tsi.retryFn()(symbolScript)
+const symbolNode = document.querySelector('.tv-main .tv-content')
+tsi.forceMutationChanges(symbolNode)
 
-browser.runtime.onMessage.addListener(receiveSignal)
+function observeSymbolChanges() {
+  // have to target dom like below since this is the most top parent dom that didn't remove/delete
+  const symbolNode = document.querySelector('.tv-main .tv-content')
 
-window.addEventListener('load', onLoad)
-
-function onLoad() {
-  browser.runtime.sendMessage({ init: 'page-symbol' }).then(() => {
-    receiveSignal()
-    window.removeEventListener('load', onLoad)
-  })
+  tsi.observeNodeChanges(symbolNode, symbolScript)
+  tsi.forceMutationChanges(symbolNode)
 }
 
 function getSymbol() {
