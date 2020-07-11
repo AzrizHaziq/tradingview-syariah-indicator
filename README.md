@@ -9,22 +9,16 @@ source data:
 inspired from
 https://github.com/amree/tradingview-shariah-indicators
 
+## Install
+<a title="Download Tradingview Shariah indicator in chrome now" href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
+</a>
+<a title="Download Tradingview Shariah indicator in firefox now" href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
+</a>
 
 ## Release 
-As we all know that the CONVID-19 is no where near ending, there is a small delay from Google side to approve this extension( I also have some other difficulty with them for approval) But anyhow, you can download in release 
-
 [https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
-
-and be sure to check the release note!
-
-
-## Chrome Extension:
-https://chrome.google.com/webstore/detail/tradingview-syariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf/related
-
-
-## Firefox Extension
-https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/
-
 
 ## Symbol Page
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_symbol.png?raw=true)
