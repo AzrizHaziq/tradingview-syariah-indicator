@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-06-11T10:34:34.324Z",
+  "updatedAt": "2020-07-11T05:14:55.705Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -245,9 +245,6 @@
       "s": true
     },
     "MYX:BINTAI": {
-      "s": true
-    },
-    "MYX:BINTAI-WA": {
       "s": true
     },
     "MYX:BIOHLDG": {
@@ -500,9 +497,6 @@
       "s": true
     },
     "MYX:DBHD-WA": {
-      "s": true
-    },
-    "MYX:DEGEM": {
       "s": true
     },
     "MYX:DELEUM": {
@@ -938,9 +932,6 @@
       "s": true
     },
     "MYX:HOMERIZ": {
-      "s": true
-    },
-    "MYX:HOMERIZ-WA": {
       "s": true
     },
     "MYX:HOMERIZ-WB": {
@@ -2635,9 +2626,6 @@
     "MYX:VIVOCOM": {
       "s": true
     },
-    "MYX:VIVOCOM-WD": {
-      "s": true
-    },
     "MYX:VIVOCOM-WE": {
       "s": true
     },
@@ -2725,9 +2713,6 @@
     "MYX:YBS": {
       "s": true
     },
-    "MYX:YEELEE": {
-      "s": true
-    },
     "MYX:YGL": {
       "s": true
     },
@@ -2750,9 +2735,6 @@
       "s": true
     },
     "MYX:YONGTAI-PA": {
-      "s": true
-    },
-    "MYX:YONGTAI-WA": {
       "s": true
     },
     "MYX:YSPSAH": {
