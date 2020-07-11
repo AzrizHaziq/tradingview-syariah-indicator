@@ -1,7 +1,7 @@
-/*global tsi */
+/* global tsi */
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
-const fetchData = async () => {
+const fetchData = async() => {
   const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
 
   try {
@@ -12,10 +12,30 @@ const fetchData = async () => {
   }
 }
 
+// just trigger get first in bg script
+fetchData()
+  .then(console.log)
+  .then(() => browser.tabs.query({
+    currentWindow: true,
+    active: true
+  }))
+  .then(sendMessageToTabs)
+
+
+function sendMessageToTabs(tabs) {
+  function onError(error) {
+    console.error(`Error: ${error}`);
+  }
+
+  for (let tab of tabs) {
+    browser.tabs.sendMessage(tab.id).catch(onError)
+  }
+}
+
 const validUrls = [
   'tradingview.com/chart',
   'tradingview.com/screener',
-  'tradingview.com/symbol'
+  'tradingview.com/symbols'
 ]
 
 async function listener(id, { status }, { url }) {
