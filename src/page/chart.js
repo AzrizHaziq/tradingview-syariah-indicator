@@ -1,6 +1,7 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
 tsi.retryFn()(observeChartChanges)
+browser.runtime.onMessage.addListener(chartScript)
 
 const symbolNode = document.querySelector('[data-name="legend-series-item"]')
 tsi.forceMutationChanges(symbolNode)

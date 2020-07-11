@@ -164,14 +164,10 @@ const tsi = (function () {
 
   function forceMutationChanges(domNodeFakeChanges) {
     const appendRemoveNodeWithDomNode = () => appendRemoveNode(domNodeFakeChanges)
-
-    // for (let i = 0; i < 10; i++) {
-      retryFn()(appendRemoveNodeWithDomNode)
-    // }
+    retryFn()(appendRemoveNodeWithDomNode)
   }
 
   function appendRemoveNode(domNodeFakeChanges) {
-    console.log(domNodeFakeChanges, 'domNodeFakeChanges')
     const fakeNode = document.createElement('a')
     domNodeFakeChanges.append(fakeNode)
     fakeNode.remove()

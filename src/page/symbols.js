@@ -1,6 +1,7 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
 tsi.retryFn()(observeSymbolChanges)
+browser.runtime.onMessage.addListener(symbolScript)
 
 const symbolNode = document.querySelector('.tv-main .tv-content')
 tsi.forceMutationChanges(symbolNode)
@@ -18,7 +19,7 @@ function getSymbol() {
     .getAttribute('data-symbol').trim()
 }
 
-function symbolScript() {
+function symbolScript(a) {
   const { s: isShariah } = tsi.lookForShariah(getSymbol())
 
   if (isShariah) {
