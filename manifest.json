@@ -22,7 +22,8 @@
       "js": [
         "src/browser-polyfill.js",
         "src/helper.js",
-        "src/page/chart.js"
+        "src/page/chart.js",
+        "src/page/screener.js"
       ]
     },
     {

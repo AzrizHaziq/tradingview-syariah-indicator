@@ -166,7 +166,8 @@ function observedTableChanges() {
         if (tsi.isSyariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
-          const domToBeAdded = firstColumn.querySelector('a.tv-screener__symbol')
+          // this query need to be the same in /screener  & /chart's stock screener
+          const domToBeAdded = firstColumn.querySelector('.tv-screener__symbol')
           domToBeAdded.insertAdjacentElement('afterend', tsi.createIcon({ width: 10, height: 10 }))
         }
       } else if (onlyFilterShariah) {
