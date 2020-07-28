@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2020-07-11T05:14:55.705Z",
+  "updatedAt": "2020-07-28T12:42:58.813Z",
   "list": {
     "MYX:3A": {
       "s": true
@@ -487,12 +487,6 @@
     "MYX:DAYANG": {
       "s": true
     },
-    "MYX:DBE": {
-      "s": true
-    },
-    "MYX:DBE-WB": {
-      "s": true
-    },
     "MYX:DBHD": {
       "s": true
     },
@@ -551,6 +545,9 @@
       "s": true
     },
     "MYX:DOLPHIN": {
+      "s": true
+    },
+    "MYX:DOLPHIN-OR": {
       "s": true
     },
     "MYX:DOLPHIN-WA": {
@@ -1273,6 +1270,12 @@
     "MYX:L&G": {
       "s": true
     },
+    "MYX:LAGENDA": {
+      "s": true
+    },
+    "MYX:LAGENDA-WB": {
+      "s": true
+    },
     "MYX:LATITUD": {
       "s": true
     },
@@ -1378,13 +1381,7 @@
     "MYX:MATRIX": {
       "s": true
     },
-    "MYX:MATRIX-WA": {
-      "s": true
-    },
     "MYX:MAXIS": {
-      "s": true
-    },
-    "MYX:MBG": {
       "s": true
     },
     "MYX:MBL": {
@@ -1745,6 +1742,9 @@
       "s": true
     },
     "MYX:ORNA": {
+      "s": true
+    },
+    "MYX:OVH": {
       "s": true
     },
     "MYX:PA": {
@@ -2155,9 +2155,6 @@
     "MYX:SCOPE": {
       "s": true
     },
-    "MYX:SCOPE-WA": {
-      "s": true
-    },
     "MYX:SDRED": {
       "s": true
     },
@@ -2339,9 +2336,6 @@
       "s": true
     },
     "MYX:SUNSURIA": {
-      "s": true
-    },
-    "MYX:SUNSURIA-WA": {
       "s": true
     },
     "MYX:SUNWAY": {
@@ -2639,6 +2633,9 @@
       "s": true
     },
     "MYX:VSOLAR": {
+      "s": true
+    },
+    "MYX:VSOLAR-WB": {
       "s": true
     },
     "MYX:VSTECS": {
