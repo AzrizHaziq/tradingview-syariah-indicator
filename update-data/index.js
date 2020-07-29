@@ -1,5 +1,7 @@
 import fs from 'fs'
+import ExcelJS from 'exceljs'
 import git from 'simple-git'
+import merge from 'lodash.merge'
 import playWright from 'playwright'
 import cliProgress from 'cli-progress'
 
@@ -64,23 +66,6 @@ async function scrapBursaMalaysia() {
   }
 }
 
-function merged(SYARIAH_LIST) {
-  try {
-    return {
-      updatedAt: new Date(),
-      list: SYARIAH_LIST.reduce((acc, name) => ({
-        ...acc,
-        [`${ TRADING_VIEW_MYR }:${ name }`]: {
-          s: true
-        }
-      }), {})
-    }
-  } catch (e) {
-    console.error('Error merge data', e)
-    process.exit(1)
-  }
-}
-
 async function writeToFile(data) {
   try {
     fs.writeFileSync(STOCK_LIST_FILENAME, JSON.stringify(data, null, 2), { encoding: 'utf-8' }, function (err) {
@@ -98,8 +83,6 @@ async function writeToFile(data) {
 }
 
 async function pushChangesIfAny() {
-  const branchName = 'update-data'
-
   try {
     await git()
       .add([STOCK_LIST_FILENAME])
@@ -110,11 +93,65 @@ async function pushChangesIfAny() {
   }
 }
 
-
-(async () => {
+function generateShariah(SYARIAH_LIST) {
   try {
+    return SYARIAH_LIST.reduce((acc, name) => ({
+      ...acc,
+      [`${ TRADING_VIEW_MYR }:${ name }`]: {
+        s: 1
+      }
+    }), {})
+  } catch (e) {
+    console.error('Error merge data', e)
+    process.exit(1)
+  }
+}
+
+async function generateMidSmallCap() {
+  let excelFile
+  const workbook = new ExcelJS.Workbook()
+  try {
+    excelFile = await workbook.xlsx.readFile('./update-data/msc.xlsx')
+  } catch (e) {
+    console.error('Error generateMidSmallCap data', e)
+    process.exit(1)
+  }
+
+  const sheet = excelFile.getWorksheet(1)
+
+  let firstRowItem
+  sheet.getColumn(1).eachCell((i, rowNumber) => {
+    // getting the first item in the list, which ignore all table headers etc
+    if (i.value === 1) {
+      firstRowItem = rowNumber
+    }
+  })
+
+  return sheet.getColumn(4).values
+    .slice(firstRowItem)
+    .reduce((acc, stockCode) => ({
+      ...acc,
+      [`${ TRADING_VIEW_MYR }:${ stockCode }`]: {
+        msc: 1
+      }
+    }), {})
+}
+
+(async() => {
+  try {
+    const MSC_LIST = await generateMidSmallCap()
     const SYARIAH_LIST = await scrapBursaMalaysia()
-    await writeToFile(merged(SYARIAH_LIST))
+
+    const mergedShariahAndMSCList = {
+      updateAt: new Date(),
+      list: merge(
+        generateShariah(SYARIAH_LIST),
+        MSC_LIST,
+      )
+    }
+
+    await writeToFile(mergedShariahAndMSCList)
+
     await pushChangesIfAny()
     process.exit()
   } catch (e) {
