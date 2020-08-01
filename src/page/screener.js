@@ -21,6 +21,13 @@ const shariahStatus = {
 }
 
 async function screenerScript() {
+  const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+
+  // if table not found then dont run rest of the scripts
+  if(!tableNode) {
+    return ;
+  }
+
   try {
     const { ONLY_FILTER_SHARIAH: bool } = (await browser.storage.local.get('ONLY_FILTER_SHARIAH'))
     onlyFilterShariah = bool || false

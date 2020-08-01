@@ -15,26 +15,30 @@ function observeChartChanges() {
 }
 
 function chartScript() {
-  const { s: isShariah } = tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
-
-  if (!isShariah) {
-    // didnt found symbol within malaysian stocks
-    tsi.deleteSyariahIcon()
-    return
-  }
+  const element = document.querySelector('[data-name="legend-source-title"]')
+  const { s: isShariah, msc = 0 } = tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (isShariah) {
-    const element = document.querySelector('[data-name="legend-source-title"]')
-
-    // if icon already exist dont do anything
     if (tsi.isSyariahIconExist(element.parentElement)) {
-      return
+      // if icon already exist dont do anything
+    } else {
+      element.parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
     }
-
-    element.parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
   } else {
     // if not syariah delete all icon
     tsi.deleteSyariahIcon()
+  }
+
+  if (msc) {
+    if (tsi.isMSCIconExist(element.parentElement)) {
+      // if icon already exist dont do anything
+    } else {
+      const mscIcon = tsi.createMSCIcon(element.parentElement)
+      mscIcon.style.marginLeft = '5px'
+      element.insertAdjacentElement('beforebegin', mscIcon)
+    }
+  } else {
+    tsi.deleteMSCIcon(element.parentElement)
   }
 }
 

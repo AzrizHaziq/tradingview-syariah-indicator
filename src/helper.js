@@ -136,7 +136,7 @@ const tsi = (function () {
         fn()
       } catch (e) {
         i++
-        console.log('Retry: ', i, fn.name)
+        console.count(fn.name)
 
         if (i < until) {
           const t = setTimeout(() => {
