@@ -174,7 +174,7 @@ const tsi = (function () {
     fakeNode.remove()
   }
 
-  function createMSCIcon(element) {
+  function createMSCIcon(element = document) {
     // only add icon if static icon is not existed yet in DOM
     if (element.querySelector(`[${ attributeName }=${ mscAttribute }]`)) {
       return

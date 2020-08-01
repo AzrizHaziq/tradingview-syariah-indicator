@@ -1,8 +1,10 @@
 {
   "ext_extension_name": { "message": "Petunjuk Shariah Tradingview" },
   "ext_extension_description": { "message": "Paparkan penunjuk syariah kecil ke senarai saham dalam Tradingview(MY)" },
-  "js_screener_filter_btn_shariah_on": { "message": "Shariah: HIDUP" },
-  "js_screener_filter_btn_shariah_off": { "message": "Shariah: MATI" },
+  "js_screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
+  "js_screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
+  "js_screener_filter_btn_msc_on": { "message": "Syarikat Modal Sederhana dan Kecil: AKTIF" },
+  "js_screener_filter_btn_msc_off": { "message": "Syarikat Modal Sederhana dan Kecil: NYAHAKTIF" },
   "js_popup_version": { "message": "versi" },
   "js_popup_tg_me": { "message": "Telegram saya" },
   "js_popup_github_repo": { "message": "Repositori Github" },
