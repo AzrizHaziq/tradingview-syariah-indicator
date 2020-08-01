@@ -6,16 +6,18 @@ const tsi = (function () {
   const TRADING_VIEW_MYR = 'MYX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
+  const mscAttribute = 'tradingview-syariah-indicator-msc'
+
   let SYARIAH_COMPLIANCE_LIST = {}
 
   function receiveSignalFromBgScript({ list }) {
     SYARIAH_COMPLIANCE_LIST = list
   }
 
-  function lookForShariah(currentSymbol) {
+  function lookForStockCode(currentSymbol) {
     return `${ currentSymbol }` in SYARIAH_COMPLIANCE_LIST
       ? SYARIAH_COMPLIANCE_LIST[currentSymbol]
-      : { s: false } // default for non-shariah
+      : { s: 0, msc: 0 } // default for non-shariah
   }
 
   function isSyariahIconExist(element) {
@@ -68,7 +70,6 @@ const tsi = (function () {
   `
 
     const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
-
     document.body.prepend(rootSvg)
   }
 
@@ -173,12 +174,42 @@ const tsi = (function () {
     fakeNode.remove()
   }
 
+  function createMSCIcon(element) {
+    // only add icon if static icon is not existed yet in DOM
+    if (element.querySelector(`[${ attributeName }=${ mscAttribute }]`)) {
+      return
+    }
+
+    const mscEle = document.createElement('span')
+    mscEle.setAttribute(attributeName, mscAttribute)
+    mscEle.innerText = 'MSC'
+    mscEle.style.color = '#131722'
+    mscEle.style.fontSize = '11px'
+    mscEle.style.cursor = 'default'
+    mscEle.style.padding = '1px 3px'
+    mscEle.style.borderRadius = '4px'
+    mscEle.style.backgroundColor = 'gold'
+    mscEle.style.border = '1px solid #131722'
+    mscEle.title = 'Mid & Small Cap'
+    return mscEle
+  }
+
+  function deleteMSCIcon(dom) {
+    (dom || document)
+      .querySelectorAll(`[${ attributeName }="${ mscAttribute }"]`)
+      .forEach(div => div.remove())
+  }
+
+  function isMSCIconExist(element) {
+    return element.querySelector(`[${ attributeName }="${ mscAttribute }"]`)
+  }
+
   return {
     retryFn,
     dateDiffInDays,
     debounce,
     isValidDate,
-    lookForShariah,
+    lookForStockCode,
     isSyariahIconExist,
     deleteSyariahIcon,
     createIcon,
@@ -187,6 +218,9 @@ const tsi = (function () {
     receiveSignalFromBgScript,
     observeNodeChanges,
     forceMutationChanges,
+    createMSCIcon,
+    deleteMSCIcon,
+    isMSCIconExist,
 
     TRADING_VIEW_MYR,
     attributeName,

@@ -103,7 +103,7 @@ function setupFilterSyariahBtn() {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
+        const { s: isSyariah } = tsi.lookForStockCode(rowSymbol)
 
         if (onlyFilterShariah) {
           if (isSyariah) {
@@ -159,7 +159,7 @@ function observedTableChanges() {
     Array.from(mutation.target.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
 
-      const { s: isSyariah } = tsi.lookForShariah(rowSymbol)
+      const { s: isSyariah } = tsi.lookForStockCode(rowSymbol)
 
       if (isSyariah) {
         const firstColumn = tr.querySelector('td div')

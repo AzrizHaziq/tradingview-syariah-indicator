@@ -15,7 +15,7 @@ function observeChartChanges() {
 }
 
 function chartScript() {
-  const { s: isShariah } = tsi.lookForShariah(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
+  const { s: isShariah } = tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (!isShariah) {
     // didnt found symbol within malaysian stocks
