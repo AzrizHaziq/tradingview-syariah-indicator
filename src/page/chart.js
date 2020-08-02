@@ -33,7 +33,7 @@ function chartScript() {
     if (tsi.isMSCIconExist(element.parentElement)) {
       // if icon already exist dont do anything
     } else {
-      const mscIcon = tsi.createMSCIcon(element.parentElement)
+      const mscIcon = tsi.createMSCIcon()
       mscIcon.style.marginLeft = '5px'
       element.insertAdjacentElement('beforebegin', mscIcon)
     }

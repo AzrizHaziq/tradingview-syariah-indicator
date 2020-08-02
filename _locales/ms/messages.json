@@ -10,5 +10,8 @@
   "js_popup_github_repo": { "message": "Repositori Github" },
   "js_popup_current_shariah_list": { "message": "Shariah list semasa" },
   "js_popup_my_updated_at": { "message": "\uD83C\uDDF2\uD83C\uDDFE kemaskini pada" },
-  "js_popup_my_loading_date": { "message": "Tunggu sekejap..." }
+  "js_popup_my_loading_date": { "message": "Tunggu sekejap..." },
+  "js_msc_title": { "message": "Syarikat Modal Sederhana dan Kecil" },
+  "js_msc_updated_at": { "message": "Modal Syarikat Sederhana & Kecil pada:" },
+  "js_popup_author_by": { "message": "Oleh: " }
 }

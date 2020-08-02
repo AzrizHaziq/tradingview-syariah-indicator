@@ -64,10 +64,11 @@ async function listener(id, { status }, { url }) {
       browser.tabs.sendMessage(id, { list: SHARIAH_LIST })
     } else {
       console.log('>>> API')
-      const { list, updatedAt } = await fetchData()
+      const { list, updatedAt, msc_link } = await fetchData()
 
-      await browser.storage.local.set({ 'UPDATED_AT': updatedAt, })
+      await browser.storage.local.set({ 'MSC_LINK': msc_link, })
       await browser.storage.local.set({ 'SHARIAH_LIST': list, })
+      await browser.storage.local.set({ 'UPDATED_AT': updatedAt, })
       await browser.storage.local.set({ 'LAST_FETCH_AT': new Date().toString() })
       browser.tabs.sendMessage(id, { list })
     }

@@ -17,9 +17,14 @@ document.querySelector('[data-tsi=my_current_shariah_list]').setAttribute('title
 
 // from storage write to dom
 ;(async() => {
+  const { MSC_LINK } = (await browser.storage.local.get('MSC_LINK'))
   const { UPDATED_AT } = (await browser.storage.local.get('UPDATED_AT'))
 
   document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(UPDATED_AT)
     ? new Date(UPDATED_AT).toLocaleDateString()
+    : browser.i18n.getMessage('js_popup_my_loading_date')
+
+  document.querySelector('[data-tsi=my_msc_updated_at]').textContent = tsi.isValidDate(MSC_LINK)
+    ? new Date(MSC_LINK).toLocaleDateString()
     : browser.i18n.getMessage('js_popup_my_loading_date')
 })()

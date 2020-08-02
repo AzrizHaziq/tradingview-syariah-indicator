@@ -174,12 +174,7 @@ const tsi = (function () {
     fakeNode.remove()
   }
 
-  function createMSCIcon(element = document) {
-    // only add icon if static icon is not existed yet in DOM
-    if (element.querySelector(`[${ attributeName }=${ mscAttribute }]`)) {
-      return
-    }
-
+  function createMSCIcon() {
     const mscEle = document.createElement('span')
     mscEle.setAttribute(attributeName, mscAttribute)
     mscEle.innerText = 'MSC'
@@ -190,7 +185,8 @@ const tsi = (function () {
     mscEle.style.borderRadius = '4px'
     mscEle.style.backgroundColor = 'gold'
     mscEle.style.border = '1px solid #131722'
-    mscEle.title = 'Mid & Small Cap'
+    mscEle.title = browser.i18n.getMessage('js_msc_title')
+
     return mscEle
   }
 
@@ -225,6 +221,7 @@ const tsi = (function () {
     TRADING_VIEW_MYR,
     attributeName,
     extensionName,
+    mscAttribute
   }
 })()
 

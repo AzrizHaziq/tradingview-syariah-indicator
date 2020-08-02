@@ -10,5 +10,8 @@
   "js_popup_github_repo": { "message": "Github repository" },
   "js_popup_current_shariah_list": { "message": "Current shariah list" },
   "js_popup_my_updated_at": { "message": "\uD83C\uDDF2\uD83C\uDDFE updated at" },
-  "js_popup_my_loading_date": { "message": "Loading date..." }
+  "js_popup_my_loading_date": { "message": "Loading date..." },
+  "js_msc_title": { "message": "Mid & Small Cap" },
+  "js_msc_updated_at": { "message": "Mid & Small cap at:" },
+  "js_popup_author_by": { "message": "By: " }
 }
