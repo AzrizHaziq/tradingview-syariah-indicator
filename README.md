@@ -32,17 +32,20 @@ https://github.com/amree/tradingview-shariah-indicators
 ## Release 
 [https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
 
-## Symbol Page
+[Symbol Page](https://www.tradingview.com/symbols/MYX-MI/)
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_symbol.png?raw=true)
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_symbol.png?raw=true)
 
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart_with_stock_screener.png?raw=true) ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart_with_stock_screener.png?raw=true)
-
-## Chart page
+[Chart page](https://www.tradingview.com/chart/)
 ![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart.png?raw=true)
 ![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart.png?raw=true)
 
-## Screener page
+<p float="left">
+  <img src="https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart_with_stock_screener.png?raw=true" width="200px" />
+  <img src="https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart_with_stock_screener.png?raw=true" width="200px" /> 
+</p>
+
+[Screener page](https://www.tradingview.com/screener/)
 ![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_screener.png?raw=true)
 ![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_screener.png?raw=true)
 
