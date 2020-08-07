@@ -15,31 +15,36 @@ https://github.com/amree/tradingview-shariah-indicators
    href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
 </a>
+
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in firefox now" 
    href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
 </a>
 
-
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Edge now" 
    href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="16" />
-     Please install this extension from chrome store.
+    Please install this extension from chrome store.
 </a>
 
 ## Release 
 [https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
 
 ## Symbol Page
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_symbol.png?raw=true)
+![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_symbol.png?raw=true)
+![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_symbol.png?raw=true)
+
+![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart_with_stock_screener.png?raw=true) ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart_with_stock_screener.png?raw=true)
 
 ## Chart page
-![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_chart.png?raw=true)
+![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart.png?raw=true)
+![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart.png?raw=true)
 
 ## Screener page
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/doc_screener.png?raw=true)
+![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_screener.png?raw=true)
+![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_screener.png?raw=true)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
