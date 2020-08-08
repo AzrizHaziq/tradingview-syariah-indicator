@@ -1,12 +1,5 @@
 /* global tsi */
-window.addEventListener('load', function onLoad() {
-  browser.runtime.sendMessage({ init: 'page-screener' }).then(() => {
-    tsi.retryFn()(screenerScript)
-    this.removeEventListener('load', onLoad)
-  })
-})
-
-let isScreenerScriptExecuted = false
+let SHARIAH_MSC_LIST = {}
 const ONLY_VALID_COUNTRIES = ['my']
 const msc = {
   type: 'MSC',
@@ -62,6 +55,10 @@ const shariah = {
   }
 }
 
+tsi.retryFn()(screenerScript)
+tsi.retryFn()(onClickStockScreenerInChartPage)
+browser.runtime.onMessage.addListener(screenerScript)
+
 // if both icon exist, then add margin-left
 tsi.addStyle(`
   [${ tsi.attributeName }="${ tsi.extensionName }"] +
@@ -70,34 +67,19 @@ tsi.addStyle(`
   }
 `)
 
-tsi.retryFn()(onClickStockScreenerInChartPage)
-function onClickStockScreenerInChartPage() {
-  document
-    .querySelector('#footer-chart-panel [data-name=screener]')
-    .addEventListener('click', function def(a) {
-      const isClose = a.currentTarget.dataset.active === 'false'
-
-      if (!isClose || isScreenerScriptExecuted) {
-        return
-      }
-
-      // only run when stock screener is open and at once only
-      screenerScript()
-    })
-}
-
 async function screenerScript() {
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
   // if table not found then dont run rest of the scripts
-  // dont run if screener script already execute 
-  if (!tableNode || isScreenerScriptExecuted) {
+  if (!tableNode) {
     return
   }
 
   try {
+    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
     const { IS_FILTER_MSC } = (await browser.storage.local.get('IS_FILTER_MSC'))
     const { IS_FILTER_SHARIAH } = (await browser.storage.local.get('IS_FILTER_SHARIAH'))
+    SHARIAH_MSC_LIST = SHARIAH_LIST
 
     msc.currentState = IS_FILTER_MSC || false
     shariah.currentState = IS_FILTER_SHARIAH || false
@@ -110,7 +92,6 @@ async function screenerScript() {
       setupFilterBtn(shariah)
       observedCountryFlagChanges()
       forceMutationChanges()
-      isScreenerScriptExecuted = true
 
       clearTimeout(tempTimeout)
     }, 500)
@@ -145,14 +126,13 @@ function observedTableChanges() {
 
   observer = new MutationObserver(([mutation]) => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-      tsi.deleteSyariahIcon()
+      tsi.deleteSyariahIcon(tableNode.parentElement)
       return
     }
 
     Array.from(mutation.target.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-
-      const { s: isSyariah, msc: isMsc } = tsi.lookForStockCode(rowSymbol)
+      const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
 
       if (isMsc) {
         const firstColumn = tr.querySelector('td div')
@@ -184,7 +164,7 @@ function observedTableChanges() {
   })
 
   // Start observing the target node for configured mutations
-  observer.observe(tableNode, { childList: true })
+  observer.observe(tableNode, { childList: true, subtree: true, })
 }
 
 function observedCountryFlagChanges() {
@@ -277,7 +257,7 @@ function setupFilterBtn(state) {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah, msc: isMsc } = tsi.lookForStockCode(rowSymbol)
+        const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
 
         // BOTH
         if (shariah.currentState && msc.currentState) {
@@ -315,5 +295,27 @@ function setupFilterBtn(state) {
 
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
     wrapper.style.display = 'none'
+  }
+}
+
+function onClickStockScreenerInChartPage() {
+  const stockScreenerBtn = document.querySelector('#footer-chart-panel [data-name=screener]')
+
+  // only run in chart page
+  if (!location.pathname.includes('chart') || !stockScreenerBtn) {
+    return
+  }
+
+  stockScreenerBtn.addEventListener('click', runScreenerScript)
+
+  function runScreenerScript(a) {
+    const isClose = a.currentTarget.dataset.active === 'false'
+    console.log('rerun screenerScript')
+    if (!isClose) {
+      return
+    }
+
+    // only run when stock screener is open
+    screenerScript()
   }
 }

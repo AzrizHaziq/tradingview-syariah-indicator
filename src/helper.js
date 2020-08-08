@@ -8,15 +8,12 @@ const tsi = (function () {
   const extensionName = 'tradingview-syariah-indicator'
   const mscAttribute = 'tradingview-syariah-indicator-msc'
 
-  let SYARIAH_COMPLIANCE_LIST = {}
+  async function lookForStockCode(currentSymbol) {
+    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
 
-  function receiveSignalFromBgScript({ list }) {
-    SYARIAH_COMPLIANCE_LIST = list
-  }
-
-  function lookForStockCode(currentSymbol) {
-    return `${ currentSymbol }` in SYARIAH_COMPLIANCE_LIST
-      ? SYARIAH_COMPLIANCE_LIST[currentSymbol]
+    // eslint-disable-next-line no-prototype-builtins
+    return SHARIAH_LIST.hasOwnProperty(currentSymbol)
+      ? SHARIAH_LIST[currentSymbol]
       : { s: 0, msc: 0 } // default for non-shariah
   }
 
@@ -24,8 +21,8 @@ const tsi = (function () {
     return element.querySelector(`[${ attributeName }="${ extensionName }"]`)
   }
 
-  function deleteSyariahIcon() {
-    document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
+  function deleteSyariahIcon(parentElement = document) {
+    parentElement.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
   }
 
   /**
@@ -125,8 +122,16 @@ const tsi = (function () {
   }
 
   function isValidDate(d) {
-    d = new Date()
-    return d instanceof Date && !isNaN(d)
+    if (Object.prototype.toString.call(d) === "[object Date]") {
+      // it is a date
+      if (isNaN(d.getTime())) {  // d.valueOf() could also work
+        return 0
+      } else {
+        return 1
+      }
+    } else {
+      return 0
+    }
   }
 
   function retryFn(until = 10, timeout = 500) {
@@ -136,7 +141,7 @@ const tsi = (function () {
         fn()
       } catch (e) {
         i++
-        console.count(fn.name)
+        console.error(e)
 
         if (i < until) {
           const t = setTimeout(() => {
@@ -211,7 +216,6 @@ const tsi = (function () {
     createIcon,
     addStaticSyariahIcon,
     addStyle,
-    receiveSignalFromBgScript,
     observeNodeChanges,
     forceMutationChanges,
     createMSCIcon,
@@ -224,5 +228,3 @@ const tsi = (function () {
     mscAttribute
   }
 })()
-
-browser.runtime.onMessage.addListener(tsi.receiveSignalFromBgScript)

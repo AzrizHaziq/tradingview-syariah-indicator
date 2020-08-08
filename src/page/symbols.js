@@ -19,8 +19,8 @@ function getSymbol() {
     .getAttribute('data-symbol').trim()
 }
 
-function symbolScript() {
-  const { s: isShariah, msc } = tsi.lookForStockCode(getSymbol())
+async function symbolScript() {
+  const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
 
   if (isShariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')

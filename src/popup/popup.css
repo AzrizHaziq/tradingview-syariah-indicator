@@ -111,3 +111,13 @@ small {
 .w-100p {
   width: 100%
 }
+
+a[data-tsi] {
+  color: var(--gray-500);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a[data-tsi]:hover {
+  text-decoration: underline;
+}

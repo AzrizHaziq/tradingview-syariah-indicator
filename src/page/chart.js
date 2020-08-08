@@ -3,42 +3,45 @@ tsi.addStaticSyariahIcon()
 tsi.retryFn()(observeChartChanges)
 browser.runtime.onMessage.addListener(chartScript)
 
-const symbolNode = document.querySelector('[data-name="legend-series-item"]')
-tsi.forceMutationChanges(symbolNode)
-
 function observeChartChanges() {
   // have to target dom like below since this is the most top parent
   const symbolNode = document.querySelector('[data-name="legend-series-item"]')
+
+  if (!symbolNode) {
+    return
+  }
 
   tsi.observeNodeChanges(symbolNode, chartScript)
   tsi.forceMutationChanges(symbolNode)
 }
 
-function chartScript() {
-  const element = document.querySelector('[data-name="legend-source-title"]')
-  const { s: isShariah, msc = 0 } = tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
+async function chartScript() {
+  const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
+  const { s: isShariah, msc = 0 } = await tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (isShariah) {
-    if (tsi.isSyariahIconExist(element.parentElement)) {
+    if (tsi.isSyariahIconExist(parentElement)) {
       // if icon already exist dont do anything
     } else {
-      element.parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
+      parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
     }
   } else {
     // if not syariah delete all icon
-    tsi.deleteSyariahIcon()
+    tsi.deleteSyariahIcon(parentElement)
   }
 
   if (msc) {
-    if (tsi.isMSCIconExist(element.parentElement)) {
+    if (tsi.isMSCIconExist(parentElement.parentElement)) {
       // if icon already exist dont do anything
     } else {
       const mscIcon = tsi.createMSCIcon()
       mscIcon.style.marginLeft = '5px'
-      element.insertAdjacentElement('beforebegin', mscIcon)
+      parentElement
+        .querySelector('[data-name="legend-source-title"]')
+        .insertAdjacentElement('beforebegin', mscIcon)
     }
   } else {
-    tsi.deleteMSCIcon(element.parentElement)
+    tsi.deleteMSCIcon(parentElement)
   }
 }
 
