@@ -6,6 +6,7 @@ window.addEventListener('load', function onLoad() {
   })
 })
 
+let isScreenerScriptExecuted = false
 const ONLY_VALID_COUNTRIES = ['my']
 const msc = {
   type: 'MSC',
@@ -69,11 +70,28 @@ tsi.addStyle(`
   }
 `)
 
+tsi.retryFn()(onClickStockScreenerInChartPage)
+function onClickStockScreenerInChartPage() {
+  document
+    .querySelector('#footer-chart-panel [data-name=screener]')
+    .addEventListener('click', function def(a) {
+      const isClose = a.currentTarget.dataset.active === 'false'
+
+      if (!isClose || isScreenerScriptExecuted) {
+        return
+      }
+
+      // only run when stock screener is open and at once only
+      screenerScript()
+    })
+}
+
 async function screenerScript() {
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
   // if table not found then dont run rest of the scripts
-  if (!tableNode) {
+  // dont run if screener script already execute 
+  if (!tableNode || isScreenerScriptExecuted) {
     return
   }
 
@@ -92,6 +110,7 @@ async function screenerScript() {
       setupFilterBtn(shariah)
       observedCountryFlagChanges()
       forceMutationChanges()
+      isScreenerScriptExecuted = true
 
       clearTimeout(tempTimeout)
     }, 500)
@@ -248,7 +267,6 @@ function setupFilterBtn(state) {
   labelElement.prepend(iconElement)
   wrapper.prepend(checkbox, labelElement)
 
-  console.log(document.querySelector('.tv-screener-toolbar'), wrapper)
   document.querySelector('.tv-screener-toolbar').prepend(wrapper)
 
   wrapper.addEventListener('change', async function (e) {
