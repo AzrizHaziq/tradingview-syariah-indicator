@@ -124,42 +124,41 @@ function observedTableChanges() {
 
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
-  observer = new MutationObserver(([mutation]) => {
+  observer = new MutationObserver(_ => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
       tsi.deleteSyariahIcon(tableNode.parentElement)
       return
     }
 
-    Array.from(mutation.target.children).forEach(tr => {
+    Array.from(tableNode.children).forEach((tr) => {
       const rowSymbol = tr.getAttribute('data-symbol')
       const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
 
+      const firstColumn = tr.querySelector('td div')
+      const mscIcon = tsi.createMSCIcon()
+      const shariahIcon = tsi.createIcon({ width: 10, height: 10 })
+
       if (isMsc) {
-        const firstColumn = tr.querySelector('td div')
         if (tsi.isMSCIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
           // this query need to be the same in /screener  & /chart's stock screener
           const domToBeAdded = firstColumn.querySelector('.tv-screener__symbol')
-          domToBeAdded.insertAdjacentElement('afterend', tsi.createMSCIcon())
+          domToBeAdded.insertAdjacentElement('afterend', mscIcon)
         }
-      } else if (msc.currentState) {
-        tr.style.display = 'none'
       }
 
       if (isSyariah) {
-        const firstColumn = tr.querySelector('td div')
         if (tsi.isSyariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
           // this query need to be the same in /screener  & /chart's stock screener
           const domToBeAdded = firstColumn.querySelector('.tv-screener__symbol')
-          const shariahIcon = tsi.createIcon({ width: 10, height: 10 })
           domToBeAdded.insertAdjacentElement('afterend', shariahIcon)
         }
-      } else if (shariah.currentState) {
-        tr.style.display = 'none'
       }
+
+      shouldDisplayRow(tr, { isSyariah, isMsc })
     })
   })
 
@@ -258,35 +257,7 @@ function setupFilterBtn(state) {
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
         const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
-
-        // BOTH
-        if (shariah.currentState && msc.currentState) {
-          if (isSyariah && isMsc) {
-            tr.style.display = 'table-row'
-          } else {
-            tr.style.display = 'none'
-          }
-
-          // SHARIAH
-        } else if (shariah.currentState && !msc.currentState) {
-          if (isSyariah) {
-            tr.style.display = 'table-row'
-          } else {
-            tr.style.display = 'none'
-          }
-
-          // MSC
-        } else if (msc.currentState && !shariah.currentState) {
-          if (isMsc) {
-            tr.style.display = 'table-row'
-          } else {
-            tr.style.display = 'none'
-          }
-
-          // BOTH is currently OFF
-        } else {
-          tr.style.display = 'table-row'
-        }
+        shouldDisplayRow(tr, { isSyariah, isMsc })
       })
     } catch (error) {
       console.log('Error post click action', e)
@@ -317,5 +288,36 @@ function onClickStockScreenerInChartPage() {
 
     // only run when stock screener is open
     screenerScript()
+  }
+}
+
+function shouldDisplayRow(rowElement, { isSyariah, isMsc }) {
+  // BOTH
+  if (shariah.currentState && msc.currentState) {
+    if (isSyariah && isMsc) {
+      rowElement.style.display = 'table-row'
+    } else {
+      rowElement.style.display = 'none'
+    }
+
+    // SHARIAH
+  } else if (shariah.currentState && !msc.currentState) {
+    if (isSyariah) {
+      rowElement.style.display = 'table-row'
+    } else {
+      rowElement.style.display = 'none'
+    }
+
+    // MSC
+  } else if (msc.currentState && !shariah.currentState) {
+    if (isMsc) {
+      rowElement.style.display = 'table-row'
+    } else {
+      rowElement.style.display = 'none'
+    }
+
+    // BOTH is currently OFF
+  } else {
+    rowElement.style.display = 'table-row'
   }
 }
