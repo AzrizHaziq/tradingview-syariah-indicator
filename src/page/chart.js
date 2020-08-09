@@ -3,38 +3,45 @@ tsi.addStaticSyariahIcon()
 tsi.retryFn()(observeChartChanges)
 browser.runtime.onMessage.addListener(chartScript)
 
-const symbolNode = document.querySelector('[data-name="legend-series-item"]')
-tsi.forceMutationChanges(symbolNode)
-
 function observeChartChanges() {
   // have to target dom like below since this is the most top parent
   const symbolNode = document.querySelector('[data-name="legend-series-item"]')
+
+  if (!symbolNode) {
+    return
+  }
 
   tsi.observeNodeChanges(symbolNode, chartScript)
   tsi.forceMutationChanges(symbolNode)
 }
 
-function chartScript() {
-  const { s: isShariah } = tsi.lookForShariah(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
-
-  if (!isShariah) {
-    // didnt found symbol within malaysian stocks
-    tsi.deleteSyariahIcon()
-    return
-  }
+async function chartScript() {
+  const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
+  const { s: isShariah, msc = 0 } = await tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
 
   if (isShariah) {
-    const element = document.querySelector('[data-name="legend-source-title"]')
-
-    // if icon already exist dont do anything
-    if (tsi.isSyariahIconExist(element.parentElement)) {
-      return
+    if (tsi.isSyariahIconExist(parentElement)) {
+      // if icon already exist dont do anything
+    } else {
+      parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
     }
-
-    element.parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
   } else {
     // if not syariah delete all icon
-    tsi.deleteSyariahIcon()
+    tsi.deleteSyariahIcon(parentElement)
+  }
+
+  if (msc) {
+    if (tsi.isMSCIconExist(parentElement.parentElement)) {
+      // if icon already exist dont do anything
+    } else {
+      const mscIcon = tsi.createMSCIcon()
+      mscIcon.style.marginLeft = '5px'
+      parentElement
+        .querySelector('[data-name="legend-source-title"]')
+        .insertAdjacentElement('beforebegin', mscIcon)
+    }
+  } else {
+    tsi.deleteMSCIcon(parentElement)
   }
 }
 

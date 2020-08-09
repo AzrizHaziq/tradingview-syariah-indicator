@@ -6,24 +6,23 @@ const tsi = (function () {
   const TRADING_VIEW_MYR = 'MYX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
-  let SYARIAH_COMPLIANCE_LIST = {}
+  const mscAttribute = 'tradingview-syariah-indicator-msc'
 
-  function receiveSignalFromBgScript({ list }) {
-    SYARIAH_COMPLIANCE_LIST = list
-  }
+  async function lookForStockCode(currentSymbol) {
+    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
 
-  function lookForShariah(currentSymbol) {
-    return `${ currentSymbol }` in SYARIAH_COMPLIANCE_LIST
-      ? SYARIAH_COMPLIANCE_LIST[currentSymbol]
-      : { s: false } // default for non-shariah
+    // eslint-disable-next-line no-prototype-builtins
+    return SHARIAH_LIST.hasOwnProperty(currentSymbol)
+      ? SHARIAH_LIST[currentSymbol]
+      : { s: 0, msc: 0 } // default for non-shariah
   }
 
   function isSyariahIconExist(element) {
     return element.querySelector(`[${ attributeName }="${ extensionName }"]`)
   }
 
-  function deleteSyariahIcon() {
-    document.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
+  function deleteSyariahIcon(parentElement = document) {
+    parentElement.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
   }
 
   /**
@@ -68,7 +67,6 @@ const tsi = (function () {
   `
 
     const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
-
     document.body.prepend(rootSvg)
   }
 
@@ -135,7 +133,7 @@ const tsi = (function () {
         fn()
       } catch (e) {
         i++
-        console.log('Retry: ', i)
+        console.error(e)
 
         if (i < until) {
           const t = setTimeout(() => {
@@ -173,25 +171,52 @@ const tsi = (function () {
     fakeNode.remove()
   }
 
+  function createMSCIcon() {
+    const mscEle = document.createElement('span')
+    mscEle.setAttribute(attributeName, mscAttribute)
+    mscEle.innerText = 'MSC'
+    mscEle.style.color = '#131722'
+    mscEle.style.fontSize = '11px'
+    mscEle.style.cursor = 'default'
+    mscEle.style.padding = '1px 3px'
+    mscEle.style.borderRadius = '4px'
+    mscEle.style.backgroundColor = 'gold'
+    mscEle.style.border = '1px solid #131722'
+    mscEle.title = browser.i18n.getMessage('js_msc_title')
+
+    return mscEle
+  }
+
+  function deleteMSCIcon(dom) {
+    (dom || document)
+      .querySelectorAll(`[${ attributeName }="${ mscAttribute }"]`)
+      .forEach(div => div.remove())
+  }
+
+  function isMSCIconExist(element) {
+    return element.querySelector(`[${ attributeName }="${ mscAttribute }"]`)
+  }
+
   return {
     retryFn,
     dateDiffInDays,
     debounce,
     isValidDate,
-    lookForShariah,
+    lookForStockCode,
     isSyariahIconExist,
     deleteSyariahIcon,
     createIcon,
     addStaticSyariahIcon,
     addStyle,
-    receiveSignalFromBgScript,
     observeNodeChanges,
     forceMutationChanges,
+    createMSCIcon,
+    deleteMSCIcon,
+    isMSCIconExist,
 
     TRADING_VIEW_MYR,
     attributeName,
     extensionName,
+    mscAttribute
   }
 })()
-
-browser.runtime.onMessage.addListener(tsi.receiveSignalFromBgScript)

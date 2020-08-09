@@ -19,8 +19,8 @@ function getSymbol() {
     .getAttribute('data-symbol').trim()
 }
 
-function symbolScript(a) {
-  const { s: isShariah } = tsi.lookForShariah(getSymbol())
+async function symbolScript() {
+  const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
 
   if (isShariah) {
     const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
@@ -45,8 +45,32 @@ function symbolScript(a) {
       icon.style.marginLeft = '5px'
       largeResoDom.insertAdjacentElement('afterend', icon)
     }
-
   } else {
     tsi.deleteSyariahIcon()
+  }
+
+  if (msc) {
+    const largeResoDom = document.querySelector('.tv-symbol-header__text-group.tv-symbol-header__text-group--adaptive-tablet')
+    const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
+
+    if (tsi.isMSCIconExist(largeResoDom.parentElement)) {
+      // if icon already exist dont do anything
+    } else {
+      const mscLargeResoIcon = tsi.createMSCIcon()
+      mscLargeResoIcon.style.marginLeft = '5px'
+      largeResoDom.insertAdjacentElement('beforeend', mscLargeResoIcon)
+    }
+
+    if (tsi.isMSCIconExist(smallResoDom)) {
+      // if icon already exist dont do anything
+    } else {
+      const mscSmallResoIcon = tsi.createMSCIcon()
+      mscSmallResoIcon.style.top = '-14px'
+      mscSmallResoIcon.style.marginLeft = '5px'
+      mscSmallResoIcon.style.position = 'relative'
+      smallResoDom.append(mscSmallResoIcon)
+    }
+  } else {
+    tsi.deleteMSCIcon()
   }
 }

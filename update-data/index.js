@@ -1,10 +1,13 @@
 import fs from 'fs'
+import ExcelJS from 'exceljs'
 import git from 'simple-git'
+import merge from 'lodash.merge'
 import playWright from 'playwright'
 import cliProgress from 'cli-progress'
 
 const TRADING_VIEW_MYR = 'MYX'
 const STOCK_LIST_FILENAME = 'stock-list.json'
+const STOCK_LIST_READ_ONLY_FILENAME = 'stock-readonly-list.json'
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
@@ -64,33 +67,16 @@ async function scrapBursaMalaysia() {
   }
 }
 
-function merged(SYARIAH_LIST) {
+async function writeToFile(filename, data) {
   try {
-    return {
-      updatedAt: new Date(),
-      list: SYARIAH_LIST.reduce((acc, name) => ({
-        ...acc,
-        [`${ TRADING_VIEW_MYR }:${ name }`]: {
-          s: true
-        }
-      }), {})
-    }
-  } catch (e) {
-    console.error('Error merge data', e)
-    process.exit(1)
-  }
-}
-
-async function writeToFile(data) {
-  try {
-    fs.writeFileSync(STOCK_LIST_FILENAME, JSON.stringify(data, null, 2), { encoding: 'utf-8' }, function (err) {
+    fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (err) {
       if (err) {
         console.log(err)
         throw Error(`Unable to write to file ${ STOCK_LIST_FILENAME }`)
       }
     })
 
-    console.log(`Saved in: ${ STOCK_LIST_FILENAME }`)
+    console.log(`Saved in: ${ filename }`)
   } catch (e) {
     console.error('Error write data', e)
     process.exit(1)
@@ -98,11 +84,12 @@ async function writeToFile(data) {
 }
 
 async function pushChangesIfAny() {
-  const branchName = 'update-data'
-
   try {
     await git()
-      .add([STOCK_LIST_FILENAME])
+      .add([
+        STOCK_LIST_FILENAME,
+        STOCK_LIST_READ_ONLY_FILENAME
+      ])
       .commit('[STOCK_LIST] script_bot: Update with new changes')
   } catch (e) {
     console.error('Error: commit and push stock list changes', e)
@@ -110,11 +97,66 @@ async function pushChangesIfAny() {
   }
 }
 
-
-(async () => {
+function generateShariah(SYARIAH_LIST) {
   try {
+    return SYARIAH_LIST.reduce((acc, name) => ({
+      ...acc,
+      [`${ TRADING_VIEW_MYR }:${ name }`]: {
+        s: 1
+      }
+    }), {})
+  } catch (e) {
+    console.error('Error merge data', e)
+    process.exit(1)
+  }
+}
+
+async function generateMidSmallCap() {
+  let excelFile
+  const workbook = new ExcelJS.Workbook()
+  try {
+    excelFile = await workbook.xlsx.readFile('./update-data/msc.xlsx')
+  } catch (e) {
+    console.error('Error generateMidSmallCap data', e)
+    process.exit(1)
+  }
+
+  const sheet = excelFile.getWorksheet(1)
+
+  let firstRowItem
+  sheet.getColumn(1).eachCell((i, rowNumber) => {
+    // getting the first item in the list, which ignore all table headers etc
+    if (i.value === 1) {
+      firstRowItem = rowNumber
+    }
+  })
+
+  return sheet.getColumn(4).values
+    .slice(firstRowItem)
+    .reduce((acc, stockCode) => ({
+      ...acc,
+      [`${ TRADING_VIEW_MYR }:${ stockCode }`]: {
+        msc: 1
+      }
+    }), {})
+}
+
+(async() => {
+  try {
+    const MSC_LIST = await generateMidSmallCap()
     const SYARIAH_LIST = await scrapBursaMalaysia()
-    await writeToFile(merged(SYARIAH_LIST))
+
+    const mergedShariahAndMSCList = {
+      updateAt: new Date(),
+      list: merge(
+        generateShariah(SYARIAH_LIST),
+        MSC_LIST,
+      )
+    }
+
+    await writeToFile(STOCK_LIST_FILENAME, JSON.stringify(mergedShariahAndMSCList))
+    await writeToFile(STOCK_LIST_READ_ONLY_FILENAME, JSON.stringify(mergedShariahAndMSCList, null, 2))
+
     await pushChangesIfAny()
     process.exit()
   } catch (e) {

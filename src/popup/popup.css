@@ -22,10 +22,17 @@ body {
   color: #444;
   padding: 0;
   margin: 0;
-  min-width: 300px;
   position: relative;
   font-size: 15px;
   background: #fff
+}
+
+body[data-tsi-i18n=en] {
+  min-width: 300px;
+}
+
+body[data-tsi-i18n=ms] {
+  min-width: 370px;
 }
 
 small {
@@ -85,8 +92,20 @@ small {
   padding-top: .2em;
 }
 
-.p-2 {
-  padding: .5em
+.pt-2 {
+  padding-bottom: .5em
+}
+
+.pb-2 {
+  padding-top: .5em
+}
+
+.pr-3 {
+  padding-right: 1em
+}
+
+.pl-3 {
+  padding-left: 1em
 }
 
 .tsi__bg {
@@ -96,4 +115,18 @@ small {
 .tsi__name {
   font-weight: bold;
   color: var(--primary-color);
+}
+
+.w-100p {
+  width: 100%
+}
+
+a[data-tsi] {
+  color: var(--gray-500);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a[data-tsi]:hover {
+  text-decoration: underline;
 }

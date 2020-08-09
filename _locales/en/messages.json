@@ -3,10 +3,15 @@
   "ext_extension_description": { "message": "Display small shariah indicator to stock list in Tradingview(MY)" },
   "js_screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
   "js_screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
+  "js_screener_filter_btn_msc_on": { "message": "Mid & Small cap: ON" },
+  "js_screener_filter_btn_msc_off": { "message": "Mid & Small cap: OFF" },
   "js_popup_version": { "message": "version" },
   "js_popup_tg_me": { "message": "Telegram me" },
   "js_popup_github_repo": { "message": "Github repository" },
   "js_popup_current_shariah_list": { "message": "Current shariah list" },
   "js_popup_my_updated_at": { "message": "\uD83C\uDDF2\uD83C\uDDFE updated at" },
-  "js_popup_my_loading_date": { "message": "Loading date..." }
+  "js_msc_title": { "message": "Mid & Small Cap" },
+  "js_msc_updated_at": { "message": "Mid & Small cap at:" },
+  "js_popup_author_by": { "message": "By: " },
+  "js_popup_current_i18n": { "message": "en" }
 }
