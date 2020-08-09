@@ -12,5 +12,6 @@
   "js_popup_my_updated_at": { "message": "\uD83C\uDDF2\uD83C\uDDFE kemaskini pada" },
   "js_msc_title": { "message": "Syarikat Modal Sederhana dan Kecil" },
   "js_msc_updated_at": { "message": "Modal Syarikat Sederhana & Kecil pada:" },
-  "js_popup_author_by": { "message": "Oleh: " }
+  "js_popup_author_by": { "message": "Oleh: " },
+  "js_popup_current_i18n": { "message": "ms" }
 }

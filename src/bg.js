@@ -14,23 +14,6 @@ const fetchData = async() => {
 
 // just trigger get first in bg script
 fetchData()
-  .then(console.log)
-  .then(() => browser.tabs.query({
-    currentWindow: true,
-    active: true
-  }))
-  .then(sendMessageToTabs)
-
-
-function sendMessageToTabs(tabs) {
-  function onError(error) {
-    console.error(`Error: ${error}`);
-  }
-
-  for (let tab of tabs) {
-    browser.tabs.sendMessage(tab.id).catch(onError)
-  }
-}
 
 const validUrls = [
   'tradingview.com/chart',
@@ -60,20 +43,18 @@ async function listener(id, { status }, { url }) {
 
     if (shouldUseCacheValue) {
       console.log('>>> Cache')
-      const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
-      browser.tabs.sendMessage(id, { list: SHARIAH_LIST })
     } else {
       console.log('>>> API')
-      const { list, updatedAt, msc_link } = await fetchData()
+      const { list, updatedAt, mscAt, mscLink } = await fetchData()
 
-      await browser.storage.local.set({ 'MSC_LINK': msc_link, })
+      await browser.storage.local.set({ 'MSC_AT': mscAt, })
+      await browser.storage.local.set({ 'MSC_LINK': mscLink, })
       await browser.storage.local.set({ 'SHARIAH_LIST': list, })
       await browser.storage.local.set({ 'UPDATED_AT': updatedAt, })
       await browser.storage.local.set({ 'LAST_FETCH_AT': new Date().toString() })
-      browser.tabs.sendMessage(id, { list })
     }
-
     const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
+    browser.tabs.sendMessage(id, { list: SHARIAH_LIST })
     return await SHARIAH_LIST
   } catch (e) {
     console.error('Error Send message', e)

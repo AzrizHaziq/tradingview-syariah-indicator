@@ -122,16 +122,8 @@ const tsi = (function () {
   }
 
   function isValidDate(d) {
-    if (Object.prototype.toString.call(d) === "[object Date]") {
-      // it is a date
-      if (isNaN(d.getTime())) {  // d.valueOf() could also work
-        return 0
-      } else {
-        return 1
-      }
-    } else {
-      return 0
-    }
+    d = new Date()
+    return d instanceof Date && !isNaN(d)
   }
 
   function retryFn(until = 10, timeout = 500) {
