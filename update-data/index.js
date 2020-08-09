@@ -147,6 +147,8 @@ async function generateMidSmallCap() {
     const SYARIAH_LIST = await scrapBursaMalaysia()
 
     const mergedShariahAndMSCList = {
+      mscAt: "31 Dec 2019",
+      mscLink: "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
       updateAt: new Date(),
       list: merge(
         generateShariah(SYARIAH_LIST),
