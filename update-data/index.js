@@ -7,6 +7,7 @@ import cliProgress from 'cli-progress'
 
 const TRADING_VIEW_MYR = 'MYX'
 const STOCK_LIST_FILENAME = 'stock-list.json'
+const STOCK_LIST_READ_ONLY_FILENAME = 'stock-readonly-list.json'
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
@@ -66,16 +67,16 @@ async function scrapBursaMalaysia() {
   }
 }
 
-async function writeToFile(data) {
+async function writeToFile(filename, data) {
   try {
-    fs.writeFileSync(STOCK_LIST_FILENAME, JSON.stringify(data, null, 2), { encoding: 'utf-8' }, function (err) {
+    fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (err) {
       if (err) {
         console.log(err)
         throw Error(`Unable to write to file ${ STOCK_LIST_FILENAME }`)
       }
     })
 
-    console.log(`Saved in: ${ STOCK_LIST_FILENAME }`)
+    console.log(`Saved in: ${ filename }`)
   } catch (e) {
     console.error('Error write data', e)
     process.exit(1)
@@ -85,7 +86,10 @@ async function writeToFile(data) {
 async function pushChangesIfAny() {
   try {
     await git()
-      .add([STOCK_LIST_FILENAME])
+      .add([
+        STOCK_LIST_FILENAME,
+        STOCK_LIST_READ_ONLY_FILENAME
+      ])
       .commit('[STOCK_LIST] script_bot: Update with new changes')
   } catch (e) {
     console.error('Error: commit and push stock list changes', e)
@@ -150,7 +154,8 @@ async function generateMidSmallCap() {
       )
     }
 
-    await writeToFile(mergedShariahAndMSCList)
+    await writeToFile(STOCK_LIST_FILENAME, JSON.stringify(mergedShariahAndMSCList))
+    await writeToFile(STOCK_LIST_READ_ONLY_FILENAME, JSON.stringify(mergedShariahAndMSCList, null, 2))
 
     await pushChangesIfAny()
     process.exit()
