@@ -123,6 +123,9 @@ async function generateMidSmallCap() {
 
   const sheet = excelFile.getWorksheet(1)
 
+  const mscAt = sheet.getCell(1, 1).value
+  const mscLink = sheet.getCell(2, 1).value.text
+
   let firstRowItem
   sheet.getColumn(1).eachCell((i, rowNumber) => {
     // getting the first item in the list, which ignore all table headers etc
@@ -131,28 +134,32 @@ async function generateMidSmallCap() {
     }
   })
 
-  return sheet.getColumn(4).values
-    .slice(firstRowItem)
-    .reduce((acc, stockCode) => ({
-      ...acc,
-      [`${ TRADING_VIEW_MYR }:${ stockCode }`]: {
-        msc: 1
-      }
-    }), {})
+  return {
+    mscAt,
+    mscLink,
+    mscList: sheet.getColumn(4).values
+      .slice(firstRowItem)
+      .reduce((acc, stockCode) => ({
+        ...acc,
+        [`${ TRADING_VIEW_MYR }:${ stockCode }`]: {
+          msc: 1
+        }
+      }), {})
+  }
 }
 
 (async() => {
   try {
-    const MSC_LIST = await generateMidSmallCap()
     const SYARIAH_LIST = await scrapBursaMalaysia()
+    const { mscAt, mscLink, mscList } = await generateMidSmallCap()
 
     const mergedShariahAndMSCList = {
-      mscAt: "31 Dec 2019",
-      mscLink: "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
+      mscAt,
+      mscLink,
       updatedAt: new Date(),
       list: merge(
         generateShariah(SYARIAH_LIST),
-        MSC_LIST,
+        mscList,
       )
     }
 
