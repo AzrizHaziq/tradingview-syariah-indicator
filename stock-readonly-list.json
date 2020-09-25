@@ -1,7 +1,7 @@
 {
   "mscAt": "2019-12-31T00:00:00.000Z",
   "mscLink": "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
-  "updatedAt": "2020-08-23T12:12:13.349Z",
+  "updatedAt": "2020-09-25T01:48:36.729Z",
   "list": {
     "MYX:3A": {
       "s": 1,
@@ -113,6 +113,9 @@
       "s": 1
     },
     "MYX:ANCOM": {
+      "s": 1
+    },
+    "MYX:ANCOM-WB": {
       "s": 1
     },
     "MYX:ANCOMLB": {
@@ -545,6 +548,9 @@
       "s": 1,
       "msc": 1
     },
+    "MYX:DFCITY": {
+      "s": 1
+    },
     "MYX:DGB": {
       "s": 1
     },
@@ -601,9 +607,6 @@
     "MYX:DOMINAN": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:DOMINAN-WA": {
-      "s": 1
     },
     "MYX:DPHARMA": {
       "s": 1,
@@ -821,6 +824,12 @@
     "MYX:GBGAQRS-WB": {
       "s": 1
     },
+    "MYX:GCAP": {
+      "s": 1
+    },
+    "MYX:GCAP-WB": {
+      "s": 1
+    },
     "MYX:GCB": {
       "s": 1
     },
@@ -912,12 +921,6 @@
     "MYX:GUH": {
       "s": 1
     },
-    "MYX:GUNUNG": {
-      "s": 1
-    },
-    "MYX:GUNUNG-WB": {
-      "s": 1
-    },
     "MYX:HANDAL": {
       "s": 1
     },
@@ -993,9 +996,6 @@
     "MYX:HOHUP": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:HOKHENG": {
-      "s": 1
     },
     "MYX:HOMERIZ": {
       "s": 1
@@ -1424,9 +1424,6 @@
     "MYX:LEWEKO": {
       "s": 1
     },
-    "MYX:LEWEKO-WB": {
-      "s": 1
-    },
     "MYX:LFECORP": {
       "s": 1
     },
@@ -1476,9 +1473,6 @@
       "s": 1,
       "msc": 1
     },
-    "MYX:MAGNA-WB": {
-      "s": 1
-    },
     "MYX:MAGNI": {
       "s": 1,
       "msc": 1
@@ -1514,10 +1508,6 @@
       "s": 1
     },
     "MYX:MBMR": {
-      "s": 1,
-      "msc": 1
-    },
-    "MYX:MBWORLD": {
       "s": 1,
       "msc": 1
     },
@@ -1652,9 +1642,6 @@
     "MYX:MITRA": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:MITRA-WD": {
-      "s": 1
     },
     "MYX:MITRA-WE": {
       "s": 1
@@ -2158,9 +2145,6 @@
       "s": 1,
       "msc": 1
     },
-    "MYX:PTRANS-WA": {
-      "s": 1
-    },
     "MYX:PUC": {
       "s": 1
     },
@@ -2616,10 +2600,6 @@
     "MYX:TAS": {
       "s": 1
     },
-    "MYX:TASEK": {
-      "s": 1,
-      "msc": 1
-    },
     "MYX:TASHIN": {
       "s": 1
     },
@@ -2656,9 +2636,6 @@
       "s": 1
     },
     "MYX:THHEAVY": {
-      "s": 1
-    },
-    "MYX:THHEAVY-PB": {
       "s": 1
     },
     "MYX:THPLANT": {
@@ -2734,9 +2711,6 @@
       "s": 1
     },
     "MYX:TRIVE": {
-      "s": 1
-    },
-    "MYX:TRIVE-WB": {
       "s": 1
     },
     "MYX:TROP": {
@@ -2855,6 +2829,9 @@
     "MYX:VIZIONE-WC": {
       "s": 1
     },
+    "MYX:VIZIONE-WD": {
+      "s": 1
+    },
     "MYX:VS": {
       "s": 1
     },
@@ -2878,9 +2855,6 @@
     "MYX:WCT": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:WCT-WE": {
-      "s": 1
     },
     "MYX:WEGMANS": {
       "s": 1
@@ -3096,6 +3070,9 @@
     "MYX:MANULFE": {
       "msc": 1
     },
+    "MYX:MBWORLD": {
+      "msc": 1
+    },
     "MYX:MEDIA": {
       "msc": 1
     },
@@ -3151,6 +3128,9 @@
       "msc": 1
     },
     "MYX:TASCO": {
+      "msc": 1
+    },
+    "MYX:TASEK": {
       "msc": 1
     },
     "MYX:TDM": {
