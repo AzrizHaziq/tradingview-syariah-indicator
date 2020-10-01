@@ -20,6 +20,13 @@ https://github.com/amree/tradingview-shariah-indicators
 </span>
 
 <span>
+   &nbsp;
+   &nbsp;
+   &nbsp;
+   &nbsp;
+</span>
+
+<span>
 <a target="_blank" rel="noopener noreferrer"
    style="display:inline-block"
    title="Download Tradingview Shariah indicator in Firefox now" 
@@ -28,6 +35,7 @@ https://github.com/amree/tradingview-shariah-indicators
 </a>
 </span>
 
+<br>
 <br>
 
 <a target="_blank" rel="noopener noreferrer"
