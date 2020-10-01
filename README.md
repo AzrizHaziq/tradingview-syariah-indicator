@@ -22,8 +22,6 @@ https://github.com/amree/tradingview-shariah-indicators
 <span>
    &nbsp;
    &nbsp;
-   &nbsp;
-   &nbsp;
 </span>
 
 <span>
