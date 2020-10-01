@@ -10,22 +10,32 @@ inspired from
 https://github.com/amree/tradingview-shariah-indicators
 
 ## Download
+<span>
 <a target="_blank" rel="noopener noreferrer"
+   style="display:inline-block"
    title="Download Tradingview Shariah indicator in Chrome now"
    href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
 </a>
+</span>
 
+<span>
 <a target="_blank" rel="noopener noreferrer"
+   style="display:inline-block"
    title="Download Tradingview Shariah indicator in Firefox now" 
    href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
 </a>
+</span>
+
+<br>
 
 <a target="_blank" rel="noopener noreferrer"
+   style="vertical-align: middle"
    title="Download Tradingview Shariah indicator in Edge now" 
    href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
-    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="48" />
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="16" />
+    Using Edge? You can follow this guide to get the extension for Edge Browser.
 </a>
 
 ## Release 
