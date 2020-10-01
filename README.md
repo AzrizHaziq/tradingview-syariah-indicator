@@ -4,20 +4,20 @@
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
 
 source data:
-[bursa malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
+[Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
 
 inspired from
 https://github.com/amree/tradingview-shariah-indicators
 
-## Install
+## Download
 <a target="_blank" rel="noopener noreferrer"
-   title="Download Tradingview Shariah indicator in chrome now"
+   title="Download Tradingview Shariah indicator in Chrome now"
    href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
 </a>
 
 <a target="_blank" rel="noopener noreferrer"
-   title="Download Tradingview Shariah indicator in firefox now" 
+   title="Download Tradingview Shariah indicator in Firefox now" 
    href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
 </a>
@@ -25,12 +25,11 @@ https://github.com/amree/tradingview-shariah-indicators
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Edge now" 
    href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
-    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="16" />
-    Please install this extension from chrome store.
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="48" />
 </a>
 
 ## Release 
-[https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
+[View All Releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
 
 [Symbol Page](https://www.tradingview.com/symbols/MYX-MI/)
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_symbol.png?raw=true)
