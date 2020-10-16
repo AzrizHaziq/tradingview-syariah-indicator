@@ -3,36 +3,33 @@
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
 
-source data:
+Source data:
 [Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
 
-inspired from
+Inspired from: 
 https://github.com/amree/tradingview-shariah-indicators
 
 ## Download
-<span>
+
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Chrome now"
    href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
 </a>
-</span>
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/eogackkjbjbbmlkbakekhaanphmnpkgf?color=blue&label=version)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/users/eogackkjbjbbmlkbakekhaanphmnpkgf?color=blue)
 
-<span>
-   &nbsp;
-   &nbsp;
-</span>
 
-<span>
+
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Firefox now" 
    href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
 </a>
-</span>
+![Mozilla Add-on](https://img.shields.io/amo/v/tradingview-shariah-indicator?color=orange&label=version)
+![Mozilla Add-on](https://img.shields.io/amo/users/tradingview-shariah-indicator?color=orange)
+![Mozilla Add-on](https://img.shields.io/amo/rating/tradingview-shariah-indicator?color=orange)
 
-<br>
-<br>
 
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Edge now" 
@@ -81,5 +78,5 @@ Feel free to contact me if any bug or more features here
 
 
 ## Update Stock list data (will take a few X minutes)
-1. Type in terminal `$ npm run scrapping`
+1. Type in terminal `$ npm run update-data`
     
