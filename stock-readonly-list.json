@@ -1,7 +1,7 @@
 {
   "mscAt": "2019-12-31T00:00:00.000Z",
   "mscLink": "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
-  "updatedAt": "2020-09-25T01:48:36.729Z",
+  "updatedAt": "2020-10-16T02:53:06.354Z",
   "list": {
     "MYX:3A": {
       "s": 1,
@@ -604,6 +604,9 @@
     "MYX:DOLPHIN-WA": {
       "s": 1
     },
+    "MYX:DOLPHIN-WB": {
+      "s": 1
+    },
     "MYX:DOMINAN": {
       "s": 1,
       "msc": 1
@@ -827,9 +830,6 @@
     "MYX:GCAP": {
       "s": 1
     },
-    "MYX:GCAP-WB": {
-      "s": 1
-    },
     "MYX:GCB": {
       "s": 1
     },
@@ -1003,6 +1003,12 @@
     "MYX:HOMERIZ-WB": {
       "s": 1
     },
+    "MYX:HONGSENG": {
+      "s": 1
+    },
+    "MYX:HONGSENG-WA": {
+      "s": 1
+    },
     "MYX:HOOVER": {
       "s": 1
     },
@@ -1089,9 +1095,6 @@
       "s": 1
     },
     "MYX:IJM": {
-      "s": 1
-    },
-    "MYX:IKHMAS": {
       "s": 1
     },
     "MYX:IMASPRO": {
@@ -1409,9 +1412,6 @@
     "MYX:LBS-PA": {
       "s": 1
     },
-    "MYX:LBS-WB": {
-      "s": 1
-    },
     "MYX:LCTITAN": {
       "s": 1
     },
@@ -1518,9 +1518,6 @@
       "s": 1
     },
     "MYX:MCLEAN": {
-      "s": 1
-    },
-    "MYX:MCLEAN-WB": {
       "s": 1
     },
     "MYX:MCOM": {
@@ -1742,12 +1739,6 @@
       "s": 1
     },
     "MYX:MYETFID": {
-      "s": 1
-    },
-    "MYX:MYSCM": {
-      "s": 1
-    },
-    "MYX:MYSCM-WA": {
       "s": 1
     },
     "MYX:N2N": {
@@ -1991,6 +1982,9 @@
     "MYX:PERSTIM": {
       "s": 1,
       "msc": 1
+    },
+    "MYX:PERSTIM-OR": {
+      "s": 1
     },
     "MYX:PESONA": {
       "s": 1
@@ -2253,6 +2247,9 @@
     "MYX:SAM": {
       "s": 1,
       "msc": 1
+    },
+    "MYX:SAMAIDEN": {
+      "s": 1
     },
     "MYX:SAPIND": {
       "s": 1
@@ -2625,6 +2622,9 @@
     "MYX:TFP": {
       "s": 1
     },
+    "MYX:TFP-WB": {
+      "s": 1
+    },
     "MYX:TGL": {
       "s": 1
     },
@@ -2643,9 +2643,6 @@
       "msc": 1
     },
     "MYX:THRIVEN": {
-      "s": 1
-    },
-    "MYX:THRIVEN-WB": {
       "s": 1
     },
     "MYX:TIGER": {
@@ -2687,6 +2684,9 @@
     "MYX:TONGHER": {
       "s": 1,
       "msc": 1
+    },
+    "MYX:TOPBLDS": {
+      "s": 1
     },
     "MYX:TOPGLOV": {
       "s": 1
