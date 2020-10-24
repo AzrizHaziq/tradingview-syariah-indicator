@@ -21,10 +21,10 @@ function getSymbol() {
 
 async function symbolScript() {
   const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
+  const largeResoDom = document.querySelector('.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange')
+  const smallResoDom = document.querySelector('.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line')
 
   if (isShariah) {
-    const largeResoDom = document.querySelector('.tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
-    const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
 
     if (tsi.isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
@@ -50,15 +50,12 @@ async function symbolScript() {
   }
 
   if (msc) {
-    const largeResoDom = document.querySelector('.tv-symbol-header__text-group.tv-symbol-header__text-group--adaptive-tablet')
-    const smallResoDom = document.querySelector('.tv-symbol-header__text-group--mobile .tv-symbol-header__short-title.tv-symbol-header__short-title--with-icon')
-
     if (tsi.isMSCIconExist(largeResoDom.parentElement)) {
       // if icon already exist dont do anything
     } else {
       const mscLargeResoIcon = tsi.createMSCIcon()
-      mscLargeResoIcon.style.marginLeft = '5px'
-      largeResoDom.insertAdjacentElement('beforeend', mscLargeResoIcon)
+      // mscLargeResoIcon.style.marginLeft = '5px'
+      largeResoDom.parentElement.insertAdjacentElement('beforeend', mscLargeResoIcon)
     }
 
     if (tsi.isMSCIconExist(smallResoDom)) {
