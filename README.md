@@ -41,6 +41,8 @@ https://github.com/amree/tradingview-shariah-indicators
 ## Release 
 [View All Releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
 
+
+## Screenshots
 [Symbol Page](https://www.tradingview.com/symbols/MYX-MI/)
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_symbol.png?raw=true)
 ![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_symbol.png?raw=true)
