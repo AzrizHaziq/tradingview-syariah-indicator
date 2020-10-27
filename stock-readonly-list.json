@@ -1,7 +1,7 @@
 {
   "mscAt": "2019-12-31T00:00:00.000Z",
   "mscLink": "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
-  "updatedAt": "2020-10-26T10:58:46.245Z",
+  "updatedAt": "2020-10-27T11:56:53.660Z",
   "list": {
     "MYX:3A": {
       "s": 1,
@@ -683,6 +683,9 @@
     "MYX:EFORCE": {
       "s": 1,
       "msc": 1
+    },
+    "MYX:EFRAME": {
+      "s": 1
     },
     "MYX:EG": {
       "s": 1
