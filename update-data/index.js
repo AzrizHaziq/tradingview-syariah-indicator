@@ -2,7 +2,7 @@ import fs from 'fs'
 import ExcelJS from 'exceljs'
 import git from 'simple-git'
 import merge from 'lodash.merge'
-import playWright from 'playwright'
+import puppeteer from 'puppeteer'
 import cliProgress from 'cli-progress'
 
 const TRADING_VIEW_MYR = 'MYX'
@@ -11,16 +11,13 @@ const STOCK_LIST_READ_ONLY_FILENAME = 'stock-readonly-list.json'
 const isCommitSKip = process.argv.slice(2).includes('skip-commit')  // for github-action cron
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
-async function scrapBursaMalaysia() {
-  const { chromium } = playWright
-
+async function scrapBursaMalaysia () {
   const scrapUrl = ({ per_page, page }) =>
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${ page }&per_page=${ per_page }`
 
   try {
-    const browser = await chromium.launch()
-    const context = await browser.newContext()
-    const page = await context.newPage()
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
