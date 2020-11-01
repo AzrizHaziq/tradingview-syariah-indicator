@@ -8,7 +8,6 @@ on:
 
 jobs:
   automation:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,15 +16,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Syncing with latest branch
+        run: |
+          git config pull.rebase false
+          git pull origin $(git branch --show-current)
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run ghAction:update-data
-
-      - name: Setup git config
-        run: git config pull.rebase false
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5.1.0
