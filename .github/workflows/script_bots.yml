@@ -1,6 +1,8 @@
 name: Automate STOCK_LIST gh_bot
 
 on:
+  push:
+    branches: [ feature/automate-with-github-action ]
   schedule:
     - cron: "0 18 * * *"
 

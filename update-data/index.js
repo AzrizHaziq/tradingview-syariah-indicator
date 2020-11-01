@@ -36,7 +36,7 @@ async function scrapBursaMalaysia () {
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }))
+      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle2' })
 
       const temp = await page.evaluate(() => {
         const pipe = (...fn) => (initialVal) => fn.reduce((acc, fn) => fn(acc), initialVal)
