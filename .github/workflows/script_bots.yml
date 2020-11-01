@@ -1,14 +1,13 @@
-name: [STOCK_LIST] script_bot
+name: Automate STOCK_LIST gh_bot
 
 on:
   push:
-    branches: [ feature/module-scrpit-improvement-and-fixing-bug ]
-  pull_request:
-    branches: [ feature/module-scrpit-improvement-and-fixing-bug ]
+    branches: [ feature/automate-with-github-action ]
+  schedule:
+    - cron: "0 18 * * *"
 
 jobs:
-  build:
-
+  automation:
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,9 +16,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Syncing with latest branch
+        run: |
+          git config pull.rebase false
+          git pull origin $(git branch --show-current)
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run update-data
+      - run: npm run ghAction:update-data
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          author_name: GitHub Actions Bot
+          author_email: <>
+          message: "[STOCK_LIST] gh_bot: Update with new changes"
+          add: "stock-list.json stock-readonly-list.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

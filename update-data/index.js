@@ -2,24 +2,22 @@ import fs from 'fs'
 import ExcelJS from 'exceljs'
 import git from 'simple-git'
 import merge from 'lodash.merge'
-import playWright from 'playwright'
+import puppeteer from 'puppeteer'
 import cliProgress from 'cli-progress'
 
 const TRADING_VIEW_MYR = 'MYX'
 const STOCK_LIST_FILENAME = 'stock-list.json'
 const STOCK_LIST_READ_ONLY_FILENAME = 'stock-readonly-list.json'
+const isCommitSKip = process.argv.slice(2).includes('skip-commit')  // for github-action cron
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
-async function scrapBursaMalaysia() {
-  const { chromium } = playWright
-
+async function scrapBursaMalaysia () {
   const scrapUrl = ({ per_page, page }) =>
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${ page }&per_page=${ per_page }`
 
   try {
-    const browser = await chromium.launch()
-    const context = await browser.newContext()
-    const page = await context.newPage()
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
@@ -38,7 +36,7 @@ async function scrapBursaMalaysia() {
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }))
+      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle2' })
 
       const temp = await page.evaluate(() => {
         const pipe = (...fn) => (initialVal) => fn.reduce((acc, fn) => fn(acc), initialVal)
@@ -83,20 +81,6 @@ async function writeToFile(filename, data) {
   }
 }
 
-async function pushChangesIfAny() {
-  try {
-    await git()
-      .add([
-        STOCK_LIST_FILENAME,
-        STOCK_LIST_READ_ONLY_FILENAME
-      ])
-      .commit('[STOCK_LIST] script_bot: Update with new changes')
-  } catch (e) {
-    console.error('Error: commit and push stock list changes', e)
-    process.exit(1)
-  }
-}
-
 function generateShariah(SYARIAH_LIST) {
   try {
     return SYARIAH_LIST.reduce((acc, name) => ({
@@ -114,8 +98,9 @@ function generateShariah(SYARIAH_LIST) {
 async function generateMidSmallCap() {
   let excelFile
   const workbook = new ExcelJS.Workbook()
+
   try {
-    excelFile = await workbook.xlsx.readFile('./update-data/msc.xlsx')
+    excelFile = await workbook.xlsx.readFile('./msc.xlsx')
   } catch (e) {
     console.error('Error generateMidSmallCap data', e)
     process.exit(1)
@@ -148,6 +133,20 @@ async function generateMidSmallCap() {
   }
 }
 
+async function commitChangesIfAny() {
+  try {
+    await git()
+      .add([
+        STOCK_LIST_FILENAME,
+        STOCK_LIST_READ_ONLY_FILENAME
+      ])
+      .commit('[STOCK_LIST] script_bot: Update with new changes')
+  } catch (e) {
+    console.error('Error: commit and push stock list changes', e)
+    process.exit(1)
+  }
+}
+
 (async() => {
   try {
     const SYARIAH_LIST = await scrapBursaMalaysia()
@@ -166,7 +165,10 @@ async function generateMidSmallCap() {
     await writeToFile(STOCK_LIST_FILENAME, JSON.stringify(mergedShariahAndMSCList))
     await writeToFile(STOCK_LIST_READ_ONLY_FILENAME, JSON.stringify(mergedShariahAndMSCList, null, 2))
 
-    await pushChangesIfAny()
+    if (!isCommitSKip) {
+      await commitChangesIfAny()
+    }
+
     process.exit()
   } catch (e) {
     console.error('Something wrong with the whole process', e)
