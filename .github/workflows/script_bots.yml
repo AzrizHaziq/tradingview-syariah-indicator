@@ -1,8 +1,8 @@
 name: Automate STOCK_LIST gh_bot
 
 on:
-  push:
-    branches: [ feature/automate-with-github-action ]
+  schedule:
+    - cron: "0 18 * * *"
 
 jobs:
   automation:
@@ -22,11 +22,14 @@ jobs:
       - run: npm ci
       - run: npm run ghAction:update-data
 
+      - name: Setup git config
+        run: git config pull.rebase false
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v5.1.0
         with:
-          author_name: AzrizHaziq
-          author_email: azrizhaziq@gmail.com
+          author_name: GitHub Actions Bot
+          author_email: <>
           message: "[STOCK_LIST] gh_bot: Update with new changes"
           add: "stock-list.json stock-readonly-list.json"
         env:
