@@ -1,4 +1,5 @@
-# Tradingview Syariah Indicator
+# Tradingview Syariah Indicator 
+![Automate STOCK_LIST gh_bot](https://github.com/AzrizHaziq/tradingview-syariah-indicator/workflows/Automate%20STOCK_LIST%20gh_bot/badge.svg)
 
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
