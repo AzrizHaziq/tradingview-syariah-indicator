@@ -1,13 +1,11 @@
-name: Automate_STOCK_LIST_script_bot
+name: Automate STOCK_LIST gh_bot
 
 on:
   push:
-    branches: [ feature/module-scrpit-improvement-and-fixing-bug ]
-  pull_request:
-    branches: [ feature/module-scrpit-improvement-and-fixing-bug ]
+    branches: [ feature/automate-with-github-action ]
 
 jobs:
-  build:
+  automation:
 
     runs-on: ubuntu-latest
 
@@ -22,4 +20,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run update-data
+      - run: npm run ghAction:update-data
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          author_name: AzrizHaziq
+          author_email: azrizhaziq@gmail.com
+          message: "[STOCK_LIST] gh_bot: Update with new changes"
+          add: "stock-list.json stock-readonly-list.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

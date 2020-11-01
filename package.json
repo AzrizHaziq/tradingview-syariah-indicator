@@ -8,7 +8,8 @@
     "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/",
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1/",
     "build": "web-ext build --overwrite-dest --ignore-files update-data docs *.md package.json package-lock.json stock-list.json stock-readonly-list.json _config.yml",
-    "update-data": "node update-data"
+    "update-data": "node update-data",
+    "ghAction:update-data": "npm run update-data -- skip-commit"
   },
   "engines": {
     "node": "13.14.0",

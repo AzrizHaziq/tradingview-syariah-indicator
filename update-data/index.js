@@ -8,6 +8,7 @@ import cliProgress from 'cli-progress'
 const TRADING_VIEW_MYR = 'MYX'
 const STOCK_LIST_FILENAME = 'stock-list.json'
 const STOCK_LIST_READ_ONLY_FILENAME = 'stock-readonly-list.json'
+const isCommitSKip = process.argv.slice(2).includes('skip-commit')  // for github-action cron
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
@@ -83,20 +84,6 @@ async function writeToFile(filename, data) {
   }
 }
 
-async function pushChangesIfAny() {
-  try {
-    await git()
-      .add([
-        STOCK_LIST_FILENAME,
-        STOCK_LIST_READ_ONLY_FILENAME
-      ])
-      .commit('[STOCK_LIST] script_bot: Update with new changes')
-  } catch (e) {
-    console.error('Error: commit and push stock list changes', e)
-    process.exit(1)
-  }
-}
-
 function generateShariah(SYARIAH_LIST) {
   try {
     return SYARIAH_LIST.reduce((acc, name) => ({
@@ -114,8 +101,9 @@ function generateShariah(SYARIAH_LIST) {
 async function generateMidSmallCap() {
   let excelFile
   const workbook = new ExcelJS.Workbook()
+
   try {
-    excelFile = await workbook.xlsx.readFile('./update-data/msc.xlsx')
+    excelFile = await workbook.xlsx.readFile('./msc.xlsx')
   } catch (e) {
     console.error('Error generateMidSmallCap data', e)
     process.exit(1)
@@ -148,6 +136,20 @@ async function generateMidSmallCap() {
   }
 }
 
+async function commitChangesIfAny() {
+  try {
+    await git()
+      .add([
+        STOCK_LIST_FILENAME,
+        STOCK_LIST_READ_ONLY_FILENAME
+      ])
+      .commit('[STOCK_LIST] script_bot: Update with new changes')
+  } catch (e) {
+    console.error('Error: commit and push stock list changes', e)
+    process.exit(1)
+  }
+}
+
 (async() => {
   try {
     const SYARIAH_LIST = await scrapBursaMalaysia()
@@ -166,7 +168,10 @@ async function generateMidSmallCap() {
     await writeToFile(STOCK_LIST_FILENAME, JSON.stringify(mergedShariahAndMSCList))
     await writeToFile(STOCK_LIST_READ_ONLY_FILENAME, JSON.stringify(mergedShariahAndMSCList, null, 2))
 
-    await pushChangesIfAny()
+    if (!isCommitSKip) {
+      await commitChangesIfAny()
+    }
+
     process.exit()
   } catch (e) {
     console.error('Something wrong with the whole process', e)
