@@ -4,8 +4,8 @@ on:
   push:
     branches: [ feature/automate-with-github-action ]
   schedule:
-    # Asia/Kuala_Lumpur 6pm
-    - cron: "0 10 * * *"
+    # Asia/Kuala_Lumpur around 6pm, weekdays only
+    - cron: "0 10 * * 1,2,3,4,5"
 
 jobs:
   automation:
