@@ -1,7 +1,7 @@
 {
   "mscAt": "2019-12-31T00:00:00.000Z",
   "mscLink": "https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf",
-  "updatedAt": "2020-11-04T11:30:19.986Z",
+  "updatedAt": "2020-11-08T10:01:30.614Z",
   "list": {
     "MYX:3A": {
       "s": 1,
@@ -155,6 +155,9 @@
       "s": 1
     },
     "MYX:ARK-WB": {
+      "s": 1
+    },
+    "MYX:ARTRONIQ": {
       "s": 1
     },
     "MYX:ASDION": {
@@ -1181,9 +1184,6 @@
       "s": 1,
       "msc": 1
     },
-    "MYX:JAKS-OR": {
-      "s": 1
-    },
     "MYX:JAKS-WB": {
       "s": 1
     },
@@ -2131,9 +2131,6 @@
     "MYX:PTARAS": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:PTB": {
-      "s": 1
     },
     "MYX:PTRANS": {
       "s": 1,
