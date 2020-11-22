@@ -1,8 +1,7 @@
 name: Automate STOCK_LIST gh_bot
 
 on:
-  push:
-    branches: [ feature/automate-with-github-action ]
+  workflow_dispatch:
   schedule:
     # Asia/Kuala_Lumpur around 6pm, weekdays only
     - cron: "0 10 * * 1,2,3,4,5"
