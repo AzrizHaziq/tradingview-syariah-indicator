@@ -20,7 +20,6 @@ const tsi = (function () {
     return new Map([...prefixStocksWithExchange(TRADING_VIEW_MYR)])
   }
 
-  // currentSymbol = 'MYX:MI
   async function lookForStockCode(currentSymbol) {
     const [flagId, stockName] = currentSymbol.split(':')
 
@@ -141,25 +140,6 @@ const tsi = (function () {
     return d instanceof Date && !isNaN(d)
   }
 
-  function retryFn(until = 10, timeout = 500) {
-    let i = 0
-    return function innerFn(fn) {
-      try {
-        fn()
-      } catch (e) {
-        i++
-        console.error(e)
-
-        if (i < until) {
-          const t = setTimeout(() => {
-            innerFn(fn)
-            clearTimeout(t)
-          }, timeout)
-        }
-      }
-    }
-  }
-
   function observeNodeChanges(nodeToObserve, cb, options = { childList: true, subtree: true }) {
     let observer
 
@@ -173,17 +153,6 @@ const tsi = (function () {
     observer.observe(nodeToObserve, options)
 
     return observer
-  }
-
-  function forceMutationChanges(domNodeFakeChanges) {
-    const appendRemoveNodeWithDomNode = () => appendRemoveNode(domNodeFakeChanges)
-    retryFn()(appendRemoveNodeWithDomNode)
-  }
-
-  function appendRemoveNode(domNodeFakeChanges) {
-    const fakeNode = document.createElement('a')
-    domNodeFakeChanges.append(fakeNode)
-    fakeNode.remove()
   }
 
   function createMSCIcon() {
@@ -202,8 +171,8 @@ const tsi = (function () {
     return mscEle
   }
 
-  function deleteMSCIcon(dom) {
-    ;(dom || document).querySelectorAll(`[${attributeName}="${mscAttribute}"]`).forEach(div => div.remove())
+  function deleteMSCIcon(dom = document) {
+    dom.querySelectorAll(`[${attributeName}="${mscAttribute}"]`).forEach(div => div.remove())
   }
 
   function isMSCIconExist(element) {
@@ -216,7 +185,7 @@ const tsi = (function () {
         return resolve(document.querySelector(selector))
       }
 
-      const observer = new MutationObserver(_ => {
+      const observer = new MutationObserver(() => {
         if (document.querySelector(selector)) {
           resolve(document.querySelector(selector))
           observer.disconnect()
@@ -232,7 +201,6 @@ const tsi = (function () {
 
   return {
     waitForElm,
-    retryFn,
     dateDiffInDays,
     debounce,
     isValidDate,
@@ -244,7 +212,6 @@ const tsi = (function () {
     addStaticSyariahIcon,
     addStyle,
     observeNodeChanges,
-    forceMutationChanges,
     createMSCIcon,
     deleteMSCIcon,
     isMSCIconExist,

@@ -55,10 +55,6 @@ const shariah = {
   },
 }
 
-tsi.retryFn()(screenerScript)
-tsi.retryFn()(onClickStockScreenerInChartPage)
-browser.runtime.onMessage.addListener(screenerScript)
-
 // if both icon exist, then add margin-left
 tsi.addStyle(`
   [${tsi.attributeName}="${tsi.extensionName}"] +
@@ -67,14 +63,9 @@ tsi.addStyle(`
   }
 `)
 
-async function screenerScript() {
-  const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+tsi.waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody').then(mainScreenerScript)
 
-  // if table not found then dont run rest of the scripts
-  if (!tableNode) {
-    return
-  }
-
+async function mainScreenerScript() {
   try {
     SHARIAH_LIST = await tsi.getStockListInMap()
     const { IS_FILTER_MSC } = await browser.storage.local.get('IS_FILTER_MSC')
@@ -83,34 +74,14 @@ async function screenerScript() {
     msc.currentState = IS_FILTER_MSC || false
     shariah.currentState = IS_FILTER_SHARIAH || false
 
-    // waiting for table to fully rendered
-    const tempTimeout = setTimeout(() => {
-      tsi.addStaticSyariahIcon()
-      observedTableChanges()
-      setupFilterBtn(msc)
-      setupFilterBtn(shariah)
-      observedCountryFlagChanges()
-      forceMutationChanges()
-
-      clearTimeout(tempTimeout)
-    }, 500)
+    tsi.addStaticSyariahIcon()
+    setupFilterBtn(msc)
+    setupFilterBtn(shariah)
+    observedTableChanges()
+    observedCountryFlagChanges()
   } catch (e) {
-    console.error('Error read storage', e)
+    console.error('Error running mainScreenerScript', e)
   }
-}
-
-function forceMutationChanges() {
-  // have to put this to trigger the first mutationObserver
-  const tempInterval = setInterval(() => {
-    const fakeDiv = document.createElement('div')
-    document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody').append(fakeDiv)
-    fakeDiv.remove()
-
-    // assume that if more than X number of syariah icon, then stop mutating dom, in this case is 10
-    if (document.querySelectorAll(`[${tsi.attributeName}="${tsi.extensionName}"]`).length > 10) {
-      clearInterval(tempInterval)
-    }
-  }, 200)
 }
 
 function observedTableChanges() {
@@ -123,7 +94,7 @@ function observedTableChanges() {
 
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
-  observer = new MutationObserver(_ => {
+  observer = new MutationObserver(() => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
       tsi.deleteSyariahIcon(tableNode.parentElement)
       return
@@ -268,28 +239,6 @@ function setupFilterBtn(state) {
 
   if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
     wrapper.style.display = 'none'
-  }
-}
-
-function onClickStockScreenerInChartPage() {
-  const stockScreenerBtn = document.querySelector('#footer-chart-panel [data-name=screener]')
-
-  // only run in chart page
-  if (!location.pathname.includes('chart') || !stockScreenerBtn) {
-    return
-  }
-
-  stockScreenerBtn.addEventListener('click', runScreenerScript)
-
-  function runScreenerScript(a) {
-    const isClose = a.currentTarget.dataset.active === 'false'
-    console.log('rerun screenerScript')
-    if (!isClose) {
-      return
-    }
-
-    // only run when stock screener is open
-    screenerScript()
   }
 }
 
