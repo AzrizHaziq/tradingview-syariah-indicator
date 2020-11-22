@@ -8,9 +8,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 
 async function commitChangesIfAny() {
   try {
-    await git()
-      .add([MAIN_STOCK_LIST_FILENAME])
-      .commit('[STOCK_LIST] script_bot: Update with new changes')
+    await git().add([MAIN_STOCK_LIST_FILENAME, MYX_FILENAME]).commit('[STOCK_LIST] script_bot: Update with new changes')
   } catch (e) {
     console.error('Error: commit and push stock list changes', e)
     process.exit(1)
