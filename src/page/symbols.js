@@ -1,31 +1,32 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
-tsi.retryFn()(observeSymbolChanges)
-browser.runtime.onMessage.addListener(symbolScript)
+tsi.waitForElm('.tv-main .tv-content').then(mainScript)
 
-const symbolNode = document.querySelector('.tv-main .tv-content')
-tsi.forceMutationChanges(symbolNode)
-
-function observeSymbolChanges() {
+function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
   const symbolNode = document.querySelector('.tv-main .tv-content')
-
   tsi.observeNodeChanges(symbolNode, symbolScript)
-  tsi.forceMutationChanges(symbolNode)
 }
 
 function getSymbol() {
-  return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol').trim()
+  return document
+    .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
+    .getAttribute('data-symbol')
+    .trim()
 }
 
 async function symbolScript() {
   const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
-  const largeResoDom = document.querySelector('.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange')
-  const smallResoDom = document.querySelector('.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line')
+
+  const largeResoDom = document.querySelector(
+    '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
+  )
+
+  const smallResoDom = document.querySelector(
+    '.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line'
+  )
 
   if (isShariah) {
-
     if (tsi.isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
@@ -54,7 +55,7 @@ async function symbolScript() {
       // if icon already exist dont do anything
     } else {
       const mscLargeResoIcon = tsi.createMSCIcon()
-      // mscLargeResoIcon.style.marginLeft = '5px'
+      mscLargeResoIcon.style.verticalAlign = 'top'
       largeResoDom.parentElement.insertAdjacentElement('beforeend', mscLargeResoIcon)
     }
 
