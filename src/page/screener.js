@@ -1,5 +1,5 @@
 /* global tsi */
-let SHARIAH_MSC_LIST = {}
+let SHARIAH_LIST = {}
 const ONLY_VALID_COUNTRIES = ['my']
 const msc = {
   type: 'MSC',
@@ -8,13 +8,13 @@ const msc = {
   checkBoxAttrName: tsi.attributeName,
   checkBoxAttrValue: 'msc-checkbox',
   createIcon: () => tsi.createMSCIcon(),
-  onClick: wrapperElement => async(e) => {
+  onClick: wrapperElement => async e => {
     try {
       msc.currentState = e.target.checked
 
-      await browser.storage.local.set({ 'IS_FILTER_MSC': e.target.checked })
+      await browser.storage.local.set({ IS_FILTER_MSC: e.target.checked })
 
-      wrapperElement.setAttribute('title', msc.status[`${ msc.currentState }`])
+      wrapperElement.setAttribute('title', msc.status[`${msc.currentState}`])
     } catch (e) {
       console.error('Error set MSC in localStorage ', e)
     }
@@ -22,7 +22,7 @@ const msc = {
   status: {
     true: browser.i18n.getMessage('js_screener_filter_btn_msc_on'),
     false: browser.i18n.getMessage('js_screener_filter_btn_msc_off'),
-  }
+  },
 }
 const shariah = {
   type: 'SHARIAH',
@@ -34,17 +34,17 @@ const shariah = {
     const icon = tsi.createIcon({ width: 17, height: 17 })
     icon.style.cursor = 'pointer'
     icon.removeAttribute(tsi.attributeName)
-    icon.setAttribute(`${ tsi.attributeName }-filter-icon`, `${ tsi.extensionName }-filter-icon`)
+    icon.setAttribute(`${tsi.attributeName}-filter-icon`, `${tsi.extensionName}-filter-icon`)
 
     return icon
   },
-  onClick: wrapperElement => async(e) => {
+  onClick: wrapperElement => async e => {
     try {
       shariah.currentState = e.target.checked
 
-      await browser.storage.local.set({ 'IS_FILTER_SHARIAH': e.target.checked })
+      await browser.storage.local.set({ IS_FILTER_SHARIAH: e.target.checked })
 
-      wrapperElement.setAttribute('title', shariah.status[`${ shariah.currentState }`])
+      wrapperElement.setAttribute('title', shariah.status[`${shariah.currentState}`])
     } catch (e) {
       console.error('Error set Shariah in localStorage', e)
     }
@@ -52,7 +52,7 @@ const shariah = {
   status: {
     true: browser.i18n.getMessage('js_screener_filter_btn_shariah_on'),
     false: browser.i18n.getMessage('js_screener_filter_btn_shariah_off'),
-  }
+  },
 }
 
 tsi.retryFn()(screenerScript)
@@ -61,8 +61,8 @@ browser.runtime.onMessage.addListener(screenerScript)
 
 // if both icon exist, then add margin-left
 tsi.addStyle(`
-  [${ tsi.attributeName }="${ tsi.extensionName }"] +
-  [${ tsi.attributeName }="${ tsi.mscAttribute }"] {
+  [${tsi.attributeName}="${tsi.extensionName}"] +
+  [${tsi.attributeName}="${tsi.mscAttribute}"] {
     margin-left: 5px;
   }
 `)
@@ -76,10 +76,9 @@ async function screenerScript() {
   }
 
   try {
-    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
-    const { IS_FILTER_MSC } = (await browser.storage.local.get('IS_FILTER_MSC'))
-    const { IS_FILTER_SHARIAH } = (await browser.storage.local.get('IS_FILTER_SHARIAH'))
-    SHARIAH_MSC_LIST = SHARIAH_LIST
+    SHARIAH_LIST = await tsi.getStockListInMap()
+    const { IS_FILTER_MSC } = await browser.storage.local.get('IS_FILTER_MSC')
+    const { IS_FILTER_SHARIAH } = await browser.storage.local.get('IS_FILTER_SHARIAH')
 
     msc.currentState = IS_FILTER_MSC || false
     shariah.currentState = IS_FILTER_SHARIAH || false
@@ -108,7 +107,7 @@ function forceMutationChanges() {
     fakeDiv.remove()
 
     // assume that if more than X number of syariah icon, then stop mutating dom, in this case is 10
-    if (document.querySelectorAll(`[${ tsi.attributeName }="${ tsi.extensionName }"]`).length > 10) {
+    if (document.querySelectorAll(`[${tsi.attributeName}="${tsi.extensionName}"]`).length > 10) {
       clearInterval(tempInterval)
     }
   }, 200)
@@ -130,9 +129,9 @@ function observedTableChanges() {
       return
     }
 
-    Array.from(tableNode.children).forEach((tr) => {
+    Array.from(tableNode.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
+      const { s: isSyariah, msc: isMsc } = getStockStat(rowSymbol)
 
       const firstColumn = tr.querySelector('td div')
       const mscIcon = tsi.createMSCIcon()
@@ -163,7 +162,7 @@ function observedTableChanges() {
   })
 
   // Start observing the target node for configured mutations
-  observer.observe(tableNode, { childList: true, subtree: true, })
+  observer.observe(tableNode, { childList: true, subtree: true })
 }
 
 function observedCountryFlagChanges() {
@@ -177,9 +176,10 @@ function observedCountryFlagChanges() {
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
   observer = new MutationObserver(() => {
-    const mscFilterBtn = document.querySelector(`label[${ msc.checkBoxAttrName }=${ msc.checkBoxAttrValue }]`).parentElement
-    const shariahFilterBtn = document.querySelector(`label[${ shariah.checkBoxAttrName }=${ shariah.checkBoxAttrValue }]`).parentElement
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
+    const mscFilterBtn = document.querySelector(`label[${msc.checkBoxAttrName}=${msc.checkBoxAttrValue}]`).parentElement
+    const shariahFilterBtn = document.querySelector(`label[${shariah.checkBoxAttrName}=${shariah.checkBoxAttrValue}]`)
+      .parentElement
 
     if (isCountriesExisted) {
       mscFilterBtn.style.display = 'block'
@@ -195,22 +195,24 @@ function observedCountryFlagChanges() {
 }
 
 function getCurrentSelectedFlag(countryKey) {
-  return document.querySelector(`.tv-screener-market-select__button > img.tv-flag-country.tv-flag-country--${ countryKey }`)
+  return document.querySelector(
+    `.tv-screener-market-select__button > img.tv-flag-country.tv-flag-country--${countryKey}`
+  )
 }
 
 function setupFilterBtn(state) {
   // check if filter btn already exist or not
-  if (document.querySelector(`label[${ state.checkBoxAttrName }=${ state.checkBoxAttrValue }]`)) {
+  if (document.querySelector(`label[${state.checkBoxAttrName}=${state.checkBoxAttrValue}]`)) {
     return
   }
 
   tsi.addStyle(`
-    [${ state.checkBoxAttrName }=${ state.checkBoxAttrValue }] {
+    [${state.checkBoxAttrName}=${state.checkBoxAttrValue}] {
      opacity: 0.4;
      transition: opacity .5s ease;
     }
 
-    input:checked + [${ state.checkBoxAttrName }=${ state.checkBoxAttrValue }] {
+    input:checked + [${state.checkBoxAttrName}=${state.checkBoxAttrValue}] {
       opacity: 1
     }
   `)
@@ -238,7 +240,7 @@ function setupFilterBtn(state) {
 
   // div wrapper, just copy paste from refresh btn
   const wrapper = document.createElement('div')
-  wrapper.setAttribute('title', state.status[`${ state.currentState }`])
+  wrapper.setAttribute('title', state.status[`${state.currentState}`])
   wrapper.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
   wrapper.style.paddingTop = '0'
   wrapper.style.width = state.type === 'MSC' ? '36px' : '33px'
@@ -256,7 +258,7 @@ function setupFilterBtn(state) {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah, msc: isMsc } = SHARIAH_MSC_LIST[rowSymbol] || { s: 0, msc: 0 }
+        const { s: isSyariah, msc: isMsc } = getStockStat(rowSymbol)
         shouldDisplayRow(tr, { isSyariah, isMsc })
       })
     } catch (error) {
@@ -320,4 +322,8 @@ function shouldDisplayRow(rowElement, { isSyariah, isMsc }) {
   } else {
     rowElement.style.display = 'table-row'
   }
+}
+
+function getStockStat(rowSymbol) {
+  return SHARIAH_LIST.has(rowSymbol) ? SHARIAH_LIST.get(rowSymbol) : { s: 0, msc: 0 }
 }
