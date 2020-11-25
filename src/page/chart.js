@@ -1,6 +1,6 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
-tsi.waitForElm('[data-name="legend-series-item"]').then(mainScript)
+tsi.waitForElm('[data-name="legend-series-item"]').then(tsi.setStockListInMap).then(mainScript)
 
 function mainScript() {
   // have to target dom like below since this is the most top parent
@@ -8,14 +8,10 @@ function mainScript() {
   tsi.observeNodeChanges(symbolNode, chartScript)
 }
 
-function getSymbolsFromTitle() {
-  const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+(-\w+)?/.exec(domTittleName)[0].trim() // also cover syntax like warrant
-}
-
 async function chartScript() {
+  const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
-  const { s: isShariah, msc = 0 } = await tsi.lookForStockCode(`${tsi.TRADING_VIEW_MYR}:${getSymbolsFromTitle()}`)
+  const { s: isShariah, msc } = tsi.getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
     if (tsi.isSyariahIconExist(parentElement)) {
@@ -39,4 +35,9 @@ async function chartScript() {
   } else {
     tsi.deleteMSCIcon(parentElement)
   }
+}
+
+function getSymbolsFromTitle() {
+  const domTittleName = document.getElementsByTagName('title')[0].innerText
+  return /\w+(-\w+)?/.exec(domTittleName)[0].trim() // also cover syntax like warrant
 }

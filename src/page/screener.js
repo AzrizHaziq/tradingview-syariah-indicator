@@ -1,5 +1,4 @@
 /* global tsi */
-let SHARIAH_LIST = {}
 const ONLY_VALID_COUNTRIES = ['my']
 const msc = {
   type: 'MSC',
@@ -63,11 +62,13 @@ tsi.addStyle(`
   }
 `)
 
-tsi.waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody').then(mainScreenerScript)
+tsi
+  .waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+  .then(tsi.setStockListInMap)
+  .then(mainScreenerScript)
 
 async function mainScreenerScript() {
   try {
-    SHARIAH_LIST = await tsi.getStockListInMap()
     const { IS_FILTER_MSC } = await browser.storage.local.get('IS_FILTER_MSC')
     const { IS_FILTER_SHARIAH } = await browser.storage.local.get('IS_FILTER_SHARIAH')
 
@@ -102,7 +103,7 @@ function observedTableChanges() {
 
     Array.from(tableNode.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const { s: isSyariah, msc: isMsc } = getStockStat(rowSymbol)
+      const { s: isSyariah, msc: isMsc } = tsi.getStockStat(rowSymbol)
 
       const firstColumn = tr.querySelector('td div')
       const mscIcon = tsi.createMSCIcon()
@@ -229,7 +230,7 @@ function setupFilterBtn(state) {
 
       Array.from(trs).forEach(tr => {
         const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah, msc: isMsc } = getStockStat(rowSymbol)
+        const { s: isSyariah, msc: isMsc } = tsi.getStockStat(rowSymbol)
         shouldDisplayRow(tr, { isSyariah, isMsc })
       })
     } catch (error) {
@@ -271,8 +272,4 @@ function shouldDisplayRow(rowElement, { isSyariah, isMsc }) {
   } else {
     rowElement.style.display = 'table-row'
   }
-}
-
-function getStockStat(rowSymbol) {
-  return SHARIAH_LIST.has(rowSymbol) ? SHARIAH_LIST.get(rowSymbol) : { s: 0, msc: 0 }
 }

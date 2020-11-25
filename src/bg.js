@@ -59,9 +59,6 @@ async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
         updatedAt,
       },
     })
-
-    const { MYX } = await browser.storage.local.get('MYX')
-    console.log(MYX)
   } catch (e) {
     console.error('Error set MYX storage', e)
   }

@@ -2,13 +2,14 @@
 
 const tsi = (function () {
   'use strict'
+  let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
   const TRADING_VIEW_MYR = 'MYX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
   const mscAttribute = 'tradingview-syariah-indicator-msc'
 
-  async function getStockListInMap() {
+  async function setStockListInMap() {
     function prefixStocksWithExchange(exchange) {
       return Object.entries(MYX).map(([key, value]) => [`${exchange}:${key}`, value])
     }
@@ -17,18 +18,12 @@ const tsi = (function () {
       MYX: { list: MYX },
     } = await browser.storage.local.get('MYX')
 
-    return new Map([...prefixStocksWithExchange(TRADING_VIEW_MYR)])
+    SHARIAH_LIST = new Map([...prefixStocksWithExchange(TRADING_VIEW_MYR)])
+    return SHARIAH_LIST
   }
 
-  async function lookForStockCode(currentSymbol) {
-    const [flagId, stockName] = currentSymbol.split(':')
-
-    const {
-      [flagId]: { list: SHARIAH_LIST = {} },
-    } = await browser.storage.local.get(flagId)
-
-    // eslint-disable-next-line no-prototype-builtins
-    return SHARIAH_LIST.hasOwnProperty(stockName) ? SHARIAH_LIST[stockName] : { s: 0, msc: 0 } // default for non-shariah
+  function getStockStat(symbol, defaultReturn = { s: 0, msc: 0 }) {
+    return SHARIAH_LIST.has(symbol) ? SHARIAH_LIST.get(symbol) : defaultReturn
   }
 
   function isSyariahIconExist(element) {
@@ -204,8 +199,6 @@ const tsi = (function () {
     dateDiffInDays,
     debounce,
     isValidDate,
-    lookForStockCode,
-    getStockListInMap,
     isSyariahIconExist,
     deleteSyariahIcon,
     createIcon,
@@ -215,6 +208,10 @@ const tsi = (function () {
     createMSCIcon,
     deleteMSCIcon,
     isMSCIconExist,
+
+    SHARIAH_LIST,
+    getStockStat,
+    setStockListInMap,
 
     TRADING_VIEW_MYR,
     attributeName,

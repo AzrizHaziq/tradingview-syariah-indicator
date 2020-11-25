@@ -1,6 +1,6 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
-tsi.waitForElm('.tv-main .tv-content').then(mainScript)
+tsi.waitForElm('.tv-main .tv-content').then(tsi.setStockListInMap).then(mainScript)
 
 function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
@@ -8,15 +8,8 @@ function mainScript() {
   tsi.observeNodeChanges(symbolNode, symbolScript)
 }
 
-function getSymbol() {
-  return document
-    .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol')
-    .trim()
-}
-
-async function symbolScript() {
-  const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
+function symbolScript() {
+  const { s: isShariah, msc } = tsi.getStockStat(getSymbol())
 
   const largeResoDom = document.querySelector(
     '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
@@ -71,4 +64,11 @@ async function symbolScript() {
   } else {
     tsi.deleteMSCIcon()
   }
+}
+
+function getSymbol() {
+  return document
+    .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
+    .getAttribute('data-symbol')
+    .trim()
 }
