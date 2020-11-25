@@ -15,9 +15,7 @@ const { author, homepage_url, version } = browser.runtime.getManifest()
 document.querySelector('[data-tsi=devName]').textContent = author
 
 // homepage_url
-document
-  .querySelector('[data-tsi=homepage_url]')
-  .setAttribute('href', homepage_url)
+document.querySelector('[data-tsi=homepage_url]').setAttribute('href', homepage_url)
 
 // Telegram group
 document
@@ -25,21 +23,14 @@ document
   .setAttribute('title', browser.i18n.getMessage('js_popup_tg_group'))
 
 // Extension version
-document.querySelector(
-  '[data-tsi=js_popup_version]'
-).textContent = `(${version})`
+document.querySelector('[data-tsi=js_popup_version]').textContent = `(${version})`
 
-document
-  .querySelector('[data-tsi=js_popup_version]')
-  .setAttribute('title', browser.i18n.getMessage('js_popup_version'))
+document.querySelector('[data-tsi=js_popup_version]').setAttribute('title', browser.i18n.getMessage('js_popup_version'))
 
 // Shariah Current at title
 document
   .querySelector('[data-tsi=js_popup_myx_current_shariah_list_at]')
-  .setAttribute(
-    'title',
-    browser.i18n.getMessage('js_popup_myx_current_shariah_list_at')
-  )
+  .setAttribute('title', browser.i18n.getMessage('js_popup_myx_current_shariah_list_at'))
 
 // MSC current at title
 document
@@ -48,25 +39,19 @@ document
 
 // from storage write to dom
 ;(async () => {
-  const { MSC_AT } = await browser.storage.local.get('MSC_AT')
-  const { MSC_LINK } = await browser.storage.local.get('MSC_LINK')
-  const { UPDATED_AT } = await browser.storage.local.get('UPDATED_AT')
+  const {
+    MYX: { mscAt, mscLink, updatedAt },
+  } = await browser.storage.local.get('MYX')
 
   // MSC current at href
-  document
-    .querySelector('[data-tsi=js_msc_updated_at]')
-    .setAttribute('href', MSC_LINK)
+  document.querySelector('[data-tsi=js_msc_updated_at]').setAttribute('href', mscLink)
 
-  document.querySelector(
-    '[data-tsi=my_updated_at]'
-  ).textContent = tsi.isValidDate(UPDATED_AT)
-    ? new Date(UPDATED_AT).toLocaleDateString()
+  document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(updatedAt)
+    ? new Date(updatedAt).toLocaleDateString()
     : '-'
 
   // MSC current at date
-  document.querySelector(
-    '[data-tsi=my_msc_updated_at]'
-  ).textContent = tsi.isValidDate(MSC_AT)
-    ? new Date(MSC_AT).toLocaleDateString()
+  document.querySelector('[data-tsi=my_msc_updated_at]').textContent = tsi.isValidDate(mscAt)
+    ? new Date(mscAt).toLocaleDateString()
     : '-'
 })()
