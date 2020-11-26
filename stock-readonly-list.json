@@ -64,13 +64,7 @@
       "s": 1,
       "msc": 1
     },
-    "MYX:AIM": {
-      "s": 1
-    },
     "MYX:AIRASIA": {
-      "s": 1
-    },
-    "MYX:AISB": {
       "s": 1
     },
     "MYX:AJI": {
@@ -108,9 +102,6 @@
     "MYX:AMWAY": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:ANALABS": {
-      "s": 1
     },
     "MYX:ANCOM": {
       "s": 1
@@ -158,6 +149,9 @@
       "s": 1
     },
     "MYX:ARTRONIQ": {
+      "s": 1
+    },
+    "MYX:ASB": {
       "s": 1
     },
     "MYX:ASDION": {
@@ -227,6 +221,9 @@
     "MYX:AYER": {
       "s": 1,
       "msc": 1
+    },
+    "MYX:AYS": {
+      "s": 1
     },
     "MYX:AZRB": {
       "s": 1,
@@ -365,7 +362,6 @@
       "s": 1
     },
     "MYX:CANONE": {
-      "s": 1,
       "msc": 1
     },
     "MYX:CAREPLS": {
@@ -468,9 +464,6 @@
     "MYX:COMFORT": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:COMPLET": {
-      "s": 1
     },
     "MYX:COMPUGT": {
       "s": 1
@@ -638,6 +631,9 @@
       "s": 1,
       "msc": 1
     },
+    "MYX:DYNACIA": {
+      "s": 1
+    },
     "MYX:E&O": {
       "s": 1,
       "msc": 1
@@ -715,6 +711,9 @@
     "MYX:ENGKAH": {
       "s": 1
     },
+    "MYX:ENCORP": {
+      "s": 1
+    },
     "MYX:ENGTEX": {
       "s": 1,
       "msc": 1
@@ -787,9 +786,6 @@
     "MYX:FITTERS": {
       "s": 1
     },
-    "MYX:FLBHD": {
-      "s": 1
-    },
     "MYX:FOCUSP": {
       "s": 1
     },
@@ -802,6 +798,9 @@
       "msc": 1
     },
     "MYX:FREIGHT": {
+      "s": 1
+    },
+    "MYX:FSBM": {
       "s": 1
     },
     "MYX:FRONTKN": {
@@ -1411,6 +1410,9 @@
     "MYX:LBALUM": {
       "s": 1
     },
+    "MYX:LBICAP": {
+      "s": 1
+    },
     "MYX:LBS": {
       "s": 1,
       "msc": 1
@@ -1457,6 +1459,9 @@
       "s": 1
     },
     "MYX:LTKM": {
+      "s": 1
+    },
+    "MYX:LUSTER": {
       "s": 1
     },
     "MYX:LUXCHEM": {
@@ -1652,6 +1657,9 @@
     "MYX:MITRA-WE": {
       "s": 1
     },
+    "MYX:MJPERAK": {
+      "s": 1
+    },
     "MYX:MKH": {
       "s": 1,
       "msc": 1
@@ -1676,6 +1684,9 @@
     "MYX:MMSV": {
       "s": 1
     },
+    "MYX:MPAY": {
+      "s": 1
+    },
     "MYX:MPI": {
       "s": 1
     },
@@ -1695,7 +1706,6 @@
       "s": 1
     },
     "MYX:MSC": {
-      "s": 1,
       "msc": 1
     },
     "MYX:MSM": {
@@ -1821,7 +1831,6 @@
       "s": 1
     },
     "MYX:NTPM": {
-      "s": 1,
       "msc": 1
     },
     "MYX:NWP": {
@@ -1866,6 +1875,9 @@
       "s": 1
     },
     "MYX:OPENSYS": {
+      "s": 1
+    },
+    "MYX:OPTIMAX": {
       "s": 1
     },
     "MYX:ORION": {
@@ -2212,6 +2224,9 @@
     "MYX:RGTECH": {
       "s": 1
     },
+    "MYX:RL": {
+      "s": 1
+    },
     "MYX:ROHAS": {
       "s": 1,
       "msc": 1
@@ -2246,6 +2261,9 @@
       "msc": 1
     },
     "MYX:SAMAIDEN": {
+      "s": 1
+    },
+    "MYX:SANICHI": {
       "s": 1
     },
     "MYX:SAPIND": {
@@ -2385,11 +2403,7 @@
       "s": 1
     },
     "MYX:SHL": {
-      "s": 1,
       "msc": 1
-    },
-    "MYX:SIGGAS": {
-      "s": 1
     },
     "MYX:SIGN": {
       "s": 1
@@ -2433,6 +2447,9 @@
     "MYX:SMCAP-WC": {
       "s": 1
     },
+    "MYX:SMETRIC": {
+      "s": 1
+    },
     "MYX:SMI": {
       "s": 1
     },
@@ -2451,16 +2468,13 @@
     "MYX:SNC": {
       "s": 1
     },
-    "MYX:SNTORIA": {
-      "s": 1
-    },
-    "MYX:SNTORIA-WB": {
-      "s": 1
-    },
     "MYX:SOLID": {
       "s": 1
     },
     "MYX:SOLID-WA": {
+      "s": 1
+    },
+    "MYX:SOLUTN": {
       "s": 1
     },
     "MYX:SOP": {
@@ -2522,6 +2536,9 @@
       "s": 1
     },
     "MYX:SUNWAY-WB": {
+      "s": 1
+    },
+    "MYX:SUNZEN": {
       "s": 1
     },
     "MYX:SUPERLN": {
@@ -2586,9 +2603,6 @@
     "MYX:TAMBUN": {
       "s": 1,
       "msc": 1
-    },
-    "MYX:TAS": {
-      "s": 1
     },
     "MYX:TASHIN": {
       "s": 1
@@ -2661,7 +2675,6 @@
       "s": 1
     },
     "MYX:TNLOGIS": {
-      "s": 1,
       "msc": 1
     },
     "MYX:TOCEAN": {
@@ -2720,9 +2733,6 @@
       "s": 1
     },
     "MYX:TTV": {
-      "s": 1
-    },
-    "MYX:TURIYA": {
       "s": 1
     },
     "MYX:UCHITEC": {
@@ -2845,6 +2855,9 @@
     "MYX:WATTA": {
       "s": 1
     },
+    "MYX:WARISAN": {
+      "s": 1
+    },
     "MYX:WCT": {
       "s": 1,
       "msc": 1
@@ -2867,9 +2880,6 @@
       "msc": 1
     },
     "MYX:WIDAD-WA": {
-      "s": 1
-    },
-    "MYX:WMG": {
       "s": 1
     },
     "MYX:WONG": {
@@ -2898,6 +2908,9 @@
     "MYX:XIANLNG": {
       "s": 1
     },
+    "MYX:XINGHE": {
+      "s": 1
+    },
     "MYX:XINHWA": {
       "s": 1
     },
@@ -2916,10 +2929,10 @@
     "MYX:YGL": {
       "s": 1
     },
-    "MYX:YILAI": {
+    "MYX:YINSON": {
       "s": 1
     },
-    "MYX:YINSON": {
+    "MYX:YKGI": {
       "s": 1
     },
     "MYX:YLI": {
@@ -2956,6 +2969,7 @@
       "msc": 1
     },
     "MYX:AMPROP": {
+      "s": 1,
       "msc": 1
     },
     "MYX:AMVERTON": {
@@ -2963,6 +2977,9 @@
     },
     "MYX:ATLAN": {
       "msc": 1
+    },
+    "MYX:BERTAM": {
+      "s": 1
     },
     "MYX:BJASSET": {
       "msc": 1
@@ -2974,6 +2991,7 @@
       "msc": 1
     },
     "MYX:BREM": {
+      "s": 1,
       "msc": 1
     },
     "MYX:CAB": {
@@ -2989,6 +3007,7 @@
       "msc": 1
     },
     "MYX:CCB": {
+      "s": 1,
       "msc": 1
     },
     "MYX:DUTALND": {
@@ -3001,6 +3020,7 @@
       "msc": 1
     },
     "MYX:G3": {
+      "s": 1,
       "msc": 1
     },
     "MYX:GPACKET": {
@@ -3016,6 +3036,7 @@
       "msc": 1
     },
     "MYX:HCK": {
+      "s": 1,
       "msc": 1
     },
     "MYX:HUMEIND": {
@@ -3025,9 +3046,13 @@
       "msc": 1
     },
     "MYX:IFCAMSC": {
+      "s": 1,
       "msc": 1
     },
     "MYX:INSAS": {
+      "msc": 1
+    },
+    "MYX:ILB": {
       "msc": 1
     },
     "MYX:KAREX": {
@@ -3051,10 +3076,14 @@
     "MYX:LANDMRK": {
       "msc": 1
     },
+    "MYX:LSTEEL": {
+      "s": 1
+    },
     "MYX:MAA": {
       "msc": 1
     },
     "MYX:MFLOUR": {
+      "s": 1,
       "msc": 1
     },
     "MYX:MUIIND": {
@@ -3071,6 +3100,9 @@
     },
     "MYX:MEDIA": {
       "msc": 1
+    },
+    "MYX:MNC": {
+      "s": 1
     },
     "MYX:MNRB": {
       "msc": 1
@@ -3091,6 +3123,7 @@
       "msc": 1
     },
     "MYX:OCK": {
+      "s": 1,
       "msc": 1
     },
     "MYX:P&O": {
@@ -3123,6 +3156,9 @@
     "MYX:TADMAX": {
       "msc": 1
     },
+    "MYX:TCS": {
+      "s": 1
+    },
     "MYX:TCHONG": {
       "msc": 1
     },
@@ -3133,12 +3169,14 @@
       "msc": 1
     },
     "MYX:TDM": {
+      "s": 1,
       "msc": 1
     },
     "MYX:TECHBND": {
       "msc": 1
     },
     "MYX:TMCLIFE": {
+      "s": 1,
       "msc": 1
     },
     "MYX:TUNEPRO": {
@@ -3146,6 +3184,9 @@
     },
     "MYX:WCEHB": {
       "msc": 1
+    },
+    "MYX:WINTONI": {
+      "s": 1
     },
     "MYX:WILLOW": {
       "msc": 1
