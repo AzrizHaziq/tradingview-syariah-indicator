@@ -1,8 +1,10 @@
 /* global tsi */
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
-const fetchData = async() => {
-  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+const fetchData = async () => {
+  // const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+  const jsonUrl =
+    'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/feature/update-stock-list-json/stock-list.json'
 
   try {
     const res = await fetch(jsonUrl)
@@ -63,3 +65,45 @@ async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
     console.error('Error set MYX storage', e)
   }
 }
+
+// prettier-ignore
+;(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r
+  ;(i[r] =
+    i[r] ||
+    function () {
+      ;(i[r].q = i[r].q || []).push(arguments)
+    }),
+    (i[r].l = 1 * new Date())
+  ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+  a.async = 1
+  a.src = g
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js?id=UA-183073441-1', 'ga')
+ga('create', 'UA-183073441-1', 'auto')
+ga('set', 'checkProtocolTask', function () {})
+ga('send', 'pageview', 'bg.html')
+
+browser.runtime.onMessage.addListener(request => {
+  // console.log(request)
+  if (request.type === 'ga') {
+    if (request.subType === 'pageview') {
+      ga('send', 'pageview', request.page)
+    }
+
+    if (request.subType === 'event') {
+      console.log(ga, request.payload)
+      ga('send', {
+        hitType: 'event',
+        ...request.payload,
+      })
+
+      // ga('send', {
+      //   hitType: 'event',
+      //   eventCategory: 'Videos',
+      //   eventAction: 'play',
+      //   eventLabel: 'Fall Campaign',
+      // })
+    }
+  }
+})

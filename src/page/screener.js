@@ -226,6 +226,16 @@ function setupFilterBtn(state) {
     try {
       await state.onClick(wrapper)(e)
 
+      await browser.runtime.sendMessage({
+        type: 'ga',
+        subType: 'event',
+        payload: {
+          eventCategory: 'screener',
+          eventLabel: state.type,
+          eventAction: state.currentState,
+        },
+      })
+
       const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
 
       Array.from(trs).forEach(tr => {
