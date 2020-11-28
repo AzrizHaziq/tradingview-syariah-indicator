@@ -2,27 +2,37 @@
 
 const tsi = (function () {
   'use strict'
+  const GA = 'UA-183073441-2'
+  let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
   const TRADING_VIEW_MYR = 'MYX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
   const mscAttribute = 'tradingview-syariah-indicator-msc'
 
-  async function lookForStockCode(currentSymbol) {
-    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
+  async function setStockListInMap() {
+    function prefixStocksWithExchange(exchange) {
+      return Object.entries(MYX).map(([key, value]) => [`${exchange}:${key}`, value])
+    }
 
-    // eslint-disable-next-line no-prototype-builtins
-    return SHARIAH_LIST.hasOwnProperty(currentSymbol)
-      ? SHARIAH_LIST[currentSymbol]
-      : { s: 0, msc: 0 } // default for non-shariah
+    const {
+      MYX: { list: MYX },
+    } = await browser.storage.local.get('MYX')
+
+    SHARIAH_LIST = new Map([...prefixStocksWithExchange(TRADING_VIEW_MYR)])
+    return SHARIAH_LIST
+  }
+
+  function getStockStat(symbol, defaultReturn = { s: 0, msc: 0 }) {
+    return SHARIAH_LIST.has(symbol) ? SHARIAH_LIST.get(symbol) : defaultReturn
   }
 
   function isSyariahIconExist(element) {
-    return element.querySelector(`[${ attributeName }="${ extensionName }"]`)
+    return element.querySelector(`[${attributeName}="${extensionName}"]`)
   }
 
   function deleteSyariahIcon(parentElement = document) {
-    parentElement.querySelectorAll(`[${ attributeName }="${ extensionName }"]`).forEach(img => img.remove())
+    parentElement.querySelectorAll(`[${attributeName}="${extensionName}"]`).forEach(img => img.remove())
   }
 
   /**
@@ -33,7 +43,7 @@ const tsi = (function () {
    */
   function createIcon({ width, height } = { width: 25, height: 25 }) {
     const iconInSvgString = `
-    <svg ${ attributeName }="${ extensionName }" width="${ width }" height="${ height }">
+    <svg ${attributeName}="${extensionName}" width="${width}" height="${height}">
       <title>Icon made by flaticon</title>
       <use xlink:href="#shariah-icon"></use>
     </svg>
@@ -47,12 +57,12 @@ const tsi = (function () {
    */
   function addStaticSyariahIcon() {
     // only add icon if static icon is not existed yet in DOM
-    if (document.body.querySelector(`[${ attributeName }="root-${ extensionName }]`)) {
+    if (document.body.querySelector(`[${attributeName}="root-${extensionName}]`)) {
       return
     }
 
     const rootIcon = `
-     <svg ${ attributeName }="root-${ extensionName }" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="15px" style="position: absolute">
+     <svg ${attributeName}="root-${extensionName}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="15px" style="position: absolute">
        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="-12 0 512 512.001" id="shariah-icon">
         <path d="m481.414062 387.503906c-46.253906 75.460938-129.484374 125.507813-224.226562 124.480469-142.894531-1.546875-257.1875-117.976563-257.1875-261.953125 0-115.910156 74.722656-214.253906 178.257812-248.757812 4.996094-1.664063 9.546876 3.523437 7.28125 8.308593-16.441406 34.6875-25.527343 73.601563-25.222656 114.691407 1.070313 144.238281 116.875 260 260.039063 260 18.78125 0 37.082031-2.007813 54.730469-5.832032 5.136718-1.113281 9.089843 4.554688 6.328124 9.0625zm0 0"
             fill="#2ecc71"></path>
@@ -115,7 +125,7 @@ const tsi = (function () {
 
       clearTimeout(timeout)
 
-      timeout = setTimeout(later, wait = 500)
+      timeout = setTimeout(later, (wait = 500))
 
       if (callNow) func.apply(context, args)
     }
@@ -126,30 +136,11 @@ const tsi = (function () {
     return d instanceof Date && !isNaN(d)
   }
 
-  function retryFn(until = 10, timeout = 500) {
-    let i = 0
-    return function innerFn(fn) {
-      try {
-        fn()
-      } catch (e) {
-        i++
-        console.error(e)
-
-        if (i < until) {
-          const t = setTimeout(() => {
-            innerFn(fn)
-            clearTimeout(t)
-          }, timeout)
-        }
-      }
-    }
-  }
-
   function observeNodeChanges(nodeToObserve, cb, options = { childList: true, subtree: true }) {
     let observer
 
     if (observer) {
-      console.log(`Already observe ${ nodeToObserve.innerText } changes`)
+      console.log(`Already observe ${nodeToObserve.innerText} changes`)
       observer.disconnect()
     }
 
@@ -158,17 +149,6 @@ const tsi = (function () {
     observer.observe(nodeToObserve, options)
 
     return observer
-  }
-
-  function forceMutationChanges(domNodeFakeChanges) {
-    const appendRemoveNodeWithDomNode = () => appendRemoveNode(domNodeFakeChanges)
-    retryFn()(appendRemoveNodeWithDomNode)
-  }
-
-  function appendRemoveNode(domNodeFakeChanges) {
-    const fakeNode = document.createElement('a')
-    domNodeFakeChanges.append(fakeNode)
-    fakeNode.remove()
   }
 
   function createMSCIcon() {
@@ -187,36 +167,57 @@ const tsi = (function () {
     return mscEle
   }
 
-  function deleteMSCIcon(dom) {
-    (dom || document)
-      .querySelectorAll(`[${ attributeName }="${ mscAttribute }"]`)
-      .forEach(div => div.remove())
+  function deleteMSCIcon(dom = document) {
+    dom.querySelectorAll(`[${attributeName}="${mscAttribute}"]`).forEach(div => div.remove())
   }
 
   function isMSCIconExist(element) {
-    return element.querySelector(`[${ attributeName }="${ mscAttribute }"]`)
+    return element.querySelector(`[${attributeName}="${mscAttribute}"]`)
+  }
+
+  function waitForElm(selector) {
+    return new Promise(resolve => {
+      if (document.querySelector(selector)) {
+        return resolve(document.querySelector(selector))
+      }
+
+      const observer = new MutationObserver(() => {
+        if (document.querySelector(selector)) {
+          resolve(document.querySelector(selector))
+          observer.disconnect()
+        }
+      })
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      })
+    })
   }
 
   return {
-    retryFn,
+    GA,
+    waitForElm,
     dateDiffInDays,
     debounce,
     isValidDate,
-    lookForStockCode,
     isSyariahIconExist,
     deleteSyariahIcon,
     createIcon,
     addStaticSyariahIcon,
     addStyle,
     observeNodeChanges,
-    forceMutationChanges,
     createMSCIcon,
     deleteMSCIcon,
     isMSCIconExist,
 
+    SHARIAH_LIST,
+    getStockStat,
+    setStockListInMap,
+
     TRADING_VIEW_MYR,
     attributeName,
     extensionName,
-    mscAttribute
+    mscAttribute,
   }
 })()

@@ -9,5 +9,10 @@
   },
   "extends": [
     "eslint:recommended"
-  ]
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "ga": true
+  }
 }

@@ -1,23 +1,23 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
-tsi.retryFn()(observeChartChanges)
-browser.runtime.onMessage.addListener(chartScript)
+tsi.waitForElm('[data-name="legend-series-item"]').then(tsi.setStockListInMap).then(mainScript)
 
-function observeChartChanges() {
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: 'chart',
+})
+
+function mainScript() {
   // have to target dom like below since this is the most top parent
   const symbolNode = document.querySelector('[data-name="legend-series-item"]')
-
-  if (!symbolNode) {
-    return
-  }
-
   tsi.observeNodeChanges(symbolNode, chartScript)
-  tsi.forceMutationChanges(symbolNode)
 }
 
 async function chartScript() {
+  const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
-  const { s: isShariah, msc = 0 } = await tsi.lookForStockCode(`${ tsi.TRADING_VIEW_MYR }:${ getSymbolsFromTitle() }`)
+  const { s: isShariah, msc } = tsi.getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
     if (tsi.isSyariahIconExist(parentElement)) {
@@ -36,9 +36,7 @@ async function chartScript() {
     } else {
       const mscIcon = tsi.createMSCIcon()
       mscIcon.style.marginLeft = '5px'
-      parentElement
-        .querySelector('[data-name="legend-source-title"]')
-        .insertAdjacentElement('beforebegin', mscIcon)
+      parentElement.querySelector('[data-name="legend-source-title"]').insertAdjacentElement('beforebegin', mscIcon)
     }
   } else {
     tsi.deleteMSCIcon(parentElement)
@@ -47,5 +45,5 @@ async function chartScript() {
 
 function getSymbolsFromTitle() {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+(-\w+)?/.exec(domTittleName)[0].trim()  // also cover syntax like warrant
+  return /\w+(-\w+)?/.exec(domTittleName)[0].trim() // also cover syntax like warrant
 }

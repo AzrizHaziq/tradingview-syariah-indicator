@@ -1,31 +1,31 @@
 /* global tsi */
 tsi.addStaticSyariahIcon()
-tsi.retryFn()(observeSymbolChanges)
-browser.runtime.onMessage.addListener(symbolScript)
+tsi.waitForElm('.tv-main .tv-content').then(tsi.setStockListInMap).then(mainScript)
 
-const symbolNode = document.querySelector('.tv-main .tv-content')
-tsi.forceMutationChanges(symbolNode)
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: 'symbols',
+})
 
-function observeSymbolChanges() {
+function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
   const symbolNode = document.querySelector('.tv-main .tv-content')
-
   tsi.observeNodeChanges(symbolNode, symbolScript)
-  tsi.forceMutationChanges(symbolNode)
 }
 
-function getSymbol() {
-  return document.querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol').trim()
-}
+function symbolScript() {
+  const { s: isShariah, msc } = tsi.getStockStat(getSymbol())
 
-async function symbolScript() {
-  const { s: isShariah, msc } = await tsi.lookForStockCode(getSymbol())
-  const largeResoDom = document.querySelector('.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange')
-  const smallResoDom = document.querySelector('.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line')
+  const largeResoDom = document.querySelector(
+    '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
+  )
+
+  const smallResoDom = document.querySelector(
+    '.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line'
+  )
 
   if (isShariah) {
-
     if (tsi.isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
@@ -54,7 +54,7 @@ async function symbolScript() {
       // if icon already exist dont do anything
     } else {
       const mscLargeResoIcon = tsi.createMSCIcon()
-      // mscLargeResoIcon.style.marginLeft = '5px'
+      mscLargeResoIcon.style.verticalAlign = 'top'
       largeResoDom.parentElement.insertAdjacentElement('beforeend', mscLargeResoIcon)
     }
 
@@ -70,4 +70,11 @@ async function symbolScript() {
   } else {
     tsi.deleteMSCIcon()
   }
+}
+
+function getSymbol() {
+  return document
+    .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
+    .getAttribute('data-symbol')
+    .trim()
 }

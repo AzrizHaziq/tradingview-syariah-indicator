@@ -1,7 +1,7 @@
 /* global tsi */
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
-const fetchData = async() => {
+const fetchData = async () => {
   const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
 
   try {
@@ -15,11 +15,7 @@ const fetchData = async() => {
 // just trigger get first in bg script
 fetchData()
 
-const validUrls = [
-  'tradingview.com/chart',
-  'tradingview.com/screener',
-  'tradingview.com/symbols'
-]
+const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
 
 async function listener(id, { status }, { url }) {
   if (status === 'loading') {
@@ -32,12 +28,10 @@ async function listener(id, { status }, { url }) {
   }
 
   try {
-    const { LAST_FETCH_AT } = (await browser.storage.local.get('LAST_FETCH_AT'))
+    const { LAST_FETCH_AT } = await browser.storage.local.get('LAST_FETCH_AT')
 
     const currentDate = new Date()
-    const lastFetchAt = tsi.isValidDate(LAST_FETCH_AT)
-      ? new Date(LAST_FETCH_AT)
-      : new Date()
+    const lastFetchAt = tsi.isValidDate(LAST_FETCH_AT) ? new Date(LAST_FETCH_AT) : new Date()
 
     const shouldUseCacheValue = tsi.dateDiffInDays(currentDate, lastFetchAt) >= 0
 
@@ -45,18 +39,59 @@ async function listener(id, { status }, { url }) {
       console.log('>>> Cache')
     } else {
       console.log('>>> API')
-      const { list, updatedAt, mscAt, mscLink } = await fetchData()
+      const { MYX } = await fetchData()
+      await setMYXStorages(MYX)
 
-      await browser.storage.local.set({ 'MSC_AT': mscAt, })
-      await browser.storage.local.set({ 'MSC_LINK': mscLink, })
-      await browser.storage.local.set({ 'SHARIAH_LIST': list, })
-      await browser.storage.local.set({ 'UPDATED_AT': updatedAt, })
-      await browser.storage.local.set({ 'LAST_FETCH_AT': new Date().toString() })
+      await browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() })
     }
-    const { SHARIAH_LIST } = (await browser.storage.local.get('SHARIAH_LIST'))
-    browser.tabs.sendMessage(id, { list: SHARIAH_LIST })
-    return await SHARIAH_LIST
   } catch (e) {
     console.error('Error Send message', e)
   }
 }
+
+async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
+  try {
+    await browser.storage.local.set({
+      MYX: {
+        list, // must save in list key
+        mscAt,
+        mscLink,
+        updatedAt,
+      },
+    })
+  } catch (e) {
+    console.error('Error set MYX storage', e)
+  }
+}
+
+// prettier-ignore
+;(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r
+  ;(i[r] =
+    i[r] ||
+    function () {
+      ;(i[r].q = i[r].q || []).push(arguments)
+    }),
+    (i[r].l = 1 * new Date())
+  ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+  a.async = 1
+  a.src = g
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${tsi.GA}`, 'ga')
+ga('create', tsi.GA, 'auto')
+ga('set', 'checkProtocolTask', function () {})
+
+browser.runtime.onMessage.addListener(request => {
+  if (request.type === 'ga') {
+    if (request.subType === 'pageview') {
+      ga('send', 'pageview', request.payload)
+    }
+
+    if (request.subType === 'event') {
+      ga('send', {
+        hitType: 'event',
+        ...request.payload,
+      })
+    }
+  }
+})
