@@ -5,9 +5,9 @@
   "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
   "scripts": {
-    "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/",
-    "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1/",
-    "build": "web-ext build --overwrite-dest --ignore-files update-data docs *.md package.json package-lock.json stock-list.json stock-readonly-list.json _config.yml",
+    "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/ about:debugging#/runtime/this-firefox",
+    "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
+    "build": "web-ext --config=config/web-ext-prod.cjs build",
     "update-data": "node update-data",
     "ghAction:update-data": "npm run update-data -- skip-commit"
   },

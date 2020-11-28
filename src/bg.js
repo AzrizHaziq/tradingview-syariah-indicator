@@ -2,9 +2,7 @@
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
 const fetchData = async () => {
-  // const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
-  const jsonUrl =
-    'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/feature/update-stock-list-json/stock-list.json'
+  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
 
   try {
     const res = await fetch(jsonUrl)
@@ -79,31 +77,21 @@ async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
   a.async = 1
   a.src = g
   m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js?id=UA-183073441-1', 'ga')
-ga('create', 'UA-183073441-1', 'auto')
+})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${tsi.GA}`, 'ga')
+ga('create', tsi.GA, 'auto')
 ga('set', 'checkProtocolTask', function () {})
-ga('send', 'pageview', 'bg.html')
 
 browser.runtime.onMessage.addListener(request => {
-  // console.log(request)
   if (request.type === 'ga') {
     if (request.subType === 'pageview') {
-      ga('send', 'pageview', request.page)
+      ga('send', 'pageview', request.payload)
     }
 
     if (request.subType === 'event') {
-      console.log(ga, request.payload)
       ga('send', {
         hitType: 'event',
         ...request.payload,
       })
-
-      // ga('send', {
-      //   hitType: 'event',
-      //   eventCategory: 'Videos',
-      //   eventAction: 'play',
-      //   eventLabel: 'Fall Campaign',
-      // })
     }
   }
 })

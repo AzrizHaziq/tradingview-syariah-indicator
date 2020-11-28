@@ -67,5 +67,5 @@
     },
     "default_popup": "src/popup/popup.html"
   },
-  "content_security_policy": "img-src 'self' https://www.google-analytics.com; style-src 'self'; object-src 'self'; default-src 'self'; script-src 'self'; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/feature/update-stock-list-json/stock-list.json https://www.google-analytics.com; script-src-elem 'self' https://www.google-analytics.com"
+  "content_security_policy": "style-src 'self'; object-src 'self'; default-src 'self'; img-src 'self' https://www.google-analytics.com; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json https://www.google-analytics.com"
 }
