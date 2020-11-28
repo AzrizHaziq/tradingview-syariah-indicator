@@ -54,6 +54,12 @@ const shariah = {
   },
 }
 
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: getCurrentPathname(),
+})
+
 // if both icon exist, then add margin-left
 tsi.addStyle(`
   [${tsi.attributeName}="${tsi.extensionName}"] +
@@ -226,13 +232,13 @@ function setupFilterBtn(state) {
     try {
       await state.onClick(wrapper)(e)
 
-      await browser.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: 'ga',
         subType: 'event',
         payload: {
-          eventCategory: 'screener',
-          eventLabel: state.type,
-          eventAction: state.currentState,
+          eventCategory: getCurrentPathname(),
+          eventAction: state.type,
+          eventLabel: `${state.currentState}`,
         },
       })
 
@@ -282,4 +288,8 @@ function shouldDisplayRow(rowElement, { isSyariah, isMsc }) {
   } else {
     rowElement.style.display = 'table-row'
   }
+}
+
+function getCurrentPathname() {
+  return window.location.pathname.replace(/\//g, '') === 'screener' ? 'screener' : 'chart-screener'
 }

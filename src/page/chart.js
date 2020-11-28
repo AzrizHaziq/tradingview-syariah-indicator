@@ -2,6 +2,12 @@
 tsi.addStaticSyariahIcon()
 tsi.waitForElm('[data-name="legend-series-item"]').then(tsi.setStockListInMap).then(mainScript)
 
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: 'chart',
+})
+
 function mainScript() {
   // have to target dom like below since this is the most top parent
   const symbolNode = document.querySelector('[data-name="legend-series-item"]')

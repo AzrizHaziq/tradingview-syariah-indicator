@@ -9,33 +9,47 @@ Array.from(document.querySelectorAll('[data-i18n]')).forEach(
   item => (item.textContent = browser.i18n.getMessage(item.dataset['i18n']))
 )
 
-// from manifest.json write to dom
-const { author, homepage_url, version } = browser.runtime.getManifest()
+const homepageEl = document.querySelector('.js-homepage')
+homepageEl.addEventListener('click', () => popupGa('click', 'homepage'))
 
+// from manifest.json write to dom
+const { author, homepage_url: githubPage_url, version } = browser.runtime.getManifest()
 document.querySelector('[data-tsi=devName]').textContent = author
 
-// homepage_url
-document.querySelector('[data-tsi=homepage_url]').setAttribute('href', homepage_url)
+// githubPage_url
+const githubEl = document.querySelector('[data-tsi=githubPage_url]')
+githubEl.setAttribute('href', githubPage_url)
+githubEl.addEventListener('click', () => popupGa('click', 'github'))
 
 // Telegram group
-document
-  .querySelector('[data-tsi=js_popup_tg_group]')
-  .setAttribute('title', browser.i18n.getMessage('js_popup_tg_group'))
+const tgEl = document.querySelector('[data-tsi=js_popup_tg_group]')
+tgEl.setAttribute('title', browser.i18n.getMessage('js_popup_tg_group'))
+tgEl.addEventListener('click', () => popupGa('click', 'tg'))
 
 // Extension version
-document.querySelector('[data-tsi=js_popup_version]').textContent = `(${version})`
-
-document.querySelector('[data-tsi=js_popup_version]').setAttribute('title', browser.i18n.getMessage('js_popup_version'))
+const versionEl = document.querySelector('[data-tsi=js_popup_version]')
+versionEl.textContent = `(${version})`
+versionEl.setAttribute('title', browser.i18n.getMessage('js_popup_version'))
+versionEl.addEventListener('click', () => popupGa('click', 'version'))
 
 // Shariah Current at title
-document
-  .querySelector('[data-tsi=js_popup_myx_current_shariah_list_at]')
-  .setAttribute('title', browser.i18n.getMessage('js_popup_myx_current_shariah_list_at'))
+const myxShariahAtEl = document.querySelector('[data-tsi=js_popup_myx_current_shariah_list_at]')
+myxShariahAtEl.setAttribute('title', browser.i18n.getMessage('js_popup_myx_current_shariah_list_at'))
+myxShariahAtEl.addEventListener('click', () => popupGa('click', 'shariahAt'))
 
 // MSC current at title
-document
-  .querySelector('[data-tsi=js_msc_updated_at]')
-  .setAttribute('title', browser.i18n.getMessage('js_msc_updated_at'))
+const mscAtEl = document.querySelector('[data-tsi=js_msc_updated_at]')
+mscAtEl.setAttribute('title', browser.i18n.getMessage('js_msc_updated_at'))
+mscAtEl.addEventListener('click', () => popupGa('click', 'mscAt'))
+
+function popupGa(eventAction, eventLabel) {
+  ga('send', {
+    hitType: 'event',
+    eventCategory: 'popup',
+    eventAction,
+    eventLabel,
+  })
+}
 
 // from storage write to dom
 ;(async () => {
@@ -67,7 +81,7 @@ document
   a.async = 1
   a.src = g
   m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
-ga('create', 'UA-183073441-1', 'auto')
+})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${tsi.GA}`, 'ga')
+ga('create', tsi.GA, 'auto')
 ga('set', 'checkProtocolTask', function () {})
-ga('send', 'pageview', 'popup.html')
+ga('send', 'pageview', 'popup')

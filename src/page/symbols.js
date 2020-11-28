@@ -2,6 +2,12 @@
 tsi.addStaticSyariahIcon()
 tsi.waitForElm('.tv-main .tv-content').then(tsi.setStockListInMap).then(mainScript)
 
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: 'symbols',
+})
+
 function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
   const symbolNode = document.querySelector('.tv-main .tv-content')
