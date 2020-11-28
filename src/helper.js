@@ -2,7 +2,7 @@
 
 const tsi = (function () {
   'use strict'
-  const GA = 'UA-183073441-1'
+  const GA = 'UA-183073441-2'
   let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
   const TRADING_VIEW_MYR = 'MYX'
