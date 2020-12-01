@@ -33,6 +33,6 @@ jobs:
           author_name: GitHub Actions Bot
           author_email: <>
           message: "[STOCK_LIST] gh_bot: Update with new changes"
-          add: "stock-list.json stock-readonly-list.json"
+          add: "stock-list.json contents"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
