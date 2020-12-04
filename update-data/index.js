@@ -1,7 +1,7 @@
 import git from 'simple-git'
 import merge from 'lodash.merge'
 import { writeToFile } from './writeToFile.js'
-import { MYX, MYX_FILENAME, myxFilenameTransformer } from './MYX.js'
+import { MYX, MYX_FILENAME, myxFilenameTransformer, shouldCommitMyx } from './MYX.js'
 
 const MAIN_STOCK_LIST_FILENAME = 'stock-list.json'
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
@@ -17,7 +17,10 @@ async function commitChangesIfAny() {
 
 ;(async () => {
   try {
-    const MALAYSIA_INFO = await MYX()
+    // const MALAYSIA_INFO = await MYX()
+    const abc = await shouldCommitMyx()
+    console.log(abc)
+    return
 
     // write to MYX
     await writeToFile(MYX_FILENAME, myxFilenameTransformer(MALAYSIA_INFO))
