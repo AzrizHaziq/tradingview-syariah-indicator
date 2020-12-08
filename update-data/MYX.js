@@ -1,8 +1,12 @@
-import git from 'simple-git'
+import fs from 'fs'
 import ExcelJS from 'exceljs'
+import omit from 'lodash.omit'
 import merge from 'lodash.merge'
+import { pipe } from './utils.js'
 import puppeteer from 'puppeteer'
+import isEqual from 'lodash.isequal'
 import cliProgress from 'cli-progress'
+import { writeToFile } from './writeToFile.js'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
@@ -10,6 +14,23 @@ export const MYX_FILENAME = 'contents/MYX.txt'
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
+  function generateShariah(SYARIAH_LIST) {
+    try {
+      return SYARIAH_LIST.reduce(
+        (acc, name) => ({
+          ...acc,
+          [name]: {
+            s: 1,
+          },
+        }),
+        {}
+      )
+    } catch (e) {
+      console.error('Error generate shariah data', e)
+      process.exit(1)
+    }
+  }
+
   const scrapUrl = ({ per_page, page }) =>
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
@@ -59,26 +80,9 @@ async function scrapBursaMalaysia() {
 
     console.log('\n\nFound: ', syariahList.length)
 
-    return syariahList
+    return generateShariah(syariahList)
   } catch (e) {
     console.error('Error scrap data', e)
-    process.exit(1)
-  }
-}
-
-function generateShariah(SYARIAH_LIST) {
-  try {
-    return SYARIAH_LIST.reduce(
-      (acc, name) => ({
-        ...acc,
-        [name]: {
-          s: 1,
-        },
-      }),
-      {}
-    )
-  } catch (e) {
-    console.error('Error merge data', e)
     process.exit(1)
   }
 }
@@ -125,20 +129,9 @@ async function generateMidSmallCap() {
   }
 }
 
-export async function shouldCommitMyx() {
-  return new Promise((resolve, reject) => {
-    git().diffSummary([MYX_FILENAME], (err, summary) => {
-      if (err) {
-        reject(`Error diffSummary for ${MYX_FILENAME}`)
-      }
+function myxFilenameTransformer(data, flagId = TRADING_VIEW_MYX) {
+  const bufferPadRightSize = 1
 
-      console.log(summary.files.find(({ file }) => file === MYX_FILENAME))
-      resolve(summary.changed > 1)
-    })
-  })
-}
-
-export function myxFilenameTransformer(data, flagId = 'MYX') {
   const {
     [TRADING_VIEW_MYX]: { list, ...rest },
   } = data
@@ -147,15 +140,15 @@ export function myxFilenameTransformer(data, flagId = 'MYX') {
   const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
 
   function metaDataDisplayed(key, value) {
-    return `${key.padEnd(maxRestLength + 1, ' ')}: ${value}`
+    return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
   }
 
   function listDisplayed(stockName, values) {
-    return `${stockName.padEnd(maxStockLength + 1, ' ')}: ${Object.keys(values).join(', ')}`
+    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${Object.keys(values).join(', ')}`
   }
 
-  function dash(size = 20, char = '-') {
-    return Array.from({ length: 20 }, _ => char).join('')
+  function dash(length = 20, char = '-') {
+    return Array.from({ length }, _ => char).join('')
   }
 
   return `
@@ -167,23 +160,50 @@ ${dash()}
 ${Object.entries(list).reduce((acc, [key, value]) => acc + '\n' + listDisplayed(key, value), '')}`.trim()
 }
 
+function isOldAndNewSame(newList) {
+  const ignoreKeysForDiffing = ['updatedAt']
+
+  fs.readFile('./stock-list.json', { encoding: 'utf-8' }, (err, data) => {
+    if (err) {
+      console.log(err)
+      throw Error(`Unable to write to file ./stock-list.json`)
+    }
+
+    const oldList = omit(JSON.parse(data), ignoreKeysForDiffing)
+    newList = omit(newList, ignoreKeysForDiffing)
+
+    return isEqual(oldList, newList)
+  })
+}
+
 export async function MYX() {
   try {
-    const SYARIAH_LIST = await scrapBursaMalaysia()
+    const shariahList = await scrapBursaMalaysia()
     const { mscAt, mscLink, mscList } = await generateMidSmallCap()
 
-    const mergedList = merge(generateShariah(SYARIAH_LIST), mscList)
-    const sortedList = Object.keys(mergedList)
-      .sort()
-      .map(key => ({ [key]: mergedList[key] }))
+    const sortedList = pipe(
+      Object.entries,
+      entries => entries.sort(([keyA], [keyB]) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
+      Object.fromEntries
+    )(merge(shariahList, mscList))
 
-    return {
+    const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
         mscAt,
         mscLink,
         updatedAt: new Date(),
         list: sortedList,
       },
+    }
+
+    if (isOldAndNewSame(NEW_MYX_DATA)) {
+      // skip generating MYX if same list with old one
+      return null
+    } else {
+      // write to MYX
+      await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
+
+      return NEW_MYX_DATA
     }
   } catch (e) {
     throw `Error generating ${TRADING_VIEW_MYX}`
