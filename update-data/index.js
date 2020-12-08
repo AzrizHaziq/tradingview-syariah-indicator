@@ -19,10 +19,6 @@ async function commitChangesIfAny() {
   try {
     const MYX_INFO = await MYX()
 
-    if (!MYX_INFO) {
-      return
-    }
-
     // write MAIN_LIST
     await writeToFile(
       MAIN_STOCK_LIST_FILENAME,

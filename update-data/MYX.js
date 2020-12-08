@@ -1,10 +1,7 @@
-import fs from 'fs'
 import ExcelJS from 'exceljs'
-import omit from 'lodash.omit'
 import merge from 'lodash.merge'
 import { pipe } from './utils.js'
 import puppeteer from 'puppeteer'
-import isEqual from 'lodash.isequal'
 import cliProgress from 'cli-progress'
 import { writeToFile } from './writeToFile.js'
 
@@ -160,22 +157,6 @@ ${dash()}
 ${Object.entries(list).reduce((acc, [key, value]) => acc + '\n' + listDisplayed(key, value), '')}`.trim()
 }
 
-function isOldAndNewSame(newList) {
-  const ignoreKeysForDiffing = ['updatedAt']
-
-  fs.readFile('./stock-list.json', { encoding: 'utf-8' }, (err, data) => {
-    if (err) {
-      console.log(err)
-      throw Error(`Unable to write to file ./stock-list.json`)
-    }
-
-    const oldList = omit(JSON.parse(data), ignoreKeysForDiffing)
-    newList = omit(newList, ignoreKeysForDiffing)
-
-    return isEqual(oldList, newList)
-  })
-}
-
 export async function MYX() {
   try {
     const shariahList = await scrapBursaMalaysia()
@@ -196,15 +177,10 @@ export async function MYX() {
       },
     }
 
-    if (isOldAndNewSame(NEW_MYX_DATA)) {
-      // skip generating MYX if same list with old one
-      return null
-    } else {
-      // write to MYX
-      await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
+    // write to MYX
+    await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
 
-      return NEW_MYX_DATA
-    }
+    return NEW_MYX_DATA
   } catch (e) {
     throw `Error generating ${TRADING_VIEW_MYX}`
   }
