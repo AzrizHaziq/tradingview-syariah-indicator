@@ -1,8 +1,36 @@
 /* global tsi */
+
+browser.runtime.sendMessage({
+  type: 'ga',
+  subType: 'pageview',
+  payload: getCurrentPathname(),
+})
+
 const ONLY_VALID_COUNTRIES = ['my']
+
+const css = {
+  main: {
+    row: 'js-tsi__main--row',
+    body: 'js-tsi__main--body',
+  },
+  shariah: {
+    row: 'js-tsi__shariah--row',
+    body: 'js-tsi__shariah--tbody',
+  },
+  MYX: {
+    msc: {
+      row: 'js-tsi__msc--row',
+      body: 'js-tsi__msc--tbody',
+    },
+  },
+}
 const msc = {
   type: 'MSC',
   currentState: false,
+  css: {
+    row: css.MYX.msc.row,
+    body: css.MYX.msc.body,
+  },
   checkBoxId: 'msc-checkbox-id',
   checkBoxAttrName: tsi.attributeName,
   checkBoxAttrValue: 'msc-checkbox',
@@ -26,6 +54,10 @@ const msc = {
 const shariah = {
   type: 'SHARIAH',
   currentState: false,
+  css: {
+    row: css.shariah.row,
+    body: css.shariah.body,
+  },
   checkBoxId: 'shariah-checkbox-id',
   checkBoxAttrName: tsi.attributeName,
   checkBoxAttrValue: 'shariah-checkbox',
@@ -54,17 +86,34 @@ const shariah = {
   },
 }
 
-browser.runtime.sendMessage({
-  type: 'ga',
-  subType: 'pageview',
-  payload: getCurrentPathname(),
-})
-
 // if both icon exist, then add margin-left
 tsi.addStyle(`
   [${tsi.attributeName}="${tsi.extensionName}"] +
   [${tsi.attributeName}="${tsi.mscAttribute}"] {
     margin-left: 5px;
+  }
+  
+  //  by default  make all visible
+  .${css.main.body} .${css.main.row} {
+     display: table-row;
+  }
+  
+  // SHARIAH ON
+  .${css.main.body}.${css.shariah.body} .${css.shariah.row} {
+     display: table-row;
+  }
+  
+  .${css.main.body}.${css.shariah.body} .${css.main.row}:not(.${css.shariah.row}) {
+     display: none;
+  }
+  
+  // MSC ON
+  .${css.main.body}.${css.MYX.msc.body} .${css.MYX.msc.row} {
+     display: table-row;
+  }
+  
+  .${css.main.body}.${css.MYX.msc.body} .${css.main.row}:not(.${css.MYX.msc.row}) {
+     display: none;
   }
 `)
 
@@ -84,6 +133,7 @@ async function mainScreenerScript() {
     tsi.addStaticSyariahIcon()
     setupFilterBtn(msc)
     setupFilterBtn(shariah)
+    setupCssClassName()
     observedTableChanges()
     observedCountryFlagChanges()
   } catch (e) {
@@ -115,7 +165,11 @@ function observedTableChanges() {
       const mscIcon = tsi.createMSCIcon()
       const shariahIcon = tsi.createIcon({ width: 10, height: 10 })
 
+      tr.classList.add(css.main.row)
+
       if (isMsc) {
+        tr.classList.add(css.MYX.msc.row)
+
         if (tsi.isMSCIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
@@ -126,6 +180,8 @@ function observedTableChanges() {
       }
 
       if (isSyariah) {
+        tr.classList.add(css.shariah.row)
+
         if (tsi.isSyariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
@@ -134,8 +190,6 @@ function observedTableChanges() {
           domToBeAdded.insertAdjacentElement('afterend', shariahIcon)
         }
       }
-
-      shouldDisplayRow(tr, { isSyariah, isMsc })
     })
   })
 
@@ -242,13 +296,8 @@ function setupFilterBtn(state) {
         },
       })
 
-      const trs = document.querySelectorAll('.tv-screener__content-pane table tbody.tv-data-table__tbody tr')
-
-      Array.from(trs).forEach(tr => {
-        const rowSymbol = tr.getAttribute('data-symbol')
-        const { s: isSyariah, msc: isMsc } = tsi.getStockStat(rowSymbol)
-        shouldDisplayRow(tr, { isSyariah, isMsc })
-      })
+      const tbody = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+      state.currentState ? tbody.classList.add(state.css.body) : tbody.classList.remove(state.css.body)
     } catch (error) {
       console.log('Error post click action', e)
     }
@@ -259,37 +308,16 @@ function setupFilterBtn(state) {
   }
 }
 
-function shouldDisplayRow(rowElement, { isSyariah, isMsc }) {
-  // BOTH
-  if (shariah.currentState && msc.currentState) {
-    if (isSyariah && isMsc) {
-      rowElement.style.display = 'table-row'
-    } else {
-      rowElement.style.display = 'none'
-    }
-
-    // SHARIAH
-  } else if (shariah.currentState && !msc.currentState) {
-    if (isSyariah) {
-      rowElement.style.display = 'table-row'
-    } else {
-      rowElement.style.display = 'none'
-    }
-
-    // MSC
-  } else if (msc.currentState && !shariah.currentState) {
-    if (isMsc) {
-      rowElement.style.display = 'table-row'
-    } else {
-      rowElement.style.display = 'none'
-    }
-
-    // BOTH is currently OFF
-  } else {
-    rowElement.style.display = 'table-row'
-  }
-}
-
 function getCurrentPathname() {
   return window.location.pathname.replace(/\//g, '') === 'screener' ? 'screener' : 'chart-screener'
+}
+
+function setupCssClassName() {
+  document
+    .querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+    .classList.add(
+      ...[css.main.body, shariah.currentState ? css.shariah.body : '', msc.currentState ? css.MYX.msc.body : ''].filter(
+        Boolean
+      )
+    )
 }
