@@ -52,7 +52,7 @@ function popupGa(eventAction, eventLabel) {
 }
 
 // from storage write to dom
-;(async () => {
+(async () => {
   const {
     MYX: { mscAt, mscLink, updatedAt },
   } = await browser.storage.local.get('MYX')
@@ -74,7 +74,7 @@ function popupGa(eventAction, eventLabel) {
   ;(i[r] =
     i[r] ||
     function () {
-      ;(i[r].q = i[r].q || []).push(arguments)
+      (i[r].q = i[r].q || []).push(arguments)
     }),
     (i[r].l = 1 * new Date())
   ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])

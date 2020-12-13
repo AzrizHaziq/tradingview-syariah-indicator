@@ -145,7 +145,7 @@ function myxFilenameTransformer(data, flagId = TRADING_VIEW_MYX) {
   }
 
   function dash(length = 20, char = '-') {
-    return Array.from({ length }, _ => char).join('')
+    return Array.from({ length }, () => char).join('')
   }
 
   return `

@@ -1,5 +1,6 @@
 /* exported tsi */
 
+// eslint-disable-next-line no-unused-vars
 const tsi = (function () {
   'use strict'
   const GA = 'UA-183073441-2'

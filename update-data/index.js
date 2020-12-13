@@ -15,7 +15,7 @@ async function commitChangesIfAny() {
   }
 }
 
-;(async () => {
+(async () => {
   try {
     const MYX_INFO = await MYX()
 
