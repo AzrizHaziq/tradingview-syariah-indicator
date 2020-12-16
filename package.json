@@ -12,7 +12,7 @@
     "ghAction:update-data": "npm run update-data -- skip-commit"
   },
   "engines": {
-    "engine": "15.3.0",
+    "node": "15.3.0",
     "npm": "6.13.4"
   },
   "keywords": [
