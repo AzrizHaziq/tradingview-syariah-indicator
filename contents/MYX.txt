@@ -1,7 +1,7 @@
 MYX
 mscAt     : Tue Dec 31 2019 00:00:00 GMT+0000 (Coordinated Universal Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf
-updatedAt : Mon Dec 21 2020 10:11:56 GMT+0000 (Coordinated Universal Time)
+updatedAt : Tue Dec 22 2020 10:15:43 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s, msc
@@ -279,6 +279,7 @@ GETS         : s
 GFM          : s
 GFM-WC       : s
 GHLSYS       : s, msc
+GIIB         : s
 GKENT        : s, msc
 GLOMAC       : s, msc
 GLOTEC       : s
@@ -288,7 +289,6 @@ GNB          : s
 GOB          : s
 GOCEAN       : s
 GOLDETF      : s
-GOODWAY      : s
 GOPENG       : s
 GPHAROS      : s
 GPP          : s
@@ -325,6 +325,7 @@ HLT-WA       : s
 HOHUP        : s, msc
 HOMERIZ      : s
 HOMERIZ-WB   : s
+HOMERIZ-WC   : s
 HONGSENG     : s
 HONGSENG-WA  : s
 HOOVER       : s
@@ -615,7 +616,6 @@ PADINI       : s
 PANSAR       : s, msc
 PANSAR-WA    : s
 PANTECH      : s, msc
-PANTECH-WA   : s
 PANTECH-WB   : s
 PAOS         : s
 PAOS-WA      : s
