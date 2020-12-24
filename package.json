@@ -8,7 +8,8 @@
     "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/ about:debugging#/runtime/this-firefox",
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
     "prebuild": "node script/build-prod.js",
-    "build": "web-ext --config=config/web-ext-prod.cjs build",
+    "build": "web-ext --config=config/web-ext-prod.cjs --source-dir=temp-dist build",
+    "postbuilds": "rimraf temp-dist",
     "update-data": "node update-data",
     "ghAction:update-data": "npm run update-data -- skip-commit"
   },
@@ -33,6 +34,7 @@
     "glob-fs": "^0.1.7",
     "lodash.merge": "^4.6.2",
     "puppeteer": "^5.5.0",
+    "rimraf": "^2.6.3",
     "simple-git": "^1.132.0",
     "terser": "^5.5.1",
     "web-ext": "^5.4.1",

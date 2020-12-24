@@ -11,6 +11,8 @@ module.exports = {
     'config',
     'contents',
     'update-data',
+    'temp-dist',
+    'script',
     'docs',
     '*.md',
   ],

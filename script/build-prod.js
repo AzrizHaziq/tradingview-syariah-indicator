@@ -37,7 +37,7 @@ async function terser() {
 
 async function replaceGA() {
   try {
-    const [helperScript] = glob().readdirSync(`temp-dist/**/helper.js`)
+    const [helperScript] = glob({ gitignore: false }).readdirSync(`temp-dist/**/helper.js`)
     const beforeReplaceScript = fs.readFileSync(helperScript, 'utf8')
 
     const afterReplacedScript = beforeReplaceScript.replace(new RegExp(process.env.REPLACE_GA, 'ig'), process.env.GA)
