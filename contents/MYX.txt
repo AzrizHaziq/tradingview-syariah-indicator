@@ -1,7 +1,7 @@
 MYX
-mscAt     : Tue Dec 31 2019 08:00:00 GMT+0800 (Malaysia Time)
+mscAt     : Tue Dec 31 2019 00:00:00 GMT+0800 (Malaysia Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf
-updatedAt : Sun Dec 13 2020 12:06:50 GMT+0800 (Malaysia Time)
+updatedAt : Thu Dec 24 2020 13:44:11 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s, msc
@@ -60,7 +60,6 @@ ASIAPAC      : s
 ASIAPAC-WB   : s
 ASIAPLY      : s
 ASIAPLY-PA   : s
-ASIAPLY-WA   : s
 ASIAPLY-WB   : s
 ASTINO       : s
 AT           : s
@@ -188,6 +187,7 @@ DELEUM       : s, msc
 DESTINI      : s, msc
 DFCITY       : s
 DGB          : s
+DGB-OR       : s
 DGB-WB       : s
 DGSB         : s
 DIALOG       : s
@@ -293,6 +293,7 @@ GETS         : s
 GFM          : s
 GFM-WC       : s
 GHLSYS       : s, msc
+GIIB         : s
 GKENT        : s, msc
 GLOMAC       : s, msc
 GLOTEC       : s
@@ -302,7 +303,6 @@ GNB          : s
 GOB          : s
 GOCEAN       : s
 GOLDETF      : s
-GOODWAY      : s
 GOPENG       : s
 GPACKET      : msc
 GPHAROS      : s
@@ -343,6 +343,7 @@ HLT-WA       : s
 HOHUP        : s, msc
 HOMERIZ      : s
 HOMERIZ-WB   : s
+HOMERIZ-WC   : s
 HONGSENG     : s
 HONGSENG-WA  : s
 HOOVER       : s
@@ -352,10 +353,8 @@ HSPLANT      : s, msc
 HSSEB        : s, msc
 HSSEB-WA     : s
 HTPADU       : s
-HUAAN        : s
 HUAYANG      : s
 HUBLINE      : s
-HUBLINE-WB   : s
 HUBLINE-WC   : s
 HUMEIND      : msc
 HUPSENG      : s, msc
@@ -637,8 +636,6 @@ NWP          : s
 NYLEX        : s
 OCB          : s
 OCK          : s, msc
-OCK-OR       : s
-OCK-WA       : s
 OCNCASH      : s
 OCR          : s
 OCR-PA       : s
@@ -662,7 +659,6 @@ PADINI       : s
 PANSAR       : s, msc
 PANSAR-WA    : s
 PANTECH      : s, msc
-PANTECH-WA   : s
 PANTECH-WB   : s
 PAOS         : s
 PAOS-WA      : s
@@ -844,7 +840,6 @@ SMRT         : s
 SMTRACK      : s
 SNC          : s
 SOLID        : s
-SOLID-WA     : s
 SOLUTN       : s
 SOLUTN-WA    : s
 SOP          : s
@@ -900,6 +895,7 @@ TDEX         : s
 TDM          : s, msc
 TECFAST      : s
 TECHBND      : msc
+TECHNAX      : s
 TEKSENG      : s
 TENAGA       : s
 TEOSENG      : s, msc
