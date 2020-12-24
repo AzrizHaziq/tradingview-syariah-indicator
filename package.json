@@ -7,6 +7,7 @@
   "scripts": {
     "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/ about:debugging#/runtime/this-firefox",
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
+    "prebuild": "node script/build-prod.js",
     "build": "web-ext --config=config/web-ext-prod.cjs build",
     "update-data": "node update-data",
     "ghAction:update-data": "npm run update-data -- skip-commit"
@@ -25,11 +26,15 @@
   "license": "ISC",
   "devDependencies": {
     "cli-progress": "^3.8.2",
+    "dotenv": "^8.2.0",
     "eslint": "^7.15.0",
     "exceljs": "^4.2.0",
+    "fs-extra": "^9.0.1",
+    "glob-fs": "^0.1.7",
     "lodash.merge": "^4.6.2",
     "puppeteer": "^5.5.0",
     "simple-git": "^1.132.0",
+    "terser": "^5.5.1",
     "web-ext": "^5.4.1",
     "webextension-polyfill": "^0.7.0"
   }

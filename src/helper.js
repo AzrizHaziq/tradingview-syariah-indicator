@@ -4,16 +4,7 @@
 const tsi = (function () {
   'use strict'
 
-  let GA = 'UA-183073441-1'
-  try {
-    // PRODUCTION flag inside build-prod.js
-    // eslint-disable-next-line no-undef
-    if (PRODUCTION) {
-      GA = 'UA-183073441-2'
-    }
-    // eslint-disable-next-line no-empty
-  } catch (e) {}
-
+  const GA = 'UA-183073441-1'
   let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
   const TRADING_VIEW_MYR = 'MYX'
