@@ -77,7 +77,12 @@ Feel free to contact me if any bug or more features here
    
    
 ## Generate Production ready extension
-1. Type in terminal `$ npm run build`
+1. create `.env` file in root, and add this
+   ```
+   GA=GA_CODE
+   REPLACE_GA=UA-183073441-1
+   ```
+2. Type in terminal `$ npm run build`
 
 
 ## Update Stock list data (will take a few X minutes)
