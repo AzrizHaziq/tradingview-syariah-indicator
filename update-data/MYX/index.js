@@ -1,9 +1,9 @@
-import ExcelJS from 'exceljs'
 import merge from 'lodash.merge'
-import { pipe } from './utils.js'
+import { pipe } from '../utils.js'
 import puppeteer from 'puppeteer'
 import cliProgress from 'cli-progress'
-import { writeToFile } from './writeToFile.js'
+import { writeToFile } from '../writeToFile.js'
+import { generateMidSmallCap } from './msc/index.js'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
@@ -81,48 +81,6 @@ async function scrapBursaMalaysia() {
   } catch (e) {
     console.error('Error scrap data', e)
     process.exit(1)
-  }
-}
-
-async function generateMidSmallCap() {
-  let excelFile
-  const workbook = new ExcelJS.Workbook()
-
-  try {
-    excelFile = await workbook.xlsx.readFile('./msc.xlsx')
-  } catch (e) {
-    console.error('Error generateMidSmallCap data', e)
-    process.exit(1)
-  }
-
-  const sheet = excelFile.getWorksheet(1)
-
-  const mscAt = sheet.getCell(1, 1).value
-  const mscLink = sheet.getCell(2, 1).value.text
-
-  let firstRowItem
-  sheet.getColumn(1).eachCell((i, rowNumber) => {
-    // getting the first item in the list, which ignore all table headers etc
-    if (i.value === 1) {
-      firstRowItem = rowNumber
-    }
-  })
-
-  return {
-    mscAt,
-    mscLink,
-    mscList: sheet
-      .getColumn(4)
-      .values.slice(firstRowItem)
-      .reduce(
-        (acc, stockCode) => ({
-          ...acc,
-          [stockCode]: {
-            msc: 1,
-          },
-        }),
-        {}
-      ),
   }
 }
 
