@@ -1,7 +1,7 @@
 MYX
 mscAt     : Tue Dec 31 2019 00:00:00 GMT+0000 (Coordinated Universal Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf
-updatedAt : Tue Dec 29 2020 10:17:48 GMT+0000 (Coordinated Universal Time)
+updatedAt : Wed Dec 30 2020 10:17:43 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s, msc
