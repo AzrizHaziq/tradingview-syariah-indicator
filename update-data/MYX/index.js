@@ -1,9 +1,7 @@
+import ExcelJS from 'exceljs'
 import merge from 'lodash.merge'
-import { pipe } from '../utils.js'
 import puppeteer from 'puppeteer'
 import cliProgress from 'cli-progress'
-import { writeToFile } from '../writeToFile.js'
-import { generateMidSmallCap } from './msc/index.js'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
@@ -11,23 +9,6 @@ export const MYX_FILENAME = 'contents/MYX.txt'
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
 async function scrapBursaMalaysia() {
-  function generateShariah(SYARIAH_LIST) {
-    try {
-      return SYARIAH_LIST.reduce(
-        (acc, name) => ({
-          ...acc,
-          [name]: {
-            s: 1,
-          },
-        }),
-        {}
-      )
-    } catch (e) {
-      console.error('Error generate shariah data', e)
-      process.exit(1)
-    }
-  }
-
   const scrapUrl = ({ per_page, page }) =>
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
@@ -58,15 +39,22 @@ async function scrapBursaMalaysia() {
 
       const temp = await page.evaluate(() => {
         const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
+        const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
+        const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
 
-        const removeSpacesAndSyariahSymbol = pipe(
-          name => name.replace(/\s/gm, ''),
-          name => name.replace(/\[S\]/gim, '')
-        )
+        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).map(tr => {
+          const s = tr.querySelector(':nth-child(2)').textContent
+          const code = tr.querySelector(':nth-child(3)').textContent
 
-        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr :nth-child(2)')).map(name =>
-          removeSpacesAndSyariahSymbol(name.textContent)
-        )
+          const strippedCode = removeSpaces(code)
+          const strippedShariah = removeSpacesAndShariah(s)
+          return {
+            [strippedCode]: {
+              code: strippedCode,
+              s: strippedShariah,
+            },
+          }
+        })
       })
 
       syariahList.push(...temp)
@@ -77,16 +65,73 @@ async function scrapBursaMalaysia() {
 
     console.log('\n\nFound: ', syariahList.length)
 
-    return generateShariah(syariahList)
+    return syariahList
   } catch (e) {
     console.error('Error scrap data', e)
     process.exit(1)
   }
 }
 
-function myxFilenameTransformer(data, flagId = TRADING_VIEW_MYX) {
-  const bufferPadRightSize = 1
+function generateShariah(SYARIAH_LIST) {
+  try {
+    return SYARIAH_LIST.reduce(
+      (acc, name) => ({
+        ...acc,
+        [name]: {
+          s: 1,
+        },
+      }),
+      {}
+    )
+  } catch (e) {
+    console.error('Error merge data', e)
+    process.exit(1)
+  }
+}
 
+async function generateMidSmallCap() {
+  let excelFile
+  const workbook = new ExcelJS.Workbook()
+
+  try {
+    excelFile = await workbook.xlsx.readFile('./msc.xlsx')
+  } catch (e) {
+    console.error('Error generateMidSmallCap data', e)
+    process.exit(1)
+  }
+
+  const sheet = excelFile.getWorksheet(1)
+
+  const mscAt = sheet.getCell(1, 1).value
+  const mscLink = sheet.getCell(2, 1).value.text
+
+  let firstRowItem
+  sheet.getColumn(1).eachCell((i, rowNumber) => {
+    // getting the first item in the list, which ignore all table headers etc
+    if (i.value === 1) {
+      firstRowItem = rowNumber
+    }
+  })
+
+  return {
+    mscAt,
+    mscLink,
+    mscList: sheet
+      .getColumn(4)
+      .values.slice(firstRowItem)
+      .reduce(
+        (acc, stockCode) => ({
+          ...acc,
+          [stockCode]: {
+            msc: 1,
+          },
+        }),
+        {}
+      ),
+  }
+}
+
+export function myxFilenameTransformer(data, flagId = 'MYX') {
   const {
     [TRADING_VIEW_MYX]: { list, ...rest },
   } = data
@@ -95,15 +140,15 @@ function myxFilenameTransformer(data, flagId = TRADING_VIEW_MYX) {
   const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
 
   function metaDataDisplayed(key, value) {
-    return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
+    return `${key.padEnd(maxRestLength + 1, ' ')}: ${value}`
   }
 
   function listDisplayed(stockName, values) {
-    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${Object.keys(values).join(', ')}`
+    return `${stockName.padEnd(maxStockLength + 1, ' ')}: ${Object.keys(values).join(', ')}`
   }
 
-  function dash(length = 20, char = '-') {
-    return Array.from({ length }, () => char).join('')
+  function dash(size = 20, char = '-') {
+    return Array.from({ length: 20 }, _ => char).join('')
   }
 
   return `
@@ -117,28 +162,17 @@ ${Object.entries(list).reduce((acc, [key, value]) => acc + '\n' + listDisplayed(
 
 export async function MYX() {
   try {
-    const shariahList = await scrapBursaMalaysia()
+    const SYARIAH_LIST = await scrapBursaMalaysia()
     const { mscAt, mscLink, mscList } = await generateMidSmallCap()
 
-    const sortedList = pipe(
-      Object.entries,
-      entries => entries.sort(([keyA], [keyB]) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      Object.fromEntries
-    )(merge(shariahList, mscList))
-
-    const NEW_MYX_DATA = {
+    return {
       [TRADING_VIEW_MYX]: {
         mscAt,
         mscLink,
         updatedAt: new Date(),
-        list: sortedList,
+        list: merge(generateShariah(SYARIAH_LIST), mscList),
       },
     }
-
-    // write to MYX
-    await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
-
-    return NEW_MYX_DATA
   } catch (e) {
     throw `Error generating ${TRADING_VIEW_MYX}`
   }
