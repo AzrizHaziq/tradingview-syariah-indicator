@@ -1,7 +1,7 @@
 MYX
-mscAt     : Tue Dec 31 2019 00:00:00 GMT+0800 (Malaysia Time)
-mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5e1598515b711a666348f0e8/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2019_V3.0.pdf
-updatedAt : Thu Dec 24 2020 13:44:11 GMT+0800 (Malaysia Time)
+mscAt     : Thu Dec 31 2020 00:00:00 GMT+0800 (Malaysia Time)
+mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5ff4163739fba21c7e048fbf/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2020.pdf
+updatedAt : Sun Jan 10 2021 23:01:39 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s, msc
@@ -14,10 +14,10 @@ ACO          : s
 ACOSTEC      : s
 ACOSTEC-WA   : s
 ADVCON       : s
-ADVENTA      : s
+ADVENTA      : s, msc
 ADVPKG       : s
 AEM          : s
-AEMULUS      : s
+AEMULUS      : s, msc
 AEON         : s, msc
 AFUJIYA      : s
 AGES         : s
@@ -35,18 +35,18 @@ AME          : s, msc
 AMEDIA       : s
 AMLEX        : s
 AMPROP       : s, msc
-AMVERTON     : msc
 AMWAY        : s, msc
-ANCOM        : s
+ANCOM        : s, msc
 ANCOM-WB     : s
-ANCOMLB      : s
+ANCOMLB      : s, msc
 ANEKA        : s
 ANNJOO       : s, msc
 APB          : s
+APEX         : msc
 APFT         : s
 APM          : s, msc
 APOLLO       : s, msc
-APPASIA      : s
+APPASIA      : s, msc
 APPASIA-WA   : s
 ARBB         : s
 ARK          : s
@@ -58,11 +58,11 @@ ASIABRN      : s
 ASIAFLE      : s, msc
 ASIAPAC      : s
 ASIAPAC-WB   : s
-ASIAPLY      : s
+ASIAPLY      : s, msc
 ASIAPLY-PA   : s
 ASIAPLY-WB   : s
-ASTINO       : s
-AT           : s
+ASTINO       : s, msc
+AT           : s, msc
 AT-WC        : s
 ATAIMS       : s
 ATLAN        : msc
@@ -71,31 +71,33 @@ ATTA-WB      : s
 ATTA-WC      : s
 AURORA       : s
 AVI          : s
+AWANTEC      : s, msc
+AWANTEC-WA   : s
 AWC          : s
 AWC-WA       : s
 AXIATA       : s
 AXREIT       : s
 AYER         : s, msc
 AYS          : s
-AZRB         : s, msc
+AZRB         : s
 AZRB-WA      : s
 BABA         : s
 BAHVEST      : s, msc
 BAHVEST-WA   : s
 BARAKAH      : s
-BAUTO        : s
+BAUTO        : s, msc
 BCMALL       : s
 BDB          : s
 BERTAM       : s
-BHIC         : s, msc
+BHIC         : s
 BIG          : s
 BIMB         : s
 BIMB-WA      : s
 BINACOM      : s
-BINTAI       : s
-BIOHLDG      : s
+BINTAI       : s, msc
+BIOHLDG      : s, msc
 BIOHLDG-WA   : s
-BIPORT       : s
+BIPORT       : s, msc
 BJASSET      : msc
 BJCORP       : msc
 BJFOOD       : s, msc
@@ -103,12 +105,12 @@ BJLAND       : msc
 BKAWAN       : s
 BLDPLNT      : s, msc
 BOILERM      : s, msc
-BONIA        : s, msc
+BONIA        : s
 BORNOIL      : s, msc
 BORNOIL-WC   : s
 BORNOIL-WD   : s
 BPLANT       : s, msc
-BPPLAS       : s
+BPPLAS       : s, msc
 BPURI        : s
 BPURI-WA     : s
 BRAHIMS      : s
@@ -126,18 +128,17 @@ CAELY        : s
 CAELY-WA     : s
 CAMRES       : s
 CANONE       : msc
-CAREPLS      : s
-CARIMIN      : s, msc
-CARING       : msc
+CAREPLS      : s, msc
+CARIMIN      : s
 CBIP         : s, msc
-CCB          : s, msc
+CCB          : s
 CCK          : s, msc
 CCK-WA       : s
 CCM          : s, msc
 CENSOF       : s
 CEPAT        : s, msc
 CEPCO        : s
-CETECH       : s
+CETECH       : s, msc
 CFM          : s
 CGB          : s
 CHEETAH      : s
@@ -148,10 +149,10 @@ CHHB-WB      : s
 CHINHIN      : s, msc
 CHINTEK      : msc
 CHINWEL      : s, msc
-CHOOBEE      : s
+CHOOBEE      : s, msc
 CHUAN        : s
 CIHLDG       : s, msc
-CJCEN        : s
+CJCEN        : s, msc
 CLOUD        : s
 CME          : s
 CME-WA       : s
@@ -175,19 +176,18 @@ CWG          : s
 CYL          : s
 CYMAO        : s
 CYPARK       : s, msc
-D&O          : s, msc
+D&O          : s
 DAIBOCI      : s, msc
 DAIBOCI-WB   : s
 DANCO        : s
 DANCO-WA     : s
 DATAPRP      : s
-DAYANG       : s
+DAYANG       : s, msc
 DBHD         : s
 DELEUM       : s, msc
 DESTINI      : s, msc
 DFCITY       : s
-DGB          : s
-DGB-OR       : s
+DGB          : s, msc
 DGB-WB       : s
 DGSB         : s
 DIALOG       : s
@@ -204,8 +204,8 @@ DNONCE       : s
 DOLPHIN      : s
 DOLPHIN-WA   : s
 DOLPHIN-WB   : s
-DOMINAN      : s, msc
-DPHARMA      : s, msc
+DOMINAN      : s
+DPHARMA      : s
 DPS          : s
 DPS-WB       : s
 DRBHCOM      : s
@@ -222,19 +222,19 @@ ECOFIRS      : s, msc
 ECOHLDS      : s
 ECONBHD      : s, msc
 ECONBHD-WA   : s
-ECOWLD       : s
+ECOWLD       : s, msc
 ECOWLD-WA    : s
 EDARAN       : s
-EDGENTA      : s
+EDGENTA      : s, msc
 EDUSPEC      : s
 EDUSPEC-WB   : s
 EFORCE       : s, msc
-EFRAME       : s
+EFRAME       : s, msc
 EG           : s
 EIG          : s
-EITA         : s
+EITA         : s, msc
 EKA          : s
-EKOVEST      : s
+EKOVEST      : s, msc
 ELKDESA      : msc
 ELSOFT       : s, msc
 EMETALL      : s
@@ -244,31 +244,35 @@ ENEST        : s
 ENGKAH       : s
 ENGTEX       : s, msc
 ENRA         : s
+ENRA-WA      : s
 EPMB         : s
 ESAFE        : s
+ESCERAM      : msc
 EUPE         : s
 EURO         : s
 EUROSP       : s
 EVERGRN      : s, msc
 EWEIN        : s
 EWEIN-WB     : s
+EWINT        : msc
 F&N          : s
-FAJAR        : s
+FAJAR        : s, msc
 FAREAST      : s, msc
 FAVCO        : s, msc
 FBBHD        : s
+FCW          : msc
 FGV          : s
 FIAMMA       : s, msc
 FIHB         : s
 FIHB-PA      : s
 FIHB-PB      : s
 FIMACOR      : s, msc
+FINTEC       : msc
 FITTERS      : s
-FOCUS        : msc
-FOCUSP       : s
+FOCUSP       : s, msc
 FPGROUP      : s, msc
 FPI          : s, msc
-FREIGHT      : s
+FREIGHT      : s, msc
 FRONTKN      : s
 FSBM         : s
 FSBM-WA      : s
@@ -281,34 +285,35 @@ GAMUDA-WE    : s
 GASMSIA      : s
 GBGAQRS      : s, msc
 GBGAQRS-WB   : s
-GCAP         : s
+GCAP         : s, msc
 GCB          : s
 GCB-WB       : s
 GDB          : s, msc
-GDEX         : s, msc
+GDEX         : s
 GENETEC      : s
 GENP         : s
 GESHEN       : s
-GETS         : s
+GETS         : s, msc
 GFM          : s
 GFM-WC       : s
-GHLSYS       : s, msc
-GIIB         : s
+GHLSYS       : s
+GIIB         : s, msc
 GKENT        : s, msc
 GLOMAC       : s, msc
 GLOTEC       : s
 GLOTEC-WA    : s
 GMUTUAL      : s
 GNB          : s
-GOB          : s
+GOB          : s, msc
 GOCEAN       : s
+GOCEAN-WB    : s
 GOLDETF      : s
 GOPENG       : s
 GPACKET      : msc
 GPHAROS      : s
 GPP          : s
 GRANFLO      : s
-GREATEC      : s, msc
+GREATEC      : s
 GREENYB      : s
 GTRONIC      : s, msc
 GUH          : s
@@ -326,6 +331,7 @@ HCK-WA       : s
 HENGYUAN     : s, msc
 HEVEA        : s, msc
 HEXTAR       : s, msc
+HEXZA        : msc
 HHGROUP      : s
 HHHCORP      : s
 HIAPTEK      : s, msc
@@ -335,16 +341,17 @@ HIBISCS      : s, msc
 HIBISCS-PA   : s
 HIBISCS-WC   : s
 HIGHTEC      : s
-HIL          : s
+HIL          : s, msc
 HIL-WB       : s
+HLCAP        : msc
 HLIND        : s
-HLT          : s
+HLT          : s, msc
 HLT-WA       : s
-HOHUP        : s, msc
-HOMERIZ      : s
+HOHUP        : s
+HOMERIZ      : s, msc
 HOMERIZ-WB   : s
 HOMERIZ-WC   : s
-HONGSENG     : s
+HONGSENG     : s, msc
 HONGSENG-WA  : s
 HOOVER       : s
 HPMT         : s
@@ -359,14 +366,14 @@ HUBLINE-WC   : s
 HUMEIND      : msc
 HUPSENG      : s, msc
 HWATAI       : s
-HWGB         : s
+HWGB         : s, msc
 HWGB-WD      : s
 IBHD         : s, msc
 IBRACO       : s, msc
 ICAP         : msc
-ICON         : s
+ICON         : s, msc
 ICON-WA      : s
-ICONIC       : s
+ICONIC       : s, msc
 IDBTECH      : s
 IDEAL        : s, msc
 IDEAL-WB     : s
@@ -374,13 +381,14 @@ IFCAMSC      : s, msc
 IHH          : s
 IHS046000824 : s
 IJM          : s
+IJMPLNT      : msc
 ILB          : s
 IMASPRO      : s
 IMPIANA      : s
 INARI        : s
 INCKEN       : s, msc
 INIX         : s
-INNATURE     : s
+INNATURE     : s, msc
 INNO         : s, msc
 INSAS        : msc
 INTA         : s
@@ -401,22 +409,22 @@ JAG          : s
 JAKS         : s, msc
 JAKS-WB      : s
 JAKS-WC      : s
-JAYCORP      : s
+JAYCORP      : s, msc
 JCY          : s, msc
 JETSON       : s
 JFTECH       : s, msc
 JHM          : s, msc
 JIANKUN      : s
 JIANKUN-WA   : s
-JKGLAND      : s
+JKGLAND      : s, msc
 JMEDU        : s
 JOHOTIN      : s, msc
 JTIASA       : s, msc
-K1           : s
+K1           : s, msc
 K1-WC        : s
 KAB          : s, msc
 KAMDAR       : s
-KANGER       : s
+KANGER       : s, msc
 KAREX        : msc
 KARYON       : s
 KAWAN        : s, msc
@@ -446,12 +454,12 @@ KMLOONG      : s, msc
 KMLOONG-WB   : s
 KNM          : msc
 KNUSFOR      : s
-KOBAY        : s
-KOMARK       : s
+KOBAY        : s, msc
+KOMARK       : s, msc
 KOSSAN       : s
 KOTRA        : s, msc
 KPJ          : s
-KPOWER       : s
+KPOWER       : s, msc
 KPPROP       : s
 KPS          : s, msc
 KPSCB        : s
@@ -464,14 +472,12 @@ KTB          : s
 KTG          : s
 KTG-PA       : s
 KTG-WA       : s
-KUB          : s
-KUCHAI       : msc
+KUB          : s, msc
 KWANTAS      : s, msc
 KYM          : s
 L&G          : s, msc
-LAGENDA      : s
+LAGENDA      : s, msc
 LAGENDA-WB   : s
-LANDMRK      : msc
 LATITUD      : s, msc
 LAYHONG      : s, msc
 LAYHONG-WA   : s
@@ -484,17 +490,18 @@ LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
 LEWEKO       : s
+LEWEKO-WC    : s
 LFECORP      : s
 LIIHEN       : s, msc
 LIONIND      : s, msc
 LIONPSIM     : s
 LITRAK       : s
-LKL          : s
+LKL          : s, msc
 LOTUS        : s
 LOTUS-WB     : s
 LSTEEL       : s
 LTKM         : s
-LUSTER       : s
+LUSTER       : s, msc
 LUSTER-WA    : s
 LUSTER-WB    : s
 LUXCHEM      : s, msc
@@ -507,20 +514,19 @@ MAG          : s
 MAG-WB       : s
 MAGNA        : s, msc
 MAGNI        : s, msc
-MAHSING      : s, msc
+MAHSING      : s
 MALAKOF      : s
 MALTON       : s, msc
 MANULFE      : msc
-MASTEEL      : s
+MASTEEL      : s, msc
 MASTER       : s
 MATRIX       : s, msc
-MAXIM        : s
+MAXIM        : s, msc
 MAXIS        : s
 MAYBULK      : msc
 MBL          : s
 MBL-WA       : s
 MBMR         : s, msc
-MBWORLD      : msc
 MCEHLDG      : s
 MCEMENT      : s
 MCLEAN       : s
@@ -532,10 +538,10 @@ MEGASUN      : s
 MELATI       : s
 MELEWAR      : s
 MELEWAR-WB   : s
-MENANG       : s
+MENANG       : s, msc
 MENTIGA      : s
 MERCURY      : s
-MERIDIAN     : s
+MERIDIAN     : s, msc
 MERIDIAN-WA  : s
 MERIDIAN-WB  : s
 MERIDIAN-WC  : s
@@ -553,14 +559,14 @@ MGB          : s, msc
 MGRC         : s
 MHB          : s, msc
 MHC          : s
-MHCARE       : s
-MI           : s, msc
-MICROLN      : s
-MIECO        : s
+MHCARE       : s, msc
+MI           : s
+MICROLN      : s, msc
+MIECO        : s, msc
 MIKROMB      : s
 MILUX        : s
 MINDA        : s
-MINETEC      : s
+MINETEC      : s, msc
 MINHO        : s
 MINHO-WC     : s
 MISC         : s
@@ -603,11 +609,12 @@ MUHIBAH      : s, msc
 MUIIND       : msc
 MUIPROP      : s
 MULPHA       : msc
-MYCRON       : s
+MYCRON       : s, msc
 MYCRON-WA    : s
 MYEG         : s
 MYETFDJ      : s
 MYETFID      : s
+MYKRIS       : msc
 MYNEWS       : msc
 N2N          : s, msc
 N2N-WB       : s
@@ -620,13 +627,14 @@ NEXGRAM-WA   : s
 NEXGRAM-WB   : s
 NEXGRAM-WC   : s
 NGGB         : s, msc
-NHFATT       : s, msc
+NHFATT       : s
 NICE         : s
 NICE-WB      : s
 NIHSIN       : s
 NIHSIN-WB    : s
 NOTION       : s, msc
 NOTION-WC    : s
+NOVA         : msc
 NOVAMSC      : s
 NPC          : s, msc
 NPS          : s
@@ -636,26 +644,29 @@ NWP          : s
 NYLEX        : s
 OCB          : s
 OCK          : s, msc
+OCK-WB       : s
 OCNCASH      : s
 OCR          : s
 OCR-PA       : s
 OCR-WC       : s
 OCR-WD       : s
-OFI          : s
+OFI          : s, msc
 OIB          : s, msc
 OKA          : s
 OMESTI       : s, msc
 OPCOM        : s
-OPENSYS      : s
-OPTIMAX      : s
+OPENSYS      : s, msc
+OPTIMAX      : s, msc
 ORION        : s
 ORION-WA     : s
 ORNA         : s
+OSK          : msc
 OVH          : s
 P&O          : msc
-PA           : s
+PA           : s, msc
 PA-WB        : s
-PADINI       : s
+PADINI       : s, msc
+PANAMY       : msc
 PANSAR       : s, msc
 PANSAR-WA    : s
 PANTECH      : s, msc
@@ -678,7 +689,7 @@ PDZ          : s
 PDZ-WB       : s
 PEB          : s
 PECCA        : s, msc
-PELIKAN      : s, msc
+PELIKAN      : s
 PENERGY      : s, msc
 PENTA        : s
 PERDANA      : s, msc
@@ -692,7 +703,7 @@ PETGAS       : s
 PETRONM      : s, msc
 PGLOBE       : s
 PHARMA       : s, msc
-PHB          : s
+PHB          : s, msc
 PHB-WB       : s
 PICORP       : s
 PIE          : s, msc
@@ -708,7 +719,7 @@ PMBTECH-WA   : s
 PMCORP       : s
 PMETAL       : s
 PMHLDG       : s
-PNEPCB       : s
+PNEPCB       : s, msc
 PNEPCB-WA    : s
 PNEPCB-WB    : s
 POHKONG      : s, msc
@@ -719,12 +730,10 @@ POS          : s, msc
 PPB          : s
 PPG          : s
 PPHB         : s, msc
-PRESBHD      : s, msc
-PRESBHD-WA   : s
 PRESTAR      : s
-PRG          : s, msc
+PRG          : s
 PRIVA        : s
-PRLEXUS      : s
+PRLEXUS      : s, msc
 PRLEXUS-WA   : s
 PRTASCO      : s
 PRTASCO-WA   : s
@@ -732,14 +741,14 @@ PTARAS       : s, msc
 PTRANS       : s, msc
 PUC          : s
 PUC-WA       : s
-PUNCAK       : s
+PUNCAK       : s, msc
 PWF          : s
 PWF-WA       : s
 PWORTH       : s
 PWROOT       : s, msc
 PWROOT-WA    : s
 PWRWELL      : s
-QES          : s
+QES          : s, msc
 QL           : s
 QUALITY      : s
 RALCO        : s
@@ -754,38 +763,41 @@ REVENUE      : s, msc
 REVENUE-WA   : s
 REX          : s
 RGB          : msc
-RGTBHD       : s
+RGTBHD       : s, msc
 RGTBHD-WB    : s
 RGTECH       : s
 RL           : s
-ROHAS        : s, msc
+ROHAS        : s
 RSAWIT       : s, msc
 RSENA        : msc
-RUBEREX      : s
-RVIEW        : s
+RUBEREX      : s, msc
+RVIEW        : s, msc
 SAB          : s, msc
 SALCON       : s, msc
 SALCON-WB    : s
-SALUTE       : s, msc
+SALUTE       : s
 SAM          : s, msc
-SAMAIDEN     : s
+SAMAIDEN     : s, msc
+SAMCHEM      : msc
 SANICHI      : s
 SANICHI-WE   : s
 SAPIND       : s
-SAPNRG       : s
+SAPNRG       : s, msc
 SAPNRG-PA    : s
 SAPNRG-WA    : s
 SAPRES       : s
 SASBADI      : s
 SAUDEE       : s
 SAUDEE-WA    : s
+SBAGAN       : msc
 SBCCORP      : s
 SCABLE       : s
 SCBUILD      : s
+SCGBHD       : msc
 SCGM         : s, msc
 SCH          : s
 SCH-WA       : s
-SCIB         : s
+SCIB         : s, msc
 SCICOM       : msc
 SCIENTX      : s
 SCNWOLF      : s
@@ -794,13 +806,13 @@ SCOMI-WB     : s
 SCOMIES      : s
 SCOMNET      : s, msc
 SCOMNET-WA   : s
-SCOPE        : s
+SCOPE        : s, msc
 SDRED        : s, msc
 SDS          : s
 SEACERA      : s
 SEACERA-WC   : s
 SEAL         : s
-SEALINK      : s, msc
+SEALINK      : s
 SEDANIA      : s
 SEEHUP       : s
 SEERS        : s
@@ -815,6 +827,7 @@ SERNKOU-WA   : s
 SERSOL       : s
 SERSOL-WA    : s
 SGBHD        : s
+SHANG        : msc
 SHCHAN       : s
 SHH          : s
 SHL          : msc
@@ -825,7 +838,7 @@ SIMEPLT      : s
 SIMEPROP     : s
 SJC          : s
 SKBSHUT      : s
-SKPRES       : s, msc
+SKPRES       : s
 SLIC         : s
 SLP          : s, msc
 SLVEST       : s, msc
@@ -840,7 +853,7 @@ SMRT         : s
 SMTRACK      : s
 SNC          : s
 SOLID        : s
-SOLUTN       : s
+SOLUTN       : s, msc
 SOLUTN-WA    : s
 SOP          : s
 SPRING       : s
@@ -855,7 +868,7 @@ STAR         : s, msc
 STELLA       : s
 STRAITS      : s
 STRAITS-WA   : s
-SUCCESS      : s, msc
+SUCCESS      : s
 SUMATEC      : s
 SUMATEC-WA   : s
 SUNCON       : s
@@ -866,20 +879,19 @@ SUNWAY-WB    : s
 SUNZEN       : s
 SUNZEN-WB    : s
 SUPERLN      : s
-SUPERMX      : s, msc
+SUPERMX      : s
 SUPREME      : s
 SURIA        : s, msc
 SWKPLNT      : s, msc
 SWSCAP       : s
 SWSCAP-WB    : s
-SYF          : s
+SYF          : s, msc
 SYMLIFE      : s, msc
 SYSCORP      : s, msc
 SYSTECH      : s
 T7GLOBAL     : s, msc
 TA           : msc
 TAANN        : s, msc
-TADMAX       : msc
 TAFI         : s
 TAGB         : msc
 TAKAFUL      : s
@@ -887,16 +899,15 @@ TALAMT       : s
 TALIWRK      : s, msc
 TAMBUN       : s, msc
 TASCO        : msc
-TASEK        : msc
 TASHIN       : s
 TCHONG       : msc
 TCS          : s
-TDEX         : s
+TDEX         : s, msc
 TDM          : s, msc
 TECFAST      : s
 TECHBND      : msc
-TECHNAX      : s
-TEKSENG      : s
+TECHNAX      : s, msc
+TEKSENG      : s, msc
 TENAGA       : s
 TEOSENG      : s, msc
 TEXCYCL      : s
@@ -928,34 +939,33 @@ TOYOVEN      : s
 TOYOVEN-WB   : s
 TPC          : s
 TPC-WA       : s
-TRC          : s, msc
+TRC          : s
 TRIMODE      : s
 TRIVE        : s
 TROP         : s, msc
-TSH          : s
+TSH          : s, msc
 TSRCAP       : s
-TSRCAP-WB    : s
 TTV          : s
 TUNEPRO      : msc
 UCHITEC      : s, msc
 UCREST       : s
 UEMS         : s
-ULICORP      : s
+ULICORP      : s, msc
 UMCCA        : s, msc
 UMS          : s
 UMSNGB       : s
 UMW          : s
-UNIMECH      : s
-UNISEM       : s, msc
+UNIMECH      : s, msc
+UNISEM       : s
 UNIWALL      : s, msc
 UOADEV       : s
 UPA          : s
 UTDPLT       : s
-UWC          : s, msc
-UZMA         : s, msc
+UWC          : s
+UZMA         : s
 VC           : s
 VC-WB        : s
-VELESTO      : s
+VELESTO      : s, msc
 VELESTO-WA   : s
 VERSATL      : s
 VERTICE      : s
@@ -963,7 +973,7 @@ VERTICE-WA   : s
 VIS          : s
 VIS-WB       : s
 VITROX       : s
-VIVOCOM      : s
+VIVOCOM      : s, msc
 VIVOCOM-WE   : s
 VIZIONE      : s, msc
 VIZIONE-WC   : s
@@ -988,25 +998,23 @@ WINTONI      : s
 WONG         : s
 WOODLAN      : s
 WPRTS        : s
-WTHORSE      : s, msc
+WTHORSE      : s
 WTK          : s, msc
 WZSATU       : s
 WZSATU-WA    : s
-XDL          : msc
 XIANLNG      : s
 XINHWA       : s
-XOX          : s
+XOX          : s, msc
 XOX-WB       : s
 Y&G          : s
 YBS          : s
-YEELEE       : msc
 YGL          : s
 YINSON       : s
 YKGI         : s
 YLI          : s
 YNHPROP      : s, msc
 YOCB         : s
-YONGTAI      : s
+YONGTAI      : s, msc
 YONGTAI-PA   : s
 YSPSAH       : s, msc
 ZECON        : s

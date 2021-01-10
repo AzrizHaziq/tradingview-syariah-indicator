@@ -1,7 +1,9 @@
-import ExcelJS from 'exceljs'
 import merge from 'lodash.merge'
 import puppeteer from 'puppeteer'
+import { pipe } from '../utils.js'
 import cliProgress from 'cli-progress'
+import { writeToFile } from '../writeToFile.js'
+import { generateMidSmallCap } from './msc/index.js'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
@@ -28,7 +30,7 @@ async function scrapBursaMalaysia() {
       return Math.max(...paginationBtn)
     })
 
-    const syariahList = []
+    let syariahList = {}
     progressBar.start(maxPageNumbers, 0)
 
     // grab all syariah list and navigate to each pages.
@@ -42,28 +44,30 @@ async function scrapBursaMalaysia() {
         const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
         const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
 
-        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).map(tr => {
+        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
           const s = tr.querySelector(':nth-child(2)').textContent
-          const code = tr.querySelector(':nth-child(3)').textContent
+          const stockCode = tr.querySelector(':nth-child(3)').textContent
 
-          const strippedCode = removeSpaces(code)
-          const strippedShariah = removeSpacesAndShariah(s)
+          const code = removeSpaces(stockCode)
+          const stockName = removeSpacesAndShariah(s)
           return {
-            [strippedCode]: {
-              code: strippedCode,
-              s: strippedShariah,
+            ...acc,
+            [code]: {
+              s: 1,
+              code,
+              stockName,
             },
           }
-        })
+        }, {})
       })
 
-      syariahList.push(...temp)
+      syariahList = { ...syariahList, ...temp }
       progressBar.increment()
     }
 
     await browser.close()
 
-    console.log('\n\nFound: ', syariahList.length)
+    console.log('\n\nFound: ', Object.keys(syariahList).length)
 
     return syariahList
   } catch (e) {
@@ -72,83 +76,36 @@ async function scrapBursaMalaysia() {
   }
 }
 
-function generateShariah(SYARIAH_LIST) {
-  try {
-    return SYARIAH_LIST.reduce(
-      (acc, name) => ({
-        ...acc,
-        [name]: {
-          s: 1,
-        },
-      }),
-      {}
-    )
-  } catch (e) {
-    console.error('Error merge data', e)
-    process.exit(1)
-  }
-}
-
-async function generateMidSmallCap() {
-  let excelFile
-  const workbook = new ExcelJS.Workbook()
-
-  try {
-    excelFile = await workbook.xlsx.readFile('./msc.xlsx')
-  } catch (e) {
-    console.error('Error generateMidSmallCap data', e)
-    process.exit(1)
-  }
-
-  const sheet = excelFile.getWorksheet(1)
-
-  const mscAt = sheet.getCell(1, 1).value
-  const mscLink = sheet.getCell(2, 1).value.text
-
-  let firstRowItem
-  sheet.getColumn(1).eachCell((i, rowNumber) => {
-    // getting the first item in the list, which ignore all table headers etc
-    if (i.value === 1) {
-      firstRowItem = rowNumber
-    }
-  })
-
-  return {
-    mscAt,
-    mscLink,
-    mscList: sheet
-      .getColumn(4)
-      .values.slice(firstRowItem)
-      .reduce(
-        (acc, stockCode) => ({
-          ...acc,
-          [stockCode]: {
-            msc: 1,
-          },
-        }),
-        {}
-      ),
-  }
-}
-
 export function myxFilenameTransformer(data, flagId = 'MYX') {
+  const bufferPadRightSize = 1
   const {
     [TRADING_VIEW_MYX]: { list, ...rest },
   } = data
 
-  const maxStockLength = Math.max(...Object.keys(list).map(i => i.length))
   const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
+  const maxStockLength = Math.max(...list.map(i => Object.keys(i)[0].length))
 
   function metaDataDisplayed(key, value) {
-    return `${key.padEnd(maxRestLength + 1, ' ')}: ${value}`
+    return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
   }
 
-  function listDisplayed(stockName, values) {
-    return `${stockName.padEnd(maxStockLength + 1, ' ')}: ${Object.keys(values).join(', ')}`
+  function listDisplayed(stock) {
+    const temp = []
+    const stockName = Object.keys(stock)[0]
+
+    if ('s' in stock[stockName]) {
+      temp.push('s')
+    }
+
+    if ('msc' in stock[stockName]) {
+      temp.push('msc')
+    }
+
+    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${temp.join(', ')}`
   }
 
   function dash(size = 20, char = '-') {
-    return Array.from({ length: 20 }, _ => char).join('')
+    return Array.from({ length: size }, () => char).join('')
   }
 
   return `
@@ -157,22 +114,36 @@ ${Object.entries(rest)
   .reduce((acc, [key, value]) => acc + '\n' + metaDataDisplayed(key, value), '')
   .trim()}
 ${dash()}
-${Object.entries(list).reduce((acc, [key, value]) => acc + '\n' + listDisplayed(key, value), '')}`.trim()
+${list.reduce((acc, item) => acc + '\n' + listDisplayed(item), '')}`.trim()
 }
 
 export async function MYX() {
   try {
-    const SYARIAH_LIST = await scrapBursaMalaysia()
+    const shariahList = await scrapBursaMalaysia()
     const { mscAt, mscLink, mscList } = await generateMidSmallCap()
 
-    return {
+    const sortedList = pipe(
+      Object.values,
+      entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
+      items =>
+        items.map(({ stockName, code: _, ...rest }) => ({
+          [stockName]: { ...rest },
+        }))
+    )(merge(mscList, shariahList)) // merge by stock code
+
+    const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
         mscAt,
         mscLink,
         updatedAt: new Date(),
-        list: merge(generateShariah(SYARIAH_LIST), mscList),
+        list: sortedList,
       },
     }
+
+    // write to MYX
+    await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
+
+    return NEW_MYX_DATA
   } catch (e) {
     throw `Error generating ${TRADING_VIEW_MYX}`
   }
