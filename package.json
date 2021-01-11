@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "tradingview-syariah-indicator",
-  "version": "1.5.4",
+  "version": "1.6.4",
   "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
     "prebuild": "node script/build-prod.js",
     "build": "web-ext --config=config/web-ext-prod.cjs --source-dir=temp-dist build",
-    "postbuilds": "rimraf temp-dist",
+    "postbuild": "rimraf temp-dist/",
     "update-data": "node update-data",
     "ghAction:update-data": "npm run update-data -- skip-commit"
   },
