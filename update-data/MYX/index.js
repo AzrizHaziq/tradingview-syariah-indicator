@@ -83,21 +83,19 @@ export function myxFilenameTransformer(data, flagId = 'MYX') {
   } = data
 
   const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
-  const maxStockLength = Math.max(...list.map(i => Object.keys(i)[0].length))
+  const maxStockLength = Math.max(...Object.keys(list).map(i => i.length))
 
   function metaDataDisplayed(key, value) {
     return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
   }
 
-  function listDisplayed(stock) {
+  function listDisplayed(stockName, value) {
     const temp = []
-    const stockName = Object.keys(stock)[0]
-
-    if ('s' in stock[stockName]) {
+    if ('s' in value) {
       temp.push('s')
     }
 
-    if ('msc' in stock[stockName]) {
+    if ('msc' in value) {
       temp.push('msc')
     }
 
@@ -114,7 +112,7 @@ ${Object.entries(rest)
   .reduce((acc, [key, value]) => acc + '\n' + metaDataDisplayed(key, value), '')
   .trim()}
 ${dash()}
-${list.reduce((acc, item) => acc + '\n' + listDisplayed(item), '')}`.trim()
+${Object.entries(list).reduce((acc, [stockName, value]) => acc + '\n' + listDisplayed(stockName, value), '')}`.trim()
 }
 
 export async function MYX() {
@@ -126,9 +124,14 @@ export async function MYX() {
       Object.values,
       entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
       items =>
-        items.map(({ stockName, code: _, ...rest }) => ({
-          [stockName]: { ...rest },
-        }))
+        items.reduce(
+          // eslint-disable-next-line no-unused-vars
+          (acc, { stockName, code, ...rest }) => ({
+            ...acc,
+            [stockName]: { ...rest },
+          }),
+          {}
+        )
     )(merge(mscList, shariahList)) // merge by stock code
 
     const NEW_MYX_DATA = {
