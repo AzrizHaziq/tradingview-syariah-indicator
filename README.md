@@ -69,6 +69,12 @@ Feel free to contact me if any bug or more features here
 
 
 ## Developers
+Requirements
+- node = 15.3.0
+- npm = 6.13.4
+- git = 2.23.0
+- os = macos 10.15.7
+
 1. Need to have node and npm (please look at package.json > engine)
 2. Type in terminal `$ npm install`
 3. Type in terminal 
@@ -77,7 +83,15 @@ Feel free to contact me if any bug or more features here
    
    
 ## Generate Production ready extension
-1. Type in terminal `$ npm run build`
+1. Git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
+2. npm install
+3. create `.env` file in root, and add this
+   ```
+   GA=GA_CODE
+   REPLACE_GA=UA-183073441-1
+   ```
+4. Type in terminal `$ npm run build`
+5. Generated file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip
 
 
 ## Update Stock list data (will take a few X minutes)

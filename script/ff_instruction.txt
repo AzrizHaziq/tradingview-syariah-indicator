@@ -1,0 +1,16 @@
+Requirements
+- node = 15.3.0
+- npm = 6.13.4
+- git = 2.23.0
+- os = macos 10.15.7
+
+Steps
+1. Git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
+2. npm install
+3. create `.env` file in root, and add this
+   ```
+   GA=GA_CODE
+   REPLACE_GA=UA-183073441-1
+   ```
+4. Type in terminal `$ npm run build`
+5. Generated file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip

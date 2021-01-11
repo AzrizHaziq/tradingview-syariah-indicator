@@ -1,8 +1,10 @@
 /* exported tsi */
 
+// eslint-disable-next-line no-unused-vars
 const tsi = (function () {
   'use strict'
-  const GA = 'UA-183073441-2'
+
+  const GA = 'UA-183073441-1'
   let SHARIAH_LIST = new Map()
   const parser = new DOMParser()
   const TRADING_VIEW_MYR = 'MYX'
@@ -11,15 +13,23 @@ const tsi = (function () {
   const mscAttribute = 'tradingview-syariah-indicator-msc'
 
   async function setStockListInMap() {
-    function prefixStocksWithExchange(exchange) {
-      return Object.entries(MYX).map(([key, value]) => [`${exchange}:${key}`, value])
+    let MYX = {}
+
+    try {
+      let {
+        MYX: { list: MYX_LIST },
+      } = await browser.storage.local.get('MYX')
+
+      MYX = MYX_LIST
+    } catch (e) {
+      console.warn('Tradingview Shariah Indicator: Please refresh the browser')
     }
 
-    const {
-      MYX: { list: MYX },
-    } = await browser.storage.local.get('MYX')
+    function prefixStocksWithExchange(list = {}, exchange) {
+      return Object.entries(list).map(([key, value]) => [`${exchange}:${key}`, value])
+    }
 
-    SHARIAH_LIST = new Map([...prefixStocksWithExchange(TRADING_VIEW_MYR)])
+    SHARIAH_LIST = new Map([...prefixStocksWithExchange(MYX, TRADING_VIEW_MYR)])
     return SHARIAH_LIST
   }
 
