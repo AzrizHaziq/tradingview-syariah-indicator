@@ -1,7 +1,7 @@
 MYX
 mscAt     : Thu Dec 31 2020 00:00:00 GMT+0000 (Coordinated Universal Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5ff4163739fba21c7e048fbf/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2020.pdf
-updatedAt : Thu Jan 21 2021 10:53:06 GMT+0000 (Coordinated Universal Time)
+updatedAt : Fri Jan 22 2021 10:42:42 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s, msc
@@ -188,6 +188,7 @@ DESTINI      : s, msc
 DFCITY       : s
 DGB          : s, msc
 DGB-WB       : s
+DGB-WC       : s
 DGSB         : s
 DIALOG       : s
 DIGI         : s
@@ -490,8 +491,6 @@ LBS-PA       : s
 LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
-LEWEKO       : s
-LEWEKO-WC    : s
 LFECORP      : s
 LIIHEN       : s, msc
 LIONIND      : s, msc
@@ -773,6 +772,8 @@ RSAWIT       : s, msc
 RSENA        : msc
 RUBEREX      : s, msc
 RVIEW        : s, msc
+S&FCAP       : s
+S&FCAP-WC    : s
 SAB          : s, msc
 SALCON       : s, msc
 SALCON-WB    : s
@@ -812,7 +813,6 @@ SCOPE        : s, msc
 SDRED        : s, msc
 SDS          : s
 SEACERA      : s
-SEACERA-WC   : s
 SEAL         : s
 SEALINK      : s
 SEDANIA      : s
@@ -943,6 +943,7 @@ TPC          : s
 TRC          : s
 TRIMODE      : s
 TRIVE        : s
+TRIVE-OR     : s
 TROP         : s, msc
 TSH          : s, msc
 TSRCAP       : s
