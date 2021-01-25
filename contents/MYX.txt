@@ -1,7 +1,7 @@
 MYX
 mscAt     : Thu Dec 31 2020 00:00:00 GMT+0000 (Coordinated Universal Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5ff4163739fba21c7e048fbf/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2020.pdf
-updatedAt : Fri Jan 22 2021 10:42:42 GMT+0000 (Coordinated Universal Time)
+updatedAt : Mon Jan 25 2021 10:49:32 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s, msc
@@ -418,7 +418,6 @@ JHM          : s, msc
 JIANKUN      : s
 JIANKUN-WA   : s
 JKGLAND      : s, msc
-JMEDU        : s
 JOHOTIN      : s, msc
 JTIASA       : s, msc
 K1           : s, msc
@@ -462,6 +461,7 @@ KOSSAN       : s
 KOTRA        : s, msc
 KPJ          : s
 KPOWER       : s, msc
+KPOWER-WA    : s
 KPPROP       : s
 KPS          : s, msc
 KPSCB        : s
@@ -1006,8 +1006,10 @@ WZSATU       : s
 WZSATU-WA    : s
 XIANLNG      : s
 XINHWA       : s
+XINHWA-WA    : s
 XOX          : s, msc
 XOX-WB       : s
+XOX-WC       : s
 Y&G          : s
 YBS          : s
 YGL          : s
