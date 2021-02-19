@@ -1,7 +1,7 @@
 MYX
-mscAt     : Thu Dec 31 2020 00:00:00 GMT+0000 (Coordinated Universal Time)
+mscAt     : Thu Dec 31 2020 00:00:00 GMT+0800 (Malaysia Time)
 mscLink   : https://www.bursamalaysia.com/sites/5d809dcf39fba22790cad230/assets/5ff4163739fba21c7e048fbf/Mid_Small_Cap_PLCs__Mkt_cap_of_200_mil_to_2_bil__Dec2020.pdf
-updatedAt : Mon Feb 15 2021 10:11:26 GMT+0000 (Coordinated Universal Time)
+updatedAt : Fri Feb 19 2021 22:08:01 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s, msc
@@ -41,6 +41,7 @@ ANCOM-WB     : s
 ANCOMLB      : s, msc
 ANEKA        : s
 ANNJOO       : s, msc
+ANNUM        : s
 APB          : s
 APEX         : msc
 APM          : s, msc
@@ -133,7 +134,7 @@ CBIP         : s, msc
 CCB          : s
 CCK          : s, msc
 CCK-WA       : s
-CCM          : s, msc
+CCM          : msc
 CENSOF       : s
 CEPAT        : s, msc
 CEPCO        : s
@@ -173,7 +174,6 @@ CTIB         : s
 CVIEW        : s
 CWG          : s
 CYL          : s
-CYMAO        : s
 CYPARK       : s, msc
 D&O          : s
 DAIBOCI      : s, msc
@@ -511,7 +511,6 @@ LYC          : s
 M3TECH       : s
 MAA          : msc
 MACPIE       : s
-MACPIE-WA    : s
 MAG          : s
 MAG-WB       : s
 MAGNA        : s, msc
@@ -550,7 +549,6 @@ MERIDIAN-WC  : s
 MESB         : s
 MESB-WA      : s
 MESTRON      : s
-METFAPA      : s
 METFSID      : s
 METFUS50     : s
 MFCB         : s
@@ -802,6 +800,7 @@ SCGM         : s, msc
 SCH          : s
 SCH-WA       : s
 SCIB         : s, msc
+SCIB-WB      : s
 SCICOM       : msc
 SCIENTX      : s
 SCIENTX-WC   : s
