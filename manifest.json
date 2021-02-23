@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.6.4",
+  "version": "1.7.4",
   "default_locale": "en",
   "author": "Azriz Haziq Jasni",
   "name": "__MSG_ext_extension_name__",
@@ -67,5 +67,5 @@
     },
     "default_popup": "src/popup/popup.html"
   },
-  "content_security_policy": "style-src 'self'; object-src 'self'; default-src 'self'; img-src 'self' https://www.google-analytics.com; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json https://www.google-analytics.com https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/feature/remove-msc/stock-list.json"
+  "content_security_policy": "style-src 'self'; object-src 'self'; default-src 'self'; img-src 'self' https://www.google-analytics.com; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json https://www.google-analytics.com"
 }

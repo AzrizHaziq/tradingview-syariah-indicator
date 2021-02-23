@@ -37,6 +37,42 @@ const myxShariahAtEl = document.querySelector('[data-tsi=js_popup_myx_current_sh
 myxShariahAtEl.setAttribute('title', browser.i18n.getMessage('js_popup_myx_current_shariah_list_at'))
 myxShariahAtEl.addEventListener('click', () => popupGa('click', 'shariahAt'))
 
+// refresh-icon listener
+document.querySelector('.tsi-refresh-icon').addEventListener('click', async function (e) {
+  const { parentElement } = e.target
+  parentElement.classList.add('is-refreshing')
+
+  browser.runtime.sendMessage({
+    type: 'ga',
+    subType: 'event',
+    payload: {
+      eventCategory: 'popup',
+      eventAction: 'invalidate-cache',
+    },
+  })
+
+  browser.runtime.sendMessage({ type: 'invalidate-cache' }).then(() => {
+    const x = setTimeout(() => {
+      parentElement.classList.remove('is-refreshing')
+      updateShariahDate()
+
+      clearTimeout(x)
+    }, 2000)
+  })
+})
+
+updateShariahDate()
+async function updateShariahDate() {
+  // from storage write to dom
+  const {
+    MYX: { updatedAt },
+  } = await browser.storage.local.get('MYX')
+
+  document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(updatedAt)
+    ? new Date(updatedAt).toLocaleDateString()
+    : '-'
+}
+
 function popupGa(eventAction, eventLabel) {
   ga('send', {
     hitType: 'event',
@@ -46,16 +82,6 @@ function popupGa(eventAction, eventLabel) {
   })
 }
 
-// from storage write to dom
-;(async () => {
-  const {
-    MYX: { updatedAt },
-  } = await browser.storage.local.get('MYX')
-
-  document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(updatedAt)
-    ? new Date(updatedAt).toLocaleDateString()
-    : '-'
-})()
 ;(function (i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r
   ;(i[r] =

@@ -45,6 +45,10 @@ small {
   justify-content: space-between;
 }
 
+.justify-content-end {
+  justify-content: flex-end;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -127,3 +131,33 @@ a[data-tsi]:hover {
 .text-decoration-normal {
   text-decoration: none;
 }
+
+ /* refresh icon & loading icon */
+.tsi-refresh-icon .tsi-search-icon {
+  display: block;
+  fill: #fff;
+}
+
+.tsi-refresh-icon .tsi-search-icon:hover {
+  fill: var(--primary-color);
+  cursor: pointer;
+}
+
+.tsi-refresh-icon.is-refreshing .tsi-search-icon {
+  display: none
+}
+
+.tsi-refresh-icon.is-refreshing .tsi-loading-icon {
+  display: block
+}
+
+.tsi-loading-icon {
+  display: none;
+  animation: spinner 1s infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg) }
+  to { transform: rotate(359deg) }
+}
+/* refresh icon & loading icon */

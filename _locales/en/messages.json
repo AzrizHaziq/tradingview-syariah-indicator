@@ -8,5 +8,6 @@
   "js_popup_github_repo": { "message": "Github repository" },
   "js_popup_myx_current_shariah_list_at": { "message": "Malaysia current shariah list at" },
   "js_popup_author_by": { "message": "By: " },
-  "js_popup_current_i18n": { "message": "en" }
+  "js_popup_current_i18n": { "message": "en" },
+  "js_popup_refresh_icon": { "message": "Refresh data" }
 }

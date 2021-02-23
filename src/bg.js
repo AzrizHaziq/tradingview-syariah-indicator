@@ -1,10 +1,12 @@
 /* global tsi */
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
-const fetchData = async () => {
-  // const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
-  const jsonUrl =
-    'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/feature/remove-msc/stock-list.json'
+const fetchData = async (shouldRefreshData = false) => {
+  let jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+
+  if (shouldRefreshData) {
+    jsonUrl += `?r=${Math.random()}`
+  }
 
   try {
     const res = await fetch(jsonUrl)
@@ -93,5 +95,14 @@ browser.runtime.onMessage.addListener(request => {
         ...request.payload,
       })
     }
+  }
+
+  if (request.type === 'invalidate-cache') {
+    return browser.storage.local
+      .set({ LAST_FETCH_AT: null })
+      .then(() => console.log('>>> INVALIDATE CACHE'))
+      .then(() => fetchData(true))
+      .then(({ MYX }) => setMYXStorages(MYX))
+      .then(() => browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() }))
   }
 })

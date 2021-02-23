@@ -8,5 +8,6 @@
   "js_popup_github_repo": { "message": "Repositori Github" },
   "js_popup_myx_current_shariah_list_at": { "message": "Senarai syariah Malaysia terkini pada" },
   "js_popup_author_by": { "message": "Oleh: " },
-  "js_popup_current_i18n": { "message": "ms" }
+  "js_popup_current_i18n": { "message": "ms" },
+  "js_popup_refresh_icon": { "message": "Kemaskini data" }
 }
