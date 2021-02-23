@@ -28,16 +28,6 @@ body {
   min-width: 300px;
 }
 
-/*
-body[data-tsi-i18n=en] {
-  min-width: 300px;
-}
-
-body[data-tsi-i18n=ms] {
-  min-width: 370px;
-}
-*/
-
 small {
   margin: 0;
   color: var(--gray-500);
@@ -132,14 +122,6 @@ a[data-tsi] {
 
 a[data-tsi]:hover {
   text-decoration: underline;
-}
-
-.msc-icon {
-  color: rgb(19, 23, 34);
-  font-size: 10px;
-  padding: 1px 3px;
-  border-radius: 4px;
-  background-color: gold;
 }
 
 .text-decoration-normal {

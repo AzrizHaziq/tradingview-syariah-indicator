@@ -17,7 +17,7 @@ function mainScript() {
 async function chartScript() {
   const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
-  const { s: isShariah, msc } = tsi.getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
+  const { s: isShariah } = tsi.getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
     if (tsi.isSyariahIconExist(parentElement)) {
@@ -28,18 +28,6 @@ async function chartScript() {
   } else {
     // if not syariah delete all icon
     tsi.deleteSyariahIcon(parentElement)
-  }
-
-  if (msc) {
-    if (tsi.isMSCIconExist(parentElement.parentElement)) {
-      // if icon already exist dont do anything
-    } else {
-      const mscIcon = tsi.createMSCIcon()
-      mscIcon.style.marginLeft = '5px'
-      parentElement.querySelector('[data-name="legend-source-title"]').insertAdjacentElement('beforebegin', mscIcon)
-    }
-  } else {
-    tsi.deleteMSCIcon(parentElement)
   }
 }
 

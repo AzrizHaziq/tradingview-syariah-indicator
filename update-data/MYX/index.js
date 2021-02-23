@@ -3,7 +3,6 @@ import puppeteer from 'puppeteer'
 import { pipe } from '../utils.js'
 import cliProgress from 'cli-progress'
 import { writeToFile } from '../writeToFile.js'
-import { generateMidSmallCap } from './msc/index.js'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'contents/MYX.txt'
@@ -118,7 +117,6 @@ ${Object.entries(list).reduce((acc, [stockName, value]) => acc + '\n' + listDisp
 export async function MYX() {
   try {
     const shariahList = await scrapBursaMalaysia()
-    const { mscAt, mscLink, mscList } = await generateMidSmallCap()
 
     const sortedList = pipe(
       Object.values,
@@ -132,12 +130,10 @@ export async function MYX() {
           }),
           {}
         )
-    )(merge(mscList, shariahList)) // merge by stock code
+    )(merge(shariahList)) // merge by stock code
 
     const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
-        mscAt,
-        mscLink,
         updatedAt: new Date(),
         list: sortedList,
       },

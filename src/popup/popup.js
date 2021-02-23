@@ -37,11 +37,6 @@ const myxShariahAtEl = document.querySelector('[data-tsi=js_popup_myx_current_sh
 myxShariahAtEl.setAttribute('title', browser.i18n.getMessage('js_popup_myx_current_shariah_list_at'))
 myxShariahAtEl.addEventListener('click', () => popupGa('click', 'shariahAt'))
 
-// MSC current at title
-const mscAtEl = document.querySelector('[data-tsi=js_msc_updated_at]')
-mscAtEl.setAttribute('title', browser.i18n.getMessage('js_msc_updated_at'))
-mscAtEl.addEventListener('click', () => popupGa('click', 'mscAt'))
-
 function popupGa(eventAction, eventLabel) {
   ga('send', {
     hitType: 'event',
@@ -52,21 +47,13 @@ function popupGa(eventAction, eventLabel) {
 }
 
 // from storage write to dom
-(async () => {
+;(async () => {
   const {
-    MYX: { mscAt, mscLink, updatedAt },
+    MYX: { updatedAt },
   } = await browser.storage.local.get('MYX')
-
-  // MSC current at href
-  document.querySelector('[data-tsi=js_msc_updated_at]').setAttribute('href', mscLink)
 
   document.querySelector('[data-tsi=my_updated_at]').textContent = tsi.isValidDate(updatedAt)
     ? new Date(updatedAt).toLocaleDateString()
-    : '-'
-
-  // MSC current at date
-  document.querySelector('[data-tsi=my_msc_updated_at]').textContent = tsi.isValidDate(mscAt)
-    ? new Date(mscAt).toLocaleDateString()
     : '-'
 })()
 ;(function (i, s, o, g, r, a, m) {
@@ -74,7 +61,7 @@ function popupGa(eventAction, eventLabel) {
   ;(i[r] =
     i[r] ||
     function () {
-      (i[r].q = i[r].q || []).push(arguments)
+      ;(i[r].q = i[r].q || []).push(arguments)
     }),
     (i[r].l = 1 * new Date())
   ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
