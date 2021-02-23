@@ -21,14 +21,20 @@ jobs:
         run: |
           git config pull.rebase false
           git pull origin $(git branch --show-current)
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Installing puppeteer dependencies
-        run: sudo apt-get update && sudo apt install chromium-browser
-      - run: yarn --frozen-lockfile
-      - run: yarn run ghAction:update-data
+      - run: npm ci
+        env:
+         PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+      - name: Update-data
+        uses: mujo-code/puppeteer-headful@master
+        env:
+          CI: 'true'
+        with:
+          args: npm run ghAction:update-data
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5.1.0
