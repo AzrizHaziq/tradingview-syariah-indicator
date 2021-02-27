@@ -1,0 +1,13 @@
+.github
+_locales
+assets
+config
+docs
+node_modules
+script
+src
+web-ext-artifacts
+
+# These file is required for automation
+# contents
+# update-data
