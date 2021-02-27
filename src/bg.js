@@ -1,8 +1,12 @@
 /* global tsi */
 browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
 
-const fetchData = async () => {
-  const jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+const fetchData = async (shouldRefreshData = false) => {
+  let jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+
+  if (shouldRefreshData) {
+    jsonUrl += `?r=${Math.random()}`
+  }
 
   try {
     const res = await fetch(jsonUrl)
@@ -49,13 +53,11 @@ async function listener(id, { status }, { url }) {
   }
 }
 
-async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
+async function setMYXStorages({ list, updatedAt }) {
   try {
     await browser.storage.local.set({
       MYX: {
         list, // must save in list key
-        mscAt,
-        mscLink,
         updatedAt,
       },
     })
@@ -65,7 +67,7 @@ async function setMYXStorages({ list, updatedAt, mscAt, mscLink }) {
 }
 
 // prettier-ignore
-(function (i, s, o, g, r, a, m) {
+;(function (i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r
   ;(i[r] =
     i[r] ||
@@ -93,5 +95,14 @@ browser.runtime.onMessage.addListener(request => {
         ...request.payload,
       })
     }
+  }
+
+  if (request.type === 'invalidate-cache') {
+    return browser.storage.local
+      .set({ LAST_FETCH_AT: null })
+      .then(() => console.log('>>> INVALIDATE CACHE'))
+      .then(() => fetchData(true))
+      .then(({ MYX }) => setMYXStorages(MYX))
+      .then(() => browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() }))
   }
 })

@@ -44,22 +44,19 @@ https://github.com/amree/tradingview-shariah-indicators
 
 
 ## Screenshots
-[Symbol Page](https://www.tradingview.com/symbols/MYX-MI/)
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_symbol.png?raw=true)
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_symbol.png?raw=true)
+[Symbol Page](https://www.tradingview.com/symbols/MYX-TOPGLOV/)
+![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/symbol_page.png?raw=true)
 
 [Chart page](https://www.tradingview.com/chart/)
-![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart.png?raw=true)
-![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart.png?raw=true)
-
-<p float="left">
-  <img src="https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_chart_with_stock_screener.png?raw=true" width="200px" />
-  <img src="https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_chart_with_stock_screener.png?raw=true" width="200px" /> 
-</p>
+![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page.png?raw=true)
+![Chart page with screener](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page_with_screener.png?raw=true)
 
 [Screener page](https://www.tradingview.com/screener/)
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_chrome/cutted_page_screener.png?raw=true)
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/mid-and-small-cap/docs/ori_ff/cutted_page_screener.png?raw=true)
+![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/screener_page_on.png?raw=true)
+
+Popup
+
+![popup](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/popup.png?raw=true)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)

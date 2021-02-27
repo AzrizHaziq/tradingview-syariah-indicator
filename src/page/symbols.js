@@ -15,7 +15,7 @@ function mainScript() {
 }
 
 function symbolScript() {
-  const { s: isShariah, msc } = tsi.getStockStat(getSymbol())
+  const { s: isShariah } = tsi.getStockStat(getSymbol())
 
   const largeResoDom = document.querySelector(
     '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
@@ -47,28 +47,6 @@ function symbolScript() {
     }
   } else {
     tsi.deleteSyariahIcon()
-  }
-
-  if (msc) {
-    if (tsi.isMSCIconExist(largeResoDom.parentElement)) {
-      // if icon already exist dont do anything
-    } else {
-      const mscLargeResoIcon = tsi.createMSCIcon()
-      mscLargeResoIcon.style.verticalAlign = 'top'
-      largeResoDom.parentElement.insertAdjacentElement('beforeend', mscLargeResoIcon)
-    }
-
-    if (tsi.isMSCIconExist(smallResoDom)) {
-      // if icon already exist dont do anything
-    } else {
-      const mscSmallResoIcon = tsi.createMSCIcon()
-      mscSmallResoIcon.style.top = '-14px'
-      mscSmallResoIcon.style.marginLeft = '5px'
-      mscSmallResoIcon.style.position = 'relative'
-      smallResoDom.append(mscSmallResoIcon)
-    }
-  } else {
-    tsi.deleteMSCIcon()
   }
 }
 

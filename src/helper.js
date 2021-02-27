@@ -10,7 +10,6 @@ const tsi = (function () {
   const TRADING_VIEW_MYR = 'MYX'
   const attributeName = 'data-indicator'
   const extensionName = 'tradingview-syariah-indicator'
-  const mscAttribute = 'tradingview-syariah-indicator-msc'
 
   async function setStockListInMap() {
     let MYX = {}
@@ -33,7 +32,7 @@ const tsi = (function () {
     return SHARIAH_LIST
   }
 
-  function getStockStat(symbol, defaultReturn = { s: 0, msc: 0 }) {
+  function getStockStat(symbol, defaultReturn = { s: 0 }) {
     return SHARIAH_LIST.has(symbol) ? SHARIAH_LIST.get(symbol) : defaultReturn
   }
 
@@ -161,30 +160,6 @@ const tsi = (function () {
     return observer
   }
 
-  function createMSCIcon() {
-    const mscEle = document.createElement('span')
-    mscEle.setAttribute(attributeName, mscAttribute)
-    mscEle.innerText = 'MSC'
-    mscEle.style.color = '#131722'
-    mscEle.style.fontSize = '11px'
-    mscEle.style.cursor = 'default'
-    mscEle.style.padding = '1px 3px'
-    mscEle.style.borderRadius = '4px'
-    mscEle.style.backgroundColor = 'gold'
-    mscEle.style.border = '1px solid #131722'
-    mscEle.title = browser.i18n.getMessage('js_msc_title')
-
-    return mscEle
-  }
-
-  function deleteMSCIcon(dom = document) {
-    dom.querySelectorAll(`[${attributeName}="${mscAttribute}"]`).forEach(div => div.remove())
-  }
-
-  function isMSCIconExist(element) {
-    return element.querySelector(`[${attributeName}="${mscAttribute}"]`)
-  }
-
   function waitForElm(selector) {
     return new Promise(resolve => {
       if (document.querySelector(selector)) {
@@ -217,9 +192,6 @@ const tsi = (function () {
     addStaticSyariahIcon,
     addStyle,
     observeNodeChanges,
-    createMSCIcon,
-    deleteMSCIcon,
-    isMSCIconExist,
 
     SHARIAH_LIST,
     getStockStat,
@@ -228,6 +200,5 @@ const tsi = (function () {
     TRADING_VIEW_MYR,
     attributeName,
     extensionName,
-    mscAttribute,
   }
 })()

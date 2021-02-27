@@ -17,40 +17,8 @@ const css = {
     row: 'js-tsi__shariah--row',
     body: 'js-tsi__shariah--tbody',
   },
-  MYX: {
-    msc: {
-      row: 'js-tsi__msc--row',
-      body: 'js-tsi__msc--tbody',
-    },
-  },
 }
-const msc = {
-  type: 'MSC',
-  currentState: false,
-  css: {
-    row: css.MYX.msc.row,
-    body: css.MYX.msc.body,
-  },
-  checkBoxId: 'msc-checkbox-id',
-  checkBoxAttrName: tsi.attributeName,
-  checkBoxAttrValue: 'msc-checkbox',
-  createIcon: () => tsi.createMSCIcon(),
-  onClick: wrapperElement => async e => {
-    try {
-      msc.currentState = e.target.checked
 
-      await browser.storage.local.set({ IS_FILTER_MSC: e.target.checked })
-
-      wrapperElement.setAttribute('title', msc.status[`${msc.currentState}`])
-    } catch (e) {
-      console.error('Error set MSC in localStorage ', e)
-    }
-  },
-  status: {
-    true: browser.i18n.getMessage('js_screener_filter_btn_msc_on'),
-    false: browser.i18n.getMessage('js_screener_filter_btn_msc_off'),
-  },
-}
 const shariah = {
   type: 'SHARIAH',
   currentState: false,
@@ -88,11 +56,6 @@ const shariah = {
 
 // if both icon exist, then add margin-left
 tsi.addStyle(`
-  [${tsi.attributeName}="${tsi.extensionName}"] +
-  [${tsi.attributeName}="${tsi.mscAttribute}"] {
-    margin-left: 5px;
-  }
-  
   //  by default  make all visible
   .${css.main.body} .${css.main.row} {
      display: table-row;
@@ -106,15 +69,6 @@ tsi.addStyle(`
   .${css.main.body}.${css.shariah.body} .${css.main.row}:not(.${css.shariah.row}) {
      display: none;
   }
-  
-  // MSC ON
-  .${css.main.body}.${css.MYX.msc.body} .${css.MYX.msc.row} {
-     display: table-row;
-  }
-  
-  .${css.main.body}.${css.MYX.msc.body} .${css.main.row}:not(.${css.MYX.msc.row}) {
-     display: none;
-  }
 `)
 
 tsi
@@ -124,14 +78,11 @@ tsi
 
 async function mainScreenerScript() {
   try {
-    const { IS_FILTER_MSC } = await browser.storage.local.get('IS_FILTER_MSC')
     const { IS_FILTER_SHARIAH } = await browser.storage.local.get('IS_FILTER_SHARIAH')
 
-    msc.currentState = IS_FILTER_MSC || false
     shariah.currentState = IS_FILTER_SHARIAH || false
 
     tsi.addStaticSyariahIcon()
-    setupFilterBtn(msc)
     setupFilterBtn(shariah)
     setupCssClassName()
     observedTableChanges()
@@ -159,25 +110,12 @@ function observedTableChanges() {
 
     Array.from(tableNode.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const { s: isSyariah, msc: isMsc } = tsi.getStockStat(rowSymbol)
+      const { s: isSyariah } = tsi.getStockStat(rowSymbol)
 
       const firstColumn = tr.querySelector('td div')
-      const mscIcon = tsi.createMSCIcon()
       const shariahIcon = tsi.createIcon({ width: 10, height: 10 })
 
       tr.classList.add(css.main.row)
-
-      if (isMsc) {
-        tr.classList.add(css.MYX.msc.row)
-
-        if (tsi.isMSCIconExist(firstColumn)) {
-          // if icon already exist don't do anything
-        } else {
-          // this query need to be the same in /screener  & /chart's stock screener
-          const domToBeAdded = firstColumn.querySelector('.tv-screener__symbol')
-          domToBeAdded.insertAdjacentElement('afterend', mscIcon)
-        }
-      }
 
       if (isSyariah) {
         tr.classList.add(css.shariah.row)
@@ -209,15 +147,12 @@ function observedCountryFlagChanges() {
 
   observer = new MutationObserver(() => {
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
-    const mscFilterBtn = document.querySelector(`label[${msc.checkBoxAttrName}=${msc.checkBoxAttrValue}]`).parentElement
     const shariahFilterBtn = document.querySelector(`label[${shariah.checkBoxAttrName}=${shariah.checkBoxAttrValue}]`)
       .parentElement
 
     if (isCountriesExisted) {
-      mscFilterBtn.style.display = 'block'
       shariahFilterBtn.style.display = 'block'
     } else {
-      mscFilterBtn.style.display = 'none'
       shariahFilterBtn.style.display = 'none'
     }
   })
@@ -266,7 +201,7 @@ function setupFilterBtn(state) {
   labelElement.setAttribute('for', state.checkBoxId)
   labelElement.setAttribute(state.checkBoxAttrName, state.checkBoxAttrValue)
 
-  // shariah icon
+  // icon
   const iconElement = state.createIcon()
   iconElement.style.cursor = 'pointer'
 
@@ -315,9 +250,5 @@ function getCurrentPathname() {
 function setupCssClassName() {
   document
     .querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
-    .classList.add(
-      ...[css.main.body, shariah.currentState ? css.shariah.body : '', msc.currentState ? css.MYX.msc.body : ''].filter(
-        Boolean
-      )
-    )
+    .classList.add(...[css.main.body, shariah.currentState ? css.shariah.body : ''].filter(Boolean))
 }
