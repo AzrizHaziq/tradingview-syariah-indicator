@@ -1,5 +1,5 @@
 MYX
-updatedAt : Tue Feb 23 2021 09:31:04 GMT+0800 (Malaysia Time)
+updatedAt : Sat Feb 27 2021 10:33:47 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -21,6 +21,7 @@ AFUJIYA      : s
 AGES         : s
 AHB          : s
 AHEALTH      : s
+AIMFLEX      : s
 AIRASIA      : s
 AJI          : s
 AJIYA        : s
@@ -373,7 +374,6 @@ IQGROUP      : s
 IQZAN        : s
 IREKA        : s
 IRIS         : s
-ISTONE       : s
 ITRONIC      : s
 IVORY        : s
 IWCITY       : s
@@ -817,7 +817,6 @@ SUNWAY       : s
 SUNWAY-PA    : s
 SUNWAY-WB    : s
 SUNZEN       : s
-SUNZEN-WB    : s
 SUPERLN      : s
 SUPERMX      : s
 SUPREME      : s
@@ -874,6 +873,7 @@ TPC          : s
 TRC          : s
 TRIMODE      : s
 TRIVE        : s
+TRIVE-WC     : s
 TROP         : s
 TSH          : s
 TSRCAP       : s
