@@ -16,8 +16,8 @@ jobs:
         with:
           ref: fix/github-action
 
-#      - name: Test Code
-#        uses: mujo-code/puppeteer-headful@master
+      - name: Installing puppeteer
+        uses: mujo-code/puppeteer-headful@master
 
       - name: Build & run docker
         run: |

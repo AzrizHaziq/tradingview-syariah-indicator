@@ -21,7 +21,7 @@ RUN npm ci
 
 COPY . .
 
-ENTRYPOINT npm run ghAction:update-data
+ENTRYPOINT PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm run ghAction:update-data
 
 # docker build -t tsi .
 # docker run -it  \

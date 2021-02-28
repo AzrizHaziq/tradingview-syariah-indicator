@@ -14,8 +14,9 @@ async function scrapBursaMalaysia() {
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
   try {
+    console.log('PUPPETEER_EXEC_PATH: ', process.env.PUPPETEER_EXEC_PATH)
     const browser = await puppeteer.launch({
-      // executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
+      executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     })
 
