@@ -9,23 +9,19 @@ on:
 
 jobs:
   automation:
-    runs-on: ubuntu-18.04
+    runs-on: macos-10.15
 
     steps:
       - uses: actions/checkout@v2
         with:
           ref: fix/github-action
 
-      - name: Installing puppeteer
-        uses: mujo-code/puppeteer-headful@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15.3.0'
 
-      - name: Build & run docker
-        run: |
-          docker build -t tsi .
-          docker run \
-           -v $PWD/contents/:/usr/src/app/contents \
-           -v $PWD/stock-list.json/:/usr/src/app/stock-list.json \
-           tsi
+      - run: npm ci
+      - run: npm run ghAction:update-data
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5.1.0
