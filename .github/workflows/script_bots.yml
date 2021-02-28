@@ -1,11 +1,10 @@
 name: Automate STOCK_LIST gh_bot
 
 on:
-  push:
   workflow_dispatch:
-#  schedule:
+  schedule:
     # Asia/Kuala_Lumpur around 6pm, weekdays only
-#    - cron: "0 10 * * 1,2,3,4,5"
+    - cron: "0 10 * * 1,2,3,4,5"
 
 jobs:
   automation:
@@ -13,9 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: fix/github-action
-
       - uses: actions/setup-node@v2
         with:
           node-version: '15.3.0'

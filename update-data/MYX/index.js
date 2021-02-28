@@ -14,14 +14,8 @@ async function scrapBursaMalaysia() {
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
   try {
-    console.log('PUPPETEER_EXEC_PATH: ', process.env.PUPPETEER_EXEC_PATH)
-    const browser = await puppeteer.launch({
-      executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    })
-
+    const browser = await puppeteer.launch()
     const page = await browser.newPage()
-
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
     // getting max size of syariah list by grabbing the value in pagination btn
