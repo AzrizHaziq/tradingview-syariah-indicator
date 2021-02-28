@@ -2,28 +2,20 @@ name: Automate STOCK_LIST gh_bot
 
 on:
   workflow_dispatch:
-#  schedule:
+  schedule:
     # Asia/Kuala_Lumpur around 6pm, weekdays only
-#    - cron: "0 10 * * 1,2,3,4,5"
+    - cron: "0 10 * * 1,2,3,4,5"
 
 jobs:
   automation:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [15.3.x]
+    runs-on: macos-10.15
 
     steps:
       - uses: actions/checkout@v2
-      - name: Syncing with latest branch
-        run: |
-          git config pull.rebase false
-          git pull origin $(git branch --show-current)
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '15.3.0'
+
       - run: npm ci
       - run: npm run ghAction:update-data
 

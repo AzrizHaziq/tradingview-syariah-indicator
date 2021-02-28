@@ -16,7 +16,6 @@ async function scrapBursaMalaysia() {
   try {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
-
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
     // getting max size of syariah list by grabbing the value in pagination btn
