@@ -19,5 +19,8 @@ COPY . .
 ENTRYPOINT npm run ghAction:update-data
 
 # docker build -t tsi .
-# docker run --rm --name tsic -v ./:/usr/src/app tsi
+# docker run -it  \
+# -v $PWD/contents/:/usr/src/app/contents \
+# -v $PWD/stock-list.json/:/usr/src/app/stock-list.json \
+# tsi
 # docker exec -it tsi /bin/bash

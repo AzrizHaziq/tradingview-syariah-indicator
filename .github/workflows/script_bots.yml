@@ -11,30 +11,18 @@ jobs:
   automation:
     runs-on: ubuntu-18.04
 
-    strategy:
-      matrix:
-        node-version: [15.3.0]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Syncing with latest branch
-        run: |
-          git config pull.rebase false
-          git pull origin $(git branch --show-current)
+        with:
+          ref: fix/github-action
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-        env:
-         PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
-      - name: Update-data
-        uses: mujo-code/puppeteer-headful@master
-        env:
-          CI: 'true'
-        with:
-          args: npm run ghAction:update-data
+      - name: Build & run docker
+        run: |
+          docker build -t tsi .
+          docker run \
+           -v $PWD/contents/:/usr/src/app/contents \
+           -v $PWD/stock-list.json/:/usr/src/app/stock-list.json \
+           tsi
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5.1.0
