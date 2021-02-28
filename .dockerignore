@@ -7,6 +7,9 @@ node_modules
 script
 src
 web-ext-artifacts
+.*
+manifest.json
+README.md
 
 # These file is required for automation
 # contents

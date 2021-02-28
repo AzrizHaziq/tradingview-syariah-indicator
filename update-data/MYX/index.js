@@ -15,7 +15,7 @@ async function scrapBursaMalaysia() {
 
   try {
     const browser = await puppeteer.launch({
-      executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
+      // executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     })
 
