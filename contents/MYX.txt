@@ -1,5 +1,5 @@
 MYX
-updatedAt : Wed Mar 03 2021 10:15:07 GMT+0000 (Coordinated Universal Time)
+updatedAt : Thu Mar 04 2021 10:18:41 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s
@@ -798,6 +798,7 @@ SOLUTN       : s
 SOLUTN-WA    : s
 SOP          : s
 SPRING       : s
+SPRING-WA    : s
 SPRITZER     : s
 SPSETIA      : s
 SPSETIA-PA   : s
@@ -810,7 +811,6 @@ STRAITS      : s
 STRAITS-WA   : s
 SUCCESS      : s
 SUMATEC      : s
-SUMATEC-WA   : s
 SUNCON       : s
 SUNSURIA     : s
 SUNWAY       : s
