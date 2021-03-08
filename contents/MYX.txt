@@ -1,5 +1,5 @@
 MYX
-updatedAt : Fri Mar 05 2021 10:15:35 GMT+0000 (Coordinated Universal Time)
+updatedAt : Mon Mar 08 2021 10:15:08 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s
@@ -265,7 +265,6 @@ G3-WA        : s
 GADANG       : s
 GADANG-WB    : s
 GAMUDA       : s
-GAMUDA-WE    : s
 GASMSIA      : s
 GBGAQRS      : s
 GBGAQRS-WB   : s
@@ -783,6 +782,7 @@ SKPRES       : s
 SLIC         : s
 SLP          : s
 SLVEST       : s
+SLVEST-WA    : s
 SMCAP        : s
 SMCAP-WC     : s
 SMETRIC      : s
