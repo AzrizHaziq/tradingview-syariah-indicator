@@ -1,5 +1,5 @@
 MYX
-updatedAt : Thu Mar 11 2021 10:19:25 GMT+0000 (Coordinated Universal Time)
+updatedAt : Fri Mar 12 2021 10:15:31 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s
@@ -476,6 +476,7 @@ LUXCHEM      : s
 LYC          : s
 M3TECH       : s
 MACPIE       : s
+MACPIE-WB    : s
 MAG          : s
 MAG-WB       : s
 MAGNA        : s
