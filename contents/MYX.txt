@@ -1,5 +1,5 @@
 MYX
-updatedAt : Mon Mar 15 2021 10:16:46 GMT+0000 (Coordinated Universal Time)
+updatedAt : Tue Mar 16 2021 19:53:59 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -344,7 +344,6 @@ HUBLINE-WC   : s
 HUPSENG      : s
 HWATAI       : s
 HWGB         : s
-HWGB-WD      : s
 IBHD         : s
 IBRACO       : s
 ICON         : s
@@ -843,6 +842,7 @@ TDM          : s
 TECFAST      : s
 TECHNAX      : s
 TEKSENG      : s
+TELADAN      : s
 TENAGA       : s
 TEOSENG      : s
 TEXCYCL      : s
@@ -924,7 +924,6 @@ WEGMANS-WB   : s
 WELLCAL      : s
 WIDAD        : s
 WIDAD-WA     : s
-WINTONI      : s
 WONG         : s
 WOODLAN      : s
 WPRTS        : s
