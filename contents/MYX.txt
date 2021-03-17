@@ -1,5 +1,5 @@
 MYX
-updatedAt : Tue Mar 16 2021 12:07:26 GMT+0000 (Coordinated Universal Time)
+updatedAt : Wed Mar 17 2021 10:17:15 GMT+0000 (Coordinated Universal Time)
 --------------------
 
 3A           : s
@@ -310,6 +310,8 @@ HCK          : s
 HCK-WA       : s
 HENGYUAN     : s
 HEVEA        : s
+HEXIND       : s
+HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
 HHHCORP      : s
@@ -738,8 +740,6 @@ SBCCORP      : s
 SCABLE       : s
 SCBUILD      : s
 SCGM         : s
-SCH          : s
-SCH-WA       : s
 SCIB         : s
 SCIB-WB      : s
 SCIENTX      : s
