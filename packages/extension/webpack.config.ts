@@ -35,6 +35,8 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
+        { from: 'assets', to: 'assets' },
+        { from: '_locales', to: '_locales' },
         {
           from: 'src',
           globOptions: {
@@ -45,21 +47,24 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         //   from: '../../node_modules/webext-base-css/webext-base.css',
         //   to: 'options/',
         // },
-        { from: '_locales', to: '_locales' },
-        { from: 'assets', to: 'assets' },
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
       ],
     }),
-    new SizePlugin({ writeFile: false }),
+    new SizePlugin({
+      writeFile: false,
+    }),
     new CleanWebpackPlugin(),
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'common',
+    },
     minimizer: [
-      // @ts-ignore
       new TerserPlugin({
         parallel: true,
         terserOptions: {

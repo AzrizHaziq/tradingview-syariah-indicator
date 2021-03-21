@@ -1,4 +1,3 @@
-/* global tsi */
 import {
   waitForElm,
   createIcon,
@@ -7,17 +6,16 @@ import {
   setStockListInMap,
   isSyariahIconExist,
   observeNodeChanges,
-  addStaticSyariahIcon,
 } from '../helper'
+;(async () => {
+  await browser.runtime.sendMessage({
+    type: 'ga',
+    subType: 'pageview',
+    payload: 'chart',
+  })
+})()
 
-addStaticSyariahIcon()
 waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
-
-browser.runtime.sendMessage({
-  type: 'ga',
-  subType: 'pageview',
-  payload: 'chart',
-})
 
 function mainScript() {
   // have to target dom like below since this is the most top parent
@@ -25,7 +23,7 @@ function mainScript() {
   observeNodeChanges(symbolNode, chartScript)
 }
 
-async function chartScript() {
+async function chartScript(): Promise<void> {
   const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
   const { s: isShariah } = getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)

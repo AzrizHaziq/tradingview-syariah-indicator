@@ -6,7 +6,6 @@ import {
   deleteSyariahIcon,
   setStockListInMap,
   isSyariahIconExist,
-  addStaticSyariahIcon,
   addStyle,
   attributeName,
   extensionName,
@@ -93,7 +92,6 @@ async function mainScreenerScript() {
 
     shariah.currentState = IS_FILTER_SHARIAH || false
 
-    addStaticSyariahIcon()
     setupFilterBtn(shariah)
     setupCssClassName()
     observedTableChanges()

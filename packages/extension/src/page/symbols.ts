@@ -6,10 +6,8 @@ import {
   setStockListInMap,
   isSyariahIconExist,
   observeNodeChanges,
-  addStaticSyariahIcon,
 } from '../helper'
 
-addStaticSyariahIcon()
 waitForElm('.tv-main .tv-content').then(setStockListInMap).then(mainScript)
 
 browser.runtime.sendMessage({
