@@ -5,6 +5,7 @@ import { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 
@@ -33,11 +34,19 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      chunkFilename: '[name].css',
+    }),
     new Dotenv({
-      path: isProd() ? './.env.production' || './env' : './.env',
+      path: isProd() ? './.env.production' : './.env',
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -46,7 +55,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         {
           from: 'src',
           globOptions: {
-            ignore: ['**/*.ts', '**/*.tsx'],
+            ignore: ['**/*.ts', '**/*.tsx', '**/*.scss'],
           },
         },
         // {
