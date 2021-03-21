@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "@app/data",
   "version": "0.0.0",
   "private": true,
