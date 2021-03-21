@@ -1,9 +1,12 @@
 import path from 'path'
+import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
 import { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+
+const isProd = () => process.env.NODE_ENV === 'production'
 
 module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
   devtool: 'source-map',
@@ -33,6 +36,9 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     ],
   },
   plugins: [
+    new Dotenv({
+      path: isProd() ? './.env.production' || './env' : './.env',
+    }),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets', to: 'assets' },

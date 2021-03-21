@@ -1,4 +1,4 @@
-export const GA = 'UA-183073441-1'
+export const GA = process.env.GA
 let SHARIAH_LIST = new Map()
 const parser = new DOMParser()
 const TRADING_VIEW_MYR = 'MYX'
