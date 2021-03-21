@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "update-data": "node scripts",
-    "ghAction:update-data": "npm run update-data -- skip-commit"
+    "ghAction": "npm run update-data -- skip-commit"
   },
   "devDependencies": {
     "lodash.merge": "^4.6.2",
