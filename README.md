@@ -84,7 +84,7 @@ Feel free to contact me if any bug or more features here
 
 ## Developers
 Requirements
-- node = 15.3.0
+- node = 15.12.0
 - npm = 6.13.4
 - git = 2.23.0
 - os = macos 10.15.7
