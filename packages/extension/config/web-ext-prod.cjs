@@ -3,7 +3,6 @@ module.exports = {
     overwriteDest: true,
   },
   ignoreFiles: [
-    'msc.xlsx',
     'package.json',
     'stock-list.json',
     '_config.yml',

@@ -1,10 +1,10 @@
-/* global tsi */
 import { dateDiffInDays, debounce, GA, isValidDate } from '../helper'
 
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
 const fetchData = async (shouldRefreshData = false) => {
-  let jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
+  let jsonUrl =
+    'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/stock-list.json'
 
   if (shouldRefreshData) {
     jsonUrl += `?r=${Math.random()}`
@@ -76,6 +76,7 @@ async function setMYXStorages({ list, updatedAt }) {
     function () {
       (i[r].q = i[r].q || []).push(arguments)
     }),
+    // @ts-ignore
     (i[r].l = 1 * new Date())
   ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
   a.async = 1
