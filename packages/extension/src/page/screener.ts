@@ -1,4 +1,16 @@
 /* global tsi */
+import {
+  createIcon,
+  waitForElm,
+  getStockStat,
+  deleteSyariahIcon,
+  setStockListInMap,
+  isSyariahIconExist,
+  addStaticSyariahIcon,
+  addStyle,
+  attributeName,
+  extensionName,
+} from '../helper'
 
 browser.runtime.sendMessage({
   type: 'ga',
@@ -27,13 +39,13 @@ const shariah = {
     body: css.shariah.body,
   },
   checkBoxId: 'shariah-checkbox-id',
-  checkBoxAttrName: tsi.attributeName,
+  checkBoxAttrName: attributeName,
   checkBoxAttrValue: 'shariah-checkbox',
   createIcon: () => {
-    const icon = tsi.createIcon({ width: 17, height: 17 })
+    const icon = createIcon({ width: 17, height: 17 })
     icon.style.cursor = 'pointer'
-    icon.removeAttribute(tsi.attributeName)
-    icon.setAttribute(`${tsi.attributeName}-filter-icon`, `${tsi.extensionName}-filter-icon`)
+    icon.removeAttribute(attributeName)
+    icon.setAttribute(`${attributeName}-filter-icon`, `${extensionName}-filter-icon`)
 
     return icon
   },
@@ -55,7 +67,7 @@ const shariah = {
 }
 
 // if both icon exist, then add margin-left
-tsi.addStyle(`
+addStyle(`
   //  by default  make all visible
   .${css.main.body} .${css.main.row} {
      display: table-row;
@@ -71,9 +83,8 @@ tsi.addStyle(`
   }
 `)
 
-tsi
-  .waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody')
-  .then(tsi.setStockListInMap)
+waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+  .then(setStockListInMap)
   .then(mainScreenerScript)
 
 async function mainScreenerScript() {
@@ -82,7 +93,7 @@ async function mainScreenerScript() {
 
     shariah.currentState = IS_FILTER_SHARIAH || false
 
-    tsi.addStaticSyariahIcon()
+    addStaticSyariahIcon()
     setupFilterBtn(shariah)
     setupCssClassName()
     observedTableChanges()
@@ -104,23 +115,23 @@ function observedTableChanges() {
 
   observer = new MutationObserver(() => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-      tsi.deleteSyariahIcon(tableNode.parentElement)
+      deleteSyariahIcon(tableNode.parentElement)
       return
     }
 
     Array.from(tableNode.children).forEach(tr => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const { s: isSyariah } = tsi.getStockStat(rowSymbol)
+      const { s: isSyariah } = getStockStat(rowSymbol)
 
       const firstColumn = tr.querySelector('td div')
-      const shariahIcon = tsi.createIcon({ width: 10, height: 10 })
+      const shariahIcon = createIcon({ width: 10, height: 10 })
 
       tr.classList.add(css.main.row)
 
       if (isSyariah) {
         tr.classList.add(css.shariah.row)
 
-        if (tsi.isSyariahIconExist(firstColumn)) {
+        if (isSyariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
           // this query need to be the same in /screener  & /chart's stock screener
@@ -173,7 +184,7 @@ function setupFilterBtn(state) {
     return
   }
 
-  tsi.addStyle(`
+  addStyle(`
     [${state.checkBoxAttrName}=${state.checkBoxAttrValue}] {
      opacity: 0.4;
      transition: opacity .5s ease;

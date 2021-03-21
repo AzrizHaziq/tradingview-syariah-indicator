@@ -1,6 +1,17 @@
 /* global tsi */
-tsi.addStaticSyariahIcon()
-tsi.waitForElm('[data-name="legend-series-item"]').then(tsi.setStockListInMap).then(mainScript)
+import {
+  waitForElm,
+  createIcon,
+  getStockStat,
+  deleteSyariahIcon,
+  setStockListInMap,
+  isSyariahIconExist,
+  observeNodeChanges,
+  addStaticSyariahIcon,
+} from '../helper'
+
+addStaticSyariahIcon()
+waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
 
 browser.runtime.sendMessage({
   type: 'ga',
@@ -11,23 +22,23 @@ browser.runtime.sendMessage({
 function mainScript() {
   // have to target dom like below since this is the most top parent
   const symbolNode = document.querySelector('[data-name="legend-series-item"]')
-  tsi.observeNodeChanges(symbolNode, chartScript)
+  observeNodeChanges(symbolNode, chartScript)
 }
 
 async function chartScript() {
   const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
-  const { s: isShariah } = tsi.getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
+  const { s: isShariah } = getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
-    if (tsi.isSyariahIconExist(parentElement)) {
+    if (isSyariahIconExist(parentElement)) {
       // if icon already exist dont do anything
     } else {
-      parentElement.prepend(tsi.createIcon({ width: 15, height: 15 }))
+      parentElement.prepend(createIcon({ width: 15, height: 15 }))
     }
   } else {
     // if not syariah delete all icon
-    tsi.deleteSyariahIcon(parentElement)
+    deleteSyariahIcon(parentElement)
   }
 }
 
