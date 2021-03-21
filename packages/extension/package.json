@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "npm run build && xo",
-    "build": "webpack --mode=production",
+    "build": "NODE_ENV=production webpack --mode=production",
     "watch": "webpack --mode=development --watch",
     "release:chrome": "cd dist && webstore upload --auto-publish",
     "release:firefox": "cd dist && web-ext-submit",
@@ -48,6 +48,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "daily-version": "^2.0.0",
     "dot-json": "^1.2.0",
+    "dotenv-webpack": "^7.0.2",
     "eslint": "^7.18.0",
     "eslint-config-xo-react": "^0.24.0",
     "eslint-plugin-react": "^7.20.5",
