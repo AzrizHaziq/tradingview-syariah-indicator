@@ -6,6 +6,9 @@
   "engines": {
     "node": "15.12.0"
   },
+  "scripts": {
+    "ghAction:update-data": "lerna run --scope @app/data --stream ghAction"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
