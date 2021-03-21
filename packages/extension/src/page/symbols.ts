@@ -1,6 +1,16 @@
-/* global tsi */
-tsi.addStaticSyariahIcon()
-tsi.waitForElm('.tv-main .tv-content').then(tsi.setStockListInMap).then(mainScript)
+import {
+  createIcon,
+  waitForElm,
+  getStockStat,
+  deleteSyariahIcon,
+  setStockListInMap,
+  isSyariahIconExist,
+  observeNodeChanges,
+  addStaticSyariahIcon,
+} from '../helper'
+
+addStaticSyariahIcon()
+waitForElm('.tv-main .tv-content').then(setStockListInMap).then(mainScript)
 
 browser.runtime.sendMessage({
   type: 'ga',
@@ -11,11 +21,11 @@ browser.runtime.sendMessage({
 function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
   const symbolNode = document.querySelector('.tv-main .tv-content')
-  tsi.observeNodeChanges(symbolNode, symbolScript)
+  observeNodeChanges(symbolNode, symbolScript)
 }
 
 function symbolScript() {
-  const { s: isShariah } = tsi.getStockStat(getSymbol())
+  const { s: isShariah } = getStockStat(getSymbol())
 
   const largeResoDom = document.querySelector(
     '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
@@ -26,10 +36,10 @@ function symbolScript() {
   )
 
   if (isShariah) {
-    if (tsi.isSyariahIconExist(smallResoDom)) {
+    if (isSyariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
-      const icon = tsi.createIcon()
+      const icon = createIcon()
       icon.style.marginLeft = '5px'
       icon.style.display = 'inline'
       icon.style.position = 'relative'
@@ -38,15 +48,15 @@ function symbolScript() {
       smallResoDom.insertAdjacentElement('beforeend', icon)
     }
 
-    if (tsi.isSyariahIconExist(largeResoDom.parentElement)) {
+    if (isSyariahIconExist(largeResoDom.parentElement)) {
       // if icon already exist dont do anything
     } else {
-      const icon = tsi.createIcon({ width: 15, height: 15 })
+      const icon = createIcon({ width: 15, height: 15 })
       icon.style.marginLeft = '5px'
       largeResoDom.insertAdjacentElement('afterend', icon)
     }
   } else {
-    tsi.deleteSyariahIcon()
+    deleteSyariahIcon()
   }
 }
 

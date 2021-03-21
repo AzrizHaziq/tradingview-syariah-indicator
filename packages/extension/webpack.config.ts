@@ -5,10 +5,7 @@ import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
-module.exports = (
-  _environment: string,
-  _: Record<string, boolean | number | string>
-): Configuration => ({
+module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
   devtool: 'source-map',
   stats: {
     all: false,
@@ -16,9 +13,11 @@ module.exports = (
     builtAt: true,
   },
   entry: {
-    main: './src/main',
+    'page/chart': './src/page/chart',
+    'page/screener': './src/page/screener',
+    'page/symbols': './src/page/symbols',
     'bg/background': './src/bg/background',
-    'options/options': './src/options/options',
+    'popup/popup': './src/popup/popup',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -42,10 +41,12 @@ module.exports = (
             ignore: ['**/*.ts', '**/*.tsx'],
           },
         },
-        {
-          from: '../../node_modules/webext-base-css/webext-base.css',
-          to: 'options/',
-        },
+        // {
+        //   from: '../../node_modules/webext-base-css/webext-base.css',
+        //   to: 'options/',
+        // },
+        { from: '_locales', to: '_locales' },
+        { from: 'assets', to: 'assets' },
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
       ],

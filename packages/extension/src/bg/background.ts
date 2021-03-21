@@ -1,5 +1,7 @@
 /* global tsi */
-browser.tabs.onUpdated.addListener(tsi.debounce(listener, 500, true))
+import { dateDiffInDays, debounce, GA, isValidDate } from '../helper'
+
+browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
 const fetchData = async (shouldRefreshData = false) => {
   let jsonUrl = 'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/stock-list.json'
@@ -35,9 +37,9 @@ async function listener(id, { status }, { url }) {
     const { LAST_FETCH_AT } = await browser.storage.local.get('LAST_FETCH_AT')
 
     const currentDate = new Date()
-    const lastFetchAt = tsi.isValidDate(LAST_FETCH_AT) ? new Date(LAST_FETCH_AT) : new Date()
+    const lastFetchAt = isValidDate(LAST_FETCH_AT) ? new Date(LAST_FETCH_AT) : new Date()
 
-    const shouldUseCacheValue = tsi.dateDiffInDays(currentDate, lastFetchAt) >= 0
+    const shouldUseCacheValue = dateDiffInDays(currentDate, lastFetchAt) >= 0
 
     if (shouldUseCacheValue) {
       console.log('>>> Cache')
@@ -79,8 +81,8 @@ async function setMYXStorages({ list, updatedAt }) {
   a.async = 1
   a.src = g
   m.parentNode.insertBefore(a, m)
-})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${tsi.GA}`, 'ga')
-ga('create', tsi.GA, 'auto')
+})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${GA}`, 'ga')
+ga('create', GA, 'auto')
 ga('set', 'checkProtocolTask', function () {})
 
 browser.runtime.onMessage.addListener(request => {

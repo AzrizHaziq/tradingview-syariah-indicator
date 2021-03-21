@@ -1,6 +1,5 @@
-/* global tsi */
+import { GA } from '../helper'
 
-// Set current lang
 const currentI18N = browser.i18n.getMessage('js_popup_current_i18n')
 document.body.setAttribute('data-tsi-i18n', currentI18N)
 
@@ -42,7 +41,7 @@ document.querySelector('.tsi-refresh-icon').addEventListener('click', async func
   const { parentElement } = e.target
   parentElement.classList.add('is-refreshing')
 
-  browser.runtime.sendMessage({
+  await browser.runtime.sendMessage({
     type: 'ga',
     subType: 'event',
     payload: {
@@ -51,7 +50,7 @@ document.querySelector('.tsi-refresh-icon').addEventListener('click', async func
     },
   })
 
-  browser.runtime.sendMessage({ type: 'invalidate-cache' }).then(() => {
+  await browser.runtime.sendMessage({ type: 'invalidate-cache' }).then(() => {
     const x = setTimeout(() => {
       parentElement.classList.remove('is-refreshing')
       updateShariahDate()
@@ -95,6 +94,6 @@ function popupGa(eventAction, eventLabel) {
   a.src = g
   m.parentNode.insertBefore(a, m)
 })(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${tsi.GA}`, 'ga')
-ga('create', tsi.GA, 'auto')
+ga('create', GA, 'auto')
 ga('set', 'checkProtocolTask', function () {})
 ga('send', 'pageview', 'popup')
