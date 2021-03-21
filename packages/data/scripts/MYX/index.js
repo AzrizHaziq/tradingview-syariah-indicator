@@ -5,7 +5,7 @@ import cliProgress from 'cli-progress'
 import { writeToFile } from '../writeToFile.js'
 
 const TRADING_VIEW_MYX = 'MYX'
-export const MYX_FILENAME = 'contents/MYX.txt'
+export const MYX_FILENAME = 'summary/MYX.txt'
 
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 
