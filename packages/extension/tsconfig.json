@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015", // TODO: Set this to `es2020` after https://github.com/webpack/webpack/issues/10227
+    "target": "es2020", // TODO: Set this to `es2020` after https://github.com/webpack/webpack/issues/10227
     "declaration": false,
     "esModuleInterop": true,
     "jsx": "react",
