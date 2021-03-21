@@ -1,3 +1,4 @@
+import '../_global.scss'
 import { GA } from '../helper'
 
 const currentI18N = browser.i18n.getMessage('js_popup_current_i18n')
