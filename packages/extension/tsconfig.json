@@ -4,6 +4,7 @@
     "declaration": false,
     "esModuleInterop": true,
     "jsx": "react",
+//    "module": "es6",
     "moduleResolution": "node"
   },
   "include": ["src", "globals.d.ts", "webpack.config.ts"],

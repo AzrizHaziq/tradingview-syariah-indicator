@@ -2,16 +2,17 @@
   "presets": [
     "@babel/preset-env",
     "@babel/typescript",
-    "@babel/react"
+    "@babel/react",
+    "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime",
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "h",
-        "pragmaFrag": "DocumentFragment"
-      }
-    ]
+    "@babel/plugin-transform-runtime"
+//    [
+//      "@babel/plugin-transform-react-jsx",
+//      {
+//        "pragma": "h",
+//        "pragmaFrag": "DocumentFragment"
+//      }
+//    ]
   ]
 }

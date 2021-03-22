@@ -1,16 +1,17 @@
 import path from 'path'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
-import { Configuration } from 'webpack'
+import webpack, { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 
 module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   stats: {
     all: false,
     errors: true,
@@ -21,18 +22,20 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     'page/screener': './src/page/screener',
     'page/symbols': './src/page/symbols',
     'bg/background': './src/bg/background',
-    'popup/popup': './src/popup/popup',
+    'popup/popup': path.join(__dirname, 'src', 'popup', 'index.tsx'),
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
+      { test: /\.(ts|tsx)$/, loader: 'ts-loader', exclude: /node_modules/ },
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(js|jsx)$/,
+        use: [{ loader: 'source-map-loader' }, { loader: 'babel-loader' }],
         exclude: /node_modules/,
-        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
@@ -40,40 +43,53 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   plugins: [
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css',
       chunkFilename: '[name].css',
     }),
-    new Dotenv({
-      path: isProd() ? './.env.production' : './.env',
+    new Dotenv({ path: isProd() ? './.env.production' : './.env' }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'popup', 'index.html'),
+      filename: 'popup/popup.html',
+      chunks: ['popup/popup'],
+      cache: false,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'manifest.json',
+          to: path.join(__dirname, 'dist'),
+          force: true,
+          transform: function (content) {
+            // generates the manifest file using the package.json informations
+            return Buffer.from(
+              JSON.stringify({
+                ...JSON.parse(content.toString()),
+                version: process.env.npm_package_version,
+                description: process.env.npm_package_description,
+              })
+            )
+          },
+        },
+      ],
     }),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets', to: 'assets' },
         { from: '_locales', to: '_locales' },
-        {
-          from: 'src',
-          globOptions: {
-            ignore: ['**/*.ts', '**/*.tsx', '**/*.scss'],
-          },
-        },
-        // {
-        //   from: '../../node_modules/webext-base-css/webext-base.css',
-        //   to: 'options/',
-        // },
+        'manifest.json',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
       ],
     }),
-    new SizePlugin({
-      writeFile: false,
-    }),
-    new CleanWebpackPlugin(),
+    new SizePlugin({ writeFile: false }),
   ],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
