@@ -1,10 +1,10 @@
 import React from 'react'
-// import './Popup.scss'
+import './_Popup.scss'
 
 const Popup = () => {
   return (
     <div className='App'>
-      <header className='App-header'>
+      <header className='p-2 App-header'>
         <p>
           Edit <code>src/pages/Popup/Popup.js</code> and save to reload.
         </p>

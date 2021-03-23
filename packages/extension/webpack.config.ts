@@ -4,9 +4,9 @@ import SizePlugin from 'size-plugin'
 import webpack, { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 
@@ -26,7 +26,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     publicPath: '/',
   },
   module: {
@@ -39,7 +39,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
       },
     ],
   },
@@ -49,10 +49,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   plugins: [
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'style.css',
-      chunkFilename: '[name].css',
-    }),
+    new MiniCssExtractPlugin(),
     new Dotenv({ path: isProd() ? './.env.production' : './.env' }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'popup', 'index.html'),
@@ -72,7 +69,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
               JSON.stringify({
                 ...JSON.parse(content.toString()),
                 version: process.env.npm_package_version,
-                description: process.env.npm_package_description,
               })
             )
           },
@@ -83,7 +79,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       patterns: [
         { from: 'assets', to: 'assets' },
         { from: '_locales', to: '_locales' },
-        'manifest.json',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
         '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
       ],
