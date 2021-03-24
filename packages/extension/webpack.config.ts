@@ -18,10 +18,10 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     builtAt: true,
   },
   entry: {
-    'page/chart': './src/page/chart',
-    'page/screener': './src/page/screener',
-    'page/symbols': './src/page/symbols',
-    'bg/background': './src/bg/background',
+    'page/chart': path.join(__dirname, 'src', 'page', 'chart.ts'),
+    'page/screener': path.join(__dirname, 'src', 'page', 'screener.ts'),
+    'page/symbols': path.join(__dirname, 'src', 'page', 'symbols.ts'),
+    'bg/background': path.join(__dirname, 'src', 'bg', 'background.ts'),
     'popup/popup': path.join(__dirname, 'src', 'popup', 'index.tsx'),
   },
   output: {
