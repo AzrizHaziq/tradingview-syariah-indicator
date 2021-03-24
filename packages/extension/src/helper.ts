@@ -174,5 +174,5 @@ export function waitForElm(selector): Promise<any> {
     const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
     document.body.prepend(rootSvg)
   }
-  addStaticSyariahIcon()
+  // addStaticSyariahIcon()
 })()
