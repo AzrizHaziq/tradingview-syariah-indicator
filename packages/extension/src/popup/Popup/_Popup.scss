@@ -1,0 +1,9 @@
+
+.tsi-refresh-icon {
+  fill: white;
+
+  &:hover {
+    fill: theme("colors.green.500");
+    cursor: pointer;
+  }
+}
