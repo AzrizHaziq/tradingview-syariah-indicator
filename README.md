@@ -14,7 +14,7 @@ https://github.com/amree/tradingview-shariah-indicators
 
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Chrome now"
-   href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf">
+   href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf?utm_source=github&utm_medium=website&utm_campaign=shariah-invest">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_128x128.png" width="48" />
 </a>
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/eogackkjbjbbmlkbakekhaanphmnpkgf?color=blue&label=version)
@@ -24,7 +24,7 @@ https://github.com/amree/tradingview-shariah-indicators
 
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Firefox now" 
-   href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator/">
+   href="https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator?utm_source=github&utm_medium=website&utm_campaign=shariah-invest">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" />
 </a>
 ![Mozilla Add-on](https://img.shields.io/amo/v/tradingview-shariah-indicator?color=orange&label=version)
