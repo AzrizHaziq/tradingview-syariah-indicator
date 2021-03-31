@@ -1,5 +1,5 @@
 MYX
-updatedAt : Tue Mar 23 2021 10:16:23 GMT+0000 (Coordinated Universal Time)
+updatedAt : Wed Mar 31 2021 18:47:41 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -191,7 +191,6 @@ DNEX         : s
 DNEX-WD      : s
 DNONCE       : s
 DOLPHIN      : s
-DOLPHIN-WA   : s
 DOLPHIN-WB   : s
 DOMINAN      : s
 DPHARMA      : s
@@ -352,7 +351,6 @@ ICON-WA      : s
 ICONIC       : s
 IDBTECH      : s
 IDEAL        : s
-IDEAL-WB     : s
 IFCAMSC      : s
 IHH          : s
 IHS046000824 : s
@@ -460,6 +458,7 @@ LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
 LFECORP      : s
+LFECORP-OR   : s
 LIIHEN       : s
 LIONIND      : s
 LIONPSIM     : s
@@ -896,6 +895,7 @@ UTDPLT       : s
 UWC          : s
 UZMA         : s
 VC           : s
+VC-OR        : s
 VC-WB        : s
 VELESTO      : s
 VELESTO-WA   : s
