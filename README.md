@@ -32,11 +32,16 @@ https://github.com/amree/tradingview-shariah-indicators
 ![Mozilla Add-on](https://img.shields.io/amo/rating/tradingview-shariah-indicator?color=orange)
 
 
+Also available in: 
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Edge now" 
    href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
-    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="16" />
-    Using Edge? You can follow this guide to get the extension for Edge Browser.
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_128x128.png" width="24" />
+</a>
+<a target="_blank" rel="noopener noreferrer"
+   title="Download Tradingview Shariah indicator in Brave now" 
+   href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/brave/brave_128x128.png" width="24" />
 </a>
 
 ## Release 
