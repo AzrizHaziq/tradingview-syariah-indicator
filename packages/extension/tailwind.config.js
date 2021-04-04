@@ -24,4 +24,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    animation: false,
+  },
 }

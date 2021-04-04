@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import '../_global.scss'
 import './_index.scss'
-import Popup from './Popup/Popup'
+import { Popup } from './Components'
 import { GA } from '../helper'
 
 render(<Popup />, window.document.querySelector('#root'))

@@ -1,13 +1,24 @@
 {
+  "i18n": { "message": "en" },
   "ext_extension_name": { "message": "Tradingview Shariah Indicator" },
   "ext_extension_description": { "message": "Display small shariah indicator to stock list in Tradingview(MY)" },
-  "js_screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
-  "js_screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
-  "js_popup_version": { "message": "Current version" },
-  "js_popup_tg_group": { "message": "Telegram Group" },
-  "js_popup_github_repo": { "message": "Github repository" },
-  "js_popup_myx_current_shariah_list_at": { "message": "Malaysia current shariah list at" },
-  "js_popup_author_by": { "message": "By: " },
-  "js_popup_current_i18n": { "message": "en" },
-  "js_popup_refresh_icon": { "message": "Refresh data" }
+  "screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
+  "screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
+  "popup_version": { "message": "Current version" },
+  "popup_tg_group": { "message": "Telegram Group" },
+  "popup_github_repo": { "message": "Github repository" },
+  "popup_refresh_icon": { "message": "Refresh data" },
+  "popup_loading_icon": { "message": "Fetching latest data" },
+  "popup_bug_or_suggestion": { "message": "Bug/suggestion" },
+  "popup_interested_to_contribute": { "message": "Interested to contribute" },
+  "popup_list_at": {
+    "message": "$URL$ current shariah list at",
+    "description": "For tooltip",
+    "placeholders": {
+      "url" : {
+        "content" : "$1",
+        "example" : "Malaysia"
+      }
+    }
+  }
 }
