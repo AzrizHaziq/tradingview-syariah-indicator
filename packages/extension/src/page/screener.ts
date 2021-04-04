@@ -1,4 +1,3 @@
-/* global tsi */
 import {
   createIcon,
   waitForElm,
@@ -9,8 +8,10 @@ import {
   addStyle,
   attributeName,
   extensionName,
+  addStaticSyariahIcon,
 } from '../helper'
 
+addStaticSyariahIcon()
 browser.runtime.sendMessage({
   type: 'ga',
   subType: 'pageview',
