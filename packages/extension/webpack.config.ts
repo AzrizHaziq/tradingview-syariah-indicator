@@ -87,8 +87,14 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all',
-      name: 'common',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+          reuseExistingChunk: true,
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
