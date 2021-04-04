@@ -5,16 +5,13 @@
   "scripts": {
     "test": "npm run build && xo",
     "build": "NODE_ENV=production webpack --mode=production",
+    "postbuild": "web-ext lint",
     "watch": "webpack --mode=development --watch",
-    "release:chrome": "cd dist && webstore upload --auto-publish",
-    "release:firefox": "cd dist && web-ext-submit",
-    "watch:ff": "web-ext run -s dist",
-    "watch:c": "npm run watch:ff -- --target=chromium",
-    "start": "web-ext run --start-url https://tradingview.com/symbols/MYX-k1/ about:debugging#/runtime/this-firefox",
+    "watch:ff": "web-ext run",
+    "watch:c": "yarn watch:ff --target=chromium",
     "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
-    "prebuilda": "node script/build-prod.js",
-    "builda": "web-ext --config=config/web-ext-prod.cjs --source-dir=temp-dist build",
-    "postbuilda": "rimraf temp-dist/"
+    "release:chrome": "cd dist && webstore upload --auto-publish",
+    "release:firefox": "cd dist && web-ext-submit"
   },
   "dependencies": {
     "element-ready": "^5.0.0",
@@ -79,15 +76,8 @@
     "xo": "^0.38.2"
   },
   "engines": {
-    "node": "15.12.0"
-  },
-  "webExt": {
-    "sourceDir": "dist",
-    "run": {
-      "startUrl": [
-        "https://www.tradingview.com/symbols/MYX-PTRANS/"
-      ]
-    }
+    "node": "15.12.0",
+    "yarn": "1.22.10"
   },
   "stylelint": {
     "extends": "stylelint-config-xo"

@@ -4,10 +4,16 @@
   "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
   "engines": {
-    "node": "15.12.0"
+    "node": "15.12.0",
+    "yarn": "1.22.10"
   },
   "scripts": {
-    "ghAction:update-data": "lerna run --scope @app/data --stream ghAction"
+    "start": "lerna run --scope @app/extension --stream watch",
+    "c": "lerna run --scope @app/extension --stream watch:c",
+    "ff": "lerna run --scope @app/extension --stream watch:ff",
+    "build": "lerna run --scope @app/extension --stream build",
+    "update-data": "lerna run --scope @app/data --stream update-data",
+    "ghAction": "lerna run --scope @app/data --stream ghAction"
   },
   "workspaces": {
     "packages": [
