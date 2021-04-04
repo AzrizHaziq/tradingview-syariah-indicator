@@ -1,0 +1,18 @@
+
+.tsi-refresh-icon {
+  fill: white;
+
+  &:hover {
+    fill: theme("colors.green.500");
+    cursor: pointer;
+  }
+}
+
+.tsi-loading-icon {
+  animation: spinner 1s infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg) }
+  to { transform: rotate(359deg) }
+}

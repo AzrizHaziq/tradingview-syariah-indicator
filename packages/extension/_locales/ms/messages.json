@@ -1,13 +1,24 @@
 {
+  "i18n": { "message": "ms" },
   "ext_extension_name": { "message": "Petunjuk Shariah Tradingview" },
   "ext_extension_description": { "message": "Paparkan penunjuk syariah kecil ke senarai saham dalam Tradingview(MY)" },
-  "js_screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
-  "js_screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
-  "js_popup_version": { "message": "Versi terkini" },
-  "js_popup_tg_group": { "message": "Telegram kumpulan" },
-  "js_popup_github_repo": { "message": "Repositori Github" },
-  "js_popup_myx_current_shariah_list_at": { "message": "Senarai syariah Malaysia terkini pada" },
-  "js_popup_author_by": { "message": "Oleh: " },
-  "js_popup_current_i18n": { "message": "ms" },
-  "js_popup_refresh_icon": { "message": "Kemaskini data" }
+  "screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
+  "screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
+  "popup_version": { "message": "Versi terkini" },
+  "popup_tg_group": { "message": "Telegram kumpulan" },
+  "popup_github_repo": { "message": "Repositori Github" },
+  "popup_refresh_icon": { "message": "Kemaskini data" },
+  "popup_loading_icon": { "message": "Mengambil data terkini" },
+  "popup_bug_or_suggestion": { "message":  "Pepijat/cadangan" },
+  "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
+  "popup_list_at": {
+    "message": "Senarai syariah $URL$ terkini pada",
+    "description": "Untuk tooltip",
+    "placeholders": {
+      "url" : {
+        "content" : "$1",
+        "example" : "Malaysia"
+      }
+    }
+  }
 }
