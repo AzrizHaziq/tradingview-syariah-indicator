@@ -3,8 +3,7 @@ import { dateDiffInDays, debounce, GA, isValidDate } from '../helper'
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
 const fetchData = async (shouldRefreshData = false) => {
-  let jsonUrl =
-    'https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/stock-list.json'
+  let jsonUrl = process.env.FETCH_URL
 
   if (shouldRefreshData) {
     jsonUrl += `?r=${Math.random()}`
