@@ -9,6 +9,8 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
+const dotEnvPath = isProd() ? './.env.production' : './.env'
+require('dotenv').config({ path: dotEnvPath })
 
 module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
   devtool: 'cheap-module-source-map',
@@ -50,7 +52,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    new Dotenv({ path: isProd() ? './.env.production' : './.env' }),
+    new Dotenv({ path: dotEnvPath }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'popup', 'index.html'),
       filename: 'popup/popup.html',
@@ -64,13 +66,17 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
           to: path.join(__dirname, 'dist'),
           force: true,
           transform: function (content) {
-            // generates the manifest file using the package.json informations
-            return Buffer.from(
-              JSON.stringify({
-                ...JSON.parse(content.toString()),
-                version: process.env.npm_package_version,
-              })
-            )
+            const manifestJson = JSON.parse(content.toString())
+            const connectSelf = ['https://www.google-analytics.com', process.env.FETCH_URL].join(' ')
+
+            const output = {
+              ...manifestJson,
+              version: process.env.npm_package_version,
+              // write our FETCH_URL into csp
+              content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
+            }
+
+            return Buffer.from(JSON.stringify(output))
           },
         },
       ],
