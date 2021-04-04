@@ -93,10 +93,6 @@ export function myxFilenameTransformer(data, flagId = 'MYX') {
       temp.push('s')
     }
 
-    if ('msc' in value) {
-      temp.push('msc')
-    }
-
     return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${temp.join(', ')}`
   }
 
