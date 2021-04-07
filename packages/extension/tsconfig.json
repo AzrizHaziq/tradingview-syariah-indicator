@@ -7,6 +7,6 @@
 //    "module": "es6",
     "moduleResolution": "node"
   },
-  "include": ["src", "globals.d.ts", "webpack.config.ts"],
+  "include": ["src/**/*", "globals.d.ts", "webpack.config.ts"],
   "exclude": ["dist", "node_modules"]
 }

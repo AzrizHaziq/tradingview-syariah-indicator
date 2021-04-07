@@ -1,9 +1,9 @@
-import { TSI_BG_MSG } from '../types'
-import { dateDiffInDays, debounce, GA, isValidDate } from '../helper'
+import { dateDiffInDays, debounce, initGa, isValidDate } from '../helper'
 
+initGa()
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
-const fetchData = async (shouldRefreshData = false) => {
+const fetchData = async (shouldRefreshData = false): Promise<Record<'MYX', TSI.SHARIAH_LIST>> => {
   let jsonUrl = process.env.FETCH_URL
 
   if (shouldRefreshData) {
@@ -55,7 +55,7 @@ async function listener(id, { status }, { url }) {
   }
 }
 
-async function setMYXStorages({ list, updatedAt }) {
+async function setMYXStorages({ list, updatedAt }: TSI.SHARIAH_LIST): Promise<void> {
   try {
     await browser.storage.local.set({
       MYX: {
@@ -68,25 +68,7 @@ async function setMYXStorages({ list, updatedAt }) {
   }
 }
 
-// prettier-ignore
-;(function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r
-  ;(i[r] =
-    i[r] ||
-    function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }),
-    // @ts-ignore
-    (i[r].l = 1 * new Date())
-  ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
-  a.async = 1
-  a.src = g
-  m.parentNode.insertBefore(a, m)
-})(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${GA}`, 'ga')
-ga('create', GA, 'auto')
-ga('set', 'checkProtocolTask', function () {})
-
-browser.runtime.onMessage.addListener((request: TSI_BG_MSG) => {
+browser.runtime.onMessage.addListener((request: TSI.EVENT_MSG) => {
   if (request.type === 'ga') {
     if (request.subType === 'pageview') {
       ga('send', 'pageview', request.payload)
