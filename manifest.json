@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.7.5",
+  "version": "1.7.6",
   "default_locale": "en",
   "author": "Azriz Haziq Jasni",
   "name": "__MSG_ext_extension_name__",
@@ -48,7 +48,6 @@
     }
   ],
   "permissions": [
-    "tabs",
     "storage",
     "*://*.tradingview.com/*"
   ],
