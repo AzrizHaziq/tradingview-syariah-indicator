@@ -1,15 +1,15 @@
 {
   "name": "@app/extension",
-  "version": "1.7.5",
+  "version": "2.0.0",
+  "description": "Display small shariah indicator to stock list in Tradingview(MY)",
   "private": true,
   "scripts": {
-    "test": "npm run build && xo",
-    "build": "NODE_ENV=production webpack --mode=production",
-    "postbuild": "web-ext lint",
     "watch": "webpack --mode=development --watch",
     "watch:ff": "web-ext run",
     "watch:c": "yarn watch:ff --target=chromium",
-    "start:chrome": "web-ext run --target chromium --start-url https://tradingview.com/symbols/MYX-k1",
+    "test": "npm run build && xo",
+    "build": "NODE_ENV=production webpack --mode=production",
+    "postbuild": "web-ext lint",
     "release:chrome": "cd dist && webstore upload --auto-publish",
     "release:firefox": "cd dist && web-ext-submit"
   },
