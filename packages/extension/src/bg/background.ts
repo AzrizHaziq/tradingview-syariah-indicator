@@ -1,3 +1,4 @@
+import { TSI_BG_MSG } from '../types'
 import { dateDiffInDays, debounce, GA, isValidDate } from '../helper'
 
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
@@ -11,7 +12,7 @@ const fetchData = async (shouldRefreshData = false) => {
 
   try {
     const res = await fetch(jsonUrl)
-    return await res.json()
+    return JSON.parse(await res.text())
   } catch (e) {
     console.error('Github json when wrong', e)
   }
@@ -85,7 +86,7 @@ async function setMYXStorages({ list, updatedAt }) {
 ga('create', GA, 'auto')
 ga('set', 'checkProtocolTask', function () {})
 
-browser.runtime.onMessage.addListener(request => {
+browser.runtime.onMessage.addListener((request: TSI_BG_MSG) => {
   if (request.type === 'ga') {
     if (request.subType === 'pageview') {
       ga('send', 'pageview', request.payload)

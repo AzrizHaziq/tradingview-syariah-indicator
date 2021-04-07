@@ -61,6 +61,12 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     }),
     new CopyWebpackPlugin({
       patterns: [
+        { from: 'assets', to: 'assets' },
+        { from: '_locales', to: '_locales' },
+        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
+        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
+
+        // customising manifest.json
         {
           from: 'manifest.json',
           to: path.join(__dirname, 'dist'),
@@ -79,14 +85,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
             return Buffer.from(JSON.stringify(output))
           },
         },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'assets', to: 'assets' },
-        { from: '_locales', to: '_locales' },
-        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
-        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
       ],
     }),
     new SizePlugin({ writeFile: false }),
