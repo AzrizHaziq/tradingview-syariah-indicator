@@ -1,5 +1,5 @@
 MYX
-updatedAt : Wed Mar 31 2021 18:47:41 GMT+0800 (Malaysia Time)
+updatedAt : Sat Apr 10 2021 16:24:37 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -115,6 +115,7 @@ BTECH        : s
 BTM          : s
 BTM-WB       : s
 BURSA        : s
+BVLH         : s
 CABNET       : s
 CABNET-WA    : s
 CAELY        : s
@@ -301,7 +302,6 @@ GTRONIC      : s
 GUH          : s
 HANDAL       : s
 HARBOUR      : s
-HARBOUR-WC   : s
 HARNLEN      : s
 HARNLEN-WB   : s
 HARTA        : s
@@ -438,8 +438,6 @@ KSL          : s
 KSSC         : s
 KTB          : s
 KTG          : s
-KTG-PA       : s
-KTG-WA       : s
 KUB          : s
 KWANTAS      : s
 KYM          : s
@@ -458,7 +456,6 @@ LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
 LFECORP      : s
-LFECORP-OR   : s
 LIIHEN       : s
 LIONIND      : s
 LIONPSIM     : s
@@ -605,6 +602,7 @@ OFI          : s
 OIB          : s
 OKA          : s
 OMESTI       : s
+OMESTI-WC    : s
 OPCOM        : s
 OPENSYS      : s
 OPTIMAX      : s
@@ -733,7 +731,6 @@ SAPNRG-WA    : s
 SAPRES       : s
 SASBADI      : s
 SAUDEE       : s
-SAUDEE-WA    : s
 SBCCORP      : s
 SCABLE       : s
 SCBUILD      : s
@@ -895,7 +892,6 @@ UTDPLT       : s
 UWC          : s
 UZMA         : s
 VC           : s
-VC-OR        : s
 VC-WB        : s
 VELESTO      : s
 VELESTO-WA   : s
