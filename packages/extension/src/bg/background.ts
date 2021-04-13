@@ -2,9 +2,10 @@ import { browser } from 'webextension-polyfill-ts'
 import { dateDiffInDays, debounce, initGa, isValidDate } from '../helper'
 
 initGa()
+fetchData()
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
-const fetchData = async (shouldRefreshData = false): Promise<Record<'MYX', TSI.SHARIAH_LIST>> => {
+async function fetchData(shouldRefreshData = false): Promise<Record<string, TSI.SHARIAH_LIST>> {
   let jsonUrl = process.env.FETCH_URL
 
   if (shouldRefreshData) {
@@ -19,16 +20,12 @@ const fetchData = async (shouldRefreshData = false): Promise<Record<'MYX', TSI.S
   }
 }
 
-// just trigger get first in bg script
-fetchData()
-
-const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
-
 async function listener(id, { status }, { url }) {
   if (status === 'loading') {
     return
   }
 
+  const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
   // filter out invalid url
   if (!validUrls.some(validUrl => new RegExp(validUrl).test(url))) {
     return
@@ -46,9 +43,8 @@ async function listener(id, { status }, { url }) {
       console.log('>>> Cache')
     } else {
       console.log('>>> API')
-      const { MYX } = await fetchData()
-      await setMYXStorages(MYX)
-
+      const response = await fetchData()
+      Object.entries(response).forEach(setStorages)
       await browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() })
     }
   } catch (e) {
@@ -56,39 +52,34 @@ async function listener(id, { status }, { url }) {
   }
 }
 
-async function setMYXStorages({ list, updatedAt }: TSI.SHARIAH_LIST): Promise<void> {
+async function setStorages([exchange, { list, updatedAt }]: [string, TSI.SHARIAH_LIST]): Promise<void> {
   try {
-    await browser.storage.local.set({
-      MYX: {
-        list, // must save in list key
-        updatedAt,
-      },
-    })
+    await browser.storage.local.set({ [exchange]: { list, updatedAt } })
   } catch (e) {
-    console.error('Error set MYX storage', e)
+    console.error(`Error set ${exchange} storage`, e)
   }
 }
 
-browser.runtime.onMessage.addListener((request: TSI.EVENT_MSG) => {
-  if (request.type === 'ga') {
-    if (request.subType === 'pageview') {
-      ga('send', 'pageview', request.payload)
+browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
+  if (req.type === 'ga') {
+    if (req.subType === 'pageview') {
+      ga('send', 'pageview', req.payload)
     }
 
-    if (request.subType === 'event') {
+    if (req.subType === 'event') {
       ga('send', {
         hitType: 'event',
-        ...request.payload,
+        ...req.payload,
       })
     }
   }
 
-  if (request.type === 'invalidate-cache') {
+  if (req.type === 'invalidate-cache') {
     return browser.storage.local
       .set({ LAST_FETCH_AT: null })
       .then(() => console.log('>>> INVALIDATE CACHE'))
       .then(() => fetchData(true))
-      .then(({ MYX }) => setMYXStorages(MYX))
+      .then(response => Object.entries(response).forEach(setStorages))
       .then(() => browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() }))
   }
 })

@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from 'react'
 
-const initState: Flag[] = [
+export const initState: Flag[] = [
   {
     id: 'MYX',
     src: '/assets/flag/MYX.svg',
@@ -13,7 +13,7 @@ const initState: Flag[] = [
 ]
 
 export interface Flag {
-  id: 'MYX'
+  id: string | 'MYX'
   src: string
   alt: string
   width: string
@@ -39,6 +39,7 @@ function currentDateReducer(state: State, action: Action): State {
         if (flag.id === action.payload.flag) {
           return { ...flag, updatedAt: action.payload.updatedAt }
         }
+
         return flag
       })
     default: {

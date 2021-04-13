@@ -20,7 +20,7 @@ export const Flags: FC = () => {
   return (
     <>
       {dates.map((flag: Flag, i: number) => {
-        const { updatedAt, ...res } = flag
+        const { updatedAt, displayUrl, ...res } = flag
         const popup_list_at = getMessage('popup_list_at', flag.alt)
 
         return (
@@ -28,8 +28,8 @@ export const Flags: FC = () => {
             key={i}
             target='_blank'
             rel='noopener noreferrer'
+            href={displayUrl}
             title={popup_list_at}
-            href={flag.displayUrl}
             onClick={_popupGa('click', 'shariahAt')}
             className='cursor-pointer flex items-center text-gray-300 hover:underline'>
             <img {...res} />
