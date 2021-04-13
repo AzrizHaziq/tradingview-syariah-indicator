@@ -3,3 +3,5 @@ dist
 *.map
 .env
 .env.production
+
+*.log
