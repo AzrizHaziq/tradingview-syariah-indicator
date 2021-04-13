@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import { _popupGa } from '../../Helpers'
+import { getMessage } from '../../../helper'
 
-const name = browser.i18n.getMessage('ext_extension_name')
+const name = getMessage('ext_extension_name')
 const githubUrl = 'https://azrizhaziq.github.io/tradingview-syariah-indicator'
 
 export const Header: FC = () => (

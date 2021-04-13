@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
 import { _popupGa } from '../../Helpers'
+import { getMessage } from '../../../helper'
+import { browser } from 'webextension-polyfill-ts'
 
 const { version } = browser.runtime.getManifest()
 const releaseUrl = 'https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'
-const popup_version = browser.i18n.getMessage('popup_version')
+const popup_version = getMessage('popup_version')
 
 export const Version: FC = () => (
   <a

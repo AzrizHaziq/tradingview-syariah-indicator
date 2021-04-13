@@ -1,3 +1,4 @@
+import { browser } from 'webextension-polyfill-ts'
 import { dateDiffInDays, debounce, initGa, isValidDate } from '../helper'
 
 initGa()

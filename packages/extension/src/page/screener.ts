@@ -1,3 +1,5 @@
+import { browser } from 'webextension-polyfill-ts'
+
 import {
   createIcon,
   waitForElm,
@@ -9,6 +11,7 @@ import {
   attributeName,
   extensionName,
   addStaticSyariahIcon,
+  getMessage,
 } from '../helper'
 
 addStaticSyariahIcon()
@@ -61,8 +64,8 @@ const shariah = {
     }
   },
   status: {
-    true: browser.i18n.getMessage('js_screener_filter_btn_shariah_on'),
-    false: browser.i18n.getMessage('js_screener_filter_btn_shariah_off'),
+    true: getMessage('js_screener_filter_btn_shariah_on'),
+    false: getMessage('js_screener_filter_btn_shariah_off'),
   },
 }
 

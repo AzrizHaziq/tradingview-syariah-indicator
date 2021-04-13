@@ -9,6 +9,7 @@
     "watch:c": "yarn watch:ff --target=chromium",
     "test": "npm run build && xo",
     "build": "NODE_ENV=production webpack --mode=production",
+    "build:2": "ENABLE_BA=true yarn build",
     "postbuild": "web-ext lint",
     "release:chrome": "cd dist && webstore upload --auto-publish",
     "release:firefox": "cd dist && web-ext-submit"
@@ -22,7 +23,7 @@
     "webext-domain-permission-toggle": "^2.0.0",
     "webext-dynamic-content-scripts": "^7.0.0",
     "webext-options-sync": "^2.0.1",
-    "webextension-polyfill": "^0.7.0"
+    "webextension-polyfill-ts": "^0.25.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -72,6 +73,7 @@
     "web-ext": "^6.0.0",
     "web-ext-submit": "^6.0.0",
     "webpack": "^5.17.0",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.4.0",
     "xo": "^0.38.2"
   },
