@@ -1,5 +1,6 @@
 import './_Popup.scss'
 import React, { useEffect } from 'react'
+import { browser } from 'webextension-polyfill-ts'
 
 import { CurrentDateProvider } from '../../Context'
 import { RefreshData, Version, Header, Flags, Footer } from './../index'

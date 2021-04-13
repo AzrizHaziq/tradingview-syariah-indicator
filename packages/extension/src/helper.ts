@@ -1,3 +1,5 @@
+import { browser } from 'webextension-polyfill-ts'
+
 const GA = process.env.GA
 let SHARIAH_LIST = new Map()
 const parser = new DOMParser()
@@ -191,4 +193,8 @@ export function initGa(): void {
   })(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${GA}`, 'ga')
   ga('create', GA, 'auto')
   ga('set', 'checkProtocolTask', function () {})
+}
+
+export function getMessage(messageName: string, substitutions?: any): string {
+  return browser.i18n.getMessage(messageName, substitutions)
 }

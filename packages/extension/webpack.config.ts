@@ -2,11 +2,11 @@ import path from 'path'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
 import webpack, { Configuration } from 'webpack'
-import TerserPlugin from 'terser-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -47,6 +47,11 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      'webextension-polyfill-ts': path.resolve(
+        path.join(__dirname, '../../', 'node_modules', 'webextension-polyfill-ts')
+      ),
+    },
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -63,10 +68,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       patterns: [
         { from: 'assets', to: 'assets' },
         { from: '_locales', to: '_locales' },
-        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js',
-        '../../node_modules/webextension-polyfill/dist/browser-polyfill.js.map',
-
-        // customising manifest.json
         {
           from: 'manifest.json',
           to: path.join(__dirname, 'dist'),
@@ -88,30 +89,22 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       ],
     }),
     new SizePlugin({ writeFile: false }),
-  ],
+    process.env.ENABLE_BA ? new BundleAnalyzerPlugin() : undefined,
+  ].filter(Boolean),
   optimization: {
     splitChunks: {
       cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
+        vendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
           name: 'vendor',
           chunks: 'all',
-          reuseExistingChunk: true,
+        },
+        'browser-polyfill': {
+          test: /[\\/]node_modules[\\/](webextension-polyfill-ts|webextension-polyfill)/,
+          name: 'browser-polyfill',
+          chunks: 'all',
         },
       },
     },
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        terserOptions: {
-          mangle: true,
-          compress: true,
-          output: {
-            beautify: false,
-            indent_level: 2,
-          },
-        },
-      }),
-    ],
   },
 })

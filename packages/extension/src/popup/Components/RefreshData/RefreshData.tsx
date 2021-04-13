@@ -1,9 +1,11 @@
 import './RefreshData.scss'
 import React, { FC, useState } from 'react'
+import { getMessage } from '../../../helper'
+import { browser } from 'webextension-polyfill-ts'
 import { setUpdateAt, useCurrentDateDispatch } from '../../Context'
 
-const popup_refresh_icon = browser.i18n.getMessage('popup_refresh_icon')
-const popup_loading_icon = browser.i18n.getMessage('popup_loading_icon')
+const popup_refresh_icon = getMessage('popup_refresh_icon')
+const popup_loading_icon = getMessage('popup_loading_icon')
 
 const LoadingIcon = (
   <svg className='tsi-loading-icon mr-1' xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'>

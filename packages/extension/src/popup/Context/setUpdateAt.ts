@@ -1,3 +1,5 @@
+import { browser } from 'webextension-polyfill-ts'
+
 export async function setUpdateAt(): Promise<Record<string, string>> {
   try {
     const {

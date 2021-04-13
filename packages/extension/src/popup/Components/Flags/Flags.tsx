@@ -1,5 +1,6 @@
 import { _popupGa } from '../../Helpers'
 import React, { FC, useEffect } from 'react'
+import { getMessage } from '../../../helper'
 import { Flag, setUpdateAt, useCurrentDate } from '../../Context'
 
 export const Flags: FC = () => {
@@ -20,7 +21,7 @@ export const Flags: FC = () => {
     <>
       {dates.map((flag: Flag, i: number) => {
         const { updatedAt, ...res } = flag
-        const popup_list_at = browser.i18n.getMessage('popup_list_at', flag.alt)
+        const popup_list_at = getMessage('popup_list_at', flag.alt)
 
         return (
           <a
