@@ -2,7 +2,10 @@ import { browser } from 'webextension-polyfill-ts'
 import { dateDiffInDays, debounce, initGa, isValidDate } from '../helper'
 
 initGa()
-fetchData()
+;(async () => {
+  await fetchData()
+})()
+
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
 async function fetchData(shouldRefreshData = false): Promise<Record<string, TSI.SHARIAH_LIST>> {

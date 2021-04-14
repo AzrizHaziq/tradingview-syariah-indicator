@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from 'react'
 
-export const initState: Flag[] = [
+export const initState: TSI.Flag[] = [
   {
     id: 'MYX',
     src: '/assets/flag/MYX.svg',
@@ -12,17 +12,7 @@ export const initState: Flag[] = [
   },
 ]
 
-export interface Flag {
-  id: string | 'MYX'
-  src: string
-  alt: string
-  width: string
-  height: string
-  displayUrl: string
-  updatedAt: Date | string
-}
-
-type State = Flag[]
+type State = TSI.Flag[]
 type Dispatch = (action: Action) => void
 type CountProviderProps = { children: React.ReactNode }
 type Action = { type: 'init' } | { type: 'set-flag-update-at'; payload: { flag: string; updatedAt: Date | string } }

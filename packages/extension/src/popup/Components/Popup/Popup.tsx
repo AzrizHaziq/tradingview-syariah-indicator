@@ -7,7 +7,7 @@ import { RefreshData, Version, Header, Flags, Footer } from './../index'
 
 const { author } = browser.runtime.getManifest()
 
-export const Popup = () => {
+export function Popup(): JSX.Element {
   useEffect(() => {
     document.body.focus()
   }, [])
@@ -48,5 +48,3 @@ export const Popup = () => {
     </CurrentDateProvider>
   )
 }
-
-export default Popup

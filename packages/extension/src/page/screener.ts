@@ -15,11 +15,13 @@ import {
 } from '../helper'
 
 addStaticSyariahIcon()
-browser.runtime.sendMessage({
-  type: 'ga',
-  subType: 'pageview',
-  payload: getCurrentPathname(),
-})
+;(async () => {
+  await browser.runtime.sendMessage({
+    type: 'ga',
+    subType: 'pageview',
+    payload: getCurrentPathname(),
+  })
+})()
 
 const ONLY_VALID_COUNTRIES = ['my']
 
@@ -52,7 +54,7 @@ const shariah = {
 
     return icon
   },
-  onClick: wrapperElement => async e => {
+  onClick: (wrapperElement: Element) => async (e: Event & { target: { checked: boolean } }) => {
     try {
       shariah.currentState = e.target.checked
 
@@ -106,7 +108,8 @@ async function mainScreenerScript() {
 }
 
 function observedTableChanges() {
-  let observer
+  // eslint-disable-next-line prefer-const
+  let observer: MutationObserver
 
   if (observer) {
     console.log('Already observe table changes')
@@ -149,7 +152,8 @@ function observedTableChanges() {
 }
 
 function observedCountryFlagChanges() {
-  let observer
+  // eslint-disable-next-line prefer-const
+  let observer: MutationObserver
 
   if (observer) {
     console.log('Already observe flag changes')
@@ -234,7 +238,7 @@ function setupFilterBtn(state) {
     try {
       await state.onClick(wrapper)(e)
 
-      browser.runtime.sendMessage({
+      await browser.runtime.sendMessage({
         type: 'ga',
         subType: 'event',
         payload: {

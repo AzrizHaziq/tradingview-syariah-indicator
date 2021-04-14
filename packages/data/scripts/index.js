@@ -15,6 +15,7 @@ async function commitChangesIfAny() {
   }
 }
 
+// eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
     const MYX_INFO = await MYX()

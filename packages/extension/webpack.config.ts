@@ -10,8 +10,9 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
-require('dotenv').config({ path: dotEnvPath })
+require('dotenv').config({ path: dotEnvPath }) // eslint-disable-line @typescript-eslint/no-var-requires
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
   devtool: 'cheap-module-source-map',
   stats: {
