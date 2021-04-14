@@ -1,3 +1,3 @@
-declare function ga(...args: (string | object)[]): void
+declare function ga(...args: any[]): void
 
 declare module '*.svg'

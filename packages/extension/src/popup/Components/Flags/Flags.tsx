@@ -1,7 +1,7 @@
 import { _popupGa } from '../../Helpers'
 import React, { FC, useEffect } from 'react'
 import { getMessage } from '../../../helper'
-import { Flag, setUpdateAt, useCurrentDate } from '../../Context'
+import { setUpdateAt, useCurrentDate } from '../../Context'
 
 export const Flags: FC = () => {
   const [dates, dispatch] = useCurrentDate()
@@ -19,7 +19,7 @@ export const Flags: FC = () => {
 
   return (
     <>
-      {dates.map((flag: Flag, i: number) => {
+      {dates.map((flag: TSI.Flag, i: number) => {
         const { updatedAt, displayUrl, ...res } = flag
         const popup_list_at = getMessage('popup_list_at', flag.alt)
 

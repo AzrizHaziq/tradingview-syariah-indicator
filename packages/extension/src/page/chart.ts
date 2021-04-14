@@ -10,14 +10,15 @@ import {
   observeNodeChanges,
   addStaticSyariahIcon,
 } from '../helper'
+;(async () => {
+  await browser.runtime.sendMessage({
+    type: 'ga',
+    subType: 'pageview',
+    payload: 'chart',
+  })
+})()
 
 addStaticSyariahIcon()
-browser.runtime.sendMessage({
-  type: 'ga',
-  subType: 'pageview',
-  payload: 'chart',
-})
-
 waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
 
 function mainScript() {

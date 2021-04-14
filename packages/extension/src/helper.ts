@@ -7,24 +7,24 @@ const TRADING_VIEW_MYR = 'MYX'
 export const attributeName = 'data-indicator'
 export const extensionName = 'tradingview-syariah-indicator'
 
-export async function setStockListInMap(): Promise<Map<any, any>> {
-  let MYX = {}
+export async function setStockListInMap(): Promise<Map<string, [string, { s: 0 | 1 }]>> {
+  async function grabInStorage(exchange: string): Promise<TSI.ITEM> {
+    try {
+      const {
+        [exchange]: { list },
+      } = await browser.storage.local.get(exchange)
 
-  try {
-    let {
-      MYX: { list: MYX_LIST },
-    } = await browser.storage.local.get('MYX')
-
-    MYX = MYX_LIST
-  } catch (e) {
-    console.warn('Tradingview Shariah Indicator: Please refresh the browser')
+      return list
+    } catch (e) {
+      console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
+    }
   }
 
-  function prefixStocksWithExchange(list = {}, exchange: 'MYX'): any[] {
+  function prefixStocksWithExchange(list: TSI.ITEM = {}, exchange: 'MYX'): [string, { s: 0 | 1 }][] {
     return Object.entries(list).map(([key, value]) => [`${exchange}:${key}`, value])
   }
 
-  SHARIAH_LIST = new Map([...prefixStocksWithExchange(MYX, TRADING_VIEW_MYR)])
+  SHARIAH_LIST = new Map([...prefixStocksWithExchange(await grabInStorage(TRADING_VIEW_MYR), TRADING_VIEW_MYR)])
   return SHARIAH_LIST
 }
 
@@ -83,12 +83,12 @@ export function dateDiffInDays(a: Date, b: Date): number {
   return Math.floor((utc2 - utc1) / _MS_PER_DAY)
 }
 
-export function debounce(func, wait, immediate): () => void {
+export function debounce(func: (...unknown) => void, wait: number, immediate: boolean): () => void {
   let timeout
 
   return function executedFunction() {
-    const context = this
-    const args = arguments
+    const context = this // eslint-disable-line @typescript-eslint/no-this-alias
+    const args = arguments // eslint-disable-line prefer-rest-params
 
     const later = function () {
       timeout = null
@@ -115,8 +115,9 @@ export function observeNodeChanges(
   nodeToObserve: Element,
   cb: () => unknown,
   options = { childList: true, subtree: true }
-) {
-  let observer
+): MutationObserver {
+  // eslint-disable-next-line prefer-const
+  let observer: MutationObserver
 
   if (observer) {
     console.log(`Already observe changes`)
@@ -130,7 +131,7 @@ export function observeNodeChanges(
   return observer
 }
 
-export function waitForElm(selector): Promise<any> {
+export function waitForElm(selector: string): Promise<Element> {
   return new Promise(resolve => {
     if (document.querySelector(selector)) {
       return resolve(document.querySelector(selector))
@@ -150,14 +151,14 @@ export function waitForElm(selector): Promise<any> {
   })
 }
 
-export function addStaticSyariahIcon() {
+export function addStaticSyariahIcon(): void {
   // only add icon if static icon is not existed yet in DOM
   if (document.body.querySelector(`[${attributeName}="root-${extensionName}]`)) {
     return
   }
 
   const rootIcon = `
-     <svg ${attributeName}="root-${extensionName}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="0">
+     <svg ${attributeName}="root-${extensionName}" xmlns="http://www.w3.org/2000/svg" height="0">
        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="-12 0 512 512.001" id="shariah-icon">
         <path d="m481.414062 387.503906c-46.253906 75.460938-129.484374 125.507813-224.226562 124.480469-142.894531-1.546875-257.1875-117.976563-257.1875-261.953125 0-115.910156 74.722656-214.253906 178.257812-248.757812 4.996094-1.664063 9.546876 3.523437 7.28125 8.308593-16.441406 34.6875-25.527343 73.601563-25.222656 114.691407 1.070313 144.238281 116.875 260 260.039063 260 18.78125 0 37.082031-2.007813 54.730469-5.832032 5.136718-1.113281 9.089843 4.554688 6.328124 9.0625zm0 0"
             fill="#2ecc71"></path>
@@ -176,6 +177,7 @@ export function addStaticSyariahIcon() {
 }
 
 export function initGa(): void {
+  /* eslint-disable */
   // prettier-ignore
   ;(function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r
@@ -183,18 +185,19 @@ export function initGa(): void {
       i[r] ||
       function () {
         (i[r].q = i[r].q || []).push(arguments)
-      }),
-      // @ts-ignore
+      });
+    // @ts-ignore
       (i[r].l = 1 * new Date())
-    ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+    ;(a = s.createElement(o)); (m = s.getElementsByTagName(o)[0])
     a.async = 1
     a.src = g
     m.parentNode.insertBefore(a, m)
   })(window, document, 'script', `https://www.google-analytics.com/analytics.js?id=${GA}`, 'ga')
   ga('create', GA, 'auto')
   ga('set', 'checkProtocolTask', function () {})
+  /* eslint-enable */
 }
 
-export function getMessage(messageName: string, substitutions?: any): string {
+export function getMessage(messageName: string, substitutions?: unknown): string {
   return browser.i18n.getMessage(messageName, substitutions)
 }

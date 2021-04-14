@@ -1,4 +1,4 @@
-export function popupGa(eventAction: string, eventLabel: string) {
+export function popupGa(eventAction: string, eventLabel: string): void {
   ga('send', {
     hitType: 'event',
     eventCategory: 'popup',

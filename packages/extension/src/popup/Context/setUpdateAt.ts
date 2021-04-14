@@ -3,7 +3,7 @@ import { browser } from 'webextension-polyfill-ts'
 
 export async function setUpdateAt(): Promise<Record<string, Date>> {
   try {
-    return initState.reduce(async (acc: any, flag) => {
+    return initState.reduce(async (acc, flag: TSI.Flag) => {
       const {
         [flag.id]: { updatedAt },
       } = await browser.storage.local.get(flag.id)

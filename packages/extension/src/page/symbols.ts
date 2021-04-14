@@ -14,11 +14,13 @@ import {
 waitForElm('.tv-main .tv-content').then(setStockListInMap).then(mainScript)
 
 addStaticSyariahIcon()
-browser.runtime.sendMessage({
-  type: 'ga',
-  subType: 'pageview',
-  payload: 'symbols',
-})
+;(async () => {
+  await browser.runtime.sendMessage({
+    type: 'ga',
+    subType: 'pageview',
+    payload: 'symbols',
+  })
+})()
 
 function mainScript() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete

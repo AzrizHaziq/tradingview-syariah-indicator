@@ -12,7 +12,9 @@
     "ff": "lerna run --scope @app/extension --stream watch:ff",
     "build": "lerna run --scope @app/extension --stream build",
     "update-data": "lerna run --scope @app/data --stream update-data",
-    "ghAction": "lerna run --scope @app/data --stream ghAction"
+    "ghAction": "lerna run --scope @app/data --stream ghAction",
+    "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix",
+    "prepare": "husky install"
   },
   "workspaces": {
     "packages": [
@@ -28,14 +30,28 @@
   "author": "Azriz Haziq <azrizhaziq@gmail.com> (https://azrizhaziq.github.io/portfolio)",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.2",
     "husky": "^5.1.3",
     "lerna": "^4.0.0",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
-    "tslint-config-airbnb": "^5.11.2",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
