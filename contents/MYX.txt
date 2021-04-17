@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Apr 10 2021 16:24:37 GMT+0800 (Malaysia Time)
+updatedAt : Sat Apr 17 2021 20:01:10 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -313,6 +313,7 @@ HEXIND       : s
 HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
+HHGROUP-OR   : s
 HHHCORP      : s
 HIAPTEK      : s
 HIAPTEK-LA   : s
