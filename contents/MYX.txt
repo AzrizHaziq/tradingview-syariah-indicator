@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Apr 17 2021 20:01:10 GMT+0800 (Malaysia Time)
+updatedAt : Sat Apr 24 2021 23:21:23 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -119,7 +119,6 @@ BVLH         : s
 CABNET       : s
 CABNET-WA    : s
 CAELY        : s
-CAELY-WA     : s
 CAMRES       : s
 CAREPLS      : s
 CARIMIN      : s
@@ -230,6 +229,7 @@ EMICO        : s
 ENCORP       : s
 ENEST        : s
 ENGKAH       : s
+ENGKAH-WB    : s
 ENGTEX       : s
 ENRA         : s
 ENRA-WA      : s
@@ -313,7 +313,6 @@ HEXIND       : s
 HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
-HHGROUP-OR   : s
 HHHCORP      : s
 HIAPTEK      : s
 HIAPTEK-LA   : s
@@ -768,7 +767,6 @@ SGBHD        : s
 SHCHAN       : s
 SHH          : s
 SIGN         : s
-SIGN-WA      : s
 SIME         : s
 SIMEPLT      : s
 SIMEPROP     : s
