@@ -7,12 +7,13 @@
     "watch": "webpack --mode=development --watch",
     "watch:ff": "web-ext run",
     "watch:c": "yarn watch:ff --target=chromium",
-    "test": "npm run build",
+    "test": "yarn build",
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true yarn build",
     "postbuild": "web-ext lint",
     "release:chrome": "cd dist && webstore upload --auto-publish",
-    "release:firefox": "cd dist && web-ext-submit"
+    "release:ff": "yarn build && dotenv -e .env.production -- web-ext-submit",
+    "post:release:ff": "ts-node scripts/ff-source-code.ts"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -40,10 +41,12 @@
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.4",
     "dot-json": "^1.2.0",
+    "dotenv-cli": "^4.0.0",
     "dotenv-webpack": "^7.0.2",
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "glob-fs": "^0.1.7",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.5.0",
     "node-sass": "^5.0.0",
