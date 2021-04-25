@@ -5,7 +5,8 @@
     "esModuleInterop": true,
     "jsx": "react",
 //    "module": "es6",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
   },
   "include": ["src/**/*", "globals.d.ts", "webpack.config.ts"],
   "exclude": ["dist", "node_modules"]

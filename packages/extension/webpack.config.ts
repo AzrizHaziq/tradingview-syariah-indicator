@@ -84,7 +84,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
               content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
             }
 
-            return Buffer.from(JSON.stringify(output))
+            return JSON.stringify(output, null, 2)
           },
         },
       ],
