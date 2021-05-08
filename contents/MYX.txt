@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat May 01 2021 09:54:14 GMT+0800 (Malaysia Time)
+updatedAt : Sat May 08 2021 18:49:30 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -93,7 +93,6 @@ BIMB-WA      : s
 BINACOM      : s
 BINTAI       : s
 BIOHLDG      : s
-BIOHLDG-OR   : s
 BIOHLDG-WA   : s
 BIPORT       : s
 BJFOOD       : s
@@ -259,6 +258,7 @@ FPGROUP      : s
 FPI          : s
 FREIGHT      : s
 FRONTKN      : s
+FRONTKN-WB   : s
 FSBM         : s
 FSBM-WA      : s
 G3           : s
@@ -395,6 +395,7 @@ JTIASA       : s
 K1           : s
 K1-WC        : s
 KAB          : s
+KAB-WA       : s
 KAMDAR       : s
 KANGER       : s
 KARYON       : s
@@ -556,6 +557,7 @@ MSNIAGA      : s
 MTAG         : s
 MTDACPI      : s
 MTOUCHE      : s
+MTOUCHE-OR   : s
 MTRONIC      : s
 MTRONIC-WA   : s
 MUDA         : s
@@ -600,6 +602,7 @@ OCR-WC       : s
 OCR-WD       : s
 OFI          : s
 OIB          : s
+OIB-OR       : s
 OKA          : s
 OMESTI       : s
 OMESTI-WC    : s
@@ -710,6 +713,7 @@ RGTBHD       : s
 RGTBHD-WB    : s
 RGTECH       : s
 RL           : s
+RL-WA        : s
 ROHAS        : s
 RSAWIT       : s
 RUBEREX      : s
@@ -723,7 +727,6 @@ SALUTE       : s
 SAM          : s
 SAMAIDEN     : s
 SANICHI      : s
-SANICHI-OR   : s
 SANICHI-WE   : s
 SAPIND       : s
 SAPNRG       : s
@@ -774,6 +777,7 @@ SIMEPROP     : s
 SJC          : s
 SKBSHUT      : s
 SKPRES       : s
+SKPRES-WB    : s
 SLIC         : s
 SLP          : s
 SLVEST       : s
