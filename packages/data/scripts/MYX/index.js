@@ -65,10 +65,12 @@ async function scrapBursaMalaysia() {
 
     await browser.close()
 
+    // eslint-disable-next-line no-console
     console.log('\n\nFound: ', Object.keys(syariahList).length)
 
     return syariahList
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error('Error scrap data', e)
     process.exit(1)
   }
