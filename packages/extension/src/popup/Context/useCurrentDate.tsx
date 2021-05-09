@@ -3,11 +3,11 @@ import React, { useContext, useReducer } from 'react'
 export const initState: TSI.Flag[] = [
   {
     id: 'MYX',
-    src: '/assets/flag/MYX.svg',
     alt: 'Malaysia',
     width: '20px',
     height: '10px',
     updatedAt: '',
+    src: '/assets/flag/MYX.svg',
     displayUrl: 'https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/contents/MYX.txt',
   },
 ]
@@ -38,7 +38,7 @@ function currentDateReducer(state: State, action: Action): State {
   }
 }
 
-function CurrentDateProvider({ children }: CountProviderProps) {
+function CurrentDateProvider({ children }: CountProviderProps): JSX.Element {
   const [state, dispatch] = useReducer(currentDateReducer, initState)
 
   return (
@@ -48,7 +48,7 @@ function CurrentDateProvider({ children }: CountProviderProps) {
   )
 }
 
-function useCurrentDateState() {
+function useCurrentDateState(): State {
   const context = useContext(StateContext)
   if (context === undefined) {
     throw new Error('CurrentDate: StateContext must be used within a CountProvider')
@@ -56,7 +56,7 @@ function useCurrentDateState() {
   return context
 }
 
-function useCurrentDateDispatch() {
+function useCurrentDateDispatch(): Dispatch {
   const context = useContext(DispatchContext)
   if (context === undefined) {
     throw new Error('CurrentDate DispatchContext must be used within a CountProvider')
@@ -64,8 +64,8 @@ function useCurrentDateDispatch() {
   return context
 }
 
-function useCurrentDate() {
-  return [useCurrentDateState(), useCurrentDateDispatch()] as const
+function useCurrentDate(): [State, Dispatch] {
+  return [useCurrentDateState(), useCurrentDateDispatch()]
 }
 
 export { CurrentDateProvider, useCurrentDateState, useCurrentDateDispatch, useCurrentDate }
