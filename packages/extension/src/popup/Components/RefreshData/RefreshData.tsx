@@ -68,5 +68,11 @@ export const RefreshData: FC = () => {
     })
   }
 
-  return loading ? LoadingIcon : <span onClick={clickHandler}>{RefreshIcon}</span>
+  return loading ? (
+    LoadingIcon
+  ) : (
+    <a href='javascript:void(0)' tabIndex={0} onClick={clickHandler}>
+      {RefreshIcon}
+    </a>
+  )
 }
