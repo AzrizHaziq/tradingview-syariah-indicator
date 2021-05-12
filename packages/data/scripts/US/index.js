@@ -1,29 +1,7 @@
-import * as fs from 'fs'
 import fetch from 'node-fetch'
 
 const blackListItems = ['Cash&Other']
-const downloadedCSV = 'wahed-holdings.csv'
 const wahedHoldingUrl = 'https://funds.wahedinvest.com/etf-holdings.csv'
-
-function readFile() {
-  return new Promise((res, rej) => {
-    // @ts-ignore
-    const reader = fs.createReadStream(downloadedCSV, { encoding: 'UTF-8' })
-    reader.on('data', function (chunk) {
-      const str = chunk.slice(1, chunk.length)
-      res(str)
-    })
-
-    reader.on('error', function (err) {
-      rej(`Error readFile: ${err}`)
-    })
-  })
-}
-
-function downloadFile(response) {
-  const dest = fs.createWriteStream(downloadedCSV)
-  response.body.pipe(dest)
-}
 
 function getTickersAndSymbols(csv) {
   function isValidDate(d) {
@@ -55,11 +33,10 @@ function getTickersAndSymbols(csv) {
   )
 }
 
-// function scrapeTickersName() {}
-
 ;(async () => {
   const response = await fetch(wahedHoldingUrl)
-  await downloadFile(response)
-  const csv = await readFile()
-  const stocks = getTickersAndSymbols(csv)
+  const data = await response.text()
+  const d = getTickersAndSymbols(data)
+
+  console.log(d)
 })()
