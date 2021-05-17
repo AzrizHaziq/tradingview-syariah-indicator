@@ -77,7 +77,7 @@ async function scrapBursaMalaysia() {
 export function myxFilenameTransformer(data, flagId = 'MYX') {
   const bufferPadRightSize = 1
   const {
-    [TRADING_VIEW_MYX]: { list, ...rest },
+    [TRADING_VIEW_MYX]: { list, shape, ...rest },
   } = data
 
   const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
@@ -87,13 +87,13 @@ export function myxFilenameTransformer(data, flagId = 'MYX') {
     return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
   }
 
-  function listDisplayed(stockName, value) {
-    const temp = []
-    if ('s' in value) {
-      temp.push('s')
-    }
+  function listDisplayed(stockName, values) {
+    const stockIs = values
+      .map((binary, index) => (Boolean(binary) ? shape[index] : null))
+      .filter(Boolean)
+      .join(', ')
 
-    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${temp.join(', ')}`
+    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${stockIs}`
   }
 
   function dash(size = 20, char = '-') {
@@ -106,7 +106,7 @@ ${Object.entries(rest)
   .reduce((acc, [key, value]) => acc + '\n' + metaDataDisplayed(key, value), '')
   .trim()}
 ${dash()}
-${Object.entries(list).reduce((acc, [stockName, value]) => acc + '\n' + listDisplayed(stockName, value), '')}`.trim()
+${Object.entries(list).reduce((acc, [stockName, values]) => acc + '\n' + listDisplayed(stockName, values), '')}`.trim()
 }
 
 export async function MYX() {
@@ -122,7 +122,7 @@ export async function MYX() {
     const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
         updatedAt: new Date(),
-        shape: ['shariah'],
+        shape: ['s'],
         list: sortedList,
       },
     }
