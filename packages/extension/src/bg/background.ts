@@ -1,14 +1,9 @@
 import { browser } from 'webextension-polyfill-ts'
 import { dateDiffInDays, debounce, initGa, isValidDate } from '../helper'
 
-initGa()
-;(async () => {
-  await fetchData()
-})()
-
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
-async function fetchData(shouldRefreshData = false): Promise<Record<string, TSI.SHARIAH_LIST>> {
+async function fetchData(shouldRefreshData = false): Promise<any> {
   let jsonUrl = process.env.FETCH_URL
 
   if (shouldRefreshData) {
@@ -17,13 +12,15 @@ async function fetchData(shouldRefreshData = false): Promise<Record<string, TSI.
 
   try {
     const res = await fetch(jsonUrl)
-    return JSON.parse(await res.text())
+    const data = await res.json()
+    await setExchangesInStorage(data)
+    await browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() })
   } catch (e) {
     console.error('Github json when wrong', e)
   }
 }
 
-async function listener(id, { status }, { url }) {
+async function listener(_, { status }, { url }) {
   if (status === 'loading') {
     return
   }
@@ -46,20 +43,37 @@ async function listener(id, { status }, { url }) {
       console.log('>>> Cache')
     } else {
       console.log('>>> API')
-      const response = await fetchData()
-      Object.entries(response).forEach(setStorages)
-      await browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() })
+      await fetchData()
     }
   } catch (e) {
     console.error('Error Send message', e)
   }
 }
 
-async function setStorages([exchange, { list, updatedAt }]: [string, TSI.SHARIAH_LIST]): Promise<void> {
+async function setExchangesInStorage(response) {
   try {
-    await browser.storage.local.set({ [exchange]: { list, updatedAt } })
+    const allExchanges = Object.entries(response).flatMap(([exchange, exchangeData]) => {
+      // @ts-ignore
+      const { shape, list } = exchangeData
+
+      return Object.entries(list).map(([symbol, symbolData]) => {
+        // @ts-ignore
+        const val = symbolData.reduce(
+          (acc, value, index) => ({
+            ...acc,
+            [shape[index].hasOwnProperty(value) ? shape[index][value] : shape[index].default]: value,
+          }),
+          {}
+        )
+
+        return [`${exchange}:${symbol}`, val]
+      })
+    })
+
+    await browser.storage.local.set({ LIST: allExchanges })
+    // console.log(await browser.storage.local.get('LIST'))
   } catch (e) {
-    console.error(`Error set ${exchange} storage`, e)
+    console.error(`Error set storage`, e)
   }
 }
 
@@ -82,7 +96,10 @@ browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
       .set({ LAST_FETCH_AT: null })
       .then(() => console.log('>>> INVALIDATE CACHE'))
       .then(() => fetchData(true))
-      .then(response => Object.entries(response).forEach(setStorages))
       .then(() => browser.storage.local.set({ LAST_FETCH_AT: new Date().toString() }))
   }
 })
+;(async () => {
+  initGa()
+  await fetchData()
+})()

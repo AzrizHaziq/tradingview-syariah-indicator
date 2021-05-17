@@ -3,33 +3,20 @@ import { browser } from 'webextension-polyfill-ts'
 const GA = process.env.GA
 let SHARIAH_LIST = new Map()
 const parser = new DOMParser()
-const TRADING_VIEW_MYR = 'MYX'
 export const attributeName = 'data-indicator'
 export const extensionName = 'tradingview-syariah-indicator'
 
-export async function setStockListInMap(): Promise<Map<string, [string, { s: 0 | 1 }]>> {
-  async function grabInStorage(exchange: string): Promise<TSI.ITEM> {
-    try {
-      const {
-        [exchange]: { list },
-      } = await browser.storage.local.get(exchange)
-
-      return list
-    } catch (e) {
-      console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
-    }
+export async function setStockListInMap(): Promise<any> {
+  try {
+    const { LIST } = await browser.storage.local.get('LIST')
+    SHARIAH_LIST = new Map(LIST)
+  } catch (e) {
+    console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
   }
-
-  function prefixStocksWithExchange(list: TSI.ITEM = {}, exchange: 'MYX'): [string, { s: 0 | 1 }][] {
-    return Object.entries(list).map(([key, value]) => [`${exchange}:${key}`, value])
-  }
-
-  SHARIAH_LIST = new Map([...prefixStocksWithExchange(await grabInStorage(TRADING_VIEW_MYR), TRADING_VIEW_MYR)])
-  return SHARIAH_LIST
 }
 
-export function getStockStat(symbol: string, defaultReturn = { s: 0 }): { s: 0 | 1 } {
-  return SHARIAH_LIST.has(symbol) ? SHARIAH_LIST.get(symbol) : defaultReturn
+export function getStockStat(symbolWithExchange: string, defaultReturn = []) {
+  return SHARIAH_LIST.has(symbolWithExchange) ? SHARIAH_LIST.get(symbolWithExchange) : defaultReturn
 }
 
 export function isSyariahIconExist(element: Element): Element | null {
