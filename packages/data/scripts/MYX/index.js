@@ -1,8 +1,8 @@
 import merge from 'lodash.merge'
-import puppeteer from 'puppeteer'
 import { pipe } from '../utils.js'
 import cliProgress from 'cli-progress'
 import { writeToFile } from '../writeToFile.js'
+import { chromium } from 'playwright-chromium'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'summary/MYX.txt'
@@ -14,7 +14,7 @@ async function scrapBursaMalaysia() {
     `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
   try {
-    const browser = await puppeteer.launch()
+    const browser = await chromium.launch()
     const page = await browser.newPage()
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
@@ -33,7 +33,7 @@ async function scrapBursaMalaysia() {
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle2' })
+      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle' })
 
       const temp = await page.evaluate(() => {
         const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
