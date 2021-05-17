@@ -49,7 +49,7 @@ Steps
 3. create \`.env.production\` file in root, and add this
    \`\`\`
    GA=UA-183073441-2
-   FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/stock-list.txt
+   FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/summary/stock-list.json
    \`\`\`
 4. Type in terminal \`$ yarn build\`
 5. Generated file located in /dist/*

@@ -89,7 +89,9 @@ export function myxFilenameTransformer(data, flagId = 'MYX') {
 
   function listDisplayed(stockName, values) {
     const stockIs = values
-      .map((binary, index) => (Boolean(binary) ? shape[index] : null))
+      .map((binary, index) =>
+        Boolean(binary) ? (shape[index].hasOwnProperty(binary) ? shape[index][binary] : shape[index].default) : null
+      )
       .filter(Boolean)
       .join(', ')
 
@@ -116,13 +118,14 @@ export async function MYX() {
     const sortedList = pipe(
       Object.values,
       entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      items => items.reduce((acc, { s, stockName }) => ({ ...acc, [stockName]: [s] }), {})
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      items => items.reduce((acc, { code, stockName, ...res }) => ({ ...acc, [stockName]: Object.values(res) }), {})
     )(merge(shariahList)) // merge by stock code
 
     const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
         updatedAt: new Date(),
-        shape: ['s'],
+        shape: [{ 0: 'non-s', 1: 's', default: '' }],
         list: sortedList,
       },
     }
