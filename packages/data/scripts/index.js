@@ -3,7 +3,7 @@ import merge from 'lodash.merge'
 import { writeToFile } from './writeToFile.js'
 import { MYX, MYX_FILENAME } from './MYX/index.js'
 
-const MAIN_STOCK_LIST_FILENAME = 'stock-list.txt'
+const MAIN_STOCK_LIST_FILENAME = 'summary/stock-list.json'
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
 async function commitChangesIfAny() {
