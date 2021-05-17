@@ -33,9 +33,7 @@ async function scrapBursaMalaysia() {
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }), {
-        waitUntil: 'networkidle2',
-      })
+      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle2' })
 
       const temp = await page.evaluate(() => {
         const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
@@ -118,20 +116,13 @@ export async function MYX() {
     const sortedList = pipe(
       Object.values,
       entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      items =>
-        items.reduce(
-          // eslint-disable-next-line no-unused-vars
-          (acc, { stockName, code, ...rest }) => ({
-            ...acc,
-            [stockName]: { ...rest },
-          }),
-          {}
-        )
+      items => items.reduce((acc, { s, stockName }) => ({ ...acc, [stockName]: [s] }), {})
     )(merge(shariahList)) // merge by stock code
 
     const NEW_MYX_DATA = {
       [TRADING_VIEW_MYX]: {
         updatedAt: new Date(),
+        shape: ['shariah'],
         list: sortedList,
       },
     }
