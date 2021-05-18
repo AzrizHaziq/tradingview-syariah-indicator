@@ -1,39 +1,39 @@
 import { _popupGa } from '../../Helpers'
 import React, { FC, useEffect } from 'react'
-import { getMessage } from '../../../helper'
+import { getMessage, isValidDate } from '../../../helper'
 import { setUpdateAt, useCurrentDate } from '../../Context'
 
 export const Flags: FC = () => {
   const [dates, dispatch] = useCurrentDate()
 
   useEffect(() => {
-    setUpdateAt().then(flags => {
-      Object.entries(flags).forEach(([flag, updatedAt]) => {
-        dispatch({
-          type: 'set-flag-update-at',
-          payload: { flag, updatedAt: new Date(updatedAt).toLocaleDateString() },
-        })
-      })
-    })
+    setUpdateAt().then(exchanges => dispatch({ type: 'init', payload: exchanges }))
   }, [])
 
   return (
     <>
-      {dates.map((flag: TSI.Flag, i: number) => {
-        const { updatedAt, displayUrl, ...res } = flag
-        const popup_list_at = getMessage('popup_list_at', flag.alt)
+      {dates.map((flag: TSI.Flag) => {
+        const { updatedAt, id } = flag
+        const popup_list_at = getMessage('popup_list_at', id)
+        const lastDate = isValidDate(new Date(updatedAt)) ? new Date(updatedAt).toLocaleDateString() : '--'
+        const href = `https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/packages/extension/assets/exchanges/${id}.txt`
 
         return (
           <a
-            key={i}
+            key={id}
+            href={href}
             target='_blank'
-            rel='noopener noreferrer'
-            href={displayUrl}
             title={popup_list_at}
+            rel='noopener noreferrer'
             onClick={_popupGa('click', 'shariahAt')}
             className='cursor-pointer flex items-center text-gray-300 hover:underline'>
-            <img {...res} />
-            <p className='ml-1 text-xs'>{updatedAt}</p>
+            <img
+              className='rounded-full'
+              style={{ width: '18px', height: '18px' }}
+              src={`/assets/exchanges/${id}.svg`}
+              alt={`Exchange: ${id}`}
+            />
+            <p className='ml-1 text-xs'>{lastDate}</p>
           </a>
         )
       })}
