@@ -1,21 +1,17 @@
-import { initState } from './useCurrentDate'
 import { browser } from 'webextension-polyfill-ts'
 
-export async function setUpdateAt(): Promise<Record<string, Date>> {
+export async function setUpdateAt(): Promise<TSI.Flag[]> {
   try {
-    return initState.reduce(async (acc, flag: TSI.Flag) => {
-      const {
-        [flag.id]: { updatedAt },
-      } = await browser.storage.local.get(flag.id)
+    const { DETAILS } = await browser.storage.local.get('DETAILS')
 
-      return {
-        ...acc,
-        [flag.id]:
-          process.env.NODE_ENV === 'production'
-            ? updatedAt
-            : `${Math.floor(Math.random() * 12)}/${Math.floor(Math.random() * 25)}/2021`,
-      }
-    }, {})
+    if (process.env.NODE_ENV !== 'production') {
+      return DETAILS.map(i => ({
+        ...i,
+        updatedAt: `${Math.floor(Math.random() * 12)}/${Math.floor(Math.random() * 25)}/2021`,
+      }))
+    }
+
+    return DETAILS
   } catch {
     throw new Error('Failed to get data from browser storage in popup')
   }

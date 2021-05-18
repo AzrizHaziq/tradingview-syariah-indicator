@@ -52,18 +52,12 @@ export const RefreshData: FC = () => {
 
     await browser.runtime.sendMessage({ type: 'invalidate-cache' }).then(() => {
       const x = setTimeout(() => {
-        setLoading(false)
-
-        setUpdateAt().then(flags => {
-          Object.entries(flags).forEach(([flag, updatedAt]) => {
-            dispatch({
-              type: 'set-flag-update-at',
-              payload: { flag, updatedAt: new Date(updatedAt).toLocaleDateString() },
-            })
-          })
+        setUpdateAt().then(exchanges => {
+          console.log(exchanges)
+          dispatch({ type: 'init', payload: exchanges })
+          setLoading(false)
+          clearTimeout(x)
         })
-
-        clearTimeout(x)
       }, 2000)
     })
   }
