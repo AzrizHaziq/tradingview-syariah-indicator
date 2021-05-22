@@ -1,5 +1,5 @@
 MYX
-updatedAt : Thu May 13 2021 22:13:13 GMT+0800 (Malaysia Time)
+updatedAt : Sat May 22 2021 10:53:21 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -314,6 +314,7 @@ HEXIND       : s
 HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
+HHGROUP-WA   : s
 HHHCORP      : s
 HIAPTEK      : s
 HIAPTEK-LA   : s
@@ -555,9 +556,7 @@ MRDIY        : s
 MSM          : s
 MSNIAGA      : s
 MTAG         : s
-MTDACPI      : s
 MTOUCHE      : s
-MTOUCHE-OR   : s
 MTRONIC      : s
 MTRONIC-WA   : s
 MUDA         : s
@@ -829,7 +828,6 @@ SYSTECH      : s
 T7GLOBAL     : s
 TAANN        : s
 TAFI         : s
-TAFI-OR      : s
 TAKAFUL      : s
 TALAMT       : s
 TALIWRK      : s
@@ -859,6 +857,7 @@ TIMECOM      : s
 TIMWELL      : s
 TITIJYA      : s
 TITIJYA-PA   : s
+TJSETIA      : s
 TM           : s
 TMCLIFE      : s
 TOCEAN       : s
@@ -936,6 +935,7 @@ WZSATU-WB    : s
 XINHWA       : s
 XINHWA-WA    : s
 XL           : s
+XL-WA        : s
 XOX          : s
 XOX-WB       : s
 XOX-WC       : s
