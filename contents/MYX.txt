@@ -1,5 +1,5 @@
 MYX
-updatedAt : Fri May 28 2021 08:05:44 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jun 05 2021 13:59:16 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -613,6 +613,7 @@ OCR-WC       : s
 OCR-WD       : s
 OFI          : s
 OIB          : s
+OIB-WA       : s
 OKA          : s
 OMESTI       : s
 OMESTI-WC    : s
@@ -746,7 +747,6 @@ SAPNRG-WA    : s
 SAPRES       : s
 SASBADI      : s
 SAUDEE       : s
-SAUDEE-OR    : s
 SBCCORP      : s
 SCABLE       : s
 SCBUILD      : s
