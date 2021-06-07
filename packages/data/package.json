@@ -9,10 +9,10 @@
   },
   "devDependencies": {
     "cli-progress": "^3.8.2",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "lodash.merge": "^4.6.2",
     "playwright-chromium": "^1.11.0",
-    "puppeteer": "^9.0.0",
+    "puppeteer": "^10.0.0",
     "rimraf": "^3.0.2",
     "simple-git": "^2.38.0"
   },
