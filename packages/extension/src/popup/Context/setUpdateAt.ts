@@ -1,8 +1,8 @@
-import { browser } from 'webextension-polyfill-ts'
+import { getStorage } from '../../helper'
 
 export async function setUpdateAt(): Promise<TSI.Flag[]> {
   try {
-    const { DETAILS } = await browser.storage.local.get('DETAILS')
+    const DETAILS = await getStorage('DETAILS')
 
     if (process.env.NODE_ENV !== 'production') {
       return DETAILS.map(i => ({

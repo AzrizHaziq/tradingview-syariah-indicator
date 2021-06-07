@@ -8,7 +8,7 @@ export const extensionName = 'tradingview-syariah-indicator'
 
 export async function setStockListInMap(): Promise<any> {
   try {
-    const { LIST } = await browser.storage.local.get('LIST')
+    const LIST = await getStorage('LIST')
     SHARIAH_LIST = new Map(LIST)
   } catch (e) {
     console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
@@ -93,7 +93,6 @@ export function debounce(func: (...unknown) => void, wait: number, immediate: bo
 }
 
 export function isValidDate(d: Date): boolean {
-  d = new Date()
   // @ts-ignore
   return d instanceof Date && !isNaN(d)
 }
@@ -187,4 +186,21 @@ export function initGa(): void {
 
 export function getMessage(messageName: string, substitutions?: unknown): string {
   return browser.i18n.getMessage(messageName, substitutions)
+}
+
+export async function setStorage<K extends keyof TSI.StorageMap>(key: K, payload: TSI.StorageMap[K]): Promise<void> {
+  try {
+    await browser.storage.local.set({ [key]: payload })
+  } catch (e) {
+    console.error(`Error set ${key} in storage`, e)
+  }
+}
+
+export async function getStorage<K extends keyof TSI.StorageMap>(key: K): Promise<TSI.StorageMap[K]> {
+  try {
+    const { [key]: data } = await browser.storage.local.get(key)
+    return data
+  } catch (e) {
+    console.error(`Error set ${key} in storage`, e)
+  }
 }
