@@ -8,7 +8,7 @@ type Action = { type: 'init'; payload: TSI.Flag[] } | { type: 'set-flag-update-a
 const StateContext = React.createContext<State | undefined>(undefined)
 const DispatchContext = React.createContext<Dispatch | undefined>(undefined)
 
-function currentDateReducer(state: State, action: Action): State {
+function currentDateReducer(state: State, action: Action): State | never {
   switch (action.type) {
     case 'init':
       return action.payload
@@ -21,7 +21,7 @@ function currentDateReducer(state: State, action: Action): State {
         return flag
       })
     default: {
-      throw new Error(`Unhandled action type: ${action!.type}`)
+      throw new Error(`Unhandled action type in currentDateReducer`)
     }
   }
 }
