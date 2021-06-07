@@ -1,5 +1,4 @@
 # Tradingview Syariah Indicator 
-![Automate STOCK_LIST gh_bot](https://github.com/AzrizHaziq/tradingview-syariah-indicator/workflows/Automate%20STOCK_LIST%20gh_bot/badge.svg)
 
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
@@ -62,18 +61,18 @@ Installation guide:
 
 ## Screenshots
 [Symbol Page](https://www.tradingview.com/symbols/MYX-TOPGLOV/)
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/symbol_page.png?raw=true)
+![Symbol page](./packages/docs/ori_chrome/symbol_page.png)
 
 [Chart page](https://www.tradingview.com/chart/)
-![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page.png?raw=true)
-![Chart page with screener](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page_with_screener.png?raw=true)
+![Chart page](./packages/docs/ori_chrome/chart_page.png)
+![Chart page with screener](./packages/docs/ori_chrome/chart_page_with_screener.png)
 
 [Screener page](https://www.tradingview.com/screener/)
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/screener_page_on.png?raw=true)
+![Screener page](./packages/docs/ori_chrome/screener_page_on.png)
 
 Popup
 
-![popup](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/popup.png?raw=true)
+![popup](./packages/docs/ori_chrome/popup.png)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
