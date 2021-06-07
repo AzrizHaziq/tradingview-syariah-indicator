@@ -12,6 +12,8 @@ import {
   extensionName,
   addStaticSyariahIcon,
   getMessage,
+  setStorage,
+  getStorage,
 } from '../helper'
 
 addStaticSyariahIcon()
@@ -58,7 +60,7 @@ const shariah = {
     try {
       shariah.currentState = e.target.checked
 
-      await browser.storage.local.set({ IS_FILTER_SHARIAH: e.target.checked })
+      await setStorage('IS_FILTER_SHARIAH', e.target.checked)
 
       wrapperElement.setAttribute('title', shariah.status[`${shariah.currentState}`])
     } catch (e) {
@@ -94,7 +96,7 @@ waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
 async function mainScreenerScript() {
   try {
-    const { IS_FILTER_SHARIAH } = await browser.storage.local.get('IS_FILTER_SHARIAH')
+    const IS_FILTER_SHARIAH = await getStorage('IS_FILTER_SHARIAH')
 
     shariah.currentState = IS_FILTER_SHARIAH || false
 

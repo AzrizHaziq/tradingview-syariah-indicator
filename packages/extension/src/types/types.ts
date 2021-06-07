@@ -1,32 +1,37 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare namespace TSI {
+  /////////////////////////// RESPONSE_FROM_JSON ///////////////////////////////////
   type SHAPE_SHARIAH = {
     0: 'non-s'
     1: 's'
     default: string
   }
 
-  type Exchanges = 'MYX'
+  type SHAPE_DUMMY = {
+    0: 'nothing'
+    abc: 'dummy'
+    default: string
+  }
+
+  type SHAPE = SHAPE_SHARIAH | SHAPE_DUMMY
+  type KEYOF_SHAPE = keyof SHAPE_SHARIAH | keyof SHAPE_DUMMY
+
+  export type Exchanges = 'MYX'
 
   export interface ExchangesDetail {
     updatedAt: string
-    shape: SHAPE_SHARIAH[]
-    list: ITEM
+    shape: SHAPE[]
+    list: Record<string, KEYOF_SHAPE[]>
   }
 
   type RESPONSE_FROM_JSON = Record<Exchanges, ExchangesDetail>
-
-  /////////////////////////// STORAGE ///////////////////////////////////
-  export const enum StorageKeys {
-    DETAILS = 'DETAILS',
-    LIST = 'LIST',
+  /////////////////////////// RESPONSE_FROM_JSON ///////////////////////////////////
+  export interface StorageMap {
+    DETAILS: Flag[]
+    LIST: any
+    LAST_FETCH_AT: string
+    IS_FILTER_SHARIAH: boolean
   }
-
-  export type StorageKey = { key: StorageKeys.DETAILS; payload: Flag[] } | { key: StorageKeys.LIST; payload: any }
-
-  /////////////////////////////////////////////////////////////
-
-  export type ITEM = Record<string, { s: 0 | 1 }>
 
   export interface Flag {
     id: string | 'MYX'
