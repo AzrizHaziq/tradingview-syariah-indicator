@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jun 05 2021 13:59:16 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jun 12 2021 07:30:05 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -154,13 +154,12 @@ CLOUD        : s
 CME          : s
 CME-WA       : s
 CMSB         : s
-CNI          : s
+CNH          : s
 COCOLND      : s
 COMFORT      : s
 COMPUGT      : s
 CONNECT      : s
 CONNECT-WA   : s
-CONNECT-WB   : s
 CRESBLD      : s
 CRESNDO      : s
 CRG          : s
