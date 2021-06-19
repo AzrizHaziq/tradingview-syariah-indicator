@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jun 12 2021 07:30:05 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jun 19 2021 08:07:40 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -693,7 +693,6 @@ PRESTAR      : s
 PRG          : s
 PRIVA        : s
 PRLEXUS      : s
-PRLEXUS-WA   : s
 PRTASCO      : s
 PRTASCO-WA   : s
 PTARAS       : s
