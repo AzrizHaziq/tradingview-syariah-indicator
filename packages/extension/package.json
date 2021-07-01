@@ -45,6 +45,7 @@
     "dot-json": "^1.2.0",
     "dotenv-cli": "^4.0.0",
     "dotenv-webpack": "^7.0.2",
+    "esbuild-loader": "^2.13.1",
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.0.8",

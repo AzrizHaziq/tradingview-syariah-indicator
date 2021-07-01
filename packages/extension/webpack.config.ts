@@ -4,6 +4,7 @@ import SizePlugin from 'size-plugin'
 import webpack, { Configuration } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { ESBuildMinifyPlugin } from 'esbuild-loader'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
@@ -34,11 +35,13 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   },
   module: {
     rules: [
-      { test: /\.(ts|tsx)$/, loader: 'ts-loader', exclude: /node_modules/ },
       {
-        test: /\.(js|jsx)$/,
-        use: [{ loader: 'source-map-loader' }, { loader: 'babel-loader' }],
-        exclude: /node_modules/,
+        test: /\.tsx?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
       },
       {
         test: /\.scss$/,
@@ -93,6 +96,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     process.env.ENABLE_BA ? new BundleAnalyzerPlugin() : undefined,
   ].filter(Boolean),
   optimization: {
+    minimizer: [new ESBuildMinifyPlugin({ target: 'es2015', css: true })],
     splitChunks: {
       cacheGroups: {
         vendor: {
