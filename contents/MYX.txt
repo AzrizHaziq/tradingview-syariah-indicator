@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jun 26 2021 09:58:03 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jul 03 2021 07:56:26 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -53,7 +53,6 @@ APPASIA-WA   : s
 ARANK        : s
 ARBB         : s
 ARK          : s
-ARK-WB       : s
 ARTRONIQ     : s
 ASB          : s
 ASDION       : s
@@ -183,7 +182,6 @@ DELEUM       : s
 DESTINI      : s
 DFCITY       : s
 DGB          : s
-DGB-WB       : s
 DGB-WC       : s
 DIALOG       : s
 DIGI         : s
@@ -284,6 +282,7 @@ GCAP         : s
 GCB          : s
 GCB-WB       : s
 GDB          : s
+GDB-WA       : s
 GDEX         : s
 GDEX-WC      : s
 GENETEC      : s
@@ -582,6 +581,7 @@ N2N-WB       : s
 NADIBHD      : s
 NAIM         : s
 NATWIDE      : s
+NESTCON      : s
 NESTLE       : s
 NEXGRAM      : s
 NEXGRAM-WA   : s
@@ -641,7 +641,6 @@ PARLO        : s
 PASDEC       : s
 PASDEC-WA    : s
 PASUKGB      : s
-PASUKGB-OR   : s
 PBA          : s
 PCCS         : s
 PCCS-WA      : s
@@ -734,6 +733,7 @@ SALCON-WB    : s
 SALUTE       : s
 SAM          : s
 SAMAIDEN     : s
+SAMAIDEN-WA  : s
 SANICHI      : s
 SANICHI-WE   : s
 SANICHI-WF   : s
@@ -758,6 +758,7 @@ SCOMIES      : s
 SCOMNET      : s
 SCOMNET-WA   : s
 SCOPE        : s
+SCOPE-OR     : s
 SDRED        : s
 SDS          : s
 SEACERA      : s
