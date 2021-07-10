@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jul 03 2021 07:56:26 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jul 10 2021 09:56:00 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -123,7 +123,6 @@ BURSA        : s
 BVLH         : s
 CAB          : s
 CABNET       : s
-CABNET-WA    : s
 CAELY        : s
 CAMRES       : s
 CAREPLS      : s
@@ -156,6 +155,7 @@ CMSB         : s
 CNH          : s
 COCOLND      : s
 COMFORT      : s
+COMFORT-WB   : s
 COMPUGT      : s
 CONNECT      : s
 CONNECT-WA   : s
@@ -691,6 +691,7 @@ PRESTAR      : s
 PRG          : s
 PRIVA        : s
 PRLEXUS      : s
+PRLEXUS-WB   : s
 PRTASCO      : s
 PRTASCO-WA   : s
 PTARAS       : s
@@ -758,7 +759,6 @@ SCOMIES      : s
 SCOMNET      : s
 SCOMNET-WA   : s
 SCOPE        : s
-SCOPE-OR     : s
 SDRED        : s
 SDS          : s
 SEACERA      : s
@@ -803,7 +803,6 @@ SMTRACK      : s
 SNC          : s
 SOLID        : s
 SOLUTN       : s
-SOLUTN-WA    : s
 SOP          : s
 SPRING       : s
 SPRING-WA    : s
@@ -915,11 +914,11 @@ VELESTO-WA   : s
 VERSATL      : s
 VERTICE      : s
 VERTICE-WA   : s
+VINVEST      : s
+VINVEST-WE   : s
 VIS          : s
 VIS-WB       : s
 VITROX       : s
-VIVOCOM      : s
-VIVOCOM-WE   : s
 VIZIONE      : s
 VIZIONE-WC   : s
 VIZIONE-WD   : s
