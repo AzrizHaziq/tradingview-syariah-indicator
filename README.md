@@ -40,9 +40,23 @@ Also available in:
 </a>
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Brave now" 
-   href="https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions">
+   href="https://support.brave.com/hc/en-us/articles/360017909112-How-can-I-add-extensions-to-Brave-">
     <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/brave/brave_128x128.png" width="24" />
 </a>
+
+
+<details>
+  <summary>Installation guide:</summary>
+  
+1. Install with: 
+    - Chrome: https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf
+    - Firefox: https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator
+    - [Edge](https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions) and [Brave](https://support.brave.com/hc/en-us/articles/360017909112-How-can-I-add-extensions-to-Brave-): Please follow this steps. (install extension via chrome store)
+2. Click button "Add to Chrome" / "Add to Firefox"
+3. Open https://tradingview.com
+4. Goto any of this page https://tradingview.com/chart https://tradingview.com/screener https://tradingview.com/symbols
+5. Seach any [valid Shariah Stocks](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/contents/MYX.txt) (currently in Malaysia only)
+</details>
 
 ## Release 
 [View All Releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
