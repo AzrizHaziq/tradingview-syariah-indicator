@@ -47,9 +47,9 @@ Also available in:
 
 Installation guide:
 1. Install with: 
-    - Chrome: https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf
-    - Firefox: https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator
-    - [Edge](https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions) and [Brave](https://support.brave.com/hc/en-us/articles/360017909112-How-can-I-add-extensions-to-Brave-): Please follow this steps. (install extension via chrome store)
+    - [Chrome](https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf)
+    - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator)
+    - [Edge](https://support.microsoft.com/en-my/help/4027935/microsoft-edge-add-or-remove-browser-extensions) and [Brave](https://support.brave.com/hc/en-us/articles/360017909112-How-can-I-add-extensions-to-Brave-): Please follow this steps and then install this extension via chrome store.
 2. Click button "Add to Chrome" / "Add to Firefox"
 3. Open https://tradingview.com
 4. Goto any of this page https://tradingview.com/chart https://tradingview.com/screener https://tradingview.com/symbols
