@@ -45,9 +45,7 @@ Also available in:
 </a>
 
 
-<details>
-  <summary>Installation guide:</summary>
-  
+Installation guide:
 1. Install with: 
     - Chrome: https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf
     - Firefox: https://addons.mozilla.org/en-US/firefox/addon/tradingview-shariah-indicator
@@ -56,7 +54,7 @@ Also available in:
 3. Open https://tradingview.com
 4. Goto any of this page https://tradingview.com/chart https://tradingview.com/screener https://tradingview.com/symbols
 5. Seach any [valid Shariah Stocks](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/contents/MYX.txt) (currently in Malaysia only)
-</details>
+
 
 ## Release 
 [View All Releases](https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases) 
