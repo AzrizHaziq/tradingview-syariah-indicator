@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jul 10 2021 09:56:00 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jul 17 2021 07:55:59 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -50,6 +50,7 @@ APM          : s
 APOLLO       : s
 APPASIA      : s
 APPASIA-WA   : s
+APPASIA-WB   : s
 ARANK        : s
 ARBB         : s
 ARK          : s
@@ -227,7 +228,6 @@ EG           : s
 EIG          : s
 EITA         : s
 EITA-WA      : s
-EKA          : s
 EKOVEST      : s
 ELSOFT       : s
 EMETALL      : s
@@ -307,7 +307,6 @@ GOLDETF      : s
 GOPENG       : s
 GPHAROS      : s
 GPP          : s
-GRANFLO      : s
 GREATEC      : s
 GREENYB      : s
 GTRONIC      : s
@@ -581,6 +580,7 @@ N2N-WB       : s
 NADIBHD      : s
 NAIM         : s
 NATWIDE      : s
+NCT          : s
 NESTCON      : s
 NESTLE       : s
 NEXGRAM      : s
