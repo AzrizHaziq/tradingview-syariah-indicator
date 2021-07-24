@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jul 17 2021 07:55:59 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jul 24 2021 12:43:11 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -15,6 +15,7 @@ ADVCON       : s
 ADVENTA      : s
 ADVPKG       : s
 AEM          : s
+AEM-OR       : s
 AEMULUS      : s
 AEON         : s
 AFUJIYA      : s
@@ -166,6 +167,7 @@ CRG          : s
 CSCENIC      : s
 CSCSTEL      : s
 CTIB         : s
+CTOS         : s
 CUSCAPI      : s
 CVIEW        : s
 CWG          : s
@@ -311,6 +313,7 @@ GREATEC      : s
 GREENYB      : s
 GTRONIC      : s
 GUH          : s
+HAILY        : s
 HANDAL       : s
 HARBOUR      : s
 HARNLEN      : s
@@ -641,6 +644,7 @@ PARLO        : s
 PASDEC       : s
 PASDEC-WA    : s
 PASUKGB      : s
+PASUKGB-WA   : s
 PBA          : s
 PCCS         : s
 PCCS-WA      : s
@@ -700,7 +704,6 @@ PUC          : s
 PUC-WA       : s
 PUNCAK       : s
 PWF          : s
-PWF-WA       : s
 PWORTH       : s
 PWROOT       : s
 PWROOT-WA    : s
