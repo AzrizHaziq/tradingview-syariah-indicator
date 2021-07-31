@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jul 24 2021 12:43:11 GMT+0800 (Malaysia Time)
+updatedAt : Sat Jul 31 2021 11:31:36 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -15,7 +15,6 @@ ADVCON       : s
 ADVENTA      : s
 ADVPKG       : s
 AEM          : s
-AEM-OR       : s
 AEMULUS      : s
 AEON         : s
 AFUJIYA      : s
@@ -91,6 +90,7 @@ BARAKAH      : s
 BAUTO        : s
 BCB          : s
 BCMALL       : s
+BCMALL-OR    : s
 BDB          : s
 BERTAM       : s
 BHIC         : s
@@ -144,6 +144,7 @@ CHGP         : s
 CHGP-WA      : s
 CHHB         : s
 CHHB-WB      : s
+CHINA100-MYR : s
 CHINHIN      : s
 CHINWEL      : s
 CHOOBEE      : s
@@ -189,7 +190,6 @@ DGB-WC       : s
 DIALOG       : s
 DIGI         : s
 DIN040000223 : s
-DIN042300721 : s
 DIN045801028 : s
 DKLS         : s
 DKSH         : s
@@ -213,6 +213,7 @@ E&O          : s
 EASTLND      : s
 EATECH       : s
 ECOFIRS      : s
+ECOFIRS-WD   : s
 ECOHLDS      : s
 ECONBHD      : s
 ECONBHD-WA   : s
@@ -376,6 +377,7 @@ INIX         : s
 INNATURE     : s
 INNO         : s
 INTA         : s
+INTA-WA      : s
 IOICORP      : s
 IOIPG        : s
 IPMUDA       : s
@@ -608,8 +610,6 @@ OCK          : s
 OCK-WB       : s
 OCNCASH      : s
 OCR          : s
-OCR-PA       : s
-OCR-WC       : s
 OCR-WD       : s
 OFI          : s
 OIB          : s
