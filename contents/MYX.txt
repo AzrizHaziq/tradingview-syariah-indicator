@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Jul 31 2021 11:31:36 GMT+0800 (Malaysia Time)
+updatedAt : Sat Aug 07 2021 08:07:37 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -9,8 +9,6 @@ ABLEGRP      : s
 ACME         : s
 ACME-WA      : s
 ACO          : s
-ACOSTEC      : s
-ACOSTEC-WA   : s
 ADVCON       : s
 ADVENTA      : s
 ADVPKG       : s
@@ -79,6 +77,8 @@ AWC          : s
 AWC-WA       : s
 AXIATA       : s
 AXREIT       : s
+AXTERIA      : s
+AXTERIA-WA   : s
 AYER         : s
 AYS          : s
 AZRB         : s
@@ -90,7 +90,6 @@ BARAKAH      : s
 BAUTO        : s
 BCB          : s
 BCMALL       : s
-BCMALL-OR    : s
 BDB          : s
 BERTAM       : s
 BHIC         : s
@@ -195,7 +194,6 @@ DKLS         : s
 DKSH         : s
 DLADY        : s
 DNEX         : s
-DNEX-WD      : s
 DNONCE       : s
 DOLPHIN      : s
 DOLPHIN-WB   : s
@@ -255,6 +253,7 @@ EWINT-WA     : s
 F&N          : s
 FAJAR        : s
 FAREAST      : s
+FAST         : s
 FAVCO        : s
 FBBHD        : s
 FGV          : s
@@ -296,6 +295,7 @@ GFM          : s
 GFM-WC       : s
 GHLSYS       : s
 GIIB         : s
+GIIB-OR      : s
 GKENT        : s
 GLBHD        : s
 GLOMAC       : s
@@ -346,6 +346,7 @@ HOMERIZ-WC   : s
 HONGSENG     : s
 HONGSENG-WA  : s
 HOOVER       : s
+HOOVER-OR    : s
 HPMT         : s
 HPPHB        : s
 HSL          : s
@@ -423,6 +424,7 @@ KESM         : s
 KEYASIC      : s
 KFIMA        : s
 KGB          : s
+KGB-WB       : s
 KGROUP       : s
 KGROUP-WC    : s
 KHIND        : s
@@ -541,7 +543,6 @@ MILUX        : s
 MINDA        : s
 MINETEC      : s
 MINHO        : s
-MINHO-WC     : s
 MISC         : s
 MITRA        : s
 MITRA-WE     : s
@@ -854,7 +855,6 @@ TCS          : s
 TCS-WA       : s
 TDEX         : s
 TDM          : s
-TECFAST      : s
 TECHNAX      : s
 TEKSENG      : s
 TELADAN      : s
