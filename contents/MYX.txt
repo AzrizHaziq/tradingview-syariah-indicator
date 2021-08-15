@@ -1,10 +1,11 @@
 MYX
-updatedAt : Sat Aug 07 2021 08:07:37 GMT+0800 (Malaysia Time)
+updatedAt : Sun Aug 15 2021 08:50:16 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
 AASIA        : s
 AAX          : s
+ABLEGLOB     : s
 ABLEGRP      : s
 ACME         : s
 ACME-WA      : s
@@ -95,7 +96,6 @@ BERTAM       : s
 BHIC         : s
 BIG          : s
 BIMB         : s
-BIMB-WA      : s
 BINACOM      : s
 BINTAI       : s
 BIOHLDG      : s
@@ -159,12 +159,11 @@ COCOLND      : s
 COMFORT      : s
 COMFORT-WB   : s
 COMPUGT      : s
-CONNECT      : s
-CONNECT-WA   : s
 CRESBLD      : s
 CRESNDO      : s
 CRG          : s
 CSCENIC      : s
+CSCENIC-WA   : s
 CSCSTEL      : s
 CTIB         : s
 CTOS         : s
@@ -238,6 +237,7 @@ ENEST        : s
 ENGKAH       : s
 ENGKAH-WB    : s
 ENGTEX       : s
+ENGTEX-WR    : s
 ENRA         : s
 ENRA-WA      : s
 EPMB         : s
@@ -405,7 +405,6 @@ JIANKUN      : s
 JIANKUN-WA   : s
 JISHAN       : s
 JKGLAND      : s
-JOHOTIN      : s
 JTIASA       : s
 K1           : s
 K1-WC        : s
@@ -701,6 +700,7 @@ PRTASCO      : s
 PRTASCO-WA   : s
 PTARAS       : s
 PTRANS       : s
+PTRANS-WB    : s
 PUC          : s
 PUC-WA       : s
 PUNCAK       : s
@@ -759,6 +759,7 @@ SCIB-WB      : s
 SCIENTX      : s
 SCIENTX-WC   : s
 SCNWOLF      : s
+SCNWOLF-WA   : s
 SCOMIES      : s
 SCOMNET      : s
 SCOMNET-WA   : s
@@ -931,6 +932,8 @@ VS-WB        : s
 VSOLAR       : s
 VSOLAR-WB    : s
 VSTECS       : s
+WAJA         : s
+WAJA-WA      : s
 WARISAN      : s
 WASEONG      : s
 WATTA        : s
