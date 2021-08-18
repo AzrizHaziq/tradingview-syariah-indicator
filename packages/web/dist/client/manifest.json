@@ -1,0 +1,90 @@
+{
+  "renderer/_default.page.client.tsx": {
+    "file": "assets/renderer/_default.page.client.tsx.46119cf6.js",
+    "src": "renderer/_default.page.client.tsx",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js"
+    ],
+    "css": [
+      "assets/renderer/_default.page.client.tsx.0c0ce1d1.css"
+    ],
+    "assets": [
+      "assets/shariah-icon.40e614a6.svg",
+      "assets/popup.913357dc.png",
+      "assets/chart_page.79ba8cd6.png",
+      "assets/symbol_page.25de0378.png",
+      "assets/screener_page_on.7e664a86.png",
+      "assets/chart_page_with_screener.3f0df85f.png"
+    ]
+  },
+  "_vendor.eeed17aa.js": {
+    "file": "assets/vendor.eeed17aa.js",
+    "dynamicImports": [
+      "renderer/_error.page.tsx",
+      "pages/dev/index.page.tsx",
+      "pages/guideline/index.page.tsx",
+      "pages/index/index.page.tsx",
+      "pages/list/index.page.tsx",
+      "renderer/_default.page.client.tsx",
+      "renderer/_default.page.server.tsx",
+      "pages/list/index.page.server.ts"
+    ]
+  },
+  "renderer/_error.page.tsx": {
+    "file": "assets/_error.page.00cb4f84.js",
+    "src": "renderer/_error.page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js"
+    ]
+  },
+  "pages/dev/index.page.tsx": {
+    "file": "assets/index.page.890fb8c3.js",
+    "src": "pages/dev/index.page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js"
+    ]
+  },
+  "pages/guideline/index.page.tsx": {
+    "file": "assets/index.page.60983cb8.js",
+    "src": "pages/guideline/index.page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js"
+    ]
+  },
+  "pages/index/index.page.tsx": {
+    "file": "assets/index.page.0d78c53c.js",
+    "src": "pages/index/index.page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js",
+      "renderer/_default.page.client.tsx"
+    ]
+  },
+  "pages/list/index.page.tsx": {
+    "file": "assets/index.page.809f67c1.js",
+    "src": "pages/list/index.page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.eeed17aa.js",
+      "renderer/_default.page.client.tsx"
+    ],
+    "css": [
+      "assets/index.page.410f634c.css"
+    ]
+  },
+  "renderer/_default.page.server.tsx": {
+    "file": "assets/_default.page.server.f78b9858.js",
+    "src": "renderer/_default.page.server.tsx",
+    "isDynamicEntry": true
+  },
+  "pages/list/index.page.server.ts": {
+    "file": "assets/index.page.server.8b64310a.js",
+    "src": "pages/list/index.page.server.ts",
+    "isDynamicEntry": true
+  }
+}
