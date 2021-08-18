@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "Display small shariah indicator to stock list in tradingview(MY)",
   "private": true,
-  "engines": {
-    "node": "15.12.0"
-  },
   "scripts": {
     "start": "lerna run --scope @app/extension --stream watch",
     "c": "lerna run --scope @app/extension --stream watch:c",
