@@ -12,11 +12,11 @@ module.exports = {
       jsx: true,
     },
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  // settings: {
+  //   react: {
+  //     version: 'detect',
+  //   },
+  // },
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
@@ -24,6 +24,7 @@ module.exports = {
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   rules: {
+    'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs

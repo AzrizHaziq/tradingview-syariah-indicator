@@ -1,13 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "esnext",
     "declaration": false,
     "esModuleInterop": true,
-    "jsx": "react",
-//    "module": "es6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+//    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
-  "include": ["src/**/*", "globals.d.ts", "webpack.config.ts"],
+  "include": ["src/**/*", "globals.d.ts"],
   "exclude": ["dist", "node_modules"]
 }

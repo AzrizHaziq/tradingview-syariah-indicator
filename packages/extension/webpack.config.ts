@@ -35,12 +35,26 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   },
   module: {
     rules: [
+      // {
+      //   test: /\.tsx?$/,
+      //   loader: 'esbuild-loader',
+      //   options: {
+      //     loader: 'tsx',
+      //     target: 'es2015',
+      //   },
+      // },
+      // https://github.com/ryansolid/solid-ts-webpack/
       {
-        test: /\.tsx?$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2015',
+        test: /\.(ts)x?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            configFile: false,
+            presets: ['@babel/preset-env', 'solid', '@babel/preset-typescript'],
+            plugins: ['@babel/plugin-transform-runtime'],
+          },
         },
       },
       {
