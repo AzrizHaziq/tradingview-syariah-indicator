@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
-import { _popupGa } from '../../Helpers'
-import { getMessage } from '../../../helper'
+import { _popupGa } from './../Helpers'
+import { getMessage } from './../../helper'
+import type { Component } from 'solid-js'
 import { browser } from 'webextension-polyfill-ts'
 
 const { version } = browser.runtime.getManifest()
-const releaseUrl = 'https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'
 const popup_version = getMessage('popup_version')
+const releaseUrl = 'https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'
 
-export const Version: FC = () => (
+export const Version: Component = () => (
   <a
     onClick={_popupGa('click', 'version')}
     title={popup_version}

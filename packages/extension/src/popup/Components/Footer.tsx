@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
-import { _popupGa } from '../../Helpers'
-import { getMessage } from '../../../helper'
+import { _popupGa } from './../Helpers'
+import type { Component } from 'solid-js'
+import { getMessage } from './../../helper'
 
 const popup_tg_group = getMessage('popup_tg_group')
 const popup_github_repo = getMessage('popup_github_repo')
 const popup_bug_or_suggestion = getMessage('popup_bug_or_suggestion')
 const popup_interested_to_contribute = getMessage('popup_interested_to_contribute')
 
-export const Footer: FC = () => (
+export const Footer: Component = () => (
   <>
     <a
       onClick={_popupGa('click', 'tg')}

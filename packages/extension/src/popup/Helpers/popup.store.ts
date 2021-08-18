@@ -1,6 +1,13 @@
 import { getStorage } from '../../helper'
+import { createStore } from 'solid-js/store'
 
-export async function setUpdateAt(): Promise<TSI.Flag[]> {
+const [state, setState] = createStore({
+  list: [],
+})
+
+export const CurrentDateStore = state
+
+export async function getStorageDetails(): Promise<TSI.Flag[]> {
   try {
     const DETAILS = await getStorage('DETAILS')
 
@@ -11,7 +18,8 @@ export async function setUpdateAt(): Promise<TSI.Flag[]> {
       }))
     }
 
-    return DETAILS
+    console.log(DETAILS)
+    setState('list', DETAILS)
   } catch {
     throw new Error('Failed to get data from browser storage in popup')
   }

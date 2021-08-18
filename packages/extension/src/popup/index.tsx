@@ -1,11 +1,11 @@
-import React from 'react'
-import { render } from 'react-dom'
-
 import '../_global.scss'
 import './_index.scss'
-import { Popup } from './Components'
+
 import { initGa } from '../helper'
+import { Popup } from './Components'
+import { render } from 'solid-js/web'
 
 initGa()
 ga('send', 'pageview', 'popup')
-render(<Popup />, window.document.querySelector('#root'))
+
+render(Popup, document.body)
