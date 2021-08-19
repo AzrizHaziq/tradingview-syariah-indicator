@@ -1,7 +1,7 @@
 import { onMount } from 'solid-js'
 import { Header, Version, Flags, Footer } from '.'
 import { browser } from 'webextension-polyfill-ts'
-import { getStorageDetails, useCounter } from './../Helpers/popup.store'
+import { getStorageDetails, useAbc, useCounter } from './../Helpers/popup.store'
 
 // import { CurrentDateProvider } from '../../Context'
 // import { RefreshData, Flags } from './../index'
@@ -9,12 +9,12 @@ import { getStorageDetails, useCounter } from './../Helpers/popup.store'
 const { author } = browser.runtime.getManifest()
 
 export const Popup = () => {
+  const [abc, { init }] = useAbc()
+
   onMount(() => {
     document.body.focus()
-    getStorageDetails().then(console.log)
+    getStorageDetails().then(init)
   })
-
-  const [count, { increment, decrement }] = useCounter()
 
   return (
     <div class='space-x-2 flex p-2 h-full'>
@@ -26,11 +26,7 @@ export const Popup = () => {
         height='25px'
       />
 
-      <div className='text-white'>
-        <p>{count()} 2222</p>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
-      </div>
+      <pre class='text-white'>{JSON.stringify(abc(), null, 2)}</pre>
 
       <div class='flex flex-col w-full'>
         <Header />

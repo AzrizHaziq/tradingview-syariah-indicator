@@ -44,3 +44,28 @@ export const CounterProvider: Component<{ count: number }> = props => {
 export function useCounter() {
   return useContext(CounterContext)
 }
+
+type ABCStore = [Accessor<any[]>, { init?: (item) => void; setFlagUpdateAt?: (id: number, updatedAt: string) => void }]
+const AbcContext = createContext<ABCStore>([() => [], {}])
+
+export function useAbc() {
+  return useContext(AbcContext)
+}
+
+export const AbcProvider: Component<{ value: any[] }> = props => {
+  const [state, setState] = createSignal(props.value || [])
+  const store: ABCStore = [
+    state,
+    {
+      init(item) {
+        setState(item)
+      },
+      setFlagUpdateAt(id: number, updatedAt: string) {
+        console.log(id, updatedAt)
+        // setState()
+      },
+    },
+  ]
+
+  return <AbcContext.Provider value={store}>{props.children}</AbcContext.Provider>
+}

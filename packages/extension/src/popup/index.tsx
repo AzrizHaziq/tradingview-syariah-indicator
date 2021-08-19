@@ -8,7 +8,7 @@ initGa()
 ga('send', 'pageview', 'popup')
 
 import { render } from 'solid-js/web'
-import { CounterProvider, useCounter } from './Helpers/popup.store'
+import { AbcProvider, CounterProvider, useCounter } from './Helpers/popup.store'
 
 const NestedComponent = () => {
   const [count, { increment, decrement }] = useCounter()
@@ -22,10 +22,12 @@ const NestedComponent = () => {
 }
 
 const App = () => (
-  <CounterProvider count={7}>
-    <NestedComponent />
+  // <CounterProvider count={7}>
+  <AbcProvider value={[]}>
+    {/*<NestedComponent />*/}
     <Popup />
-  </CounterProvider>
+  </AbcProvider>
+  // </CounterProvider>
 )
 
 render(App, document.body)
