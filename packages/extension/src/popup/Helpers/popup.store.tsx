@@ -1,4 +1,5 @@
 import { getStorage } from '../../helper'
+import { createSignal, createContext, useContext, Component, Accessor } from 'solid-js'
 
 export async function getStorageDetails(): Promise<TSI.Flag[]> {
   try {
@@ -18,54 +19,39 @@ export async function getStorageDetails(): Promise<TSI.Flag[]> {
   }
 }
 
-import { createSignal, createContext, useContext, Component, Accessor } from 'solid-js'
+type CurrentDataStore = [Accessor<TSI.Flag[]>, { setState?: (item: TSI.Flag[]) => void }]
 
-type CounterStore = [Accessor<number>, { increment?: () => void; decrement?: () => void }]
+const CurrentDataContext = createContext<CurrentDataStore>([() => [], {}])
 
-const CounterContext = createContext<CounterStore>([() => 0, {}])
+export const useCurrentData = (): CurrentDataStore => useContext(CurrentDataContext)
 
-export const CounterProvider: Component<{ count: number }> = props => {
-  const [count, setCount] = createSignal(props.count || 0),
-    store: CounterStore = [
-      count,
-      {
-        increment() {
-          setCount(c => c + 1)
-        },
-        decrement() {
-          setCount(c => c - 1)
-        },
-      },
-    ]
-
-  return <CounterContext.Provider value={store}>{props.children}</CounterContext.Provider>
-}
-
-export function useCounter() {
-  return useContext(CounterContext)
-}
-
-type ABCStore = [Accessor<any[]>, { init?: (item) => void; setFlagUpdateAt?: (id: number, updatedAt: string) => void }]
-const AbcContext = createContext<ABCStore>([() => [], {}])
-
-export function useAbc() {
-  return useContext(AbcContext)
-}
-
-export const AbcProvider: Component<{ value: any[] }> = props => {
+export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = props => {
   const [state, setState] = createSignal(props.value || [])
-  const store: ABCStore = [
+  const store: CurrentDataStore = [
     state,
     {
-      init(item) {
+      setState(item) {
         setState(item)
-      },
-      setFlagUpdateAt(id: number, updatedAt: string) {
-        console.log(id, updatedAt)
-        // setState()
       },
     },
   ]
 
-  return <AbcContext.Provider value={store}>{props.children}</AbcContext.Provider>
+  return <CurrentDataContext.Provider value={store}>{props.children}</CurrentDataContext.Provider>
+}
+
+export async function setUpdateAt(): Promise<TSI.Flag[]> {
+  try {
+    const DETAILS = await getStorage('DETAILS')
+
+    if (process.env.NODE_ENV !== 'production') {
+      return DETAILS.map(i => ({
+        ...i,
+        updatedAt: `${Math.floor(Math.random() * 12)}/${Math.floor(Math.random() * 25)}/2021`,
+      }))
+    }
+
+    return DETAILS
+  } catch {
+    throw new Error('Failed to get data from browser storage in popup')
+  }
 }
