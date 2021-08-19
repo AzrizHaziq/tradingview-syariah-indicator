@@ -1,18 +1,24 @@
 import type { Component } from 'solid-js'
-import { For } from 'solid-js'
-import { _popupGa } from './../Helpers'
-import { getMessage, isValidDate } from './../../helper'
-import { CurrentDateStore } from '../Helpers/popup.store'
+// import { createContext, For, JSXElement, useContext } from 'solid-js'
+// import { _popupGa } from './../Helpers'
+// import { getMessage, isValidDate } from './../../helper'
+import { useCounter } from '../Helpers/popup.store'
 
 export const Flags: Component = () => {
-  // const [dates, dispatch] = useCurrentDate()
-
-  // useEffect(() => {
-  //   setUpdateAt().then(exchanges => dispatch({ type: 'init', payload: exchanges }))
-  // }, [])
+  const [count, { increment, decrement }] = useCounter()
 
   return (
-    <For each={CurrentDateStore.list}>{e => <div>{e}</div>}</For>
+    <>
+      <div>{count()}</div>
+      <button onClick={increment} class='p-2 bg-red-300'>
+        +
+      </button>
+      <button onClick={decrement} class='p-2 ml-2 bg-green-400'>
+        -
+      </button>
+    </>
+
+    // <For each={state.count}>{e => <div>{e}</div>}</For>
     //   {dates.map((flag: TSI.Flag) => {
     //     const { updatedAt, id } = flag
     //     const popup_list_at = getMessage('popup_list_at', id)
@@ -27,14 +33,14 @@ export const Flags: Component = () => {
     //         title={popup_list_at}
     //         rel='noopener noreferrer'
     //         onClick={_popupGa('click', 'shariahAt')}
-    //         className='cursor-pointer flex items-center text-gray-300 hover:underline'>
+    //         class='cursor-pointer flex items-center text-gray-300 hover:underline'>
     //         <img
-    //           className='rounded-full'
+    //           class='rounded-full'
     //           style={{ width: '18px', height: '18px' }}
     //           src={`/assets/exchanges/${id}.svg`}
     //           alt={`Exchange: ${id}`}
     //         />
-    //         <p className='ml-1 text-xs'>{lastDate}</p>
+    //         <p class='ml-1 text-xs'>{lastDate}</p>
     //       </a>
     //     )
     //   })}

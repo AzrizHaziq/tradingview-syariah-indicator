@@ -60,8 +60,4 @@
 // export { CurrentDateProvider, useCurrentDateState, useCurrentDateDispatch, useCurrentDate }
 ////////////////////////////////////////////////////////////////////////////////
 
-import { createStore } from 'solid-js/store'
-
-const [state, setState] = createStore({
-  list: [],
-})
+export {}

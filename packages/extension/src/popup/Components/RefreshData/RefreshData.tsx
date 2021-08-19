@@ -8,7 +8,7 @@
 // const popup_loading_icon = getMessage('popup_loading_icon')
 //
 // const LoadingIcon = (
-//   <svg className='tsi-loading-icon mr-1' xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'>
+//   <svg class='tsi-loading-icon mr-1' xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'>
 //     <title>{popup_loading_icon}</title>
 //     <g fillRule='evenodd'>
 //       <circle cx='7' cy='7' r='6' stroke='#fff' strokeOpacity='.2' strokeWidth='2' />
@@ -19,7 +19,7 @@
 //
 // const RefreshIcon = (
 //   <svg
-//     className='tsi-refresh-icon'
+//     class='tsi-refresh-icon'
 //     enableBackground='new 0 0 76 76'
 //     viewBox='0 0 80 80'
 //     height='24'

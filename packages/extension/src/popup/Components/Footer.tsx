@@ -11,12 +11,12 @@ export const Footer: Component = () => (
   <>
     <a
       onClick={_popupGa('click', 'tg')}
-      className='text-gray-300 flex hover:underline'
+      class='text-gray-300 flex hover:underline'
       target='_blank'
       rel='noopener noreferrer'
       href='https://t.me/tv_shariah'>
       <img
-        className='mr-1'
+        class='mr-1'
         src='/assets/icons/telegram.svg'
         alt='Tradingview shariah icon'
         width='20px'
@@ -27,13 +27,13 @@ export const Footer: Component = () => (
     </a>
     <a
       onClick={_popupGa('click', 'github')}
-      className='text-gray-300 flex hover:underline'
+      class='text-gray-300 flex hover:underline'
       target='_blank'
       rel='noopener noreferrer'
       href='https://github.com/AzrizHaziq/tradingview-syariah-indicator'>
       <img
         title={popup_github_repo}
-        className='mr-2'
+        class='mr-2'
         src='/assets/icons/github.svg'
         alt='Tradingview shariah icon'
         width='17px'
