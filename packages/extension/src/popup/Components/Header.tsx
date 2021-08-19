@@ -1,6 +1,6 @@
-import { _popupGa } from './../Helpers'
+import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
-import { getMessage } from './../../helper'
+import { _popupGa } from '@popup/popup-helpers'
 
 const name = getMessage('ext_extension_name')
 const githubUrl = 'https://azrizhaziq.github.io/tradingview-syariah-indicator'

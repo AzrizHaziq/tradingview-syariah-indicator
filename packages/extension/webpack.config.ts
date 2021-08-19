@@ -9,6 +9,7 @@ import { ESBuildMinifyPlugin } from 'esbuild-loader'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -65,6 +66,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     ],
   },
   resolve: {
+    plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       'webextension-polyfill-ts': path.resolve(

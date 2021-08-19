@@ -11,7 +11,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@popup/*": ["./src/popup/*"]
+    }
   },
   "include": ["src/**/*", "globals.d.ts"],
   "exclude": ["dist", "node_modules"]

@@ -1,7 +1,7 @@
 import { For } from 'solid-js'
 import type { Component } from 'solid-js'
-import { _popupGa, useCurrentData } from './../Helpers'
-import { getMessage, isValidDate } from './../../helper'
+import { getMessage, isValidDate } from '@src/helper'
+import { _popupGa, useCurrentData } from '@popup/popup-helpers'
 
 export const Flags: Component = () => {
   const [currentData] = useCurrentData()

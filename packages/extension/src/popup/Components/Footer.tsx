@@ -1,6 +1,6 @@
-import { _popupGa } from './../Helpers'
+import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
-import { getMessage } from './../../helper'
+import { _popupGa } from '@popup/popup-helpers'
 
 const popup_tg_group = getMessage('popup_tg_group')
 const popup_github_repo = getMessage('popup_github_repo')

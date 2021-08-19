@@ -1,4 +1,4 @@
-import { getStorage } from '../../helper'
+import { getStorage } from '@src/helper'
 import { createSignal, createContext, useContext, Component, Accessor } from 'solid-js'
 
 export async function getStorageDetails(): Promise<TSI.Flag[]> {

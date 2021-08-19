@@ -1,7 +1,7 @@
 import { onMount } from 'solid-js'
 import { browser } from 'webextension-polyfill-ts'
-import { Footer, Header, Version, Flags, RefreshData } from '.'
-import { getStorageDetails, useCurrentData } from './../Helpers'
+import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
+import { Footer, Header, Version, Flags, RefreshData } from '@popup/Components'
 
 const { author } = browser.runtime.getManifest()
 

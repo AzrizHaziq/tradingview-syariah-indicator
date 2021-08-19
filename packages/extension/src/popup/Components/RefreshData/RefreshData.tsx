@@ -1,8 +1,8 @@
 import './RefreshData.scss'
-import { getMessage } from '../../../helper'
+import { getMessage } from '@src/helper'
 import { Component, createSignal } from 'solid-js'
 import { browser } from 'webextension-polyfill-ts'
-import { setUpdateAt, useCurrentData } from '../../Helpers'
+import { setUpdateAt, useCurrentData } from '@popup/popup-helpers'
 
 export const RefreshData: Component = () => {
   const [, { setState }] = useCurrentData()
