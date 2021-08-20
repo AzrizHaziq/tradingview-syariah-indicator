@@ -1,8 +1,8 @@
 import merge from 'lodash.merge'
-import { pipe } from '../utils.js'
+import { pipe } from '../utils.mjs'
 import cliProgress from 'cli-progress'
-import { writeToFile } from '../writeToFile.js'
 import { chromium } from 'playwright-chromium'
+import { writeToFile } from '../writeToFile.mjs'
 
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'summary/MYX.txt'
