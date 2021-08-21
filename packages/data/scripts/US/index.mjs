@@ -2,10 +2,17 @@ import fetch from 'node-fetch'
 import { delay } from '../utils.mjs'
 import { writeToFile } from '../writeToFile.mjs'
 
-const blackListItems = ['Cash&Other']
-const wahedHoldingUrl = 'https://funds.wahedinvest.com/etf-holdings.csv'
+const config = {
+  FgRed: '\x1b[31m',
+  FgCyan: '\x1b[36m',
+  blackListItems: ['Cash&Other'],
+  exchanges: ['NYSE', 'NASDAQ', 'AMAX', 'OTC'],
+  wahedHoldingUrl: 'https://funds.wahedinvest.com/etf-holdings.csv',
+}
 
-function getTickersAndSymbols(csv) {
+const isWait = spec => spec.task === 'wait'
+
+function transformToTickersAndSymbols(csv) {
   function isValidDate(d) {
     return d instanceof Date && !isNaN(d)
   }
@@ -26,7 +33,7 @@ function getTickersAndSymbols(csv) {
         const [, , ticker, , symbols] = item.split(',')
 
         // remove non stock item (sukuk)
-        if (blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
+        if (config.blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
           return acc
         }
 
@@ -44,12 +51,13 @@ function getTickersAndSymbols(csv) {
  */
 const getExchange = item =>
   new Promise(async (res, rej) => {
-    const exchanges = ['NYSE', 'NASDAQ', 'AMAX', 'OTC']
-
-    for await (const exchange of exchanges) {
+    for await (const exchange of config.exchanges) {
       try {
         const response = await fetch(`https://www.tradingview.com/symbols/${exchange}-${item.ticker}/`)
-        console.log(`Fetched ${response.status} = ${item.ticker}:${exchange}`)
+        console.log(
+          response.status === 200 ? config.FgCyan : config.FgRed,
+          `${response.status}:${item.ticker}:${exchange}`
+        )
 
         // only expect status code to be 200 and 404
         if (![200, 404].includes(response.status)) {
@@ -60,7 +68,7 @@ const getExchange = item =>
           res({ ...item, exchange })
           break
           // if all exchanges failed, then search that stock if it is really exist
-        } else if (exchange === exchanges[exchanges.length - 1]) {
+        } else if (exchange === config.exchanges[config.exchanges.length - 1]) {
           rej(`Failed (getExchanged): all exchanges failed: ${exchange}:${item.ticker}`)
         }
       } catch (e) {
@@ -69,25 +77,31 @@ const getExchange = item =>
     }
   })
 
-const isWait = spec => spec.task === 'wait'
-
 ;(async () => {
   try {
-    const response = await fetch(wahedHoldingUrl)
+    const response = await fetch(config.wahedHoldingUrl)
     const data = await response.text()
-    const list = getTickersAndSymbols(data)
+    const list = transformToTickersAndSymbols(data)
 
     const tasks = list
       .flatMap((item, index) => [item, index + 1 === list.length ? null : { task: 'wait' }])
       .filter(Boolean)
 
-    const listWithExchanges = await tasks.reduce(async (p, spec) => {
-      return p.then(acc =>
-        (isWait(spec) ? delay() : getExchange(spec))
-          .then(item => (isWait(spec) ? acc : acc.concat(item)))
-          .catch(console.err)
-      )
-    }, Promise.resolve([]))
+    const listWithExchanges = await tasks.reduce(
+      async (p, spec) =>
+        p.then(acc =>
+          (isWait(spec) ? delay() : getExchange(spec))
+            .then(item => {
+              if (isWait(spec)) {
+                return acc
+              } else {
+                return acc.concat(item)
+              }
+            })
+            .catch(console.error)
+        ),
+      Promise.resolve([])
+    )
 
     await writeToFile('summary/US.json', JSON.stringify(listWithExchanges, null, 2))
   } catch (e) {

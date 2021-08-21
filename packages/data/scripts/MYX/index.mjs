@@ -7,7 +7,7 @@ import { writeToFile } from '../writeToFile.mjs'
 const TRADING_VIEW_MYX = 'MYX'
 export const MYX_FILENAME = 'summary/MYX.txt'
 
-const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
+const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.legacy)
 
 async function scrapBursaMalaysia() {
   const scrapUrl = ({ per_page, page }) =>

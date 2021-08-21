@@ -83,7 +83,7 @@ Feel free to contact me if any bug or more features here
 
 ## Developers
 Requirements
-- node = 15.12.0
+- node = look at `.nvmrc`
 - yarn = 1.22.10
 - git = 2.23.0
 
@@ -106,3 +106,18 @@ Requirements
 ## Update Stock list data (will take a few X minutes)
 1. Type in terminal `$ npm run update-data`
     
+
+## Todo
+
+- [ ] Add US stocks
+- [ ] Read pdf from ChinaA ETF
+- [ ] Add e2e test with playwright + github action run with schedule
+- [ ] Add website, host in vercel with nextjs
+- [ ] Add an option page where user can custom its own data.
+- [ ] Create a page where a list of US, MY, China stocks and 
+    - [ ] search
+    - [ ] filter
+    - [ ] use json hosted in github raw
+- [ ] Added a page for "accept agreement/conditions"
+  - For US and China stocks please do refer to original website before buying. And if you'r holding then look at them everyday.
+- [ ] Test chrome webStore-cli npm
