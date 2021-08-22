@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "for-china-etf": "use npm pdfreader",
     "update-data": "node scripts/_index.mjs",
     "ghAction": "npm run update-data -- skip-commit"
   },
