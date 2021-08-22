@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "ava",
     "for-china-etf": "use npm pdfreader",
     "update-data": "node scripts/_index.mjs",
     "ghAction": "npm run update-data -- skip-commit"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "cli-progress": "^3.8.2",
     "dotenv": "^10.0.0",
     "lodash.merge": "^4.6.2",
@@ -18,5 +20,21 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
+  },
+  "ava": {
+    "files": [
+      "__test__/**/*.mjs"
+    ],
+    "concurrency": 2,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "environmentVariables": {
+      "MY_ENVIRONMENT_VARIABLE": "some value"
+    },
+    "verbose": true,
+    "nodeArguments": [
+      "--trace-deprecation",
+      "--napi-modules"
+    ]
   }
 }
