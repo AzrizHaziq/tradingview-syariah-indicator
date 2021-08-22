@@ -1,11 +1,9 @@
 import merge from 'lodash.merge'
-import { pipe } from '../utils.mjs'
 import cliProgress from 'cli-progress'
 import { chromium } from 'playwright-chromium'
-import { writeToFile } from '../writeToFile.mjs'
+import { pipe } from './utils.mjs'
 
 const TRADING_VIEW_MYX = 'MYX'
-export const MYX_FILENAME = 'summary/MYX.txt'
 
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.legacy)
 
@@ -74,43 +72,6 @@ async function scrapBursaMalaysia() {
   }
 }
 
-export function myxFilenameTransformer(data, flagId = 'MYX') {
-  const bufferPadRightSize = 1
-  const {
-    [TRADING_VIEW_MYX]: { list, shape, ...rest },
-  } = data
-
-  const maxRestLength = Math.max(...Object.keys(rest).map(i => i.length))
-  const maxStockLength = Math.max(...Object.keys(list).map(i => i.length))
-
-  function metaDataDisplayed(key, value) {
-    return `${key.padEnd(maxRestLength + bufferPadRightSize, ' ')}: ${value}`
-  }
-
-  function listDisplayed(stockName, values) {
-    const stockIs = values
-      .map((binary, index) =>
-        Boolean(binary) ? (shape[index].hasOwnProperty(binary) ? shape[index][binary] : shape[index].default) : null
-      )
-      .filter(Boolean)
-      .join(', ')
-
-    return `${stockName.padEnd(maxStockLength + bufferPadRightSize, ' ')}: ${stockIs}`
-  }
-
-  function dash(size = 20, char = '-') {
-    return Array.from({ length: size }, () => char).join('')
-  }
-
-  return `
-${flagId}
-${Object.entries(rest)
-  .reduce((acc, [key, value]) => acc + '\n' + metaDataDisplayed(key, value), '')
-  .trim()}
-${dash()}
-${Object.entries(list).reduce((acc, [stockName, values]) => acc + '\n' + listDisplayed(stockName, values), '')}`.trim()
-}
-
 export async function MYX() {
   try {
     const shariahList = await scrapBursaMalaysia()
@@ -118,23 +79,17 @@ export async function MYX() {
     const sortedList = pipe(
       Object.values,
       entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       items => items.reduce((acc, { code, stockName, ...res }) => ({ ...acc, [stockName]: Object.values(res) }), {})
     )(merge(shariahList)) // merge by stock code
 
-    const NEW_MYX_DATA = {
+    return {
       [TRADING_VIEW_MYX]: {
         updatedAt: new Date(),
         shape: [{ 0: 'non-s', 1: 's', default: '' }],
         list: sortedList,
       },
     }
-
-    // write to MYX
-    await writeToFile(MYX_FILENAME, myxFilenameTransformer(NEW_MYX_DATA))
-
-    return NEW_MYX_DATA
   } catch (e) {
-    throw `Error generating ${TRADING_VIEW_MYX}`
+    throw `Error generating MYX: ${e}`
   }
 }

@@ -1,6 +1,5 @@
 import fetch from 'node-fetch'
-import { delay } from '../utils.mjs'
-import { writeToFile } from '../writeToFile.mjs'
+import { delay, pipe } from './utils.mjs'
 
 const config = {
   FgRed: '\x1b[31m',
@@ -8,6 +7,13 @@ const config = {
   blackListItems: ['Cash&Other'],
   exchanges: ['NYSE', 'NASDAQ', 'AMAX', 'OTC'],
   wahedHoldingUrl: 'https://funds.wahedinvest.com/etf-holdings.csv',
+  shape: [
+    {
+      '0': 'non-s',
+      '1': 's',
+      default: '',
+    },
+  ],
 }
 
 const isWait = spec => spec.task === 'wait'
@@ -44,10 +50,8 @@ function transformToTickersAndSymbols(csv) {
 
 /**
  * https://www.tradingview.com/symbols/NYSE-A/
- * @param {Object} item - item from WHAD ETF
- * @param {string} item.ticker - Company code
- * @param {string} item.symbols - Company fullname
- * @returns {Promise<string>}
+ * @param {BeforeGetExchange} item
+ * @returns {Promise<AfterGetExchange>}
  */
 const getExchange = item =>
   new Promise(async (res, rej) => {
@@ -77,34 +81,99 @@ const getExchange = item =>
     }
   })
 
-;(async () => {
+/**
+ * @param {AfterGetExchange[]} list
+ */
+function createTasks(list) {
+  return list.flatMap((item, index) => [item, index + 1 === list.length ? null : { task: 'wait' }]).filter(Boolean)
+}
+
+/**
+ * @param {(Tasks|AfterGetExchange)[]} tasks
+ * @returns {Promise}
+ */
+function runTaskSequentially(tasks) {
+  return tasks.reduce(
+    async (p, spec) =>
+      p.then(acc =>
+        (isWait(spec) ? delay() : getExchange(spec))
+          .then(item => {
+            if (!isWait(spec)) {
+              acc[item.exchange][item.ticker] = [1] // shape final output
+            }
+
+            return acc
+          })
+          .catch(console.error)
+      ),
+    Promise.resolve(config.exchanges.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}))
+  )
+}
+
+/**
+ * @param {Promise<Object>} p
+ * @returns {Promise<Exchange>}
+ */
+function finalOutput(p) {
+  const updatedAt = new Date()
+
+  return p.then(data =>
+    Object.entries(data).reduce(
+      (acc, [k, v]) => ({
+        ...acc,
+        ...(Object.keys(v).length ? { [k]: { shape: config.shape, updatedAt, list: v } } : {}),
+      }),
+      {}
+    )
+  )
+}
+
+/**
+ * returns {Promise<Exchange>}
+ */
+export async function US() {
   try {
     const response = await fetch(config.wahedHoldingUrl)
     const data = await response.text()
-    const list = transformToTickersAndSymbols(data)
 
-    const tasks = list
-      .flatMap((item, index) => [item, index + 1 === list.length ? null : { task: 'wait' }])
-      .filter(Boolean)
-
-    const listWithExchanges = await tasks.reduce(
-      async (p, spec) =>
-        p.then(acc =>
-          (isWait(spec) ? delay() : getExchange(spec))
-            .then(item => {
-              if (isWait(spec)) {
-                return acc
-              } else {
-                return acc.concat(item)
-              }
-            })
-            .catch(console.error)
-        ),
-      Promise.resolve([])
-    )
-
-    await writeToFile('summary/US.json', JSON.stringify(listWithExchanges, null, 2))
+    return await pipe(
+      transformToTickersAndSymbols,
+      // data => data.slice(0, 5),
+      createTasks,
+      runTaskSequentially,
+      finalOutput
+    )(data)
   } catch (e) {
-    throw Error(`Error at getting US stock: ${e}`)
+    throw Error(`Error generating US stock: ${e}`)
   }
-})()
+}
+
+/**
+ * @typedef {Object} BeforeGetExchange
+ * @property {string} ticker - company code
+ * @property {string} symbols - company full name
+ */
+
+/**
+ * @typedef {Object} AfterGetExchange
+ * @property {string} ticker - company code
+ * @property {string} symbols - company full name
+ * @property {string} exchange - company's exchange
+ */
+
+/**
+ * @typedef {Object} Tasks
+ * @property {wait} task
+ */
+
+/**
+ * @typedef {Object} ExchangeItem
+ * @property {string} updatedAt
+ * @property {Array.<Object>} shape
+ * @property {Record<string, [number]>} list
+ */
+
+/**
+ * @typedef {Object} Exchange
+ * @property {Record<string, ExchangeItem>} e
+ */

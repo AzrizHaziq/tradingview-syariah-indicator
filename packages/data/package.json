@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "update-data": "node scripts/index.mjs",
+    "update-data": "node scripts/_index.mjs",
     "ghAction": "npm run update-data -- skip-commit"
   },
   "devDependencies": {
