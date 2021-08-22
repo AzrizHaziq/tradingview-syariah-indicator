@@ -12,8 +12,8 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "cli-progress": "^3.8.2",
-    "dotenv": "^10.0.0",
     "lodash.merge": "^4.6.2",
+    "msw": "^0.35.0",
     "playwright-chromium": "^1.11.0",
     "rimraf": "^3.0.2",
     "simple-git": "^2.38.0"
