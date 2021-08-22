@@ -1,20 +1,9 @@
 import fetch from 'node-fetch'
+import { CONFIG } from './config.mjs'
+import cliProgress from 'cli-progress'
 import { delay, pipe } from './utils.mjs'
 
-const config = {
-  FgRed: '\x1b[31m',
-  FgCyan: '\x1b[36m',
-  blackListItems: ['Cash&Other'],
-  exchanges: ['NYSE', 'NASDAQ', 'AMAX', 'OTC'],
-  wahedHoldingUrl: 'https://funds.wahedinvest.com/etf-holdings.csv',
-  shape: [
-    {
-      '0': 'non-s',
-      '1': 's',
-      default: '',
-    },
-  ],
-}
+CONFIG.progressBar = new cliProgress.SingleBar({}, CONFIG.progressBarType)
 
 const isWait = spec => spec.task === 'wait'
 
@@ -39,7 +28,7 @@ function transformToTickersAndSymbols(csv) {
         const [, , ticker, , symbols] = item.split(',')
 
         // remove non stock item (sukuk)
-        if (config.blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
+        if (CONFIG.US.blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
           return acc
         }
 
@@ -55,13 +44,11 @@ function transformToTickersAndSymbols(csv) {
  */
 const getExchange = item =>
   new Promise(async (res, rej) => {
-    for await (const exchange of config.exchanges) {
+    CONFIG.progressBar.increment()
+    for await (const exchange of CONFIG.US.exchanges) {
       try {
         const response = await fetch(`https://www.tradingview.com/symbols/${exchange}-${item.ticker}/`)
-        console.log(
-          response.status === 200 ? config.FgCyan : config.FgRed,
-          `${response.status}:${item.ticker}:${exchange}`
-        )
+        // console.log(response.status === 200 ? '\x1b[31m' : '\x1b[36m'`${response.status}:${item.ticker}:${exchange}`)
 
         // only expect status code to be 200 and 404
         if (![200, 404].includes(response.status)) {
@@ -72,7 +59,7 @@ const getExchange = item =>
           res({ ...item, exchange })
           break
           // if all exchanges failed, then search that stock if it is really exist
-        } else if (exchange === config.exchanges[config.exchanges.length - 1]) {
+        } else if (exchange === CONFIG.US.exchanges[CONFIG.US.exchanges.length - 1]) {
           rej(`Failed (getExchanged): all exchanges failed: ${exchange}:${item.ticker}`)
         }
       } catch (e) {
@@ -106,7 +93,7 @@ function runTaskSequentially(tasks) {
           })
           .catch(console.error)
       ),
-    Promise.resolve(config.exchanges.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}))
+    Promise.resolve(CONFIG.US.exchanges.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}))
   )
 }
 
@@ -121,7 +108,7 @@ function finalOutput(p) {
     Object.entries(data).reduce(
       (acc, [k, v]) => ({
         ...acc,
-        ...(Object.keys(v).length ? { [k]: { shape: config.shape, updatedAt, list: v } } : {}),
+        ...(Object.keys(v).length ? { [k]: { shape: CONFIG.US.shape, updatedAt, list: v } } : {}),
       }),
       {}
     )
@@ -133,12 +120,16 @@ function finalOutput(p) {
  */
 export async function US() {
   try {
-    const response = await fetch(config.wahedHoldingUrl)
+    const response = await fetch(CONFIG.US.wahedHoldingUrl)
     const data = await response.text()
 
     return await pipe(
       transformToTickersAndSymbols,
-      // data => data.slice(0, 5),
+      data => data.slice(0, 5),
+      data => {
+        CONFIG.progressBar.start(data.length, 0)
+        return data
+      },
       createTasks,
       runTaskSequentially,
       finalOutput

@@ -1,11 +1,10 @@
 import merge from 'lodash.merge'
+import { pipe } from './utils.mjs'
+import { CONFIG } from './CONFIG.mjs'
 import cliProgress from 'cli-progress'
 import { chromium } from 'playwright-chromium'
-import { pipe } from './utils.mjs'
 
-const TRADING_VIEW_MYX = 'MYX'
-
-const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.legacy)
+CONFIG.progressBar = new cliProgress.SingleBar({}, CONFIG.progressBarType)
 
 async function scrapBursaMalaysia() {
   const scrapUrl = ({ per_page, page }) =>
@@ -27,7 +26,7 @@ async function scrapBursaMalaysia() {
     })
 
     let syariahList = {}
-    progressBar.start(maxPageNumbers, 0)
+    CONFIG.progressBar.start(maxPageNumbers, 0)
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
@@ -56,13 +55,13 @@ async function scrapBursaMalaysia() {
       })
 
       syariahList = { ...syariahList, ...temp }
-      progressBar.increment()
+      CONFIG.progressBar.increment()
     }
 
     await browser.close()
 
     // eslint-disable-next-line no-console
-    console.log('\n\nFound: ', Object.keys(syariahList).length)
+    console.log('\n\nMYX Found: ', Object.keys(syariahList).length)
 
     return syariahList
   } catch (e) {
@@ -83,7 +82,7 @@ export async function MYX() {
     )(merge(shariahList)) // merge by stock code
 
     return {
-      [TRADING_VIEW_MYX]: {
+      MYX: {
         updatedAt: new Date(),
         shape: [{ 0: 'non-s', 1: 's', default: '' }],
         list: sortedList,
