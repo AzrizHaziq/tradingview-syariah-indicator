@@ -83,7 +83,6 @@ export async function MYX() {
 
     return {
       MYX: {
-        updatedAt: new Date(),
         shape: [{ 0: 'non-s', 1: 's', default: '' }],
         list: sortedList,
       },

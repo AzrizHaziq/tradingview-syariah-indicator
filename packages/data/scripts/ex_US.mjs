@@ -102,13 +102,11 @@ function runTaskSequentially(tasks) {
  * @returns {Promise<Exchange>}
  */
 function finalOutput(p) {
-  const updatedAt = new Date()
-
   return p.then(data =>
     Object.entries(data).reduce(
       (acc, [k, v]) => ({
         ...acc,
-        ...(Object.keys(v).length ? { [k]: { shape: CONFIG.US.shape, updatedAt, list: v } } : {}),
+        ...(Object.keys(v).length ? { [k]: { shape: CONFIG.US.shape, list: v } } : {}),
       }),
       {}
     )
@@ -125,7 +123,7 @@ export async function US() {
 
     return await pipe(
       transformToTickersAndSymbols,
-      data => data.slice(0, 5),
+      // data => data.slice(0, 5),
       data => {
         CONFIG.progressBar.start(data.length, 0)
         return data
@@ -159,7 +157,6 @@ export async function US() {
 
 /**
  * @typedef {Object} ExchangeItem
- * @property {string} updatedAt
  * @property {Array.<Object>} shape
  * @property {Record<string, [number]>} list
  */

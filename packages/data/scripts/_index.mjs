@@ -26,7 +26,7 @@ async function commitChangesIfAny() {
       CONFIG.mainOutput,
 
       // Please make sure the key is unique and taken from TV exchange id
-      JSON.stringify(merge(MYX_INFO, US_INFO))
+      JSON.stringify(merge(MYX_INFO, US_INFO, { metadata: { updatedAt: Date.now() } }))
     )
 
     if (!isCommitSKip) {

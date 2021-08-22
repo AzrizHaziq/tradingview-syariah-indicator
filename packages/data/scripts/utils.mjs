@@ -12,7 +12,6 @@ export function delay(delay = getRandomInt(1, 2)) {
   })
 }
 
-
 export async function writeToFile(filename, data) {
   try {
     fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (err) {
