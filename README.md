@@ -114,10 +114,18 @@ Requirements
 - [ ] Add e2e test with playwright + github action run with schedule
 - [ ] Add website, host in vercel with nextjs
 - [ ] Add an option page where user can custom its own data.
+- [ ] Test chrome webStore-cli npm
 - [ ] Create a page where a list of US, MY, China stocks and 
     - [ ] search
     - [ ] filter
     - [ ] use json hosted in github raw
 - [ ] Added a page for "accept agreement/conditions"
-  - For US and China stocks please do refer to original website before buying. And if you'r holding then look at them everyday.
-- [ ] Test chrome webStore-cli npm
+
+### Please do refer to original website before buying. And if you're holding then look at them everyday.
+#### 1. China100 A stocks
+1. Go to [Bursa Malaysia](https://www.bursamalaysia.com/bm/market_information/announcements/company_announcement/announcement_details?ann_id=3174424) 
+2. Then click the pdf [Prospectus VP-DJ Shariah China A-Shares 100 ETF d.12 July 2021.pdf](https://disclosure.bursamalaysia.com/FileAccess/apbursaweb/download?id=209757&name=EA_DS_ATTACHMENTS)
+3. Read at page 48 about Shariah
+
+#### 2. For Wahed ETF HLAL
+1. Read more here [HLAL](https://funds.wahedinvest.com/)
