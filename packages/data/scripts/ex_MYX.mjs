@@ -37,21 +37,34 @@ async function scrapBursaMalaysia() {
         const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
         const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
 
-        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
-          const s = tr.querySelector(':nth-child(2)').textContent
-          const stockCode = tr.querySelector(':nth-child(3)').textContent
+        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce(
+          async (acc, tr) => {
+            const s = tr.querySelector(':nth-child(2)').textContent
+            const stockCode = tr.querySelector(':nth-child(3)').textContent
 
-          const code = removeSpaces(stockCode)
-          const stockName = removeSpacesAndShariah(s)
-          return {
-            ...acc,
-            [code]: {
-              s: 1,
-              code,
-              stockName,
-            },
-          }
-        }, {})
+            const code = removeSpaces(stockCode)
+
+            const {
+              data: {
+                company_info: { name: fullname },
+              },
+            } = await fetch(
+              `https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`
+            ).then(r => r.json())
+
+            const stockName = removeSpacesAndShariah(s)
+            return {
+              ...acc,
+              [code]: {
+                s: 1,
+                code,
+                stockName,
+                fullname,
+              },
+            }
+          },
+          {}
+        )
       })
 
       syariahList = { ...syariahList, ...temp }
@@ -73,18 +86,27 @@ async function scrapBursaMalaysia() {
 
 export async function MYX() {
   try {
-    const shariahList = await scrapBursaMalaysia()
+    let shariahList = await scrapBursaMalaysia()
+    shariahList = merge(shariahList) // merge by stock code
+
+    const human = pipe(Object.values, values =>
+      values.map(val => ({ code: `MYX:${val.stockName}`, fullname: val.fullname }))
+    )(shariahList)
 
     const sortedList = pipe(
       Object.values,
       entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      items => items.reduce((acc, { code, stockName, ...res }) => ({ ...acc, [stockName]: Object.values(res) }), {})
-    )(merge(shariahList)) // merge by stock code
+      items =>
+        items.reduce((acc, { code, stockName, fullname, ...res }) => ({ ...acc, [stockName]: Object.values(res) }), {})
+    )(shariahList)
 
     return {
-      MYX: {
-        shape: [{ 0: 'non-s', 1: 's', default: '' }],
-        list: sortedList,
+      human,
+      data: {
+        MYX: {
+          shape: [{ 0: 'non-s', 1: 's', default: '' }],
+          list: sortedList,
+        },
       },
     }
   } catch (e) {

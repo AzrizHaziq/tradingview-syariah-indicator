@@ -19,15 +19,17 @@ async function commitChangesIfAny() {
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    const US_INFO = await US()
-    const MYX_INFO = await MYX()
+    // Please make sure the key is unique and taken from TV exchange id
+    const { data: US_DATA, human: US_HUMAN } = await US()
+    const { data: MYX_DATA, human: MYX_HUMAN } = await MYX()
+    const updatedAt = Date.now()
 
     await writeToFile(
-      CONFIG.mainOutput,
-
-      // Please make sure the key is unique and taken from TV exchange id
-      JSON.stringify(merge(MYX_INFO, US_INFO, { metadata: { updatedAt: Date.now() } }))
+      CONFIG.humanOutput,
+      JSON.stringify({ data: [...MYX_HUMAN, ...US_HUMAN], metadata: { updatedAt } })
     )
+
+    await writeToFile(CONFIG.mainOutput, JSON.stringify(merge(MYX_DATA, US_DATA, { metadata: { updatedAt } })))
 
     if (!isCommitSKip) {
       await commitChangesIfAny()

@@ -1,0 +1,907 @@
+{
+  "data": [
+    {
+      "code": "MYX:DRBHCOM",
+      "fullname": "DRB-HICOM BERHAD"
+    },
+    {
+      "code": "MYX:FAREAST",
+      "fullname": "FAR EAST HOLDINGS BERHAD"
+    },
+    {
+      "code": "MYX:BIPORT",
+      "fullname": "BINTULU PORT HOLDINGS BERHAD"
+    },
+    {
+      "code": "MYX:ARANK",
+      "fullname": "A-RANK BERHAD"
+    },
+    {
+      "code": "MYX:CLOUD",
+      "fullname": "CLOUDARON GROUP BERHAD"
+    },
+    {
+      "code": "NYSE:A",
+      "fullname": "AGILENT TECHNOLOGIES INC"
+    },
+    {
+      "code": "NYSE:AAP",
+      "fullname": "ADVANCE AUTO PARTS INC"
+    },
+    {
+      "code": "NASDAQ:AAPL",
+      "fullname": "APPLE INC"
+    },
+    {
+      "code": "NYSE:ABC",
+      "fullname": "AMERISOURCEBERGEN CORP"
+    },
+    {
+      "code": "NYSE:ABT",
+      "fullname": "ABBOTT LABS"
+    },
+    {
+      "code": "NASDAQ:ADBE",
+      "fullname": "ADOBE SYSTEMS INCORPORATED"
+    },
+    {
+      "code": "NASDAQ:ADI",
+      "fullname": "ANALOG DEVICES INC"
+    },
+    {
+      "code": "NYSE:ADM",
+      "fullname": "ARCHER DANIELS MIDLAND CO"
+    },
+    {
+      "code": "NASDAQ:ADSK",
+      "fullname": "AUTODESK INC"
+    },
+    {
+      "code": "NYSE:AGR",
+      "fullname": "AVANGRID INC"
+    },
+    {
+      "code": "NASDAQ:AKAM",
+      "fullname": "AKAMAI TECHNOLOGIES INC"
+    },
+    {
+      "code": "NYSE:ALB",
+      "fullname": "ALBEMARLE CORP"
+    },
+    {
+      "code": "NASDAQ:ALGN",
+      "fullname": "ALIGN TECHNOLOGY INC"
+    },
+    {
+      "code": "NYSE:ALV",
+      "fullname": "AUTOLIV INC"
+    },
+    {
+      "code": "NASDAQ:AMAT",
+      "fullname": "APPLIED MATLS INC"
+    },
+    {
+      "code": "NASDAQ:AMD",
+      "fullname": "ADVANCED MICRO DEVICES INC"
+    },
+    {
+      "code": "NASDAQ:ANSS",
+      "fullname": "ANSYS INC"
+    },
+    {
+      "code": "NYSE:APD",
+      "fullname": "AIR PRODS & CHEMS INC"
+    },
+    {
+      "code": "NYSE:APTV",
+      "fullname": "APTIV PLC"
+    },
+    {
+      "code": "NYSE:ATO",
+      "fullname": "ATMOS ENERGY CORP"
+    },
+    {
+      "code": "NYSE:AVY",
+      "fullname": "AVERY DENNISON CORP"
+    },
+    {
+      "code": "NASDAQ:AZN",
+      "fullname": "ASTRAZENECA PLC"
+    },
+    {
+      "code": "NYSE:AZO",
+      "fullname": "AUTOZONE INC"
+    },
+    {
+      "code": "NYSE:BAX",
+      "fullname": "BAXTER INTL INC"
+    },
+    {
+      "code": "NYSE:BDX",
+      "fullname": "BECTON DICKINSON & CO"
+    },
+    {
+      "code": "NYSE:BG",
+      "fullname": "BUNGE LIMITED"
+    },
+    {
+      "code": "NASDAQ:BIIB",
+      "fullname": "BIOGEN INC"
+    },
+    {
+      "code": "NYSE:BIO",
+      "fullname": "BIO RAD LABS INC"
+    },
+    {
+      "code": "NYSE:BKR",
+      "fullname": "BAKER HUGHES COMPANY"
+    },
+    {
+      "code": "NASDAQ:BMRN",
+      "fullname": "BIOMARIN PHARMACEUTICAL INC"
+    },
+    {
+      "code": "NYSE:BMY",
+      "fullname": "BRISTOL-MYERS SQUIBB CO"
+    },
+    {
+      "code": "NYSE:BSX",
+      "fullname": "BOSTON SCIENTIFIC CORP"
+    },
+    {
+      "code": "NYSE:BURL",
+      "fullname": "BURLINGTON STORES INC"
+    },
+    {
+      "code": "NYSE:BWA",
+      "fullname": "BORGWARNER INC"
+    },
+    {
+      "code": "NYSE:CAH",
+      "fullname": "CARDINAL HEALTH INC"
+    },
+    {
+      "code": "NYSE:CARR",
+      "fullname": "CARRIER GLOBAL CORPORATION"
+    },
+    {
+      "code": "NYSE:CCEP",
+      "fullname": "COCA-COLA EUROPACIFIC PARTNERS SHS"
+    },
+    {
+      "code": "NYSE:CDAY",
+      "fullname": "CERIDIAN HCM HLDG INC"
+    },
+    {
+      "code": "NASDAQ:CDNS",
+      "fullname": "CADENCE DESIGN SYSTEM INC"
+    },
+    {
+      "code": "NASDAQ:CDW",
+      "fullname": "CDW CORP"
+    },
+    {
+      "code": "NASDAQ:CERN",
+      "fullname": "CERNER CORP"
+    },
+    {
+      "code": "NYSE:CF",
+      "fullname": "CF INDS HLDGS INC"
+    },
+    {
+      "code": "NYSE:CHD",
+      "fullname": "CHURCH & DWIGHT INC"
+    },
+    {
+      "code": "NASDAQ:CHRW",
+      "fullname": "C H ROBINSON WORLDWIDE INC"
+    },
+    {
+      "code": "NYSE:CLVT",
+      "fullname": "CLARIVATE PLC"
+    },
+    {
+      "code": "NYSE:CMI",
+      "fullname": "CUMMINS INC"
+    },
+    {
+      "code": "NYSE:COG",
+      "fullname": "CABOT OIL & GAS CORP"
+    },
+    {
+      "code": "NYSE:COO",
+      "fullname": "COOPER COS INC"
+    },
+    {
+      "code": "NYSE:COP",
+      "fullname": "CONOCOPHILLIPS"
+    },
+    {
+      "code": "NASDAQ:CPRT",
+      "fullname": "COPART INC"
+    },
+    {
+      "code": "NYSE:CRM",
+      "fullname": "SALESFORCE COM INC"
+    },
+    {
+      "code": "NASDAQ:CSCO",
+      "fullname": "CISCO SYS INC"
+    },
+    {
+      "code": "NASDAQ:CTAS",
+      "fullname": "CINTAS CORP"
+    },
+    {
+      "code": "NYSE:CTLT",
+      "fullname": "CATALENT INC"
+    },
+    {
+      "code": "NASDAQ:CTSH",
+      "fullname": "COGNIZANT TECHNOLOGY SOLUTIONS CL A"
+    },
+    {
+      "code": "NYSE:CTVA",
+      "fullname": "CORTEVA INC"
+    },
+    {
+      "code": "NASDAQ:CTXS",
+      "fullname": "CITRIX SYS INC"
+    },
+    {
+      "code": "NYSE:CVS",
+      "fullname": "CVS HEALTH CORP"
+    },
+    {
+      "code": "NYSE:CVX",
+      "fullname": "CHEVRON CORP NEW"
+    },
+    {
+      "code": "NYSE:DAL",
+      "fullname": "DELTA AIR LINES INC DEL"
+    },
+    {
+      "code": "NYSE:DD",
+      "fullname": "DUPONT DE NEMOURS INC"
+    },
+    {
+      "code": "NYSE:DELL",
+      "fullname": "DELL TECHNOLOGIES INC"
+    },
+    {
+      "code": "NYSE:DGX",
+      "fullname": "QUEST DIAGNOSTICS INC"
+    },
+    {
+      "code": "NYSE:DHI",
+      "fullname": "D R HORTON INC"
+    },
+    {
+      "code": "NYSE:DHR",
+      "fullname": "DANAHER CORPORATION"
+    },
+    {
+      "code": "NASDAQ:DLTR",
+      "fullname": "DOLLAR TREE INC"
+    },
+    {
+      "code": "NASDAQ:DOCU",
+      "fullname": "DOCUSIGN INC"
+    },
+    {
+      "code": "NYSE:DOV",
+      "fullname": "DOVER CORP"
+    },
+    {
+      "code": "NYSE:DOW",
+      "fullname": "DOW INC"
+    },
+    {
+      "code": "NASDAQ:DOX",
+      "fullname": "AMDOCS LTD"
+    },
+    {
+      "code": "NASDAQ:EBAY",
+      "fullname": "EBAY INC."
+    },
+    {
+      "code": "NYSE:ECL",
+      "fullname": "ECOLAB INC"
+    },
+    {
+      "code": "NYSE:EIX",
+      "fullname": "EDISON INTL"
+    },
+    {
+      "code": "NYSE:EL",
+      "fullname": "LAUDER ESTEE COS INC"
+    },
+    {
+      "code": "NYSE:EMR",
+      "fullname": "EMERSON ELEC CO"
+    },
+    {
+      "code": "NYSE:EOG",
+      "fullname": "EOG RES INC"
+    },
+    {
+      "code": "NASDAQ:EQIX",
+      "fullname": "EQUINIX INC"
+    },
+    {
+      "code": "NYSE:ETN",
+      "fullname": "EATON CORP PLC"
+    },
+    {
+      "code": "NYSE:EW",
+      "fullname": "EDWARDS LIFESCIENCES CORP"
+    },
+    {
+      "code": "NASDAQ:EXC",
+      "fullname": "EXELON CORP"
+    },
+    {
+      "code": "NASDAQ:EXPD",
+      "fullname": "EXPEDITORS INTL WASH INC"
+    },
+    {
+      "code": "NASDAQ:FANG",
+      "fullname": "DIAMONDBACK ENERGY INC"
+    },
+    {
+      "code": "NASDAQ:FAST",
+      "fullname": "FASTENAL CO"
+    },
+    {
+      "code": "NYSE:FBHS",
+      "fullname": "FORTUNE BRANDS HOME & SEC INC COM"
+    },
+    {
+      "code": "NYSE:FCX",
+      "fullname": "FREEPORT-MCMORAN INC"
+    },
+    {
+      "code": "NYSE:FDX",
+      "fullname": "FEDEX CORP"
+    },
+    {
+      "code": "NASDAQ:FFIV",
+      "fullname": "F5 NETWORKS INC"
+    },
+    {
+      "code": "NASDAQ:FLEX",
+      "fullname": "FLEX LTD"
+    },
+    {
+      "code": "NYSE:FLT",
+      "fullname": "FLEETCOR TECHNOLOGIES INC"
+    },
+    {
+      "code": "NYSE:FMC",
+      "fullname": "FMC CORP"
+    },
+    {
+      "code": "NYSE:FTV",
+      "fullname": "FORTIVE CORP"
+    },
+    {
+      "code": "NYSE:GLW",
+      "fullname": "CORNING INC"
+    },
+    {
+      "code": "NASDAQ:GNTX",
+      "fullname": "GENTEX CORP"
+    },
+    {
+      "code": "NYSE:GPC",
+      "fullname": "GENUINE PARTS CO"
+    },
+    {
+      "code": "NASDAQ:GRMN",
+      "fullname": "GARMIN LTD"
+    },
+    {
+      "code": "NYSE:GWW",
+      "fullname": "GRAINGER W W INC"
+    },
+    {
+      "code": "NYSE:GXO",
+      "fullname": "GXO LOGISTICS INCORPORATED"
+    },
+    {
+      "code": "NASDAQ:HOLX",
+      "fullname": "HOLOGIC INC"
+    },
+    {
+      "code": "NYSE:HPE",
+      "fullname": "HEWLETT PACKARD ENTERPRISE CO COM"
+    },
+    {
+      "code": "NYSE:HPQ",
+      "fullname": "HP INC"
+    },
+    {
+      "code": "NASDAQ:HSIC",
+      "fullname": "HENRY SCHEIN INC"
+    },
+    {
+      "code": "NASDAQ:HZNP",
+      "fullname": "HORIZON THERAPEUTICS PUB L"
+    },
+    {
+      "code": "NYSE:IBM",
+      "fullname": "INTERNATIONAL BUSINESS MACHS COM"
+    },
+    {
+      "code": "NASDAQ:IDXX",
+      "fullname": "IDEXX LABS INC"
+    },
+    {
+      "code": "NYSE:IEX",
+      "fullname": "IDEX CORP"
+    },
+    {
+      "code": "NYSE:IFF",
+      "fullname": "INTERNATIONAL FLAVORS&FRAGRANC COM"
+    },
+    {
+      "code": "NASDAQ:INTC",
+      "fullname": "INTEL CORP"
+    },
+    {
+      "code": "NASDAQ:INTU",
+      "fullname": "INTUIT"
+    },
+    {
+      "code": "NYSE:IP",
+      "fullname": "INTERNATIONAL PAPER CO"
+    },
+    {
+      "code": "NYSE:IPG",
+      "fullname": "INTERPUBLIC GROUP COS INC"
+    },
+    {
+      "code": "NYSE:IR",
+      "fullname": "INGERSOLL RAND INC"
+    },
+    {
+      "code": "NYSE:IT",
+      "fullname": "GARTNER INC"
+    },
+    {
+      "code": "NASDAQ:JAZZ",
+      "fullname": "JAZZ PHARMACEUTICALS PLC"
+    },
+    {
+      "code": "NASDAQ:JBHT",
+      "fullname": "HUNT J B TRANS SVCS INC"
+    },
+    {
+      "code": "NYSE:JCI",
+      "fullname": "JOHNSON CTLS INTL PLC"
+    },
+    {
+      "code": "NASDAQ:JKHY",
+      "fullname": "HENRY JACK & ASSOC INC"
+    },
+    {
+      "code": "NYSE:JNJ",
+      "fullname": "JOHNSON & JOHNSON"
+    },
+    {
+      "code": "NYSE:JNPR",
+      "fullname": "JUNIPER NETWORKS INC"
+    },
+    {
+      "code": "NASDAQ:KDP",
+      "fullname": "KEURIG DR PEPPER INC"
+    },
+    {
+      "code": "NASDAQ:KLAC",
+      "fullname": "KLA CORP"
+    },
+    {
+      "code": "NASDAQ:LBRDA",
+      "fullname": "LIBERTY BROADBAND CORP"
+    },
+    {
+      "code": "NASDAQ:LBRDK",
+      "fullname": "LIBERTY BROADBAND CORP"
+    },
+    {
+      "code": "NYSE:LEA",
+      "fullname": "LEAR CORP"
+    },
+    {
+      "code": "NYSE:LEN",
+      "fullname": "LENNAR CORP"
+    },
+    {
+      "code": "NYSE:LEN/B",
+      "fullname": "LENNAR CORP"
+    },
+    {
+      "code": "NYSE:LH",
+      "fullname": "LABORATORY CORP AMER HLDGS"
+    },
+    {
+      "code": "NYSE:LIN",
+      "fullname": "LINDE PLC"
+    },
+    {
+      "code": "NASDAQ:LKQ",
+      "fullname": "LKQ CORP"
+    },
+    {
+      "code": "NYSE:LLY",
+      "fullname": "LILLY ELI & CO"
+    },
+    {
+      "code": "NASDAQ:LULU",
+      "fullname": "LULULEMON ATHLETICA INC"
+    },
+    {
+      "code": "NYSE:MCK",
+      "fullname": "MCKESSON CORP"
+    },
+    {
+      "code": "NASDAQ:MDLZ",
+      "fullname": "MONDELEZ INTL INC"
+    },
+    {
+      "code": "NYSE:MDT",
+      "fullname": "MEDTRONIC PLC"
+    },
+    {
+      "code": "NYSE:MHK",
+      "fullname": "MOHAWK INDS INC"
+    },
+    {
+      "code": "NYSE:MLM",
+      "fullname": "MARTIN MARIETTA MATLS INC"
+    },
+    {
+      "code": "NYSE:MMM",
+      "fullname": "3M CO"
+    },
+    {
+      "code": "NASDAQ:MNST",
+      "fullname": "MONSTER BEVERAGE CORP NEW"
+    },
+    {
+      "code": "NYSE:MRK",
+      "fullname": "MERCK & CO INC"
+    },
+    {
+      "code": "NASDAQ:MRVL",
+      "fullname": "MARVELL TECHNOLOGY INC"
+    },
+    {
+      "code": "NASDAQ:MU",
+      "fullname": "MICRON TECHNOLOGY INC"
+    },
+    {
+      "code": "NYSE:NEM",
+      "fullname": "NEWMONT CORP"
+    },
+    {
+      "code": "NYSE:NKE",
+      "fullname": "NIKE INC"
+    },
+    {
+      "code": "NYSE:NSC",
+      "fullname": "NORFOLK SOUTHN CORP"
+    },
+    {
+      "code": "NYSE:NUE",
+      "fullname": "NUCOR CORP"
+    },
+    {
+      "code": "NASDAQ:NWS",
+      "fullname": "NEWS CORP NEW"
+    },
+    {
+      "code": "NASDAQ:NWSA",
+      "fullname": "NEWS CORP NEW"
+    },
+    {
+      "code": "NASDAQ:NXPI",
+      "fullname": "NXP SEMICONDUCTORS N V"
+    },
+    {
+      "code": "NASDAQ:ODFL",
+      "fullname": "OLD DOMINION FREIGHT LINE INC COM"
+    },
+    {
+      "code": "NYSE:OGN",
+      "fullname": "ORGANON & CO"
+    },
+    {
+      "code": "NYSE:OMC",
+      "fullname": "OMNICOM GROUP INC"
+    },
+    {
+      "code": "NASDAQ:ORLY",
+      "fullname": "OREILLY AUTOMOTIVE INC"
+    },
+    {
+      "code": "NYSE:PAYC",
+      "fullname": "PAYCOM SOFTWARE INC"
+    },
+    {
+      "code": "NASDAQ:PCAR",
+      "fullname": "PACCAR INC"
+    },
+    {
+      "code": "NYSE:PEG",
+      "fullname": "PUBLIC SVC ENTERPRISE GRP INC COM"
+    },
+    {
+      "code": "NYSE:PFE",
+      "fullname": "PFIZER INC"
+    },
+    {
+      "code": "NYSE:PG",
+      "fullname": "PROCTER AND GAMBLE CO"
+    },
+    {
+      "code": "NYSE:PHM",
+      "fullname": "PULTE GROUP INC"
+    },
+    {
+      "code": "NYSE:PKG",
+      "fullname": "PACKAGING CORP AMER"
+    },
+    {
+      "code": "NYSE:PKI",
+      "fullname": "PERKINELMER INC"
+    },
+    {
+      "code": "NYSE:PLD",
+      "fullname": "PROLOGIS INC."
+    },
+    {
+      "code": "NASDAQ:PLUG",
+      "fullname": "PLUG POWER INC"
+    },
+    {
+      "code": "NYSE:PNR",
+      "fullname": "PENTAIR PLC"
+    },
+    {
+      "code": "NYSE:PNW",
+      "fullname": "PINNACLE WEST CAP CORP"
+    },
+    {
+      "code": "NASDAQ:POOL",
+      "fullname": "POOL CORP"
+    },
+    {
+      "code": "NYSE:PPG",
+      "fullname": "PPG INDS INC"
+    },
+    {
+      "code": "NYSE:PRGO",
+      "fullname": "PERRIGO CO PLC"
+    },
+    {
+      "code": "NYSE:PSX",
+      "fullname": "PHILLIPS 66"
+    },
+    {
+      "code": "NASDAQ:PTC",
+      "fullname": "PTC INC"
+    },
+    {
+      "code": "NYSE:PXD",
+      "fullname": "PIONEER NAT RES CO"
+    },
+    {
+      "code": "NASDAQ:QCOM",
+      "fullname": "QUALCOMM INC"
+    },
+    {
+      "code": "NASDAQ:REG",
+      "fullname": "REGENCY CTRS CORP"
+    },
+    {
+      "code": "NASDAQ:REGN",
+      "fullname": "REGENERON PHARMACEUTICALS"
+    },
+    {
+      "code": "NYSE:RHI",
+      "fullname": "ROBERT HALF INTL INC"
+    },
+    {
+      "code": "NYSE:RMD",
+      "fullname": "RESMED INC"
+    },
+    {
+      "code": "NYSE:ROK",
+      "fullname": "ROCKWELL AUTOMATION INC"
+    },
+    {
+      "code": "NYSE:ROL",
+      "fullname": "ROLLINS INC"
+    },
+    {
+      "code": "NYSE:SCCO",
+      "fullname": "SOUTHERN COPPER CORP"
+    },
+    {
+      "code": "NYSE:SJM",
+      "fullname": "SMUCKER J M CO"
+    },
+    {
+      "code": "NYSE:SNA",
+      "fullname": "SNAP ON INC"
+    },
+    {
+      "code": "NASDAQ:SNPS",
+      "fullname": "SYNOPSYS INC"
+    },
+    {
+      "code": "NYSE:SRE",
+      "fullname": "SEMPRA"
+    },
+    {
+      "code": "NYSE:ST",
+      "fullname": "SENSATA TECHNOLOGIES HLDG PLC SHS"
+    },
+    {
+      "code": "NYSE:STE",
+      "fullname": "STERIS PLC"
+    },
+    {
+      "code": "NASDAQ:STLD",
+      "fullname": "STEEL DYNAMICS INC"
+    },
+    {
+      "code": "NYSE:SWK",
+      "fullname": "STANLEY BLACK & DECKER INC"
+    },
+    {
+      "code": "NYSE:SYK",
+      "fullname": "STRYKER CORPORATION"
+    },
+    {
+      "code": "NYSE:TDOC",
+      "fullname": "TELADOC HEALTH INC"
+    },
+    {
+      "code": "NYSE:TEL",
+      "fullname": "TE CONNECTIVITY LTD"
+    },
+    {
+      "code": "NYSE:TFX",
+      "fullname": "TELEFLEX INCORPORATED"
+    },
+    {
+      "code": "NYSE:TMO",
+      "fullname": "THERMO FISHER SCIENTIFIC INC COM"
+    },
+    {
+      "code": "NASDAQ:TMUS",
+      "fullname": "T-MOBILE US INC"
+    },
+    {
+      "code": "NASDAQ:TRMB",
+      "fullname": "TRIMBLE INC"
+    },
+    {
+      "code": "NASDAQ:TSCO",
+      "fullname": "TRACTOR SUPPLY CO"
+    },
+    {
+      "code": "NASDAQ:TSLA",
+      "fullname": "TESLA INC"
+    },
+    {
+      "code": "NYSE:TT",
+      "fullname": "TRANE TECHNOLOGIES PLC"
+    },
+    {
+      "code": "NASDAQ:TXN",
+      "fullname": "TEXAS INSTRS INC"
+    },
+    {
+      "code": "NYSE:TYL",
+      "fullname": "TYLER TECHNOLOGIES INC"
+    },
+    {
+      "code": "NASDAQ:UAL",
+      "fullname": "UNITED AIRLS HLDGS INC"
+    },
+    {
+      "code": "NYSE:UBER",
+      "fullname": "UBER TECHNOLOGIES INC"
+    },
+    {
+      "code": "NYSE:UHS",
+      "fullname": "UNIVERSAL HLTH SVCS INC"
+    },
+    {
+      "code": "NASDAQ:ULTA",
+      "fullname": "ULTA BEAUTY INC"
+    },
+    {
+      "code": "NYSE:UPS",
+      "fullname": "UNITED PARCEL SERVICE INC"
+    },
+    {
+      "code": "NYSE:VFC",
+      "fullname": "V F CORP"
+    },
+    {
+      "code": "NYSE:VLO",
+      "fullname": "VALERO ENERGY CORP"
+    },
+    {
+      "code": "NYSE:VMC",
+      "fullname": "VULCAN MATLS CO"
+    },
+    {
+      "code": "NYSE:VMW",
+      "fullname": "VMWARE INC"
+    },
+    {
+      "code": "NYSE:WAB",
+      "fullname": "WABTEC"
+    },
+    {
+      "code": "NASDAQ:WBA",
+      "fullname": "WALGREENS BOOTS ALLIANCE INC COM"
+    },
+    {
+      "code": "NASDAQ:WDC",
+      "fullname": "WESTERN DIGITAL CORP."
+    },
+    {
+      "code": "NYSE:WHR",
+      "fullname": "WHIRLPOOL CORP"
+    },
+    {
+      "code": "NYSE:WLK",
+      "fullname": "WESTLAKE CHEM CORP"
+    },
+    {
+      "code": "NYSE:WRK",
+      "fullname": "WESTROCK CO"
+    },
+    {
+      "code": "NYSE:WST",
+      "fullname": "WEST PHARMACEUTICAL SVSC INC COM"
+    },
+    {
+      "code": "NYSE:WY",
+      "fullname": "WEYERHAEUSER CO MTN BE"
+    },
+    {
+      "code": "NYSE:XOM",
+      "fullname": "EXXON MOBIL CORP"
+    },
+    {
+      "code": "NYSE:XPO",
+      "fullname": "XPO LOGISTICS INC"
+    },
+    {
+      "code": "NASDAQ:XRAY",
+      "fullname": "DENTSPLY SIRONA INC"
+    },
+    {
+      "code": "NYSE:XYL",
+      "fullname": "XYLEM INC"
+    },
+    {
+      "code": "NYSE:ZBH",
+      "fullname": "ZIMMER BIOMET HOLDINGS INC"
+    },
+    {
+      "code": "NASDAQ:ZBRA",
+      "fullname": "ZEBRA TECHNOLOGIES CORPORATION CL A"
+    }
+  ],
+  "metadata": {
+    "updatedAt": 1630038502914
+  }
+}

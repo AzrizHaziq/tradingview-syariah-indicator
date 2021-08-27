@@ -80,20 +80,24 @@ function createTasks(list) {
  * @returns {Promise}
  */
 function runTaskSequentially(tasks) {
+  const human = []
+  const data = CONFIG.US.exchanges.reduce((acc, exchange) => ({ ...acc, [exchange]: {} }), {})
+
   return tasks.reduce(
     async (p, spec) =>
       p.then(acc =>
         (isWait(spec) ? delay() : getExchange(spec))
           .then(item => {
             if (!isWait(spec)) {
-              acc[item.exchange][item.ticker] = [1] // shape final output
+              acc.data[item.exchange][item.ticker] = [1] // shape final output
+              acc.human.push({ code: `${item.exchange}:${item.ticker}`, fullname: spec.symbols })
             }
 
             return acc
           })
           .catch(console.error)
       ),
-    Promise.resolve(CONFIG.US.exchanges.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}))
+    Promise.resolve({ data, human })
   )
 }
 
@@ -102,24 +106,25 @@ function runTaskSequentially(tasks) {
  * @returns {Promise<Exchange>}
  */
 function finalOutput(p) {
-  return p.then(data =>
-    Object.entries(data).reduce(
+  return p.then(({ data, human }) => ({
+    human,
+    data: Object.entries(data).reduce(
       (acc, [k, v]) => ({
         ...acc,
         ...(Object.keys(v).length ? { [k]: { shape: CONFIG.US.shape, list: v } } : {}),
       }),
       {}
-    )
-  )
+    ),
+  }))
 }
 
 /**
- * returns {Promise<Exchange>}
+ * @returns {Promise<{ data: Exchange; human: Object[]}>}
  */
 export async function US() {
   try {
     const response = await fetch(CONFIG.US.wahedHoldingUrl)
-    const data = await response.text()
+    const responseText = await response.text()
 
     return await pipe(
       transformToTickersAndSymbols,
@@ -131,7 +136,7 @@ export async function US() {
       createTasks,
       runTaskSequentially,
       finalOutput
-    )(data)
+    )(responseText)
   } catch (e) {
     throw Error(`Error generating US stock: ${e}`)
   }

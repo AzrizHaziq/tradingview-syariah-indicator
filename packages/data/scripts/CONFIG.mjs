@@ -2,6 +2,7 @@ import cliProgress from 'cli-progress'
 
 export const CONFIG = {
   mainOutput: 'stock-list.json',
+  humanOutput: 'stock-list-human.json',
   progressBar: null,
   progressBarType: cliProgress.Presets.legacy,
   US: {
