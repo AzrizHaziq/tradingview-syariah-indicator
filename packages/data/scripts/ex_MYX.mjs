@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 import merge from 'lodash.merge'
 import { pipe } from './utils.mjs'
-import { chromium } from 'playwright-chromium'
 import { CONFIG } from './CONFIG.mjs'
+import { chromium } from 'playwright-chromium'
 
-let progressBar = undefined
+let progressBar = CONFIG.progressBar.create(100)
 
 async function getCompanyName(temp) {
   try {
@@ -53,7 +53,7 @@ async function scrapBursaMalaysia() {
     await page.goto(scrapUrl({ page: 1, per_page: 50 }))
 
     // getting max size of syariah list by grabbing the value in pagination btn
-    const maxPageNumbers = await page.evaluate(() => {
+    let maxPageNumbers = await page.evaluate(() => {
       const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
         .map(i => i.textContent)
         .filter(Boolean)
@@ -63,7 +63,7 @@ async function scrapBursaMalaysia() {
     })
 
     let syariahList = {}
-    progressBar = CONFIG.progressBar.create(maxPageNumbers, 0)
+    progressBar.setTotal(maxPageNumbers)
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {

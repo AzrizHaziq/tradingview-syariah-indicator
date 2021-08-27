@@ -1,15 +1,9 @@
-import cliProgress from 'cli-progress'
+import { CliProgress } from './utils.mjs'
 
 export const CONFIG = {
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
-  progressBar: new cliProgress.MultiBar(
-    {
-      clearOnComplete: false,
-      hideCursor: true,
-    },
-    cliProgress.Presets.shades_grey
-  ),
+  progressBar: new CliProgress().getInstance(),
   US: {
     blackListItems: ['Cash&Other'],
     exchanges: ['NYSE', 'NASDAQ', 'AMAX', 'OTC'],

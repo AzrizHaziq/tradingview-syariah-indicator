@@ -20,11 +20,11 @@ async function commitChangesIfAny() {
 ;(async () => {
   try {
     // Please make sure the key is unique and taken from TV exchange id
-    const [_US, _MYX] = await Promise.all([US(), MYX()])
+    const [_MYX, _US] = await Promise.all([MYX(), US()])
 
+    const updatedAt = Date.now()
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
-    const updatedAt = Date.now()
 
     await writeToFile(
       CONFIG.humanOutput,

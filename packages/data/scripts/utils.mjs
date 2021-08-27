@@ -1,4 +1,5 @@
 import fs from 'fs'
+import cliProgress from 'cli-progress'
 
 export const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
 
@@ -25,5 +26,23 @@ export async function writeToFile(filename, data) {
   } catch (e) {
     console.error('Error write data', e)
     process.exit(1)
+  }
+}
+
+export class CliProgress {
+  constructor() {
+    if (!CliProgress.instance) {
+      CliProgress.instance = new cliProgress.MultiBar(
+        {
+          clearOnComplete: false,
+          hideCursor: true,
+        },
+        cliProgress.Presets.shades_grey
+      )
+    }
+  }
+
+  getInstance() {
+    return CliProgress.instance
   }
 }
