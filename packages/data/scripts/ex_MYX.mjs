@@ -1,10 +1,47 @@
+import fetch from 'node-fetch'
 import merge from 'lodash.merge'
 import { pipe } from './utils.mjs'
-import { CONFIG } from './CONFIG.mjs'
-import cliProgress from 'cli-progress'
 import { chromium } from 'playwright-chromium'
+import { CONFIG } from './CONFIG.mjs'
 
-CONFIG.progressBar = new cliProgress.SingleBar({}, CONFIG.progressBarType)
+let progressBar = undefined
+
+async function getCompanyName(temp) {
+  try {
+    const fetchCompanyName = async code => {
+      const {
+        data: {
+          company_info: { name },
+        },
+      } = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`).then(r =>
+        r.json()
+      )
+
+      return name
+    }
+
+    const resolved = await Promise.all(
+      temp.map(item => fetchCompanyName(item.code).then(fullname => ({ ...item, fullname })))
+    )
+
+    return resolved.reduce((acc, curr) => {
+      acc[curr.code] = curr
+      return acc
+    }, {})
+
+    // sequentially
+    // temp = await Object.entries(temp).reduce(async (p, [k, v]) => {
+    //   return p.then(acc => {
+    //     return getCompanyName(k).then(fullname => ({
+    //       ...acc,
+    //       [k]: { ...v, fullname },
+    //     }))
+    //   })
+    // }, Promise.resolve({}))
+  } catch (e) {
+    throw Error(`Failed at getCompanyName: ${e}`)
+  }
+}
 
 async function scrapBursaMalaysia() {
   const scrapUrl = ({ per_page, page }) =>
@@ -26,49 +63,31 @@ async function scrapBursaMalaysia() {
     })
 
     let syariahList = {}
-    CONFIG.progressBar.start(maxPageNumbers, 0)
+    progressBar = CONFIG.progressBar.create(maxPageNumbers, 0)
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
       await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle' })
 
-      const temp = await page.evaluate(() => {
+      let temp = await page.evaluate(() => {
         const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
         const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
         const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
 
-        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce(
-          async (acc, tr) => {
-            const s = tr.querySelector(':nth-child(2)').textContent
-            const stockCode = tr.querySelector(':nth-child(3)').textContent
+        return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
+          const s = tr.querySelector(':nth-child(2)').textContent
+          const stockCode = tr.querySelector(':nth-child(3)').textContent
 
-            const code = removeSpaces(stockCode)
-
-            const {
-              data: {
-                company_info: { name: fullname },
-              },
-            } = await fetch(
-              `https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`
-            ).then(r => r.json())
-
-            const stockName = removeSpacesAndShariah(s)
-            return {
-              ...acc,
-              [code]: {
-                s: 1,
-                code,
-                stockName,
-                fullname,
-              },
-            }
-          },
-          {}
-        )
+          const code = removeSpaces(stockCode)
+          const stockName = removeSpacesAndShariah(s)
+          return [...acc, { s: 1, code, stockName }]
+        }, [])
       })
 
+      progressBar.increment(0.5)
+      temp = await getCompanyName(temp)
       syariahList = { ...syariahList, ...temp }
-      CONFIG.progressBar.increment()
+      progressBar.increment(0.5)
     }
 
     await browser.close()
@@ -90,7 +109,7 @@ export async function MYX() {
     shariahList = merge(shariahList) // merge by stock code
 
     const human = pipe(Object.values, values =>
-      values.map(val => ({ code: `MYX:${val.stockName}`, fullname: val.fullname }))
+      values.map(val => ({ code: `MYX-${val.stockName}`, fullname: val.fullname }))
     )(shariahList)
 
     const sortedList = pipe(

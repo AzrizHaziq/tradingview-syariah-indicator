@@ -1,9 +1,8 @@
 import fetch from 'node-fetch'
 import { CONFIG } from './config.mjs'
-import cliProgress from 'cli-progress'
 import { delay, pipe } from './utils.mjs'
 
-CONFIG.progressBar = new cliProgress.SingleBar({}, CONFIG.progressBarType)
+let progressBar = undefined
 
 const isWait = spec => spec.task === 'wait'
 
@@ -44,7 +43,7 @@ function transformToTickersAndSymbols(csv) {
  */
 const getExchange = item =>
   new Promise(async (res, rej) => {
-    CONFIG.progressBar.increment()
+    progressBar.increment()
     for await (const exchange of CONFIG.US.exchanges) {
       try {
         const response = await fetch(`https://www.tradingview.com/symbols/${exchange}-${item.ticker}/`)
@@ -90,7 +89,7 @@ function runTaskSequentially(tasks) {
           .then(item => {
             if (!isWait(spec)) {
               acc.data[item.exchange][item.ticker] = [1] // shape final output
-              acc.human.push({ code: `${item.exchange}:${item.ticker}`, fullname: spec.symbols })
+              acc.human.push({ code: `${item.exchange}-${item.ticker}`, fullname: spec.symbols })
             }
 
             return acc
@@ -130,7 +129,7 @@ export async function US() {
       transformToTickersAndSymbols,
       // data => data.slice(0, 5),
       data => {
-        CONFIG.progressBar.start(data.length, 0)
+        progressBar = CONFIG.progressBar.create(data.length, 0)
         return data
       },
       createTasks,

@@ -3,8 +3,13 @@ import cliProgress from 'cli-progress'
 export const CONFIG = {
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
-  progressBar: null,
-  progressBarType: cliProgress.Presets.legacy,
+  progressBar: new cliProgress.MultiBar(
+    {
+      clearOnComplete: false,
+      hideCursor: true,
+    },
+    cliProgress.Presets.shades_grey
+  ),
   US: {
     blackListItems: ['Cash&Other'],
     exchanges: ['NYSE', 'NASDAQ', 'AMAX', 'OTC'],
