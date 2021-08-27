@@ -21,10 +21,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.14.5",
-    "@types/chrome": "0.0.154",
     "@types/copy-webpack-plugin": "^8.0.0",
     "@types/firefox-webext-browser": "^82.0.0",
     "autoprefixer": "^10.2.5",

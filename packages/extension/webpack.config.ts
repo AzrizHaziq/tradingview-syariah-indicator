@@ -1,14 +1,17 @@
-import path from 'path'
-import webpack from 'webpack'
+import * as path from 'path'
+import * as webpack from 'webpack'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
 import type { Configuration } from 'webpack'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
+
+// @ts-ignore
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+// @ts-ignore
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -38,15 +41,13 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     rules: [
       // https://github.com/ryansolid/solid-ts-webpack/
       {
-        test: /\.(ts)x?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            babelrc: false,
-            configFile: false,
             presets: ['@babel/preset-env', 'solid', '@babel/preset-typescript'],
-            plugins: ['@babel/plugin-transform-runtime'],
+            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-syntax-dynamic-import'],
           },
         },
       },
