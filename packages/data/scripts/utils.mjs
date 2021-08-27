@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
 
 export const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
@@ -50,5 +51,19 @@ export class CliProgress {
 export function logCount(exchanges) {
   Object.entries(exchanges).forEach(([exchange, { list }]) => {
     console.log(`Found ${exchange} >> ${Object.keys(list).length}`)
+  })
+}
+
+export async function gitCommand(...command) {
+  return new Promise(function (resolve, reject) {
+    const process = spawn('git', [...command])
+
+    process.on('close', function (code) {
+      resolve(code)
+    })
+
+    process.on('error', function (err) {
+      reject(err)
+    })
   })
 }

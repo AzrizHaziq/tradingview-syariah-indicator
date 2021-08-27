@@ -120,6 +120,7 @@ Requirements
     - [ ] filter
     - [ ] use json hosted in github raw
 - [ ] Added a page for "accept agreement/conditions"
+- [ ] @Data, do some diffing with current data. If exists, then commit it.
 
 ### Please do refer to original website before buying. And if you're holding then look at them everyday.
 #### 1. China100 A stocks

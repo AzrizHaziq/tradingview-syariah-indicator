@@ -1,16 +1,14 @@
-import git from 'simple-git'
-import { US } from './ex_US.mjs'
-import { MYX } from './ex_MYX.mjs'
 import { CONFIG } from './CONFIG.mjs'
-import { logCount, writeToFile } from './utils.mjs'
+import { gitCommand, logCount, writeToFile } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
 async function commitChangesIfAny() {
   try {
-    await git().add([CONFIG.mainOutput]).commit('[STOCK_LIST] script_bot: Update with new changes')
+    await gitCommand('add', 'stock-list*.json')
+    await gitCommand('commit', '-m [STOCK_LIST] script_bot: Update with new changes')
   } catch (e) {
-    console.error('Error: commit and push stock list changes', e)
+    console.error('Error commit', e)
     process.exit(1)
   }
 }
@@ -19,7 +17,10 @@ async function commitChangesIfAny() {
 ;(async () => {
   try {
     // Please make sure the key is unique and taken from TV exchange id
-    const [_MYX, _US] = await Promise.all([MYX(), US()])
+    const [_MYX, _US] = await Promise.all([
+      import('./ex_US.mjs').then(m => m.US()),
+      import('./ex_MYX.mjs').then(m => m.MYX()),
+    ])
 
     const updatedAt = Date.now()
     const { data: US_DATA, human: US_HUMAN } = _US
