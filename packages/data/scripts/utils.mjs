@@ -46,3 +46,9 @@ export class CliProgress {
     return CliProgress.instance
   }
 }
+
+export function logCount(exchanges) {
+  Object.entries(exchanges).forEach(([exchange, { list }]) => {
+    console.log(`Found ${exchange} >> ${Object.keys(list).length}`)
+  })
+}

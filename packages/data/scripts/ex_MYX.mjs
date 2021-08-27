@@ -1,5 +1,4 @@
 import fetch from 'node-fetch'
-import merge from 'lodash.merge'
 import { pipe } from './utils.mjs'
 import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
@@ -91,10 +90,6 @@ async function scrapBursaMalaysia() {
     }
 
     await browser.close()
-
-    // eslint-disable-next-line no-console
-    console.log('\n\nMYX Found: ', Object.keys(syariahList).length)
-
     return syariahList
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -105,8 +100,7 @@ async function scrapBursaMalaysia() {
 
 export async function MYX() {
   try {
-    let shariahList = await scrapBursaMalaysia()
-    shariahList = merge(shariahList) // merge by stock code
+    const shariahList = await scrapBursaMalaysia()
 
     const human = pipe(Object.values, values =>
       values.map(val => ({ code: `MYX-${val.stockName}`, fullname: val.fullname }))

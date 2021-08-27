@@ -1,9 +1,8 @@
 import git from 'simple-git'
-import merge from 'lodash.merge'
 import { US } from './ex_US.mjs'
 import { MYX } from './ex_MYX.mjs'
 import { CONFIG } from './CONFIG.mjs'
-import { writeToFile } from './utils.mjs'
+import { logCount, writeToFile } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
@@ -26,12 +25,23 @@ async function commitChangesIfAny() {
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
 
+    console.log('\n')
+    logCount(US_DATA)
+    logCount(MYX_DATA)
+
     await writeToFile(
       CONFIG.humanOutput,
       JSON.stringify({ data: [...MYX_HUMAN, ...US_HUMAN], metadata: { updatedAt } })
     )
 
-    await writeToFile(CONFIG.mainOutput, JSON.stringify(merge(MYX_DATA, US_DATA, { metadata: { updatedAt } })))
+    await writeToFile(
+      CONFIG.mainOutput,
+      JSON.stringify({
+        ...MYX_DATA,
+        ...US_DATA,
+        metadata: { updatedAt },
+      })
+    )
 
     if (!isCommitSKip) {
       await commitChangesIfAny()
