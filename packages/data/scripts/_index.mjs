@@ -1,5 +1,5 @@
 import { CONFIG } from './CONFIG.mjs'
-import { gitCommand, logCount, writeToFile } from './utils.mjs'
+import { gitCommand, isSameWithPreviousData, logCount, writeToFile } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
@@ -30,9 +30,21 @@ async function commitChangesIfAny() {
     logCount(US_DATA)
     logCount(MYX_DATA)
 
+    const sortedHuman = []
+      .concat(MYX_HUMAN, US_HUMAN)
+      .sort(({ fullname: a }, { fullname: b }) => (a > b ? 1 : a < b ? -1 : 0))
+
+    if (isSameWithPreviousData(sortedHuman)) {
+      console.log('Previous data and current data is same, hence skip commit')
+      return
+    }
+
     await writeToFile(
       CONFIG.humanOutput,
-      JSON.stringify({ data: [...MYX_HUMAN, ...US_HUMAN], metadata: { updatedAt } })
+      JSON.stringify({
+        data: sortedHuman,
+        metadata: { updatedAt },
+      })
     )
 
     await writeToFile(

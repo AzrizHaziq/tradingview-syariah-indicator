@@ -10,8 +10,8 @@ export const CONFIG = {
     wahedHoldingUrl: 'https://funds.wahedinvest.com/etf-holdings.csv',
     shape: [
       {
-        '0': 'non-s',
-        '1': 's',
+        0: 'non-s',
+        1: 's',
         default: '',
       },
     ],

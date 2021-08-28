@@ -1,6 +1,8 @@
 import fs from 'fs'
+import path from 'path'
 import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
+import { CONFIG } from './CONFIG.mjs'
 
 export const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
 
@@ -66,4 +68,11 @@ export async function gitCommand(...command) {
       reject(err)
     })
   })
+}
+
+export function isSameWithPreviousData(newData, filePath = `${path.resolve()}/${CONFIG.humanOutput}`) {
+  const fileContent = fs.readFileSync(filePath, 'utf-8')
+  const { data: oldData } = JSON.parse(fileContent)
+
+  return JSON.stringify(oldData) === JSON.stringify(newData)
 }
