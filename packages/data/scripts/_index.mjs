@@ -36,7 +36,7 @@ async function commitChangesIfAny() {
 
     if (isSameWithPreviousData(sortedHuman)) {
       console.log('Previous data and current data is same, hence skip commit')
-      return
+      process.exit()
     }
 
     await writeToFile(CONFIG.humanOutput, JSON.stringify({ data: sortedHuman, metadata: { updatedAt } }))
