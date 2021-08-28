@@ -3,22 +3,22 @@ import { pipe } from './utils.mjs'
 import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
 
-let progressBar = CONFIG.progressBar.create(100)
+const progressBar = CONFIG.progressBar.create(100)
+
+async function fetchCompanyName(code) {
+  const {
+    data: {
+      company_info: { name },
+    },
+  } = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`).then(r =>
+    r.json()
+  )
+
+  return name
+}
 
 async function getCompanyName(temp) {
   try {
-    const fetchCompanyName = async code => {
-      const {
-        data: {
-          company_info: { name },
-        },
-      } = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`).then(r =>
-        r.json()
-      )
-
-      return name
-    }
-
     const resolved = await Promise.all(
       temp.map(item => fetchCompanyName(item.code).then(fullname => ({ ...item, fullname })))
     )
@@ -42,10 +42,10 @@ async function getCompanyName(temp) {
   }
 }
 
-async function scrapBursaMalaysia() {
-  const scrapUrl = ({ per_page, page }) =>
-    `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
+const scrapUrl = ({ per_page, page }) =>
+  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
 
+async function scrapBursaMalaysia() {
   try {
     const browser = await chromium.launch()
     const page = await browser.newPage()
@@ -123,6 +123,6 @@ export async function MYX() {
       },
     }
   } catch (e) {
-    throw `Error generating MYX: ${e}`
+    throw Error(`Error generating MYX: ${e}`)
   }
 }

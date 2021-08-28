@@ -39,22 +39,8 @@ async function commitChangesIfAny() {
       return
     }
 
-    await writeToFile(
-      CONFIG.humanOutput,
-      JSON.stringify({
-        data: sortedHuman,
-        metadata: { updatedAt },
-      })
-    )
-
-    await writeToFile(
-      CONFIG.mainOutput,
-      JSON.stringify({
-        ...MYX_DATA,
-        ...US_DATA,
-        metadata: { updatedAt },
-      })
-    )
+    await writeToFile(CONFIG.humanOutput, JSON.stringify({ data: sortedHuman, metadata: { updatedAt } }))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA, metadata: { updatedAt } }))
 
     if (!isCommitSKip) {
       await commitChangesIfAny()
