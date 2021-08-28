@@ -42,17 +42,17 @@ async function getCompanyName(temp) {
   }
 }
 
-const scrapUrl = ({ per_page, page }) =>
-  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${per_page}`
+const scrapUrl = ({ perPage, page }) =>
+  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
 
 async function scrapBursaMalaysia() {
   try {
     const browser = await chromium.launch()
     const page = await browser.newPage()
-    await page.goto(scrapUrl({ page: 1, per_page: 50 }))
+    await page.goto(scrapUrl({ page: 1, perPage: 50 }))
 
     // getting max size of syariah list by grabbing the value in pagination btn
-    let maxPageNumbers = await page.evaluate(() => {
+    const maxPageNumbers = await page.evaluate(() => {
       const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
         .map(i => i.textContent)
         .filter(Boolean)
@@ -66,7 +66,7 @@ async function scrapBursaMalaysia() {
 
     // grab all syariah list and navigate to each pages.
     for (let i = 1; i <= maxPageNumbers; i++) {
-      await page.goto(scrapUrl({ page: i, per_page: 50 }), { waitUntil: 'networkidle' })
+      await page.goto(scrapUrl({ page: i, perPage: 50 }), { waitUntil: 'networkidle' })
 
       let temp = await page.evaluate(() => {
         const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
@@ -117,6 +117,7 @@ export async function MYX() {
       human,
       data: {
         MYX: {
+          updatedAt: Date.now(),
           shape: [{ 0: 'non-s', 1: 's', default: '' }],
           list: sortedList,
         },

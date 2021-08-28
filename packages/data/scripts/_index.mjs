@@ -22,7 +22,6 @@ async function commitChangesIfAny() {
       import('./ex_MYX.mjs').then(m => m.MYX()),
     ])
 
-    const updatedAt = Date.now()
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
 
@@ -34,13 +33,24 @@ async function commitChangesIfAny() {
       .concat(MYX_HUMAN, US_HUMAN)
       .sort(({ fullname: a }, { fullname: b }) => (a > b ? 1 : a < b ? -1 : 0))
 
-    if (isSameWithPreviousData(sortedHuman)) {
-      console.log('Previous data and current data is same, hence skip commit')
-      process.exit()
-    }
+    // if (isSameWithPreviousData(sortedHuman)) {
+    //   console.log('Previous data and current data is same, hence skip commit')
+    //   process.exit()
+    // }
 
-    await writeToFile(CONFIG.humanOutput, JSON.stringify({ data: sortedHuman, metadata: { updatedAt } }))
-    await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA, metadata: { updatedAt } }))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA }))
+    await writeToFile(
+      CONFIG.humanOutput,
+      JSON.stringify({
+        data: sortedHuman,
+
+        // pluck all updatedAt data from each exchanges
+        metadata: Object.entries({ ...US_DATA, ...MYX_DATA }).reduce((acc, [exchange, detail]) => {
+          acc[exchange] = detail.updatedAt
+          return acc
+        }, {}),
+      })
+    )
 
     if (!isCommitSKip) {
       await commitChangesIfAny()
