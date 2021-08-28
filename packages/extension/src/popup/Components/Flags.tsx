@@ -21,14 +21,15 @@ export const Flags: Component = () => {
             title={popup_list_at}
             rel='noopener noreferrer'
             onClick={_popupGa('click', 'shariahAt')}
-            class='cursor-pointer flex items-center text-gray-300 hover:underline'>
+            class='cursor-pointer gap-x-2 flex items-center text-gray-300 hover:underline'>
+            <p>{id}</p>
+            <p class='text-xs'>{lastDate}</p>
             <img
               class='rounded-full'
               style={{ width: '15px', height: '15px' }}
               src={`/assets/exchanges/${id}.svg`}
               alt={`Exchange: ${id}`}
             />
-            <p class='ml-1 text-xs'>{lastDate}</p>
           </a>
         )
       }}

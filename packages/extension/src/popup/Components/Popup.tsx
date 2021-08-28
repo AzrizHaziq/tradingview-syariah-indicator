@@ -32,7 +32,7 @@ export const Popup = () => {
             <Version />
           </div>
         </div>
-        <div class='flex justify-end text-white'>
+        <div class='flex flex-col items-end text-white'>
           <Flags />
         </div>
         <hr class='my-2 border-gray-400 opacity-30' />
