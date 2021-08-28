@@ -57,8 +57,8 @@ async function listener(_, { status }, { url }): Promise<void> {
 
 async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const allExchanges = Object.entries(response).flatMap(([exchange, exchangeData]) => {
-      const { shape, list } = exchangeData
+    const allExchanges = Object.entries(response).flatMap(([exchange, exchangeDetail]) => {
+      const { shape, list } = exchangeDetail as TSI.ExchangesDetail
       return Object.entries(list).map(([symbol, symbolData]) => {
         const val = symbolData.reduce(
           (acc, value, index) => ({
@@ -68,14 +68,11 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
           {} as Record<string, Record<string, number | boolean | string>>
         )
 
-        // ddd[`${TSI.Exchanges}:string`, {s: number}][]
-
         return [`${exchange}:${symbol}`, val]
       })
     })
 
     await setStorage('LIST', allExchanges)
-    console.log('Shariah list: ', await getStorage('LIST'))
   } catch (e) {
     console.error(`Error set shariah storage`, e)
   }

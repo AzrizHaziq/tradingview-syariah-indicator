@@ -17,9 +17,9 @@ declare namespace TSI {
   }
 
   type SHAPE = SHAPE_SHARIAH | SHAPE_DUMMY
-  type KEYOF_SHAPE = keyof SHAPE_SHARIAH | keyof SHAPE_DUMMY
+  type KEYOF_SHAPE = keyof (SHAPE_SHARIAH | SHAPE_DUMMY)
 
-  export type Exchanges = 'MYX'
+  export type Exchanges = 'MYX' | 'NASDAQ' | 'NYSE' | 'AMAX' | 'OTC'
 
   export interface ExchangesDetail {
     updatedAt: string
