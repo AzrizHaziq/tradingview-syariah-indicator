@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Aug 21 2021 08:39:17 GMT+0800 (Malaysia Time)
+updatedAt : Sun Aug 29 2021 08:42:53 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -844,10 +844,10 @@ TALAMT       : s
 TALIWRK      : s
 TAMBUN       : s
 TANCO        : s
-TANCO-WB     : s
 TASHIN       : s
 TAWIN        : s
 TAWIN-WA     : s
+TAWIN-WB     : s
 TCS          : s
 TCS-WA       : s
 TDEX         : s
