@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sun Aug 29 2021 08:42:53 GMT+0800 (Malaysia Time)
+updatedAt : Sun Sep 05 2021 13:30:48 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -25,7 +25,6 @@ AIMFLEX      : s
 AIRASIA      : s
 AJI          : s
 AJIYA        : s
-AJIYA-WA     : s
 ALAM         : s
 ALAM-WA      : s
 ALAQAR       : s
@@ -92,6 +91,7 @@ BARAKAH      : s
 BAUTO        : s
 BCB          : s
 BCMALL       : s
+BCMALL-WA    : s
 BDB          : s
 BERTAM       : s
 BHIC         : s
@@ -409,6 +409,7 @@ KAB          : s
 KAB-WA       : s
 KAMDAR       : s
 KANGER       : s
+KANGER-OR    : s
 KAREX        : s
 KARYON       : s
 KAWAN        : s
@@ -663,6 +664,7 @@ PETDAG       : s
 PETGAS       : s
 PETRONM      : s
 PGLOBE       : s
+PGLOBE-OR    : s
 PHARMA       : s
 PHB          : s
 PHB-WB       : s
