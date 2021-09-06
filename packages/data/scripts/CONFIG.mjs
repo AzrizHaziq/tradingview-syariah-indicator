@@ -1,6 +1,7 @@
 import { CliProgress } from './utils.mjs'
 
 export const CONFIG = {
+  isDev: 0,
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
   progressBar: new CliProgress().getInstance(),

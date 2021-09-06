@@ -7,7 +7,7 @@ import { CONFIG } from './CONFIG.mjs'
 export const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
 
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min) + min) //The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
 export function delay(delay = getRandomInt(1, 2)) {
@@ -75,4 +75,14 @@ export function isSameWithPreviousData(newData, filePath = `${path.resolve()}/${
   const { data: oldData } = JSON.parse(fileContent)
 
   return JSON.stringify(oldData) === JSON.stringify(newData)
+}
+
+export async function commitChangesIfAny() {
+  try {
+    await gitCommand('add', 'stock-list*.json')
+    await gitCommand('commit', '-m [STOCK_LIST] script_bot: Update with new changes')
+  } catch (e) {
+    console.error('Error commit', e)
+    process.exit(1)
+  }
 }

@@ -12,18 +12,19 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "cli-progress": "^3.8.2",
-    "msw": "^0.35.0",
-    "playwright-chromium": "^1.11.0",
-    "rimraf": "^3.0.2",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0"
+    "msw": "^0.35.0",
+    "playwright-chromium": "^1.11.0",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
+    "@supercharge/promise-pool": "^1.7.0",
     "node-fetch": "^2.6.1"
   },
   "ava": {

@@ -58,7 +58,7 @@ async function scrapBursaMalaysia() {
         .filter(Boolean)
         .map(parseFloat)
 
-      return Math.max(...paginationBtn)
+      return CONFIG.isDev ? 1 : Math.max(...paginationBtn)
     })
 
     let syariahList = {}

@@ -1,22 +1,20 @@
 import fetch from 'node-fetch'
+import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
-import { delay, pipe } from './utils.mjs'
-
+import PromisePool from '@supercharge/promise-pool'
 const progressBar = CONFIG.progressBar.create(100)
-
-const isWait = spec => spec.task === 'wait'
 
 function transformToTickersAndSymbols(data) {
   return data // get tickers & symbols
     .reduce((acc, item) => {
-      const [, , ticker, , symbols] = item.split(',')
+      const [, , ticker, , fullname] = item.split(',')
 
       // remove non stock item (sukuk)
       if (CONFIG.US.blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
         return acc
       }
 
-      return [...acc, { ticker, symbols }]
+      return [...acc, { ticker, fullname }]
     }, [])
 }
 
@@ -53,6 +51,7 @@ const getExchange = item =>
         }
 
         if (response.status === 200) {
+          progressBar.increment()
           resolve({ ...item, exchange })
           break
           // if all exchanges failed, then search that stock if it is really exist
@@ -65,31 +64,28 @@ const getExchange = item =>
     }
   })
 
-function createTasks(list) {
-  return list.flatMap((item, index) => [item, index + 1 === list.length ? null : { task: 'wait' }]).filter(Boolean)
-}
+async function runTaskSequentially(tasks) {
+  try {
+    const { results, errors } = await PromisePool.withConcurrency(2)
+      .for(tasks)
+      .process(async item => await getExchange(item))
 
-function runTaskSequentially(tasks) {
-  const human = []
-  const data = CONFIG.US.exchanges.reduce((acc, exchange) => ({ ...acc, [exchange]: {} }), {})
+    if (errors.length) {
+      throw Error(`failed runTaskSequentially: ${errors}`)
+    }
 
-  return tasks.reduce(
-    async (p, spec) =>
-      p.then(acc =>
-        (isWait(spec) ? delay() : getExchange(spec))
-          .then(item => {
-            if (!isWait(spec)) {
-              acc.data[item.exchange][item.ticker] = [1] // shape final output
-              acc.human.push([item.exchange, item.ticker, spec.symbols])
-              progressBar.increment()
-            }
-
-            return acc
-          })
-          .catch(console.error)
-      ),
-    Promise.resolve({ data, human })
-  )
+    return results.reduce(
+      (acc, item) => {
+        // shape final output
+        acc.data[item.exchange][item.ticker] = [1]
+        acc.human.push([item.exchange, item.ticker, item.fullname])
+        return acc
+      },
+      { human: [], data: CONFIG.US.exchanges.reduce((acc, exchange) => ({ ...acc, [exchange]: {} }), {}) }
+    )
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 const finalOutput = updatedAt => p => {
@@ -117,12 +113,11 @@ export async function US() {
     return await pipe(
       prettierCSV,
       transformToTickersAndSymbols,
-      // data => data.slice(0, 10),
+      data => data.slice(0, CONFIG.isDev ? 10 : data.length),
       data => {
         progressBar.setTotal(data.length)
         return data
       },
-      createTasks,
       runTaskSequentially,
       finalOutput(updatedAt)
     )(responseText)

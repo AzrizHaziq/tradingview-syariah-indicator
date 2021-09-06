@@ -17,7 +17,7 @@ async function commitChangesIfAny() {
 ;(async () => {
   try {
     // Please make sure the key is unique and taken from TV exchange id
-    const [_MYX, _US] = await Promise.all([
+    const [_US, _MYX] = await Promise.all([
       import('./ex_US.mjs').then(m => m.US()),
       import('./ex_MYX.mjs').then(m => m.MYX()),
     ])
