@@ -80,7 +80,7 @@ function runTaskSequentially(tasks) {
           .then(item => {
             if (!isWait(spec)) {
               acc.data[item.exchange][item.ticker] = [1] // shape final output
-              acc.human.push({ code: `${item.exchange}-${item.ticker}`, fullname: spec.symbols })
+              acc.human.push([item.exchange, item.ticker, spec.symbols])
               progressBar.increment()
             }
 

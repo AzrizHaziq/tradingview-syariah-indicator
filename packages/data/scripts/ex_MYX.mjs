@@ -102,9 +102,7 @@ export async function MYX() {
   try {
     const shariahList = await scrapBursaMalaysia()
 
-    const human = pipe(Object.values, values =>
-      values.map(val => ({ code: `MYX-${val.stockName}`, fullname: val.fullname }))
-    )(shariahList)
+    const human = pipe(Object.values, values => values.map(val => ['MYX', val.stockName, val.fullname]))(shariahList)
 
     const sortedList = pipe(
       Object.values,

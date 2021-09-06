@@ -29,14 +29,12 @@ async function commitChangesIfAny() {
     logCount(US_DATA)
     logCount(MYX_DATA)
 
-    const sortedHuman = []
-      .concat(MYX_HUMAN, US_HUMAN)
-      .sort(({ fullname: a }, { fullname: b }) => (a > b ? 1 : a < b ? -1 : 0))
+    const sortedHuman = [].concat(MYX_HUMAN, US_HUMAN).sort(([, , a], [, , b]) => (a > b ? 1 : a < b ? -1 : 0))
 
-    // if (isSameWithPreviousData(sortedHuman)) {
-    //   console.log('Previous data and current data is same, hence skip commit')
-    //   process.exit()
-    // }
+    if (isSameWithPreviousData(sortedHuman)) {
+      console.log('Previous data and current data is same, hence skip commit')
+      process.exit()
+    }
 
     await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA }))
     await writeToFile(
