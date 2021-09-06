@@ -1,17 +1,7 @@
 import { CONFIG } from './CONFIG.mjs'
-import { gitCommand, isSameWithPreviousData, logCount, writeToFile } from './utils.mjs'
+import { commitChangesIfAny, isSameWithPreviousData, logCount, prettierFormatJSON, writeToFile } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
-
-async function commitChangesIfAny() {
-  try {
-    await gitCommand('add', 'stock-list*.json')
-    await gitCommand('commit', '-m [STOCK_LIST] script_bot: Update with new changes')
-  } catch (e) {
-    console.error('Error commit', e)
-    process.exit(1)
-  }
-}
 
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
@@ -39,15 +29,16 @@ async function commitChangesIfAny() {
     await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA }))
     await writeToFile(
       CONFIG.humanOutput,
-      JSON.stringify({
-        data: sortedHuman,
-
-        // pluck all updatedAt data from each exchanges
-        metadata: Object.entries({ ...US_DATA, ...MYX_DATA }).reduce((acc, [exchange, detail]) => {
-          acc[exchange] = detail.updatedAt
-          return acc
-        }, {}),
-      })
+      await prettierFormatJSON(
+        JSON.stringify({
+          data: sortedHuman,
+          // pluck all updatedAt data from each exchanges
+          metadata: Object.entries({ ...US_DATA, ...MYX_DATA }).reduce((acc, [exchange, detail]) => {
+            acc[exchange] = detail.updatedAt
+            return acc
+          }, {}),
+        })
+      )
     )
 
     if (!isCommitSKip) {

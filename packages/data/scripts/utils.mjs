@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import prettier from 'prettier'
 import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
 import { CONFIG } from './CONFIG.mjs'
@@ -85,4 +86,8 @@ export async function commitChangesIfAny() {
     console.error('Error commit', e)
     process.exit(1)
   }
+}
+
+export async function prettierFormatJSON(str) {
+  return prettier.format(str, { semi: false, parser: 'json' })
 }
