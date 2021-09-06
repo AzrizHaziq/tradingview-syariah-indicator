@@ -66,9 +66,7 @@ const getExchange = item =>
 
 async function runTaskSequentially(tasks) {
   try {
-    const { results, errors } = await PromisePool.withConcurrency(2)
-      .for(tasks)
-      .process(async item => await getExchange(item))
+    const { results, errors } = await PromisePool.for(tasks).process(async item => await getExchange(item))
 
     if (errors.length) {
       throw Error(`failed runTaskSequentially: ${errors}`)

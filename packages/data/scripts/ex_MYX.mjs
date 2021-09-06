@@ -52,14 +52,16 @@ async function scrapBursaMalaysia() {
     await page.goto(scrapUrl({ page: 1, perPage: 50 }))
 
     // getting max size of syariah list by grabbing the value in pagination btn
-    const maxPageNumbers = await page.evaluate(() => {
-      const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
-        .map(i => i.textContent)
-        .filter(Boolean)
-        .map(parseFloat)
+    const maxPageNumbers = await (CONFIG.isDev
+      ? Promise.resolve(1)
+      : page.evaluate(() => {
+          const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
+            .map(i => i.textContent)
+            .filter(Boolean)
+            .map(parseFloat)
 
-      return CONFIG.isDev ? 1 : Math.max(...paginationBtn)
-    })
+          return Math.max(...paginationBtn)
+        }))
 
     let syariahList = {}
     progressBar.setTotal(maxPageNumbers)
