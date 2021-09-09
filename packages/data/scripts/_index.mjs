@@ -7,9 +7,10 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 ;(async () => {
   try {
     // Please make sure the key is unique and taken from TV exchange id
-    const [_US, _MYX] = await Promise.all([
+    const [_US, _MYX, _CHINA] = await Promise.all([
       import('./ex_US.mjs').then(m => m.US()),
       import('./ex_MYX.mjs').then(m => m.MYX()),
+      import('./ex_CHINA.mjs').then(m => m.CHINA()),
     ])
 
     const { data: US_DATA, human: US_HUMAN } = _US

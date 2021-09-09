@@ -5,7 +5,9 @@ import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
 import { CONFIG } from './CONFIG.mjs'
 
-export const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
+export const pipe = (...fns) => initialVal => fns.reduce((acc, fn) => fn(acc), initialVal)
+export const pluck = key => obj => obj[key] || null
+export const map = fn => item => fn(item)
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
