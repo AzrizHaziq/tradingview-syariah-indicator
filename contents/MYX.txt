@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sun Sep 05 2021 13:30:48 GMT+0800 (Malaysia Time)
+updatedAt : Sun Sep 12 2021 09:00:49 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -237,6 +237,7 @@ ENEST        : s
 ENGKAH       : s
 ENGKAH-WB    : s
 ENGTEX       : s
+ENGTEX-WB    : s
 ENRA         : s
 ENRA-WA      : s
 EPMB         : s
@@ -294,6 +295,7 @@ GFM          : s
 GFM-WC       : s
 GHLSYS       : s
 GIIB         : s
+GIIB-WA      : s
 GKENT        : s
 GLBHD        : s
 GLOMAC       : s
@@ -409,7 +411,6 @@ KAB          : s
 KAB-WA       : s
 KAMDAR       : s
 KANGER       : s
-KANGER-OR    : s
 KAREX        : s
 KARYON       : s
 KAWAN        : s
@@ -664,7 +665,6 @@ PETDAG       : s
 PETGAS       : s
 PETRONM      : s
 PGLOBE       : s
-PGLOBE-OR    : s
 PHARMA       : s
 PHB          : s
 PHB-WB       : s
@@ -800,6 +800,7 @@ SMETRIC      : s
 SMETRIC-WA   : s
 SMI          : s
 SMILE        : s
+SMILE-WA     : s
 SMISCOR      : s
 SMRT         : s
 SMTRACK      : s
@@ -869,6 +870,7 @@ THHEAVY      : s
 THPLANT      : s
 THRIVEN      : s
 TIGER        : s
+TIGER-OR     : s
 TIMECOM      : s
 TIMWELL      : s
 TITIJYA      : s
