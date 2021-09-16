@@ -13,9 +13,9 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
-export function delay(delay = getRandomInt(1, 2)) {
+export function delay(delaySecond = getRandomInt(1, 2)) {
   return new Promise(resolve => {
-    setTimeout(() => resolve(delay), delay * 1000)
+    setTimeout(() => resolve(delaySecond), delaySecond * 1000)
   })
 }
 
@@ -91,7 +91,7 @@ export async function commitChangesIfAny() {
   }
 }
 
-export async function prettierFormatJSON(str) {
+export async function prettierJSON(str) {
   return prettier.format(str, { semi: false, parser: 'json' })
 }
 

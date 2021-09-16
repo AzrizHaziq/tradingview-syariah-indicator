@@ -1,5 +1,5 @@
 import { CONFIG } from './CONFIG.mjs'
-import { commitChangesIfAny, isSameWithPreviousData, logCount, prettierFormatJSON, writeToFile } from './utils.mjs'
+import { commitChangesIfAny, delay, isSameWithPreviousData, logCount, prettierJSON, writeToFile } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
@@ -13,13 +13,12 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       import('./ex_CHINA.mjs').then(m => m.CHINA()),
     ])
 
+    await delay(1)
+
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
     const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
     const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
-
-    console.log('\n')
-    logCount(data)
 
     const sortedHuman = []
       .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN)
@@ -30,10 +29,13 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
+    console.log('\n')
+    logCount(data)
+
     await writeToFile(CONFIG.mainOutput, JSON.stringify(data))
     await writeToFile(
       CONFIG.humanOutput,
-      await prettierFormatJSON(
+      await prettierJSON(
         JSON.stringify({
           data: sortedHuman,
 
