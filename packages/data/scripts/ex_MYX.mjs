@@ -118,7 +118,7 @@ export async function MYX() {
       data: {
         MYX: {
           updatedAt: Date.now(),
-          shape: [{ 0: 'non-s', 1: 's', default: '' }],
+          shape: CONFIG.MYX.shape,
           list: sortedList,
         },
       },

@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
 import PromisePool from '@supercharge/promise-pool'
+
 const progressBar = CONFIG.progressBar.create(100)
 
 function transformToTickersAndSymbols(data) {

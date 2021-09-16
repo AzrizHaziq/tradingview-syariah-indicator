@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "test": "ava",
-    "for-china-etf": "use npm pdfreader",
     "update-data": "node scripts/_index.mjs",
     "update-data:skip-commit": "npm run update-data -- skip-commit"
   },

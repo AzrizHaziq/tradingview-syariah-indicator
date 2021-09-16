@@ -5,6 +5,9 @@ export const CONFIG = {
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
   progressBar: new CliProgress().getInstance(),
+  MYX: {
+    shape: [{ 0: 'non-s', 1: 's', default: '' }],
+  },
   CHINA: {
     // will be based on VP-DJ Shariah China A-Shares 100 ETF (0838EA)
     home_page: 'https://www.valuepartners-group.com.my/en/shariah-china/',
@@ -12,6 +15,10 @@ export const CONFIG = {
     exchanges: ['SSE', 'SZSE'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
     blackListItems: ['CHINA100-MYR', 'MYL0838EA002'],
+    remapExchangeFromGoogleToTV: {
+      SHE: 'SZSE',
+      SHA: 'SSE',
+    },
   },
   US: {
     // will be based on HLAL ETF Wahed

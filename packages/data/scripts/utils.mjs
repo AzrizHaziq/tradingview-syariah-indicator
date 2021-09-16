@@ -54,8 +54,9 @@ export class CliProgress {
 }
 
 export function logCount(exchanges) {
+  const maxExchangeLength = Math.max(...Object.keys(exchanges).map(k => k.length))
   Object.entries(exchanges).forEach(([exchange, { list }]) => {
-    console.log(`Found ${exchange} >> ${Object.keys(list).length}`)
+    console.log(`${exchange.padEnd(maxExchangeLength, ' ')} >> ${Object.keys(list).length}`)
   })
 }
 
@@ -92,4 +93,10 @@ export async function commitChangesIfAny() {
 
 export async function prettierFormatJSON(str) {
   return prettier.format(str, { semi: false, parser: 'json' })
+}
+
+// https://stackoverflow.com/a/43688599/3648961
+export function getElementByXPath(path) {
+  return new XPathEvaluator().evaluate(path, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
+    .singleNodeValue
 }

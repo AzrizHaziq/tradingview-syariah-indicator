@@ -15,26 +15,30 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
+    const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
+    const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
 
     console.log('\n')
-    logCount(US_DATA)
-    logCount(MYX_DATA)
+    logCount(data)
 
-    const sortedHuman = [].concat(MYX_HUMAN, US_HUMAN).sort(([, , a], [, , b]) => (a > b ? 1 : a < b ? -1 : 0))
+    const sortedHuman = []
+      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN)
+      .sort(([, , a], [, , b]) => (a > b ? 1 : a < b ? -1 : 0))
 
     if (isSameWithPreviousData(sortedHuman)) {
       console.log('Previous data and current data is same, hence skip commit')
       process.exit()
     }
 
-    await writeToFile(CONFIG.mainOutput, JSON.stringify({ ...MYX_DATA, ...US_DATA }))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify(data))
     await writeToFile(
       CONFIG.humanOutput,
       await prettierFormatJSON(
         JSON.stringify({
           data: sortedHuman,
+
           // pluck all updatedAt data from each exchanges
-          metadata: Object.entries({ ...US_DATA, ...MYX_DATA }).reduce((acc, [exchange, detail]) => {
+          metadata: Object.entries(data).reduce((acc, [exchange, detail]) => {
             acc[exchange] = detail.updatedAt
             return acc
           }, {}),
