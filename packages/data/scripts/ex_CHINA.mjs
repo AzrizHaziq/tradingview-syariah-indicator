@@ -3,7 +3,7 @@ import { PdfReader } from 'pdfreader'
 import { CONFIG } from './config.mjs'
 import { chromium } from 'playwright-chromium'
 import PromisePool from '@supercharge/promise-pool'
-import { pipe, pluck, map, getElementByXPath } from './utils.mjs'
+import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
 
 const progressBar = CONFIG.progressBar.create(2)
 
@@ -113,11 +113,12 @@ async function getCompanyExchangeAndCode(stockNames) {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
 
+  // main just search thru google search and grab the stock code and exchange
   const _main = async name => {
     progressBar.increment()
 
     const page = await ctx.newPage()
-    const url = `https://google.com/search?q=${encodeURIComponent(name + 'stock price')}`
+    const url = `https://google.com/search?q=${encodeURIComponent(name + ' stock price')}`
     await page.goto(url, { waitUntil: 'networkidle' })
 
     return await page
@@ -131,8 +132,6 @@ async function getCompanyExchangeAndCode(stockNames) {
 
           if (!el) {
             return Promise.resolve(['', '', name])
-            // console.log(`Pushed to retries: ${name}`)
-            // throw new Error(name)
           }
 
           let [exchange, code] = el.textContent.replace(/\s/g, '').split(':')
@@ -156,9 +155,62 @@ async function getCompanyExchangeAndCode(stockNames) {
       .finally(async () => await page.close())
   }
 
+  // retry have quite number of steps and that's why its not a default method
+  const _retry = async name => {
+    const noMatches = 'text=No matches...'
+    const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
+
+    const page = await ctx.newPage()
+    await page.goto(`https://www.google.com/finance`, { waitUntil: 'networkidle' })
+
+    try {
+      let _name = name
+      do {
+        _name = _name.slice(0, _name.length - 1)
+        if (_name.length < 8) {
+          return ['', '', name] // failed to identify this stock and just return it as is.
+        }
+
+        await page.fill(mainInputBox, _name)
+        await delay(1)
+
+        // if "No matches..." not exist then press enter and get code and exchange
+        const bool = await page.isVisible(noMatches)
+        if (!bool) {
+          await page.focus(mainInputBox)
+          await page.keyboard.down('Enter')
+          await delay(2)
+
+          // getting stock code and exchange in url
+          let [code, exchange] = await page.evaluate(async () => {
+            const split = location.pathname.split('/')
+            return Promise.resolve(split[split.length - 1].split(':'))
+          })
+          // eslint-disable-next-line no-prototype-builtins
+          exchange = CONFIG.CHINA.remapExchangeFromGoogleToTV.hasOwnProperty(exchange)
+            ? CONFIG.CHINA.remapExchangeFromGoogleToTV[exchange]
+            : ''
+
+          return [exchange, code, name]
+        }
+      } while (await page.isVisible(noMatches))
+    } finally {
+      await page.close()
+    }
+  }
+
   try {
     const { results } = await PromisePool.for(stockNames).process(_main)
-    return results
+    const { success, failed } = results.reduce(
+      (acc, stock) => {
+        stock[0] === '' ? acc.failed.push(stock) : acc.success.push(stock)
+        return acc
+      },
+      { success: [], failed: [] }
+    )
+
+    const { results: retryResults } = await PromisePool.for(failed.map(i => i[2])).process(_retry)
+    return [...success, ...retryResults]
   } catch (e) {
     throw Error(`Error getCompanyExchangeAndCode: ${e}`)
   } finally {
