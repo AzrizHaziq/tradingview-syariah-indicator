@@ -1,5 +1,6 @@
 import { browser } from 'webextension-polyfill-ts'
-import { dateDiffInDays, debounce, getStorage, initGa, isValidDate, setStorage } from '../helper'
+import { differenceInDays, format, isDate } from 'date-fns'
+import { debounce, getStorage, initGa, setStorage } from '../helper'
 
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
@@ -33,16 +34,14 @@ async function listener(_, { status }, { url }): Promise<void> {
   }
 
   try {
-    const currentDate = new Date()
-
     const LAST_FETCH_AT_STR = await getStorage('LAST_FETCH_AT')
     const LAST_FETCH_AT = new Date(LAST_FETCH_AT_STR)
 
     // use for testing cache
     // LAST_FETCH_AT.setDate(LAST_FETCH_AT.getDate() - 1)
 
-    const lastFetchAt = isValidDate(LAST_FETCH_AT) ? LAST_FETCH_AT : new Date()
-    const shouldUseCacheValue = dateDiffInDays(currentDate, lastFetchAt) >= 0
+    const lastFetchAt = isDate(LAST_FETCH_AT) ? LAST_FETCH_AT : new Date()
+    const shouldUseCacheValue = differenceInDays(new Date(), lastFetchAt) >= 0
 
     if (shouldUseCacheValue) {
       console.log('>>> Cache')
@@ -82,11 +81,10 @@ async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON):
   try {
     const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt }]) => ({
       id: exchange,
-      updatedAt,
+      updatedAt: isDate(new Date(updatedAt)) ? format(new Date(updatedAt), 'dd LLL yy') : '--',
     }))
 
     await setStorage('DETAILS', exchangesDetails)
-    // console.log('Exchanges details: ', await getStorage('DETAILS'))
   } catch (e) {
     console.error(`Error set Exchanges detail in storage`, e)
   }

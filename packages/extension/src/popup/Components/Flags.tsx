@@ -12,7 +12,6 @@ export const Flags: Component = () => {
       {flag => {
         const { updatedAt, id } = flag
         const popup_list_at = getMessage('popup_list_at', id)
-        const lastDate = isDate(new Date(updatedAt)) ? format(1632381584165, 'dd LLL yy') : '--'
         const href = `https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/packages/extension/assets/exchanges/${id}.txt`
 
         return (
@@ -32,7 +31,7 @@ export const Flags: Component = () => {
               />
               <p>{id}</p>
             </div>
-            <p class='text-xs'>{lastDate}</p>
+            <p class='text-xs'>{updatedAt}</p>
           </a>
         )
       }}

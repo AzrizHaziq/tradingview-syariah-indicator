@@ -109,8 +109,8 @@ Requirements
 
 ## Todo
 
-- [ ] Add US stocks
-- [ ] Read pdf from ChinaA ETF
+- [X] Add US stocks
+- [X] Read pdf from ChinaA ETF
 - [ ] Add e2e test with playwright + github action run with schedule
 - [ ] Add website, host in vercel with nextjs
 - [ ] Add an option page where user can custom its own data.
@@ -120,7 +120,7 @@ Requirements
     - [ ] filter
     - [ ] use json hosted in github raw
 - [ ] Added a page for "accept agreement/conditions"
-- [ ] @Data, do some diffing with current data. If exists, then commit it.
+- [X] @Data, do some diffing with current data. If exists, then commit it.
 
 ### Please do refer to original website before buying. And if you're holding then look at them everyday.
 #### 1. China100 A stocks
