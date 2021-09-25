@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Sep 18 2021 10:21:02 GMT+0800 (Malaysia Time)
+updatedAt : Sat Sep 25 2021 12:52:28 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -252,6 +252,7 @@ EWINT        : s
 EWINT-WA     : s
 F&N          : s
 FAJAR        : s
+FAJAR-OR     : s
 FAREAST      : s
 FAST         : s
 FAVCO        : s
@@ -870,7 +871,6 @@ THHEAVY      : s
 THPLANT      : s
 THRIVEN      : s
 TIGER        : s
-TIGER-OR     : s
 TIMECOM      : s
 TIMWELL      : s
 TITIJYA      : s
@@ -933,7 +933,6 @@ VSOLAR       : s
 VSOLAR-WB    : s
 VSTECS       : s
 WAJA         : s
-WAJA-WA      : s
 WARISAN      : s
 WASEONG      : s
 WATTA        : s
