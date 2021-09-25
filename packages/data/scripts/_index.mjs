@@ -20,9 +20,11 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
     const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
     const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
 
-    const sortedHuman = []
-      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN)
-      .sort(([, , a], [, , b]) => (a > b ? 1 : a < b ? -1 : 0))
+    const sortedHuman = [].concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN).sort(([a1, a2, a3], [b1, b2, b3]) => {
+      if (a2 === b2 && a3 === b3) return a1 > b1 ? 1 : a1 < b1 ? -1 : 0 // sort by exchange
+      if (a3 === b3) return a2 > b2 ? 1 : a2 < b2 ? -1 : 0 // sort by code
+      return a3 > b3 ? 1 : a3 < b3 ? -1 : 0 // by default use company name to sort
+    })
 
     if (isSameWithPreviousData(sortedHuman)) {
       console.log('Previous data and current data is same, hence skip commit')
