@@ -26,12 +26,12 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       return a3 > b3 ? 1 : a3 < b3 ? -1 : 0 // by default use company name to sort
     })
 
+    console.log('\n')
     if (isSameWithPreviousData(sortedHuman)) {
       console.log('Previous data and current data is same, hence skip commit')
       process.exit()
     }
 
-    console.log('\n')
     logCount(data)
 
     await writeToFile(CONFIG.mainOutput, JSON.stringify(data))

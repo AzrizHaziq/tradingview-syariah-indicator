@@ -157,8 +157,6 @@ async function getCompanyExchangeAndCode(stockNames) {
 
   // retry have quite number of steps and that's why its not a default method
   const _retry = async name => {
-    progressBar.increment(1, { stats: `Google finance: ${name}` })
-
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -175,6 +173,7 @@ async function getCompanyExchangeAndCode(stockNames) {
 
         await page.fill(mainInputBox, _name)
         await delay(1)
+        progressBar.update({ stats: `Google finance: ${_name}` })
 
         // if "No matches..." not exist then press enter and get code and exchange
         const bool = await page.isVisible(noMatches)
@@ -212,8 +211,6 @@ async function getCompanyExchangeAndCode(stockNames) {
     )
 
     const failedNames = failed.map(i => i[2])
-    progressBar.update(0)
-    progressBar.update(failedNames.length)
     const { results: retryResults } = await PromisePool.for(failedNames).process(_retry)
 
     return [...success, ...retryResults]
