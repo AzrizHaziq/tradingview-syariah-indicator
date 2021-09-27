@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import colors from 'colors'
 import prettier from 'prettier'
 import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
@@ -43,7 +44,11 @@ export class CliProgress {
           clearOnComplete: false,
           hideCursor: true,
         },
-        cliProgress.Presets.shades_grey
+        {
+          format: colors.yellow(' {bar} ') + '{percentage}% | ETA: {eta}s | {value}/{total} {stats}',
+          barCompleteChar: '\u2588',
+          barIncompleteChar: '\u2591',
+        }
       )
     }
   }

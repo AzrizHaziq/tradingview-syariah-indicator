@@ -4,7 +4,7 @@ import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
 import PromisePool from '@supercharge/promise-pool'
 
-const progressBar = CONFIG.progressBar.create(100)
+const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
 async function getCompanyName(stocks) {
   async function getCompanyFullname(code) {
@@ -75,9 +75,11 @@ async function scrapBursaMalaysia() {
           }, [])
         })
 
-        progressBar.increment(0.5)
+        const pageNo = `${i + 1}`.padStart(2, '0')
+        progressBar.increment(0.5, { stats: `Page ${pageNo}: scrapped` })
         temp = await getCompanyName(temp)
-        progressBar.increment(0.5)
+        progressBar.increment(0.5, { stats: `Page ${pageNo}: fetched` })
+
         return temp
       })
     ).then(results => results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {}))

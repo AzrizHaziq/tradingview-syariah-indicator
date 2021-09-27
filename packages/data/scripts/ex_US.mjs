@@ -3,7 +3,7 @@ import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
 import PromisePool from '@supercharge/promise-pool'
 
-const progressBar = CONFIG.progressBar.create(100)
+const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
 function transformToTickersAndSymbols(data) {
   return data // get tickers & symbols
@@ -52,7 +52,7 @@ const getExchange = item =>
         }
 
         if (response.status === 200) {
-          progressBar.increment()
+          progressBar.increment(1, { stats: `${exchange}-${item.ticker}` })
           resolve({ ...item, exchange })
           break
           // if all exchanges failed, then search that stock if it is really exist

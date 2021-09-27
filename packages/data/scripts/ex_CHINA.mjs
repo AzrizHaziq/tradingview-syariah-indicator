@@ -5,7 +5,7 @@ import { chromium } from 'playwright-chromium'
 import PromisePool from '@supercharge/promise-pool'
 import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
 
-const progressBar = CONFIG.progressBar.create(2)
+const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
 const CHINA_ETF = (
   companyCode = '0838EA',
@@ -115,7 +115,7 @@ async function getCompanyExchangeAndCode(stockNames) {
 
   // main just search thru google search and grab the stock code and exchange
   const _main = async name => {
-    progressBar.increment()
+    progressBar.increment(1, { stats: `Google search: ${name}` })
 
     const page = await ctx.newPage()
     const url = `https://google.com/search?q=${encodeURIComponent(name + ' stock price')}`
@@ -157,6 +157,8 @@ async function getCompanyExchangeAndCode(stockNames) {
 
   // retry have quite number of steps and that's why its not a default method
   const _retry = async name => {
+    progressBar.increment(1, { stats: `Google finance: ${name}` })
+
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -209,7 +211,11 @@ async function getCompanyExchangeAndCode(stockNames) {
       { success: [], failed: [] }
     )
 
-    const { results: retryResults } = await PromisePool.for(failed.map(i => i[2])).process(_retry)
+    const failedNames = failed.map(i => i[2])
+    progressBar.update(0)
+    progressBar.update(failedNames.length)
+    const { results: retryResults } = await PromisePool.for(failedNames).process(_retry)
+
     return [...success, ...retryResults]
   } catch (e) {
     throw Error(`Error getCompanyExchangeAndCode: ${e}`)
@@ -221,10 +227,10 @@ async function getCompanyExchangeAndCode(stockNames) {
 export async function CHINA() {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
-    progressBar.increment()
+    progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
 
     let companyNames = await parsePdf(pdfUrl)
-    progressBar.increment()
+    progressBar.increment(1, { stats: 'Success parse pdf' })
 
     companyNames = CONFIG.isDev ? companyNames.slice(0, 30) : companyNames
     progressBar.update(0)
