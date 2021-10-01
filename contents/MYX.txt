@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Sep 25 2021 12:52:28 GMT+0800 (Malaysia Time)
+updatedAt : Sat Oct 02 2021 07:54:45 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -30,6 +30,7 @@ ALAM-WA      : s
 ALAQAR       : s
 ALSREIT      : s
 AME          : s
+AME-WA       : s
 AMEDIA       : s
 AMLEX        : s
 AMPROP       : s
@@ -133,6 +134,7 @@ CBIP         : s
 CCB          : s
 CCK          : s
 CCK-WA       : s
+CEKD         : s
 CENSOF       : s
 CEPAT        : s
 CEPCO        : s
@@ -252,7 +254,6 @@ EWINT        : s
 EWINT-WA     : s
 F&N          : s
 FAJAR        : s
-FAJAR-OR     : s
 FAREAST      : s
 FAST         : s
 FAVCO        : s
@@ -326,6 +327,7 @@ HCK-WA       : s
 HENGYUAN     : s
 HEVEA        : s
 HEXIND       : s
+HEXIND-OR    : s
 HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
@@ -412,6 +414,7 @@ KAB          : s
 KAB-WA       : s
 KAMDAR       : s
 KANGER       : s
+KANGER-WB    : s
 KAREX        : s
 KARYON       : s
 KAWAN        : s
@@ -496,6 +499,7 @@ MAHSING      : s
 MALAKOF      : s
 MALTON       : s
 MASTEEL      : s
+MASTEEL-OR   : s
 MASTER       : s
 MATRIX       : s
 MAXIM        : s
@@ -859,6 +863,7 @@ TDM          : s
 TECHNAX      : s
 TEKSENG      : s
 TELADAN      : s
+TELADAN-WA   : s
 TENAGA       : s
 TEOSENG      : s
 TEXCYCL      : s
