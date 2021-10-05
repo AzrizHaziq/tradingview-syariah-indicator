@@ -4,13 +4,10 @@ import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import { PageContext } from './types'
 import logoUrl from './logo.svg'
 
-export { render }
-export { passToClient }
-
 // See https://vite-plugin-ssr.com/data-fetching
-const passToClient = ['pageProps', 'documentProps']
+export const passToClient = ['pageProps', 'documentProps']
 
-function render(pageContext: PageContext) {
+export function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
 
   const pageHtml = renderToString(() => (
@@ -35,7 +32,7 @@ function render(pageContext: PageContext) {
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
       <body>
-        <div id="tradingview-shariah-indicator-web">${dangerouslySkipEscape(pageHtml)}</div>
+        <div id="tsi-web">${dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`
 }

@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 import { Counter } from './Counter'
 
-const Page: Component = () => {
+export const Page: Component = () => {
   return (
     <>
       <h1>Welcome</h1>
@@ -16,5 +16,3 @@ const Page: Component = () => {
     </>
   )
 }
-
-export { Page }

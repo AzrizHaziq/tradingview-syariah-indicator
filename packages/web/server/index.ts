@@ -1,40 +1,40 @@
-import express from "express";
-import { createPageRenderer } from "vite-plugin-ssr";
+import express from 'express'
+import { createPageRenderer } from 'vite-plugin-ssr'
 
-const isProduction = process.env.NODE_ENV === "production";
-const root = `${__dirname}/..`;
+const isProduction = process.env.NODE_ENV === 'production'
+const root = `${__dirname}/..`
 
-startServer();
+startServer()
 
 async function startServer() {
-  const app = express();
+  const app = express()
 
-  let viteDevServer;
+  let viteDevServer
   if (isProduction) {
-    app.use(express.static(`${root}/dist/client`));
+    app.use(express.static(`${root}/dist/client`))
   } else {
-    const vite = require("vite");
+    const vite = require('vite')
     viteDevServer = await vite.createServer({
       root,
       server: { middlewareMode: true },
-    });
-    app.use(viteDevServer.middlewares);
+    })
+    app.use(viteDevServer.middlewares)
   }
 
-  const renderPage = createPageRenderer({ viteDevServer, isProduction, root });
-  app.get("*", async (req, res, next) => {
-    const url = req.originalUrl;
-    const pageContextInit = {
-      url,
-    };
-    const pageContext = await renderPage(pageContextInit);
-    const { httpResponse } = pageContext;
-    if (!httpResponse) return next();
-    const { statusCode, body } = httpResponse;
-    res.status(statusCode).send(body);
-  });
+  const renderPage = createPageRenderer({ viteDevServer, isProduction, root })
+  app.get('*', async (req, res, next) => {
+    const url = req.originalUrl
+    const pageContextInit = { url }
+    const pageContext = await renderPage(pageContextInit)
+    const { httpResponse } = pageContext
 
-  const port = process.env.PORT || 3000;
-  app.listen(port);
-  console.log(`Server running at http://localhost:${port}`);
+    if (!httpResponse) return next()
+
+    const { statusCode, body } = httpResponse
+    res.status(statusCode).send(body)
+  })
+
+  const port = process.env.PORT || 3000
+  app.listen(port)
+  console.log(`Server running at http://localhost:${port}`)
 }

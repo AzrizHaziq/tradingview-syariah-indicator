@@ -1,13 +1,11 @@
-import { Component } from "solid-js";
-import "./index.css";
+import './index.css'
+import { Component } from 'solid-js'
 
-export { Page };
-
-const Page: Component = () => {
+export const Page: Component = () => {
   return (
     <>
       <h1>About</h1>
       <p>A colored page.</p>
     </>
-  );
-};
+  )
+}

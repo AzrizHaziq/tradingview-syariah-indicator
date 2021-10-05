@@ -1,12 +1,11 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createSignal } from 'solid-js'
 
-export { Counter };
+export const Counter: Component = () => {
+  const [count, setCount] = createSignal(2)
 
-const Counter: Component = () => {
-  const [count, setCount] = createSignal(2);
   return (
-    <button type="button" onClick={() => setCount((prev) => prev + 1)}>
+    <button type='button' onClick={() => setCount(prev => prev + 1)}>
       Counter {count()}
     </button>
-  );
-};
+  )
+}

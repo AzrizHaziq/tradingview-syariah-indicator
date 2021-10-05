@@ -1,15 +1,15 @@
-import { hydrate, render } from 'solid-js/web'
-import { useClientRouter } from 'vite-plugin-ssr/client/router'
-import { PageLayout } from './PageLayout'
-
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
+
+import { PageLayout } from './PageLayout'
+import { hydrate, render } from 'solid-js/web'
+import { useClientRouter } from 'vite-plugin-ssr/client/router'
 
 let dispose: () => void
 
 const { hydrationPromise } = useClientRouter({
   render(pageContext) {
-    const content = document.getElementById('tradingview-shariah-indicator-web')
+    const content = document.getElementById('tsi-web')
     const { Page, pageProps } = pageContext
 
     // Dispose to prevent duplicate pages when navigating.
@@ -50,6 +50,7 @@ hydrationPromise.then(s => {
 function onTransitionStart() {
   console.log('Page transition start')
 }
+
 function onTransitionEnd() {
   console.log('Page transition end')
 }
