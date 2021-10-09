@@ -12,8 +12,8 @@ const PageLayout: Component = props => {
         <a class='navitem' href='/'>
           Home
         </a>
-        <a class='navitem' href='/about'>
-          About
+        <a class='navitem' href='/list'>
+          List
         </a>
       </Sidebar>
       <Content>{props.children}</Content>
