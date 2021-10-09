@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Oct 02 2021 07:54:45 GMT+0800 (Malaysia Time)
+updatedAt : Sat Oct 09 2021 14:26:25 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -327,7 +327,6 @@ HCK-WA       : s
 HENGYUAN     : s
 HEVEA        : s
 HEXIND       : s
-HEXIND-OR    : s
 HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
@@ -499,7 +498,6 @@ MAHSING      : s
 MALAKOF      : s
 MALTON       : s
 MASTEEL      : s
-MASTEEL-OR   : s
 MASTER       : s
 MATRIX       : s
 MAXIM        : s
@@ -654,6 +652,7 @@ PCCS         : s
 PCCS-WA      : s
 PCHEM        : s
 PDZ          : s
+PDZ-OR       : s
 PDZ-WB       : s
 PEB          : s
 PECCA        : s
