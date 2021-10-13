@@ -7,10 +7,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
-
-// @ts-ignore
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-// @ts-ignore
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
