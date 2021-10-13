@@ -1,8 +1,9 @@
-import { defineConfig } from "vite-plugin-windicss";
+import { defineConfig } from 'vite-plugin-windicss'
 
 export default defineConfig({
   darkMode: 'class',
   theme: {
     extend: {},
   },
-});
+  plugins: [require('windicss/plugin/typography')],
+})
