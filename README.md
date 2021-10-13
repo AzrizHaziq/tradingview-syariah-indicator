@@ -61,18 +61,18 @@ Installation guide:
 
 ## Screenshots
 [Symbol Page](https://www.tradingview.com/symbols/MYX-TOPGLOV/)
-![Symbol page](./packages/docs/ori_chrome/symbol_page.png)
+![Symbol page](/docs/ori_chrome/symbol_page.png)
 
 [Chart page](https://www.tradingview.com/chart/)
-![Chart page](./packages/docs/ori_chrome/chart_page.png)
-![Chart page with screener](./packages/docs/ori_chrome/chart_page_with_screener.png)
+![Chart page](/docs/ori_chrome/chart_page.png)
+![Chart page with screener](/docs/ori_chrome/chart_page_with_screener.png)
 
 [Screener page](https://www.tradingview.com/screener/)
-![Screener page](./packages/docs/ori_chrome/screener_page_on.png)
+![Screener page](/docs/ori_chrome/screener_page_on.png)
 
 Popup
 
-![popup](./packages/docs/ori_chrome/popup.png)
+![popup](/docs/ori_chrome/popup.png)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
