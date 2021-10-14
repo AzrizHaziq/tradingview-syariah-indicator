@@ -1,7 +1,8 @@
 {
   "name": "tradingview-syariah-indicator",
+  "name_display": "Tradingview Shariah Indicator",
   "version": "0.0.0",
-  "description": "Display small shariah indicator to stock list in tradingview(MY)",
+  "description": " Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai at the moment.",
   "private": true,
   "scripts": {
     "start": "lerna run --scope @app/extension --stream watch",

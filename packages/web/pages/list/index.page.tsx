@@ -1,4 +1,3 @@
-import './index.css'
 import { Component } from 'solid-js'
 
 export const Page: Component = pageProps => {

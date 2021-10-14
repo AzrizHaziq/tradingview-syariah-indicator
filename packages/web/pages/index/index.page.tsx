@@ -1,9 +1,9 @@
 import { Component } from 'solid-js'
-import chrome_popup from '../../../../docs/ori_chrome/popup.png'
-import chrome_chart from '../../../../docs/ori_chrome/chart_page.png'
-import chrome_symbol from '../../../../docs/ori_chrome/symbol_page.png'
-import chrome_screener from '../../../../docs/ori_chrome/screener_page_on.png'
-import chrome_chartWithScreener from '../../../../docs/ori_chrome/chart_page_with_screener.png'
+import chrome_popup from '../../../../assets/ori_chrome/popup.png'
+import chrome_chart from '../../../../assets/ori_chrome/chart_page.png'
+import chrome_symbol from '../../../../assets/ori_chrome/symbol_page.png'
+import chrome_screener from '../../../../assets/ori_chrome/screener_page_on.png'
+import chrome_chartWithScreener from '../../../../assets/ori_chrome/chart_page_with_screener.png'
 
 export const Page: Component = () => {
   return (
@@ -11,8 +11,8 @@ export const Page: Component = () => {
       <h1 id='tradingview-syariah-indicator'>Tradingview Syariah Indicator</h1>
       <h2 id='what-it-does'>What it does</h2>
       <p>
-        Add a small green indicator in tradingview.com, unfortunately currently only cover Malaysian, NYSE, Nasdaq,
-        Shenzhen, Shanghai at the moment.
+        Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen,
+        Shanghai at the moment.
       </p>
       <p>
         Source data:
