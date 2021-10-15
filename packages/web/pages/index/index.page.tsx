@@ -150,25 +150,39 @@ export const Page: Component = () => {
         <h3>
           <a href='https://www.tradingview.com/symbols/MYX-TOPGLOV/'>Symbol Page</a>
         </h3>
-        <img class='!m-0' src={chrome_symbol} alt='Symbol page' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_symbol} alt='Symbol page' />
 
         <h3>
           <a href='https://www.tradingview.com/chart/'>Chart page</a>
         </h3>
-        <img class='!m-0' src={chrome_chart} alt='Chart page' />
-        <img class='!m-0' src={chrome_chartWithScreener} alt='Chart page with screener' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_chart} alt='Chart page' />
+        <img
+          width='600'
+          height='400'
+          loading='lazy'
+          class='!m-0'
+          src={chrome_chartWithScreener}
+          alt='Chart page with screener'
+        />
 
         <h3>
           <a href='https://www.tradingview.com/screener/'>Screener page</a>
         </h3>
-        <img class='!m-0' src={chrome_screener} alt='Screener page' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_screener} alt='Screener page' />
 
         <h3 id='popup'>Popup</h3>
-        <img class='!m-0' src={chrome_popup} alt='popup' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_popup} alt='popup' />
         {/**/}
         <h2 id='video'>Video</h2>
         <a href='https://www.youtube.com/watch?v=4U8mu_5UfUQ'>
-          <img class='!m-0' src='https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg' alt='tradingview-syariah-indicator' />
+          <img
+            width='600'
+            height='400'
+            loading='lazy'
+            class='!m-0'
+            src='https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg'
+            alt='tradingview-syariah-indicator'
+          />
         </a>
       </div>
       <p class='mt-10 text-2xl text-center'>Please feel free to contact me if any bug happen.</p>

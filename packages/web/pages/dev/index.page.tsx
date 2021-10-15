@@ -8,7 +8,7 @@ export const Page: Component = () => {
       <p>Requirements</p>
       <ul>
         <li>
-          node = look at <code>.nvmrc</code>
+          node = look at <b>.nvmrc</b>
         </li>
         <li>yarn = 1.22.10</li>
         <li>
@@ -36,10 +36,10 @@ export const Page: Component = () => {
           All new data will be written to
           <ul>
             <li>
-              <code>/packages/data/stock-list.json</code>
+              <b>/packages/data/stock-list.json</b>
             </li>
             <li>
-              <code>/packages/data/stock-list.human.json</code>
+              <b>/packages/data/stock-list.human.json</b>
             </li>
           </ul>
         </li>
