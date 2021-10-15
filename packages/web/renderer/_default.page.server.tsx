@@ -32,7 +32,7 @@ export function render(pageContext: PageContext) {
         <title>${title}</title>
         ${dangerouslySkipEscape(generateHydrationScript())}
       </head>
-      <body>
+      <body class="bg-gray-900">
         <div id="tsi-web">${dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`
