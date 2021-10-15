@@ -15,14 +15,8 @@ export const Page: Component = () => {
         <p>
           Add a small green indicator(
           <img class='inline !my-0 mx-1' src={logo} height={15} width={15} alt='logo' />) in
-          <a href='https://tradingview.com'>tradingview.com</a>
-          At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai at the moment.
-        </p>
-        <p>
-          Source data:
-          <a href='https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&amp;sort_by=short_name&amp;sort_dir=asc&amp;page=1'>
-            Bursa Malaysia
-          </a>
+          <a href='https://tradingview.com'>tradingview.com</a>. At the moment, only cover Malaysian, NYSE, Nasdaq,
+          Shenzhen, Shanghai at the moment.
         </p>
         <p>
           Inspired from:
@@ -140,18 +134,12 @@ export const Page: Component = () => {
           </li>
           <li>
             Goto any of this page
-            <a href='https://tradingview.com/chart'>https://tradingview.com/chart</a>
-            <a href='https://tradingview.com/screener'>https://tradingview.com/screener</a>
-            <a href='https://tradingview.com/symbols'>https://tradingview.com/symbols</a>
+            <a href='https://tradingview.com/chart'>Chart</a>/<a href='https://tradingview.com/screener'>Screener</a>/
+            <a href='https://tradingview.com/symbols'>Symbols</a>
           </li>
           <li>
-            <p>
-              Search any
-              <a href='https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/contents/MYX.txt'>
-                valid Shariah Stocks
-              </a>
-              (currently in Malaysia only)
-            </p>
+            You can also you this page for more easy navigation
+            <a href='list'>list</a>
           </li>
         </ol>
         {/**/}

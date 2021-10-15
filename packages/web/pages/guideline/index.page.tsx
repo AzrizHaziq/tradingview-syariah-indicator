@@ -9,10 +9,23 @@ import chrome_chartWithScreener from '../../../../assets/ori_chrome/chart_page_w
 export const Page: Component = () => {
   return (
     <div class='prose'>
-      <h3 id='please-do-refer-to-original-website-before-buying.-and-if-youre-holding-then-look-at-them-everyday.'>
+      <h2 id='please-do-refer-to-original-website-before-buying.-and-if-youre-holding-then-look-at-them-everyday.'>
         Please do refer to original website before buying and if you're holding, then look at them everyday.
-      </h3>
-      <h4 id='china100-a-stocks'>1. China100 A stocks</h4>
+      </h2>
+      <h3 id='malaysia'>Malaysia Stocks(MYX)</h3>
+      <ol>
+        <li>Malaysia had a very good website which list out all Shariah Compliant</li>
+        <li>
+          Every <b>Mei</b> and <b>November</b>, Shariah Board will update the list accordingly.
+        </li>
+        <li>
+          For more info click here:
+          <a href='https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1'>
+            MYX
+          </a>
+        </li>
+      </ol>
+      <h3 id='china100-a-stocks'>China100 A stocks(Shenzhen, Shanghai)</h3>
       <ol>
         <li>
           Go to
@@ -28,7 +41,7 @@ export const Page: Component = () => {
         </li>
         <li>Read at page 48 about Shariah</li>
       </ol>
-      <h4 id='for-wahed-etf-hlal'>2. For Wahed ETF HLAL</h4>
+      <h3 id='wahed-etf-hlal'>Wahed ETF HLAL(Nasdaq, NYSE)</h3>
       <ol>
         <li>
           Read more here <a href='https://funds.wahedinvest.com/'>HLAL</a>

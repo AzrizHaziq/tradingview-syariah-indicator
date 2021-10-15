@@ -9,56 +9,86 @@ export const Page: Component = () => {
       <ul>
         <li>
           node = look at <code>.nvmrc</code>
-          <br />
+        </li>
+        <li>yarn = 1.22.10</li>
+        <li>
+          git clone this repository <code>$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git</code>
         </li>
         <li>
-          yarn = 1.22.10
-          <br />
+          Then run <code>$ yarn</code> to install all dependencies.
         </li>
-        <li>git = 2.23.0</li>
+        <li>
+          Create <b>.env</b>(for development) and <b>.env.production</b>(for production) file in every 'web', and
+          'extension', and please follow <b>.env.example</b>
+        </li>
       </ul>
+
+      <h2 id='how-to-use'>How to use</h2>
+      <h3 id='development-mode-data'>Data</h3>
       <ol>
         <li>
-          Need to have node and npm (please look at package.json &gt; engine)
-          <br />
+          Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Type in terminal <code>$ yarn</code>
-          <br />
+          Use this to scrape latest data <code>$ yarn update-data</code>
+        </li>
+        <li>
+          All new data will be written to
+          <ul>
+            <li>
+              <code>/packages/data/stock-list.json</code>
+            </li>
+            <li>
+              <code>/packages/data/stock-list.human.json</code>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <h3 id='development-mode-extension'>Extension</h3>
+      <ol>
+        <li>
+          Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
           Type in 1st terminal: <code>$ yarn watch</code>
-          <br />
           and then in another terminal type either below commands:
-          <br />
-          Firefox: <code>$ yarn watch:ff</code>
-          <br />
-          Chrome: <code>$ npm watch:c</code>
+          <ul>
+            <li>
+              Firefox: <code>$ yarn watch:ff</code>
+            </li>
+            <li>
+              Chrome: <code>$ yarn watch:c</code>
+            </li>
+            <li>
+              <code>$ yarn build</code> to generate production file. Generated file located in
+              <b>/web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</b>
+            </li>
+          </ul>
         </li>
       </ol>
-      <h2 id='generate-production-ready-extension'>Generate Production ready extension</h2>
+
+      <h3 id='development-mode-website'>Website</h3>
       <ol>
         <li>
-          Git clone: AzrizHaziq/tradingview-syariah-indicator.git
-          <br />
+          Make sure your terminal inside <b>/packages/web</b> directory
         </li>
         <li>
-          npm install
-          <br />
+          Type in terminal
+          <ul>
+            <li>
+              Devs: <code>$ yarn dev</code>
+            </li>
+            <li>
+              Build: <code>$ yarn build</code>
+            </li>
+          </ul>
         </li>
-        <li>
-          create <code>.env.production</code> file in root, and please follow
-          <code>.env.example</code>
-          <br />
-        </li>
-        <li>
-          Type in terminal <code>$ yarn build</code>
-          <br />
-        </li>
-        <li>Generate a file located in /web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</li>
       </ol>
       <h2 id='update-stock-list-data-will-take-a-few-x-minutes'>Update Stock list data (will take a few X minutes)</h2>
       <ol>
+        <li>
+          Make sure your terminal inside <b>/packages/data</b> directory
+        </li>
         <li>
           Type in terminal <code>$ npm run update-data</code>
         </li>
