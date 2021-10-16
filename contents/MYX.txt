@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Oct 09 2021 14:26:25 GMT+0800 (Malaysia Time)
+updatedAt : Sat Oct 16 2021 10:00:13 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -347,6 +347,7 @@ HOMERIZ-WB   : s
 HOMERIZ-WC   : s
 HONGSENG     : s
 HONGSENG-WA  : s
+HONGSENG-WB  : s
 HOOVER       : s
 HPMT         : s
 HPPHB        : s
@@ -463,7 +464,6 @@ LAGENDA      : s
 LAGENDA-WB   : s
 LATITUD      : s
 LAYHONG      : s
-LAYHONG-WA   : s
 LBALUM       : s
 LBICAP       : s
 LBICAP-WB    : s
@@ -652,7 +652,6 @@ PCCS         : s
 PCCS-WA      : s
 PCHEM        : s
 PDZ          : s
-PDZ-OR       : s
 PDZ-WB       : s
 PEB          : s
 PECCA        : s
@@ -875,6 +874,7 @@ THHEAVY      : s
 THPLANT      : s
 THRIVEN      : s
 TIGER        : s
+TIGER-WD     : s
 TIMECOM      : s
 TIMWELL      : s
 TITIJYA      : s
