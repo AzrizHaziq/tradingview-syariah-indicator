@@ -18,19 +18,19 @@ export const PageLayout: Component = (props: { pageContext: PageContextBuiltIn; 
           <nav class='md:mr-auto md:ml-4 md:py-1 md:pl-4 gap-5 flex flex-wrap items-center text-base justify-center'>
             <a
               href='/list'
-              class='text-white hover:text-gray-300'
+              class='text-white hover:text-green-500'
               classList={{ 'text-green-300': urlPathname === '/list' }}>
               Shariah list
             </a>
             <a
               href='/dev'
-              class='text-white hover:text-gray-300'
+              class='text-white hover:text-green-500'
               classList={{ 'text-green-300': urlPathname === '/dev' }}>
               Dev
             </a>
             <a
               href='/guideline'
-              class='text-white hover:text-gray-300'
+              class='text-white hover:text-green-500'
               classList={{ 'text-green-300': urlPathname === '/guideline' }}>
               Guideline
             </a>
