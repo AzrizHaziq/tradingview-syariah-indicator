@@ -1,9 +1,10 @@
 import { PageContext } from './types'
 import { PageLayout } from './PageLayout'
 import logo from '../../../assets/shariah-icon.svg'
+import { PageContextProvider } from './usePageContext'
+import { description, name_display } from '../../../package.json'
 import { generateHydrationScript, renderToString } from 'solid-js/web'
-import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import { name_display, description } from '../../../package.json'
+import { dangerouslySkipEscape, escapeInject } from 'vite-plugin-ssr'
 
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'documentProps']
@@ -12,9 +13,11 @@ export function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
 
   const pageHtml = renderToString(() => (
-    <PageLayout>
-      <Page {...pageProps} />
-    </PageLayout>
+    <PageContextProvider pageContext={pageContext}>
+      <PageLayout>
+        <Page {...pageProps} />
+      </PageLayout>
+    </PageContextProvider>
   ))
 
   // See https://vite-plugin-ssr.com/html-head

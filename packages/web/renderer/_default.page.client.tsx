@@ -1,8 +1,10 @@
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
+import './PageLayout.scss'
 
 import { PageLayout } from './PageLayout'
 import { hydrate, render } from 'solid-js/web'
+import { PageContextProvider } from './usePageContext'
 import { useClientRouter } from 'vite-plugin-ssr/client/router'
 
 let dispose: () => void
@@ -21,9 +23,11 @@ const { hydrationPromise } = useClientRouter({
       // and we now make it interactive.
       dispose = hydrate(
         () => (
-          <PageLayout>
-            <Page {...pageProps} />
-          </PageLayout>
+          <PageContextProvider pageContext={pageContext}>
+            <PageLayout>
+              <Page {...pageProps} />
+            </PageLayout>
+          </PageContextProvider>
         ),
         content!
       )
@@ -31,9 +35,11 @@ const { hydrationPromise } = useClientRouter({
       // Render new page
       render(
         () => (
-          <PageLayout>
-            <Page {...pageProps} />
-          </PageLayout>
+          <PageContextProvider pageContext={pageContext}>
+            <PageLayout>
+              <Page {...pageProps} />
+            </PageLayout>
+          </PageContextProvider>
         ),
         content!
       )
