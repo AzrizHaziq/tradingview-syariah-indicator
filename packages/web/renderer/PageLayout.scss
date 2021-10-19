@@ -6,3 +6,12 @@
 html {
   scroll-padding-top: 100px
 }
+
+
+code {
+  @apply rounded py-1 px-2 bg-green-300 text-green-800 #{!important};
+
+  &::before, &::after {
+    content: '' !important;
+  }
+}

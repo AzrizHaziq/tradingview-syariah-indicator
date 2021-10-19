@@ -17,7 +17,8 @@ export const Page: Component = () => {
         </li>
         <li>yarn = 1.22.10</li>
         <li>
-          git clone this repository <code>$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git</code>
+          git clone this repository <br />
+          <code>$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git</code>
         </li>
         <li>
           Then run <code>$ yarn</code> to install all dependencies.
