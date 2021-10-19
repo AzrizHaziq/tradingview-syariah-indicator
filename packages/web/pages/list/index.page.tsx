@@ -1,4 +1,4 @@
-import { Component, For } from 'solid-js'
+import { Component, For, createMemo } from 'solid-js'
 
 type PageProps = {
   data: [exchnage: string, code: string, name: string][]
@@ -28,13 +28,13 @@ export const Page: Component = (pageProps: PageProps) => {
         <For each={data}>
           {([exchange, code, name]) => (
             <li>
-              <a class='flex group' href='' target='_blank'>
+              <a class='flex group' href={`https://www.tradingview.com/symbols/${exchange}-${code}`} target='_blank'>
                 <p class='text-white opacity-80 group-hover:opacity-100'>{name}</p>
                 {exchange && (
                   <span
                     class='text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100'
                     className={`${exchangeStyle[exchange]}`}>
-                    {exchange}:{code}
+                    {exchange}-{code}
                   </span>
                 )}
               </a>
