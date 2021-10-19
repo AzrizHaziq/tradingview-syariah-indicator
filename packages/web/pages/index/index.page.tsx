@@ -10,8 +10,13 @@ export const Page: Component = () => {
   return (
     <>
       <div class='prose'>
-        <h1 id='tradingview-syariah-indicator'>Tradingview Syariah Indicator</h1>
-        <h2 id='what-it-does'>What it does</h2>
+        <h1>Tradingview Syariah Indicator</h1>
+        <h2 id='what-it-does'>
+          What it does
+          <a class='!ml-2' href='#what-it-does'>
+            #
+          </a>
+        </h2>
         <p>
           Add a small green indicator(
           <img class='inline !my-0 mx-1' src={logo} height={15} width={15} alt='logo' />) in
@@ -24,7 +29,12 @@ export const Page: Component = () => {
             https://github.com/amree/tradingview-shariah-indicators
           </a>
         </p>
-        <h2 id='download'>Download</h2>
+        <h2 id='download'>
+          Download
+          <a class='!ml-2' href='#download'>
+            #
+          </a>
+        </h2>
         <div className='flex flex-col gap-y-2'>
           <div className='flex gap-2 items-center'>
             <a
@@ -143,10 +153,20 @@ export const Page: Component = () => {
           </li>
         </ol>
         {/**/}
-        <h2 id='release'>Release</h2>
+        <h2 id='release'>
+          Release{' '}
+          <a class='!ml-2' href='#release'>
+            #
+          </a>
+        </h2>
         <a href='https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'>View All Releases</a>
         {/**/}
-        <h2 id='screenshots'>Screenshots</h2>
+        <h2 id='screenshots'>
+          Screenshots{' '}
+          <a class='!ml-2' href='#screenshots'>
+            #
+          </a>
+        </h2>
         <h3>
           <a href='https://www.tradingview.com/symbols/MYX-TOPGLOV/'>Symbol Page</a>
         </h3>
@@ -170,10 +190,20 @@ export const Page: Component = () => {
         </h3>
         <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_screener} alt='Screener page' />
 
-        <h3 id='popup'>Popup</h3>
+        <h3 id='popup'>
+          Popup{' '}
+          <a class='!ml-2' href='#popup'>
+            #
+          </a>
+        </h3>
         <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_popup} alt='popup' />
         {/**/}
-        <h2 id='video'>Video</h2>
+        <h2 id='video'>
+          Video{' '}
+          <a class='!ml-2' href='#video'>
+            #
+          </a>
+        </h2>
         <a href='https://www.youtube.com/watch?v=4U8mu_5UfUQ'>
           <img
             width='600'

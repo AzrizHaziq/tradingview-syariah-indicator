@@ -3,7 +3,12 @@ import { Component } from 'solid-js'
 export const Page: Component = () => {
   return (
     <div class='prose'>
-      <h2 id='developers'>Developers</h2>
+      <h2 id='developers'>
+        Developers{' '}
+        <a class='!ml-2' href='#developers'>
+          #
+        </a>
+      </h2>
 
       <p>Requirements</p>
       <ul>
@@ -23,8 +28,18 @@ export const Page: Component = () => {
         </li>
       </ul>
 
-      <h2 id='how-to-use'>How to use</h2>
-      <h3 id='development-mode-data'>Data</h3>
+      <h2 id='how-to-use'>
+        How to use{' '}
+        <a class='!ml-2' href='#how-to-use'>
+          #
+        </a>
+      </h2>
+      <h3 id='development-mode-data'>
+        Data{' '}
+        <a class='!ml-2' href='#development-mode-data'>
+          #
+        </a>
+      </h3>
       <ol>
         <li>
           Make sure your terminal inside <b>/packages/extension</b> directory
@@ -44,7 +59,12 @@ export const Page: Component = () => {
           </ul>
         </li>
       </ol>
-      <h3 id='development-mode-extension'>Extension</h3>
+      <h3 id='development-mode-extension'>
+        Extension{' '}
+        <a class='!ml-2' href='#development-mode-extension'>
+          #
+        </a>
+      </h3>
       <ol>
         <li>
           Make sure your terminal inside <b>/packages/extension</b> directory
@@ -67,7 +87,12 @@ export const Page: Component = () => {
         </li>
       </ol>
 
-      <h3 id='development-mode-website'>Website</h3>
+      <h3 id='development-mode-website'>
+        Website{' '}
+        <a class='!ml-2' href='#development-mode-website'>
+          #
+        </a>
+      </h3>
       <ol>
         <li>
           Make sure your terminal inside <b>/packages/web</b> directory
@@ -84,7 +109,12 @@ export const Page: Component = () => {
           </ul>
         </li>
       </ol>
-      <h2 id='update-stock-list-data-will-take-a-few-x-minutes'>Update Stock list data (will take a few X minutes)</h2>
+      <h2 id='update-stock-list-data-will-take-a-few-x-minutes'>
+        Update Stock list data (will take a few X minutes){' '}
+        <a class='!ml-2' href='#update-stock-list-data-will-take-a-few-x-minutes'>
+          #
+        </a>
+      </h2>
       <ol>
         <li>
           Make sure your terminal inside <b>/packages/data</b> directory

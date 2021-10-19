@@ -23,16 +23,16 @@ export const PageLayout: Component = (props: { pageContext: PageContextBuiltIn; 
               Shariah list
             </a>
             <a
-              href='/dev'
-              class='text-white hover:text-green-500'
-              classList={{ 'text-green-300': urlPathname === '/dev' }}>
-              Dev
-            </a>
-            <a
               href='/guideline'
               class='text-white hover:text-green-500'
               classList={{ 'text-green-300': urlPathname === '/guideline' }}>
               Guideline
+            </a>
+            <a
+              href='/dev'
+              class='text-white hover:text-green-500'
+              classList={{ 'text-green-300': urlPathname === '/dev' }}>
+              Dev
             </a>
           </nav>
         </div>
