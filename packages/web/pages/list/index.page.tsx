@@ -1,6 +1,7 @@
 import { isServer } from 'solid-js/web'
 import { JSX, Show, createSignal, createEffect } from 'solid-js'
 import { VirtualContainer } from '@minht11/solid-virtual-container'
+import { createMediaQuery } from '../../lib'
 
 type PageProps = {
   data: [exchnage: string, code: string, name: string][]
@@ -26,7 +27,10 @@ const ListItem = props => {
   return (
     <div style={props.style} class='absolute top-0 left-0 w-full' tabIndex={props.tabIndex} role='listitem'>
       <div class='flex group items-center gap-x-1'>
-        <p class='text-white opacity-80 group-hover:opacity-100 overflow-ellipsis overflow-hidden'>{name}</p>
+        <p class='text-white opacity-80 group-hover:opacity-100 overflow-ellipsis overflow-hidden'>
+          <span class='inline sm:hidden mr-2'>{exchange} </span>
+          {name}
+        </p>
         <a target='_blank' href={`https://www.tradingview.com/symbols/${exchange}-${code}`}>
           <svg
             stroke='currentColor'
@@ -43,7 +47,7 @@ const ListItem = props => {
         {exchange && (
           <Show when={exchange}>
             <span
-              class='text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100'
+              class='hidden sm:block text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100'
               className={`${props.exchangeColor}`}>
               {exchange}-{code}
             </span>
@@ -64,6 +68,8 @@ export const Page = (pageProps: PageProps): JSX.Element => {
     return { ...acc, [key]: staticExchangeColors[i % staticExchangeColors.length] }
   }, {})
 
+  const size = createMediaQuery()
+
   createEffect(() => {
     setPos(scrollTargetElement.getBoundingClientRect().top + 'px')
   })
@@ -72,23 +78,35 @@ export const Page = (pageProps: PageProps): JSX.Element => {
     <>
       <input
         type='text'
-        class='w-full rounded h-10 px-2 mb-5 '
         placeholder='Tesla'
         value={search()}
+        class='w-full rounded h-10 px-2 mb-5 '
         onInput={(e: any) => setSearch(e.target.value)}
       />
+
+      {/*<noscript>*/}
+      {/*  <ul class='flex gap-1 flex-col'>*/}
+      {/*    <For each={data}>*/}
+      {/*      {item => (*/}
+      {/*        <li>*/}
+      {/*          <ListItem item={item} tabIndex={1} exchangeColor={exchangeStyle[item[0]]} />*/}
+      {/*        </li>*/}
+      {/*      )}*/}
+      {/*    </For>*/}
+      {/*  </ul>*/}
+      {/*</noscript>*/}
 
       <div
         ref={scrollTargetElement}
         style={{
           overflow: 'auto',
           position: 'relative',
-          height: `calc(100vh - ${pos()} - 60px)`,
+          height: `calc(100vh - ${pos() === '0px' ? '100vh' : pos()} - ${size() === 'xs' ? '40px' : '0px'})`,
           'will-change': 'transform',
         }}>
         <Show when={!isServer}>
           <VirtualContainer items={data} scrollTarget={scrollTargetElement} itemSize={{ height: 35 }}>
-            {props => <ListItem {...props} exchangeColor={exchangeStyle[props.item[0]]} />}
+            {props => <ListItem {...props} isVirtualScroll exchangeColor={exchangeStyle[props.item[0]]} />}
           </VirtualContainer>
         </Show>
       </div>

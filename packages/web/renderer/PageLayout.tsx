@@ -38,7 +38,7 @@ export const PageLayout: Component = (props: { pageContext: PageContextBuiltIn; 
         </div>
       </header>
       <main class='text-gray-600 body-font'>
-        <section class='container px-5 py-24 mx-auto'>{props.children}</section>
+        <section class='container px-5 py-10 mx-auto'>{props.children}</section>
       </main>
     </>
   )

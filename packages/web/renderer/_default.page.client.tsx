@@ -2,15 +2,17 @@ import 'virtual:windi.css'
 import 'virtual:windi-devtools'
 import './PageLayout.scss'
 
+import { PageContext } from './types'
 import { PageLayout } from './PageLayout'
 import { hydrate, render } from 'solid-js/web'
 import { PageContextProvider } from './usePageContext'
 import { useClientRouter } from 'vite-plugin-ssr/client/router'
+import { PageContextBuiltInClient } from 'vite-plugin-ssr/dist/cjs/types'
 
 let dispose: () => void
 
 const { hydrationPromise } = useClientRouter({
-  render(pageContext) {
+  render(pageContext: PageContextBuiltInClient & PageContext) {
     const content = document.getElementById('tsi-web')
     const { Page, pageProps } = pageContext
 
