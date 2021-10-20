@@ -1,0 +1,9 @@
+.exchange {
+  span {
+    @apply text-gray-700 uppercase cursor-pointer;
+  }
+
+  input[type='checkbox']:checked + span {
+    @apply text-gray-200;
+  }
+}
