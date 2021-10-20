@@ -1,7 +1,4 @@
-import { isServer } from 'solid-js/web'
-import { JSX, Show, createSignal, createEffect } from 'solid-js'
-import { VirtualContainer } from '@minht11/solid-virtual-container'
-import { createMediaQuery } from '../../lib'
+import { createSignal, For, JSX, Show } from 'solid-js'
 
 type PageProps = {
   data: [exchnage: string, code: string, name: string][]
@@ -9,26 +6,22 @@ type PageProps = {
 }
 
 const staticExchangeColors = [
-  'text-red-500 bg-red-100 border-red-500',
-  'text-yellow-500 bg-yellow-200 border-yellow-500',
-  'text-blue-500 bg-blue-200 border-blue-500',
+  'text-red-600 bg-red-100 border-red-500',
+  'text-yellow-800 bg-yellow-100 border-yellow-500',
+  'text-blue-700 bg-blue-100 border-blue-500',
   'text-green-700 bg-green-200 border-green-700',
-  'text-pink-500 bg-pink-200 border-pink-500',
+  'text-pink-800 bg-pink-100 border-pink-500',
   'text-indigo-500 bg-indigo-200 border-indigo-500',
   'text-gray-900 bg-gray-100 border-gray-900',
 ]
 
 const ListItem = props => {
   const [exchange, code, name] = props.item
-  // if (code === 'MMM') {
-  //   console.log(props.item, exchange, props.exchangeColor)
-  // }
-
   return (
-    <div style={props.style} class='absolute top-0 left-0 w-full' tabIndex={props.tabIndex} role='listitem'>
+    <div style={props.style} tabIndex={props.tabIndex} role='listitem'>
       <div class='flex group items-center gap-x-1'>
         <p class='text-white opacity-80 group-hover:opacity-100 overflow-ellipsis overflow-hidden'>
-          <span class='inline sm:hidden mr-2'>{exchange} </span>
+          <span class='inline sm:hidden mr-2 font-bold'>{exchange} </span>
           {name}
         </p>
         <a target='_blank' href={`https://www.tradingview.com/symbols/${exchange}-${code}`}>
@@ -47,8 +40,7 @@ const ListItem = props => {
         {exchange && (
           <Show when={exchange}>
             <span
-              class='hidden sm:block text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100'
-              className={`${props.exchangeColor}`}>
+              class={`hidden sm:block text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100 ${props.exchangeColor}`}>
               {exchange}-{code}
             </span>
           </Show>
@@ -60,19 +52,14 @@ const ListItem = props => {
 
 export const Page = (pageProps: PageProps): JSX.Element => {
   const { data, metadata } = pageProps
-  let scrollTargetElement!: HTMLDivElement
-  const [pos, setPos] = createSignal('0px')
   const [search, setSearch] = createSignal('')
 
   const exchangeStyle: Record<string, string> = Object.keys(metadata).reduce((acc, key, i) => {
-    return { ...acc, [key]: staticExchangeColors[i % staticExchangeColors.length] }
+    return {
+      ...acc,
+      [key]: staticExchangeColors[i % staticExchangeColors.length],
+    }
   }, {})
-
-  const size = createMediaQuery()
-
-  createEffect(() => {
-    setPos(scrollTargetElement.getBoundingClientRect().top + 'px')
-  })
 
   return (
     <>
@@ -84,32 +71,15 @@ export const Page = (pageProps: PageProps): JSX.Element => {
         onInput={(e: any) => setSearch(e.target.value)}
       />
 
-      {/*<noscript>*/}
-      {/*  <ul class='flex gap-1 flex-col'>*/}
-      {/*    <For each={data}>*/}
-      {/*      {item => (*/}
-      {/*        <li>*/}
-      {/*          <ListItem item={item} tabIndex={1} exchangeColor={exchangeStyle[item[0]]} />*/}
-      {/*        </li>*/}
-      {/*      )}*/}
-      {/*    </For>*/}
-      {/*  </ul>*/}
-      {/*</noscript>*/}
-
-      <div
-        ref={scrollTargetElement}
-        style={{
-          overflow: 'auto',
-          position: 'relative',
-          height: `calc(100vh - ${pos() === '0px' ? '100vh' : pos()} - ${size() === 'xs' ? '40px' : '0px'})`,
-          'will-change': 'transform',
-        }}>
-        <Show when={!isServer}>
-          <VirtualContainer items={data} scrollTarget={scrollTargetElement} itemSize={{ height: 35 }}>
-            {props => <ListItem {...props} isVirtualScroll exchangeColor={exchangeStyle[props.item[0]]} />}
-          </VirtualContainer>
-        </Show>
-      </div>
+      <ul class='flex gap-1 flex-col'>
+        <For each={data}>
+          {item => (
+            <li>
+              <ListItem item={item} tabIndex={1} exchangeColor={exchangeStyle[item[0]]} />
+            </li>
+          )}
+        </For>
+      </ul>
     </>
   )
 }
