@@ -7,3 +7,8 @@
     @apply text-green-500;
   }
 }
+
+li {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 30px;
+}

@@ -90,7 +90,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   }
 
   return (
-    <>
+    <div class='max-w-full mx-auto md:max-w-3xl'>
       <svg class='hidden'>
         <symbol
           id='link-icon'
@@ -135,7 +135,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
       <Show when={store.data.length} fallback={'Please search or select any filter anything'}>
         <List data={store.data} exchangeStyle={exchangeStyle} />
       </Show>
-    </>
+    </div>
   )
 }
 
