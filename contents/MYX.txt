@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Oct 16 2021 10:00:13 GMT+0800 (Malaysia Time)
+updatedAt : Sat Oct 23 2021 11:36:30 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -790,6 +790,7 @@ SIME         : s
 SIMEPLT      : s
 SIMEPROP     : s
 SJC          : s
+SJC-WA       : s
 SKBSHUT      : s
 SKPRES       : s
 SKPRES-WB    : s
