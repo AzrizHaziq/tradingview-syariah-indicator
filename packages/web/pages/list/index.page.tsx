@@ -1,11 +1,17 @@
 import './list.scss'
-import { For, JSX, Show } from 'solid-js'
+import { isServer } from 'solid-js/web'
 import { createStore } from 'solid-js/store'
-import { debounce, TFilter, TArrayConcat, pipe } from '../../../util'
+import { createMemo, For, JSX, Show } from 'solid-js'
+import { debounce, pipe, TArrayConcat, TFilter } from '../../../util'
 
 type PageProps = {
   data: [exchange: string, code: string, name: string][]
   metadata: Record<string, Date>
+  exchangesList: string[]
+  queryParams: Partial<{
+    q: string
+    exchange: string | string[]
+  }>
 }
 
 const staticExchangeColors = [
@@ -19,13 +25,17 @@ const staticExchangeColors = [
 ]
 
 export const Page = (pageProps: PageProps): JSX.Element => {
-  const { data: originalData, metadata } = pageProps
+  const { data: originalData, metadata, exchangesList, queryParams } = pageProps
+
   const [store, setStore] = createStore({
     data: originalData,
+    runFilter: () => {
+      setStore('data', transducerFilter())
+    },
     metadata,
-    search: '',
+    search: isServer ? queryParams.q ?? '' : new URL(location.href).searchParams.get('q'),
     currentExchange: {
-      _data: Object.keys(metadata),
+      _data: exchangesList,
       add(exchange: string) {
         const s = new Set<string>(this._data)
         s.add(exchange)
@@ -58,35 +68,52 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   }
 
   const showExchange = ([exchange]: PageProps['data']['0']): boolean => store.currentExchange.has(exchange)
-  const transducerFilter = () => originalData.reduce(pipe(TFilter(showExchange), TFilter(showSearch))(TArrayConcat), [])
+
+  const transducerFilter = createMemo(() =>
+    originalData.reduce(pipe(TFilter(showExchange), TFilter(showSearch))(TArrayConcat), [])
+  )
 
   const handleSearchChange = debounce((e: any) => {
     const keyword = e.target.value
     setStore('search', keyword)
 
+    const url = new URL(location.href)
+    url.searchParams.set('q', encodeURIComponent(keyword))
+    history.pushState(null, '', url)
+
     if (keyword) {
-      const result = transducerFilter()
-      setStore('data', result)
+      store.runFilter()
     } else {
       setStore('data', originalData)
     }
   })
 
-  const handleExchangeChange = (exchange: string) => (e: any) => {
-    if (e.target.checked) {
-      store.currentExchange.add(exchange)
-    } else {
-      store.currentExchange.delete(exchange)
-    }
+  const handleExchangeChange = (exchange: string) => {
+    return (e: any) => {
+      if (e.target.checked) {
+        store.currentExchange.add(exchange)
+      } else {
+        store.currentExchange.delete(exchange)
+      }
 
-    const result = transducerFilter()
-    setStore('data', result)
+      const url = new URL(location.href)
+      url.searchParams.delete('exchange')
+      store.currentExchange._data.forEach((exchange) => url.searchParams.append('exchange', exchange))
+      history.pushState(null, '', url)
+
+      store.runFilter()
+    }
   }
 
   const handleClear = () => {
     setStore('data', originalData)
     setStore('search', '')
     setStore('currentExchange', '_data', Object.keys(metadata))
+
+    const url = new URL(location.href)
+    url.searchParams.delete('exchange')
+    url.searchParams.delete('q')
+    history.pushState(null, '', url)
   }
 
   return (
@@ -133,7 +160,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
       </div>
 
       <Show when={store.data.length} fallback={'Please search or select any filter anything'}>
-        <List data={store.data} exchangeStyle={exchangeStyle} />
+        <List data={transducerFilter()} exchangeStyle={exchangeStyle} />
       </Show>
     </div>
   )
