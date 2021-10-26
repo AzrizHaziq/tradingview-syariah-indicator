@@ -19,10 +19,13 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
     "msw": "^0.35.0",
     "node-fetch": "^2.6.1",
     "pdfreader": "^1.2.11",
-    "playwright-chromium": "^1.11.0"
+    "playwright-chromium": "^1.11.0",
+    "ts-node": "^10.3.0"
   },
   "ava": {
     "files": [
