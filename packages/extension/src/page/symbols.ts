@@ -4,16 +4,16 @@ import {
   createIcon,
   waitForElm,
   getStockStat,
-  deleteSyariahIcon,
+  deleteShariahIcon,
   setStockListInMap,
-  isSyariahIconExist,
+  isShariahIconExist,
   observeNodeChanges,
-  addStaticSyariahIcon,
+  addStaticShariahIcon,
 } from '../helper'
 
 waitForElm('.tv-main .tv-content').then(setStockListInMap).then(mainScript)
 
-addStaticSyariahIcon()
+addStaticShariahIcon()
 ;(async () => {
   await browser.runtime.sendMessage({
     type: 'ga',
@@ -40,7 +40,7 @@ function symbolScript() {
   )
 
   if (isShariah) {
-    if (isSyariahIconExist(smallResoDom)) {
+    if (isShariahIconExist(smallResoDom)) {
       // if icon already exist dont do anything
     } else {
       const icon = createIcon()
@@ -52,7 +52,7 @@ function symbolScript() {
       smallResoDom.insertAdjacentElement('beforeend', icon)
     }
 
-    if (isSyariahIconExist(largeResoDom.parentElement)) {
+    if (isShariahIconExist(largeResoDom.parentElement)) {
       // if icon already exist dont do anything
     } else {
       const icon = createIcon({ width: 15, height: 15 })
@@ -60,7 +60,7 @@ function symbolScript() {
       largeResoDom.insertAdjacentElement('afterend', icon)
     }
   } else {
-    deleteSyariahIcon()
+    deleteShariahIcon()
   }
 }
 

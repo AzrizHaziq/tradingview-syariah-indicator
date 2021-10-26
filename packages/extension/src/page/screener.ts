@@ -4,19 +4,19 @@ import {
   createIcon,
   waitForElm,
   getStockStat,
-  deleteSyariahIcon,
+  deleteShariahIcon,
   setStockListInMap,
-  isSyariahIconExist,
+  isShariahIconExist,
   addStyle,
   attributeName,
   extensionName,
-  addStaticSyariahIcon,
+  addStaticShariahIcon,
   getMessage,
   setStorage,
   getStorage,
 } from '../helper'
 
-addStaticSyariahIcon()
+addStaticShariahIcon()
 ;(async () => {
   await browser.runtime.sendMessage({
     type: 'ga',
@@ -122,11 +122,11 @@ function observedTableChanges() {
 
   observer = new MutationObserver(() => {
     if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
-      deleteSyariahIcon(tableNode.parentElement)
+      deleteShariahIcon(tableNode.parentElement)
       return
     }
 
-    Array.from(tableNode.children).forEach(tr => {
+    Array.from(tableNode.children).forEach((tr) => {
       const rowSymbol = tr.getAttribute('data-symbol')
       const { s: isSyariah } = getStockStat(rowSymbol)
 
@@ -138,7 +138,7 @@ function observedTableChanges() {
       if (isSyariah) {
         tr.classList.add(css.shariah.row)
 
-        if (isSyariahIconExist(firstColumn)) {
+        if (isShariahIconExist(firstColumn)) {
           // if icon already exist don't do anything
         } else {
           // this query need to be the same in /screener  & /chart's stock screener
@@ -166,8 +166,9 @@ function observedCountryFlagChanges() {
 
   observer = new MutationObserver(() => {
     const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
-    const shariahFilterBtn = document.querySelector(`label[${shariah.checkBoxAttrName}=${shariah.checkBoxAttrValue}]`)
-      .parentElement
+    const shariahFilterBtn = document.querySelector(
+      `label[${shariah.checkBoxAttrName}=${shariah.checkBoxAttrValue}]`
+    ).parentElement
 
     if (isCountriesExisted) {
       shariahFilterBtn.style.display = 'block'

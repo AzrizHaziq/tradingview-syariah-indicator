@@ -20,7 +20,7 @@ const files = [
   'tsconfig.json',
   'web-ext-config.js',
   'webpack.config.ts',
-].map(file => copy(file))
+].map((file) => copy(file))
 
 async function copy(input, dest = destination) {
   try {
@@ -48,7 +48,7 @@ Steps
 3. cd packages/extension
 3. create \`.env.production\` file in root, and add this
    \`\`\`
-   GA=UA-183073441-2
+   GA=UA-random-integer-2
    FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/summary/stock-list.json
    \`\`\`
 4. Type in terminal \`$ yarn build\`

@@ -4,7 +4,7 @@ const GA = process.env.GA
 let SHARIAH_LIST = new Map()
 const parser = new DOMParser()
 export const attributeName = 'data-indicator'
-export const extensionName = 'tradingview-syariah-indicator'
+export const extensionName = 'tradingview-shariah-indicator'
 
 export async function setStockListInMap(): Promise<any> {
   try {
@@ -19,16 +19,16 @@ export function getStockStat(symbolWithExchange: string, defaultReturn = []) {
   return SHARIAH_LIST.has(symbolWithExchange) ? SHARIAH_LIST.get(symbolWithExchange) : defaultReturn
 }
 
-export function isSyariahIconExist(element: Element): Element | null {
+export function isShariahIconExist(element: Element): Element | null {
   return element.querySelector(`[${attributeName}="${extensionName}"]`)
 }
 
-export function deleteSyariahIcon(parentElement: Element | Document = document): void {
-  parentElement.querySelectorAll(`[${attributeName}="${extensionName}"]`).forEach(img => img.remove())
+export function deleteShariahIcon(parentElement: Element | Document = document): void {
+  parentElement.querySelectorAll(`[${attributeName}="${extensionName}"]`).forEach((img) => img.remove())
 }
 
 /**
- * All icon will be references in document.body.svg below 'addStaticSyariahIcon'
+ * All icon will be references in document.body.svg below 'addStaticShariahIcon'
  */
 export function createIcon({ width, height } = { width: 25, height: 25 }): SVGSVGElement {
   const iconInSvgString = `
@@ -94,7 +94,7 @@ export function observeNodeChanges(
 }
 
 export function waitForElm(selector: string): Promise<Element> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     if (document.querySelector(selector)) {
       return resolve(document.querySelector(selector))
     }
@@ -113,7 +113,7 @@ export function waitForElm(selector: string): Promise<Element> {
   })
 }
 
-export function addStaticSyariahIcon(): void {
+export function addStaticShariahIcon(): void {
   // only add icon if static icon is not existed yet in DOM
   if (document.body.querySelector(`[${attributeName}="root-${extensionName}]`)) {
     return
@@ -141,7 +141,7 @@ export function addStaticSyariahIcon(): void {
 export function initGa(): void {
   /* eslint-disable */
   // prettier-ignore
-  ;(function (i, s, o, g, r, a, m) {
+  (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r
     ;(i[r] =
       i[r] ||

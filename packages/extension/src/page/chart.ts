@@ -4,11 +4,11 @@ import {
   waitForElm,
   createIcon,
   getStockStat,
-  deleteSyariahIcon,
+  deleteShariahIcon,
   setStockListInMap,
-  isSyariahIconExist,
+  isShariahIconExist,
   observeNodeChanges,
-  addStaticSyariahIcon,
+  addStaticShariahIcon,
 } from '../helper'
 ;(async () => {
   await browser.runtime.sendMessage({
@@ -18,7 +18,7 @@ import {
   })
 })()
 
-addStaticSyariahIcon()
+addStaticShariahIcon()
 waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
 
 function mainScript() {
@@ -33,14 +33,14 @@ async function chartScript(): Promise<void> {
   const { s: isShariah } = getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
-    if (isSyariahIconExist(parentElement)) {
+    if (isShariahIconExist(parentElement)) {
       // if icon already exist dont do anything
     } else {
       parentElement.prepend(createIcon({ width: 15, height: 15 }))
     }
   } else {
     // if not syariah delete all icon
-    deleteSyariahIcon(parentElement)
+    deleteShariahIcon(parentElement)
   }
 }
 

@@ -1,4 +1,4 @@
-# Tradingview Syariah Indicator 
+# Tradingview Shariah Indicator 
 
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.

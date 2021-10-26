@@ -16,7 +16,7 @@ async function getCompanyName(stocks) {
   try {
     const { results } = await PromisePool.for(stocks)
       .withConcurrency(5)
-      .process(async stock => {
+      .process(async (stock) => {
         const fullname = await getCompanyFullname(stock.code)
         return { ...stock, fullname }
       })
@@ -45,7 +45,7 @@ async function scrapBursaMalaysia() {
       ? Promise.resolve(1)
       : initPage.evaluate(() => {
           const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
-            .map(i => i.textContent)
+            .map((i) => i.textContent)
             .filter(Boolean)
             .map(parseFloat)
 
@@ -55,15 +55,18 @@ async function scrapBursaMalaysia() {
     progressBar.setTotal(maxPageNumbers)
     await initPage.close()
 
-    const syariahList = await Promise.all(
+    const shariahList = await Promise.all(
       Array.from({ length: maxPageNumbers }).map(async (_, i) => {
         const page = await ctx.newPage()
         await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
 
         let temp = await page.evaluate(() => {
-          const pipe = (...fn) => initialVal => fn.reduce((acc, fn) => fn(acc), initialVal)
-          const removeSpaces = pipe(name => name.replace(/\s/gm, ''))
-          const removeSpacesAndShariah = pipe(removeSpaces, name => name.replace(/\[S\]/gim, ''))
+          const pipe =
+            (...fn) =>
+            (initialVal) =>
+              fn.reduce((acc, fn) => fn(acc), initialVal)
+          const removeSpaces = pipe((name) => name.replace(/\s/gm, ''))
+          const removeSpacesAndShariah = pipe(removeSpaces, (name) => name.replace(/\[S\]/gim, ''))
 
           return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
             const s = tr.querySelector(':nth-child(2)').textContent
@@ -82,10 +85,10 @@ async function scrapBursaMalaysia() {
 
         return temp
       })
-    ).then(results => results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {}))
+    ).then((results) => results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {}))
 
     await browser.close()
-    return syariahList
+    return shariahList
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('Error scrap data', e)
@@ -97,12 +100,14 @@ export async function MYX() {
   try {
     const shariahList = await scrapBursaMalaysia()
 
-    const human = pipe(Object.values, values => values.map(val => ['MYX', val.stockName, val.fullname]))(shariahList)
+    const human = pipe(Object.values, (values) => values.map((val) => ['MYX', val.stockName, val.fullname]))(
+      shariahList
+    )
 
     const sortedList = pipe(
       Object.values,
-      entries => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      items =>
+      (entries) => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
+      (items) =>
         items.reduce((acc, { code, stockName, fullname, ...res }) => ({ ...acc, [stockName]: Object.values(res) }), {})
     )(shariahList)
 
