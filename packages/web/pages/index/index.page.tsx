@@ -10,7 +10,7 @@ export const Page: Component = () => {
   return (
     <>
       <div class='prose'>
-        <h1>Tradingview Syariah Indicator</h1>
+        <h1>Tradingview Shariah Indicator</h1>
         <h2 id='what-it-does'>
           What it does
           <a class='!ml-2' href='#what-it-does'>
@@ -211,7 +211,7 @@ export const Page: Component = () => {
             loading='lazy'
             class='!m-0'
             src='https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg'
-            alt='tradingview-syariah-indicator'
+            alt='tradingview-shariah-indicator'
           />
         </a>
       </div>
