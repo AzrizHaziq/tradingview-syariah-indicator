@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Oct 23 2021 11:36:30 GMT+0800 (Malaysia Time)
+updatedAt : Sat Oct 30 2021 07:55:12 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -254,6 +254,7 @@ EWINT        : s
 EWINT-WA     : s
 F&N          : s
 FAJAR        : s
+FAJAR-WC     : s
 FAREAST      : s
 FAST         : s
 FAVCO        : s
@@ -498,6 +499,7 @@ MAHSING      : s
 MALAKOF      : s
 MALTON       : s
 MASTEEL      : s
+MASTEEL-WB   : s
 MASTER       : s
 MATRIX       : s
 MAXIM        : s
