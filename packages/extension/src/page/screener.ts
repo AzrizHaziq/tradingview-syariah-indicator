@@ -25,7 +25,7 @@ addStaticShariahIcon()
   })
 })()
 
-const ONLY_VALID_COUNTRIES = ['my']
+const ONLY_VALID_COUNTRIES = ['my', 'us', 'cn']
 
 const css = {
   main: {
@@ -121,7 +121,7 @@ function observedTableChanges() {
   const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
 
   observer = new MutationObserver(() => {
-    if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
+    if (!isCountryValid()) {
       deleteShariahIcon(tableNode.parentElement)
       return
     }
@@ -165,12 +165,11 @@ function observedCountryFlagChanges() {
   const countryMarketDropdown = document.querySelector('.tv-screener-market-select')
 
   observer = new MutationObserver(() => {
-    const isCountriesExisted = ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)
     const shariahFilterBtn = document.querySelector(
       `label[${shariah.checkBoxAttrName}=${shariah.checkBoxAttrValue}]`
     ).parentElement
 
-    if (isCountriesExisted) {
+    if (isCountryValid()) {
       shariahFilterBtn.style.display = 'block'
     } else {
       shariahFilterBtn.style.display = 'none'
@@ -179,12 +178,6 @@ function observedCountryFlagChanges() {
 
   // Start observing the target node for configured mutations
   observer.observe(countryMarketDropdown, { childList: true, subtree: true })
-}
-
-function getCurrentSelectedFlag(countryKey) {
-  return document.querySelector(
-    `.tv-screener-market-select__button > img.tv-flag-country.tv-flag-country--${countryKey}`
-  )
 }
 
 function setupFilterBtn(state) {
@@ -258,7 +251,7 @@ function setupFilterBtn(state) {
     }
   })
 
-  if (!ONLY_VALID_COUNTRIES.some(getCurrentSelectedFlag)) {
+  if (!isCountryValid()) {
     wrapper.style.display = 'none'
   }
 }
@@ -271,4 +264,11 @@ function setupCssClassName() {
   document
     .querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
     .classList.add(...[css.main.body, shariah.currentState ? css.shariah.body : ''].filter(Boolean))
+}
+
+function isCountryValid(): boolean {
+  // at the moment only Malaysia, United state, and China only
+  return ONLY_VALID_COUNTRIES.some((country) =>
+    document.querySelector(`.tv-screener-market-select__button > img.tv-flag-country.tv-flag-country--${country}`)
+  )
 }
