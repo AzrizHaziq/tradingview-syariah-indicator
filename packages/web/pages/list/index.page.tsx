@@ -63,6 +63,8 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   )
 
   const showSearch = (item: PageProps['data']['0']): boolean => {
+    if (!store.search) return true
+
     const searchRegex = new RegExp(store.search, 'ig')
     return item.some((i) => searchRegex.test(i))
   }
