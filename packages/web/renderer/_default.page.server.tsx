@@ -1,6 +1,6 @@
+import { IMGS } from '@util'
 import { PageContext } from './types'
 import { PageLayout } from './PageLayout'
-import logo from '../../../assets/shariah-icon.svg'
 import { PageContextProvider } from './usePageContext'
 import { description, name_display } from '../../../package.json'
 import { generateHydrationScript, renderToString } from 'solid-js/web'
@@ -29,7 +29,7 @@ export function render(pageContext: PageContext) {
     <html lang="en" class="dark">
       <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="${logo}" />
+        <link rel="icon" href="${IMGS.logo}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${descriptions}" />
         <title>${title}</title>

@@ -1,5 +1,5 @@
 {
-  "name": "vite-template-solid",
+  "name": "@app/web",
   "version": "0.0.0",
   "description": "",
   "scripts": {
@@ -21,6 +21,7 @@
     "vite-plugin-solid": "^2.0.3",
     "vite-plugin-ssr": "^0.3.3",
     "vite-plugin-windicss": "^1.4.11",
+    "vite-tsconfig-paths": "^3.3.17",
     "windicss": "^3.1.9"
   },
   "dependencies": {

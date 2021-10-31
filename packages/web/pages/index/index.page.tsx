@@ -1,10 +1,5 @@
+import { IMGS } from '@util'
 import { Component } from 'solid-js'
-import logo from '../../../../assets/shariah-icon.svg'
-import chrome_popup from '../../../../assets/ori_chrome/popup.png'
-import chrome_chart from '../../../../assets/ori_chrome/chart_page.png'
-import chrome_symbol from '../../../../assets/ori_chrome/symbol_page.png'
-import chrome_screener from '../../../../assets/ori_chrome/screener_page_on.png'
-import chrome_chartWithScreener from '../../../../assets/ori_chrome/chart_page_with_screener.png'
 
 export const Page: Component = () => {
   return (
@@ -19,7 +14,7 @@ export const Page: Component = () => {
         </h2>
         <p>
           Add a small green indicator(
-          <img class='inline !my-0 mx-1' src={logo} height={15} width={15} alt='logo' />) in
+          <img class='inline !my-0 mx-1' src={IMGS.logo} height={15} width={15} alt='logo' />) in
           <a href='https://tradingview.com'>tradingview.com</a>. At the moment, only cover Malaysian, NYSE, Nasdaq,
           Shenzhen, Shanghai at the moment.
         </p>
@@ -170,25 +165,25 @@ export const Page: Component = () => {
         <h3>
           <a href='https://www.tradingview.com/symbols/MYX-TOPGLOV/'>Symbol Page</a>
         </h3>
-        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_symbol} alt='Symbol page' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={IMGS.chrome_symbol} alt='Symbol page' />
 
         <h3>
           <a href='https://www.tradingview.com/chart/'>Chart page</a>
         </h3>
-        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_chart} alt='Chart page' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={IMGS.chrome_chart} alt='Chart page' />
         <img
           width='600'
           height='400'
           loading='lazy'
           class='!m-0'
-          src={chrome_chartWithScreener}
+          src={IMGS.chrome_chartWithScreener}
           alt='Chart page with screener'
         />
 
         <h3>
           <a href='https://www.tradingview.com/screener/'>Screener page</a>
         </h3>
-        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_screener} alt='Screener page' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={IMGS.chrome_screener} alt='Screener page' />
 
         <h3 id='popup'>
           Popup{' '}
@@ -196,7 +191,7 @@ export const Page: Component = () => {
             #
           </a>
         </h3>
-        <img width='600' height='400' loading='lazy' class='!m-0' src={chrome_popup} alt='popup' />
+        <img width='600' height='400' loading='lazy' class='!m-0' src={IMGS.chrome_popup} alt='popup' />
         {/**/}
         <h2 id='video'>
           Video{' '}

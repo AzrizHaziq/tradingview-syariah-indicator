@@ -2,7 +2,7 @@ import './list.scss'
 import { isServer } from 'solid-js/web'
 import { createStore } from 'solid-js/store'
 import { createMemo, For, JSX, Show } from 'solid-js'
-import { debounce, pipe, TArrayConcat, TFilter } from '../../../util'
+import { debounce, pipe, TArrayConcat, TFilter } from '@util'
 
 type PageProps = {
   data: [exchange: string, code: string, name: string][]
