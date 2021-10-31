@@ -25,6 +25,8 @@
     "windicss": "^3.1.9"
   },
   "dependencies": {
+    "@analytics/google-analytics": "^0.5.3",
+    "analytics": "^0.7.18",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "node-fetch": "2.6.2",

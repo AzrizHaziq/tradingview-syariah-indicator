@@ -2,6 +2,7 @@ import 'virtual:windi.css'
 import 'virtual:windi-devtools'
 import './PageLayout.scss'
 
+import { trackOnLoad } from '@util'
 import { PageContext } from './types'
 import { PageLayout } from './PageLayout'
 import { hydrate, render } from 'solid-js/web'
@@ -13,6 +14,12 @@ let dispose: () => void
 
 const { hydrationPromise } = useClientRouter({
   render(pageContext: PageContextBuiltInClient & PageContext) {
+    trackOnLoad({
+      href: location.href,
+      path: location.pathname,
+      title: `web::${location.pathname.replace(/\//, '')}`,
+    })
+
     const content = document.getElementById('tsi-web')
     const { Page, pageProps } = pageContext
 
@@ -51,7 +58,7 @@ const { hydrationPromise } = useClientRouter({
   onTransitionEnd,
 })
 
-hydrationPromise.then(s => {
+hydrationPromise.then((s) => {
   console.log('Hydration finished; page is now interactive.')
 })
 
