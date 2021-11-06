@@ -1,3 +1,4 @@
+import wahed from '../../../assets/wahed.png'
 import logo from '../../../assets/shariah-icon.svg'
 import chrome_popup from '../../../assets/ori_chrome/popup.png'
 import chrome_chart from '../../../assets/ori_chrome/chart_page.png'
@@ -7,6 +8,7 @@ import chrome_chartWithScreener from '../../../assets/ori_chrome/chart_page_with
 
 export const IMGS = {
   logo,
+  wahed,
   chrome_popup,
   chrome_chart,
   chrome_screener,

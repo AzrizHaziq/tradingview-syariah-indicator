@@ -30,17 +30,18 @@
     "isDynamicEntry": true
   },
   "pages/index/index.page.tsx": {
-    "file": "assets/index.page.b7a19a19.js",
+    "file": "assets/index.page.c9cd5a69.js",
     "src": "pages/index/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_imgs.affe25b7.js",
-      "_analytics.876cfeac.js"
+      "_imgs.239de086.js",
+      "_analytics.69c98bee.js"
     ]
   },
-  "_imgs.affe25b7.js": {
-    "file": "assets/imgs.affe25b7.js",
+  "_imgs.239de086.js": {
+    "file": "assets/imgs.239de086.js",
     "assets": [
+      "assets/wahed.34a5dba1.png",
       "assets/shariah-icon.40e614a6.svg",
       "assets/popup.913357dc.png",
       "assets/chart_page.79ba8cd6.png",
@@ -49,15 +50,15 @@
       "assets/chart_page_with_screener.3f0df85f.png"
     ]
   },
-  "_analytics.876cfeac.js": {
-    "file": "assets/analytics.876cfeac.js"
+  "_analytics.69c98bee.js": {
+    "file": "assets/analytics.69c98bee.js"
   },
   "pages/list/index.page.tsx": {
-    "file": "assets/index.page.54c1152e.js",
+    "file": "assets/index.page.904e2bf0.js",
     "src": "pages/list/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_analytics.876cfeac.js"
+      "_analytics.69c98bee.js"
     ],
     "css": [
       "assets/index.page.998d45ef.css"
@@ -69,12 +70,12 @@
     "isDynamicEntry": true
   },
   "renderer/_default.page.server.tsx": {
-    "file": "assets/_default.page.server.a6899603.js",
+    "file": "assets/_default.page.server.7d57ba71.js",
     "src": "renderer/_default.page.server.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_imgs.affe25b7.js",
-      "_analytics.876cfeac.js"
+      "_imgs.239de086.js",
+      "_analytics.69c98bee.js"
     ],
     "css": [
       "assets/_default.page.server.76c2c1be.css"

@@ -1,7 +1,6 @@
 import Analytics from 'analytics'
 import googleAnalytics from '@analytics/google-analytics'
 
-console.log(import.meta.env.MODE === 'development', 11)
 export const analytics = Analytics({
   app: 'tradingview shariah indicator web',
   debug: import.meta.env.MODE === 'development',
@@ -12,7 +11,10 @@ export const trackOnLoad: typeof analytics.page = async (...args) => {
   await analytics.page(...args)
 }
 
-export interface EventMap {}
+export interface EventMap {
+  referrer_code: { category: 'web::referrer_code'; label: string }
+}
+
 export async function trackEvent<K extends keyof EventMap>(eventName: K, props: EventMap[K]): Promise<void> {
   await analytics.track(eventName, props)
 }

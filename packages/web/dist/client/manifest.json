@@ -1,16 +1,17 @@
 {
   "renderer/_default.page.client.tsx": {
-    "file": "assets/renderer/_default.page.client.tsx.46119cf6.js",
+    "file": "assets/renderer/_default.page.client.tsx.afb3065e.js",
     "src": "renderer/_default.page.client.tsx",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js"
+      "_vendor.dd93a15b.js"
     ],
     "css": [
-      "assets/renderer/_default.page.client.tsx.0c0ce1d1.css"
+      "assets/renderer/_default.page.client.tsx.fef2e74a.css"
     ],
     "assets": [
+      "assets/wahed.34a5dba1.png",
       "assets/shariah-icon.40e614a6.svg",
       "assets/popup.913357dc.png",
       "assets/chart_page.79ba8cd6.png",
@@ -19,8 +20,8 @@
       "assets/chart_page_with_screener.3f0df85f.png"
     ]
   },
-  "_vendor.eeed17aa.js": {
-    "file": "assets/vendor.eeed17aa.js",
+  "_vendor.dd93a15b.js": {
+    "file": "assets/vendor.dd93a15b.js",
     "dynamicImports": [
       "renderer/_error.page.tsx",
       "pages/dev/index.page.tsx",
@@ -33,44 +34,44 @@
     ]
   },
   "renderer/_error.page.tsx": {
-    "file": "assets/_error.page.00cb4f84.js",
+    "file": "assets/_error.page.a2ae9474.js",
     "src": "renderer/_error.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js"
+      "_vendor.dd93a15b.js"
     ]
   },
   "pages/dev/index.page.tsx": {
-    "file": "assets/index.page.890fb8c3.js",
+    "file": "assets/index.page.cca9cae8.js",
     "src": "pages/dev/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js"
+      "_vendor.dd93a15b.js"
     ]
   },
   "pages/guideline/index.page.tsx": {
-    "file": "assets/index.page.60983cb8.js",
+    "file": "assets/index.page.1e818ca5.js",
     "src": "pages/guideline/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js"
+      "_vendor.dd93a15b.js"
     ]
   },
   "pages/index/index.page.tsx": {
-    "file": "assets/index.page.0d78c53c.js",
+    "file": "assets/index.page.499cbfe7.js",
     "src": "pages/index/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js",
+      "_vendor.dd93a15b.js",
       "renderer/_default.page.client.tsx"
     ]
   },
   "pages/list/index.page.tsx": {
-    "file": "assets/index.page.809f67c1.js",
+    "file": "assets/index.page.57b7d7b8.js",
     "src": "pages/list/index.page.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.eeed17aa.js",
+      "_vendor.dd93a15b.js",
       "renderer/_default.page.client.tsx"
     ],
     "css": [

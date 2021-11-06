@@ -1,1 +1,0 @@
-import{t as e,g as t}from"./vendor.eeed17aa.js";const r=e("<h1>404 Page Not Found</h1>",2),o=e("<p>This page could not be found.</p>",2),p=e("<h1>500 Internal Server Error</h1>",2),a=e("<p>Something went wrong.</p>",2);function m({is404:n}){return n?[t(r),t(o)]:[t(p),t(a)]}export{m as Page};
