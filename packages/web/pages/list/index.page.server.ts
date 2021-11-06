@@ -1,10 +1,19 @@
 import fetch from 'node-fetch'
+import { format } from 'date-fns'
 
 export const doNotPrerender = true
 
 export async function onBeforeRender(pageContext) {
   const res = await fetch(import.meta.env.VITE_FETCH_URL)
   const { data, metadata } = await res.json()
+
+  const m = Object.entries(metadata).reduce(
+    (acc, [exchange, date]) => ({
+      ...acc,
+      [exchange]: format(new Date(date as Date), 'dd LLL yy'),
+    }),
+    {}
+  )
 
   // input: '/list?exchange=MYX&q=TSLA&exchange=NYSE&exchange=NASDAQ'
   // output: { exchange: [ 'MYX', 'NYSE', 'NASDAQ' ], q: 'TSLA' }
@@ -24,7 +33,7 @@ export async function onBeforeRender(pageContext) {
     pageContext: {
       pageProps: {
         data,
-        metadata,
+        metadata: m,
         queryParams,
         exchangesList: Array.isArray(queryParams.exchange)
           ? queryParams.exchange

@@ -8,7 +8,8 @@
   }
 }
 
-li {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 30px;
-}
+//li {
+//  content-visibility: auto;
+//  contain-intrinsic-size: 0 30px;
+//}
+// have to disable this since it doesnt properly work with scrolling

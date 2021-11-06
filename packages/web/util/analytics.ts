@@ -3,7 +3,7 @@ import googleAnalytics from '@analytics/google-analytics'
 
 export const analytics = Analytics({
   app: 'tradingview shariah indicator web',
-  debug: import.meta.env.MODE === 'development',
+  // debug: import.meta.env.MODE === 'development',
   plugins: [googleAnalytics({ trackingId: import.meta.env.VITE_GA })],
 })
 
