@@ -71,8 +71,7 @@ export const Page: Component = () => {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Type in 1st terminal: <code>$ yarn watch</code>
-          and then in another terminal type either below commands:
+          Type in 1st terminal: <code>$ yarn watch</code> and then in another terminal type either below commands:
           <ul>
             <li>
               Firefox: <code>$ yarn watch:ff</code>
@@ -121,7 +120,7 @@ export const Page: Component = () => {
           Make sure your terminal inside <b>/packages/data</b> directory
         </li>
         <li>
-          Type in terminal <code>$ npm run update-data</code>
+          Type in terminal <code>$ yarn update-data</code>
         </li>
       </ol>
     </div>

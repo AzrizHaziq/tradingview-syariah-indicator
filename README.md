@@ -104,7 +104,7 @@ Requirements
 
 
 ## Update Stock list data (will take a few X minutes)
-1. Type in terminal `$ npm run update-data`
+1. Type in terminal `$ yarn update-data`
     
 
 ## Todo
