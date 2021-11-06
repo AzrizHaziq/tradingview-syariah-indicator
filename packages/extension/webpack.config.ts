@@ -9,6 +9,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -64,6 +65,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     },
   },
   plugins: [
+    new WindiCSSWebpackPlugin(),
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

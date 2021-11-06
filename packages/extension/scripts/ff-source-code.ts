@@ -16,7 +16,7 @@ const files = [
   'manifest.json',
   'package.json',
   'postcss.config.js',
-  'tailwind.config.js',
+  'windi.config.js',
   'tsconfig.json',
   'web-ext-config.js',
   'webpack.config.ts',

@@ -1,6 +1,6 @@
-module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx,html}'],
-  darkMode: false, // or 'media' or 'class'
+import { defineConfig } from 'windicss/helpers'
+
+export default defineConfig({
   theme: {
     extend: {
       colors: {
@@ -20,11 +20,10 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
+  extract: {
+    // A common use case is scanning files from the root directory
+    include: ['**/*.{js,jsx,ts,tsx,html}'],
+    // if you are excluding files, make sure you always include node_modules and .git
+    exclude: ['node_modules', '.git', 'dist'],
   },
-  plugins: [],
-  corePlugins: {
-    animation: false,
-  },
-}
+})
