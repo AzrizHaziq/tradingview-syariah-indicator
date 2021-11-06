@@ -51,16 +51,16 @@ export const PageLayout: Component = (props: { pageContext: PageContextBuiltIn; 
               height={80}
               class='aspect-w-16 aspect-h-9'
             />
-            <span class='flex items-center'>
-              Consider support this project by using
-              <span class='mx-1 md:hidden'>this</span>
-              <span class='mx-1 hidden md:block'>that</span>
-              referer code
+            <span class='block items-center'>
+              Support this project by using
+              <span class='mx-1 inline md:hidden'>this</span>
+              <span class='mx-1 hidden md:inline'>that</span>
+              referer code. I'm truly appreciate it Thank you!
               <svg
                 viewBox='0 0 24 24'
                 height='1.5em'
                 width='1.5em'
-                class='text-green-700 fill-current rotate-90 md:rotate-0 transform'
+                class='inline text-green-700 fill-current rotate-90 md:rotate-0 transform'
                 xmlns='http://www.w3.org/2000/svg'>
                 <path d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' />
               </svg>

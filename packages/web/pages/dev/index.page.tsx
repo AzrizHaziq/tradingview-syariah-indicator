@@ -4,7 +4,7 @@ export const Page: Component = () => {
   return (
     <div class='prose'>
       <h2 id='developers'>
-        Developers{' '}
+        Developers
         <a class='!ml-2' href='#developers'>
           #
         </a>
@@ -24,19 +24,20 @@ export const Page: Component = () => {
           Then run <code>$ yarn</code> to install all dependencies.
         </li>
         <li>
-          Create <b>.env</b>(for development) and <b>.env.production</b>(for production) file in every 'web', and
-          'extension', and please follow <b>.env.example</b>
+          Create <b>.env</b>(for development) and <b>.env.production</b>(for production) file in every{' '}
+          <a href='#development-mode-website'>Web</a>, and
+          <a href='#development-mode-extension'>extension</a>, and please follow <b>.env.example</b>
         </li>
       </ul>
 
       <h2 id='how-to-use'>
-        How to use{' '}
+        How to use
         <a class='!ml-2' href='#how-to-use'>
           #
         </a>
       </h2>
       <h3 id='development-mode-data'>
-        Data{' '}
+        Data
         <a class='!ml-2' href='#development-mode-data'>
           #
         </a>
@@ -46,7 +47,7 @@ export const Page: Component = () => {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Use this to scrape latest data <code>$ yarn update-data</code>
+          Use this to scrape latest data <code>$ yarn update-data</code>. Will take a few X minutes.
         </li>
         <li>
           All new data will be written to
@@ -61,7 +62,7 @@ export const Page: Component = () => {
         </li>
       </ol>
       <h3 id='development-mode-extension'>
-        Extension{' '}
+        Extension
         <a class='!ml-2' href='#development-mode-extension'>
           #
         </a>
@@ -88,7 +89,7 @@ export const Page: Component = () => {
       </ol>
 
       <h3 id='development-mode-website'>
-        Website{' '}
+        Website
         <a class='!ml-2' href='#development-mode-website'>
           #
         </a>
@@ -107,20 +108,6 @@ export const Page: Component = () => {
               Build: <code>$ yarn build</code>
             </li>
           </ul>
-        </li>
-      </ol>
-      <h2 id='update-stock-list-data-will-take-a-few-x-minutes'>
-        Update Stock list data (will take a few X minutes){' '}
-        <a class='!ml-2' href='#update-stock-list-data-will-take-a-few-x-minutes'>
-          #
-        </a>
-      </h2>
-      <ol>
-        <li>
-          Make sure your terminal inside <b>/packages/data</b> directory
-        </li>
-        <li>
-          Type in terminal <code>$ yarn update-data</code>
         </li>
       </ol>
     </div>

@@ -27,10 +27,11 @@ export const Page: Component = () => {
       </ul>
       <p>
         Lastly, when opening an account with Broker, personally in my humble opinion just open a
-        <b> Cash upfront account</b>. It means, you only invest the money that you have in your account.
+        <b> Cash upfront account</b>. It means, you only invest the money that you have in your account and avoid using
+        other people money. Only do it if you are aware of the risks and etc.
       </p>
 
-      <div class='rounded p-2 border-3 border-dotted bg-green-50 text-green-700 border-green-600'>
+      <div class='rounded p-2 border-3 border-dashed bg-green-50 text-green-700 border-green-600'>
         <h3 class='!m-0 !text-green-800'>Notes</h3>
         <ul class='!m-0'>
           <li>
@@ -53,11 +54,14 @@ export const Page: Component = () => {
           <li>
             If you can't find the stock that you are looking for, it's not necessarily mean its not <b>Shariah</b>.
             <ul>
-              <li>AFAIK currently, VP-DJ Shariah capped up to 100 stocks</li>
+              <li>
+                AFAIK currently, VP-DJ Shariah capped up to 100 stocks. Thus, you can perform you own quantitative and
+                qualitative assessment
+              </li>
               <li>Wahed, its depend on their assessment.</li>
               <li>
-                This is different for Malaysia, we had a very strict regulated Shariah board that do assessment and if
-                you dont find the stock, it mean not shariah-compliance.
+                For Malaysia, we had a very strict regulated Shariah board that do all the assessment and if you dont
+                find the stock, it mean it's not shariah-compliance.
               </li>
             </ul>
           </li>
@@ -141,7 +145,8 @@ export const Page: Component = () => {
         </li>
         <li>
           Wahed have a guide on purification, please do have a look at their website
-          <a href='https://funds.wahedinvest.com/quarterly-purification-on-hlal-dividends.csv'>here</a>.
+          <a href='https://funds.wahedinvest.com/quarterly-purification-on-hlal-dividends.csv'>here</a>. Hence, if you
+          are buying the stocks via Wahed ETF, then you need to purify it.
         </li>
       </ol>
     </div>
