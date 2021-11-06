@@ -7,9 +7,19 @@
     "prod": "npm run build && npm run server:prod",
     "build": "vite build && vite build --ssr && vite-plugin-ssr prerender",
     "server": "ts-node ./server",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server"
+    "server:prod": "cross-env NODE_ENV=production ts-node ./server",
+    "lint": "eslint --fix ."
   },
   "license": "MIT",
+  "dependencies": {
+    "@analytics/google-analytics": "^0.5.3",
+    "analytics": "^0.7.18",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "node-fetch": "2.6.2",
+    "solid-app-router": "^0.1.5",
+    "solid-js": "^1.1.1"
+  },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.10.5",
@@ -22,15 +32,7 @@
     "vite-plugin-ssr": "^0.3.3",
     "vite-plugin-windicss": "^1.4.11",
     "vite-tsconfig-paths": "^3.3.17",
-    "windicss": "^3.1.9"
-  },
-  "dependencies": {
-    "@analytics/google-analytics": "^0.5.3",
-    "analytics": "^0.7.18",
-    "cross-env": "^7.0.3",
-    "express": "^4.17.1",
-    "node-fetch": "2.6.2",
-    "solid-app-router": "^0.1.5",
-    "solid-js": "^1.1.1"
+    "windicss": "^3.1.9",
+    "eslint-plugin-tailwind": "^0.2.1"
   }
 }

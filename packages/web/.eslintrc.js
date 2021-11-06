@@ -19,7 +19,6 @@ module.exports = {
     'plugin:tailwind/recommended',
   ],
   rules: {
-    'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs

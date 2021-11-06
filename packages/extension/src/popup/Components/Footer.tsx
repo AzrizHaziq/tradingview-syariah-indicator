@@ -11,7 +11,7 @@ export const Footer: Component = () => (
   <>
     <a
       onClick={_popupGa('click', 'tg')}
-      class='text-gray-300 flex hover:underline'
+      class='flex text-gray-300 hover:underline'
       target='_blank'
       rel='noopener noreferrer'
       href='https://t.me/tv_shariah'>
@@ -27,7 +27,7 @@ export const Footer: Component = () => (
     </a>
     <a
       onClick={_popupGa('click', 'github')}
-      class='text-gray-300 flex hover:underline'
+      class='flex text-gray-300 hover:underline'
       target='_blank'
       rel='noopener noreferrer'
       href='https://github.com/AzrizHaziq/tradingview-syariah-indicator'>

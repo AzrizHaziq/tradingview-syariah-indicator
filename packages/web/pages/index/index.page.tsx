@@ -14,7 +14,7 @@ export const Page: Component = () => {
         </h2>
         <p>
           Add a small green indicator(
-          <img class='inline !my-0 mx-1' src={IMGS.logo} height={15} width={15} alt='logo' />) in
+          <img class='inline mx-1 !my-0' src={IMGS.logo} height={15} width={15} alt='logo' />) in
           <a href='https://tradingview.com'>tradingview.com</a>. At the moment, only cover Malaysian, NYSE, Nasdaq,
           Shenzhen, Shanghai at the moment.
         </p>
@@ -31,7 +31,7 @@ export const Page: Component = () => {
           </a>
         </h2>
         <div className='flex flex-col gap-y-2'>
-          <div className='flex gap-2 items-center'>
+          <div className='flex items-center gap-2'>
             <a
               target='_blank'
               rel='noopener noreferrer'
@@ -54,7 +54,7 @@ export const Page: Component = () => {
               alt='Chrome Web Store'
             />
           </div>
-          <div class='flex gap-2 items-center'>
+          <div class='flex items-center gap-2'>
             <a
               target='_blank'
               rel='noopener noreferrer'
@@ -83,7 +83,7 @@ export const Page: Component = () => {
             />
           </div>
         </div>
-        <div class='flex gap-2 mt-2'>
+        <div class='flex mt-2 gap-2'>
           Also available in:
           <a
             target='_blank'

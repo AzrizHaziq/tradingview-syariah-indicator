@@ -128,7 +128,7 @@ function observedTableChanges() {
 
     Array.from(tableNode.children).forEach((tr) => {
       const rowSymbol = tr.getAttribute('data-symbol')
-      const { s: isSyariah } = getStockStat(rowSymbol)
+      const { s: isSyariah } = getStockStat(rowSymbol as `${string}:${string}`)
 
       const firstColumn = tr.querySelector('td div')
       const shariahIcon = createIcon({ width: 10, height: 10 })

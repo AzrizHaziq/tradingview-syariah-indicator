@@ -6,7 +6,7 @@ export async function getStorageDetails(): Promise<TSI.Flag[]> {
     const DETAILS = await getStorage('DETAILS')
 
     if (process.env.NODE_ENV !== 'production') {
-      return DETAILS.map(i => ({
+      return DETAILS.map((i) => ({
         ...i,
         updatedAt: `${Math.floor(Math.random() * 12)}/${Math.floor(Math.random() * 25)}/2021`,
       }))
@@ -25,7 +25,7 @@ const CurrentDataContext = createContext<CurrentDataStore>([() => [], {}])
 
 export const useCurrentData = (): CurrentDataStore => useContext(CurrentDataContext)
 
-export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = props => {
+export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = (props) => {
   const [state, setState] = createSignal(props.value || [])
   const store: CurrentDataStore = [
     state,
@@ -44,7 +44,7 @@ export async function setUpdateAt(): Promise<TSI.Flag[]> {
     const DETAILS = await getStorage('DETAILS')
 
     if (process.env.NODE_ENV !== 'production') {
-      return DETAILS.map(i => ({
+      return DETAILS.map((i) => ({
         ...i,
         updatedAt: `${Math.floor(Math.random() * 12)}/${Math.floor(Math.random() * 25)}/2021`,
       }))

@@ -5,13 +5,6 @@
   "description": " Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai at the moment.",
   "private": true,
   "scripts": {
-    "start": "lerna run --scope @app/extension --stream watch",
-    "c": "lerna run --scope @app/extension --stream watch:c",
-    "ff": "lerna run --scope @app/extension --stream watch:ff",
-    "build": "lerna run --scope @app/extension --stream build",
-    "update-data": "lerna run --scope @app/data --stream update-data",
-    "ghAction": "lerna run --scope @app/data --stream ghAction",
-    "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix",
     "prepare": "husky install"
   },
   "workspaces": {
@@ -29,19 +22,8 @@
   "license": "ISC",
   "devDependencies": {
     "husky": "^7.0.2",
-    "lint-staged": "^11.2.3",
     "prettier": "^2.2.1",
     "ts-node": "^10.3.0",
     "typescript": "^4.2.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ]
   }
 }

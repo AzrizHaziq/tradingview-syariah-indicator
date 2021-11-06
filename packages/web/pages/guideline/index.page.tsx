@@ -31,7 +31,7 @@ export const Page: Component = () => {
         other people money. Only do it if you are aware of the risks and etc.
       </p>
 
-      <div class='rounded p-2 border-3 border-dashed bg-green-50 text-green-700 border-green-600'>
+      <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>
         <h3 class='!m-0 !text-green-800'>Notes</h3>
         <ul class='!m-0'>
           <li>

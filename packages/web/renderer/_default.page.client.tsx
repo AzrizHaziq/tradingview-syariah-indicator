@@ -38,7 +38,7 @@ const { hydrationPromise } = useClientRouter({
             </PageLayout>
           </PageContextProvider>
         ),
-        content!
+        content
       )
     } else {
       // Render new page
@@ -50,7 +50,7 @@ const { hydrationPromise } = useClientRouter({
             </PageLayout>
           </PageContextProvider>
         ),
-        content!
+        content
       )
     }
   },
@@ -58,7 +58,7 @@ const { hydrationPromise } = useClientRouter({
   onTransitionEnd,
 })
 
-hydrationPromise.then((s) => {
+hydrationPromise.then(() => {
   console.log('Hydration finished; page is now interactive.')
 })
 

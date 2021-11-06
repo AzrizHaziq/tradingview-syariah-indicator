@@ -8,7 +8,7 @@ const githubUrl = 'https://azrizhaziq.github.io/tradingview-syariah-indicator'
 export const Header: Component = () => (
   <a
     onClick={_popupGa('click', 'homepage')}
-    class='text-green-500 text-base'
+    class='text-base text-green-500'
     target='_blank'
     rel='noopener noreferrer'
     href={githubUrl}>

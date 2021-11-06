@@ -14,7 +14,7 @@ export const Popup = () => {
   })
 
   return (
-    <div class='space-x-2 flex p-2 h-full'>
+    <div class='flex h-full p-2 space-x-2'>
       <img
         class='self-start mt-2'
         src='/assets/shariah-icon.svg'
@@ -25,18 +25,18 @@ export const Popup = () => {
 
       <div class='flex flex-col w-full'>
         <Header />
-        <div class='flex items-center h-6 justify-between'>
-          <p class='text-gray-300 text-xs'>{author}</p>
+        <div class='flex items-center justify-between h-6'>
+          <p class='text-xs text-gray-300'>{author}</p>
           <div class='flex items-center'>
             <RefreshData />
             <Version />
           </div>
         </div>
-        <div class='grid grid-cols-2 gap-x-2 text-white mt-2'>
+        <div class='mt-2 text-white grid grid-cols-2 gap-x-2'>
           <Flags />
         </div>
         <hr class='my-2 border-gray-400 opacity-30' />
-        <div class='flex justify-start flex-col text-xs'>
+        <div class='flex flex-col justify-start text-xs'>
           <Footer />
         </div>
       </div>

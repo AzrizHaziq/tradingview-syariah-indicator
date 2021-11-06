@@ -13,6 +13,7 @@ async function startServer() {
   if (isProduction) {
     app.use(express.static(`${root}/dist/client`))
   } else {
+    // eslint-disable-next-line
     const vite = require('vite')
     viteDevServer = await vite.createServer({
       root,

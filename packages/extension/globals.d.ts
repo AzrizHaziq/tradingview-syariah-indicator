@@ -1,4 +1,4 @@
-declare function ga(...args: any[]): void
+declare function ga(...args: unknown[]): void
 
 declare module '*.svg'
 
@@ -31,7 +31,7 @@ declare namespace TSI {
   /////////////////////////// RESPONSE_FROM_JSON ///////////////////////////////////
   export interface StorageMap {
     DETAILS: Flag[]
-    LIST: any
+    LIST: [`${string}:${string}`, Record<string, number>][]
     LAST_FETCH_AT: string
     IS_FILTER_SHARIAH: boolean
   }

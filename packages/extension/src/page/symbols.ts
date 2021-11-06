@@ -68,5 +68,5 @@ function getSymbol() {
   return document
     .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
     .getAttribute('data-symbol')
-    .trim()
+    .trim() as `${string}:${string}`
 }

@@ -13,7 +13,8 @@
     "postbuild": "web-ext lint",
     "prerelease": "yarn build && dotenv -e .env.production",
     "release:chrome": "yarn prerelease webstore upload --source dist",
-    "release:ff": "yarn prerelease web-ext-submit && ts-node scripts/ff-source-code.ts"
+    "release:ff": "yarn prerelease web-ext-submit && ts-node scripts/ff-source-code.ts",
+    "lint": "eslint --fix ."
   },
   "dependencies": {
     "date-fns": "^2.24.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "eslint-plugin-tailwind": "^0.2.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.7",

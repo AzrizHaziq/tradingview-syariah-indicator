@@ -11,7 +11,7 @@ export const Version: Component = () => (
   <a
     onClick={_popupGa('click', 'version')}
     title={popup_version}
-    class='text-gray-300 text-xs hover:underline'
+    class='text-xs text-gray-300 hover:underline'
     rel='noopener noreferrer'
     target='_blank'
     href={releaseUrl}>

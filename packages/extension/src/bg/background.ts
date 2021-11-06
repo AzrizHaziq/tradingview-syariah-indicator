@@ -29,7 +29,7 @@ async function listener(_, { status }, { url }): Promise<void> {
 
   const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
   // filter out invalid url
-  if (!validUrls.some(validUrl => new RegExp(validUrl).test(url))) {
+  if (!validUrls.some((validUrl) => new RegExp(validUrl).test(url))) {
     return
   }
 
@@ -71,6 +71,7 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
       })
     })
 
+    // @ts-ignore
     await setStorage('LIST', allExchanges)
   } catch (e) {
     console.error(`Error set shariah storage`, e)

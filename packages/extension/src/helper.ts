@@ -1,12 +1,12 @@
 import { browser } from 'webextension-polyfill-ts'
 
 const GA = process.env.GA
-let SHARIAH_LIST = new Map()
+let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()
 const parser = new DOMParser()
 export const attributeName = 'data-indicator'
 export const extensionName = 'tradingview-shariah-indicator'
 
-export async function setStockListInMap(): Promise<any> {
+export async function setStockListInMap(): Promise<void> {
   try {
     const LIST = await getStorage('LIST')
     SHARIAH_LIST = new Map(LIST)
@@ -15,7 +15,7 @@ export async function setStockListInMap(): Promise<any> {
   }
 }
 
-export function getStockStat(symbolWithExchange: string, defaultReturn = []) {
+export function getStockStat(symbolWithExchange: `${string}:${string}`, defaultReturn = {}): Record<string, number> {
   return SHARIAH_LIST.has(symbolWithExchange) ? SHARIAH_LIST.get(symbolWithExchange) : defaultReturn
 }
 
