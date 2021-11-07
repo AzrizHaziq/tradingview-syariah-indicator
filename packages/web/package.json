@@ -33,6 +33,11 @@
     "vite-plugin-windicss": "^1.4.11",
     "vite-tsconfig-paths": "^3.3.17",
     "windicss": "^3.1.9",
-    "eslint-plugin-tailwind": "^0.2.1"
+    "eslint-plugin-tailwind": "^0.2.1",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0"
   }
 }

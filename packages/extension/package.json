@@ -7,14 +7,14 @@
     "watch": "webpack --mode=development --watch",
     "watch:ff": "web-ext run",
     "watch:c": "yarn watch:ff --target=chromium",
-    "test": "yarn build",
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true yarn build",
     "postbuild": "web-ext lint",
     "prerelease": "yarn build && dotenv -e .env.production",
     "release:chrome": "yarn prerelease webstore upload --source dist",
     "release:ff": "yarn prerelease web-ext-submit && ts-node scripts/ff-source-code.ts",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "t": "playwright test"
   },
   "dependencies": {
     "date-fns": "^2.24.0",
@@ -65,6 +65,8 @@
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
     "windicss": "^3.1.9",
-    "windicss-webpack-plugin": "^1.5.5"
+    "windicss-webpack-plugin": "^1.5.5",
+    "@playwright/test": "^1.16.3",
+    "playwright-chromium": "^1.16.3"
   }
 }
