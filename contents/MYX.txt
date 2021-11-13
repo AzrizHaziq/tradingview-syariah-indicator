@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Nov 06 2021 09:05:25 GMT+0800 (Malaysia Time)
+updatedAt : Sat Nov 13 2021 15:36:56 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -168,7 +168,6 @@ CRG          : s
 CSCENIC      : s
 CSCENIC-WA   : s
 CSCSTEL      : s
-CTIB         : s
 CTOS         : s
 CUSCAPI      : s
 CVIEW        : s
@@ -558,7 +557,6 @@ MMCCORP      : s
 MMIS         : s
 MMSV         : s
 MNC          : s
-MNC-WA       : s
 MNC-WB       : s
 MOBILIA      : s
 MPAY         : s
@@ -663,6 +661,7 @@ PENERGY      : s
 PENTA        : s
 PERDANA      : s
 PERMAJU      : s
+PERMAJU-OR   : s
 PERMAJU-WA   : s
 PERSTIM      : s
 PESONA       : s
