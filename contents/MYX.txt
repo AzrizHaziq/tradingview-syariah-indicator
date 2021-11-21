@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Nov 13 2021 15:36:56 GMT+0800 (Malaysia Time)
+updatedAt : Sun Nov 21 2021 08:15:41 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -118,6 +118,7 @@ BPURI-WA     : s
 BRAHIMS      : s
 BREM         : s
 BSLCORP      : s
+BSLCORP-WA   : s
 BSTEAD       : s
 BTECH        : s
 BTM          : s
@@ -214,6 +215,7 @@ EATECH       : s
 ECOFIRS      : s
 ECOFIRS-WD   : s
 ECOHLDS      : s
+ECOMATE      : s
 ECONBHD      : s
 ECONBHD-WA   : s
 ECOWLD       : s
@@ -256,6 +258,7 @@ FAJAR        : s
 FAJAR-WC     : s
 FAREAST      : s
 FAST         : s
+FAST-OR      : s
 FAVCO        : s
 FBBHD        : s
 FGV          : s
@@ -492,6 +495,7 @@ MACPIE       : s
 MACPIE-WB    : s
 MAG          : s
 MAG-WB       : s
+MAG-WC       : s
 MAGNA        : s
 MAGNI        : s
 MAHSING      : s
@@ -559,6 +563,7 @@ MMSV         : s
 MNC          : s
 MNC-WB       : s
 MOBILIA      : s
+MOBILIA-WA   : s
 MPAY         : s
 MPCORP       : s
 MPI          : s
@@ -661,7 +666,6 @@ PENERGY      : s
 PENTA        : s
 PERDANA      : s
 PERMAJU      : s
-PERMAJU-OR   : s
 PERMAJU-WA   : s
 PERSTIM      : s
 PESONA       : s
