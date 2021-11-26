@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sun Nov 21 2021 08:15:41 GMT+0800 (Malaysia Time)
+updatedAt : Fri Nov 26 2021 08:40:10 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -7,6 +7,7 @@ AASIA        : s
 AAX          : s
 ABLEGLOB     : s
 ABLEGRP      : s
+ACEINNO      : s
 ACME         : s
 ACME-WA      : s
 ACO          : s
@@ -21,6 +22,7 @@ AFUJIYA      : s
 AGES         : s
 AHB          : s
 AHEALTH      : s
+AIM          : s
 AIMFLEX      : s
 AIRASIA      : s
 AJI          : s
@@ -33,7 +35,6 @@ AME          : s
 AME-WA       : s
 AMEDIA       : s
 AMLEX        : s
-AMPROP       : s
 AMTEL        : s
 AMTEL-WA     : s
 AMWAY        : s
@@ -48,9 +49,6 @@ ANZO-WB      : s
 APB          : s
 APM          : s
 APOLLO       : s
-APPASIA      : s
-APPASIA-WA   : s
-APPASIA-WB   : s
 ARANK        : s
 ARBB         : s
 ARK          : s
@@ -58,9 +56,6 @@ ARTRONIQ     : s
 ASB          : s
 ASDION       : s
 ASIABRN      : s
-ASIAFLE      : s
-ASIAPAC      : s
-ASIAPAC-WB   : s
 ASIAPLY      : s
 ASIAPLY-PA   : s
 ASIAPLY-WB   : s
@@ -91,9 +86,8 @@ BAHVEST-WA   : s
 BARAKAH      : s
 BAUTO        : s
 BCB          : s
-BCMALL       : s
-BCMALL-WA    : s
 BDB          : s
+BENALEC      : s
 BERTAM       : s
 BHIC         : s
 BIG          : s
@@ -116,7 +110,6 @@ BPPLAS       : s
 BPURI        : s
 BPURI-WA     : s
 BRAHIMS      : s
-BREM         : s
 BSLCORP      : s
 BSLCORP-WA   : s
 BSTEAD       : s
@@ -131,6 +124,7 @@ CAELY        : s
 CAMRES       : s
 CAREPLS      : s
 CARIMIN      : s
+CARZO        : s
 CBIP         : s
 CCB          : s
 CCK          : s
@@ -183,11 +177,8 @@ DANCO-WA     : s
 DATAPRP      : s
 DAYANG       : s
 DBHD         : s
-DELEUM       : s
 DESTINI      : s
 DFCITY       : s
-DGB          : s
-DGB-WC       : s
 DIALOG       : s
 DIGI         : s
 DIN040000223 : s
@@ -245,6 +236,8 @@ ENRA         : s
 ENRA-WA      : s
 EPMB         : s
 ESAFE        : s
+ESCERAM      : s
+ESCERAM-WB   : s
 EUPE         : s
 EURO         : s
 EUROSP       : s
@@ -257,8 +250,7 @@ F&N          : s
 FAJAR        : s
 FAJAR-WC     : s
 FAREAST      : s
-FAST         : s
-FAST-OR      : s
+FARLIM       : s
 FAVCO        : s
 FBBHD        : s
 FGV          : s
@@ -294,7 +286,6 @@ GDEX         : s
 GDEX-WC      : s
 GENETEC      : s
 GENP         : s
-GESHEN       : s
 GETS         : s
 GFM          : s
 GFM-WC       : s
@@ -313,6 +304,8 @@ GOCEAN       : s
 GOCEAN-WB    : s
 GOLDETF      : s
 GOPENG       : s
+GPACKET      : s
+GPACKET-WB   : s
 GPHAROS      : s
 GPP          : s
 GREATEC      : s
@@ -342,8 +335,6 @@ HIGHTEC      : s
 HIL          : s
 HIL-WB       : s
 HLIND        : s
-HLT          : s
-HLT-WA       : s
 HOHUP        : s
 HOMERIZ      : s
 HOMERIZ-WB   : s
@@ -365,16 +356,17 @@ HUBLINE-WC   : s
 HUPSENG      : s
 HWATAI       : s
 HWGB         : s
-IBHD         : s
 IBRACO       : s
 ICON         : s
 ICON-WA      : s
 ICONIC       : s
+ICTZONE      : s
 IDEAL        : s
 IFCAMSC      : s
 IHH          : s
 IHS046000824 : s
 IJM          : s
+IJMPLNT      : s
 ILB          : s
 IMASPRO      : s
 INARI        : s
@@ -426,7 +418,6 @@ KEN          : s
 KERJAYA      : s
 KERJAYA-WB   : s
 KESM         : s
-KEYASIC      : s
 KFIMA        : s
 KGB          : s
 KGB-WB       : s
@@ -443,6 +434,7 @@ KLCC         : s
 KLK          : s
 KMLOONG      : s
 KMLOONG-WB   : s
+KNM          : s
 KNUSFOR      : s
 KOBAY        : s
 KOMARK       : s
@@ -459,7 +451,6 @@ KRETAM       : s
 KRONO        : s
 KSL          : s
 KSSC         : s
-KTB          : s
 KUB          : s
 KYM          : s
 L&G          : s
@@ -468,13 +459,12 @@ LAGENDA-WB   : s
 LATITUD      : s
 LAYHONG      : s
 LBALUM       : s
-LBICAP       : s
-LBICAP-WB    : s
 LBS          : s
 LBS-PA       : s
 LCTITAN      : s
 LEBTECH      : s
 LEESK        : s
+LEONFB       : s
 LFECORP      : s
 LIIHEN       : s
 LIONIND      : s
@@ -485,11 +475,9 @@ LOTUS        : s
 LOTUS-WB     : s
 LSTEEL       : s
 LTKM         : s
-LUSTER       : s
-LUSTER-WA    : s
-LUSTER-WB    : s
 LUXCHEM      : s
 LYC          : s
+LYSAGHT      : s
 M3TECH       : s
 MACPIE       : s
 MACPIE-WB    : s
@@ -570,7 +558,6 @@ MPI          : s
 MPSOL        : s
 MPSOL-WA     : s
 MQTECH       : s
-MQTECH-WA    : s
 MRCB         : s
 MRCB-WB      : s
 MRDIY        : s
@@ -610,6 +597,7 @@ NOTION-WC    : s
 NOVAMSC      : s
 NPC          : s
 NPS          : s
+NTPM         : s
 NWP          : s
 NYLEX        : s
 OCB          : s
@@ -637,8 +625,6 @@ OWG-WB       : s
 PA           : s
 PA-WB        : s
 PADINI       : s
-PANSAR       : s
-PANSAR-WA    : s
 PANTECH      : s
 PANTECH-WB   : s
 PAOS         : s
@@ -647,7 +633,7 @@ PARAGON      : s
 PARAMON      : s
 PARAMON-WA   : s
 PARKSON      : s
-PARLO        : s
+PARKWD       : s
 PASDEC       : s
 PASDEC-WA    : s
 PASUKGB      : s
@@ -661,8 +647,11 @@ PDZ-WB       : s
 PDZ-WC       : s
 PEB          : s
 PECCA        : s
+PEKAT        : s
 PELIKAN      : s
 PENERGY      : s
+PENSONI      : s
+PENSONI-WB   : s
 PENTA        : s
 PERDANA      : s
 PERMAJU      : s
@@ -699,7 +688,6 @@ POS          : s
 PPB          : s
 PPHB         : s
 PRESTAR      : s
-PRG          : s
 PRIVA        : s
 PRLEXUS      : s
 PRLEXUS-WB   : s
@@ -721,8 +709,7 @@ QL           : s
 QUALITY      : s
 RALCO        : s
 RANHILL      : s
-REACH        : s
-REACH-WA     : s
+RCECAP       : s
 RESINTC      : s
 REVENUE      : s
 REVENUE-WA   : s
@@ -735,7 +722,7 @@ RL           : s
 RL-WA        : s
 ROHAS        : s
 RSAWIT       : s
-RUBEREX      : s
+RTSTECH      : s
 RVIEW        : s
 S&FCAP       : s
 S&FCAP-WC    : s
@@ -746,9 +733,6 @@ SALUTE       : s
 SAM          : s
 SAMAIDEN     : s
 SAMAIDEN-WA  : s
-SANICHI      : s
-SANICHI-WE   : s
-SANICHI-WF   : s
 SAPIND       : s
 SAPNRG       : s
 SAPNRG-PA    : s
@@ -760,6 +744,7 @@ SAUDEE-WB    : s
 SBCCORP      : s
 SCABLE       : s
 SCBUILD      : s
+SCGBHD       : s
 SCGM         : s
 SCIB         : s
 SCIB-WB      : s
@@ -791,6 +776,7 @@ SERSOL-WA    : s
 SGBHD        : s
 SHCHAN       : s
 SHH          : s
+SHL          : s
 SIGN         : s
 SIME         : s
 SIMEPLT      : s
@@ -837,7 +823,6 @@ SUNSURIA     : s
 SUNWAY       : s
 SUNWAY-PA    : s
 SUNWAY-WB    : s
-SUNZEN       : s
 SUPERLN      : s
 SUPERMX      : s
 SUPREME      : s
@@ -857,23 +842,25 @@ TALAMT       : s
 TALIWRK      : s
 TAMBUN       : s
 TANCO        : s
+TAS          : s
+TASCO        : s
 TASHIN       : s
 TAWIN        : s
 TAWIN-WA     : s
 TAWIN-WB     : s
+TCHONG       : s
 TCS          : s
 TCS-WA       : s
 TDEX         : s
 TDM          : s
+TECHBND      : s
+TECHBND-WA   : s
 TECHNAX      : s
 TEKSENG      : s
 TELADAN      : s
 TELADAN-WA   : s
 TENAGA       : s
-TEOSENG      : s
 TEXCYCL      : s
-TFP          : s
-TFP-WB       : s
 TGL          : s
 TGUAN        : s
 THETA        : s
@@ -889,6 +876,7 @@ TITIJYA-PA   : s
 TJSETIA      : s
 TM           : s
 TMCLIFE      : s
+TNLOGIS      : s
 TOCEAN       : s
 TOMYPAK      : s
 TONGHER      : s
@@ -904,6 +892,7 @@ TROP         : s
 TSH          : s
 TSRCAP       : s
 TTV          : s
+TURIYA       : s
 UCHITEC      : s
 UCREST       : s
 UEMS         : s
@@ -944,6 +933,7 @@ VSOLAR       : s
 VSOLAR-WB    : s
 VSTECS       : s
 WAJA         : s
+WANGZNG      : s
 WARISAN      : s
 WASEONG      : s
 WATTA        : s
@@ -967,9 +957,9 @@ XINHWA-WA    : s
 XL           : s
 XL-WA        : s
 Y&G          : s
+YB           : s
 YBS          : s
 YGL          : s
-YINSON       : s
 YKGI         : s
 YLI          : s
 YNHPROP      : s
