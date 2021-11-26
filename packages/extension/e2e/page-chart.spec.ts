@@ -1,49 +1,23 @@
-import { test } from './_default'
 import { expect } from '@playwright/test'
+import { nonShariahList, shariahByExchange, test } from './setup'
 
-// @ts-ignore
-import { data as _shariahList } from '../../data/stock-list-human.json'
+// const symbolSelector = `[data-name=legend] [data-name=legend-series-item] svg`
+const selector = '[data-name=legend] [data-name=legend-series-item] [data-indicator="tradingview-shariah-indicator"]'
 
-const tsi_selector = '[data-indicator=tradingview-shariah-indicator]'
-
-const findFirstStockByExchange =
-  <T extends []>(array: T) =>
-  (exchange: string): T =>
-    array.find(([e]: [string]) => e === exchange)
-
-const shariahByExchange = ['NYSE', 'MYX', 'SSE', 'SZSE', 'NASDAQ'].map(findFirstStockByExchange(_shariahList))
-
-const nonShariahList = [
-  ['MYX', 'CARLSBG', 'CARSBERG'],
-  ['MYX', 'BAT', 'British Tobacco'],
-  ['MYX', 'MAYBANK', 'Maybank'],
-  ['MYX', 'PBBANK', 'Public Bank'],
-  ['NYSE', 'PM', 'Philip Morris International'],
-  ['NYSE', 'SAM', 'Boston Beer'],
-  ['NASDAQ', 'NFLX', 'Netflix'],
-  ['SSE', '601988', 'Bank of China'],
-  ['SZSE', '000001', 'PING AN BANK'],
-]
-
-const chartTestPage =
+const chartPage =
   (assert: 'toBeTruthy' | 'toBeFalsy') =>
   ([exchange, code, name]) => {
-    test.describe.parallel(`${assert === 'toBeTruthy' ? '[S]' : '[NS]'}: ${exchange}-${code}-${name}`, () => {
-      test(`desktop view`, async ({ page }) => {
-        await page.setViewportSize({ width: 1200, height: 700 })
-        await page.goto(`https://www.tradingview.com/symbols/${exchange}-${code}`)
-        const bool = await page.isVisible(`.tv-symbol-header ${tsi_selector}`)
-        expect(bool)[assert]()
-      })
+    test(`${assert === 'toBeTruthy' ? '[S]' : '[NS]'}: ${exchange}-${code}-${name}`, async ({ page }) => {
+      const url = `https://www.tradingview.com/chart?symbol=${encodeURIComponent(exchange + ':' + code)}`
+      await page.goto(url, { waitUntil: 'networkidle' })
+      await page.waitForSelector('.layout__area--center [data-name=legend]')
+      const bool = await page.evaluate((s: string) => Promise.resolve(!!document.querySelector(s)), selector)
 
-      test('mobile view', async ({ page }) => {
-        await page.setViewportSize({ width: 500, height: 700 })
-        await page.goto(`https://www.tradingview.com/symbols/${exchange}-${code}`)
-        const bool = await page.isVisible(`.tv-symbol-header.tv-symbol-header--mobile ${tsi_selector}`)
-        expect(bool)[assert]()
-      })
+      expect(bool)[assert]()
     })
   }
 
-shariahByExchange.forEach(chartTestPage('toBeTruthy'))
-nonShariahList.forEach(chartTestPage('toBeFalsy'))
+test.describe.parallel('Chart page', () => {
+  shariahByExchange.forEach(chartPage('toBeTruthy'))
+  nonShariahList.forEach(chartPage('toBeFalsy'))
+})

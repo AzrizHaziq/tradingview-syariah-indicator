@@ -14,7 +14,7 @@
     "release:chrome": "yarn prerelease webstore upload --source dist",
     "release:ff": "yarn prerelease web-ext-submit && ts-node scripts/ff-source-code.ts",
     "lint": "eslint --fix .",
-    "t": "playwright test"
+    "test": "playwright test --config=playwright.config.ts"
   },
   "dependencies": {
     "date-fns": "^2.24.0",
