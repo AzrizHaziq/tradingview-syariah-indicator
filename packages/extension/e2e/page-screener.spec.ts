@@ -1,92 +1,142 @@
-import { expect } from '@playwright/test'
-import { nonShariahList, shariahByExchange, test } from './setup'
+import { expect, Page } from '@playwright/test'
+import { exchanges, exchangeToMarket, Market, nonShariahList, shariahByExchange, test } from './setup'
 
 // const shariahButton = '#shariah-checkbox-id'
 const shariahLabelButton = '[for="shariah-checkbox-id"]'
 
-const setMarket = (market: 'malaysia' | 'USA' | 'china' | 'canada' | 'indonesia' | 'brazil') => async (page) => {
-  // click country dropdown
-  await page.click('.tv-screener-market-select > .js-screener-market-button')
-  await page.fill('[placeholder=Search]', market)
-
-  // @ts-ignore
-  if (market === 'USA') market = 'america'
-
-  await page.click(`[data-market=${market}]`)
-  await page.waitForTimeout(2000)
-}
-
-test.beforeEach(async ({ page }) => {
-  await page.goto(`https://www.tradingview.com/screener/`)
-
-  // black friday modal
-  await page.click('#overlap-manager-root svg')
-})
-
 test.describe.parallel('Screener page', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(`https://www.tradingview.com/screener/`)
+
+    // close any modal popup
+    const res = await page.evaluate((s) => Promise.resolve(!!document.querySelector(s)), '.js-dialog__close')
+    if (res) await page.click('.js-dialog__close')
+  })
+
   test('Shariah checkbox button should exist on US, China, Malaysia market', async ({ page }) => {
     await setMarket('canada')(page)
-    await page.isHidden(shariahLabelButton)
+    let res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('none')
 
     await setMarket('china')(page)
-    await page.isVisible(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('block')
 
     await setMarket('indonesia')(page)
-    await page.isHidden(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('none')
 
     await setMarket('malaysia')(page)
-    await page.isVisible(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('block')
 
     await setMarket('brazil')(page)
-    await page.isHidden(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('none')
 
     await setMarket('USA')(page)
-    await page.isVisible(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('block')
   })
 
   test('Should retain active/inactive state of shariah button', async ({ page }) => {
-    const assert = ([s]) => Promise.resolve(getComputedStyle(document.querySelector(s)).getPropertyValue('opacity'))
-    let res = await page.evaluate(assert, [shariahLabelButton])
+    let res = await page.evaluate(assertOpacity, shariahLabelButton)
     expect(parseFloat(res)).toBe(0.4)
 
     // set shariah active
     await page.click(shariahLabelButton)
     await page.waitForTimeout(500)
-    res = await page.evaluate(assert, [shariahLabelButton])
+    res = await page.evaluate(assertOpacity, shariahLabelButton)
     expect(parseFloat(res)).toBe(1)
 
     await setMarket('brazil')(page)
-    await page.isHidden(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('none')
 
     await setMarket('USA')(page)
     await page.waitForTimeout(500)
-    res = await page.evaluate(assert, [shariahLabelButton])
+    res = await page.evaluate(assertOpacity, shariahLabelButton)
     expect(parseFloat(res)).toBe(1)
 
     // set shariah inactive
     await page.click(shariahLabelButton)
     await page.waitForTimeout(500)
-    res = await page.evaluate(assert, [shariahLabelButton])
+    res = await page.evaluate(assertOpacity, shariahLabelButton)
     expect(parseFloat(res)).toBe(0.4)
 
     await setMarket('brazil')(page)
-    await page.isHidden(shariahLabelButton)
+    res = await page.evaluate(assertDisplay, shariahLabelButton)
+    expect(res).toEqual('none')
 
     await setMarket('USA')(page)
     await page.waitForTimeout(500)
-    res = await page.evaluate(assert, [shariahLabelButton])
+    res = await page.evaluate(assertOpacity, shariahLabelButton)
     expect(parseFloat(res)).toBe(0.4)
+  })
+
+  test.describe('Search for', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.click(shariahLabelButton)
+    })
+
+    shariahByExchange.forEach(([exchange, code, name]) => {
+      test(`[S]: ${exchange}-${code}-${name}`, async ({ page }) => {
+        await validate('table-row')([exchange, code], page)
+      })
+    })
+
+    nonShariahList.forEach(([exchange, code, name]) => {
+      test(`[NS]: ${exchange}-${code}-${name}`, async ({ page }) => {
+        await validate('none')([exchange, code], page)
+      })
+    })
   })
 })
 
-// const goToScreenerPage =
-//   (assert: 'toBeTruthy' | 'toBeFalsy') =>
-//   ([exchange, code, name]) => {
-//
-//   }
+const validate =
+  (cssDisplay: 'table-row' | 'none') =>
+  async ([exchange, code]: [typeof exchanges[number], string], page: Page): Promise<void> => {
+    const market = exchangeToMarket(exchange)
+    await setMarket(market)(page)
 
-// goToScreenerPage('toBeTruthy')(['MYX', 'ADVENTA', 'ADVENTA BERHAD'])
-// test.describe.parallel('Screener page', () => {
-//   shariahByExchange.forEach(goToScreenerPage('toBeTruthy'))
-// nonShariahList.forEach(goToScreenerPage('toBeFalsy'))
-// })
+    await page.fill('.tv-screener-table__search-input.js-search-input', code)
+    await page.waitForResponse((resp) => resp.url().includes('/scan') && resp.ok())
+    await page.waitForTimeout(1000)
+
+    const res = await page.evaluate(
+      (s) => Promise.resolve(getComputedStyle(document.querySelector(s)).getPropertyValue('display')),
+      `[data-symbol='${exchange}:${code}']`
+    )
+
+    expect(res).toEqual(cssDisplay)
+  }
+
+const setMarket =
+  (market: Market) =>
+  async (page: Page): Promise<void> => {
+    // await page.waitForSelector(`[data-name="screener-markets"]`)
+
+    const isMarketAlreadySelected = await page.evaluate(
+      (s: string) => Promise.resolve(!!document.querySelector(s)),
+      `[data-market=${market === 'USA' ? 'america' : market}][data-name="screener-markets"]`
+    )
+
+    if (isMarketAlreadySelected) {
+      return
+    }
+
+    // click country dropdown
+    await page.click('.tv-screener-market-select > .js-screener-market-button')
+    await page.fill('[placeholder=Search]', market)
+
+    await page.click(`[data-market=${market === 'USA' ? 'america' : market}]`)
+    await page.waitForResponse((resp) => resp.url().includes('/metainfo') && resp.ok())
+    await page.waitForResponse((resp) => resp.url().includes('/scan') && resp.ok())
+    await page.waitForTimeout(1000)
+  }
+
+const assertDisplay = (s: string): Promise<string> =>
+  Promise.resolve(getComputedStyle(document.querySelector(s).parentElement).getPropertyValue('display'))
+
+const assertOpacity = (s: string): Promise<string> =>
+  Promise.resolve(getComputedStyle(document.querySelector(s)).getPropertyValue('opacity'))

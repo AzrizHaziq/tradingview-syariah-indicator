@@ -1,9 +1,9 @@
 import * as fs from 'fs'
 import { join } from 'path'
 import { tmpdir } from 'os'
+import config from '../playwright.config'
 import { chromium } from 'playwright-chromium'
 import { test as base } from '@playwright/test'
-import config from '../playwright.config'
 
 // @ts-ignore
 import { data as _shariahList } from '../../data/stock-list-human.json'
@@ -27,9 +27,13 @@ const findFirstStockByExchange =
   (exchange: string): T =>
     array.find(([e]: [string]) => e === exchange)
 
-export const shariahByExchange = ['NYSE', 'MYX', 'SSE', 'SZSE', 'NASDAQ'].map(findFirstStockByExchange(_shariahList))
+// AMAX and OTC not available since no data from Wahed
+export const exchanges = ['NYSE', 'MYX', 'SSE', 'SZSE', 'NASDAQ', 'AMAX', 'OTC'] as const
+export const shariahByExchange: [typeof exchanges[number], string, string][] = exchanges
+  .map(findFirstStockByExchange(_shariahList))
+  .filter(Boolean)
 
-export const nonShariahList = [
+export const nonShariahList: [typeof exchanges[number], string, string][] = [
   ['MYX', 'CARLSBG', 'CARSBERG'],
   ['MYX', 'BAT', 'British Tobacco'],
   ['MYX', 'MAYBANK', 'Maybank'],
@@ -45,3 +49,19 @@ export const nonShariahList = [
  * @description Cant use this as cant use css selector with playwright
  */
 const tsi_selector = '[data-indicator=tradingview-syariah-indicator]'
+
+export type Market = 'malaysia' | 'USA' | 'china' | 'canada' | 'indonesia' | 'brazil'
+export const exchangeToMarket = (exchange: typeof exchanges[number]): Market => {
+  switch (exchange) {
+    case 'MYX':
+      return 'malaysia'
+    case 'NASDAQ':
+    case 'NYSE':
+    case 'AMAX':
+    case 'OTC':
+      return 'USA'
+    case 'SZSE':
+    case 'SSE':
+      return 'china'
+  }
+}
