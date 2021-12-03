@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "eslint-plugin-tailwind": "^0.2.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.14.5",
+    "@playwright/test": "^1.16.3",
     "@types/copy-webpack-plugin": "^8.0.0",
     "@types/firefox-webext-browser": "^82.0.0",
     "@types/webpack": "^5.28.0",
@@ -45,8 +45,10 @@
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-tailwind": "^0.2.1",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^2.2.0",
+    "playwright-chromium": "^1.16.3",
     "postcss": "^8.2.12",
     "postcss-import": "^14.0.1",
     "postcss-loader": "^6.1.1",
@@ -65,8 +67,6 @@
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
     "windicss": "^3.1.9",
-    "windicss-webpack-plugin": "^1.5.5",
-    "@playwright/test": "^1.16.3",
-    "playwright-chromium": "^1.16.3"
+    "windicss-webpack-plugin": "^1.5.5"
   }
 }
