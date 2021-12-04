@@ -1,5 +1,5 @@
 MYX
-updatedAt : Fri Nov 26 2021 08:40:10 GMT+0800 (Malaysia Time)
+updatedAt : Sat Dec 04 2021 20:02:43 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -272,7 +272,6 @@ FSBM-WA      : s
 G3           : s
 G3-WA        : s
 GADANG       : s
-GADANG-WB    : s
 GAMUDA       : s
 GASMSIA      : s
 GBGAQRS      : s
@@ -478,7 +477,6 @@ LTKM         : s
 LUXCHEM      : s
 LYC          : s
 LYSAGHT      : s
-M3TECH       : s
 MACPIE       : s
 MACPIE-WB    : s
 MAG          : s
@@ -956,6 +954,7 @@ XINHWA       : s
 XINHWA-WA    : s
 XL           : s
 XL-WA        : s
+XOXTECH      : s
 Y&G          : s
 YB           : s
 YBS          : s
