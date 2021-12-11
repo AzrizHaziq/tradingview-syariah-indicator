@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Dec 04 2021 20:02:43 GMT+0800 (Malaysia Time)
+updatedAt : Sat Dec 11 2021 15:14:54 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -25,6 +25,7 @@ AHEALTH      : s
 AIM          : s
 AIMFLEX      : s
 AIRASIA      : s
+AIRASIA-LR   : s
 AJI          : s
 AJIYA        : s
 ALAM         : s
@@ -322,7 +323,6 @@ HCK-WA       : s
 HENGYUAN     : s
 HEVEA        : s
 HEXIND       : s
-HEXIND-WA    : s
 HEXTAR       : s
 HHGROUP      : s
 HHGROUP-WA   : s
@@ -365,7 +365,6 @@ IFCAMSC      : s
 IHH          : s
 IHS046000824 : s
 IJM          : s
-IJMPLNT      : s
 ILB          : s
 IMASPRO      : s
 INARI        : s
@@ -754,6 +753,7 @@ SCOMIES      : s
 SCOMNET      : s
 SCOMNET-WA   : s
 SCOPE        : s
+SCOPE-WB     : s
 SDRED        : s
 SDS          : s
 SEACERA      : s
