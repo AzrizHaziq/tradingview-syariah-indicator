@@ -18,8 +18,29 @@ export const test = base.extend({
     })
 
     await use(context.pages()[0])
-    await context.close()
+    // await context.close()
   },
+})
+
+// abort all tracker
+test.beforeEach(async ({ page }) => {
+  for (const url of [
+    'https://www.google-analytics.com/**',
+    'https://stats.g.doubleclick.net/**',
+    'https://data.tradingview.com/ping',
+    'https://adservice.google.com/**',
+    'https://pagead2.googlesyndication.com/**',
+    'https://securepubads.g.doubleclick.net/**',
+    'https://ad.doubleclick.net/**',
+    'https://telemetry.tradingview.com/free/report/**',
+    'https://www.googletagmanager.com/**',
+  ]) {
+    await page.route(url, (u) => u.abort())
+  }
+
+  // await page.on('requestfailed', async (u) => {
+  //   console.log(u.url(), u.failure(), 1111)
+  // })
 })
 
 const findFirstStockByExchange =
