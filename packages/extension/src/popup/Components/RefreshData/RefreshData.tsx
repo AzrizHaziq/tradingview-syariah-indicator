@@ -4,6 +4,8 @@ import { Component, createSignal } from 'solid-js'
 import { browser } from 'webextension-polyfill-ts'
 import { setUpdateAt, useCurrentData } from '@popup/popup-helpers'
 
+const delay = (ms = 1500): Promise<void> => new Promise((res) => setTimeout(res, ms))
+
 export const RefreshData: Component = () => {
   const [, { setState }] = useCurrentData()
   const [loading, setLoading] = createSignal(false)
@@ -22,12 +24,9 @@ export const RefreshData: Component = () => {
 
     await browser.runtime.sendMessage({ type: 'invalidate-cache' })
     const currentDates = await setUpdateAt()
-
-    const x = setTimeout(() => {
-      setLoading(false)
-      setState(currentDates)
-      clearTimeout(x)
-    }, 1500)
+    await delay()
+    setLoading(false)
+    setState(currentDates)
   }
 
   return (
@@ -55,8 +54,8 @@ const LoadingIcon: Component = () => (
     viewBox='0 0 16 16'
     height='1em'
     width='1em'
-    class='tsi-loading-icon'
-    xmlns='http://www.w3.org/2000/svg'>
+    xmlns='http://www.w3.org/2000/svg'
+    class='transition animate-spin ease-in-out'>
     <title>{popup_loading_icon}</title>
     <path
       fill='#2fcc71'

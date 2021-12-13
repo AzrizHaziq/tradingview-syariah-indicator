@@ -89,8 +89,8 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
             const connectSelf = ['https://www.google-analytics.com', process.env.FETCH_URL].join(' ')
 
             const output = {
-              ...manifestJson,
               version: process.env.npm_package_version,
+              ...manifestJson,
               // write our FETCH_URL into csp
               content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
             }

@@ -1,6 +1,5 @@
 {
   "manifest_version": 2,
-  "version": "1.7.6",
   "default_locale": "en",
   "author": "Azriz Haziq Jasni",
   "name": "__MSG_ext_extension_name__",
@@ -13,46 +12,24 @@
     }
   },
   "background": {
-    "scripts": [
-      "browser-polyfill.js",
-      "bg/background.js"
-    ],
+    "scripts": ["browser-polyfill.js", "bg/background.js"],
     "persistent": true
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.tradingview.com/chart/*"
-      ],
-      "js": [
-        "browser-polyfill.js",
-        "page/chart.js",
-        "page/screener.js"
-      ]
+      "matches": ["*://*.tradingview.com/chart/*"],
+      "js": ["browser-polyfill.js", "page/chart.js", "page/screener.js"]
     },
     {
-      "matches": [
-        "*://*.tradingview.com/screener/*"
-      ],
-      "js": [
-        "browser-polyfill.js",
-        "page/screener.js"
-      ]
+      "matches": ["*://*.tradingview.com/screener/*"],
+      "js": ["browser-polyfill.js", "page/screener.js"]
     },
     {
-      "matches": [
-        "*://*.tradingview.com/symbols/*"
-      ],
-      "js": [
-        "browser-polyfill.js",
-        "page/symbols.js"
-      ]
+      "matches": ["*://*.tradingview.com/symbols/*"],
+      "js": ["browser-polyfill.js", "page/symbols.js"]
     }
   ],
-  "permissions": [
-    "storage",
-    "*://*.tradingview.com/*"
-  ],
+  "permissions": ["storage", "*://*.tradingview.com/*"],
   "icons": {
     "16": "./assets/shariah-icon-16.png",
     "48": "./assets/shariah-icon-48.png",

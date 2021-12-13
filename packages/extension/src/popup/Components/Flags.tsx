@@ -1,6 +1,7 @@
 import { For } from 'solid-js'
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
+import { homepage as href } from '../../../package.json'
 import { _popupGa, useCurrentData } from '@popup/popup-helpers'
 
 export const Flags: Component = () => {
@@ -11,7 +12,6 @@ export const Flags: Component = () => {
       {(flag) => {
         const { updatedAt, id } = flag
         const popup_list_at = getMessage('popup_list_at', id)
-        const href = `https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/packages/extension/assets/exchanges/${id}.txt`
 
         return (
           <a
