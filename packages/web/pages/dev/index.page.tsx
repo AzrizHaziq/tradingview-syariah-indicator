@@ -2,7 +2,7 @@ import { Component } from 'solid-js'
 
 export const Page: Component = () => {
   return (
-    <div class='prose'>
+    <div class='mx-auto prose'>
       <h2 id='developers'>
         Developers
         <a class='!ml-2' href='#developers'>

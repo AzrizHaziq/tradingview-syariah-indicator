@@ -14,12 +14,6 @@ let dispose: () => void
 
 const { hydrationPromise } = useClientRouter({
   render(pageContext: PageContextBuiltInClient & PageContext) {
-    trackOnLoad({
-      href: location.href,
-      path: location.pathname,
-      title: `web::${location.pathname.replace(/\//, '')}`,
-    })
-
     const content = document.getElementById('tsi-web')
     const { Page, pageProps } = pageContext
 
@@ -60,6 +54,12 @@ const { hydrationPromise } = useClientRouter({
 
 hydrationPromise.then(() => {
   console.log('Hydration finished; page is now interactive.')
+
+  return trackOnLoad({
+    href: location.href,
+    path: location.pathname,
+    title: `web::${location.pathname.replace(/\//, '')}`,
+  })
 })
 
 function onTransitionStart() {

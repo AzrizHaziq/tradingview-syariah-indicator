@@ -2,7 +2,7 @@ import { Component } from 'solid-js'
 
 export const Page: Component = () => {
   return (
-    <div class='prose'>
+    <div class='mx-auto prose'>
       <p>
         This will be totally <b>free</b>. Reason being is that, I wanted to help those who want to trade individual
         stocks, rather than buying a basket of stocks(ETF/Unit trust). Hence, I hope that muslim will now be able to

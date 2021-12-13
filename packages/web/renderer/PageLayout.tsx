@@ -75,7 +75,7 @@ export const PageLayout: Component = (props: { pageContext: PageContextBuiltIn; 
                 trackEvent('referrer_code', { category: 'web::referrer_code', label: 'footer' })
               })
             }>
-            <code class='text-4xl border-2 border-green-500 rounded'>azrjas3</code>
+            <code class='text-4xl bg-green-400 border-2 border-green-500 rounded'>azrjas3</code>
             <span class='px-2 py-1 text-green-800 bg-green-100 rounded cursor-pointer'>
               {isCopy() ? 'Thank you !!' : 'Copy'}
             </span>

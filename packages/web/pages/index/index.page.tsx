@@ -4,7 +4,7 @@ import { Component } from 'solid-js'
 export const Page: Component = () => {
   return (
     <>
-      <div class='prose'>
+      <div class='mx-auto prose'>
         <h1>Tradingview Shariah Indicator</h1>
         <h2 id='what-it-does'>
           What it does
