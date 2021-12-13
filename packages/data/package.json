@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@app/data",
-  "version": "0.0.0",
+  "version": "1.22.5",
   "private": true,
   "scripts": {
     "test": "ava",
