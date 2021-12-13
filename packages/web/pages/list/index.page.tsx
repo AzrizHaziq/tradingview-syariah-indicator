@@ -162,7 +162,9 @@ export const Page = (pageProps: PageProps): JSX.Element => {
           </Show>
         </div>
 
-        <Show when={store.data.length} fallback={'Please search or select any filter anything'}>
+        <Show
+          when={store.data.length}
+          fallback={<div class='flex justify-center text-xl'>Please search or select new filter</div>}>
           <List data={transducerFilter()} exchangeStyle={exchangeStyle} />
         </Show>
       </div>

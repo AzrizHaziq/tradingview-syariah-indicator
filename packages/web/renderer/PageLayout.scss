@@ -4,14 +4,24 @@
 }
 
 html {
-  scroll-padding-top: 100px
+  scroll-padding-top: 100px;
 }
 
+html,
+body,
+#tsi-web {
+  @apply h-full;
+}
+
+#tsi-web {
+  @apply flex flex-col;
+}
 
 code {
   @apply rounded py-1 px-2 bg-green-300 text-green-800 #{!important};
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: '' !important;
   }
 }
