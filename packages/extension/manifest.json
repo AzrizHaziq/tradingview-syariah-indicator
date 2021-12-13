@@ -18,15 +18,15 @@
   "content_scripts": [
     {
       "matches": ["*://*.tradingview.com/chart/*"],
-      "js": ["browser-polyfill.js", "page/chart.js", "page/screener.js"]
+      "js": ["page/chart.js", "page/screener.js"]
     },
     {
       "matches": ["*://*.tradingview.com/screener/*"],
-      "js": ["browser-polyfill.js", "page/screener.js"]
+      "js": ["page/screener.js"]
     },
     {
       "matches": ["*://*.tradingview.com/symbols/*"],
-      "js": ["browser-polyfill.js", "page/symbols.js"]
+      "js": ["page/symbols.js"]
     }
   ],
   "permissions": ["storage", "*://*.tradingview.com/*"],
