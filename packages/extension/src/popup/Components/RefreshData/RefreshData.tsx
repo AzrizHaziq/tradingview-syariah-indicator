@@ -1,7 +1,8 @@
 import './RefreshData.scss'
 import { getMessage } from '@src/helper'
 import { Component, createSignal } from 'solid-js'
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
+
 import { setUpdateAt, useCurrentData } from '@popup/popup-helpers'
 
 const delay = (ms = 1500): Promise<void> => new Promise((res) => setTimeout(res, ms))

@@ -37,17 +37,10 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   },
   module: {
     rules: [
-      // https://github.com/ryansolid/solid-ts-webpack/
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', 'solid', '@babel/preset-typescript'],
-            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-syntax-dynamic-import'],
-          },
-        },
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
@@ -58,11 +51,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      'webextension-polyfill-ts': path.resolve(
-        path.join(__dirname, '../../', 'node_modules', 'webextension-polyfill-ts')
-      ),
-    },
   },
   plugins: [
     new WindiCSSWebpackPlugin(),

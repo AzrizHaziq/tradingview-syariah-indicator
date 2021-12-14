@@ -1,5 +1,6 @@
 import { onMount } from 'solid-js'
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
+
 import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
 import { Footer, Header, Version, Flags, RefreshData } from '@popup/Components'
 

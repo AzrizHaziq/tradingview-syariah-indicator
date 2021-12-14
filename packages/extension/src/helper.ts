@@ -1,4 +1,4 @@
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
 
 const GA = process.env.GA
 let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()

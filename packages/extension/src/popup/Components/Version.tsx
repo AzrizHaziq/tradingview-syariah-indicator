@@ -1,7 +1,7 @@
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
 import { _popupGa } from '@popup/popup-helpers'
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
 
 const { version } = browser.runtime.getManifest()
 const popup_version = getMessage('popup_version')

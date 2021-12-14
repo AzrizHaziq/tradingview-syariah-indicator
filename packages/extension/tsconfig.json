@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2015",
     "declaration": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-//    "strict": true,
+    "sourceMap": true,
+    "allowJs": true,
+    //    "strict": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,

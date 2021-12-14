@@ -1,4 +1,5 @@
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
+
 import { differenceInDays, format, isDate } from 'date-fns'
 import { debounce, getStorage, initGa, setStorage } from '../helper'
 
