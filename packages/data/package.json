@@ -12,6 +12,7 @@
     "@supercharge/promise-pool": "^1.7.0",
     "ava": "^3.15.0",
     "cli-progress": "^3.8.2",
+    "colors": "^1.4.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
