@@ -68,8 +68,8 @@ const shariah = {
     }
   },
   status: {
-    true: getMessage('js_screener_filter_btn_shariah_on'),
-    false: getMessage('js_screener_filter_btn_shariah_off'),
+    true: getMessage('screener_filter_btn_shariah_on'),
+    false: getMessage('screener_filter_btn_shariah_off'),
   },
 }
 
@@ -220,6 +220,7 @@ function setupFilterBtn(state) {
 
   // div wrapper, just copy paste from refresh btn
   const wrapper = document.createElement('div')
+  wrapper.setAttribute('data-role', 'button')
   wrapper.setAttribute('title', state.status[`${state.currentState}`])
   wrapper.className = document.querySelector('.tv-screener-toolbar__button--refresh').className // copy refresh btn class
   wrapper.style.paddingTop = '0'
