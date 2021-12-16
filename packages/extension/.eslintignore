@@ -2,3 +2,4 @@ dist
 web-ext-artifacts
 src/popup/index.html
 e2e/mock
+/scripts/source-code-tsi--*

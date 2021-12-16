@@ -16,7 +16,7 @@ const files = [
   'manifest.json',
   'package.json',
   'postcss.config.js',
-  'windi.config.js',
+  'windi.config.ts',
   'tsconfig.json',
   'web-ext-config.js',
   'webpack.config.ts',
@@ -38,8 +38,8 @@ async function createReadme() {
     const readme = `
 ## Tradingview Shariah Indicator (${version})
 Requirements
-- node = 15.12.0
-- yarn = 1.15.2
+- node = 16.9.1
+- pnpm = 6.24.1
 - git = 2.31.0
 
 Steps
@@ -49,7 +49,7 @@ Steps
 3. create \`.env.production\` file in root, and add this
    \`\`\`
    GA=UA-random-integer-2
-   FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/lerna-init/packages/data/summary/stock-list.json
+   FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/packages/data/stock-list.json
    \`\`\`
 4. Type in terminal \`$ yarn build\`
 5. Generated file located in /dist/*
@@ -78,6 +78,6 @@ async function gzip() {
 }
 
 Promise.all(files)
-  .then(() => console.log(`success copy to ${destination}`))
+  .then(() => console.log(`\nsuccess copy to ${destination}`))
   .then(createReadme)
   .then(gzip)

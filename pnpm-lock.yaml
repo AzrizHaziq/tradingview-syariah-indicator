@@ -77,6 +77,7 @@ importers:
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-tailwind: ^0.2.1
+      fs-extra: ^10.0.0
       html-webpack-plugin: ^5.3.1
       mini-css-extract-plugin: ^2.2.0
       playwright-chromium: ^1.16.3
@@ -131,6 +132,7 @@ importers:
       eslint-config-prettier: 8.3.0_eslint@8.4.1
       eslint-plugin-prettier: 4.0.0_90bd2ba582f6d1348d73031482d782e2
       eslint-plugin-tailwind: 0.2.1_eslint@8.4.1
+      fs-extra: 10.0.0
       html-webpack-plugin: 5.5.0_webpack@5.65.0
       mini-css-extract-plugin: 2.4.5_webpack@5.65.0
       playwright-chromium: 1.17.1
@@ -5039,6 +5041,15 @@ packages:
     resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
     engines: {node: '>= 0.6'}
     dev: false
+
+  /fs-extra/10.0.0:
+    resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.8
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
 
   /fs-extra/9.0.1:
     resolution: {integrity: sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==}
