@@ -39,8 +39,8 @@ export function render(pageContext: PageContext) {
 
   // See https://vite-plugin-ssr.com/html-head
   const { documentProps } = pageContext.pageExports
-  const title = documentProps?.title ?? SEO.title
-  const description = documentProps?.description ?? SEO.description
+  const title = (documentProps && documentProps.title) || SEO.title
+  const description = (documentProps && documentProps.description) || SEO.description
   const fullUrl = `${domain}${pageContext.urlParsed.pathname}`
 
   return escapeInject`<!DOCTYPE html>

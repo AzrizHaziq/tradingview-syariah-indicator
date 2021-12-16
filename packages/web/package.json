@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint --fix .",
     "dev": "ts-node ./server",
-    "build": "vite build && vite build --ssr && vite-plugin-ssr prerender",
+    "build": "npx vite build && npx vite build --ssr && npx vite-plugin-ssr prerender",
     "prod:run": "cross-env NODE_ENV=production npm run dev",
     "prod:local": "npm run build && npm run prod:run",
     "prod:vercel": "VERCEL=true npm run build && ./vercel/deploy.sh && npm run prod:run"
