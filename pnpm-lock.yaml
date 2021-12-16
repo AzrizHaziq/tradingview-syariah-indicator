@@ -27,8 +27,6 @@ importers:
       eslint-plugin-node: ^11.1.0
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-promise: ^5.1.0
-      husky: ^7.0.2
-      lint-staged: ^11.2.3
       node-fetch: ^2.6.1
       pdfreader: ^1.2.11
       playwright-chromium: ^1.11.0
@@ -45,8 +43,6 @@ importers:
       eslint-plugin-node: 11.1.0_eslint@8.4.1
       eslint-plugin-prettier: 4.0.0_90bd2ba582f6d1348d73031482d782e2
       eslint-plugin-promise: 5.2.0_eslint@8.4.1
-      husky: 7.0.4
-      lint-staged: 11.2.6
       node-fetch: 2.6.6
       pdfreader: 1.2.14
       playwright-chromium: 1.17.1
@@ -167,8 +163,8 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.0.0
       '@typescript-eslint/parser': ^5.0.0
       analytics: ^0.7.18
-      colors: ^1.4.0
       cross-env: ^7.0.3
+      date-fns: ^2.24.0
       eslint: ^8.0.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
@@ -191,6 +187,7 @@ importers:
       '@analytics/google-analytics': 0.5.3
       analytics: 0.7.19
       cross-env: 7.0.3
+      date-fns: 2.27.0
       express: 4.17.1
       node-fetch: 2.6.2
       solid-app-router: 0.1.14_solid-js@1.2.6
@@ -200,7 +197,6 @@ importers:
       '@types/node': 16.11.12
       '@typescript-eslint/eslint-plugin': 5.7.0_915acdfead96f701b1277a1a723fc8d4
       '@typescript-eslint/parser': 5.7.0_eslint@8.4.1+typescript@4.5.4
-      colors: 1.4.0
       eslint: 8.4.1
       eslint-config-prettier: 8.3.0_eslint@8.4.1
       eslint-plugin-prettier: 4.0.0_90bd2ba582f6d1348d73031482d782e2

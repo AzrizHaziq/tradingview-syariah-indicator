@@ -8,6 +8,7 @@ startServer()
 
 async function startServer() {
   const app = express()
+  app.disable('x-powered-by')
 
   let viteDevServer
   if (isProduction) {

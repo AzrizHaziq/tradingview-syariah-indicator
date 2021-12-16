@@ -15,6 +15,7 @@
     "@analytics/google-analytics": "^0.5.3",
     "analytics": "^0.7.18",
     "cross-env": "^7.0.3",
+    "date-fns": "^2.24.0",
     "express": "^4.17.1",
     "node-fetch": "2.6.2",
     "solid-app-router": "^0.1.5",

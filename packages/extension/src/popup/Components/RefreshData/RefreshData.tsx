@@ -1,9 +1,8 @@
 import './RefreshData.scss'
 import { getMessage } from '@src/helper'
-import { Component, createSignal } from 'solid-js'
 import browser from 'webextension-polyfill'
-
-import { setUpdateAt, useCurrentData } from '@popup/popup-helpers'
+import { Component, createSignal } from 'solid-js'
+import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
 
 const delay = (ms = 1500): Promise<void> => new Promise((res) => setTimeout(res, ms))
 
@@ -24,7 +23,7 @@ export const RefreshData: Component = () => {
     })
 
     await browser.runtime.sendMessage({ type: 'invalidate-cache' })
-    const currentDates = await setUpdateAt()
+    const currentDates = await getStorageDetails()
     await delay()
     setLoading(false)
     setState(currentDates)

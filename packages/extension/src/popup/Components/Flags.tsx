@@ -15,7 +15,7 @@ export const Flags: Component = () => {
 
         return (
           <a
-            href={href}
+            href={`${href}/list?exchange=${id}`}
             target='_blank'
             title={popup_list_at}
             rel='noopener noreferrer'
@@ -24,9 +24,9 @@ export const Flags: Component = () => {
             <div class='flex gap-x-2'>
               <img
                 class='rounded-full'
-                style={{ width: '15px', height: '15px' }}
-                src={`/assets/exchanges/${id}.svg`}
                 alt={`Exchange: ${id}`}
+                src={`/assets/exchanges/${id}.svg`}
+                style={{ width: '15px', height: '15px' }}
               />
               <p>{id}</p>
             </div>
