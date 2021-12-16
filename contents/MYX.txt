@@ -1,5 +1,5 @@
 MYX
-updatedAt : Sat Dec 11 2021 15:14:54 GMT+0800 (Malaysia Time)
+updatedAt : Thu Dec 16 2021 12:14:41 GMT+0800 (Malaysia Time)
 --------------------
 
 3A           : s
@@ -25,7 +25,6 @@ AHEALTH      : s
 AIM          : s
 AIMFLEX      : s
 AIRASIA      : s
-AIRASIA-LR   : s
 AJI          : s
 AJIYA        : s
 ALAM         : s
@@ -64,6 +63,7 @@ ASTINO       : s
 AT           : s
 AT-WC        : s
 ATAIMS       : s
+ATECH        : s
 ATTA         : s
 ATTA-WB      : s
 ATTA-WC      : s
@@ -262,10 +262,10 @@ FIHB-PB      : s
 FIMACOR      : s
 FITTERS      : s
 FLEXI        : s
+FM           : s
 FOCUSP       : s
 FPGROUP      : s
 FPI          : s
-FREIGHT      : s
 FRONTKN      : s
 FRONTKN-WB   : s
 FSBM         : s
@@ -542,7 +542,6 @@ MKH          : s
 MKLAND       : s
 MMAG         : s
 MMAG-WB      : s
-MMCCORP      : s
 MMIS         : s
 MMSV         : s
 MNC          : s
@@ -625,7 +624,6 @@ PADINI       : s
 PANTECH      : s
 PANTECH-WB   : s
 PAOS         : s
-PAOS-WA      : s
 PARAGON      : s
 PARAMON      : s
 PARAMON-WA   : s
@@ -799,6 +797,7 @@ SMISCOR      : s
 SMRT         : s
 SMTRACK      : s
 SNC          : s
+SNC-WB       : s
 SOLID        : s
 SOLUTN       : s
 SOP          : s
