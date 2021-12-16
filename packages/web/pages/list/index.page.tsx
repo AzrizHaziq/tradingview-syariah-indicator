@@ -24,6 +24,11 @@ const staticExchangeColors = [
   'text-gray-900 bg-gray-100 border-gray-900',
 ]
 
+export const documentProps = {
+  title: 'TSI: Shariah List',
+  description: 'List of Shariah in Tradingview Shariah Indicator(TSI)',
+}
+
 export const Page = (pageProps: PageProps): JSX.Element => {
   const { data: originalData, metadata, exchangesList, queryParams } = pageProps
 

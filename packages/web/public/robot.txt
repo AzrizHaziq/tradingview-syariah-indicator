@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tsi.azrizhaziq.com/sitemap.xml

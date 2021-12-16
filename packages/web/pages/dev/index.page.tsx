@@ -1,5 +1,10 @@
 import { Component } from 'solid-js'
 
+export const documentProps = {
+  title: 'TSI: Developer Guideline',
+  description: 'For Devs who interested to contribute this project please read few guideline here',
+}
+
 export const Page: Component = () => {
   return (
     <div class='mx-auto prose'>

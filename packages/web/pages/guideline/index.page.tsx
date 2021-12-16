@@ -1,5 +1,10 @@
 import { Component } from 'solid-js'
 
+export const documentProps = {
+  title: 'TSI: Guideline',
+  description: "Few notes on using Tradingview Shariah Indicator(TSI)'s guideline.",
+}
+
 export const Page: Component = () => {
   return (
     <div class='mx-auto prose'>

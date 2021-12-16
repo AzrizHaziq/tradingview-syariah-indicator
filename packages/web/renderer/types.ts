@@ -5,8 +5,10 @@ export type PageProps = Record<string, unknown>
 export type PageContext = PageContextBuiltIn & {
   Page: (pageProps: PageProps) => Component
   pageProps: PageProps
-  documentProps?: {
-    title?: string
-    description?: string
+  pageExports: {
+    documentProps: {
+      title?: string
+      description?: string
+    }
   }
 }
