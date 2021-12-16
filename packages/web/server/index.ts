@@ -2,7 +2,7 @@ import express from 'express'
 import { createPageRenderer } from 'vite-plugin-ssr'
 
 const root = `${__dirname}/..`
-const isVercel = process.env.VERCEL === 'true'
+const isVercel = process.env.VERCEL === '1'
 const isProduction = process.env.NODE_ENV === 'production'
 
 startServer()
