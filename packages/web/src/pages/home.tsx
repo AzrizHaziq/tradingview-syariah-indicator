@@ -1,7 +1,7 @@
 import { IMGS } from '@util'
-import { Component } from 'solid-js'
+import { JSX } from 'solid-js'
 
-export const Page: Component = () => {
+export default function Home(): JSX.Element {
   return (
     <>
       <div class='mx-auto prose'>
@@ -155,7 +155,7 @@ export const Page: Component = () => {
           </a>
         </h2>
         <a href='https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'>View All Releases</a>
-        {/**/}
+
         <h2 id='screenshots'>
           Screenshots{' '}
           <a class='!ml-2' href='#screenshots'>
@@ -192,7 +192,7 @@ export const Page: Component = () => {
           </a>
         </h3>
         <img width='600' height='400' loading='lazy' class='!m-0' src={IMGS.chrome_popup} alt='popup' />
-        {/**/}
+
         <h2 id='video'>
           Video{' '}
           <a class='!ml-2' href='#video'>

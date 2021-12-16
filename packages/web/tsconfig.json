@@ -11,13 +11,8 @@
     "types": ["vite/client"],
     "baseUrl": "./",
     "paths": {
-      "@util": ["util"]
-    }
-  },
-  "ts-node": {
-    "transpileOnly": true,
-    "compilerOptions": {
-      "module": "CommonJS"
+      "@util": ["src/util"],
+      "@components": ["components"]
     }
   }
 }

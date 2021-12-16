@@ -1,45 +1,31 @@
 {
   "name": "@app/web",
   "version": "0.0.0",
-  "description": "",
+  "description": "website for Tradingview Shariah Indicator",
   "scripts": {
-    "lint": "eslint --fix .",
-    "dev": "ts-node ./server",
-    "build": "vite build && npx vite build --ssr && npx vite-plugin-ssr prerender",
-    "prod:run": "cross-env NODE_ENV=production npm run dev",
-    "prod:local": "npm run build && npm run prod:run",
-    "prod:vercel": "npm run build && ./vercel/deploy.sh && npm run prod:run",
-    "prod:vercel:local": "VERCEL=1 npm run prod:vercel"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "license": "MIT",
-  "dependencies": {
-    "@analytics/google-analytics": "^0.5.3",
-    "analytics": "^0.7.18",
-    "cross-env": "^7.0.3",
-    "date-fns": "^2.24.0",
-    "express": "^4.17.1",
-    "node-fetch": "2.6.2",
-    "solid-app-router": "^0.1.5",
-    "solid-js": "^1.1.1"
-  },
   "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^16.10.5",
+    "date-fns": "^2.24.0",
+    "@analytics/google-analytics": "^0.5.3",
+    "analytics": "^0.7.18"
+  },
+  "dependencies": {
+    "solid-app-router": "^0.1.14",
+    "solid-js": "^1.2.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "@vercel/ncc": "^0.33.0",
-    "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwind": "^0.2.1",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.2.3",
-    "ts-node": "^10.3.0",
+    "eslint": "^8.0.0",
     "typescript": "^4.4.4",
-    "vite": "^2.5.7",
-    "vite-plugin-solid": "^2.0.3",
-    "vite-plugin-ssr": "0.3.20",
-    "vite-plugin-windicss": "^1.4.11",
+    "vite": "^2.7.1",
+    "vite-plugin-solid": "^2.1.4",
+    "vite-plugin-windicss": "^1.5.4",
     "vite-tsconfig-paths": "^3.3.17",
     "windicss": "^3.1.9"
   }

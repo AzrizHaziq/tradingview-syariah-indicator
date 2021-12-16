@@ -1,11 +1,6 @@
-import { Component } from 'solid-js'
+import { JSX } from 'solid-js'
 
-export const documentProps = {
-  title: 'TSI: Guideline',
-  description: "Few notes on using Tradingview Shariah Indicator(TSI)'s guideline.",
-}
-
-export const Page: Component = () => {
+export default function Guideline(): JSX.Element {
   return (
     <div class='mx-auto prose'>
       <p>
@@ -74,7 +69,7 @@ export const Page: Component = () => {
             I do have small portion on both ETF 🙂, and <b>it's not a buy call</b> as this is only for my
             diversification strategy.
           </li>
-          <li>Let me know if there any incorrect or insufficient statement or broken links in this website 🙂. </li>
+          <li>Let me know if there any incorrect or insufficient statement or broken links in this website 🙂.</li>
         </ul>
       </div>
       <p>
@@ -157,3 +152,8 @@ export const Page: Component = () => {
     </div>
   )
 }
+
+// export const documentProps = {
+//   title: 'TSI: Guideline',
+//   description: "Few notes on using Tradingview Shariah Indicator(TSI)'s guideline.",
+// }

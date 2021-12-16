@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🛩  web: ';  cd ./packages/web; yarn lint && \
+echo '🛩  web: ';  cd ./packages/web; npm run lint && \
 cd  ../.. && \
-echo '🐈 extension:'; cd ./packages/extension; yarn lint
+echo '🐈 extension:'; cd ./packages/extension; npm run lint
 

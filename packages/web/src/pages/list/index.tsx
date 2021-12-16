@@ -1,10 +1,10 @@
 import './list.scss'
-import { isServer } from 'solid-js/web'
 import { createStore } from 'solid-js/store'
-import { createMemo, For, JSX, Show } from 'solid-js'
+import { ShariahFetcher } from 'src/pages/list/list.data'
 import { debounce, pipe, TArrayConcat, TFilter } from '@util'
+import { createEffect, createMemo, createResource, For, JSX, Show } from 'solid-js'
 
-type PageProps = {
+export type PageProps = {
   data: [exchange: string, code: string, name: string][]
   metadata: Record<string, Date>
   exchangesList: string[]
@@ -24,23 +24,20 @@ const staticExchangeColors = [
   'text-gray-900 bg-gray-100 border-gray-900',
 ]
 
-export const documentProps = {
-  title: 'TSI: Shariah List',
-  description: 'List of Shariah in Tradingview Shariah Indicator(TSI)',
-}
-
-export const Page = (pageProps: PageProps): JSX.Element => {
-  const { data: originalData, metadata, exchangesList, queryParams } = pageProps
+export default function List(): JSX.Element {
+  const [data] = createResource<PageProps | undefined>(ShariahFetcher, { initialValue: undefined })
 
   const [store, setStore] = createStore({
-    data: originalData,
+    data: [],
+    originalData: [],
+    exchangeStyle: {},
     runFilter: () => {
       setStore('data', transducerFilter())
     },
-    metadata,
-    search: isServer ? queryParams.q ?? '' : new URL(location.href).searchParams.get('q'),
+    metadata: {},
+    search: '',
     currentExchange: {
-      _data: exchangesList,
+      _data: [], // exchangesList,
       add(exchange: string) {
         const s = new Set<string>(this._data)
         s.add(exchange)
@@ -59,16 +56,32 @@ export const Page = (pageProps: PageProps): JSX.Element => {
     },
   })
 
-  const exchangeStyle: Record<string, string> = Object.keys(metadata).reduce(
-    (acc, key, i) => ({
-      ...acc,
-      [key]: staticExchangeColors[i % staticExchangeColors.length],
-    }),
-    {}
-  )
+  createEffect(() => {
+    if (!data.loading) {
+      const { data: originalData, metadata, exchangesList, queryParams } = data()
+      setStore('data', originalData)
+      setStore('originalData', originalData)
+      setStore('metadata', metadata)
+      setStore('search', queryParams.q || '')
+      setStore('currentExchange', '_data', exchangesList)
+
+      setStore(
+        'exchangeStyle',
+        Object.keys(store.metadata).reduce(
+          (acc, key, i) => ({
+            ...acc,
+            [key]: staticExchangeColors[i % staticExchangeColors.length],
+          }),
+          {}
+        )
+      )
+    }
+  })
 
   const showSearch = (item: PageProps['data']['0']): boolean => {
-    if (!store.search) return true
+    if (!store.search) {
+      return true
+    }
 
     const searchRegex = new RegExp(store.search, 'ig')
     return item.some((i) => searchRegex.test(i))
@@ -77,7 +90,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   const showExchange = ([exchange]: PageProps['data']['0']): boolean => store.currentExchange.has(exchange)
 
   const transducerFilter = createMemo(() =>
-    originalData.reduce(pipe(TFilter(showExchange), TFilter(showSearch))(TArrayConcat), [])
+    store.originalData.reduce(pipe(TFilter(showExchange), TFilter(showSearch))(TArrayConcat), [])
   )
 
   const handleSearchChange = debounce((e) => {
@@ -91,7 +104,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
     if (keyword) {
       store.runFilter()
     } else {
-      setStore('data', originalData)
+      setStore('data', store.originalData)
     }
   })
 
@@ -113,9 +126,9 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   }
 
   const handleClear = () => {
-    setStore('data', originalData)
+    setStore('data', store.originalData)
     setStore('search', '')
-    setStore('currentExchange', '_data', Object.keys(metadata))
+    setStore('currentExchange', '_data', Object.keys(store.metadata))
 
     const url = new URL(location.href)
     url.searchParams.delete('exchange')
@@ -124,7 +137,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
   }
 
   return (
-    <>
+    <Show when={store.originalData.length} fallback={<span>Loading...</span>}>
       <div class='max-w-full mx-auto md:max-w-3xl'>
         <svg class='hidden'>
           <symbol
@@ -144,7 +157,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
           onInput={handleSearchChange}
         />
         <div class='flex mb-4 gap-2'>
-          <For each={Object.entries(metadata)}>
+          <For each={Object.entries(store.metadata)}>
             {([exchange]) => (
               <label class='exchange'>
                 <input
@@ -159,7 +172,7 @@ export const Page = (pageProps: PageProps): JSX.Element => {
           </For>
 
           <Show
-            when={store.search || store.currentExchange._data.length < Object.keys(metadata).length}
+            when={store.search || store.currentExchange._data.length < Object.keys(store.metadata).length}
             fallback={<div class='ml-auto' />}>
             <button class='ml-auto text-green-500' onClick={handleClear}>
               Clear All
@@ -170,11 +183,11 @@ export const Page = (pageProps: PageProps): JSX.Element => {
         <Show
           when={store.data.length}
           fallback={<div class='flex justify-center text-xl'>Please search or select new filter</div>}>
-          <List data={transducerFilter()} exchangeStyle={exchangeStyle} />
+          <ShariahList data={transducerFilter()} exchangeStyle={store.exchangeStyle} />
         </Show>
       </div>
       <div class='flex flex-wrap justify-center pt-5 gap-4'>
-        <For each={Object.entries(metadata)}>
+        <For each={Object.entries(store.metadata)}>
           {([exchange, date]) => (
             <div class='px-2 py-1 bg-green-100 rounded'>
               <span className='mr-1 text-xs text-green-800'>{exchange}</span>
@@ -183,17 +196,27 @@ export const Page = (pageProps: PageProps): JSX.Element => {
           )}
         </For>
       </div>
-    </>
+    </Show>
   )
 }
 
-const ListItem = (props: { item: PageProps['data']['0']; exchangeColor: string }) => {
+const ShariahList = (props: { data: PageProps['data']; exchangeStyle: Record<string, string> }) => {
+  return (
+    <ul class='flex flex-col overflow-auto gap-1 overscroll-contain' style={{ height: 'calc(100vh - 280px)' }}>
+      <For each={props.data}>
+        {(item) => <ShariahListItem item={item} exchangeColor={props.exchangeStyle[item[0]]} />}
+      </For>
+    </ul>
+  )
+}
+
+const ShariahListItem = (props: { item: PageProps['data']['0']; exchangeColor: string }) => {
   const [exchange, code, name] = props.item
 
   return (
     <li class='flex items-center group gap-x-1' role='listitem'>
       <p class='text-white opacity-80 group-hover:opacity-100'>
-        <span class='inline mr-2 font-bold sm:hidden'>{exchange} </span>
+        <span class='inline mr-2 font-bold sm:hidden'>{exchange}</span>
         {name}
       </p>
       <a target='_blank' href={`https://www.tradingview.com/symbols/${exchange}-${code}`}>
@@ -214,10 +237,7 @@ const ListItem = (props: { item: PageProps['data']['0']; exchangeColor: string }
   )
 }
 
-const List = (props: { data: PageProps['data']; exchangeStyle: Record<string, string> }) => {
-  return (
-    <ul class='flex flex-col overflow-auto gap-1 overscroll-contain' style={{ height: 'calc(100vh - 280px)' }}>
-      <For each={props.data}>{(item) => <ListItem item={item} exchangeColor={props.exchangeStyle[item[0]]} />}</For>
-    </ul>
-  )
-}
+// export const documentProps = {
+//   title: 'TSI: Shariah List',
+//   description: 'List of Shariah in Tradingview Shariah Indicator(TSI)',
+// }
