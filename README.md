@@ -1,5 +1,4 @@
-# Tradingview Syariah Indicator 
-![Automate STOCK_LIST gh_bot](https://github.com/AzrizHaziq/tradingview-syariah-indicator/workflows/Automate%20STOCK_LIST%20gh_bot/badge.svg)
+# Tradingview Shariah Indicator 
 
 ## What it does
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
@@ -62,18 +61,18 @@ Installation guide:
 
 ## Screenshots
 [Symbol Page](https://www.tradingview.com/symbols/MYX-TOPGLOV/)
-![Symbol page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/symbol_page.png?raw=true)
+![Symbol page](/assets/ori_chrome/symbol_page.png)
 
 [Chart page](https://www.tradingview.com/chart/)
-![Chart page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page.png?raw=true)
-![Chart page with screener](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/chart_page_with_screener.png?raw=true)
+![Chart page](/assets/ori_chrome/chart_page.png)
+![Chart page with screener](/assets/ori_chrome/chart_page_with_screener.png)
 
 [Screener page](https://www.tradingview.com/screener/)
-![Screener page](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/screener_page_on.png?raw=true)
+![Screener page](/assets/ori_chrome/screener_page_on.png)
 
 Popup
 
-![popup](https://github.com/AzrizHaziq/tradingview-syariah-indicator/blob/master/docs/ori_chrome/popup.png?raw=true)
+![popup](/assets/ori_chrome/popup.png)
 
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
@@ -84,30 +83,50 @@ Feel free to contact me if any bug or more features here
 
 ## Developers
 Requirements
-- node = 15.3.0
-- npm = 6.13.4
+- node = look at `.nvmrc`
+- yarn = 1.22.10
 - git = 2.23.0
-- os = macos 10.15.7
 
 1. Need to have node and npm (please look at package.json > engine)
-2. Type in terminal `$ npm install`
-3. Type in terminal 
-    Firefox: `$ npm run start` 
-    Chrome: `$ npm run start:chrome`
+2. Type in terminal `$ yarn`
+3. Type in 1st terminal: `$ yarn watch`
+   and then in another terminal type either below commands:
+   Firefox: `$ yarn watch:ff` 
+   Chrome: `$ npm watch:c`
    
    
 ## Generate Production ready extension
 1. Git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
 2. npm install
-3. create `.env` file in root, and add this
-   ```
-   GA=GA_CODE
-   REPLACE_GA=UA-183073441-1
-   ```
-4. Type in terminal `$ npm run build`
-5. Generated file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip
+3. create `.env.production` file in root, and please follow `.env.example`
+4. Type in terminal `$ yarn build`
+5. Generate a file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip
 
 
 ## Update Stock list data (will take a few X minutes)
-1. Type in terminal `$ npm run update-data`
+1. Type in terminal `$ yarn update-data`
     
+
+## Todo
+
+- [X] Add US stocks
+- [X] Read pdf from ChinaA ETF
+- [ ] Add e2e test with playwright + github action run with schedule
+- [ ] Add website, host in vercel with nextjs
+- [ ] Add an option page where user can custom its own data.
+- [ ] Test chrome webStore-cli npm
+- [ ] Create a page where a list of US, MY, China stocks and 
+    - [ ] search
+    - [ ] filter
+    - [ ] use json hosted in github raw
+- [ ] Added a page for "accept agreement/conditions"
+- [X] @Data, do some diffing with current data. If exists, then commit it.
+
+### Please do refer to original website before buying. And if you're holding then look at them everyday.
+#### 1. China100 A stocks
+1. Go to [Bursa Malaysia](https://www.bursamalaysia.com/bm/market_information/announcements/company_announcement/announcement_details?ann_id=3174424) 
+2. Then click the pdf [Prospectus VP-DJ Shariah China A-Shares 100 ETF d.12 July 2021.pdf](https://disclosure.bursamalaysia.com/FileAccess/apbursaweb/download?id=209757&name=EA_DS_ATTACHMENTS)
+3. Read at page 48 about Shariah
+
+#### 2. For Wahed ETF HLAL
+1. Read more here [HLAL](https://funds.wahedinvest.com/)

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "declaration": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "allowJs": true,
+    //    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@popup/*": ["./src/popup/*"]
+    }
+  },
+  "include": ["src/**/*", "globals.d.ts"],
+  "exclude": ["dist", "node_modules"]
+}

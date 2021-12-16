@@ -1,0 +1,15 @@
+.exchange {
+  span {
+    @apply text-gray-700 uppercase cursor-pointer;
+  }
+
+  input[type='checkbox']:checked + span {
+    @apply text-green-500;
+  }
+}
+
+//li {
+//  content-visibility: auto;
+//  contain-intrinsic-size: 0 30px;
+//}
+// have to disable this since it doesnt properly work with scrolling

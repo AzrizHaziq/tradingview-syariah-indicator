@@ -1,0 +1,27 @@
+.dark .prose a {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+html,
+body,
+#tsi-web {
+  @apply h-full;
+}
+
+#tsi-web {
+  @apply flex flex-col;
+}
+
+code {
+  @apply rounded py-1 px-2 bg-green-300 text-green-800 #{!important};
+
+  &::before,
+  &::after {
+    content: '' !important;
+  }
+}

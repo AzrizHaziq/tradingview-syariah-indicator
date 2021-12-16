@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "./../../node_modules/eslint-config-standard",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "space-before-function-paren": "off",
+    "prettier/prettier": "off"
+  }
+}

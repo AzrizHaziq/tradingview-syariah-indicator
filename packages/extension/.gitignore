@@ -1,0 +1,8 @@
+node_modules
+dist
+*.map
+.env
+.env.production
+/scripts/*
+!/scripts/ff-source-code.ts
+*.log
