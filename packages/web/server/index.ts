@@ -1,8 +1,9 @@
 import express from 'express'
 import { createPageRenderer } from 'vite-plugin-ssr'
 
-const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
+const isVercel = process.env.VERCEL === 'true'
+const isProduction = process.env.NODE_ENV === 'production'
 
 startServer()
 
@@ -12,7 +13,9 @@ async function startServer() {
 
   let viteDevServer
   if (isProduction) {
-    app.use(express.static(`${root}/dist/client`))
+    const staticPath = `${root}/${isVercel ? '.output/static' : 'dist/client'}`
+    console.log(`>>> Using ${isVercel ? 'Vercel' : 'Vite'}`)
+    app.use(express.static(staticPath))
   } else {
     // eslint-disable-next-line
     const vite = require('vite')

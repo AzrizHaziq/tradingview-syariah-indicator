@@ -164,6 +164,7 @@ importers:
       '@types/node': ^16.10.5
       '@typescript-eslint/eslint-plugin': ^5.0.0
       '@typescript-eslint/parser': ^5.0.0
+      '@vercel/ncc': ^0.33.0
       analytics: ^0.7.18
       cross-env: ^7.0.3
       date-fns: ^2.24.0
@@ -199,6 +200,7 @@ importers:
       '@types/node': 16.11.12
       '@typescript-eslint/eslint-plugin': 5.7.0_915acdfead96f701b1277a1a723fc8d4
       '@typescript-eslint/parser': 5.7.0_eslint@8.4.1+typescript@4.5.4
+      '@vercel/ncc': 0.33.0
       eslint: 8.4.1
       eslint-config-prettier: 8.3.0_eslint@8.4.1
       eslint-plugin-prettier: 4.0.0_90bd2ba582f6d1348d73031482d782e2
@@ -2004,6 +2006,11 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.7.0
       eslint-visitor-keys: 3.1.0
+    dev: true
+
+  /@vercel/ncc/0.33.0:
+    resolution: {integrity: sha512-m21HzXD+L/YHoJTwyCCyGBXD0O2L4KR/Y6SSsS4qvRlz3NAYsiiYahzOsgfWEt4PJxpPVCMGiuWzsvb2tycmyA==}
+    hasBin: true
     dev: true
 
   /@webassemblyjs/ast/1.11.1:

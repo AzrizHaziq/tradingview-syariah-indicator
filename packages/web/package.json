@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "dev": "npm run server",
-    "prod": "npm run build && npm run server:prod",
+    "lint": "eslint --fix .",
+    "dev": "ts-node ./server",
     "build": "vite build && vite build --ssr && vite-plugin-ssr prerender",
-    "server": "ts-node ./server",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server",
-    "lint": "eslint --fix ."
+    "prod:run": "cross-env NODE_ENV=production npm run dev",
+    "prod:local": "npm run build && npm run prod:run",
+    "prod:vercel": "VERCEL=true npm run build && ./vercel/deploy.sh && npm run prod:run"
   },
   "license": "MIT",
   "dependencies": {
@@ -26,6 +26,7 @@
     "@types/node": "^16.10.5",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "@vercel/ncc": "^0.33.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
