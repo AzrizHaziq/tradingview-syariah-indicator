@@ -9,14 +9,14 @@
     "serve": "vite preview"
   },
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "date-fns": "^2.24.0",
+    "solid-app-router": "^0.1.14",
+    "solid-js": "^1.2.6",
     "@analytics/google-analytics": "^0.5.3",
     "analytics": "^0.7.18"
   },
-  "dependencies": {
-    "solid-app-router": "^0.1.14",
-    "solid-js": "^1.2.6",
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint-config-prettier": "^8.3.0",
