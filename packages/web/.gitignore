@@ -4,6 +4,3 @@ dist
 *.local
 .env
 .env.production
-.output
-
-.vercel
