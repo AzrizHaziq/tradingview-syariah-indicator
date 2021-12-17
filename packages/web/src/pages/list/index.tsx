@@ -90,7 +90,7 @@ export default function List(): JSX.Element {
 
     const url = new URL(location.href)
     url.searchParams.set('q', encodeURIComponent(keyword))
-    // history.pushState(null, '', url)
+    history.pushState(null, '', url)
 
     if (keyword) {
       store.runFilter()
