@@ -84,14 +84,14 @@ Feel free to contact me if any bug or more features here
 ## Developers
 Requirements
 - node = look at `.nvmrc`
-- yarn = 1.22.10
+- pnpm = 6.24.1
 - git = 2.23.0
 
 1. Need to have node and npm (please look at package.json > engine)
-2. Type in terminal `$ yarn`
-3. Type in 1st terminal: `$ yarn watch`
+2. Type in terminal `$ pnpm install`
+3. Type in 1st terminal: `$ npm run watch`
    and then in another terminal type either below commands:
-   Firefox: `$ yarn watch:ff` 
+   Firefox: `$ npm run watch:ff` 
    Chrome: `$ npm watch:c`
    
    
@@ -99,12 +99,12 @@ Requirements
 1. Git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
 2. npm install
 3. create `.env.production` file in root, and please follow `.env.example`
-4. Type in terminal `$ yarn build`
+4. Type in terminal `$ npm run build`
 5. Generate a file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip
 
 
 ## Update Stock list data (will take a few X minutes)
-1. Type in terminal `$ yarn update-data`
+1. Type in terminal `$ npm run update-data`
     
 
 ## Todo

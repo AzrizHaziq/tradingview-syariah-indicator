@@ -44,14 +44,14 @@ Requirements
 
 Steps
 1. Git clone \`git@github.com:AzrizHaziq/tradingview-syariah-indicator.git\`
-2. cd tradingview-shariah-indicator && yarn
+2. cd tradingview-shariah-indicator && pnpm install
 3. cd packages/extension
 3. create \`.env.production\` file in root, and add this
    \`\`\`
    GA=UA-random-integer-2
    FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/packages/data/stock-list.json
    \`\`\`
-4. Type in terminal \`$ yarn build\`
+4. Type in terminal \`$ npm run build\`
 5. Generated file located in /dist/*
 `.trim()
 

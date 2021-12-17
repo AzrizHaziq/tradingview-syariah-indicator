@@ -1,11 +1,6 @@
-import { Component } from 'solid-js'
+import { JSX } from 'solid-js'
 
-export const documentProps = {
-  title: 'TSI: Developer Guideline',
-  description: 'For Devs who interested to contribute this project please read few guideline here',
-}
-
-export const Page: Component = () => {
+export default function Dev(): JSX.Element {
   return (
     <div class='mx-auto prose'>
       <h2 id='developers'>
@@ -20,13 +15,13 @@ export const Page: Component = () => {
         <li>
           node = look at <b>.nvmrc</b>
         </li>
-        <li>yarn = 1.22.10</li>
+        <li>pnpm = 6.24.1</li>
         <li>
           git clone this repository <br />
           <code>$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git</code>
         </li>
         <li>
-          Then run <code>$ yarn</code> to install all dependencies.
+          Then run <code>$ pnpm</code> to install all dependencies.
         </li>
         <li>
           Create <b>.env</b>(for development) and <b>.env.production</b>(for production) file in every{' '}
@@ -52,7 +47,7 @@ export const Page: Component = () => {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Use this to scrape latest data <code>$ yarn update-data</code>. Will take a few X minutes.
+          Use this to scrape latest data <code>$ npm run update-data</code>. Will take a few X minutes.
         </li>
         <li>
           All new data will be written to
@@ -77,16 +72,16 @@ export const Page: Component = () => {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Type in 1st terminal: <code>$ yarn watch</code> and then in another terminal type either below commands:
+          Type in 1st terminal: <code>$ npm run watch</code> and then in another terminal type either below commands:
           <ul>
             <li>
-              Firefox: <code>$ yarn watch:ff</code>
+              Firefox: <code>$ npm run watch:ff</code>
             </li>
             <li>
-              Chrome: <code>$ yarn watch:c</code>
+              Chrome: <code>$ npm run watch:c</code>
             </li>
             <li>
-              <code>$ yarn build</code> to generate production file. Generated file located in
+              <code>$ npm run build</code> to generate production file. Generated file located in
               <b>/web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</b>
             </li>
           </ul>
@@ -107,10 +102,10 @@ export const Page: Component = () => {
           Type in terminal
           <ul>
             <li>
-              Devs: <code>$ yarn dev</code>
+              Devs: <code>$ npm run dev</code>
             </li>
             <li>
-              Build: <code>$ yarn build</code>
+              Build: <code>$ npm run build</code>
             </li>
           </ul>
         </li>
@@ -118,3 +113,8 @@ export const Page: Component = () => {
     </div>
   )
 }
+
+// export const documentProps = {
+//   title: 'TSI: Developer Guideline',
+//   description: 'For Devs who interested to contribute this project please read few guideline here',
+// }

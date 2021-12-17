@@ -6,7 +6,8 @@
   "description": "Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai",
   "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy:web": "vercel --prod"
   },
   "workspaces": {
     "packages": [
