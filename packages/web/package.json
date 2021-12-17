@@ -10,19 +10,20 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@analytics/google-analytics": "^0.5.3",
+    "analytics": "^0.7.18",
     "date-fns": "^2.24.0",
     "solid-app-router": "^0.1.14",
-    "solid-js": "^1.2.6",
-    "@analytics/google-analytics": "^0.5.3",
-    "analytics": "^0.7.18"
+    "solid-js": "^1.2.6"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwind": "^0.2.1",
-    "eslint": "^8.0.0",
+    "sass": "^1.38.0",
     "typescript": "^4.4.4",
     "vite": "^2.7.1",
     "vite-plugin-solid": "^2.1.4",
