@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
     <>
       <Header />
       <main class='flex-grow text-gray-600 body-font'>
-        <section class='container px-5 py-10 mx-auto'>
+        <section class='container h-full px-5 py-10 mx-auto'>
           <Route />
         </section>
       </main>

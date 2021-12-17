@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "website for Tradingview Shariah Indicator",
   "scripts": {
+    "lint": "eslint --fix .",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"

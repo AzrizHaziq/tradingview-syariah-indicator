@@ -1,6 +1,7 @@
 import { format } from 'date-fns'
+import type { PageProps } from 'type'
 
-export const ShariahFetcher = async () => {
+export const ShariahFetcher = async (): Promise<PageProps> => {
   const res = await fetch(import.meta.env.VITE_FETCH_URL as string)
   const { data, metadata } = await res.json()
 

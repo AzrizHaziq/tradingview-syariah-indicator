@@ -1,18 +1,9 @@
 import './list.scss'
+import type { PageProps } from 'type'
+import { ShariahFetcher } from './fetcher'
 import { createStore } from 'solid-js/store'
-import { ShariahFetcher } from 'src/pages/list/list.data'
-import { debounce, pipe, TArrayConcat, TFilter } from '@util'
+import { debounce, pipe, TArrayConcat, TFilter, IMGS } from '@util'
 import { createEffect, createMemo, createResource, For, JSX, Show } from 'solid-js'
-
-export type PageProps = {
-  data: [exchange: string, code: string, name: string][]
-  metadata: Record<string, Date>
-  exchangesList: string[]
-  queryParams: Partial<{
-    q: string
-    exchange: string | string[]
-  }>
-}
 
 const staticExchangeColors = [
   'text-red-600 bg-red-100 border-red-500',
@@ -99,7 +90,7 @@ export default function List(): JSX.Element {
 
     const url = new URL(location.href)
     url.searchParams.set('q', encodeURIComponent(keyword))
-    history.pushState(null, '', url)
+    // history.pushState(null, '', url)
 
     if (keyword) {
       store.runFilter()
@@ -137,7 +128,14 @@ export default function List(): JSX.Element {
   }
 
   return (
-    <Show when={store.originalData.length} fallback={<span>Loading...</span>}>
+    <Show
+      when={store.originalData.length}
+      fallback={
+        <div class='flex flex-col items-center justify-center h-full text-gray-500 gap-2'>
+          <img src={IMGS.logo} alt='logo' class='animate-bounce' width='25px' height='25px' />
+          Loading
+        </div>
+      }>
       <div class='max-w-full mx-auto md:max-w-3xl'>
         <svg class='hidden'>
           <symbol
