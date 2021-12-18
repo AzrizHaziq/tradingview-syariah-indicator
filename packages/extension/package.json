@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true npm run build",
     "postbuild": "web-ext lint && ts-node scripts/ff-source-code.ts",
-    "prerelease": "npm run build && dotenv -e .env.production",
+    "prerelease": "npm run build && web-ext build -s dist -o && dotenv -e .env.production",
     "release:chrome": "npm run prerelease webstore upload --source dist",
     "release:ff": "npm run prerelease web-ext-submit",
     "lint": "eslint --fix .",

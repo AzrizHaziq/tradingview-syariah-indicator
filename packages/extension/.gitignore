@@ -6,3 +6,4 @@ dist
 /scripts/*
 !/scripts/ff-source-code.ts
 *.log
+web-ext-artifacts
