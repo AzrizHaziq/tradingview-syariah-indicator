@@ -11,9 +11,7 @@
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true npm run build",
     "postbuild": "web-ext lint && ts-node scripts/ff-source-code.ts",
-    "prerelease": "npm run build && web-ext build -s dist -o && dotenv -e .env.production",
-    "release:chrome": "npm run prerelease webstore upload --source dist",
-    "release:ff": "npm run prerelease web-ext-submit",
+    "prerelease": "npm run build && web-ext build -s dist -o -n extension.zip",
     "lint": "eslint --fix .",
     "test": "playwright test --config=playwright.config.ts"
   },
@@ -43,7 +41,6 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^6.2.0",
-    "dotenv-cli": "^4.0.0",
     "dotenv-webpack": "^7.0.2",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
