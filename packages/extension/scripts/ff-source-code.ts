@@ -1,9 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import fse from 'fs-extra'
-import { version } from '../package.json'
+import pkg from '../package.json'
 
-const outputFolder = `source-code-tsi--${version}`
+const outputFolder = `source-code-tsi--${pkg.version}`
 const outputZip = `${outputFolder}.zip`
 const destination = `scripts/${outputFolder}`
 const files = [
@@ -36,7 +36,7 @@ async function copy(input, dest = destination) {
 async function createReadme() {
   try {
     const readme = `
-## Tradingview Shariah Indicator (${version})
+## Tradingview Shariah Indicator (${pkg.version})
 Requirements
 - node = 16.9.1
 - pnpm = 6.24.1

@@ -1,9 +1,9 @@
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
+import pkg from './../../../package.json'
 import { _popupGa } from '@popup/popup-helpers'
 
 const name = getMessage('ext_extension_name')
-const githubUrl = 'https://azrizhaziq.github.io/tradingview-syariah-indicator'
 
 export const Header: Component = () => (
   <a
@@ -11,7 +11,7 @@ export const Header: Component = () => (
     class='text-base text-green-500'
     target='_blank'
     rel='noopener noreferrer'
-    href={githubUrl}>
+    href={pkg.homepage}>
     {name}
   </a>
 )

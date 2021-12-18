@@ -4,7 +4,9 @@
 Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
 
 Source data:
-[Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
+MYX: [Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
+NASDAQ/NYSE: [Wahed ETF HLAL](https://funds.wahedinvest.com)
+SSE/SZSE: [China100 A stocks](https://www.valuepartners-group.com.my/en/shariah-china/)
 
 Inspired from: 
 https://github.com/amree/tradingview-shariah-indicators
@@ -87,17 +89,16 @@ Requirements
 - pnpm = 6.24.1
 - git = 2.23.0
 
-1. Need to have node and npm (please look at package.json > engine)
-2. Type in terminal `$ pnpm install`
-3. Type in 1st terminal: `$ npm run watch`
+1. Type in terminal `$ pnpm install`
+2. Type in 1st terminal: `$ npm run watch`
    and then in another terminal type either below commands:
    Firefox: `$ npm run watch:ff` 
    Chrome: `$ npm watch:c`
    
    
 ## Generate Production ready extension
-1. Git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
-2. npm install
+1. `$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git`
+2. `$ pnpm install`
 3. create `.env.production` file in root, and please follow `.env.example`
 4. Type in terminal `$ npm run build`
 5. Generate a file located in /web-ext-artifacts/tradingview-shariah-indicator-{{ version }}.zip
@@ -111,14 +112,14 @@ Requirements
 
 - [X] Add US stocks
 - [X] Read pdf from ChinaA ETF
-- [ ] Add e2e test with playwright + github action run with schedule
-- [ ] Add website, host in vercel with nextjs
+- [X] Add e2e test with playwright + github action run with schedule
+- [X] Add website, host in vercel with SolidJS(SPA), waiting a meta framework from Solid.
 - [ ] Add an option page where user can custom its own data.
-- [ ] Test chrome webStore-cli npm
-- [ ] Create a page where a list of US, MY, China stocks and 
-    - [ ] search
-    - [ ] filter
-    - [ ] use json hosted in github raw
+- [ ] Test chrome webStore-cli npm, and firefox addons
+- [X] Create a page where a list of US, MY, China stocks and 
+    - [X] search
+    - [X] filter
+    - [X] use json hosted in github raw
 - [ ] Added a page for "accept agreement/conditions"
 - [X] @Data, do some diffing with current data. If exists, then commit it.
 
