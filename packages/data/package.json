@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@app/data",
-  "version": "1.22.5",
+  "version": "2.0.3",
   "private": true,
   "scripts": {
     "test": "ava",
@@ -25,6 +25,7 @@
     "playwright-chromium": "^1.11.0",
     "ts-node": "^10.3.0"
   },
+  "license": "MIT",
   "ava": {
     "files": [
       "__test__/**/*.mjs"

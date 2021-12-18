@@ -1,7 +1,7 @@
 import { For } from 'solid-js'
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
-import { homepage as href } from '../../../package.json'
+import pkg from '../../../package.json'
 import { _popupGa, useCurrentData } from '@popup/popup-helpers'
 
 export const Flags: Component = () => {
@@ -15,7 +15,7 @@ export const Flags: Component = () => {
 
         return (
           <a
-            href={`${href}/list?exchange=${id}`}
+            href={`${pkg.homepage}/list?exchange=${id}`}
             target='_blank'
             title={popup_list_at}
             rel='noopener noreferrer'

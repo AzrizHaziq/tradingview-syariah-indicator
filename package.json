@@ -2,7 +2,7 @@
   "name": "tradingview-shariah-indicator",
   "name_display": "Tradingview Shariah Indicator",
   "homepage": "https://tsi.azrizhaziq.com",
-  "version": "0.0.0",
+  "version": "2.0.3",
   "description": "Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "Bursa Malaysia"
   ],
   "author": "Azriz Haziq <azrizhaziq@gmail.com> (https://azrizhaziq.github.io/portfolio)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "husky": "^7.0.2",
     "prettier": "^2.2.1",

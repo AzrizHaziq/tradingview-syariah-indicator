@@ -1,6 +1,6 @@
 {
   "name": "@app/extension",
-  "version": "2.0.0.3",
+  "version": "2.0.3",
   "homepage": "https://tsi.azrizhaziq.com",
   "description": "Display small shariah indicator to stock list in Tradingview(MY)",
   "private": true,
@@ -17,6 +17,7 @@
     "lint": "eslint --fix .",
     "test": "playwright test --config=playwright.config.ts"
   },
+  "license": "MIT",
   "dependencies": {
     "date-fns": "^2.24.0",
     "solid-js": "^1.1.1"
