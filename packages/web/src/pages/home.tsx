@@ -1,7 +1,9 @@
-import { IMGS } from '@util'
 import { JSX } from 'solid-js'
+import { IMGS, useTrackOnLoad } from '@util'
 
 export default function Home(): JSX.Element {
+  useTrackOnLoad()
+
   return (
     <>
       <div class='mx-auto prose'>

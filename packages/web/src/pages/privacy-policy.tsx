@@ -1,7 +1,10 @@
 import { JSX } from 'solid-js'
 import pkg from '/../../package.json'
+import { useTrackOnLoad } from '@util'
 
 export default function PrivacyPolicy(): JSX.Element {
+  useTrackOnLoad()
+
   return (
     <div class='mx-auto prose'>
       <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>

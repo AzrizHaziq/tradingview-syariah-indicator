@@ -2,7 +2,7 @@ import './list.scss'
 import type { PageProps } from 'type'
 import { ShariahFetcher } from './fetcher'
 import { createStore } from 'solid-js/store'
-import { debounce, pipe, TArrayConcat, TFilter, IMGS } from '@util'
+import { debounce, pipe, TArrayConcat, TFilter, IMGS, useTrackOnLoad } from '@util'
 import { createEffect, createMemo, createResource, For, JSX, Show } from 'solid-js'
 
 const staticExchangeColors = [
@@ -16,6 +16,8 @@ const staticExchangeColors = [
 ]
 
 export default function List(): JSX.Element {
+  useTrackOnLoad()
+
   const [data] = createResource<PageProps | undefined>(ShariahFetcher, { initialValue: undefined })
 
   const [store, setStore] = createStore({

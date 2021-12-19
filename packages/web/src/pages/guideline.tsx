@@ -1,6 +1,9 @@
 import { JSX } from 'solid-js'
+import { useTrackOnLoad } from '@util'
 
 export default function Guideline(): JSX.Element {
+  useTrackOnLoad()
+
   return (
     <div class='mx-auto prose'>
       <p>

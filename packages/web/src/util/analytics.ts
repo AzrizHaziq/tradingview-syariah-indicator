@@ -1,4 +1,5 @@
 import Analytics from 'analytics'
+import { createEffect } from 'solid-js'
 import googleAnalytics from '@analytics/google-analytics'
 
 export const analytics = Analytics({
@@ -17,4 +18,14 @@ export interface EventMap {
 
 export async function trackEvent<K extends keyof EventMap>(eventName: K, props: EventMap[K]): Promise<void> {
   await analytics.track(eventName, props)
+}
+
+export function useTrackOnLoad(): void {
+  createEffect(() => {
+    trackOnLoad({
+      href: location.href,
+      path: location.pathname,
+      title: `web::${location.pathname.replace(/\//, '') || 'home'}`,
+    })
+  })
 }
