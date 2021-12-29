@@ -69,6 +69,7 @@ async function gzip() {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const child_process = require('child_process')
     child_process.execSync(`zip -r scripts/${outputZip} scripts/${outputFolder}`)
+    child_process.execSync(`rm -rf scripts/${outputFolder}`)
 
     // eslint-disable-next-line no-console
     console.log(`Success zip to ${outputZip}`)
