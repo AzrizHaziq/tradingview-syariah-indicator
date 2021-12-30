@@ -190,7 +190,7 @@ export default function List(): JSX.Element {
         <For each={Object.entries(store.metadata)}>
           {([exchange, date]) => (
             <div class='px-2 py-1 bg-green-100 rounded'>
-              <span className='mr-1 text-xs text-green-800'>{exchange}</span>
+              <span class='mr-1 text-xs text-green-800'>{exchange}</span>
               <span class='font-bold text-green-900'>{date as unknown as string}</span>
             </div>
           )}

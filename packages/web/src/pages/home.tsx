@@ -32,8 +32,8 @@ export default function Home(): JSX.Element {
             #
           </a>
         </h2>
-        <div className='flex flex-col gap-y-2'>
-          <div className='flex items-center gap-2'>
+        <div class='flex flex-col gap-y-2'>
+          <div class='flex items-center gap-2'>
             <a
               target='_blank'
               rel='noopener noreferrer'

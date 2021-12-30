@@ -28,13 +28,21 @@ function mainScript() {
 }
 
 async function chartScript(): Promise<void> {
-  const currentExchange = document.querySelector('[class*=title3rd]').textContent
   const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
+
+  // getting cssInJS hash like titleWrapper-1WIwNaDF (1WIwNaDF)
+  const cssInJsHash = parentElement.className
+    .split(' ')
+    .find((i) => i.startsWith('titleWrapper-'))
+    .replace('titleWrapper-', '')
+
+  const currentExchange = parentElement.querySelector(`.exchangeTitle-${cssInJsHash}`)?.textContent.trim() ?? ''
+
   const { s: isShariah } = getStockStat(`${currentExchange}:${getSymbolsFromTitle()}`)
 
   if (isShariah) {
     if (isShariahIconExist(parentElement)) {
-      // if icon already exist dont do anything
+      // if icon already exist don't do anything
     } else {
       parentElement.prepend(createIcon({ width: 15, height: 15 }))
     }
@@ -44,7 +52,11 @@ async function chartScript(): Promise<void> {
   }
 }
 
-function getSymbolsFromTitle() {
+/**
+ *  also cover syntax like warrant and &
+ *  D&O, CTOS-WC, S&FCAP-WC
+ */
+function getSymbolsFromTitle(): string {
   const domTittleName = document.getElementsByTagName('title')[0].innerText
-  return /\w+(-\w+)?/.exec(domTittleName)[0].trim() // also cover syntax like warrant
+  return /\w+([&-]?\w+)+/.exec(domTittleName)[0].trim()
 }

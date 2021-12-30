@@ -2,12 +2,16 @@
   "name": "@app/extension",
   "version": "2.0.3",
   "homepage": "https://tsi.azrizhaziq.com",
-  "description": "Display small shariah indicator to stock list in Tradingview(MY)",
+  "description": "Display small shariah indicator to stock list in Tradingview",
+  "bugs": {
+    "url" : "https://github.com/AzrizHaziq/tradingview-syariah-indicator/issues",
+    "email" : "azrizhaziq@gmail.com"
+  },
   "private": true,
   "scripts": {
     "watch": "webpack --mode=development --watch",
     "watch:ff": "web-ext run",
-    "watch:c": "npm run watch:ff --target=chromium",
+    "watch:c": "npm run watch:ff -- --target=chromium",
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true npm run build",
     "postbuild": "web-ext lint && ts-node scripts/ff-source-code.ts",
@@ -56,7 +60,7 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-windicss": "^1.0.0",
     "prettier": "^2.2.1",
-    "sass": "^1.38.0",
+    "sass": "^1.45.1",
     "sass-loader": "^12.0.0",
     "size-plugin": "^2.0.1",
     "terser-webpack-plugin": "^5.1.1",
@@ -69,6 +73,6 @@
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
     "windicss": "^3.1.9",
-    "windicss-webpack-plugin": "^1.5.5"
+    "windicss-webpack-plugin": "^1.6.2"
   }
 }

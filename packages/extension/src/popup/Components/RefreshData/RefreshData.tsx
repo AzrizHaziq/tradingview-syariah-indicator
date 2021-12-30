@@ -32,7 +32,7 @@ export const RefreshData: Component = () => {
   return (
     <>
       {loading() ? (
-        <div className='mr-2'>
+        <div class='mr-2'>
           <LoadingIcon />
         </div>
       ) : (

@@ -37,7 +37,7 @@ export const Popup = () => {
           <Flags />
         </div>
         <hr class='my-2 border-gray-400 opacity-30' />
-        <div class='flex flex-col justify-start text-xs'>
+        <div class='flex flex-col justify-start text-xs gap-1'>
           <Footer />
         </div>
       </div>
