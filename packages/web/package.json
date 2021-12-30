@@ -17,6 +17,7 @@
     "solid-js": "^1.2.6"
   },
   "devDependencies": {
+    "@types/dlv": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
@@ -25,10 +26,13 @@
     "eslint-plugin-tailwind": "^0.2.1",
     "sass": "^1.45.1",
     "typescript": "^4.4.4",
-    "vite": "^2.7.9",
+    "vite": "^2.7.10",
     "vite-plugin-solid": "^2.1.4",
     "vite-plugin-windicss": "^1.6.1",
     "vite-tsconfig-paths": "^3.3.17",
     "windicss": "^3.4.2"
+  },
+  "peerDependencies": {
+    "@types/dlv": "^1.0.0"
   }
 }
