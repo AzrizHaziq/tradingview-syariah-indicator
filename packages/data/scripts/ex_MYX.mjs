@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import { pipe } from './utils.mjs'
 import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
-import PromisePool from '@supercharge/promise-pool'
+import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
