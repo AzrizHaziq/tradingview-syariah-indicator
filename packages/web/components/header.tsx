@@ -16,9 +16,6 @@ export const Header = (): JSX.Element => {
           <NavLink class='text-white hover:text-green-500' activeClass='text-green-300' href='/guideline'>
             Guideline
           </NavLink>
-          <NavLink class='text-white hover:text-green-500' activeClass='text-green-300' href='/privacy-policy'>
-            Privacy Policy
-          </NavLink>
           <NavLink class='ml-auto text-white hover:text-green-500' activeClass='text-green-300' href='/dev'>
             Dev
           </NavLink>
