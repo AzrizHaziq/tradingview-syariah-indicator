@@ -39,6 +39,7 @@ declare namespace TSI {
   export interface Flag {
     id: string | 'MYX'
     updatedAt: string
+    counts: number
   }
 
   export type EVENT_MSG =

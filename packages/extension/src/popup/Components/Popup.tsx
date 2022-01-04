@@ -1,13 +1,13 @@
-import { onMount } from 'solid-js'
 import browser from 'webextension-polyfill'
-
+import { createSignal, onMount } from 'solid-js'
 import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
-import { Footer, Header, Version, Flags, RefreshData } from '@popup/Components'
+import { Footer, Header, Version, Flags, RefreshData, ToggleDateAndCount } from '@popup/Components'
 
 const { author } = browser.runtime.getManifest()
 
 export const Popup = () => {
   const [, { setState }] = useCurrentData()
+  const [view, setView] = createSignal<'date' | 'count'>('date')
 
   onMount(() => {
     document.body.focus()
@@ -30,11 +30,14 @@ export const Popup = () => {
           <p class='text-xs text-gray-300'>{author}</p>
           <div class='flex items-center'>
             <RefreshData />
+            <div class='mr-2' />
+            <ToggleDateAndCount view={view} setView={setView} />
+            <div class='mr-2' />
             <Version />
           </div>
         </div>
         <div class='mt-2 text-white grid grid-cols-2 gap-x-2'>
-          <Flags />
+          <Flags view={view} />
         </div>
         <hr class='my-2 border-gray-400 opacity-30' />
         <div class='flex flex-col justify-start text-xs gap-1'>

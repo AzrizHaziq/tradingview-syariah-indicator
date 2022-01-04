@@ -10,15 +10,17 @@
   "popup_refresh_icon": { "message": "Refresh data" },
   "popup_loading_icon": { "message": "Fetching latest data" },
   "popup_wahed_learnmore": { "message": "Learn more about this referral code" },
+  "popup_change_view_to_date": { "message": "Click to change into date view" },
+  "popup_change_view_to_count": { "message": "Click to change into count view" },
   "popup_bug": { "message": "Found bug(s)" },
   "popup_interested_to_contribute": { "message": "Interested to contribute" },
   "popup_list_at": {
     "message": "$URL$ current shariah list at",
     "description": "For tooltip",
     "placeholders": {
-      "url" : {
-        "content" : "$1",
-        "example" : "Malaysia"
+      "url": {
+        "content": "$1",
+        "example": "Malaysia"
       }
     }
   }

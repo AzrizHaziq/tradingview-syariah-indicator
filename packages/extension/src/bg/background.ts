@@ -81,8 +81,9 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
 
 async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt }]) => ({
+    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt, list }]) => ({
       id: exchange,
+      counts: Object.keys(list).length,
       updatedAt: isDate(new Date(updatedAt)) ? format(new Date(updatedAt), 'dd LLL yy') : '--',
     }))
 
