@@ -31,6 +31,8 @@
     ["MYX", "AIMFLEX", "AIMFLEX BERHAD"],
     ["NYSE", "APD", "AIR PRODS & CHEMS INC"],
     ["MYX", "AIRASIA", "AIRASIA GROUP BERHAD"],
+    ["MYX", "AIRASIA-LA", "AIRASIA GROUP BERHAD"],
+    ["MYX", "AIRASIA-WA", "AIRASIA GROUP BERHAD"],
     ["MYX", "AAX", "AIRASIA X BERHAD"],
     ["MYX", "AJI", "AJINOMOTO (MALAYSIA) BERHAD"],
     ["MYX", "AJIYA", "AJIYA BERHAD"],
@@ -134,7 +136,6 @@
     ["NYSE", "BIO", "BIO RAD LABS INC"],
     ["NASDAQ", "TECH", "BIO-TECHNE CORP"],
     ["MYX", "BIOHLDG", "BIOALPHA HOLDINGS BERHAD"],
-    ["MYX", "BIOHLDG-WA", "BIOALPHA HOLDINGS BERHAD"],
     ["NASDAQ", "BIIB", "BIOGEN INC"],
     ["NASDAQ", "BMRN", "BIOMARIN PHARMACEUTICAL INC"],
     ["MYX", "BLDPLNT", "BLD PLANTATION BHD."],
@@ -574,7 +575,6 @@
     ["SSE", "600276", "Jiangsu Hengrui Medicine Co A"],
     ["SZSE", "002460", "Jiangxi Ganfeng Lithium Co Ltd A"],
     ["MYX", "K1", "K-ONE TECHNOLOGY BERHAD"],
-    ["MYX", "K1-WC", "K-ONE TECHNOLOGY BERHAD"],
     ["MYX", "KSSC", "K. SENG SENG CORPORATION BERHAD"],
     ["MYX", "KAMDAR", "KAMDAR GROUP (M) BERHAD"],
     ["MYX", "KANGER", "KANGER INTERNATIONAL BERHAD"],
@@ -830,6 +830,7 @@
     ["MYX", "OPCOM", "OPCOM HOLDINGS BERHAD"],
     ["MYX", "OPENSYS", "OPENSYS (M) BERHAD"],
     ["MYX", "OPTIMAX", "OPTIMAX HOLDINGS BERHAD"],
+    ["MYX", "OPTIMAX-WA", "OPTIMAX HOLDINGS BERHAD"],
     ["NASDAQ", "ORLY", "OREILLY AUTOMOTIVE INC"],
     ["MYX", "OFI", "ORIENTAL FOOD INDUSTRIES HOLDINGS BERHAD"],
     ["MYX", "OIB", "ORIENTAL INTEREST BERHAD"],
@@ -1106,7 +1107,7 @@
     ["SSE", "600426", "Shandong Hualu Hengsheng Chem Co A"],
     ["SSE", "600845", "Shanghai Baosight Software Co Ltd A"],
     ["SSE", "600196", "Shanghai Fosun Pharmaceutical Group Co Ltd A"],
-    ["", "DIS", "Shanghai Intl Airport A"],
+    ["SSE", "600009", "Shanghai Intl Airport A"],
     ["SSE", "603899", "Shanghai M&G Stationery Inc A"],
     ["SSE", "603659", "Shanghai Putailai New Energy Technology Co Ltd"],
     ["SSE", "600183", "Shengyi Technology Co Ltd A"],
@@ -1244,6 +1245,7 @@
     ["NYSE", "VMC", "VULCAN MATLS CO"],
     ["NYSE", "WAB", "WABTEC"],
     ["MYX", "WASEONG", "WAH SEONG CORPORATION BERHAD"],
+    ["NASDAQ", "HLAL", "WAHED FTSE USA SHARIAH ETF"],
     ["MYX", "WAJA", "WAJA KONSORTIUM BERHAD"],
     ["NASDAQ", "WBA", "WALGREENS BOOTS ALLIANCE INC COM"],
     ["MYX", "WANGZNG", "WANG-ZHENG BERHAD"],
@@ -1321,10 +1323,10 @@
     ["SZSE", "002050", "Zhejiang Sanhua Intelligent Controls Co Ltd A"]
   ],
   "metadata": {
-    "MYX": 1640849109473,
-    "NYSE": 1640707200000,
-    "NASDAQ": 1640707200000,
-    "SSE": 1640793600000,
-    "SZSE": 1640793600000
+    "MYX": 1641470453032,
+    "NYSE": 1641312000000,
+    "NASDAQ": 1641312000000,
+    "SZSE": 1641398400000,
+    "SSE": 1641398400000
   }
 }
