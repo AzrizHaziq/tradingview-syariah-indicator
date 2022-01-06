@@ -3,6 +3,7 @@ import browser from 'webextension-polyfill'
 import { differenceInDays, format, isDate } from 'date-fns'
 import { debounce, getStorage, initGa, setStorage } from '../helper'
 
+browser.runtime.onInstalled.addListener(() => fetchData(true))
 browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
 
 async function fetchData(shouldRefreshData = false): Promise<void> {
