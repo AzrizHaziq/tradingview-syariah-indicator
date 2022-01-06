@@ -18,10 +18,9 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
     const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
-    const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
 
     const sortedHuman = []
-      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN)
+      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN, CONFIG.whitelist)
       .sort(([a1, a2, a3], [b1, b2, b3]) => {
         if (a2 === b2 && a3 === b3) return a1 > b1 ? 1 : a1 < b1 ? -1 : 0 // sort by exchange
         if (a3 === b3) return a2 > b2 ? 1 : a2 < b2 ? -1 : 0 // sort by code
@@ -35,6 +34,11 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
+    const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
+
+    // this should be depended on the exchange shape, I'm too lazy atm.
+    // whitelist data will merge into stock-list.json according to exchange
+    CONFIG.whitelist.forEach(([exchange, name]) => (data[exchange].list[name] = [1]))
     logCount(data)
 
     await writeToFile(CONFIG.mainOutput, JSON.stringify(data))
