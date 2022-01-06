@@ -34,7 +34,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    const data = { ...MYX_DATA, ...US_DATA, ...CHINA_DATA }
+    const data = { ...US_DATA, ...CHINA_DATA, ...MYX_DATA }
 
     // this should be depended on the exchange shape, I'm too lazy atm.
     // whitelist data will merge into stock-list.json according to exchange
