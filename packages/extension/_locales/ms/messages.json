@@ -5,6 +5,7 @@
   "screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
   "screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
   "popup_version": { "message": "Versi terkini" },
+  "popup_or": { "message": "atau" },
   "popup_bug_alt": { "message": "Laporkan pepijat (sila jangan laporkan pendua)" },
   "popup_github_repo": { "message": "Repositori Github" },
   "popup_refresh_icon": { "message": "Kemaskini data" },

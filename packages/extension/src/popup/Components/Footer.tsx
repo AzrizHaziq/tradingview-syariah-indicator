@@ -4,6 +4,7 @@ import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { _popupGa, popupGa } from '@popup/popup-helpers'
 
+const popup_or = getMessage('popup_or')
 const popup_bug = getMessage('popup_bug')
 const popup_bug_alt = getMessage('popup_bug_alt')
 const popup_github_repo = getMessage('popup_github_repo')
@@ -15,16 +16,26 @@ export const Footer: Component = () => {
 
   return (
     <>
-      <a
-        onClick={_popupGa('click', 'github_bugs')}
-        class='flex text-gray-300 hover:underline'
-        target='_blank'
-        rel='noopener noreferrer'
-        title={popup_bug_alt}
-        href={pkg.bugs.url}>
-        <img class='mr-2' src='/assets/icons/github.svg' alt='github icon' width='17px' height='20px' />
-        {popup_bug}
-      </a>
+      <div class='flex text-gray-300  hover:underline gap-2'>
+        <a
+          onClick={_popupGa('click', 'github_bugs')}
+          target='_blank'
+          rel='noopener noreferrer'
+          title={popup_bug_alt}
+          href={pkg.bugs.url}>
+          <img src='/assets/icons/github.svg' alt='github icon' width='17px' height='20px' />
+        </a>
+        <p>{popup_or}</p>
+        <a
+          onClick={_popupGa('click', 'twitter')}
+          target='_blank'
+          rel='noopener noreferrer'
+          title={popup_bug_alt}
+          href='https://twitter.com/tradingviewsha1'>
+          <img src='/assets/icons/twitter.svg' alt='github icon' width='17px' height='20px' />
+        </a>
+        <p>{popup_bug}</p>
+      </div>
       <a
         onClick={_popupGa('click', 'github')}
         class='flex text-gray-300 hover:underline'
