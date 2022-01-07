@@ -106,6 +106,7 @@ importers:
       webpack: ^5.35.1
       webpack-bundle-analyzer: ^4.4.1
       webpack-cli: ^4.6.0
+      webpack-merge-and-include-globally: ^2.3.4
       windicss: ^3.4.2
       windicss-webpack-plugin: ^1.6.2
     dependencies:
@@ -164,6 +165,7 @@ importers:
       webpack: 5.65.0_webpack-cli@4.9.1
       webpack-bundle-analyzer: 4.5.0
       webpack-cli: 4.9.1_5b92130145ce81e9abcf23f2ab95d57c
+      webpack-merge-and-include-globally: 2.3.4_webpack@5.65.0
       windicss: 3.4.2
       windicss-webpack-plugin: 1.6.2
 
@@ -4103,6 +4105,10 @@ packages:
 
   /es6-error/4.1.1:
     resolution: {integrity: sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==}
+    dev: true
+
+  /es6-promisify/6.1.1:
+    resolution: {integrity: sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==}
     dev: true
 
   /es6-promisify/7.0.0:
@@ -8577,6 +8583,11 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
+  /rev-hash/3.0.0:
+    resolution: {integrity: sha512-s+87HfEKAu95TaTxnbCobn0/BkbzR23LHSwVdYvr8mn5+PPjzy+hTWyh92b5oaLgig9TKPe5d6ZcubsVBtUrZg==}
+    engines: {node: '>=8'}
+    dev: true
+
   /rimraf/2.4.5:
     resolution: {integrity: sha1-7nEM5dk6j9uFb7Xqj/Di11k0sto=}
     hasBin: true
@@ -10126,6 +10137,17 @@ packages:
       webpack: 5.65.0_webpack-cli@4.9.1
       webpack-bundle-analyzer: 4.5.0
       webpack-merge: 5.8.0
+    dev: true
+
+  /webpack-merge-and-include-globally/2.3.4_webpack@5.65.0:
+    resolution: {integrity: sha512-s5dd7m3ycVBlC7C6GAx91JQzbjhxC/NJRuT2sCkg8WCcF8CE1x/7xwVXqgmt0Fr/H/0sX5C5HE2RdU6+vCY5yg==}
+    peerDependencies:
+      webpack: '>=1.0.0'
+    dependencies:
+      es6-promisify: 6.1.1
+      glob: 7.2.0
+      rev-hash: 3.0.0
+      webpack: 5.65.0_webpack-cli@4.9.1
     dev: true
 
   /webpack-merge/5.8.0:

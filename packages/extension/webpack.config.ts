@@ -10,6 +10,7 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
+import MergeIntoSingleFilePlugin from 'webpack-merge-and-include-globally'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -31,9 +32,11 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     'popup/popup': path.join(__dirname, 'src', 'popup', 'index.tsx'),
   },
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/',
+    environment: { module: true },
   },
   module: {
     rules: [
@@ -88,6 +91,9 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         },
       ],
     }),
+    new MergeIntoSingleFilePlugin({
+      files: { 'bg/bg.js': ['dist/browser-polyfill.js', 'dist/bg/background.js'] },
+    }),
     new SizePlugin({ writeFile: false }),
     process.env.ENABLE_BA ? new BundleAnalyzerPlugin() : undefined,
   ].filter(Boolean),
@@ -95,12 +101,12 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/](solid-js)[\\/]/,
+          test: /[\\/]node_modules[\\/]solid-js[\\/]/,
           name: 'vendor',
           chunks: 'all',
         },
         'browser-polyfill': {
-          test: /[\\/]node_modules[\\/](webextension-polyfill-ts|webextension-polyfill)/,
+          test: /[\\/]node_modules[\\/]webextension-polyfill/,
           name: 'browser-polyfill',
           chunks: 'all',
         },
