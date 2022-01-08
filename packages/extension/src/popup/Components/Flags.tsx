@@ -4,11 +4,10 @@ import type { Component } from 'solid-js'
 import { Accessor, For } from 'solid-js'
 import { _popupGa, useCurrentData } from '@popup/popup-helpers'
 
-const popup_bug_in_flag = getMessage('popup_bug_in_flag')
 export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) => {
   const [currentData] = useCurrentData()
 
-  return currentData().length ? (
+  return (
     <For each={currentData()}>
       {(flag) => {
         const { updatedAt, id, counts } = flag
@@ -39,9 +38,5 @@ export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) =>
         )
       }}
     </For>
-  ) : (
-    <div class='px-1 py-2 font-bold text-center text-red-400 border-2 border-red-400 rounded bg-red-50 col-span-2'>
-      {popup_bug_in_flag}
-    </div>
   )
 }

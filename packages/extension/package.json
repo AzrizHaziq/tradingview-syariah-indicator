@@ -1,6 +1,6 @@
 {
   "name": "@app/extension",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "homepage": "https://tsi.azrizhaziq.com",
   "description": "Display small shariah indicator to stock list in Tradingview",
   "bugs": {

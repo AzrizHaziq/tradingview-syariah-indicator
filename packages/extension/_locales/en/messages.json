@@ -7,7 +7,6 @@
   "popup_version": { "message": "Current version" },
   "popup_or": { "message": "or" },
   "popup_bug_alt": { "message": "Report a bug(please dont report duplicate)" },
-  "popup_bug_in_flag": { "message": "Bug. Please inform this to dev." },
   "popup_github_repo": { "message": "Github repository" },
   "popup_refresh_icon": { "message": "Refresh data" },
   "popup_loading_icon": { "message": "Fetching latest data" },
