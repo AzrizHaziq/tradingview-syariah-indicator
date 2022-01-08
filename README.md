@@ -11,8 +11,8 @@ SSE/SZSE: [China100 A stocks](https://www.valuepartners-group.com.my/en/shariah-
 Inspired from: 
 https://github.com/amree/tradingview-shariah-indicators
 
-## Download
 
+## Download
 <a target="_blank" rel="noopener noreferrer"
    title="Download Tradingview Shariah indicator in Chrome now"
    href="https://chrome.google.com/webstore/detail/tradingview-shariah-indic/eogackkjbjbbmlkbakekhaanphmnpkgf?utm_source=github&utm_medium=website&utm_campaign=shariah-invest">
@@ -76,6 +76,7 @@ Popup
 
 ![popup](/assets/ori_chrome/popup.png)
 
+
 ## Youtube video
 [![tradingview-syariah-indicator](https://img.youtube.com/vi/4U8mu_5UfUQ/0.jpg)](https://www.youtube.com/watch?v=4U8mu_5UfUQ)
 
@@ -109,7 +110,6 @@ Requirements
     
 
 ## Todo
-
 - [X] Add US stocks
 - [X] Read pdf from ChinaA ETF
 - [X] Add e2e test with playwright + github action run with schedule
@@ -123,11 +123,13 @@ Requirements
 - [ ] Added a page for "accept agreement/conditions"
 - [X] @Data, do some diffing with current data. If exists, then commit it.
 
+
 ### Please do refer to original website before buying. And if you're holding then look at them everyday.
 #### 1. China100 A stocks
 1. Go to [Bursa Malaysia](https://www.bursamalaysia.com/bm/market_information/announcements/company_announcement/announcement_details?ann_id=3174424) 
 2. Then click the pdf [Prospectus VP-DJ Shariah China A-Shares 100 ETF d.12 July 2021.pdf](https://disclosure.bursamalaysia.com/FileAccess/apbursaweb/download?id=209757&name=EA_DS_ATTACHMENTS)
 3. Read at page 48 about Shariah
+
 
 #### 2. For Wahed ETF HLAL
 1. Read more here [HLAL](https://funds.wahedinvest.com/)
