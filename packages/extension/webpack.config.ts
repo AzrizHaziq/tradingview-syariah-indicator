@@ -3,13 +3,13 @@ import * as webpack from 'webpack'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
 import type { Configuration } from 'webpack'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -31,9 +31,11 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     'popup/popup': path.join(__dirname, 'src', 'popup', 'index.tsx'),
   },
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/',
+    environment: { module: true },
   },
   module: {
     rules: [
@@ -43,7 +45,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(s)?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
@@ -95,14 +97,16 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/](solid-js)[\\/]/,
+          test: /[\\/]node_modules[\\/]solid-js[\\/]/,
           name: 'vendor',
           chunks: 'all',
         },
         'browser-polyfill': {
-          test: /[\\/]node_modules[\\/](webextension-polyfill-ts|webextension-polyfill)/,
+          test: /[\\/]node_modules[\\/]webextension-polyfill/,
           name: 'browser-polyfill',
-          chunks: 'all',
+
+          // browser-polyfill in bg scripts is omitted because for manifest version 3
+          chunks: (chunk) => chunk.name !== 'bg/background',
         },
       },
     },

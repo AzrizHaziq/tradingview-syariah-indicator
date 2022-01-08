@@ -1,5 +1,4 @@
 import { JSX } from 'solid-js'
-import pkg from '/../../package.json'
 import { useTrackOnLoad } from '@util'
 
 export default function PrivacyPolicy(): JSX.Element {
@@ -8,7 +7,7 @@ export default function PrivacyPolicy(): JSX.Element {
   return (
     <div class='mx-auto prose'>
       <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>
-        <ul className='!m-0'>
+        <ul class='!m-0'>
           <li>
             <p>
               All source code is available in github publicly <br />
@@ -23,7 +22,7 @@ export default function PrivacyPolicy(): JSX.Element {
         </ul>
       </div>
       <div class='mt-15' />
-      <small>Version: {pkg.version}</small>
+      <small>8 Jan 2022</small>
       <h1>Privacy Policy</h1>
       <p>
         This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
@@ -236,8 +235,8 @@ export default function PrivacyPolicy(): JSX.Element {
         Policy on this page.
       </p>
       <p>
-        We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective
-        and update the &quot;version&quot; date at the top of this Privacy Policy.
+        We will let You know via prominent notice on Our Service, prior to the change becoming effective and update the
+        &quot;date&quot; at the top of this Privacy Policy.
       </p>
       <p>
         You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are

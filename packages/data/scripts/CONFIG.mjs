@@ -5,6 +5,12 @@ export const CONFIG = {
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
   progressBar: new CliProgress().getInstance(),
+  whitelist: [
+    //  this should be in human form
+    // [exchange, code, fullname]
+    // https://www.tradingview.com/symbols/NASDAQ-HLAL/
+    ['NASDAQ', 'HLAL', 'WAHED FTSE USA SHARIAH ETF'],
+  ],
   MYX: {
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },

@@ -1,9 +1,71 @@
 import browser from 'webextension-polyfill'
-
 import { differenceInDays, format, isDate } from 'date-fns'
 import { debounce, getStorage, initGa, setStorage } from '../helper'
+;(async () => {
+  initGa()
+  await fetchData()
+})()
 
-browser.tabs.onUpdated.addListener(debounce(listener, 500, true))
+browser.runtime.onInstalled.addListener(() => fetchData(true))
+browser.tabs.onUpdated.addListener(
+  debounce(
+    async function listener(_, { status }, { url }): Promise<void> {
+      if (status === 'loading') {
+        return
+      }
+
+      const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
+      // filter out invalid url
+      if (!validUrls.some((validUrl) => new RegExp(validUrl).test(url))) {
+        return
+      }
+
+      try {
+        const LAST_FETCH_AT_STR = await getStorage('LAST_FETCH_AT')
+        const LAST_FETCH_AT = new Date(LAST_FETCH_AT_STR)
+
+        // use for testing cache
+        // LAST_FETCH_AT.setDate(LAST_FETCH_AT.getDate() - 1)
+
+        const lastFetchAt = isDate(LAST_FETCH_AT) ? LAST_FETCH_AT : new Date()
+        const shouldUseCacheValue = differenceInDays(new Date(), lastFetchAt) >= 0
+
+        if (shouldUseCacheValue) {
+          console.log('>>> Cache')
+        } else {
+          console.log('>>> API')
+          await fetchData()
+        }
+      } catch (e) {
+        console.error('Error Send message', e)
+      }
+    },
+    500,
+    true
+  )
+)
+
+browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
+  if (req.type === 'ga') {
+    if (req.subType === 'pageview') {
+      ga('send', 'pageview', req.payload)
+    }
+
+    if (req.subType === 'event') {
+      ga('send', {
+        hitType: 'event',
+        ...req.payload,
+      })
+    }
+  }
+
+  if (req.type === 'invalidate-cache') {
+    return setStorage('LAST_FETCH_AT', '')
+      .then(() => console.log('>>> INVALIDATE CACHE'))
+      .then(() => fetchData(true))
+      .then(() => setStorage('LAST_FETCH_AT', new Date().toString()))
+  }
+})
 
 async function fetchData(shouldRefreshData = false): Promise<void> {
   let jsonUrl = process.env.FETCH_URL
@@ -20,38 +82,6 @@ async function fetchData(shouldRefreshData = false): Promise<void> {
     await setStorage('LAST_FETCH_AT', new Date().toString())
   } catch (e) {
     console.error('Github json when wrong', e)
-  }
-}
-
-async function listener(_, { status }, { url }): Promise<void> {
-  if (status === 'loading') {
-    return
-  }
-
-  const validUrls = ['tradingview.com/chart', 'tradingview.com/screener', 'tradingview.com/symbols']
-  // filter out invalid url
-  if (!validUrls.some((validUrl) => new RegExp(validUrl).test(url))) {
-    return
-  }
-
-  try {
-    const LAST_FETCH_AT_STR = await getStorage('LAST_FETCH_AT')
-    const LAST_FETCH_AT = new Date(LAST_FETCH_AT_STR)
-
-    // use for testing cache
-    // LAST_FETCH_AT.setDate(LAST_FETCH_AT.getDate() - 1)
-
-    const lastFetchAt = isDate(LAST_FETCH_AT) ? LAST_FETCH_AT : new Date()
-    const shouldUseCacheValue = differenceInDays(new Date(), lastFetchAt) >= 0
-
-    if (shouldUseCacheValue) {
-      console.log('>>> Cache')
-    } else {
-      console.log('>>> API')
-      await fetchData()
-    }
-  } catch (e) {
-    console.error('Error Send message', e)
   }
 }
 
@@ -81,8 +111,9 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
 
 async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt }]) => ({
+    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt, list }]) => ({
       id: exchange,
+      counts: Object.keys(list).length,
       updatedAt: isDate(new Date(updatedAt)) ? format(new Date(updatedAt), 'dd LLL yy') : '--',
     }))
 
@@ -91,29 +122,3 @@ async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON):
     console.error(`Error set Exchanges detail in storage`, e)
   }
 }
-
-browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
-  if (req.type === 'ga') {
-    if (req.subType === 'pageview') {
-      ga('send', 'pageview', req.payload)
-    }
-
-    if (req.subType === 'event') {
-      ga('send', {
-        hitType: 'event',
-        ...req.payload,
-      })
-    }
-  }
-
-  if (req.type === 'invalidate-cache') {
-    return setStorage('LAST_FETCH_AT', '')
-      .then(() => console.log('>>> INVALIDATE CACHE'))
-      .then(() => fetchData(true))
-      .then(() => setStorage('LAST_FETCH_AT', new Date().toString()))
-  }
-})
-;(async () => {
-  initGa()
-  await fetchData()
-})()

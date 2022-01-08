@@ -23,9 +23,9 @@
   "author": "Azriz Haziq <azrizhaziq@gmail.com> (https://azrizhaziq.com)",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^7.0.2",
-    "prettier": "^2.2.1",
-    "ts-node": "^10.3.0",
-    "typescript": "^4.2.4"
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
   }
 }

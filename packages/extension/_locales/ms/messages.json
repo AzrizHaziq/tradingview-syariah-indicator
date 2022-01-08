@@ -5,19 +5,24 @@
   "screener_filter_btn_shariah_on": { "message": "Shariah: AKTIF" },
   "screener_filter_btn_shariah_off": { "message": "Shariah: NYAHAKTIF" },
   "popup_version": { "message": "Versi terkini" },
-  "popup_tg_group": { "message": "Telegram kumpulan" },
+  "popup_or": { "message": "atau" },
+  "popup_bug_alt": { "message": "Laporkan pepijat (sila jangan laporkan pendua)" },
+  "popup_bug_in_flag": { "message": "Pepijat. Sila maklumkan perkara ini kepada dev." },
   "popup_github_repo": { "message": "Repositori Github" },
   "popup_refresh_icon": { "message": "Kemaskini data" },
   "popup_loading_icon": { "message": "Mengambil data terkini" },
-  "popup_bug_or_suggestion": { "message":  "Jumpa pepijat" },
+  "popup_wahed_learnmore": { "message": "Ketahui lebih lanjut tentang kod rujukan ini" },
+  "popup_change_view_to_date": { "message": "Klik untuk menukar kepada paparan tarikh" },
+  "popup_change_view_to_count": { "message": "Klik untuk menukar kepada paparan kiraan" },
+  "popup_bug": { "message": "Jumpa pepijat" },
   "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
   "popup_list_at": {
     "message": "Senarai syariah $URL$ terkini pada",
     "description": "Untuk tooltip",
     "placeholders": {
-      "url" : {
-        "content" : "$1",
-        "example" : "Malaysia"
+      "url": {
+        "content": "$1",
+        "example": "Malaysia"
       }
     }
   }

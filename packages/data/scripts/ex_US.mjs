@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
-import PromisePool from '@supercharge/promise-pool'
+import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
@@ -11,7 +11,7 @@ function transformToTickersAndSymbols(data) {
       const [, , ticker, , fullname] = item.split(',')
 
       // remove non stock item (sukuk)
-      if (CONFIG.US.blackListItems.some(i => new RegExp(i, 'i').test(ticker))) {
+      if (CONFIG.US.blackListItems.some((i) => new RegExp(i, 'i').test(ticker))) {
         return acc
       }
 
@@ -38,7 +38,7 @@ function prettierCSV(csv) {
 }
 
 // https://www.tradingview.com/symbols/NYSE-A/
-const getExchange = item =>
+const getExchange = (item) =>
   // eslint-disable-next-line no-async-promise-executor
   new Promise(async (resolve, reject) => {
     for (const exchange of CONFIG.US.exchanges) {
@@ -67,7 +67,7 @@ const getExchange = item =>
 
 async function runTaskSequentially(tasks) {
   try {
-    const { results, errors } = await PromisePool.for(tasks).process(async item => await getExchange(item))
+    const { results, errors } = await PromisePool.for(tasks).process(async (item) => await getExchange(item))
 
     if (errors.length) {
       throw Error(`failed runTaskSequentially: ${errors}`)
@@ -87,7 +87,7 @@ async function runTaskSequentially(tasks) {
   }
 }
 
-const finalOutput = updatedAt => p => {
+const finalOutput = (updatedAt) => (p) => {
   return p.then(({ data, human }) => ({
     human,
     data: Object.entries(data).reduce(
@@ -112,8 +112,8 @@ export async function US() {
     return await pipe(
       prettierCSV,
       transformToTickersAndSymbols,
-      data => data.slice(0, CONFIG.isDev ? 10 : data.length),
-      data => {
+      (data) => data.slice(0, CONFIG.isDev ? 10 : data.length),
+      (data) => {
         progressBar.setTotal(data.length)
         return data
       },

@@ -1,3 +1,4 @@
+import 'windi.css'
 import '../_global.scss'
 import './_index.scss'
 

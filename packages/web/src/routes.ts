@@ -23,11 +23,10 @@ export const routes: RouteDefinition[] = [
     path: '/privacy-policy',
     component: lazy(() => import('./pages/privacy-policy')),
   },
-  // {
-  //   path: '/about',
-  //   component: lazy(() => import('./pages/about')),
-  //   data: AboutData,
-  // },
+  {
+    path: '/wahed',
+    component: lazy(() => import('./pages/wahed')),
+  },
   {
     path: '**',
     component: lazy(() => import('./errors/404')),

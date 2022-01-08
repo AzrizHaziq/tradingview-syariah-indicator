@@ -3,7 +3,14 @@ import path from 'path'
 import fse from 'fs-extra'
 import pkg from '../package.json'
 
-const outputFolder = `source-code-tsi--${pkg.version}`
+/**
+ * This script is for uploading source code to Firefox submission.
+ * This script run after `npm run build`.
+ * It will compile all `files` below and write a README.md.
+ * Then it will zip it with `outputFolder` name.
+ * The output can be found at /web-ext-artifacts.
+ */
+const outputFolder = `tradingview_shariah_indicator-${pkg.version}-source_code`
 const outputZip = `${outputFolder}.zip`
 const destination = `scripts/${outputFolder}`
 const files = [
@@ -69,6 +76,8 @@ async function gzip() {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const child_process = require('child_process')
     child_process.execSync(`zip -r scripts/${outputZip} scripts/${outputFolder}`)
+    child_process.execSync(`rm -rf scripts/${outputFolder}`)
+    child_process.execSync(`mv scripts/${outputZip} web-ext-artifacts/`)
 
     // eslint-disable-next-line no-console
     console.log(`Success zip to ${outputZip}`)

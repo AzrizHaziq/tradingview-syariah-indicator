@@ -12,7 +12,7 @@
     }
   },
   "background": {
-    "scripts": ["browser-polyfill.js", "bg/background.js"],
+    "scripts": ["bg/background.js"],
     "persistent": true
   },
   "content_scripts": [

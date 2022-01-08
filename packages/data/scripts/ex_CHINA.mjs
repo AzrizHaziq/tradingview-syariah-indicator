@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
 import { CONFIG } from './config.mjs'
 import { chromium } from 'playwright-chromium'
-import PromisePool from '@supercharge/promise-pool'
+import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
@@ -16,7 +16,7 @@ const CHINA_ETF = (
 async function parsePdf(pdfUrl) {
   const companyNames = new Set()
   const response = await fetch(pdfUrl)
-  const buffer = await response.buffer()
+  const buffer = await response.arrayBuffer()
 
   return new Promise((resolve, reject) => {
     let isSedol = false
@@ -67,11 +67,11 @@ async function getUpdatedAtAndPdfUrl() {
         pluck = new Function(`return ${pluck}`)() // eslint-disable-line no-new-func
 
         return pipe(
-          s => document.querySelector(s),
+          (s) => document.querySelector(s),
           pluck('textContent'),
-          map(text => text.trim()),
-          map(date => Date.parse(date)),
-          map(timeStamp => Promise.resolve(timeStamp))
+          map((text) => text.trim()),
+          map((date) => Date.parse(date)),
+          map((timeStamp) => Promise.resolve(timeStamp))
         )(selector)
       },
       [
@@ -82,18 +82,19 @@ async function getUpdatedAtAndPdfUrl() {
 
     // process of finding pdfUrl
     const latestReportSelector = '#table-announcements tbody td:last-child a'
-    await page.evaluate(s => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
+    await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
     await page.click(latestReportSelector)
 
     const iframeUrl = await page.evaluate(
-      s => Promise.resolve(document.querySelector(s).getAttribute('src')),
+      (s) => Promise.resolve(document.querySelector(s).getAttribute('src')),
       '#bm_ann_detail_iframe'
     )
 
     const iframeDomain = new URL(iframeUrl).origin
+    console.log(iframeUrl, 2222)
     await page.goto(iframeUrl)
     const pdfUrl = await page.evaluate(
-      s => Promise.resolve(document.querySelector(s).getAttribute('href')),
+      (s) => Promise.resolve(document.querySelector(s).getAttribute('href')),
       '.att_download_pdf a'
     )
 
@@ -114,7 +115,7 @@ async function getCompanyExchangeAndCode(stockNames) {
   const ctx = await browser.newContext()
 
   // main just search thru google search and grab the stock code and exchange
-  const _main = async name => {
+  const _main = async (name) => {
     progressBar.increment(1, { stats: `Google search: ${name}` })
 
     const page = await ctx.newPage()
@@ -156,7 +157,7 @@ async function getCompanyExchangeAndCode(stockNames) {
   }
 
   // retry have quite number of steps and that's why its not a default method
-  const _retry = async name => {
+  const _retry = async (name) => {
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -210,7 +211,7 @@ async function getCompanyExchangeAndCode(stockNames) {
       { success: [], failed: [] }
     )
 
-    const failedNames = failed.map(i => i[2])
+    const failedNames = failed.map((i) => i[2])
     const { results: retryResults } = await PromisePool.for(failedNames).process(_retry)
 
     return [...success, ...retryResults]
