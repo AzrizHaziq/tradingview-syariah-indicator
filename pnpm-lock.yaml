@@ -90,14 +90,12 @@ importers:
       postcss-import: ^14.0.1
       postcss-loader: ^6.1.1
       postcss-preset-env: ^7.1.0
-      postcss-windicss: ^1.0.0
       prettier: ^2.2.1
       safe-compare: 1.1.4
       sass: ^1.45.1
       sass-loader: ^12.0.0
       size-plugin: ^2.0.1
       solid-js: ^1.1.1
-      terser-webpack-plugin: ^5.3.0
       tsconfig-paths-webpack-plugin: ^3.5.1
       typescript: ^4.4.4
       web-ext: ^6.1.0
@@ -149,13 +147,11 @@ importers:
       postcss-import: 14.0.2_postcss@8.4.5
       postcss-loader: 6.2.1_postcss@8.4.5+webpack@5.65.0
       postcss-preset-env: 7.1.0_postcss@8.4.5
-      postcss-windicss: 1.0.0_postcss@8.4.5
       prettier: 2.5.1
       safe-compare: 1.1.4
       sass: 1.45.1
       sass-loader: 12.4.0_sass@1.45.1+webpack@5.65.0
       size-plugin: 2.0.2_webpack@5.65.0
-      terser-webpack-plugin: 5.3.0_webpack@5.65.0
       tsconfig-paths-webpack-plugin: 3.5.2
       typescript: 4.5.4
       web-ext: 6.6.0_5759b7e109f16724996aaec5078cdf0a
@@ -258,10 +254,6 @@ packages:
   /@analytics/type-utils/0.5.1:
     resolution: {integrity: sha512-dyuyZQhIacRW+QP7iTBZT+R9SlkFNr+AsgYZDce6PMAUo6cgDKBrxxWtkMPKCqyzvCUwCbR92sILOvUUtQoieA==}
     dev: false
-
-  /@antfu/utils/0.1.7:
-    resolution: {integrity: sha512-XbmXbhrjfxQq+ishOKeUIK1VYxQV0B+ZkAQkz00bxhmQd5izdT0YRSDwkyH/KX46gFVBMd+6anvSDlciUt3L4A==}
-    dev: true
 
   /@antfu/utils/0.3.0:
     resolution: {integrity: sha512-UU8TLr/EoXdg7OjMp0h9oDoIAVr+Z/oW9cpOxQQyrsz6Qzd2ms/1CdWx8fl2OQdFpxGmq5Vc4TwfLHId6nAZjA==}
@@ -2095,20 +2087,6 @@ packages:
     dependencies:
       debug: 4.3.3
       jiti: 1.12.9
-      windicss: 3.4.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@windicss/plugin-utils/0.16.7:
-    resolution: {integrity: sha512-mxgTj/MkemN8JlyfaS20OAJ0BqTUoUlDT9wD/m5U+nUa5SN/r0kPlg1IW9SbmRTrYjNXWEENf9F0Fjb/X4zn6g==}
-    dependencies:
-      '@antfu/utils': 0.1.7
-      debug: 4.3.3
-      fast-glob: 3.2.7
-      jiti: 1.12.9
-      magic-string: 0.25.7
-      micromatch: 4.0.4
       windicss: 3.4.2
     transitivePeerDependencies:
       - supports-color
@@ -4784,11 +4762,6 @@ packages:
       onetime: 5.1.2
       signal-exit: 3.0.6
       strip-final-newline: 2.0.0
-    dev: true
-
-  /exit-hook/2.2.1:
-    resolution: {integrity: sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==}
-    engines: {node: '>=6'}
     dev: true
 
   /expect/27.2.5:
@@ -8056,21 +8029,6 @@ packages:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
 
-  /postcss-windicss/1.0.0_postcss@8.4.5:
-    resolution: {integrity: sha512-/nerHoHEJHpal9Kxnld+4Sj2Jac1gds9/cNuWEdD0rMVlw5Nl1YcmFkDyU5QJeeRC3tqjTEmpghvfztXLWPjiA==}
-    peerDependencies:
-      postcss: ^8.0.0
-    dependencies:
-      '@windicss/plugin-utils': 0.16.7
-      chokidar: 3.5.2
-      debug: 4.3.3
-      exit-hook: 2.2.1
-      postcss: 8.4.5
-      windicss: 3.4.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /postcss/8.3.11:
     resolution: {integrity: sha512-hCmlUAIlUiav8Xdqw3Io4LcpA1DOt7h3LSTAC4G6JGHFFaWzI6qvFt9oilvl8BmkbBRX1IhM90ZAmpk68zccQA==}
     engines: {node: ^10 || ^12 || >=14}
@@ -9392,32 +9350,6 @@ packages:
       serialize-javascript: 6.0.0
       source-map: 0.6.1
       terser: 5.10.0_acorn@8.6.0
-      webpack: 5.65.0_webpack-cli@4.9.1
-    transitivePeerDependencies:
-      - acorn
-    dev: true
-
-  /terser-webpack-plugin/5.3.0_webpack@5.65.0:
-    resolution: {integrity: sha512-LPIisi3Ol4chwAaPP8toUJ3L4qCM1G0wao7L3qNv57Drezxj6+VEyySpPw4B1HSO2Eg/hDY/MNF5XihCAoqnsQ==}
-    engines: {node: '>= 10.13.0'}
-    peerDependencies:
-      '@swc/core': '*'
-      esbuild: '*'
-      uglify-js: '*'
-      webpack: ^5.1.0
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      esbuild:
-        optional: true
-      uglify-js:
-        optional: true
-    dependencies:
-      jest-worker: 27.4.5
-      schema-utils: 3.1.1
-      serialize-javascript: 6.0.0
-      source-map: 0.6.1
-      terser: 5.10.0
       webpack: 5.65.0_webpack-cli@4.9.1
     transitivePeerDependencies:
       - acorn

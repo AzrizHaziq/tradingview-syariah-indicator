@@ -7,6 +7,7 @@
   "popup_version": { "message": "Versi terkini" },
   "popup_or": { "message": "atau" },
   "popup_bug_alt": { "message": "Laporkan pepijat (sila jangan laporkan pendua)" },
+  "popup_bug_in_flag": { "message": "Pepijat. Sila maklumkan perkara ini kepada dev." },
   "popup_github_repo": { "message": "Repositori Github" },
   "popup_refresh_icon": { "message": "Kemaskini data" },
   "popup_loading_icon": { "message": "Mengambil data terkini" },

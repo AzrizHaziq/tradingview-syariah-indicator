@@ -4,6 +4,6 @@ module.exports = {
     require('postcss-import'),
     require('postcss-preset-env'),
     require('autoprefixer'),
-    require('postcss-windicss'),
+    // require('postcss-windicss'),
   ],
 }

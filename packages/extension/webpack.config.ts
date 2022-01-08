@@ -45,7 +45,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(s)?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
