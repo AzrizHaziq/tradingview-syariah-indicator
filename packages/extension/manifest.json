@@ -12,7 +12,7 @@
     }
   },
   "background": {
-    "scripts": ["bg/bg.js"],
+    "scripts": ["bg/background.js"],
     "persistent": true
   },
   "content_scripts": [

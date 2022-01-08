@@ -3,14 +3,13 @@ import * as webpack from 'webpack'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
 import type { Configuration } from 'webpack'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
-import MergeIntoSingleFilePlugin from 'webpack-merge-and-include-globally'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
@@ -91,9 +90,6 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         },
       ],
     }),
-    new MergeIntoSingleFilePlugin({
-      files: { 'bg/bg.js': ['dist/browser-polyfill.js', 'dist/bg/background.js'] },
-    }),
     new SizePlugin({ writeFile: false }),
     process.env.ENABLE_BA ? new BundleAnalyzerPlugin() : undefined,
   ].filter(Boolean),
@@ -108,7 +104,9 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         'browser-polyfill': {
           test: /[\\/]node_modules[\\/]webextension-polyfill/,
           name: 'browser-polyfill',
-          chunks: 'all',
+
+          // browser-polyfill in bg scripts is omitted because for manifest version 3
+          chunks: (chunk) => chunk.name !== 'bg/background',
         },
       },
     },
