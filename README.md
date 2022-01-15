@@ -74,7 +74,7 @@ Installation guide:
 
 Popup
 
-![popup](/assets/ori_chrome/popup.png)
+![popup](/assets/ori_chrome/popup.jpg)
 
 
 ## Youtube video
