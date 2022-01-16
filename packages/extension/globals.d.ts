@@ -57,7 +57,16 @@ declare namespace TSI {
           eventLabel?: string
         }
       }
+    | { type: 'invalidate-cache' }
     | {
-        type: 'invalidate-cache'
+        type: 'ga-popup'
+        subType: 'pageview' | 'event' // this should look the same as above ga
+        payload:
+          | string
+          | {
+              eventCategory: string
+              eventAction: string
+              eventLabel?: string
+            }
       }
 }

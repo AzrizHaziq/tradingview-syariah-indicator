@@ -82,7 +82,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
               version: process.env.npm_package_version,
               ...manifestJson,
               // write our FETCH_URL into csp
-              content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
+              // content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
             }
 
             return JSON.stringify(output, null, 2)

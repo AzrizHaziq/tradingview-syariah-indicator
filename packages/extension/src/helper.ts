@@ -2,7 +2,7 @@ import browser from 'webextension-polyfill'
 
 const GA = process.env.GA
 let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()
-const parser = new DOMParser()
+// const parser = new DOMParser()
 export const attributeName = 'data-indicator'
 export const extensionName = 'tradingview-shariah-indicator'
 
@@ -37,8 +37,12 @@ export function createIcon({ width, height } = { width: 25, height: 25 }): SVGSV
       <use xlink:href="#shariah-icon"></use>
     </svg>
   `
+  const p = document.createElement('p')
+  p.textContent = '123123123'
+  // @ts-ignore
+  return p
 
-  return parser.parseFromString(iconInSvgString, 'text/html').querySelector('svg')
+  // return parser.parseFromString(iconInSvgString, 'text/html').querySelector('svg')
 }
 
 export function addStyle(css: string): void {
@@ -132,8 +136,8 @@ export function addStaticShariahIcon(): void {
      </svg>
   `
 
-  const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
-  document.body.append(rootSvg)
+  // const rootSvg = parser.parseFromString(rootIcon, 'text/html').querySelector('svg')
+  // document.body.append(rootSvg)
 }
 
 export function initGa(): void {
