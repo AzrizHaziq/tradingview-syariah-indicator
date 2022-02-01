@@ -1,4 +1,4 @@
-declare function ga(...args: unknown[]): void
+// declare function ga(...args: unknown[]): void
 
 declare module '*.svg'
 

@@ -1,5 +1,3 @@
-import browser from 'webextension-polyfill'
-
 import {
   waitForElm,
   createIcon,
@@ -8,17 +6,8 @@ import {
   setStockListInMap,
   isShariahIconExist,
   observeNodeChanges,
-  addStaticShariahIcon,
 } from '../helper'
-;(async () => {
-  await browser.runtime.sendMessage({
-    type: 'ga',
-    subType: 'pageview',
-    payload: 'chart',
-  })
-})()
 
-addStaticShariahIcon()
 waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
 
 function mainScript() {
@@ -44,7 +33,9 @@ async function chartScript(): Promise<void> {
     if (isShariahIconExist(parentElement)) {
       // if icon already exist don't do anything
     } else {
-      parentElement.prepend(createIcon({ width: 15, height: 15 }))
+      const span = createIcon({ width: 15, height: 15 })
+      span.style.display = 'flex'
+      parentElement.prepend(span)
     }
   } else {
     // if not syariah delete all icon

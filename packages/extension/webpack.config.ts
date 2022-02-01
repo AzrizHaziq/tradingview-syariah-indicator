@@ -76,13 +76,21 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
           force: true,
           transform: function (content) {
             const manifestJson = JSON.parse(content.toString())
-            const connectSelf = ['https://www.google-analytics.com', process.env.FETCH_URL].join(' ')
 
             const output = {
               version: process.env.npm_package_version,
               ...manifestJson,
               // write our FETCH_URL into csp
-              // content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
+              content_security_policy: {
+                extension_pages: [
+                  manifestJson.content_security_policy.extension_pages,
+                  `default-src 'self'; style-src 'self'; object-src 'self'; script-src 'self';`,
+                  `connect-src ${process.env.FETCH_URL}`, // https://www.google-analytics.com
+                  // `img-src 'self' https://google-analytics.com`,
+                  // `script-src-elem 'self' https://www.google-analytics.com`,
+                  // `script-src https://www.google-analytics.com/analytics.js 'self'`,
+                ].join('; '),
+              },
             }
 
             return JSON.stringify(output, null, 2)

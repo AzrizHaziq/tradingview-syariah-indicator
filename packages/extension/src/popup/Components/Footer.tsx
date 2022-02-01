@@ -72,12 +72,6 @@ export const Footer: Component = () => {
             copy('azrjas3', () => {
               setIsCopy(true)
               setTimeout(() => setIsCopy(false), 1000)
-              popupGa({
-                hitType: 'event',
-                eventAction: 'click',
-                eventCategory: 'extension::referrer_code',
-                eventLabel: 'popup',
-              })
             })
           }>
           <span class='px-2 text-sm font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed py-0.5'>

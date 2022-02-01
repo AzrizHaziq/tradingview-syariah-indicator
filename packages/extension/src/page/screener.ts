@@ -1,5 +1,3 @@
-import browser from 'webextension-polyfill'
-
 import {
   createIcon,
   waitForElm,
@@ -10,20 +8,10 @@ import {
   addStyle,
   attributeName,
   extensionName,
-  addStaticShariahIcon,
   getMessage,
   setStorage,
   getStorage,
 } from '../helper'
-
-addStaticShariahIcon()
-;(async () => {
-  await browser.runtime.sendMessage({
-    type: 'ga',
-    subType: 'pageview',
-    payload: getCurrentPathname(),
-  })
-})()
 
 const ONLY_VALID_COUNTRIES = ['my', 'us', 'cn']
 
@@ -50,6 +38,7 @@ const shariah = {
   checkBoxAttrValue: 'shariah-checkbox',
   createIcon: () => {
     const icon = createIcon({ width: 17, height: 17 })
+    icon.style.display = 'flex'
     icon.style.cursor = 'pointer'
     icon.removeAttribute(attributeName)
     icon.setAttribute(`${attributeName}-filter-icon`, `${extensionName}-filter-icon`)
@@ -131,7 +120,7 @@ function observedTableChanges() {
       const { s: isSyariah } = getStockStat(rowSymbol as `${string}:${string}`)
 
       const firstColumn = tr.querySelector('td div')
-      const shariahIcon = createIcon({ width: 10, height: 10 })
+      const shariahIcon = createIcon({ width: 12, height: 12 })
 
       tr.classList.add(css.main.row)
 
@@ -235,16 +224,6 @@ function setupFilterBtn(state) {
     try {
       await state.onClick(wrapper)(e)
 
-      await browser.runtime.sendMessage({
-        type: 'ga',
-        subType: 'event',
-        payload: {
-          eventCategory: getCurrentPathname(),
-          eventAction: state.type,
-          eventLabel: `${state.currentState}`,
-        },
-      })
-
       const tbody = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
       state.currentState ? tbody.classList.add(state.css.body) : tbody.classList.remove(state.css.body)
     } catch (error) {
@@ -255,10 +234,6 @@ function setupFilterBtn(state) {
   if (!isCountryValid()) {
     wrapper.style.display = 'none'
   }
-}
-
-function getCurrentPathname() {
-  return window.location.pathname.replace(/\//g, '') === 'screener' ? 'screener' : 'chart-screener'
 }
 
 function setupCssClassName() {

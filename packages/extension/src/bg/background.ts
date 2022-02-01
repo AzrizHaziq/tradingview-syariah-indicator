@@ -1,11 +1,7 @@
 import browser from 'webextension-polyfill'
 import { differenceInDays, format, isDate } from 'date-fns'
-import { debounce, getStorage, initGa, setStorage } from '../helper'
-;(async () => {
-  // initGa()
-  console.log('on init in bg')
-  await fetchData()
-})()
+import { debounce, getStorage, setStorage } from '../helper'
+;(async () => await fetchData())()
 
 browser.runtime.onInstalled.addListener(() => fetchData(true))
 browser.tabs.onUpdated.addListener(
@@ -47,21 +43,6 @@ browser.tabs.onUpdated.addListener(
 )
 
 browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
-  if (req.type === 'ga') {
-    console.log('send ga in bg', req)
-    browser.runtime.sendMessage({ ...req, type: 'ga-popup' })
-    // if (req.subType === 'pageview') {
-    //   ga('send', 'pageview', req.payload)
-    // }
-    //
-    // if (req.subType === 'event') {
-    //   ga('send', {
-    //     hitType: 'event',
-    //     ...req.payload,
-    //   })
-    // }
-  }
-
   if (req.type === 'invalidate-cache') {
     return setStorage('LAST_FETCH_AT', '')
       .then(() => console.log('>>> INVALIDATE CACHE'))

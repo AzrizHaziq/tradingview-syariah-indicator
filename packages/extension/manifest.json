@@ -38,7 +38,7 @@
       "48": "./assets/shariah-icon-48.png"
     }
   },
-  "content_security_policy3": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
+  "content_security_policy": {
+    "extension_pages": ""
   }
 }
