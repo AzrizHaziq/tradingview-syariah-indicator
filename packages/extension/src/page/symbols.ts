@@ -8,20 +8,19 @@ import {
   observeNodeChanges,
 } from '../helper'
 
+let obs: MutationObserver
 const largeResoSelector = '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
 const smallResoSelector = '.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line'
 
 waitForElm('.tv-main .tv-content')
   .then(setStockListInMap)
   .then(() => waitForElm('.tv-category-header__title'))
-  .then(mainScript)
+  .then(observeDom)
+  .then(symbolScript)
 
-function mainScript() {
-  symbolScript()
-
+function observeDom() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
-  const symbolNode = document.querySelector('.tv-category-header__title')
-  observeNodeChanges(symbolNode, symbolScript)
+  obs = observeNodeChanges(document.querySelector('.tv-main .tv-content'), symbolScript)
 }
 
 function symbolScript() {
@@ -30,20 +29,22 @@ function symbolScript() {
   const largeResoDom = document.querySelector(largeResoSelector)
 
   if (isShariah) {
-    if (isShariahIconExist(smallResoDom)) {
+    if (isShariahIconExist(smallResoDom) || isShariahIconExist(largeResoDom.parentElement)) {
       // if icon already exist don't do anything
     } else {
-      const icon = createIcon()
-      icon.style.position = 'relative'
-      icon.style.bottom = '10px'
-      smallResoDom.insertAdjacentElement('beforeend', icon)
-    }
+      // have to disconnect current observer so that it doesn't create loop
+      // because below we create icon and insert into div which trigger again observer.
+      obs.disconnect()
 
-    if (isShariahIconExist(largeResoDom.parentElement)) {
-      // if icon already exist don't do anything
-    } else {
-      const icon = createIcon({ width: 15, height: 15 })
-      largeResoDom.insertAdjacentElement('afterend', icon)
+      const icon1 = createIcon()
+      icon1.style.position = 'relative'
+      icon1.style.bottom = '10px'
+      smallResoDom.insertAdjacentElement('beforeend', icon1)
+
+      const icon2 = createIcon({ width: 15, height: 15 })
+      largeResoDom.insertAdjacentElement('afterend', icon2)
+
+      observeDom()
     }
   } else {
     deleteShariahIcon()
