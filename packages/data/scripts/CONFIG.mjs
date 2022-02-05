@@ -12,6 +12,9 @@ export const CONFIG = {
     ['NASDAQ', 'HLAL', 'WAHED FTSE USA SHARIAH ETF'],
   ],
   MYX: {
+    home_page:
+      'https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc',
+    exchanges: ['MYX'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },
   CHINA: {
