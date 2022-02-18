@@ -1,38 +1,50 @@
-import { JSX } from 'solid-js'
-import { useTrackOnLoad } from '@util'
+import { JSX } from "solid-js";
+import { useTrackOnLoad } from "@util";
 
 export default function PrivacyPolicy(): JSX.Element {
-  useTrackOnLoad()
+  useTrackOnLoad();
 
   return (
-    <div class='mx-auto prose'>
-      <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>
-        <ul class='!m-0'>
+    <div class="mx-auto prose">
+      <div class="p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50">
+        <ul class="!m-0">
           <li>
             <p>
               All source code is available in github publicly <br />
-              <a class='font-bold !text-green-800' href='https://github.com/AzrizHaziq/tradingview-syariah-indicator'>
+              <a
+                class="font-bold !text-green-800"
+                href="https://github.com/AzrizHaziq/tradingview-syariah-indicator"
+              >
                 https://github.com/AzrizHaziq/tradingview-syariah-indicator
               </a>
             </p>
           </li>
           <li>
-            <p>Since, this extension does not have any login, thus no personal & privacy information is obtain</p>
+            <p>
+              Since, this extension does not have any login, thus no personal &
+              privacy information is obtain
+            </p>
           </li>
         </ul>
       </div>
-      <div class='mt-15' />
+      <div class="mt-15" />
       <small>8 Jan 2022</small>
       <h1>Privacy Policy</h1>
       <p>
-        This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
-        information when You use the Service and tells You about Your privacy rights and how the law protects You.
+        This Privacy Policy describes Our policies and procedures on the
+        collection, use and disclosure of Your information when You use the
+        Service and tells You about Your privacy rights and how the law protects
+        You.
       </p>
       <p>
-        We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection
-        and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the
-        help of the
-        <a href='https://www.termsfeed.com/blog/sample-privacy-policy-template/' target='_blank'>
+        We use Your Personal data to provide and improve the Service. By using
+        the Service, You agree to the collection and use of information in
+        accordance with this Privacy Policy. This Privacy Policy has been
+        created with the help of the
+        <a
+          href="https://www.termsfeed.com/blog/sample-privacy-policy-template/"
+          target="_blank"
+        >
           Privacy Policy Template
         </a>
         .
@@ -40,27 +52,31 @@ export default function PrivacyPolicy(): JSX.Element {
       <h1>Interpretation and Definitions</h1>
       <h2>Interpretation</h2>
       <p>
-        The words of which the initial letter is capitalized have meanings defined under the following conditions. The
-        following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+        The words of which the initial letter is capitalized have meanings
+        defined under the following conditions. The following definitions shall
+        have the same meaning regardless of whether they appear in singular or
+        in plural.
       </p>
       <h2>Definitions</h2>
       <p>For the purposes of this Privacy Policy:</p>
       <ul>
         <li>
           <p>
-            <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or
-            &quot;Our&quot; in this Agreement) refers to Tradingview Shariah Indicator.
+            <strong>Company</strong> (referred to as either &quot;the
+            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
+            this Agreement) refers to Tradingview Shariah Indicator.
           </p>
         </li>
         <li>
           <p>
-            <strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a
-            digital tablet.
+            <strong>Device</strong> means any device that can access the Service
+            such as a computer, a cellphone or a digital tablet.
           </p>
         </li>
         <li>
           <p>
-            <strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.
+            <strong>Personal Data</strong> is any information that relates to an
+            identified or identifiable individual.
           </p>
         </li>
         <li>
@@ -70,30 +86,39 @@ export default function PrivacyPolicy(): JSX.Element {
         </li>
         <li>
           <p>
-            <strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the
-            Company. It refers to third-party companies or individuals employed by the Company to facilitate the
-            Service, to provide the Service on behalf of the Company, to perform services related to the Service or to
-            assist the Company in analyzing how the Service is used.
+            <strong>Service Provider</strong> means any natural or legal person
+            who processes the data on behalf of the Company. It refers to
+            third-party companies or individuals employed by the Company to
+            facilitate the Service, to provide the Service on behalf of the
+            Company, to perform services related to the Service or to assist the
+            Company in analyzing how the Service is used.
           </p>
         </li>
         <li>
           <p>
-            <strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the
-            Service or from the Service infrastructure itself (for example, the duration of a page visit).
+            <strong>Usage Data</strong> refers to data collected automatically,
+            either generated by the use of the Service or from the Service
+            infrastructure itself (for example, the duration of a page visit).
           </p>
         </li>
         <li>
           <p>
-            <strong>Website</strong> refers to Tradingview Shariah Indicator, accessible from{' '}
-            <a href='https://tsi.azrizhaziq.com' rel='external nofollow noopener' target='_blank'>
+            <strong>Website</strong> refers to Tradingview Shariah Indicator,
+            accessible from{" "}
+            <a
+              href="https://tsi.azrizhaziq.com"
+              rel="external nofollow noopener"
+              target="_blank"
+            >
               https://tsi.azrizhaziq.com
             </a>
           </p>
         </li>
         <li>
           <p>
-            <strong>You</strong> means the individual accessing or using the Service, or the company, or other legal
-            entity on behalf of which such individual is accessing or using the Service, as applicable.
+            <strong>You</strong> means the individual accessing or using the
+            Service, or the company, or other legal entity on behalf of which
+            such individual is accessing or using the Service, as applicable.
           </p>
         </li>
       </ul>
@@ -101,8 +126,10 @@ export default function PrivacyPolicy(): JSX.Element {
       <h2>Types of Data Collected</h2>
       <h3>Personal Data</h3>
       <p>
-        While using Our Service, We may ask You to provide Us with certain personally identifiable information that can
-        be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+        While using Our Service, We may ask You to provide Us with certain
+        personally identifiable information that can be used to contact or
+        identify You. Personally identifiable information may include, but is
+        not limited to:
       </p>
       <ul>
         <li>Usage Data</li>
@@ -110,13 +137,16 @@ export default function PrivacyPolicy(): JSX.Element {
       <h3>Usage Data</h3>
       <p>Usage Data is collected automatically when using the Service.</p>
       <p>
-        Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser
-        type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent
-        on those pages, unique device identifiers and other diagnostic data.
+        Usage Data may include information such as Your Device's Internet
+        Protocol address (e.g. IP address), browser type, browser version, the
+        pages of our Service that You visit, the time and date of Your visit,
+        the time spent on those pages, unique device identifiers and other
+        diagnostic data.
       </p>
       <p>
-        We may also collect information that Your browser sends whenever You visit our Service or when You access the
-        Service by or through a mobile device.
+        We may also collect information that Your browser sends whenever You
+        visit our Service or when You access the Service by or through a mobile
+        device.
       </p>
       <h3>Tracking Technologies and Cookies</h3>
       <p>We don't use cookies at all</p>
@@ -125,128 +155,161 @@ export default function PrivacyPolicy(): JSX.Element {
       <ul>
         <li>
           <p>
-            <strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.
+            <strong>To provide and maintain our Service</strong>, including to
+            monitor the usage of our Service.
           </p>
         </li>
 
         <li>
           <p>
-            <strong>To manage Your requests:</strong> To attend and manage Your requests to Us.
+            <strong>To manage Your requests:</strong> To attend and manage Your
+            requests to Us.
           </p>
         </li>
         <li>
           <p>
-            <strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger,
-            divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our
-            assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which
-            Personal Data held by Us about our Service users is among the assets transferred.
+            <strong>For business transfers:</strong> We may use Your information
+            to evaluate or conduct a merger, divestiture, restructuring,
+            reorganization, dissolution, or other sale or transfer of some or
+            all of Our assets, whether as a going concern or as part of
+            bankruptcy, liquidation, or similar proceeding, in which Personal
+            Data held by Us about our Service users is among the assets
+            transferred.
           </p>
         </li>
         <li>
           <p>
-            <strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis,
-            identifying usage trends, and to evaluate and improve our Service, products, services, marketing and your
-            experience.
+            <strong>For other purposes</strong>: We may use Your information for
+            other purposes, such as data analysis, identifying usage trends, and
+            to evaluate and improve our Service, products, services, marketing
+            and your experience.
           </p>
         </li>
       </ul>
       <p>We may share Your personal information in the following situations:</p>
       <ul>
         <li>
-          <strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your
-          consent.
+          <strong>With Your consent</strong>: We may disclose Your personal
+          information for any other purpose with Your consent.
         </li>
       </ul>
       <h2>Retention of Your Personal Data</h2>
       <p>
-        The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this
-        Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal
-        obligations (for example, if we are required to retain your data to comply with applicable laws), resolve
-        disputes, and enforce our legal agreements and policies.
+        The Company will retain Your Personal Data only for as long as is
+        necessary for the purposes set out in this Privacy Policy. We will
+        retain and use Your Personal Data to the extent necessary to comply with
+        our legal obligations (for example, if we are required to retain your
+        data to comply with applicable laws), resolve disputes, and enforce our
+        legal agreements and policies.
       </p>
       <p>
-        The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a
-        shorter period of time, except when this data is used to strengthen the security or to improve the functionality
-        of Our Service, or We are legally obligated to retain this data for longer time periods.
+        The Company will also retain Usage Data for internal analysis purposes.
+        Usage Data is generally retained for a shorter period of time, except
+        when this data is used to strengthen the security or to improve the
+        functionality of Our Service, or We are legally obligated to retain this
+        data for longer time periods.
       </p>
       <h2>Transfer of Your Personal Data</h2>
       <p>
-        Your information, including Personal Data, is processed at the Company's operating offices and in any other
-        places where the parties involved in the processing are located. It means that this information may be
-        transferred to — and maintained on — computers located outside of Your state, province, country or other
-        governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+        Your information, including Personal Data, is processed at the Company's
+        operating offices and in any other places where the parties involved in
+        the processing are located. It means that this information may be
+        transferred to — and maintained on — computers located outside of Your
+        state, province, country or other governmental jurisdiction where the
+        data protection laws may differ than those from Your jurisdiction.
       </p>
       <p>
-        Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to
-        that transfer.
+        Your consent to this Privacy Policy followed by Your submission of such
+        information represents Your agreement to that transfer.
       </p>
       <p>
-        The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in
-        accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or
-        a country unless there are adequate controls in place including the security of Your data and other personal
-        information.
+        The Company will take all steps reasonably necessary to ensure that Your
+        data is treated securely and in accordance with this Privacy Policy and
+        no transfer of Your Personal Data will take place to an organization or
+        a country unless there are adequate controls in place including the
+        security of Your data and other personal information.
       </p>
       <h2>Disclosure of Your Personal Data</h2>
       <h3>Law enforcement</h3>
       <p>
-        Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by
-        law or in response to valid requests by public authorities (e.g. a court or a government agency).
+        Under certain circumstances, the Company may be required to disclose
+        Your Personal Data if required to do so by law or in response to valid
+        requests by public authorities (e.g. a court or a government agency).
       </p>
       <h3>Other legal requirements</h3>
-      <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+      <p>
+        The Company may disclose Your Personal Data in the good faith belief
+        that such action is necessary to:
+      </p>
       <ul>
         <li>Comply with a legal obligation</li>
         <li>Protect and defend the rights or property of the Company</li>
-        <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-        <li>Protect the personal safety of Users of the Service or the public</li>
+        <li>
+          Prevent or investigate possible wrongdoing in connection with the
+          Service
+        </li>
+        <li>
+          Protect the personal safety of Users of the Service or the public
+        </li>
         <li>Protect against legal liability</li>
       </ul>
       <h2>Security of Your Personal Data</h2>
       <p>
-        The security of Your Personal Data is important to Us, but remember that no method of transmission over the
-        Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means
-        to protect Your Personal Data, We cannot guarantee its absolute security.
+        The security of Your Personal Data is important to Us, but remember that
+        no method of transmission over the Internet, or method of electronic
+        storage is 100% secure. While We strive to use commercially acceptable
+        means to protect Your Personal Data, We cannot guarantee its absolute
+        security.
       </p>
       <h1>Children's Privacy</h1>
       <p>
-        Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable
-        information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child
-        has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data
-        from anyone under the age of 13 without verification of parental consent, We take steps to remove that
-        information from Our servers.
+        Our Service does not address anyone under the age of 13. We do not
+        knowingly collect personally identifiable information from anyone under
+        the age of 13. If You are a parent or guardian and You are aware that
+        Your child has provided Us with Personal Data, please contact Us. If We
+        become aware that We have collected Personal Data from anyone under the
+        age of 13 without verification of parental consent, We take steps to
+        remove that information from Our servers.
       </p>
       <p>
-        If We need to rely on consent as a legal basis for processing Your information and Your country requires consent
-        from a parent, We may require Your parent's consent before We collect and use that information.
+        If We need to rely on consent as a legal basis for processing Your
+        information and Your country requires consent from a parent, We may
+        require Your parent's consent before We collect and use that
+        information.
       </p>
       <h1>Links to Other Websites</h1>
       <p>
-        Our Service may contain links to other websites that are not operated by Us. If You click on a third party link,
-        You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every
-        site You visit.
+        Our Service may contain links to other websites that are not operated by
+        Us. If You click on a third party link, You will be directed to that
+        third party's site. We strongly advise You to review the Privacy Policy
+        of every site You visit.
       </p>
       <p>
-        We have no control over and assume no responsibility for the content, privacy policies or practices of any third
-        party sites or services.
+        We have no control over and assume no responsibility for the content,
+        privacy policies or practices of any third party sites or services.
       </p>
       <h1>Changes to this Privacy Policy</h1>
       <p>
-        We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy
-        Policy on this page.
+        We may update Our Privacy Policy from time to time. We will notify You
+        of any changes by posting the new Privacy Policy on this page.
       </p>
       <p>
-        We will let You know via prominent notice on Our Service, prior to the change becoming effective and update the
-        &quot;date&quot; at the top of this Privacy Policy.
+        We will let You know via prominent notice on Our Service, prior to the
+        change becoming effective and update the &quot;date&quot; at the top of
+        this Privacy Policy.
       </p>
       <p>
-        You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are
-        effective when they are posted on this page.
+        You are advised to review this Privacy Policy periodically for any
+        changes. Changes to this Privacy Policy are effective when they are
+        posted on this page.
       </p>
       <h1>Contact Us</h1>
-      <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+      <p>
+        If you have any questions about this Privacy Policy, You can contact us:
+      </p>
       <ul>
         <li>By email: azrizhaziq@gmail.com</li>
       </ul>
     </div>
-  )
+  );
 }

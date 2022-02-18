@@ -1,7 +1,7 @@
-import fs from 'fs'
-import path from 'path'
-import fse from 'fs-extra'
-import pkg from '../package.json'
+import fs from "fs";
+import path from "path";
+import fse from "fs-extra";
+import pkg from "../package.json";
 
 /**
  * This script is for uploading source code to Firefox submission.
@@ -10,33 +10,37 @@ import pkg from '../package.json'
  * Then it will zip it with `outputFolder` name.
  * The output can be found at /web-ext-artifacts.
  */
-const outputFolder = `tradingview_shariah_indicator-${pkg.version}-source_code`
-const outputZip = `${outputFolder}.zip`
-const destination = `scripts/${outputFolder}`
+const outputFolder = `tradingview_shariah_indicator-${pkg.version}-source_code`;
+const outputZip = `${outputFolder}.zip`;
+const destination = `scripts/${outputFolder}`;
 const files = [
-  '_locales',
-  'assets',
-  'src',
-  '.babelrc',
-  '.env.example',
-  'globals.d.ts',
-  'manifest.json',
-  'package.json',
-  'postcss.config.js',
-  'windi.config.ts',
-  'tsconfig.json',
-  'web-ext-config.js',
-  'webpack.config.ts',
-].map((file) => copy(file))
+  "_locales",
+  "assets",
+  "src",
+  ".babelrc",
+  ".env.example",
+  "globals.d.ts",
+  "manifest.json",
+  "package.json",
+  "postcss.config.js",
+  "windi.config.ts",
+  "tsconfig.json",
+  "web-ext-config.js",
+  "webpack.config.ts",
+].map((file) => copy(file));
 
 async function copy(input, dest = destination) {
   try {
-    return await fse.copy(path.resolve(process.cwd(), input), path.resolve(process.cwd(), dest, input), {
-      overwrite: true,
-    })
+    return await fse.copy(
+      path.resolve(process.cwd(), input),
+      path.resolve(process.cwd(), dest, input),
+      {
+        overwrite: true,
+      }
+    );
   } catch (err) {
-    console.error(`Failed to copy: ${input}`, err)
-    process.exit(1)
+    console.error(`Failed to copy: ${input}`, err);
+    process.exit(1);
   }
 }
 
@@ -60,33 +64,35 @@ Steps
    \`\`\`
 4. Type in terminal \`$ npm run build\`
 5. Generated file located in /dist/*
-`.trim()
+`.trim();
 
-    fs.writeFileSync(`${destination}/README.md`, readme, { encoding: 'utf-8' })
+    fs.writeFileSync(`${destination}/README.md`, readme, { encoding: "utf-8" });
 
     // eslint-disable-next-line no-console
-    console.log(`Success write to README.md`)
+    console.log(`Success write to README.md`);
   } catch (e) {
-    throw new Error(`Error create README.md: ${e}`)
+    throw new Error(`Error create README.md: ${e}`);
   }
 }
 
 async function gzip() {
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const child_process = require('child_process')
-    child_process.execSync(`zip -r scripts/${outputZip} scripts/${outputFolder}`)
-    child_process.execSync(`rm -rf scripts/${outputFolder}`)
-    child_process.execSync(`mv scripts/${outputZip} web-ext-artifacts/`)
+    const child_process = require("child_process");
+    child_process.execSync(
+      `zip -r scripts/${outputZip} scripts/${outputFolder}`
+    );
+    child_process.execSync(`rm -rf scripts/${outputFolder}`);
+    child_process.execSync(`mv scripts/${outputZip} web-ext-artifacts/`);
 
     // eslint-disable-next-line no-console
-    console.log(`Success zip to ${outputZip}`)
+    console.log(`Success zip to ${outputZip}`);
   } catch (e) {
-    throw new Error(`Error zip folder: ${e}`)
+    throw new Error(`Error zip folder: ${e}`);
   }
 }
 
 Promise.all(files)
   .then(() => console.log(`\nsuccess copy to ${destination}`))
   .then(createReadme)
-  .then(gzip)
+  .then(gzip);

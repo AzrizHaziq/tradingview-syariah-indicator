@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import solidPlugin from 'vite-plugin-solid'
-import WindiCSS from 'vite-plugin-windicss'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
+import WindiCSS from "vite-plugin-windicss";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
@@ -9,14 +9,14 @@ export default defineConfig({
     solidPlugin({ ssr: true }),
     WindiCSS({
       scan: {
-        include: ['index.html'],
-        dirs: ['src', 'components'],
-        exclude: ['node_modules', '.git'],
+        include: ["index.html"],
+        dirs: ["src", "components"],
+        exclude: ["node_modules", ".git"],
       },
     }),
   ],
   build: {
-    target: 'esnext',
+    target: "esnext",
     polyfillDynamicImport: false,
   },
-})
+});

@@ -1,14 +1,14 @@
-import { JSX } from 'solid-js'
-import { useTrackOnLoad } from '@util'
+import { JSX } from "solid-js";
+import { useTrackOnLoad } from "@util";
 
 export default function Dev(): JSX.Element {
-  useTrackOnLoad()
+  useTrackOnLoad();
 
   return (
-    <div class='mx-auto prose'>
-      <h2 id='developers'>
+    <div class="mx-auto prose">
+      <h2 id="developers">
         Developers
-        <a class='!ml-2' href='#developers'>
+        <a class="!ml-2" href="#developers">
           #
         </a>
       </h2>
@@ -21,27 +21,32 @@ export default function Dev(): JSX.Element {
         <li>pnpm = 6.24.1</li>
         <li>
           git clone this repository <br />
-          <code>$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git</code>
+          <code>
+            $ git clone
+            git@github.com:AzrizHaziq/tradingview-syariah-indicator.git
+          </code>
         </li>
         <li>
           Then run <code>$ pnpm</code> to install all dependencies.
         </li>
         <li>
-          Create <b>.env</b>(for development) and <b>.env.production</b>(for production) file in every{' '}
-          <a href='#development-mode-website'>Web</a>, and
-          <a href='#development-mode-extension'>extension</a>, and please follow <b>.env.example</b>
+          Create <b>.env</b>(for development) and <b>.env.production</b>(for
+          production) file in every <a href="#development-mode-website">Web</a>,
+          and
+          <a href="#development-mode-extension">extension</a>, and please follow{" "}
+          <b>.env.example</b>
         </li>
       </ul>
 
-      <h2 id='how-to-use'>
+      <h2 id="how-to-use">
         How to use
-        <a class='!ml-2' href='#how-to-use'>
+        <a class="!ml-2" href="#how-to-use">
           #
         </a>
       </h2>
-      <h3 id='development-mode-data'>
+      <h3 id="development-mode-data">
         Data
-        <a class='!ml-2' href='#development-mode-data'>
+        <a class="!ml-2" href="#development-mode-data">
           #
         </a>
       </h3>
@@ -50,7 +55,8 @@ export default function Dev(): JSX.Element {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Use this to scrape latest data <code>$ npm run update-data</code>. Will take a few X minutes.
+          Use this to scrape latest data <code>$ npm run update-data</code>.
+          Will take a few X minutes.
         </li>
         <li>
           All new data will be written to
@@ -64,9 +70,9 @@ export default function Dev(): JSX.Element {
           </ul>
         </li>
       </ol>
-      <h3 id='development-mode-extension'>
+      <h3 id="development-mode-extension">
         Extension
-        <a class='!ml-2' href='#development-mode-extension'>
+        <a class="!ml-2" href="#development-mode-extension">
           #
         </a>
       </h3>
@@ -75,7 +81,8 @@ export default function Dev(): JSX.Element {
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
         <li>
-          Type in 1st terminal: <code>$ npm run watch</code> and then in another terminal type either below commands:
+          Type in 1st terminal: <code>$ npm run watch</code> and then in another
+          terminal type either below commands:
           <ul>
             <li>
               Firefox: <code>$ npm run watch:ff</code>
@@ -84,16 +91,17 @@ export default function Dev(): JSX.Element {
               Chrome: <code>$ npm run watch:c</code>
             </li>
             <li>
-              <code>$ npm run build</code> to generate production file. Generated file located in
+              <code>$ npm run build</code> to generate production file.
+              Generated file located in
               <b>/web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</b>
             </li>
           </ul>
         </li>
       </ol>
 
-      <h3 id='development-mode-website'>
+      <h3 id="development-mode-website">
         Website
-        <a class='!ml-2' href='#development-mode-website'>
+        <a class="!ml-2" href="#development-mode-website">
           #
         </a>
       </h3>
@@ -114,7 +122,7 @@ export default function Dev(): JSX.Element {
         </li>
       </ol>
     </div>
-  )
+  );
 }
 
 // export const documentProps = {

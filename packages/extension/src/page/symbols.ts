@@ -6,54 +6,62 @@ import {
   setStockListInMap,
   isShariahIconExist,
   observeNodeChanges,
-} from '../helper'
+} from "../helper";
 
-let obs: MutationObserver
-const largeResoSelector = '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
-const smallResoSelector = '.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line'
+let obs: MutationObserver;
+const largeResoSelector =
+  ".tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange";
+const smallResoSelector =
+  ".tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line";
 
-waitForElm('.tv-main .tv-content')
+waitForElm(".tv-main .tv-content")
   .then(setStockListInMap)
-  .then(() => waitForElm('.tv-category-header__title'))
+  .then(() => waitForElm(".tv-category-header__title"))
   .then(observeDom)
-  .then(symbolScript)
+  .then(symbolScript);
 
 function observeDom() {
   // have to target dom like below since this is the most top parent dom that didn't remove/delete
-  obs = observeNodeChanges(document.querySelector('.tv-main .tv-content'), symbolScript)
+  obs = observeNodeChanges(
+    document.querySelector(".tv-main .tv-content"),
+    symbolScript
+  );
 }
 
 function symbolScript() {
-  const { s: isShariah } = getStockStat(getSymbol())
-  const smallResoDom = document.querySelector(smallResoSelector)
-  const largeResoDom = document.querySelector(largeResoSelector)
+  const { s: isShariah } = getStockStat(getSymbol());
+  const smallResoDom = document.querySelector(smallResoSelector);
+  const largeResoDom = document.querySelector(largeResoSelector);
 
   if (isShariah) {
-    if (isShariahIconExist(smallResoDom) || isShariahIconExist(largeResoDom.parentElement)) {
+    if (
+      isShariahIconExist(smallResoDom) ||
+      isShariahIconExist(largeResoDom.parentElement)
+    ) {
       // if icon already exist don't do anything
     } else {
       // have to disconnect current observer so that it doesn't create loop
       // because below we create icon and insert into div which trigger again observer.
-      obs.disconnect()
+      obs.disconnect();
 
-      const icon1 = createIcon()
-      icon1.style.position = 'relative'
-      icon1.style.bottom = '10px'
-      smallResoDom.insertAdjacentElement('beforeend', icon1)
+      const icon1 = createIcon();
+      icon1.style.position = "relative";
+      icon1.style.bottom = "10px";
+      smallResoDom.insertAdjacentElement("beforeend", icon1);
 
-      const icon2 = createIcon({ width: 15, height: 15 })
-      largeResoDom.insertAdjacentElement('afterend', icon2)
+      const icon2 = createIcon({ width: 15, height: 15 });
+      largeResoDom.insertAdjacentElement("afterend", icon2);
 
-      observeDom()
+      observeDom();
     }
   } else {
-    deleteShariahIcon()
+    deleteShariahIcon();
   }
 }
 
 function getSymbol() {
   return document
-    .querySelector('.tv-category-header__price-line.js-header-symbol-quotes')
-    .getAttribute('data-symbol')
-    .trim() as `${string}:${string}`
+    .querySelector(".tv-category-header__price-line.js-header-symbol-quotes")
+    .getAttribute("data-symbol")
+    .trim() as `${string}:${string}`;
 }
