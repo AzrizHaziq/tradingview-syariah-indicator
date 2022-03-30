@@ -1,6 +1,5 @@
 import browser from "webextension-polyfill";
 
-// const GA = process.env.GA
 let SHARIAH_LIST: Map<
   `${string}:${string}`,
   Record<string, number>
@@ -164,25 +163,3 @@ export async function getStorage<K extends keyof TSI.StorageMap>(
     console.error(`Error set ${key} in storage`, e);
   }
 }
-
-// export function initGa(): void {
-/* eslint-disable */
-// ;(function (i, s, o, g, r, a, m) {
-//   i['GoogleAnalyticsObject'] = r
-//   ;(i[r] =
-//     i[r] ||
-//     function () {
-//       ;(i[r].q = i[r].q || []).push(arguments)
-//     }),
-//     // @ts-ignore
-//     (i[r].l = 1 * new Date())
-//   ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
-//   a.async = 1
-//   a.src = g
-//   m.parentNode.insertBefore(a, m)
-// })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
-//
-// ga('create', GA, 'auto')
-// ga('set', 'checkProtocolTask', null)
-/* eslint-enable */
-// }

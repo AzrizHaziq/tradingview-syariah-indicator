@@ -15,6 +15,16 @@ const isProd = () => process.env.NODE_ENV === "production";
 const dotEnvPath = isProd() ? "./.env.production" : "./.env";
 require("dotenv").config({ path: dotEnvPath }); // eslint-disable-line @typescript-eslint/no-var-requires
 
+console.log(
+  `Using Browser: ${
+    process.env.BROWSER === "ff"
+      ? "Firefox"
+      : process.env.BROWSER === "cc"
+      ? "Chrome"
+      : ""
+  }`
+);
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (
   _environment: string,
@@ -79,8 +89,8 @@ module.exports = (
         { from: "assets", to: "assets" },
         { from: "_locales", to: "_locales" },
         {
-          from: "manifest.json",
-          to: path.join(__dirname, "dist"),
+          from: `manifest.${process.env.BROWSER || "cc"}.json`,
+          to: path.join(__dirname, "dist", "manifest.json"),
           force: true,
           transform: function (content) {
             const manifestJson = JSON.parse(content.toString());
@@ -89,16 +99,27 @@ module.exports = (
               version: process.env.npm_package_version,
               ...manifestJson,
               // write our FETCH_URL into csp
-              content_security_policy: {
-                extension_pages: [
-                  manifestJson.content_security_policy.extension_pages,
-                  `default-src 'self'; style-src 'self'; object-src 'self'; script-src 'self';`,
-                  `connect-src ${process.env.FETCH_URL}`, // https://www.google-analytics.com
-                  // `img-src 'self' https://google-analytics.com`,
-                  // `script-src-elem 'self' https://www.google-analytics.com`,
-                  // `script-src https://www.google-analytics.com/analytics.js 'self'`,
-                ].join("; "),
-              },
+              // for chrome
+              ...(process.env.BROWSER === "cc"
+                ? {
+                    content_security_policy: {
+                      extension_pages: [
+                        manifestJson.content_security_policy.extension_pages,
+                        `connect-src ${process.env.FETCH_URL}`,
+                      ].join("; "),
+                    },
+                  }
+                : {}),
+
+              // for firefox
+              ...(process.env.BROWSER === "ff"
+                ? {
+                    content_security_policy: [
+                      manifestJson.content_security_policy,
+                      `connect-src ${process.env.FETCH_URL}`,
+                    ].join("; "),
+                  }
+                : {}),
             };
 
             return JSON.stringify(output, null, 2);

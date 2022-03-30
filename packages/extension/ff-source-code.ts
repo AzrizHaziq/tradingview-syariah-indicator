@@ -1,18 +1,17 @@
 import fs from "fs";
 import path from "path";
 import fse from "fs-extra";
-import pkg from "../package.json";
+import pkg from "./package.json";
 
 /**
  * This script is for uploading source code to Firefox submission.
  * This script run after `npm run build`.
  * It will compile all `files` below and write a README.md.
- * Then it will zip it with `outputFolder` name.
+ * Then it will zip it with `sourceFolder` name.
  * The output can be found at /web-ext-artifacts.
  */
-const outputFolder = `tradingview_shariah_indicator-${pkg.version}-source_code`;
-const outputZip = `${outputFolder}.zip`;
-const destination = `scripts/${outputFolder}`;
+const sourceFolder = `tradingview_shariah_indicator-${pkg.version}-source_code`;
+const outputZip = `${sourceFolder}.zip`;
 const files = [
   "_locales",
   "assets",
@@ -20,7 +19,7 @@ const files = [
   ".babelrc",
   ".env.example",
   "globals.d.ts",
-  "manifest.json",
+  "manifest.ff.json",
   "package.json",
   "postcss.config.js",
   "windi.config.ts",
@@ -29,7 +28,7 @@ const files = [
   "webpack.config.ts",
 ].map((file) => copy(file));
 
-async function copy(input, dest = destination) {
+async function copy(input, dest = sourceFolder) {
   try {
     return await fse.copy(
       path.resolve(process.cwd(), input),
@@ -59,14 +58,15 @@ Steps
 3. cd packages/extension
 3. create \`.env.production\` file in root, and add this
    \`\`\`
-   GA=UA-random-integer-2
    FETCH_URL=https://raw.githubusercontent.com/AzrizHaziq/tradingview-syariah-indicator/master/packages/data/stock-list.json
    \`\`\`
-4. Type in terminal \`$ npm run build\`
+4. Type in terminal \`$ npm run ff:build\`
 5. Generated file located in /dist/*
 `.trim();
 
-    fs.writeFileSync(`${destination}/README.md`, readme, { encoding: "utf-8" });
+    fs.writeFileSync(`${sourceFolder}/README.md`, readme, {
+      encoding: "utf-8",
+    });
 
     // eslint-disable-next-line no-console
     console.log(`Success write to README.md`);
@@ -79,11 +79,10 @@ async function gzip() {
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const child_process = require("child_process");
-    child_process.execSync(
-      `zip -r scripts/${outputZip} scripts/${outputFolder}`
-    );
-    child_process.execSync(`rm -rf scripts/${outputFolder}`);
-    child_process.execSync(`mv scripts/${outputZip} web-ext-artifacts/`);
+
+    child_process.execSync(`zip -r ./${outputZip} ./${sourceFolder}`);
+    child_process.execSync(`rm -rf ./${sourceFolder}`);
+    child_process.execSync(`mv ./${outputZip} ./web-ext-artifacts/`);
 
     // eslint-disable-next-line no-console
     console.log(`Success zip to ${outputZip}`);
@@ -93,6 +92,6 @@ async function gzip() {
 }
 
 Promise.all(files)
-  .then(() => console.log(`\nsuccess copy to ${destination}`))
+  .then(() => console.log(`\nsuccess copy to ${sourceFolder}`))
   .then(createReadme)
   .then(gzip);

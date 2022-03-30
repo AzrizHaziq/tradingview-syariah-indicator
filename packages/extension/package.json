@@ -1,6 +1,6 @@
 {
   "name": "@app/extension",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "homepage": "https://tsi.azrizhaziq.com",
   "description": "Display small shariah indicator to stock list in Tradingview",
   "bugs": {
@@ -9,12 +9,17 @@
   },
   "private": true,
   "scripts": {
-    "watch": "webpack --mode=development --watch",
-    "watch:ff": "web-ext run",
-    "watch:c": "npm run watch:ff -- --target=chromium",
+    "ff:webpack": "BROWSER=ff webpack --mode=development --watch",
+    "ff:browser": "web-ext run",
+    "cc:webpack": "BROWSER=cc webpack --mode=development --watch",
+    "cc:browser": "npm run ff:browser -- --target=chromium",
+    "_": "_",
+    "ff:build": "BROWSER=ff npm run build",
+    "cc:build": "BROWSER=cc npm run build",
     "build": "NODE_ENV=production webpack --mode=production && web-ext build -s dist -o",
     "build:BA": "ENABLE_BA=true npm run build",
-    "postbuild": "web-ext lint && ts-node scripts/ff-source-code.ts",
+    "postbuild": "web-ext lint",
+    "generate-ff-doc": "ts-node  -P ./tsconfig.json ff-source-code.ts",
     "lint": "eslint --fix .",
     "test": "playwright test --config=playwright.config.ts"
   },
