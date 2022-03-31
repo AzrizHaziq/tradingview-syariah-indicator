@@ -13,10 +13,9 @@
     "build:firefox": "BROWSER=firefox npm run build",
     "start:chrome": "BROWSER=chrome webpack --mode=development --watch",
     "build:chrome": "BROWSER=chrome npm run build",
-    "build:all": "npm run build:chrome && npm run build:firefox",
     "build": "NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true npm run build",
-    "postbuild": "web-ext lint",
+    "build:all": "npm run build:firefox && npm run build:chrome || true && yarn generate-ff-doc",
     "generate-ff-doc": "ts-node  -P ./tsconfig.json firefox-source-code.ts",
     "lint": "eslint --fix .",
     "test": "playwright test --config=playwright.config.ts"
