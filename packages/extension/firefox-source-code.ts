@@ -24,7 +24,6 @@ const files = [
   'postcss.config.js',
   'windi.config.ts',
   'tsconfig.json',
-  'web-ext-config.js',
   'webpack.config.ts',
 ].map((file) => copy(file))
 

@@ -1,2 +1,2 @@
-export * from "./ga";
-export * from "./popup.store";
+export * from './ga'
+export * from './popup.store'
