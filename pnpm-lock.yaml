@@ -99,7 +99,7 @@ importers:
       tsconfig-paths-webpack-plugin: ^3.5.1
       typescript: ^4.4.4
       web-ext: ^6.1.0
-      web-ext-plugin: ^1.7.0
+      web-ext-plugin: ^1.8.0
       web-ext-submit: ^6.1.0
       webextension-polyfill: ^0.8.0
       webpack: ^5.35.1
@@ -156,7 +156,7 @@ importers:
       tsconfig-paths-webpack-plugin: 3.5.2
       typescript: 4.5.4
       web-ext: 6.6.0_5759b7e109f16724996aaec5078cdf0a
-      web-ext-plugin: 1.7.0_5759b7e109f16724996aaec5078cdf0a
+      web-ext-plugin: 1.8.0_5759b7e109f16724996aaec5078cdf0a
       web-ext-submit: 6.6.0_5759b7e109f16724996aaec5078cdf0a
       webextension-polyfill: 0.8.0
       webpack: 5.65.0_webpack-cli@4.9.1
@@ -9935,8 +9935,8 @@ packages:
       defaults: 1.0.3
     dev: true
 
-  /web-ext-plugin/1.7.0_5759b7e109f16724996aaec5078cdf0a:
-    resolution: {integrity: sha512-tN3JmYLENCJyejnJRAzULzJXaEbgDkf1vVydCUa2qUGn1SrDDfPtZsEbu97QmfzpIZ/m0FjZ+Ypy3jYbi63ljA==}
+  /web-ext-plugin/1.8.0_5759b7e109f16724996aaec5078cdf0a:
+    resolution: {integrity: sha512-z16OxDJe983viUmqsjmf0incO1uFFCIZEcmK8Yxf0PPm/31Ix0WYuf1vRcNuptdAF9CeNwHqMxrcNigjJpWppQ==}
     dependencies:
       web-ext: 6.6.0_5759b7e109f16724996aaec5078cdf0a
     transitivePeerDependencies:

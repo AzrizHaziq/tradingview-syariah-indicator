@@ -79,7 +79,7 @@
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.4.4",
     "web-ext": "^6.1.0",
-    "web-ext-plugin": "^1.7.0",
+    "web-ext-plugin": "^1.8.0",
     "web-ext-submit": "^6.1.0",
     "webextension-polyfill": "^0.8.0",
     "webpack": "^5.35.1",
