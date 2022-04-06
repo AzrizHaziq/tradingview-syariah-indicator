@@ -2,7 +2,7 @@ import pkg from '../../../package.json'
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
 import { Accessor, For } from 'solid-js'
-import { _popupGa, useCurrentData } from '@popup/popup-helpers'
+import { useCurrentData } from '@popup/popup-helpers'
 
 export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) => {
   const [currentData] = useCurrentData()
@@ -19,7 +19,6 @@ export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) =>
             target='_blank'
             title={popup_list_at}
             rel='noopener noreferrer'
-            onClick={_popupGa('click', 'shariahAt')}
             class='flex justify-between text-gray-300 cursor-pointer gap-x-2'>
             <div class='flex gap-x-2'>
               <img
