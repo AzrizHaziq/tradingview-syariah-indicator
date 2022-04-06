@@ -119,7 +119,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       overwriteDest: true,
       buildPackage: true,
       artifactsDir: path.resolve(__dirname, 'web-ext-artifacts'),
-      runLint: isProd() || !isChrome, // do not run lint on chrome dev
+      runLint: !isChrome, // do not run lint on chrome dev
       target: isChrome ? 'chromium' : 'firefox-desktop',
       outputFilename: `${currentBrowser}-tsi-${process.env.npm_package_version}.zip`,
       startUrl: 'https://www.tradingview.com/symbols/MYX-K1/',
