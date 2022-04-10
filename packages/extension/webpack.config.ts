@@ -2,6 +2,7 @@ import * as path from 'path'
 import * as webpack from 'webpack'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
+import WebExtPlugin from 'web-ext-plugin'
 import type { Configuration } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
@@ -14,6 +15,11 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
 require('dotenv').config({ path: dotEnvPath }) // eslint-disable-line @typescript-eslint/no-var-requires
+
+const currentBrowser = process.env.BROWSER
+const isChrome = process.env.BROWSER === 'chrome'
+const isFirefox = process.env.BROWSER === 'firefox'
+console.log(`Using Browser ====> ${currentBrowser}`)
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (_environment: string, _: Record<string, boolean | number | string>): Configuration => ({
@@ -71,18 +77,35 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
         { from: 'assets', to: 'assets' },
         { from: '_locales', to: '_locales' },
         {
-          from: 'manifest.json',
-          to: path.join(__dirname, 'dist'),
+          from: `manifest.${currentBrowser}.json`,
+          to: path.join(__dirname, 'dist', 'manifest.json'),
           force: true,
           transform: function (content) {
             const manifestJson = JSON.parse(content.toString())
-            const connectSelf = ['https://www.google-analytics.com', process.env.FETCH_URL].join(' ')
 
             const output = {
               version: process.env.npm_package_version,
               ...manifestJson,
               // write our FETCH_URL into csp
-              content_security_policy: `${manifestJson.content_security_policy} connect-src 'self' ${connectSelf}`,
+              ...(isChrome
+                ? {
+                    content_security_policy: {
+                      extension_pages: [
+                        manifestJson.content_security_policy.extension_pages,
+                        `connect-src ${process.env.FETCH_URL}`,
+                      ].join('; '),
+                    },
+                  }
+                : {}),
+
+              ...(isFirefox
+                ? {
+                    content_security_policy: [
+                      manifestJson.content_security_policy,
+                      `connect-src ${process.env.FETCH_URL}`,
+                    ].join('; '),
+                  }
+                : {}),
             }
 
             return JSON.stringify(output, null, 2)
@@ -91,6 +114,16 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
       ],
     }),
     new SizePlugin({ writeFile: false }),
+    new WebExtPlugin({
+      sourceDir: path.resolve(__dirname, 'dist'),
+      overwriteDest: true,
+      buildPackage: true,
+      artifactsDir: path.resolve(__dirname, 'web-ext-artifacts'),
+      runLint: !isChrome, // do not run lint on chrome dev
+      target: isChrome ? 'chromium' : 'firefox-desktop',
+      outputFilename: `${currentBrowser}-tsi-${process.env.npm_package_version}.zip`,
+      startUrl: 'https://www.tradingview.com/symbols/MYX-K1/',
+    }),
     process.env.ENABLE_BA ? new BundleAnalyzerPlugin() : undefined,
   ].filter(Boolean),
   optimization: {

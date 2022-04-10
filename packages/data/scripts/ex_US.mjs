@@ -57,7 +57,8 @@ const getExchange = (item) =>
           break
           // if all exchanges failed, then search that stock if it is really exist
         } else if (exchange === CONFIG.US.exchanges[CONFIG.US.exchanges.length - 1]) {
-          reject(new Error(`Failed (getExchanged): all exchanges failed: ${exchange}:${item.ticker}`))
+          continue
+          // reject(new Error(`Failed (getExchanged): all exchanges failed: ${exchange}:${item.ticker}`))
         }
       } catch (e) {
         reject(new Error(`Failed (getExchanged): ${exchange}:${item.ticker}: ${e}`))

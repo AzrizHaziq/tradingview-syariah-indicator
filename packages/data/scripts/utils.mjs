@@ -6,16 +6,19 @@ import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
 import { CONFIG } from './CONFIG.mjs'
 
-export const pipe = (...fns) => initialVal => fns.reduce((acc, fn) => fn(acc), initialVal)
-export const pluck = key => obj => obj[key] || null
-export const map = fn => item => fn(item)
+export const pipe =
+  (...fns) =>
+  (initialVal) =>
+    fns.reduce((acc, fn) => fn(acc), initialVal)
+export const pluck = (key) => (obj) => obj[key] || null
+export const map = (fn) => (item) => fn(item)
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
 export function delay(delaySecond = getRandomInt(1, 2)) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(delaySecond), delaySecond * 1000)
   })
 }
@@ -59,7 +62,7 @@ export class CliProgress {
 }
 
 export function logCount(exchanges) {
-  const maxExchangeLength = Math.max(...Object.keys(exchanges).map(k => k.length))
+  const maxExchangeLength = Math.max(...Object.keys(exchanges).map((k) => k.length))
   Object.entries(exchanges).forEach(([exchange, { list }]) => {
     console.log(`${exchange.padEnd(maxExchangeLength, ' ')} >> ${Object.keys(list).length}`)
   })

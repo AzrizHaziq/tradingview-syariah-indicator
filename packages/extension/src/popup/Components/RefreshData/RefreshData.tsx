@@ -23,15 +23,6 @@ export const RefreshData: Component = () => {
 
     setLoading(false)
     setState(currentDates)
-
-    await browser.runtime.sendMessage({
-      type: 'ga',
-      subType: 'event',
-      payload: {
-        eventCategory: 'popup',
-        eventAction: 'invalidate-cache',
-      },
-    })
   }
 
   return (

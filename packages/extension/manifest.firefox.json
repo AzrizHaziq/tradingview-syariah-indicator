@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "author": "Azriz Haziq Jasni",
+  "name": "__MSG_ext_extension_name__",
+  "description": "__MSG_ext_extension_description__",
+  "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
+  "applications": {
+    "gecko": {
+      "id": "{f8ef05be-4a95-4265-b6ee-66eaafe0fcef}",
+      "strict_min_version": "78.0"
+    }
+  },
+  "background": {
+    "scripts": ["bg/background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tradingview.com/chart/*"],
+      "js": ["browser-polyfill.js", "page/chart.js", "page/screener.js"]
+    },
+    {
+      "matches": ["*://*.tradingview.com/screener/*"],
+      "js": ["browser-polyfill.js", "page/screener.js"]
+    },
+    {
+      "matches": ["*://*.tradingview.com/symbols/*"],
+      "js": ["browser-polyfill.js", "page/symbols.js"]
+    }
+  ],
+  "web_accessible_resources": ["assets/shariah-icon.svg"],
+  "permissions": ["storage", "*://*.tradingview.com/*"],
+  "icons": {
+    "16": "./assets/shariah-icon-16.png",
+    "48": "./assets/shariah-icon-48.png",
+    "128": "./assets/shariah-icon-128.png"
+  },
+  "browser_action": {
+    "default_title": "__MSG_ext_extension_name__",
+    "browser_style": true,
+    "default_icon": {
+      "16": "./assets/shariah-icon-16.png",
+      "48": "./assets/shariah-icon-48.png"
+    },
+    "default_popup": "popup/popup.html"
+  },
+  "content_security_policy": "default-src 'self'; style-src 'self'; object-src 'self'"
+}

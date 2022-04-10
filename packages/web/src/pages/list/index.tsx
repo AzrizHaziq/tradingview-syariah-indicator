@@ -18,7 +18,9 @@ const staticExchangeColors = [
 export default function List(): JSX.Element {
   useTrackOnLoad()
 
-  const [data] = createResource<PageProps | undefined>(ShariahFetcher, { initialValue: undefined })
+  const [data] = createResource<PageProps | undefined>(ShariahFetcher, {
+    initialValue: undefined,
+  })
 
   const [store, setStore] = createStore({
     data: [],

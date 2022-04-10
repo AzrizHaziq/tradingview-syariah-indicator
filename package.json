@@ -24,8 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "husky": "^7.0.4",
-    "prettier": "^2.5.1",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   }
 }

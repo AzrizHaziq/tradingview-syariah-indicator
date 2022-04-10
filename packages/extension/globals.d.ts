@@ -1,4 +1,4 @@
-declare function ga(...args: unknown[]): void
+// declare function ga(...args: unknown[]): void
 
 declare module '*.svg'
 
@@ -42,22 +42,5 @@ declare namespace TSI {
     counts: number
   }
 
-  export type EVENT_MSG =
-    | {
-        type: 'ga'
-        subType: 'pageview'
-        payload: string
-      }
-    | {
-        type: 'ga'
-        subType: 'event'
-        payload: {
-          eventCategory: string
-          eventAction: string
-          eventLabel?: string
-        }
-      }
-    | {
-        type: 'invalidate-cache'
-      }
+  export type EVENT_MSG = { type: 'invalidate-cache' }
 }

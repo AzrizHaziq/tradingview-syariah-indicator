@@ -2,7 +2,6 @@ import pkg from '../../../package.json'
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
-import { _popupGa, popupGa } from '@popup/popup-helpers'
 
 const popup_or = getMessage('popup_or')
 const popup_bug = getMessage('popup_bug')
@@ -17,27 +16,16 @@ export const Footer: Component = () => {
   return (
     <>
       <div class='flex text-gray-300  hover:underline gap-2'>
-        <a
-          onClick={_popupGa('click', 'github_bugs')}
-          target='_blank'
-          rel='noopener noreferrer'
-          title={popup_bug_alt}
-          href={pkg.bugs.url}>
+        <a target='_blank' rel='noopener noreferrer' title={popup_bug_alt} href={pkg.bugs.url}>
           <img src='/assets/icons/github.svg' alt='github icon' width='17px' height='20px' />
         </a>
         <p>{popup_or}</p>
-        <a
-          onClick={_popupGa('click', 'twitter')}
-          target='_blank'
-          rel='noopener noreferrer'
-          title={popup_bug_alt}
-          href='https://twitter.com/tradingviewsha1'>
+        <a target='_blank' rel='noopener noreferrer' title={popup_bug_alt} href='https://twitter.com/tradingviewsha1'>
           <img src='/assets/icons/twitter.svg' alt='github icon' width='17px' height='20px' />
         </a>
         <p>{popup_bug}</p>
       </div>
       <a
-        onClick={_popupGa('click', 'github')}
         class='flex text-gray-300 hover:underline'
         target='_blank'
         rel='noopener noreferrer'
@@ -49,7 +37,6 @@ export const Footer: Component = () => {
       <div class='flex w-full'>
         <a
           href='https://tsi.azrizhaziq.com/wahed'
-          onClick={_popupGa('click', 'wahed')}
           target='_blank'
           rel='noopener noreferrer'
           class='flex items-center mr-2 text-white'
@@ -72,12 +59,6 @@ export const Footer: Component = () => {
             copy('azrjas3', () => {
               setIsCopy(true)
               setTimeout(() => setIsCopy(false), 1000)
-              popupGa({
-                hitType: 'event',
-                eventAction: 'click',
-                eventCategory: 'extension::referrer_code',
-                eventLabel: 'popup',
-              })
             })
           }>
           <span class='px-2 text-sm font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed py-0.5'>
