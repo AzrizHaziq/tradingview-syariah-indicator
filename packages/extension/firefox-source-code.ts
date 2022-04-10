@@ -48,14 +48,14 @@ Requirements
 - git = 2.31.0
 
 Steps
-1. Using Git clone
+1. Using Git clone (will take longer time to install all library)
    1. \`$ git clone git@github.com:AzrizHaziq/tradingview-syariah-indicator.git\` 
    2. \`$ cd tradingview-shariah-indicator\`
    3. \`$ pnpm install\`
    4. \`$ cd packages/extension\`
    5. Please continue to step 3 below:
 
-2. Using source-code zip 
+2. Using source-code zip (much faster install time)
    1. Unzip the \`firefox-tsi-${pkg.version}-source-code.zip\`
    2. cd inside \`firefox-tsi-${pkg.version}\`
    3. \`$ pnpm install\`
