@@ -42,6 +42,7 @@ function symbolScript() {
       smallResoDom.insertAdjacentElement('beforeend', icon1)
 
       const icon2 = createIcon({ width: 15, height: 15 })
+      icon2.style.marginLeft = '5px'
       largeResoDom.insertAdjacentElement('afterend', icon2)
 
       observeDom()

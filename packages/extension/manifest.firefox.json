@@ -29,6 +29,7 @@
       "js": ["browser-polyfill.js", "page/symbols.js"]
     }
   ],
+  "web_accessible_resources": ["assets/shariah-icon.svg"],
   "permissions": ["storage", "*://*.tradingview.com/*"],
   "icons": {
     "16": "./assets/shariah-icon-16.png",
