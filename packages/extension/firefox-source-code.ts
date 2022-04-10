@@ -96,6 +96,7 @@ function updatePackageDevDependencies() {
       'chrome-webstore-upload-cli',
       'body-parser',
       'safe-compare',
+      'fs-extra',
       '@playwright/test',
       '@typescript-eslint',
     ]
