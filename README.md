@@ -133,3 +133,6 @@ Requirements
 
 #### 2. For Wahed ETF HLAL
 1. Read more here [HLAL](https://funds.wahedinvest.com/)
+
+
+![Alt](https://repobeats.axiom.co/api/embed/6b9d87cc3438de7959bbdf70582279fa2397012d.svg "Repobeats analytics image")
