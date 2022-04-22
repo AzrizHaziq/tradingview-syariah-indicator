@@ -187,6 +187,7 @@
     ["MYX", "CCK-WA", "CCK CONSOLIDATED HOLDINGS BERHAD"],
     ["MYX", "CETECH", "CE TECHNOLOGY BERHAD"],
     ["MYX", "CEKD", "CEKD BERHAD"],
+    ["MYX", "CENGILD", "CENGILD MEDICAL BERHAD"],
     ["MYX", "CENSOF", "CENSOF HOLDINGS BERHAD"],
     ["MYX", "CGB", "CENTRAL GLOBAL BERHAD"],
     ["MYX", "CEPAT", "CEPATWAWASAN GROUP BERHAD"],
@@ -298,6 +299,7 @@
     ["MYX", "EASTLND-WB", "EASTLAND EQUITY BHD"],
     ["NYSE", "ETN", "EATON CORP PLC"],
     ["MYX", "ECOWLD", "ECO WORLD DEVELOPMENT GROUP BERHAD"],
+    ["MYX", "ECOWLD-WB", "ECO WORLD DEVELOPMENT GROUP BERHAD"],
     ["MYX", "EWINT", "ECO WORLD INTERNATIONAL BERHAD"],
     ["MYX", "ECOHLDS", "ECOBUILT HOLDINGS BERHAD"],
     ["MYX", "ECOFIRS", "ECOFIRST CONSOLIDATED BHD"],
@@ -730,7 +732,6 @@
     ["MYX", "MESTRON-WA", "MESTRON HOLDINGS BERHAD"],
     ["MYX", "MHCARE", "METRO HEALTHCARE BERHAD"],
     ["MYX", "MTRONIC", "METRONIC GLOBAL BERHAD"],
-    ["MYX", "MTRONIC-WA", "METRONIC GLOBAL BERHAD"],
     ["MYX", "MGB", "MGB BERHAD"],
     ["MYX", "MHC", "MHC PLANTATIONS BHD"],
     ["MYX", "MI", "MI TECHNOVATION BERHAD"],
@@ -828,7 +829,7 @@
     ["MYX", "OPCOM", "OPCOM HOLDINGS BERHAD"],
     ["MYX", "OPENSYS", "OPENSYS (M) BERHAD"],
     ["MYX", "OPTIMAX", "OPTIMAX HOLDINGS BERHAD"],
-    ["MYX", "OPTIMAX-WA", "OPTIMAX HOLDINGS BERHAD"],
+    ["MYX", "OPTIMAX-WA", "OPTIMAX HOLDINGS BERHAD - WARRANTS A 2021/2026"],
     ["NASDAQ", "ORLY", "OREILLY AUTOMOTIVE INC"],
     ["MYX", "OFI", "ORIENTAL FOOD INDUSTRIES HOLDINGS BERHAD"],
     ["MYX", "OIB", "ORIENTAL INTEREST BERHAD"],
@@ -1118,7 +1119,6 @@
     ["", "DIS", "Shanghai Intl Airport A"],
     ["SSE", "603659", "Shanghai Putailai New Energy Technology Co"],
     ["SZSE", "300124", "Shenzhen Inovance Technology Co Ltd A"],
-    ["SZSE", "300601", "Shenzhen Kangtai Biological Products Co Lt"],
     ["SZSE", "300760", "Shenzhen Mindray Bio-Medical Electronics C"],
     ["SSE", "688036", "Shenzhen Transsion Holdings Co Ltd A"],
     ["SSE", "603290", "StarPower Semiconductor Ltd A"],
@@ -1329,10 +1329,10 @@
     ["SZSE", "002001", "Zhejiang NHU Co. Ltd. A"]
   ],
   "metadata": {
-    "NYSE": 1650211200000,
-    "NASDAQ": 1650211200000,
-    "SSE": 1649952000000,
-    "SZSE": 1649952000000,
-    "MYX": 1650062841855
+    "NYSE": 1650556800000,
+    "NASDAQ": 1650556800000,
+    "SSE": 1650556800000,
+    "SZSE": 1650556800000,
+    "MYX": 1650666469367
   }
 }
