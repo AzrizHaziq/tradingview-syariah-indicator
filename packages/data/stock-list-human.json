@@ -195,6 +195,7 @@
     ["NASDAQ", "CERN", "CERNER CORP"],
     ["NYSE", "CF", "CF INDS HLDGS INC"],
     ["MYX", "CHEETAH", "CHEETAH HOLDINGS BERHAD"],
+    ["MYX", "CHEETAH-WA", "CHEETAH HOLDINGS BERHAD"],
     ["NYSE", "CVX", "CHEVRON CORP NEW"],
     ["MYX", "CHINHIN", "CHIN HIN GROUP BERHAD"],
     ["MYX", "CHGP", "CHIN HIN GROUP PROPERTY BERHAD"],
@@ -724,7 +725,6 @@
     ["NYSE", "MRK", "MERCK & CO INC"],
     ["MYX", "MERCURY", "MERCURY INDUSTRIES BERHAD"],
     ["MYX", "MERIDIAN", "MERIDIAN BERHAD"],
-    ["MYX", "MERIDIAN-WB", "MERIDIAN BERHAD"],
     ["MYX", "MESB", "MESB BERHAD"],
     ["MYX", "MESB-WA", "MESB BERHAD"],
     ["MYX", "MSNIAGA", "MESINIAGA BERHAD"],
@@ -752,6 +752,7 @@
     ["MYX", "MMAG-WB", "MMAG HOLDINGS BERHAD"],
     ["MYX", "MMIS", "MMIS BERHAD"],
     ["MYX", "MMSV", "MMS VENTURES BERHAD"],
+    ["MYX", "MNHLDG", "MN HOLDINGS BERHAD"],
     ["MYX", "MOBILIA", "MOBILIA HOLDINGS BERHAD"],
     ["MYX", "MOBILIA-WA", "MOBILIA HOLDINGS BERHAD"],
     ["NYSE", "MHK", "MOHAWK INDS INC"],
@@ -906,7 +907,7 @@
     ["MYX", "PLS", "PLS PLANTATIONS BERHAD"],
     ["MYX", "PLS-WA", "PLS PLANTATIONS BERHAD"],
     ["MYX", "PMBTECH", "PMB TECHNOLOGY BERHAD"],
-    ["MYX", "PMBTECH-WA", "PMB TECHNOLOGY BERHAD - WARRANTS A 2018/2023"],
+    ["MYX", "PMBTECH-WA", "PMB TECHNOLOGY BERHAD"],
     ["MYX", "PNEPCB", "PNE PCB BERHAD"],
     ["MYX", "PNEPCB-WA", "PNE PCB BERHAD"],
     ["MYX", "PNEPCB-WB", "PNE PCB BERHAD"],
@@ -928,6 +929,7 @@
     ["MYX", "PRLEXUS", "PROLEXUS BERHAD"],
     ["MYX", "PRLEXUS-WB", "PROLEXUS BERHAD"],
     ["NYSE", "PLD", "PROLOGIS INC."],
+    ["MYX", "PGB", "PROPEL GLOBAL BERHAD"],
     ["MYX", "PRTASCO", "PROTASCO BERHAD"],
     ["MYX", "PRTASCO-WA", "PROTASCO BERHAD"],
     ["NASDAQ", "PTC", "PTC INC"],
@@ -1119,6 +1121,7 @@
     ["", "DIS", "Shanghai Intl Airport A"],
     ["SSE", "603659", "Shanghai Putailai New Energy Technology Co"],
     ["SZSE", "300124", "Shenzhen Inovance Technology Co Ltd A"],
+    ["SZSE", "300601", "Shenzhen Kangtai Biological Products Co Lt"],
     ["SZSE", "300760", "Shenzhen Mindray Bio-Medical Electronics C"],
     ["SSE", "688036", "Shenzhen Transsion Holdings Co Ltd A"],
     ["SSE", "603290", "StarPower Semiconductor Ltd A"],
@@ -1329,10 +1332,10 @@
     ["SZSE", "002001", "Zhejiang NHU Co. Ltd. A"]
   ],
   "metadata": {
-    "NYSE": 1650556800000,
-    "NASDAQ": 1650556800000,
-    "SSE": 1650556800000,
-    "SZSE": 1650556800000,
-    "MYX": 1650666469367
+    "NYSE": 1651075200000,
+    "NASDAQ": 1651075200000,
+    "SSE": 1651161600000,
+    "SZSE": 1651161600000,
+    "MYX": 1651268052096
   }
 }
