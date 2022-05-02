@@ -12,8 +12,8 @@ const App = (): JSX.Element => {
   return (
     <>
       <Header />
-      <main class='flex-grow text-gray-600 body-font'>
-        <section class='container h-full px-5 py-10 mx-auto'>
+      <main class='grow text-gray-600 body-font'>
+        <section class='container py-10 px-5 mx-auto h-full'>
           <Route />
         </section>
       </main>

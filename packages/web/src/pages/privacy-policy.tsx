@@ -6,7 +6,7 @@ export default function PrivacyPolicy(): JSX.Element {
 
   return (
     <div class='mx-auto prose'>
-      <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>
+      <div class='p-2 text-green-700 bg-green-50 rounded border-green-600 border-dashed border-3'>
         <ul class='!m-0'>
           <li>
             <p>

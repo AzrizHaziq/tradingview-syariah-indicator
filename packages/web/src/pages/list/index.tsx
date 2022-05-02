@@ -135,18 +135,18 @@ export default function List(): JSX.Element {
     <Show
       when={store.originalData.length}
       fallback={
-        <div class='flex flex-col items-center justify-center h-full text-gray-500 gap-2'>
+        <div class='flex flex-col gap-2 justify-center items-center h-full text-gray-500'>
           <img src={IMGS.logo} alt='logo' class='animate-bounce' width='25px' height='25px' />
           Loading
         </div>
       }>
-      <div class='max-w-full mx-auto md:max-w-3xl'>
+      <div class='mx-auto max-w-full md:max-w-3xl'>
         <svg class='hidden'>
           <symbol
             id='link-icon'
             stroke='currentColor'
             stroke-width='0'
-            class='text-gray-300 fill-current hover:text-green-200'
+            class='text-gray-300 hover:text-green-200 fill-current'
             viewBox='0 0 1024 1024'>
             <path d='M574 665.4a8.03 8.03 0 0 0-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8a8.03 8.03 0 0 0-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zm258.6-474c-84.6-84.6-221.5-84.6-306 0L410.3 307.6a8.03 8.03 0 0 0 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6a8.03 8.03 0 0 0 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1zM610.1 372.3a8.03 8.03 0 0 0-11.3 0L372.3 598.7a8.03 8.03 0 0 0 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z' />
           </symbol>
@@ -155,10 +155,10 @@ export default function List(): JSX.Element {
           type='text'
           placeholder='Tesla, TOPGLOV, MYX, SZSE, NYSE, MYX, intel'
           value={store.search}
-          class='w-full h-10 px-2 mb-5 rounded'
+          class='px-2 mb-5 w-full h-10 rounded'
           onInput={handleSearchChange}
         />
-        <div class='flex mb-4 gap-2'>
+        <div class='flex gap-2 mb-4'>
           <For each={Object.entries(store.metadata)}>
             {([exchange]) => (
               <label class='exchange'>
@@ -188,10 +188,10 @@ export default function List(): JSX.Element {
           <ShariahList data={transducerFilter()} exchangeStyle={store.exchangeStyle} />
         </Show>
       </div>
-      <div class='flex flex-wrap justify-center pt-5 gap-4'>
+      <div class='flex flex-wrap gap-4 justify-center pt-5'>
         <For each={Object.entries(store.metadata)}>
           {([exchange, date]) => (
-            <div class='px-2 py-1 bg-green-100 rounded'>
+            <div class='py-1 px-2 bg-green-100 rounded'>
               <span class='mr-1 text-xs text-green-800'>{exchange}</span>
               <span class='font-bold text-green-900'>{date as unknown as string}</span>
             </div>
@@ -204,7 +204,7 @@ export default function List(): JSX.Element {
 
 const ShariahList = (props: { data: PageProps['data']; exchangeStyle: Record<string, string> }) => {
   return (
-    <ul class='flex flex-col overflow-auto gap-1 overscroll-contain' style={{ height: 'calc(100vh - 280px)' }}>
+    <ul class='flex overflow-auto overscroll-contain flex-col gap-1' style={{ height: 'calc(100vh - 280px)' }}>
       <For each={props.data}>
         {(item) => <ShariahListItem item={item} exchangeColor={props.exchangeStyle[item[0]]} />}
       </For>
@@ -216,7 +216,7 @@ const ShariahListItem = (props: { item: PageProps['data']['0']; exchangeColor: s
   const [exchange, code, name] = props.item
 
   return (
-    <li class='flex items-center group gap-x-1' role='listitem'>
+    <li class='group flex gap-x-1 items-center' role='listitem'>
       <p class='text-white opacity-80 group-hover:opacity-100'>
         <span class='inline mr-2 font-bold sm:hidden'>{exchange}</span>
         {name}

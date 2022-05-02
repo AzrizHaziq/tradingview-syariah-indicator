@@ -46,10 +46,10 @@ const images = [
   ],
   [],
   [
-    <div class='sticky pb-12 bg-gray-900 top-[20px] md:top-[90px] col-span-2'>
-      <p class='py-3 text-xl text-center !my-0'>Answer few questionnaire below</p>
+    <div class='sticky top-[20px] col-span-2 pb-12 bg-gray-900 md:top-[90px]'>
+      <p class='py-3 !my-0 text-xl text-center'>Answer few questionnaire below</p>
       <div
-        class='overflow-x-scroll border-2 border-gray-900 grid top-[130px] overscroll-x-contain gap-2'
+        class='grid overflow-x-scroll overscroll-x-contain top-[130px] gap-2 border-2 border-gray-900'
         style='grid-template-columns: repeat(9, 320px); scroll-snap-type: x mandatory;'>
         {Array(9)
           .fill(7)
@@ -154,7 +154,7 @@ const images = [
     <div class='py-2'>
       <p>Much appreciated if you use my referrer code here 🙂, Thank you.</p>
       <div
-        class='flex mx-auto xl:ml-auto xl:mr-0 rounded-md shadow-sm'
+        class='flex mx-auto rounded-md shadow-sm xl:mr-0 xl:ml-auto'
         role='group'
         onClick={() =>
           copy('azrjas3', () => {
@@ -166,13 +166,13 @@ const images = [
             })
           })
         }>
-        <span class='px-4 py-2 text-xl font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
+        <span class='py-2 px-4 text-xl font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
           azrjas3
         </span>
         <button
           type='button'
-          class='px-4 py-2 text-xl font-medium text-green-700 bg-green-100 rounded-r-md hover:text-green-900 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700'>
-          <div class='flex items-center gap-1'>
+          class='focus:z-10 py-2 px-4 text-xl font-medium text-green-700 hover:text-green-900 focus:text-green-700 bg-green-100 rounded-r-md focus:ring-2 focus:ring-green-700'>
+          <div class='flex gap-1 items-center'>
             <svg
               stroke='currentColor'
               fill='currentColor'
@@ -205,9 +205,9 @@ const images = [
         alt={`Wahed steps at ${i}`}
         src={`/wahed_steps/${i}.jpeg`}
         style='aspect-ratio:9/16'
-        class='sticky bg-gray-900 md:w-full !my-0 top-[20px] md:top-[90px] col-span-2 md:col-span-1'
+        class='sticky top-[20px] col-span-2 !my-0 bg-gray-900 md:top-[90px] md:col-span-1 md:w-full'
       />
-      <div class='sticky px-5 pb-12 bg-gray-900 top-[20px] md:top-[90px] col-span-2 md:col-span-1 md:pb-0'>{text}</div>
+      <div class='sticky top-[20px] col-span-2 px-5 pb-12 bg-gray-900 md:top-[90px] md:col-span-1 md:pb-0'>{text}</div>
     </>
   ) : (
     <>{i}</>
@@ -220,7 +220,7 @@ export default function Guideline(): JSX.Element {
   return (
     <div class='mx-auto bg-gray-900 prose'>
       <h2>Below are the steps how to get started with Wahed Invest</h2>
-      <div className='max-w-md mx-auto md:max-w-full grid grid-cols-2 gap-y-0 md:gap-y-2'>{images}</div>
+      <div className='grid grid-cols-2 gap-y-0 mx-auto max-w-md md:gap-y-2 md:max-w-full'>{images}</div>
     </div>
   )
 }

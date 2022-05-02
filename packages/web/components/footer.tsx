@@ -10,7 +10,7 @@ export const Footer = (): JSX.Element => {
 
   return (
     <footer>
-      <div class='flex flex-col px-5 py-10 bg-white xl:flex-row xl:items-center md:justify-between gap-2'>
+      <div class='flex flex-col gap-2 py-10 px-5 bg-white md:justify-between xl:flex-row xl:items-center'>
         <div class='flex flex-col items-center xl:items-stretch'>
           <img
             alt='wahed azrizhaziq referer code'
@@ -19,7 +19,7 @@ export const Footer = (): JSX.Element => {
             height={80}
             class='aspect-w-16 aspect-h-9'
           />
-          <span class='items-center block'>
+          <span class='block items-center'>
             Support this project by using
             <span class='inline mx-1 md:hidden'>this</span>
             <span class='hidden mx-1 md:inline'>that</span>
@@ -28,14 +28,14 @@ export const Footer = (): JSX.Element => {
               viewBox='0 0 24 24'
               height='1.5em'
               width='1.5em'
-              class='inline text-green-700 fill-current rotate-90 xl:rotate-0 transform'
+              class='inline text-green-700 rotate-90 fill-current xl:rotate-0'
               xmlns='http://www.w3.org/2000/svg'>
               <path d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' />
             </svg>
           </span>
         </div>
         <div
-          class='inline-flex mx-auto xl:ml-auto xl:mr-0 rounded-md shadow-sm'
+          class='inline-flex mx-auto rounded-md shadow-sm xl:mr-0 xl:ml-auto'
           role='group'
           onClick={() =>
             copy('azrjas3', () => {
@@ -47,13 +47,13 @@ export const Footer = (): JSX.Element => {
               })
             })
           }>
-          <span class='px-4 py-2 text-xl font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
+          <span class='py-2 px-4 text-xl font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
             azrjas3
           </span>
           <button
             type='button'
-            class='px-4 py-2 text-xl font-medium text-green-700 bg-green-100 rounded-r-md hover:text-green-900 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700'>
-            <div class='flex items-center gap-1'>
+            class='focus:z-10 py-2 px-4 text-xl font-medium text-green-700 hover:text-green-900 focus:text-green-700 bg-green-100 rounded-r-md focus:ring-2 focus:ring-green-700'>
+            <div class='flex gap-1 items-center'>
               <svg
                 stroke='currentColor'
                 fill='currentColor'
@@ -70,20 +70,20 @@ export const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <div class='py-8 bg-white xl:py-14 dark:bg-gray-800'>
-        <div class='w-full px-4 mx-auto max-w-8xl'>
-          <div class='grid gap-12 grid-cols-2 md:grid-cols-5 xl:gap-24'>
+      <div class='py-8 bg-white dark:bg-gray-800 xl:py-14'>
+        <div class='px-4 mx-auto w-full max-w-8xl'>
+          <div class='grid grid-cols-2 gap-12 md:grid-cols-5 xl:gap-24'>
             <div class='col-span-2'>
               <a href='https://flowbite.com' class='flex mb-5'>
-                <img src='/favicon.svg' class='h-10 mr-4' alt={rootPkg.name_display} />
-                <span class='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
+                <img src='/favicon.svg' class='mr-4 h-10' alt={rootPkg.name_display} />
+                <span class='self-center text-xl font-semibold dark:text-white whitespace-nowrap'>
                   {rootPkg.name_display}
                 </span>
               </a>
               <p class='max-w-lg text-gray-600 dark:text-gray-400'>{rootPkg.description}</p>
             </div>
             <div>
-              <h3 class='mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white'>Resources</h3>
+              <h3 class='mb-6 text-sm font-semibold text-gray-400 dark:text-white uppercase'>Resources</h3>
               <ul>
                 <li class='mb-4'>
                   <a
@@ -127,7 +127,7 @@ export const Footer = (): JSX.Element => {
               </ul>
             </div>
             <div>
-              <h3 class='mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white'>Follow us</h3>
+              <h3 class='mb-6 text-sm font-semibold text-gray-400 dark:text-white uppercase'>Follow us</h3>
               <ul>
                 <li class='mb-4'>
                   <a
@@ -150,7 +150,7 @@ export const Footer = (): JSX.Element => {
               </ul>
             </div>
             <div>
-              <h3 class='mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white'>Legal</h3>
+              <h3 class='mb-6 text-sm font-semibold text-gray-400 dark:text-white uppercase'>Legal</h3>
               <ul>
                 <li class='mb-4'>
                   <NavLink

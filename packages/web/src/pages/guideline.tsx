@@ -34,7 +34,7 @@ export default function Guideline(): JSX.Element {
         other people money. Only do it if you are aware of the risks and etc.
       </p>
 
-      <div class='p-2 text-green-700 border-green-600 border-dashed rounded border-3 bg-green-50'>
+      <div class='p-2 text-green-700 bg-green-50 rounded border-green-600 border-dashed border-3'>
         <h3 class='!m-0 !text-green-800'>Notes</h3>
         <ul class='!m-0'>
           <li>
