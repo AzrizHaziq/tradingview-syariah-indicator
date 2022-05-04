@@ -6,11 +6,13 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
+
     // Please make sure the key is unique and taken from TV exchange id
-    const [_US, _MYX, _CHINA] = await Promise.all([
+    const [_US, _MYX, _CHINA, _IDX] = await Promise.all([
       import('./ex_US.mjs').then((m) => m.US()),
       import('./ex_MYX.mjs').then((m) => m.MYX()),
       import('./ex_CHINA.mjs').then((m) => m.CHINA()),
+      import('./ex_IDX.mjs').then((m) => m.IDX()),
     ])
 
     await delay(1)
@@ -18,9 +20,10 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
     const { data: US_DATA, human: US_HUMAN } = _US
     const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
     const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
+    const { data: IDX_DATA, human: IDX_HUMAN } = _IDX
 
     const sortedHuman = []
-      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN, CONFIG.whitelist)
+      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN, IDX_HUMAN, CONFIG.whitelist)
       .sort(([a1, a2, a3], [b1, b2, b3]) => {
         if (a2 === b2 && a3 === b3) return a1 > b1 ? 1 : a1 < b1 ? -1 : 0 // sort by exchange
         if (a3 === b3) return a2 > b2 ? 1 : a2 < b2 ? -1 : 0 // sort by code
@@ -34,7 +37,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    const data = { ...US_DATA, ...CHINA_DATA, ...MYX_DATA }
+    const data = { ...US_DATA, ...CHINA_DATA, ...MYX_DATA, ...IDX_DATA }
 
     // this should be depended on the exchange shape, I'm too lazy atm.
     // whitelist data will merge into stock-list.json according to exchange
