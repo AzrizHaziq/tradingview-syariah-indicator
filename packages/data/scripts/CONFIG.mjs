@@ -37,4 +37,11 @@ export const CONFIG = {
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
     wahedHoldingUrl: 'https://funds.wahedinvest.com/etf-holdings.csv',
   },
+  IDX: {
+    // will be based on Indonesian exchange official website
+    home_page:
+      'https://www.idx.co.id/data-pasar/data-saham/indeks-saham/',
+    exchanges: ['IDX'],
+    shape: [{ 0: 'non-s', 1: 's', default: '' }],
+  },
 }
