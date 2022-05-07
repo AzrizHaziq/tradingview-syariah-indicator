@@ -1,15 +1,13 @@
-import fetch from 'node-fetch'
 import { pipe } from './utils.mjs'
 import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
-import { PromisePool } from '@supercharge/promise-pool'
 import xlsx from 'xlsx'
 import extract from 'extract-zip'
 import fs from 'fs'
 import path from 'node:path'
 import os from 'os'
 
-const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
+const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
 async function fetchShariahList() {
   try {
@@ -23,7 +21,13 @@ async function fetchShariahList() {
     // Download the latest ISSI (Indeks Saham Syariah Indonesia) zip file
     await page.selectOption('select#indexCodeList', 'ISSI')
     await page.locator('text=Cari').click({ timeout: 10000 })
-    
+ 
+    // Wait for the page to response and show the expected widgets
+    await page.waitForResponse(
+      (resp) => resp.status() < 400 && ['/GetStockIndex', 'code=ISSI'].every((str) => resp.url().includes(str))
+    )
+
+    // Download the first ISSI file
     const [ download ] = await Promise.all([
       page.waitForEvent('download'),
       page.locator('table#indexConstituentTable tr:nth-child(1) a').click(),
@@ -39,12 +43,16 @@ async function fetchShariahList() {
     const shariahList = await extractFromXlsxFile(xlsxFile)
     progressBar.increment(1, { stats: 'Successfully extracted and parsed ISSI list' })
 
-    await browser.close()
     return shariahList
+
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.error('Failed to download the ISSI list zip file', e)
+    console.error('Failed to fetch or extract the ISSI stock list', e)
     process.exit(1)
+
+  } finally {
+    await browser.close()
+
   }
 }
 
@@ -65,7 +73,7 @@ async function getXlsxFile(filePath) {
   return xlsxFile
 }
 
-// Returns: {code: string, name: string}[]
+// Returns: {stockName: string, fullname: string}[]
 function extractFromXlsxFile(xlsxFile) {
   const workbook = xlsx.readFile(xlsxFile)
 
@@ -77,7 +85,7 @@ function extractFromXlsxFile(xlsxFile) {
     const codeCandidate = row.__EMPTY
     const nameCandidate = row.__EMPTY_1
     if (codeCandidate && codeCandidate.match(/^([A-Z]{4})$/)) {
-      shariaStocks.push({code: codeCandidate, name: nameCandidate})
+      shariaStocks.push({stockName: codeCandidate, fullname: nameCandidate})
     }
   })
 
@@ -88,7 +96,7 @@ export async function IDX() {
   try {
     const shariahList = await fetchShariahList()
 
-    const human = pipe(Object.values, (values) => values.map((val) => ['IDX', val.code, val.name]))(
+    const human = pipe(Object.values, (values) => values.map((val) => ['IDX', val.stockName, val.fullname]))(
       shariahList
     )
 
