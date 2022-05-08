@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import { pipe } from './utils.mjs'
 import { CONFIG } from './CONFIG.mjs'
+import { delay, pipe } from './utils.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 
@@ -73,35 +73,48 @@ async function scrapBursaMalaysia() {
       .withConcurrency(5) // 5 pages at a time
       .process(async (_, i) => {
         const page = await ctx.newPage()
+        const pageNo = `${i + 1}`.padStart(2, '0')
         await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
 
-        let temp = await page.evaluate(() => {
-          const pipe =
-            (...fn) =>
-            (initialVal) =>
-              fn.reduce((acc, fn) => fn(acc), initialVal)
-          const removeSpaces = pipe((name) => name.replace(/\s/gm, ''))
-          const removeSpacesAndShariah = pipe(removeSpaces, (name) => name.replace(/\[S\]/gim, ''))
+        /** @returns {Promise<{s: 1, code: string, stockName: string}[]>} */
+        const scrapeList = async () =>
+          await page.evaluate(() => {
+            const pipe =
+              (...fn) =>
+              (initialVal) =>
+                fn.reduce((acc, fn) => fn(acc), initialVal)
+            const removeSpaces = pipe((name) => name.replace(/\s/gm, ''))
+            const removeSpacesAndShariah = pipe(removeSpaces, (name) => name.replace(/\[S\]/gim, ''))
 
-          return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
-            const s = tr.querySelector(':nth-child(2)').textContent
-            const stockCode = tr.querySelector(':nth-child(3)').textContent
+            return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
+              const s = tr.querySelector(':nth-child(2)').textContent
+              const stockCode = tr.querySelector(':nth-child(3)').textContent
 
-            const code = removeSpaces(stockCode)
-            const stockName = removeSpacesAndShariah(s)
-            return [...acc, { s: 1, code, stockName }]
-          }, [])
-        })
+              const code = removeSpaces(stockCode)
+              const stockName = removeSpacesAndShariah(s)
+              return [...acc, { s: 1, code, stockName }]
+            }, [])
+          })
 
-        const pageNo = `${i + 1}`.padStart(2, '0')
+        // this does the work as of retry scrapping function
+        // sometime scrape return 0 items
+        let shariahList = await scrapeList()
+        while (shariahList.length <= 0) {
+          await delay(1)
+          progressBar.increment(0, { stats: `Page ${pageNo}: retry` })
+          shariahList = await scrapeList()
+        }
+
         progressBar.increment(0.5, { stats: `Page ${pageNo}: scrapped` })
-        temp = await getCompanyName(temp)
-        progressBar.increment(0.5, { stats: `Page ${pageNo}: fetched` })
+        shariahList = await getCompanyName(shariahList)
+        progressBar.increment(0.5, { stats: `Page ${pageNo}: done` })
 
-        return temp
+        return shariahList
       })
 
+    // TODO: fixme if there is error in pool
     if (errors.length) {
+      console.log(errors, 'MYX, promise pool scrape failed', errors, results)
       throw Error(`failed scrape stock in pages`, { cause: errors })
     }
 
