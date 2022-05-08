@@ -108,3 +108,26 @@ export function getElementByXPath(path) {
   return new XPathEvaluator().evaluate(path, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
     .singleNodeValue
 }
+
+/**
+ * only used this to make debug easier
+ * type data = { [k: string]: { list: {k: string}: (string|number)[], shape: Shape[], updatedAt: string }}
+ * @param exchanges {string[]} eg: ['NASDAQ', 'NYSE', 'MYX']
+ * @returns {Promise<Exchanges>} {data: {}, human: [ exchange: string, code: string, fullname: string][]}
+ */
+export async function returnEmptyData(exchanges) {
+  return Promise.resolve({
+    data: exchanges.reduce(
+      (acc, ex) => ({
+        ...acc,
+        [ex]: {
+          list: {},
+          shape: [],
+          updatedAt: Date.now(),
+        },
+      }),
+      {}
+    ),
+    human: [],
+  })
+}

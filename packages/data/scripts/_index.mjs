@@ -1,27 +1,46 @@
 import { CONFIG } from './CONFIG.mjs'
-import { commitChangesIfAny, delay, isSameWithPreviousData, logCount, prettierJSON, writeToFile } from './utils.mjs'
+import {
+  delay,
+  logCount,
+  writeToFile,
+  prettierJSON,
+  returnEmptyData,
+  commitChangesIfAny,
+  isSameWithPreviousData,
+} from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-
     // Please make sure the key is unique and taken from TV exchange id
-    const [_US, _MYX, _CHINA, _IDX] = await Promise.all([
-      import('./ex_US.mjs').then((m) => m.US()),
-      import('./ex_MYX.mjs').then((m) => m.MYX()),
-      import('./ex_CHINA.mjs').then((m) => m.CHINA()),
-      import('./ex_IDX.mjs').then((m) => m.IDX()),
+    const [US, MYX, CHINA, IDX] = await Promise.all([
+      // US
+      // returnEmptyData(CONFIG.US.exchanges),
+      import('./ex_US.mjs').then((m) => m.default()),
+
+      // MALAYSIA
+      // returnEmptyData(CONFIG.MYX.exchanges),
+      import('./ex_MYX.mjs').then((m) => m.default()),
+
+      // CHINA
+      // returnEmptyData(CONFIG.CHINA.exchanges),
+      import('./ex_CHINA.mjs').then((m) => m.default()),
+
+      // IDX
+      // returnEmptyData(CONFIG.IDX.exchanges),
+      import('./ex_IDX.mjs').then((m) => m.default()),
     ])
 
     await delay(1)
 
-    const { data: US_DATA, human: US_HUMAN } = _US
-    const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
-    const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
-    const { data: IDX_DATA, human: IDX_HUMAN } = _IDX
+    const { data: US_DATA, human: US_HUMAN } = US
+    const { data: MYX_DATA, human: MYX_HUMAN } = MYX
+    const { data: IDX_DATA, human: IDX_HUMAN } = IDX
+    const { data: CHINA_DATA, human: CHINA_HUMAN } = CHINA
 
+    // sort stock by company name > code > exchange
     const sortedHuman = []
       .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN, IDX_HUMAN, CONFIG.whitelist)
       .sort(([a1, a2, a3], [b1, b2, b3]) => {
@@ -41,7 +60,15 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 
     // this should be depended on the exchange shape, I'm too lazy atm.
     // whitelist data will merge into stock-list.json according to exchange
-    CONFIG.whitelist.forEach(([exchange, name]) => (data[exchange].list[name] = [1]))
+    CONFIG.whitelist.forEach(([exchange, name]) => {
+      if (Object.hasOwn(data, exchange)) {
+        data[exchange].list[name] = [1]
+      } else {
+        // if not exist then create new
+        data[exchange] = { list: { [name]: [1] } }
+      }
+    })
+
     logCount(data)
 
     await writeToFile(CONFIG.mainOutput, JSON.stringify(data))

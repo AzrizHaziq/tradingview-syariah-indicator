@@ -101,7 +101,11 @@ const finalOutput = (updatedAt) => (p) => {
   }))
 }
 
-export async function US() {
+/**
+ * Main NYSE & NASDAQ & AMAX & OTC scrape function
+ * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * */
+export default async function () {
   try {
     const response = await fetch(CONFIG.US.wahedHoldingUrl)
     const responseText = await response.text()

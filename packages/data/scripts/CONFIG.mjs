@@ -39,8 +39,7 @@ export const CONFIG = {
   },
   IDX: {
     // will be based on Indonesian exchange official website
-    home_page:
-      'https://www.idx.co.id/data-pasar/data-saham/indeks-saham/',
+    home_page: 'https://www.idx.co.id/data-pasar/data-saham/indeks-saham/',
     exchanges: ['IDX'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },

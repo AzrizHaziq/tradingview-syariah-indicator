@@ -106,10 +106,13 @@ async function getUpdatedAtAndPdfUrl() {
   }
 }
 
-// stockNames: string[]
-// launch multi-tabs of pages and scrape company name in google.com/search?q={companyname}.
-// and then return Array<[exchange: string, code: string, companyName: string]>
-// remap(google exchange to TV exchange): SHE === 'SZSE', SHA === 'SSE'
+/**
+ * launch multi-tabs of pages and scrape company name in google.com/search?q={companyname}.
+ * and then return Array<[exchange: string, code: string, companyName: string]>
+ * remap(google exchange to TV exchange): SHE === 'SZSE', SHA === 'SSE'
+ * @param {string[]} stockNames
+ * @returns {Promise<*[]>}
+ */
 async function getCompanyExchangeAndCode(stockNames) {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
@@ -222,7 +225,11 @@ async function getCompanyExchangeAndCode(stockNames) {
   }
 }
 
-export async function CHINA() {
+/**
+ * Main SSE & SZSE scrape function
+ * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * */
+export default async function () {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })

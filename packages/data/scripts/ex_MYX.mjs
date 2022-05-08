@@ -6,7 +6,15 @@ import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
+/**
+ * @param {{s: 1, code: string, stockName: string}} stocks - {s:1, code: '0012', '3A' }
+ * @returns {Promise<Object<string, {s: 1, code: string, stockName: string, fullname; string}>>} - {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
+ */
 async function getCompanyName(stocks) {
+  /**
+   * @param {string} code
+   * @returns {Promise<string>}
+   */
   async function getCompanyFullname(code) {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
     const json = await res.json()
@@ -33,6 +41,7 @@ async function getCompanyName(stocks) {
 const scrapUrl = ({ perPage, page }) =>
   `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
 
+/** @returns {Promise<RESPONSE_FROM_JSON>} */
 async function scrapBursaMalaysia() {
   try {
     const browser = await chromium.launch()
@@ -96,7 +105,11 @@ async function scrapBursaMalaysia() {
   }
 }
 
-export async function MYX() {
+/**
+ * Main MYX scrape function
+ * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * */
+export default async function () {
   try {
     const shariahList = await scrapBursaMalaysia()
 
