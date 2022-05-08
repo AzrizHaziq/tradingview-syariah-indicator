@@ -71,7 +71,7 @@ async function runTaskSequentially(tasks) {
     const { results, errors } = await PromisePool.for(tasks).process(async (item) => await getExchange(item))
 
     if (errors.length) {
-      throw Error(`failed runTaskSequentially: ${errors}`)
+      throw Error(`failed runTaskSequentially`, { cause: errors })
     }
 
     return results.reduce(
@@ -126,6 +126,6 @@ export default async function () {
       finalOutput(updatedAt)
     )(responseText)
   } catch (e) {
-    throw Error(`Error generating US stock: ${e}`)
+    throw Error(`Error generating US stock`, { cause: e })
   }
 }

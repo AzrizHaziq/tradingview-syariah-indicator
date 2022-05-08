@@ -7,7 +7,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
 /**
- * @param {{s: 1, code: string, stockName: string}} stocks - {s:1, code: '0012', '3A' }
+ * @param {{s: 1, code: string, stockName: string}[]} stocks - Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
  * @returns {Promise<Object<string, {s: 1, code: string, stockName: string, fullname; string}>>} - {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
  */
 async function getCompanyName(stocks) {
@@ -22,29 +22,34 @@ async function getCompanyName(stocks) {
   }
 
   try {
-    const { results } = await PromisePool.for(stocks)
-      .withConcurrency(5)
+    const { results, errors } = await PromisePool.for(stocks) // mostly stocks will have 50 items based on per_page
+      .withConcurrency(25) // fetch company fullname 25 items at a time
       .process(async (stock) => {
         const fullname = await getCompanyFullname(stock.code)
         return { ...stock, fullname }
       })
+
+    if (errors.length) {
+      throw Error(`failed fetch getCompanyFullName`, { cause: errors })
+    }
 
     return results.reduce((acc, curr) => {
       acc[curr.code] = curr
       return acc
     }, {})
   } catch (e) {
-    throw Error(`Failed at getCompanyName: ${e}`)
+    throw Error(`Failed at getCompanyName`, { cause: e })
   }
 }
 
 const scrapUrl = ({ perPage, page }) =>
   `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
 
-/** @returns {Promise<RESPONSE_FROM_JSON>} */
+/** @returns {Promise<{[p: string]: {s: 1, code: string, stockName: string, fullname, string}}>} */
 async function scrapBursaMalaysia() {
+  const browser = await chromium.launch({ headless: !CONFIG.isDev })
+
   try {
-    const browser = await chromium.launch()
     const ctx = await browser.newContext()
     const initPage = await ctx.newPage()
     await initPage.goto(scrapUrl({ page: 1, perPage: 50 }))
@@ -64,8 +69,9 @@ async function scrapBursaMalaysia() {
     progressBar.setTotal(maxPageNumbers)
     await initPage.close()
 
-    const shariahList = await Promise.all(
-      Array.from({ length: maxPageNumbers }).map(async (_, i) => {
+    const { results, errors } = await PromisePool.for(Array.from({ length: maxPageNumbers }))
+      .withConcurrency(5) // 5 pages at a time
+      .process(async (_, i) => {
         const page = await ctx.newPage()
         await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
 
@@ -94,14 +100,18 @@ async function scrapBursaMalaysia() {
 
         return temp
       })
-    ).then((results) => results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {}))
 
-    await browser.close()
-    return shariahList
+    if (errors.length) {
+      throw Error(`failed scrape stock in pages`, { cause: errors })
+    }
+
+    return results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {})
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.error('Error scrap data', e)
+    console.error('Error scrap MYX data', e)
     process.exit(1)
+  } finally {
+    await browser.close()
   }
 }
 
@@ -135,6 +145,6 @@ export default async function () {
       },
     }
   } catch (e) {
-    throw Error(`Error generating MYX: ${e}`)
+    throw Error(`Error generating MYX`, { cause: e })
   }
 }

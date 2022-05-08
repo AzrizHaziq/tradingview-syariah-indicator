@@ -13,7 +13,7 @@ const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
  * @returns {Promise<{stockCode: string, fullname: string}[]>}
  */
 async function fetchShariahList() {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
     const userAgent =
@@ -133,6 +133,6 @@ export default async function () {
       },
     }
   } catch (e) {
-    throw Error(`Error generating IDX: ${e}`)
+    throw Error(`Error generating IDX`, { cause: e })
   }
 }

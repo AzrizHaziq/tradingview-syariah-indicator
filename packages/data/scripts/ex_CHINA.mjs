@@ -85,13 +85,15 @@ async function getUpdatedAtAndPdfUrl() {
     await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
     await page.click(latestReportSelector)
 
+    // have to put this, otherwise chrome will failed
+    await delay(1)
+
     const iframeUrl = await page.evaluate(
       (s) => Promise.resolve(document.querySelector(s).getAttribute('src')),
       '#bm_ann_detail_iframe'
     )
 
     const iframeDomain = new URL(iframeUrl).origin
-    console.log(iframeUrl, 2222)
     await page.goto(iframeUrl)
     const pdfUrl = await page.evaluate(
       (s) => Promise.resolve(document.querySelector(s).getAttribute('href')),
@@ -100,7 +102,7 @@ async function getUpdatedAtAndPdfUrl() {
 
     return { updatedAt, pdfUrl: `${iframeDomain}${pdfUrl}` }
   } catch (e) {
-    throw Error(`Error getUpdatedAtAndPdfUrl: ${e}`)
+    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
   } finally {
     await browser.close()
   }
@@ -219,7 +221,7 @@ async function getCompanyExchangeAndCode(stockNames) {
 
     return [...success, ...retryResults]
   } catch (e) {
-    throw Error(`Error getCompanyExchangeAndCode: ${e}`)
+    throw Error(`Error getCompanyExchangeAndCode`, { cause: e })
   } finally {
     await browser.close()
   }
@@ -247,7 +249,7 @@ export default async function () {
       human,
       data: human.reduce((acc, stock) => {
         const [exchange, code] = stock
-        // some of the stock failed to get exchange and code
+        // some stock failed to get exchange and code
         if (exchange === '') {
           return acc
         }
@@ -270,6 +272,6 @@ export default async function () {
       }, {}),
     }
   } catch (e) {
-    throw Error(`Failed scrape CHINA: ${e}`)
+    throw Error(`Failed scrape CHINA`, { cause: e })
   }
 }
