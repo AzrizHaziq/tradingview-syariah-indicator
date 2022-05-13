@@ -74,20 +74,28 @@ export default function Dev(): JSX.Element {
         <li>
           Make sure your terminal inside <b>/packages/extension</b> directory
         </li>
+        <li>Firefox</li>
+        <ul class='ml-5'>
+          <li>
+            dev: <code>$ npm run start:firefox</code>
+          </li>
+          <li>
+            prod:
+            <code>$ npm run build:firefox</code>
+          </li>
+        </ul>
+        <li>Chrome</li>
+        <ul class='ml-5'>
+          <li>
+            dev: <code>$ npm run start:chrome</code>
+          </li>
+          <li>
+            prod:
+            <code>$ npm run build:chrome</code>
+          </li>
+        </ul>
         <li>
-          Type in 1st terminal: <code>$ npm run watch</code> and then in another terminal type either below commands:
-          <ul>
-            <li>
-              Firefox: <code>$ npm run watch:ff</code>
-            </li>
-            <li>
-              Chrome: <code>$ npm run watch:c</code>
-            </li>
-            <li>
-              <code>$ npm run build</code> to generate production file. Generated file located in
-              <b>/web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</b>
-            </li>
-          </ul>
+          Generated file production file is located in<b>/web-ext-artifacts/tradingview-shariah-indicator-XXX.zip</b>
         </li>
       </ol>
 

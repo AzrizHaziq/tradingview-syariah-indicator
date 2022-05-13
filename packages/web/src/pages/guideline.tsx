@@ -12,7 +12,7 @@ export default function Guideline(): JSX.Element {
         trade confidently under Shariah Law.
       </p>
       <p>
-        AFAIK, I do find that most of the guideline have a little bit different one to another but this post should help
+        AFAIK, I do find that most of the guideline have a little different one to another but these posts should help
         you understand what are the criteria:
       </p>
       <ul id='shariah-screening'>
@@ -29,9 +29,9 @@ export default function Guideline(): JSX.Element {
         </li>
       </ul>
       <p>
-        Lastly, when opening an account with Broker, personally in my humble opinion just open a
-        <b> Cash upfront account</b>. It means, you only invest the money that you have in your account and avoid using
-        other people money. Only do it if you are aware of the risks and etc.
+        Lastly, when opening an account with Broker, in my humble opinion just open a<b> Cash upfront account</b>. It
+        means, you only invest the money that you have in your account and avoid using other people money. Only do it if
+        you are aware of the risks and etc.
       </p>
 
       <div class='p-2 text-green-700 bg-green-50 rounded border-green-600 border-dashed border-3'>
@@ -52,10 +52,10 @@ export default function Guideline(): JSX.Element {
           <li>If you're holding, then look at the source everyday.</li>
           <li>
             Things can go south like the <b>data is not up to date</b>. As currently I'm manually updating the data on
-            every Weekend Malaysia by weekly.
+            every Malaysia weekend.
           </li>
           <li>
-            If you can't find the stock that you are looking for, it's not necessarily mean its not <b>Shariah</b>.
+            If you can't find the stock that you are looking for, it's not necessarily mean it's not <b>Shariah</b>.
             <ul>
               <li>
                 AFAIK currently, VP-DJ Shariah capped up to 100 stocks. Thus, you can perform you own quantitative and
@@ -63,16 +63,12 @@ export default function Guideline(): JSX.Element {
               </li>
               <li>Wahed, its depend on their assessment.</li>
               <li>
-                For Malaysia, we had a very strict regulated Shariah board that do all the assessment and if you dont
-                find the stock, it mean it's not shariah-compliance.
+                For Malaysia, we had a very strict regulated Shariah board that do all the assessment and if you don't
+                find the stock, it means it's not shariah-compliance.
               </li>
             </ul>
           </li>
-          <li>
-            I do have small portion on both ETF 🙂, and <b>it's not a buy call</b> as this is only for my
-            diversification strategy.
-          </li>
-          <li>Let me know if there any incorrect or insufficient statement or broken links in this website 🙂.</li>
+          <li>Let me know if there is any incorrect or insufficient statement or broken links in this website 🙂.</li>
         </ul>
       </div>
       <p>
@@ -155,8 +151,3 @@ export default function Guideline(): JSX.Element {
     </div>
   )
 }
-
-// export const documentProps = {
-//   title: 'TSI: Guideline',
-//   description: "Few notes on using Tradingview Shariah Indicator(TSI)'s guideline.",
-// }
