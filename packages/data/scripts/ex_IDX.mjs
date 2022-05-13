@@ -127,8 +127,9 @@ export default async function () {
       data: {
         IDX: {
           updatedAt: Date.now(),
-          shape: CONFIG.IDX.shape,
           list: sortedList,
+          shape: CONFIG.IDX.shape,
+          market: CONFIG.IDX.market,
         },
       },
     }

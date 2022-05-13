@@ -94,7 +94,16 @@ const finalOutput = (updatedAt) => (p) => {
     data: Object.entries(data).reduce(
       (acc, [k, v]) => ({
         ...acc,
-        ...(Object.keys(v).length ? { [k]: { updatedAt, shape: CONFIG.US.shape, list: v } } : {}),
+        ...(Object.keys(v).length
+          ? {
+              [k]: {
+                updatedAt,
+                list: v,
+                shape: CONFIG.US.shape,
+                market: CONFIG.US.market,
+              },
+            }
+          : {}),
       }),
       {}
     ),

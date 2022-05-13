@@ -263,8 +263,9 @@ export default async function () {
             ...acc,
             [exchange]: {
               updatedAt,
-              shape: CONFIG.CHINA.shape,
               list: {},
+              shape: CONFIG.CHINA.shape,
+              market: CONFIG.CHINA.market,
             },
           }
         }

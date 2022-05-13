@@ -152,8 +152,9 @@ export default async function () {
       data: {
         MYX: {
           updatedAt: Date.now(),
-          shape: CONFIG.MYX.shape,
           list: sortedList,
+          shape: CONFIG.MYX.shape,
+          market: CONFIG.MYX.market,
         },
       },
     }
