@@ -19,15 +19,17 @@ declare namespace TSI {
   type SHAPE = SHAPE_SHARIAH | SHAPE_DUMMY
   type KEYOF_SHAPE = keyof (SHAPE_SHARIAH | SHAPE_DUMMY)
 
-  export type Exchanges = 'MYX' | 'NASDAQ' | 'NYSE' | 'AMAX' | 'OTC' | 'IDX'
+  export type Market = 'malaysia' | 'america' | 'indonesia' | 'china'
+  export type Exchange = 'MYX' | 'NASDAQ' | 'NYSE' | 'AMAX' | 'OTC' | 'IDX'
 
-  export interface ExchangesDetail {
+  export interface ExchangeDetail {
     updatedAt: string
     shape: SHAPE[]
+    market: Market
     list: Record<string, KEYOF_SHAPE[]>
   }
 
-  type RESPONSE_FROM_JSON = Record<Exchanges, ExchangesDetail>
+  type RESPONSE_FROM_JSON = Record<Exchange, ExchangeDetail>
 
   /////////////////////////// USED_IN_EXTENSION  ///////////////////////////////////
   export interface StorageMap {
@@ -38,7 +40,8 @@ declare namespace TSI {
   }
 
   export interface Flag {
-    id: string | 'MYX'
+    id: Exchange
+    market: Market
     updatedAt: string
     counts: number
   }

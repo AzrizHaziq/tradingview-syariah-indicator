@@ -13,7 +13,8 @@ import {
   getStorage,
 } from '../helper'
 
-const ONLY_VALID_COUNTRIES = ['my', 'us', 'cn']
+let markets: TSI.Market[]
+const screenerTableSelector = '.tv-screener__content-pane table tbody.tv-data-table__tbody' // this should target <tbody>
 
 const css = {
   main: {
@@ -79,13 +80,12 @@ addStyle(`
   }
 `)
 
-waitForElm('.tv-screener__content-pane table tbody.tv-data-table__tbody')
-  .then(setStockListInMap)
-  .then(mainScreenerScript)
+waitForElm(screenerTableSelector).then(setStockListInMap).then(mainScreenerScript)
 
 async function mainScreenerScript() {
   try {
     const IS_FILTER_SHARIAH = await getStorage('IS_FILTER_SHARIAH')
+    markets = await getStorage('DETAILS').then((item) => Array.from(new Set(item.map((i) => i.market))))
 
     shariah.currentState = IS_FILTER_SHARIAH || false
 
@@ -107,7 +107,7 @@ function observedTableChanges() {
     observer.disconnect()
   }
 
-  const tableNode = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+  const tableNode = document.querySelector(screenerTableSelector)
 
   observer = new MutationObserver(() => {
     if (!isCountryValid()) {
@@ -207,7 +207,7 @@ function setupFilterBtn(state) {
   const iconElement = state.createIcon()
   iconElement.style.cursor = 'pointer'
 
-  // div wrapper, just copy paste from refresh btn
+  // div wrapper, just copy and paste from refresh btn
   const wrapper = document.createElement('div')
   wrapper.setAttribute('data-role', 'button')
   wrapper.setAttribute('title', state.status[`${state.currentState}`])
@@ -224,7 +224,7 @@ function setupFilterBtn(state) {
     try {
       await state.onClick(wrapper)(e)
 
-      const tbody = document.querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+      const tbody = document.querySelector(screenerTableSelector)
       state.currentState ? tbody.classList.add(state.css.body) : tbody.classList.remove(state.css.body)
     } catch (error) {
       console.log('Error post click action', e)
@@ -238,13 +238,18 @@ function setupFilterBtn(state) {
 
 function setupCssClassName() {
   document
-    .querySelector('.tv-screener__content-pane table tbody.tv-data-table__tbody')
+    .querySelector(screenerTableSelector)
     .classList.add(...[css.main.body, shariah.currentState ? css.shariah.body : ''].filter(Boolean))
 }
 
 function isCountryValid(): boolean {
-  // at the moment only Malaysia, United state, and China only
-  return ONLY_VALID_COUNTRIES.some((country) =>
-    document.querySelector(`.tv-screener-market-select__button > img.tv-flag-country.tv-flag-country--${country}`)
-  )
+  const flagDom = document.querySelector('.tv-screener-market-select__button > img.tv-flag-country')
+
+  if (flagDom) {
+    // getting [data-market]="malaysia" in dome
+    const currentFlag = flagDom.parentElement.dataset.market as string as TSI.Market
+    return markets.includes(currentFlag)
+  }
+
+  return false
 }
