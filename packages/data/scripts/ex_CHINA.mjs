@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
-import { CONFIG } from './config.mjs'
+import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
