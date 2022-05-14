@@ -1,7 +1,7 @@
 # Tradingview Shariah Indicator 
 
 ## What it does
-Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
+Add a small green indicator in tradingview.com. At the moment, only cover Malaysia, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia.
 
 Source data:
 MYX: [Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
@@ -134,8 +134,13 @@ Requirements
 #### 2. For Wahed ETF HLAL
 1. Read more here [HLAL](https://funds.wahedinvest.com/)
 
-### 3. Indonesia Exchange
-1. https://www.idx.co.id/data-pasar/data-saham/indeks-saham/
-2. Filter code to `ISSI` (Indonesia Sharia Stock Index)
+
+#### 3. Indonesia Exchange
+1. More info here [IDX](https://idx.co.id/idx-syariah/indeks-saham-syariah)
+
+
+#### 4. Shenzen & Shanghai Exchange
+1. More info here [China ETF](https://www.valuepartners-group.com.my/en/shariah-china/)
+
 
 ![Alt](https://repobeats.axiom.co/api/embed/6b9d87cc3438de7959bbdf70582279fa2397012d.svg "Repobeats analytics image")

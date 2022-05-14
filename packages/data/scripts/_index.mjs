@@ -1,60 +1,35 @@
 import { CONFIG } from './CONFIG.mjs'
-import {
-  delay,
-  logCount,
-  writeToFile,
-  prettierJSON,
-  returnEmptyData,
-  commitChangesIfAny,
-  isSameWithPreviousData,
-} from './utils.mjs'
+import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    // Please make sure the key is unique and taken from TV exchange id
+    const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
     const ALL_SHARIAH_LIST = await Promise.all(
-      [
-        // US
-        // returnEmptyData(CONFIG.US.exchanges),
-        import('./ex_US.mjs').then((m) => m.default()),
-
-        // MALAYSIA
-        // returnEmptyData(CONFIG.MYX.exchanges),
-        import('./ex_MYX.mjs').then((m) => m.default()),
-
-        // CHINA
-        // returnEmptyData(CONFIG.CHINA.exchanges),
-        import('./ex_CHINA.mjs').then((m) => m.default()),
-
-        // IDX
-        // returnEmptyData(CONFIG.IDX.exchanges),
-        import('./ex_IDX.mjs').then((m) => m.default()),
-      ]
+      INDEX_CODES.map((code) => import(`./ex_${code}.mjs`).then((m) => m.default()))
     )
 
     await delay(1)
 
     const { allData, allHuman } = ALL_SHARIAH_LIST.reduce(
       (acc, { human, data }) => ({
-        allData: { ...acc.data, ...data },
-        allHuman: acc.human.concat(human),
+        allData: { ...acc.allData, ...data },
+        allHuman: acc.allHuman.concat(human),
       }),
       { allData: {}, allHuman: [] }
     )
 
-    CONFIG.whitelist.forEach((whiteListStock) => {
-      allHuman.push(whiteListStock)
+    CONFIG.whitelist.forEach(([exchange, code, fullname]) => {
+      allHuman.push([exchange, code, fullname])
 
-      // this should be depended on the exchange shape, I'm too lazy atm.
       // whitelist data will merge into stock-list.json according to exchange
-      if (Object.hasOwn(allData, whiteListStock[0])) {
-        allData[whiteListStock].list[name] = [1]
+      if (Object.hasOwn(allData, exchange)) {
+        allData[exchange].list[code] = [1]
       } else {
         // if not exist then create new
-        allData[whiteListStock] = { list: { [name]: [1] } }
+        allData[exchange] = { list: { [code]: [1] } }
       }
     })
 
@@ -74,9 +49,9 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    logCount(data)
+    logCount(allData)
 
-    await writeToFile(CONFIG.mainOutput, JSON.stringify(data))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
     await writeToFile(
       CONFIG.humanOutput,
       await prettierJSON(
@@ -84,7 +59,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
           data: sortedHuman,
 
           // pluck all updatedAt data from each exchanges
-          metadata: Object.entries(data).reduce((acc, [exchange, detail]) => {
+          metadata: Object.entries(allData).reduce((acc, [exchange, detail]) => {
             acc[exchange] = detail.updatedAt
             return acc
           }, {}),
