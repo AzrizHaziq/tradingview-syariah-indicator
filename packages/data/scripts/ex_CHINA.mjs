@@ -222,8 +222,10 @@ async function getCompanyExchangeAndCode(stockNames) {
 
     const failedNames = failed.map((i) => i[2])
 
-    progressBar.update(0)
-    progressBar.setTotal(failedNames.length)
+    if (failedNames.length > 0) {
+      progressBar.update(0)
+      progressBar.setTotal(failedNames.length)
+    }
     const { results: retryResults } = await PromisePool.for(failedNames).process(_retry)
 
     return [...success, ...retryResults]
