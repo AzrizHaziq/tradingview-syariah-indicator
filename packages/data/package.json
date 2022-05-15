@@ -21,10 +21,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "extract-zip": "^2.0.1",
     "node-fetch": "^3.2.4",
     "pdfreader": "^1.4.0",
     "playwright-chromium": "^1.21.1",
-    "ts-node": "^10.7.0"
+    "ts-node": "^10.7.0",
+    "xlsx": "^0.18.5"
   },
   "license": "MIT",
   "ava": {

@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
-import { CONFIG } from './config.mjs'
+import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
@@ -85,13 +85,15 @@ async function getUpdatedAtAndPdfUrl() {
     await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
     await page.click(latestReportSelector)
 
+    // have to put this, otherwise chrome will failed
+    await delay(1)
+
     const iframeUrl = await page.evaluate(
       (s) => Promise.resolve(document.querySelector(s).getAttribute('src')),
       '#bm_ann_detail_iframe'
     )
 
     const iframeDomain = new URL(iframeUrl).origin
-    console.log(iframeUrl, 2222)
     await page.goto(iframeUrl)
     const pdfUrl = await page.evaluate(
       (s) => Promise.resolve(document.querySelector(s).getAttribute('href')),
@@ -100,16 +102,19 @@ async function getUpdatedAtAndPdfUrl() {
 
     return { updatedAt, pdfUrl: `${iframeDomain}${pdfUrl}` }
   } catch (e) {
-    throw Error(`Error getUpdatedAtAndPdfUrl: ${e}`)
+    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
   } finally {
     await browser.close()
   }
 }
 
-// stockNames: string[]
-// launch multi-tabs of pages and scrape company name in google.com/search?q={companyname}.
-// and then return Array<[exchange: string, code: string, companyName: string]>
-// remap(google exchange to TV exchange): SHE === 'SZSE', SHA === 'SSE'
+/**
+ * launch multi-tabs of pages and scrape company name in google.com/search?q={companyname}.
+ * and then return Array<[exchange: string, code: string, companyName: string]>
+ * remap(google exchange to TV exchange): SHE === 'SZSE', SHA === 'SSE'
+ * @param {string[]} stockNames
+ * @returns {Promise<*[]>}
+ */
 async function getCompanyExchangeAndCode(stockNames) {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
@@ -216,13 +221,17 @@ async function getCompanyExchangeAndCode(stockNames) {
 
     return [...success, ...retryResults]
   } catch (e) {
-    throw Error(`Error getCompanyExchangeAndCode: ${e}`)
+    throw Error(`Error getCompanyExchangeAndCode`, { cause: e })
   } finally {
     await browser.close()
   }
 }
 
-export async function CHINA() {
+/**
+ * Main SSE & SZSE scrape function
+ * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * */
+export default async function () {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
@@ -240,7 +249,7 @@ export async function CHINA() {
       human,
       data: human.reduce((acc, stock) => {
         const [exchange, code] = stock
-        // some of the stock failed to get exchange and code
+        // some stock failed to get exchange and code
         if (exchange === '') {
           return acc
         }
@@ -254,8 +263,9 @@ export async function CHINA() {
             ...acc,
             [exchange]: {
               updatedAt,
-              shape: CONFIG.CHINA.shape,
               list: {},
+              shape: CONFIG.CHINA.shape,
+              market: CONFIG.CHINA.market,
             },
           }
         }
@@ -263,6 +273,6 @@ export async function CHINA() {
       }, {}),
     }
   } catch (e) {
-    throw Error(`Failed scrape CHINA: ${e}`)
+    throw Error(`Failed scrape CHINA`, { cause: e })
   }
 }

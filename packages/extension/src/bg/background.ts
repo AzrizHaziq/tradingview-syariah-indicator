@@ -72,7 +72,7 @@ async function fetchData(shouldRefreshData = false): Promise<void> {
 async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
   try {
     const allExchanges = Object.entries(response).flatMap(([exchange, exchangeDetail]) => {
-      const { shape, list } = exchangeDetail as TSI.ExchangesDetail
+      const { shape, list } = exchangeDetail as TSI.ExchangeDetail
       return Object.entries(list).map(([symbol, symbolData]) => {
         const val = symbolData.reduce(
           (acc, value, index) => ({
@@ -95,11 +95,14 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
 
 async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(([exchange, { updatedAt, list }]) => ({
-      id: exchange,
-      counts: Object.keys(list).length,
-      updatedAt: isDate(new Date(updatedAt)) ? format(new Date(updatedAt), 'dd LLL yy') : '--',
-    }))
+    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(
+      ([exchange, { market, updatedAt, list }]: [TSI.Exchange, TSI.ExchangeDetail]) => ({
+        id: exchange,
+        market,
+        counts: Object.keys(list).length,
+        updatedAt: isDate(new Date(updatedAt)) ? format(new Date(updatedAt), 'dd LLL yy') : '--',
+      })
+    )
 
     await setStorage('DETAILS', exchangesDetails)
   } catch (e) {

@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 import { pipe } from './utils.mjs'
-import { CONFIG } from './config.mjs'
+import { CONFIG } from './CONFIG.mjs'
 import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
@@ -71,7 +71,7 @@ async function runTaskSequentially(tasks) {
     const { results, errors } = await PromisePool.for(tasks).process(async (item) => await getExchange(item))
 
     if (errors.length) {
-      throw Error(`failed runTaskSequentially: ${errors}`)
+      throw Error(`failed runTaskSequentially`, { cause: errors })
     }
 
     return results.reduce(
@@ -94,14 +94,27 @@ const finalOutput = (updatedAt) => (p) => {
     data: Object.entries(data).reduce(
       (acc, [k, v]) => ({
         ...acc,
-        ...(Object.keys(v).length ? { [k]: { updatedAt, shape: CONFIG.US.shape, list: v } } : {}),
+        ...(Object.keys(v).length
+          ? {
+              [k]: {
+                updatedAt,
+                list: v,
+                shape: CONFIG.US.shape,
+                market: CONFIG.US.market,
+              },
+            }
+          : {}),
       }),
       {}
     ),
   }))
 }
 
-export async function US() {
+/**
+ * Main NYSE & NASDAQ & AMAX & OTC scrape function
+ * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * */
+export default async function () {
   try {
     const response = await fetch(CONFIG.US.wahedHoldingUrl)
     const responseText = await response.text()
@@ -122,6 +135,6 @@ export async function US() {
       finalOutput(updatedAt)
     )(responseText)
   } catch (e) {
-    throw Error(`Error generating US stock: ${e}`)
+    throw Error(`Error generating US stock`, { cause: e })
   }
 }

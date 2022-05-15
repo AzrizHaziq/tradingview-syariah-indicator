@@ -23,12 +23,17 @@ export function delay(delaySecond = getRandomInt(1, 2)) {
   })
 }
 
+/**
+ * @param {string} filename
+ * @param {string} data
+ * @returns {void}
+ */
 export async function writeToFile(filename, data) {
   try {
-    fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (err) {
-      if (err) {
-        console.log(err)
-        throw Error(`Unable to write to file ${filename}`)
+    fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (e) {
+      if (e) {
+        console.log('Error writeToFile', e)
+        throw Error(`Unable to writeToFile`, { cause: e })
       }
     })
 

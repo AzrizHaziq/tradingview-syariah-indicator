@@ -117,6 +117,17 @@ export const Footer = (): JSX.Element => {
                 </li>
                 <li class='mb-4'>
                   <a
+                    href='https://www.valuepartners-group.com.my/en/shariah-china/'
+                    target='_blank'
+                    rel='noreferrer nofollow'
+                    class='font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline'>
+                    Indonesia Sharia Stock Index
+                    <br />
+                    <b>(IDX)</b>
+                  </a>
+                </li>
+                <li class='mb-4'>
+                  <a
                     href='https://github.com/AzrizHaziq/tradingview-syariah-indicator/releases'
                     target='_blank'
                     rel='noreferrer nofollow'

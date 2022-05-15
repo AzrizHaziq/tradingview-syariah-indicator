@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
         <p>
           Add a small green indicator(
           <img class='inline !my-0 mx-1' src={IMGS.logo} height={15} width={15} alt='logo' />) in
-          <a href='https://tradingview.com'>tradingview.com</a>. At the moment, only cover Malaysian, NYSE, Nasdaq,
+          <a href='https://tradingview.com'>tradingview.com</a>. At the moment, only cover Malaysia, NYSE, Nasdaq,
           Shenzhen, Shanghai at the moment.
         </p>
         <p>

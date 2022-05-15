@@ -67,9 +67,9 @@ export const nonShariahList: [typeof exchanges[number], string, string][] = [
 ]
 
 /**
- * @description Cant use this as cant use css selector with playwright
+ * @description Cant use this as can't use css selector with playwright
  */
-const tsi_selector = '[data-indicator=tradingview-syariah-indicator]'
+// const tsi_selector = '[data-indicator=tradingview-syariah-indicator]'
 
 export type Market = 'malaysia' | 'USA' | 'china' | 'canada' | 'indonesia' | 'brazil'
 export const exchangeToMarket = (exchange: typeof exchanges[number]): Market => {

@@ -1,31 +1,46 @@
 import { CONFIG } from './CONFIG.mjs'
-import { commitChangesIfAny, delay, isSameWithPreviousData, logCount, prettierJSON, writeToFile } from './utils.mjs'
+import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    // Please make sure the key is unique and taken from TV exchange id
-    const [_US, _MYX, _CHINA] = await Promise.all([
-      import('./ex_US.mjs').then((m) => m.US()),
-      import('./ex_MYX.mjs').then((m) => m.MYX()),
-      import('./ex_CHINA.mjs').then((m) => m.CHINA()),
-    ])
+    const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
+    const ALL_SHARIAH_LIST = await Promise.all(
+      INDEX_CODES.map((code) => import(`./ex_${code}.mjs`).then((m) => m.default()))
+    )
 
     await delay(1)
 
-    const { data: US_DATA, human: US_HUMAN } = _US
-    const { data: MYX_DATA, human: MYX_HUMAN } = _MYX
-    const { data: CHINA_DATA, human: CHINA_HUMAN } = _CHINA
+    const { allData, allHuman } = ALL_SHARIAH_LIST.reduce(
+      (acc, { human, data }) => ({
+        allData: { ...acc.allData, ...data },
+        allHuman: acc.allHuman.concat(human),
+      }),
+      { allData: {}, allHuman: [] }
+    )
 
-    const sortedHuman = []
-      .concat(MYX_HUMAN, US_HUMAN, CHINA_HUMAN, CONFIG.whitelist)
+    CONFIG.whitelist.forEach(([exchange, code, fullname]) => {
+      allHuman.push([exchange, code, fullname])
+
+      // whitelist data will merge into stock-list.json according to exchange
+      if (Object.hasOwn(allData, exchange)) {
+        allData[exchange].list[code] = [1]
+      } else {
+        // if not exist then create new
+        allData[exchange] = { list: { [code]: [1] } }
+      }
+    })
+
+    // sort stock by company name > code > exchange
+    const sortedHuman = allHuman
       .sort(([a1, a2, a3], [b1, b2, b3]) => {
         if (a2 === b2 && a3 === b3) return a1 > b1 ? 1 : a1 < b1 ? -1 : 0 // sort by exchange
         if (a3 === b3) return a2 > b2 ? 1 : a2 < b2 ? -1 : 0 // sort by code
         return a3 > b3 ? 1 : a3 < b3 ? -1 : 0 // by default use company name to sort
       })
+      // sometimes we are unable to parse correctly CHINA exchange code, so remove all empty code
       .filter(([, code]) => code)
 
     console.log('\n')
@@ -34,14 +49,9 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    const data = { ...US_DATA, ...CHINA_DATA, ...MYX_DATA }
+    logCount(allData)
 
-    // this should be depended on the exchange shape, I'm too lazy atm.
-    // whitelist data will merge into stock-list.json according to exchange
-    CONFIG.whitelist.forEach(([exchange, name]) => (data[exchange].list[name] = [1]))
-    logCount(data)
-
-    await writeToFile(CONFIG.mainOutput, JSON.stringify(data))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
     await writeToFile(
       CONFIG.humanOutput,
       await prettierJSON(
@@ -49,7 +59,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
           data: sortedHuman,
 
           // pluck all updatedAt data from each exchanges
-          metadata: Object.entries(data).reduce((acc, [exchange, detail]) => {
+          metadata: Object.entries(allData).reduce((acc, [exchange, detail]) => {
             acc[exchange] = detail.updatedAt
             return acc
           }, {}),

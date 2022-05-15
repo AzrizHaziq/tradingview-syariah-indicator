@@ -1,7 +1,7 @@
 # Tradingview Shariah Indicator 
 
 ## What it does
-Add a small indicator in tradingview.com, unfortunately currently only cover Malaysian stocks.
+Add a small green indicator in tradingview.com. At the moment, only cover Malaysia, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia.
 
 Source data:
 MYX: [Bursa Malaysia](https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&sort_by=short_name&sort_dir=asc&page=1)
@@ -115,7 +115,7 @@ Requirements
 - [X] Add e2e test with playwright + github action run with schedule
 - [X] Add website, host in vercel with SolidJS(SPA), waiting a meta framework from Solid.
 - [ ] Add an option page where user can custom its own data.
-- [ ] Test chrome webStore-cli npm, and firefox addons
+- [X] Test chrome webStore-cli npm, and firefox addons
 - [X] Create a page where a list of US, MY, China stocks and 
     - [X] search
     - [X] filter
@@ -124,7 +124,7 @@ Requirements
 - [X] @Data, do some diffing with current data. If exists, then commit it.
 
 
-### Please do refer to original website before buying. And if you're holding then look at them everyday.
+### Please do refer to original website before buying. And if you're holding then look at them every day.
 #### 1. China100 A stocks
 1. Go to [Bursa Malaysia](https://www.bursamalaysia.com/bm/market_information/announcements/company_announcement/announcement_details?ann_id=3174424) 
 2. Then click the pdf [Prospectus VP-DJ Shariah China A-Shares 100 ETF d.12 July 2021.pdf](https://disclosure.bursamalaysia.com/FileAccess/apbursaweb/download?id=209757&name=EA_DS_ATTACHMENTS)
@@ -133,6 +133,14 @@ Requirements
 
 #### 2. For Wahed ETF HLAL
 1. Read more here [HLAL](https://funds.wahedinvest.com/)
+
+
+#### 3. Indonesia Exchange
+1. More info here [IDX](https://idx.co.id/idx-syariah/indeks-saham-syariah)
+
+
+#### 4. Shenzen & Shanghai Exchange
+1. More info here [China ETF](https://www.valuepartners-group.com.my/en/shariah-china/)
 
 
 ![Alt](https://repobeats.axiom.co/api/embed/6b9d87cc3438de7959bbdf70582279fa2397012d.svg "Repobeats analytics image")

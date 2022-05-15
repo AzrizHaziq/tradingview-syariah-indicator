@@ -1,0 +1,12 @@
+// data is not using ts-node yet. It primary used for jsdoc
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["global.d.ts"]
+}
