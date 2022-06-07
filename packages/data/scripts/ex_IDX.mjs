@@ -35,7 +35,7 @@ async function fetchShariahList() {
     // Download the first ISSI file
     const [download] = await Promise.all([
       page.waitForEvent('download'),
-      page.locator('table#indexConstituentTable tr:nth-child(1) a').click(),
+      page.locator('table#indexConstituentTable tr a[href$="zip"]').first().click(), // find the first zip file in table
     ])
 
     // Wait for the download process to complete
