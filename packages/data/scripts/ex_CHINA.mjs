@@ -3,15 +3,12 @@ import { PdfReader } from 'pdfreader'
 import { CONFIG } from './CONFIG.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
-import { pipe, pluck, map, getElementByXPath, delay } from './utils.mjs'
+import { pipe, pluck, map, delay } from './utils.mjs'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
-const CHINA_ETF = (
-  companyCode = '0838EA',
-  title = encodeURIComponent('NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE')
-) =>
-  `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&title=${title}`
+const CHINA_ETF = (companyCode = '0838EA', title = 'NET+ASSET+VALUE+%2F+INDICATIVE+OPTIMUM+PORTFOLIO+VALUE') =>
+  `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&keyword=${title}`
 
 async function parsePdf(pdfUrl) {
   const companyNames = new Set()
@@ -119,50 +116,7 @@ async function getCompanyExchangeAndCode(stockNames) {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
 
-  // main just search thru google search and grab the stock code and exchange
-  const _main = async (name) => {
-    progressBar.increment(1, { stats: `Google search: ${name}` })
-
-    const page = await ctx.newPage()
-    const url = `https://google.com/search?q=${encodeURIComponent(name + ' stock price')}`
-    await page.goto(url, { waitUntil: 'networkidle' })
-
-    return await page
-      .evaluate(
-        ([selector, util]) => {
-          let { name, getElementByXPath, remapExchange } = util
-          remapExchange = JSON.parse(remapExchange)
-          getElementByXPath = new Function(`return ${getElementByXPath}`)() // eslint-disable-line no-new-func
-
-          const el = getElementByXPath(selector)
-
-          if (!el) {
-            return Promise.resolve(['', '', name])
-          }
-
-          let [exchange, code] = el.textContent.replace(/\s/g, '').split(':')
-
-          // eslint-disable-next-line no-prototype-builtins
-          if (remapExchange.hasOwnProperty(exchange)) {
-            exchange = remapExchange[exchange]
-          } else throw new Error(`Failed to remap China exchange: ${exchange}:${code}:${name}`)
-
-          return Promise.resolve([exchange, code, name])
-        },
-        [
-          '//*[@id="knowledge-finance-wholepage__entity-summary"]/div/g-card-section/div/g-card-section/div[2]/div[2]/div[1]',
-          {
-            name,
-            getElementByXPath: getElementByXPath.toString(),
-            remapExchange: JSON.stringify(CONFIG.CHINA.remapExchangeFromGoogleToTV),
-          },
-        ]
-      )
-      .finally(async () => await page.close())
-  }
-
-  // retry have quite number of steps and that's why its not a default method
-  const _retry = async (name) => {
+  const searchInGoogleFinance = async (name) => {
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -179,7 +133,7 @@ async function getCompanyExchangeAndCode(stockNames) {
 
         await page.fill(mainInputBox, _name)
         await delay(1)
-        progressBar.update({ stats: `Google finance: ${_name}` })
+        progressBar.update({ stats: `Searching: ${_name}` })
 
         // if "No matches..." not exist then press enter and get code and exchange
         const bool = await page.isVisible(noMatches)
@@ -198,6 +152,7 @@ async function getCompanyExchangeAndCode(stockNames) {
             ? CONFIG.CHINA.remapExchangeFromGoogleToTV[exchange]
             : ''
 
+          progressBar.increment(1, { stats: `Done: ${exchange}-${code}-${name}` })
           return [exchange, code, name]
         }
       } while (await page.isVisible(noMatches))
@@ -207,19 +162,8 @@ async function getCompanyExchangeAndCode(stockNames) {
   }
 
   try {
-    const { results } = await PromisePool.for(stockNames).process(_main)
-    const { success, failed } = results.reduce(
-      (acc, stock) => {
-        stock[0] === '' ? acc.failed.push(stock) : acc.success.push(stock)
-        return acc
-      },
-      { success: [], failed: [] }
-    )
-
-    const failedNames = failed.map((i) => i[2])
-    const { results: retryResults } = await PromisePool.for(failedNames).process(_retry)
-
-    return [...success, ...retryResults]
+    const { results } = await PromisePool.for(stockNames).process(searchInGoogleFinance)
+    return results
   } catch (e) {
     throw Error(`Error getCompanyExchangeAndCode`, { cause: e })
   } finally {
@@ -276,3 +220,45 @@ export default async function () {
     throw Error(`Failed scrape CHINA`, { cause: e })
   }
 }
+
+// main just search thru google search and grab the stock code and exchange
+// const _main = async (name) => {
+//   progressBar.increment(1, { stats: `Google search: ${name}` })
+//
+//   const page = await ctx.newPage()
+//   const url = `https://google.com/search?q=${encodeURIComponent(name + ' stock price')}`
+//   await page.goto(url, { waitUntil: 'networkidle' })
+//
+//   return await page
+//     .evaluate(
+//       ([selector, util]) => {
+//         let { name, getElementByXPath, remapExchange } = util
+//         remapExchange = JSON.parse(remapExchange)
+//         getElementByXPath = new Function(`return ${getElementByXPath}`)() // eslint-disable-line no-new-func
+//
+//         const el = getElementByXPath(selector)
+//
+//         if (!el) {
+//           return Promise.resolve(['', '', name])
+//         }
+//
+//         let [exchange, code] = el.textContent.replace(/\s/g, '').split(':')
+//
+//         // eslint-disable-next-line no-prototype-builtins
+//         if (remapExchange.hasOwnProperty(exchange)) {
+//           exchange = remapExchange[exchange]
+//         } else throw new Error(`Failed to remap China exchange: ${exchange}:${code}:${name}`)
+//
+//         return Promise.resolve([exchange, code, name])
+//       },
+//       [
+//         '//*[@id="knowledge-finance-wholepage__entity-summary"]/div/g-card-section/div/g-card-section/div[2]/div[2]/div[1]',
+//         {
+//           name,
+//           getElementByXPath: getElementByXPath.toString(),
+//           remapExchange: JSON.stringify(CONFIG.CHINA.remapExchangeFromGoogleToTV),
+//         },
+//       ]
+//     )
+//     .finally(async () => await page.close())
+// }
