@@ -86,14 +86,16 @@ export function observeNodeChanges(
   return () => observer.disconnect()
 }
 
-export function waitForElm(selector: string): Promise<Element> {
+export function waitForElm<T = Element>(selector: string): Promise<T> {
   return new Promise((resolve) => {
     if (document.querySelector(selector)) {
+      // @ts-ignore
       return resolve(document.querySelector(selector))
     }
 
     const observer = new MutationObserver(() => {
       if (document.querySelector(selector)) {
+        // @ts-ignore
         resolve(document.querySelector(selector))
         observer.disconnect()
       }
