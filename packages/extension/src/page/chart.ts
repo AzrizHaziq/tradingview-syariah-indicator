@@ -8,18 +8,33 @@ import {
   observeNodeChanges,
 } from '../helper'
 
-waitForElm('[data-name="legend-series-item"]').then(setStockListInMap).then(mainScript)
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+let obs = () => {}
+const selectors = {
+  mainChartStockNameEl: '[data-name="legend-series-item"] [data-name="legend-source-title"]',
+  mainChartStockSeriesEl: '[data-name="legend-series-item"]',
+  mainChartEl:
+    'body > div.js-rootresizer__contents.layout-with-border-radius > div.layout__area--center > div.chart-container.single-visible.top-full-width-chart.active > div.chart-container-border',
+}
+
+waitForElm(selectors.mainChartStockSeriesEl)
+  .then(setStockListInMap)
+  .then(() => waitForElm(selectors.mainChartEl))
+  .then((rootChartElement) => {
+    obs()
+    observeNodeChanges(rootChartElement, mainScript)
+  })
 
 function mainScript() {
   // have to target dom like below since this is the most top parent
-  const symbolNode = document.querySelector('[data-name="legend-series-item"]')
-  observeNodeChanges(symbolNode, chartScript)
+  const symbolNode = document.querySelector(selectors.mainChartStockSeriesEl)
+  obs = observeNodeChanges(symbolNode, chartScript)
 }
 
 async function chartScript(): Promise<void> {
-  const { parentElement } = document.querySelector('[data-name="legend-source-title"]')
+  const { parentElement } = document.querySelector(selectors.mainChartStockNameEl)
 
-  // getting cssInJS hash like titleWrapper-1WIwNaDF (1WIwNaDF)
+  // getting cssInJS hash like titleWrapper-1WIwNaDF -> 1WIwNaDF
   const cssInJsHash = parentElement.className
     .split(' ')
     .find((i) => i.startsWith('titleWrapper-'))

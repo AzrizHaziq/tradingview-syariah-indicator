@@ -70,7 +70,7 @@ export function observeNodeChanges(
   nodeToObserve: Element,
   cb: () => unknown,
   options: Partial<MutationObserverInit> = { childList: true, subtree: true }
-): MutationObserver {
+): () => void {
   // eslint-disable-next-line prefer-const
   let observer: MutationObserver
 
@@ -83,7 +83,7 @@ export function observeNodeChanges(
 
   observer.observe(nodeToObserve, options)
 
-  return observer
+  return () => observer.disconnect()
 }
 
 export function waitForElm(selector: string): Promise<Element> {

@@ -8,7 +8,9 @@ import {
   observeNodeChanges,
 } from '../helper'
 
-let obs: MutationObserver
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+let obs = () => {}
+
 const largeResoSelector = '.tv-symbol-header .tv-symbol-header__second-line .tv-symbol-header__exchange'
 const smallResoSelector = '.tv-symbol-header.tv-symbol-header--mobile .tv-symbol-header__first-line'
 
@@ -34,7 +36,7 @@ function symbolScript() {
     } else {
       // have to disconnect current observer so that it doesn't create loop
       // because below we create icon and insert into div which trigger again observer.
-      obs.disconnect()
+      obs()
 
       const icon1 = createIcon()
       icon1.style.position = 'relative'
