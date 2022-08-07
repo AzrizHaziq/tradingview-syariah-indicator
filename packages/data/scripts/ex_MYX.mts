@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import { CONFIG } from './CONFIG.mjs'
-import { delay, pipe } from './utils.mjs'
+import { CONFIG } from './CONFIG.mts'
+import { delay, pipe } from './utils.mts'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 
@@ -114,7 +114,7 @@ async function scrapBursaMalaysia() {
 
     // TODO: fixme if there is error in pool
     if (errors.length) {
-      console.log(errors, 'MYX, promise pool scrape failed', errors, results)
+      console.log(errors, 'MYX, promise pool scrape failed', errors)
       throw Error(`failed scrape stock in pages`, { cause: errors })
     }
 

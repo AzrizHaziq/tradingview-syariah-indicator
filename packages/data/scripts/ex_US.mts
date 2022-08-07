@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import { pipe } from './utils.mjs'
-import { CONFIG } from './CONFIG.mjs'
+import { pipe } from './utils.mts'
+import { CONFIG } from './CONFIG.mts'
 import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })

@@ -3,8 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import os from 'node:os'
 import extract from 'extract-zip'
-import { pipe } from './utils.mjs'
-import { CONFIG } from './CONFIG.mjs'
+import { pipe } from './utils.mts'
+import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })

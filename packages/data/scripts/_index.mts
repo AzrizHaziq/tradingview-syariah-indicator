@@ -1,5 +1,5 @@
-import { CONFIG } from './CONFIG.mjs'
-import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
+import { CONFIG } from './CONFIG.mts'
+import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mts'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
 
@@ -8,7 +8,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
   try {
     const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
     const ALL_SHARIAH_LIST = await Promise.all(
-      INDEX_CODES.map((code) => import(`./ex_${code}.mjs`).then((m) => m.default()))
+      INDEX_CODES.map((code) => import(`./ex_${code}.mts`).then((m) => m.default()))
     )
 
     await delay(1)

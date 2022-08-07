@@ -1,4 +1,4 @@
-import { CliProgress } from './utils.mjs'
+import { CliProgress } from './utils.mts'
 
 // 'market' is used in /screener > dom node in filter by country
 export const CONFIG = {

@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
-import { CONFIG } from './CONFIG.mjs'
+import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
-import { pipe, pluck, map, delay } from './utils.mjs'
+import { pipe, pluck, map, delay } from './utils.mts'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 

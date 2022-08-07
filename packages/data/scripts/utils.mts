@@ -4,7 +4,7 @@ import colors from 'colors'
 import prettier from 'prettier'
 import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
-import { CONFIG } from './CONFIG.mjs'
+import { CONFIG } from './CONFIG.mts'
 
 export const pipe =
   (...fns) =>
