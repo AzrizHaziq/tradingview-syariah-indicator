@@ -23,7 +23,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "extract-zip": "^2.0.1",
     "node-fetch": "^3.2.10",
-    "pdfreader": "^1.4.0",
+    "pdfreader": "^2.0.0",
     "playwright-chromium": "^1.24.2",
     "ts-node": "^10.7.0",
     "xlsx": "^0.18.5"

@@ -32,7 +32,7 @@ importers:
       eslint-plugin-promise: ^6.0.0
       extract-zip: ^2.0.1
       node-fetch: ^3.2.10
-      pdfreader: ^1.4.0
+      pdfreader: ^2.0.0
       playwright-chromium: ^1.24.2
       ts-node: ^10.7.0
       xlsx: ^0.18.5
@@ -51,7 +51,7 @@ importers:
       eslint-plugin-promise: 6.0.0_eslint@8.21.0
       extract-zip: 2.0.1
       node-fetch: 3.2.10
-      pdfreader: 1.4.0
+      pdfreader: 2.0.0
       playwright-chromium: 1.24.2
       ts-node: 10.7.0_@types+node@18.6.4
       xlsx: 0.18.5
@@ -101,7 +101,7 @@ importers:
       sass: ^1.54.3
       sass-loader: ^13.0.2
       size-plugin: 2.0.2
-      solid-js: ^1.3.17
+      solid-js: ^1.4.8
       ts-node: ^10.7.0
       tsconfig-paths-webpack-plugin: ^4.0.0
       typescript: ^4.7.4
@@ -116,7 +116,7 @@ importers:
       windicss-webpack-plugin: ^1.7.5
     dependencies:
       date-fns: 2.29.1
-      solid-js: 1.3.17
+      solid-js: 1.4.8
     devDependencies:
       '@babel/core': 7.18.10
       '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.18.10
@@ -187,8 +187,8 @@ importers:
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-tailwindcss: ^3.6.0
       sass: ^1.54.3
-      solid-app-router: ^0.3.2
-      solid-js: ^1.3.17
+      solid-app-router: ^0.4.2
+      solid-js: ^1.4.8
       ts-node: ^10.7.0
       typescript: ^4.7.4
       vite: ^3.0.4
@@ -200,8 +200,8 @@ importers:
       '@analytics/google-analytics': 0.5.3
       analytics: 0.8.1_@types+dlv@1.1.2
       date-fns: 2.29.1
-      solid-app-router: 0.3.2_solid-js@1.3.17
-      solid-js: 1.3.17
+      solid-app-router: 0.4.2_solid-js@1.4.8
+      solid-js: 1.4.8
     devDependencies:
       '@types/dlv': 1.1.2
       '@types/node': 18.6.4
@@ -215,7 +215,7 @@ importers:
       ts-node: 10.7.0_hn66opzbaneygq52jmwjxha6su
       typescript: 4.7.4
       vite: 3.0.4_sass@1.54.3
-      vite-plugin-solid: 2.3.0_solid-js@1.3.17+vite@3.0.4
+      vite-plugin-solid: 2.3.0_solid-js@1.4.8+vite@3.0.4
       vite-plugin-windicss: 1.8.7_vite@3.0.4
       vite-tsconfig-paths: 3.5.0_vite@3.0.4
       windicss: 3.5.6
@@ -1923,7 +1923,6 @@ packages:
 
   /@types/dlv/1.1.2:
     resolution: {integrity: sha512-OyiZ3jEKu7RtGO1yp9oOdK0cTwZ/10oE9PDJ6fyN3r9T5wkyOcvr6awdugjYdqF6KVO5eUvt7jx7rk2Eylufow==}
-    dev: true
 
   /@types/download/8.0.1:
     resolution: {integrity: sha512-t5DjMD6Y1DxjXtEHl7Kt+nQn9rOmVLYD8p4Swrcc5QpgyqyqR2gXTIK6RwwMnNeFJ+ZIiIW789fQKzCrK7AOFA==}
@@ -2341,11 +2340,6 @@ packages:
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@xmldom/xmldom/0.7.5:
-    resolution: {integrity: sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A==}
-    engines: {node: '>=10.0.0'}
     dev: true
 
   /@xtuc/ieee754/1.2.0:
@@ -7482,26 +7476,19 @@ packages:
     resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
     dev: true
 
-  /pdf2json/1.2.5:
-    resolution: {integrity: sha512-pkzyyPpil+jd+qQZVFzO9ZeeNFGZNLv6eNsz/P3l8QDztLkG4e/PhPYwr0IjGEv+PvgfzEniHZMgMCxadF+W3w==}
-    engines: {node: '>=12.20.0'}
+  /pdf2json/2.0.1:
+    resolution: {integrity: sha512-gj1kZOV2cA+bHyyZiwNU8AVduT4L+7dQODtJZRev7/23TZ0Mz5ILVLsaCLX2p7A8cdBYyDq6zXEBUBvtXgpIZg==}
+    engines: {node: '>=14.18.0', npm: '>=6.14.15'}
     hasBin: true
-    dependencies:
-      '@xmldom/xmldom': 0.7.5
-      async: 3.2.2
-      lodash: 4.17.21
-      yargs: 17.2.1
     dev: true
     bundledDependencies:
-      - async
-      - lodash
       - '@xmldom/xmldom'
-      - yargs
 
-  /pdfreader/1.4.0:
-    resolution: {integrity: sha512-TwUnslc/P38HSscepFl7zrSgJnzj+fUW+Wd4Cze9VBMC0yArlPVXcK4afqSWkJ840xiFQJI08rgaRgApzULfiw==}
+  /pdfreader/2.0.0:
+    resolution: {integrity: sha512-ieCZ89yl1cb8olOhzMsSJgRJ+mR6tTwG/AGy9nWXzFPhzGgQA76Qh7CCWk6QTE3V30z2Hre1EVagzIjhNERYGw==}
+    engines: {node: '>=14'}
     dependencies:
-      pdf2json: 1.2.5
+      pdf2json: 2.0.1
     dev: true
 
   /pend/1.2.0:
@@ -8854,19 +8841,18 @@ packages:
       is-fullwidth-code-point: 4.0.0
     dev: true
 
-  /solid-app-router/0.3.2_solid-js@1.3.17:
-    resolution: {integrity: sha512-zh6Ui87xy23JUxrH0z1xAROJPpiuxa3JRx9jP2qqjr07q2EKQOjn9BrmTFvQd/azQWzLjSMU+hN2fy6kLh5Bdw==}
+  /solid-app-router/0.4.2_solid-js@1.4.8:
+    resolution: {integrity: sha512-+NrLcmqYssx8DcbpcLBaYPqfTRtS+rkfbxMhLH8MHfTcTkdZfrkWQK7lsUvuPCebGEzfaPZJvHqBwhPrCXAmxg==}
     peerDependencies:
       solid-js: ^1.3.5
     dependencies:
-      solid-js: 1.3.17
+      solid-js: 1.4.8
     dev: false
 
-  /solid-js/1.3.17:
-    resolution: {integrity: sha512-BFCosxa4hRm+LF7S+kBL5bNr4RtuZif6AaR5FdQkBpV1E6QNLAOFm4HWgEN8vL2aCWEKl384cT8Etw8ziW8aag==}
-    dev: false
+  /solid-js/1.4.8:
+    resolution: {integrity: sha512-XErZdnnYYXF7OwGSUAPcua2y5/ELB/c53zFCpWiEGqxTNoH1iQghzI8EsHJXk06sNn+Z/TGhb8bPDNNGSgimag==}
 
-  /solid-refresh/0.4.1_solid-js@1.3.17:
+  /solid-refresh/0.4.1_solid-js@1.4.8:
     resolution: {integrity: sha512-v3tD/OXQcUyXLrWjPW1dXZyeWwP7/+GQNs8YTL09GBq+5FguA6IejJWUvJDrLIA4M0ho9/5zK2e9n+uy+4488g==}
     peerDependencies:
       solid-js: ^1.3
@@ -8874,7 +8860,7 @@ packages:
       '@babel/generator': 7.18.12
       '@babel/helper-module-imports': 7.18.6
       '@babel/types': 7.18.10
-      solid-js: 1.3.17
+      solid-js: 1.4.8
     dev: true
 
   /sonic-boom/2.6.0:
@@ -9754,7 +9740,7 @@ packages:
       core-util-is: 1.0.2
       extsprintf: 1.3.0
 
-  /vite-plugin-solid/2.3.0_solid-js@1.3.17+vite@3.0.4:
+  /vite-plugin-solid/2.3.0_solid-js@1.4.8+vite@3.0.4:
     resolution: {integrity: sha512-N2sa54C3UZC2nN5vpj5o6YP+XdIAZW6n6xv8OasxNAcAJPFeZT7EOVvumL0V4c8hBz1yuYniMWdESY8807fVSg==}
     peerDependencies:
       solid-js: ^1.3.17
@@ -9764,8 +9750,8 @@ packages:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.18.10
       babel-preset-solid: 1.4.8_@babel+core@7.18.10
       merge-anything: 5.0.2
-      solid-js: 1.3.17
-      solid-refresh: 0.4.1_solid-js@1.3.17
+      solid-js: 1.4.8
+      solid-refresh: 0.4.1_solid-js@1.4.8
       vite: 3.0.4_sass@1.54.3
     transitivePeerDependencies:
       - supports-color
@@ -10260,19 +10246,6 @@ packages:
   /yargs/16.2.0:
     resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
     engines: {node: '>=10'}
-    dependencies:
-      cliui: 7.0.4
-      escalade: 3.1.1
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      string-width: 4.2.3
-      y18n: 5.0.8
-      yargs-parser: 20.2.9
-    dev: true
-
-  /yargs/17.2.1:
-    resolution: {integrity: sha512-XfR8du6ua4K6uLGm5S6fA+FIJom/MdJcFNVY8geLlp2v8GYbOXD4EB1tPNZsRn4vBzKGMgb5DRZMeWuFc2GO8Q==}
-    engines: {node: '>=12'}
     dependencies:
       cliui: 7.0.4
       escalade: 3.1.1
