@@ -230,7 +230,8 @@ const ShariahListItem = (props: { item: PageProps['data']['0']; exchangeColor: s
       {exchange && (
         <Show when={exchange}>
           <span
-            class={`hidden sm:block text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100 ${props.exchangeColor}`}>
+            classList={{ [props.exchangeColor]: true }}
+            class='hidden sm:block text-sm py-1 px-2 border rounded ml-auto opacity-80 group-hover:opacity-100'>
             {exchange}-{code}
           </span>
         </Show>
