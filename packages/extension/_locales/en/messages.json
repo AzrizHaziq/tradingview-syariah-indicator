@@ -1,7 +1,9 @@
 {
   "i18n": { "message": "en" },
   "ext_extension_name": { "message": "Tradingview Shariah Indicator" },
-  "ext_extension_description": { "message": "Display small shariah indicator to stock list in Tradingview(MY)" },
+  "ext_extension_description": {
+    "message": "Display small shariah indicator to stock list in Tradingview(Malaysia, China, Indonesia, US)"
+  },
   "screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
   "screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
   "popup_version": { "message": "Current version" },
