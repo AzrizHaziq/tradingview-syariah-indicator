@@ -11,6 +11,9 @@ export const CONFIG = {
     // [exchange, code, fullname]
     // https://www.tradingview.com/symbols/NASDAQ-HLAL/
     ['NASDAQ', 'HLAL', 'WAHED FTSE USA SHARIAH ETF'],
+    ['FTSEMYX', 'FBMSHA', 'FTSE BURSA MALAYSIA EMAS SHARIAH INDEX'],
+    ['FTSEMYX', 'FBMHIJRAH', 'FTSE BURSA MALAYSIA HIJRAH SHARIAH INDEX'],
+    ['FTSEMYX', 'F4GBM', 'FTSE BURSA MALAYSIA MIDS CAP SHARIAH INDEX'],
   ],
   MYX: {
     market: 'malaysia',
