@@ -1,6 +1,8 @@
+/* eslint-disable */
 import Analytics from 'analytics'
 import { createEffect } from 'solid-js'
-import googleAnalytics from '@analytics/google-analytics'
+// import googleAnalytics from '@analytics/google-analytics'
+// https://github.com/DavidWells/analytics/pull/297
 
 export const analytics = Analytics({
   app: 'tradingview shariah indicator web',
