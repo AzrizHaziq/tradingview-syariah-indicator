@@ -1,3 +1,4 @@
+import type { ExchangeDetail, Flag, Exchange, EVENT_MSG, RESPONSE_FROM_JSON } from '@app/type'
 import browser from 'webextension-polyfill'
 import { differenceInDays, format, isDate } from 'date-fns'
 import { debounce, getStorage, setStorage } from '../helper'
@@ -42,7 +43,7 @@ browser.tabs.onUpdated.addListener(
   )
 )
 
-browser.runtime.onMessage.addListener((req: TSI.EVENT_MSG) => {
+browser.runtime.onMessage.addListener((req: EVENT_MSG) => {
   if (req.type === 'invalidate-cache') {
     return setStorage('LAST_FETCH_AT', '')
       .then(() => console.log('>>> INVALIDATE CACHE'))
@@ -60,7 +61,7 @@ async function fetchData(shouldRefreshData = false): Promise<void> {
 
   try {
     const res = await fetch(jsonUrl)
-    const data: TSI.RESPONSE_FROM_JSON = await res.json()
+    const data: RESPONSE_FROM_JSON = await res.json()
     await setListInStorages(data)
     await setExchangeDetailInfoInStorage(data)
     await setStorage('LAST_FETCH_AT', new Date().toString())
@@ -69,10 +70,10 @@ async function fetchData(shouldRefreshData = false): Promise<void> {
   }
 }
 
-async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
+async function setListInStorages(response: RESPONSE_FROM_JSON): Promise<void> {
   try {
     const allExchanges = Object.entries(response).flatMap(([exchange, exchangeDetail]) => {
-      const { shape, list } = exchangeDetail as TSI.ExchangeDetail
+      const { shape, list } = exchangeDetail as ExchangeDetail
       return Object.entries(list).map(([symbol, symbolData]) => {
         const val = symbolData.reduce(
           (acc, value, index) => ({
@@ -93,10 +94,10 @@ async function setListInStorages(response: TSI.RESPONSE_FROM_JSON): Promise<void
   }
 }
 
-async function setExchangeDetailInfoInStorage(response: TSI.RESPONSE_FROM_JSON): Promise<void> {
+async function setExchangeDetailInfoInStorage(response: RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const exchangesDetails: TSI.Flag[] = Object.entries(response).map(
-      ([exchange, { market, updatedAt, list }]: [TSI.Exchange, TSI.ExchangeDetail]) => ({
+    const exchangesDetails: Flag[] = Object.entries(response).map(
+      ([exchange, { market, updatedAt, list }]: [Exchange, ExchangeDetail]) => ({
         id: exchange,
         market,
         counts: Object.keys(list).length,

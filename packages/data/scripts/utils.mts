@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import colors from 'colors'
 import prettier from 'prettier'
 import { spawn } from 'child_process'
@@ -10,25 +10,28 @@ export const pipe =
   (...fns) =>
   (initialVal) =>
     fns.reduce((acc, fn) => fn(acc), initialVal)
-export const pluck = (key) => (obj) => obj[key] || null
-export const map = (fn) => (item) => fn(item)
 
-function getRandomInt(min, max) {
+export const pluck =
+  <T, K extends keyof T>(key: K) =>
+  (obj: T): T[K] | null =>
+    obj[key] || null
+
+export const map =
+  <T, R>(fn: (a: T) => R) =>
+  (item: T): R =>
+    fn(item)
+
+function getRandomInt(min, max): number {
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
-export function delay(delaySecond = getRandomInt(1, 2)) {
+export function delay(delaySecond = getRandomInt(1, 2)): Promise<number> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(delaySecond), delaySecond * 1000)
   })
 }
 
-/**
- * @param {string} filename
- * @param {string} data
- * @returns {void}
- */
-export async function writeToFile(filename, data) {
+export async function writeToFile(filename: string, data: string) {
   try {
     fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (e) {
       if (e) {
@@ -45,6 +48,8 @@ export async function writeToFile(filename, data) {
 }
 
 export class CliProgress {
+  static instance: CliProgress
+
   constructor() {
     if (!CliProgress.instance) {
       CliProgress.instance = new cliProgress.MultiBar(
@@ -87,7 +92,7 @@ export async function gitCommand(...command) {
   })
 }
 
-export function isSameWithPreviousData(newData, filePath = `${path.resolve()}/${CONFIG.humanOutput}`) {
+export function isSameWithPreviousData(newData, filePath = `${path.resolve()}/${CONFIG.humanOutput}`): boolean {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data: oldData } = JSON.parse(fileContent)
 
@@ -104,12 +109,6 @@ export async function commitChangesIfAny() {
   }
 }
 
-export async function prettierJSON(str) {
+export async function prettierJSON(str: string): Promise<string> {
   return prettier.format(str, { semi: false, parser: 'json' })
-}
-
-// https://stackoverflow.com/a/43688599/3648961
-export function getElementByXPath(path) {
-  return new XPathEvaluator().evaluate(path, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
-    .singleNodeValue
 }

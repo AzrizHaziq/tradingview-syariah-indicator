@@ -1,3 +1,4 @@
+import type { StorageMap } from '@app/type'
 import browser from 'webextension-polyfill'
 
 let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()
@@ -108,11 +109,11 @@ export function waitForElm<T = Element>(selector: string): Promise<T> {
   })
 }
 
-export function getMessage(messageName: string, substitutions?: unknown): string {
+export function getMessage(messageName: string, substitutions?: Parameters<typeof browser.i18n.getMessage>[1]): string {
   return browser.i18n.getMessage(messageName, substitutions)
 }
 
-export async function setStorage<K extends keyof TSI.StorageMap>(key: K, payload: TSI.StorageMap[K]): Promise<void> {
+export async function setStorage<K extends keyof StorageMap>(key: K, payload: StorageMap[K]): Promise<void> {
   try {
     await browser.storage.local.set({ [key]: payload })
   } catch (e) {
@@ -120,7 +121,7 @@ export async function setStorage<K extends keyof TSI.StorageMap>(key: K, payload
   }
 }
 
-export async function getStorage<K extends keyof TSI.StorageMap>(key: K): Promise<TSI.StorageMap[K]> {
+export async function getStorage<K extends keyof StorageMap>(key: K): Promise<StorageMap[K]> {
   try {
     const { [key]: data } = await browser.storage.local.get(key)
     return data

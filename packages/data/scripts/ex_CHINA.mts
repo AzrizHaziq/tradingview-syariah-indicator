@@ -57,7 +57,7 @@ async function getUpdatedAtAndPdfUrl() {
 
     // get updatedAt at latest report
     const updatedAt = await page.evaluate(
-      ([selector, util]) => {
+      ([selector, util]: [string, any]) => {
         let { pipe, map, pluck } = util
         pipe = new Function(`return ${pipe}`)() // eslint-disable-line no-new-func
         map = new Function(`return ${map}`)() // eslint-disable-line no-new-func

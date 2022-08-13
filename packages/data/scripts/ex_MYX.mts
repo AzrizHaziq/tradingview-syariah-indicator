@@ -10,15 +10,13 @@ const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
  * @param {{s: 1, code: string, stockName: string}[]} stocks - Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
  * @returns {Promise<Object<string, {s: 1, code: string, stockName: string, fullname; string}>>} - {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
  */
-async function getCompanyName(stocks) {
-  /**
-   * @param {string} code
-   * @returns {Promise<string>}
-   */
-  async function getCompanyFullname(code) {
+async function getCompanyName(
+  stocks: { s: 0 | 1; code: string; stockName: string }[]
+): Promise<{ [p: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }> {
+  async function getCompanyFullname(code: string): Promise<string> {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
-    const json = await res.json()
-    return json.data?.company_info?.name
+    const json = (await res.json()) as { data: { company_info: { name: string } } }
+    return json?.data?.company_info?.name
   }
 
   try {
@@ -42,11 +40,12 @@ async function getCompanyName(stocks) {
   }
 }
 
-const scrapUrl = ({ perPage, page }) =>
+const scrapUrl = ({ perPage, page }: { perPage: number; page: number }) =>
   `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
 
-/** @returns {Promise<{[p: string]: {s: 1, code: string, stockName: string, fullname, string}}>} */
-async function scrapBursaMalaysia() {
+async function scrapBursaMalaysia(): Promise<{
+  [p in string]: { s: 1 | 0; code: string; stockName: string; fullname: string }
+}> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
@@ -76,8 +75,7 @@ async function scrapBursaMalaysia() {
         const pageNo = `${i + 1}`.padStart(2, '0')
         await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
 
-        /** @returns {Promise<{s: 1, code: string, stockName: string}[]>} */
-        const scrapeList = async () =>
+        const scrapeList = async (): Promise<{ s: 1 | 0; code: string; stockName: string }[]> =>
           await page.evaluate(() => {
             const pipe =
               (...fn) =>
@@ -98,15 +96,15 @@ async function scrapBursaMalaysia() {
 
         // this does the work as of retry scrapping function
         // sometime scrape return 0 items
-        let shariahList = await scrapeList()
-        while (shariahList.length <= 0) {
+        let scrapped = await scrapeList()
+        while (scrapped.length <= 0) {
           await delay(1)
           progressBar.increment(0, { stats: `Page ${pageNo}: retry` })
-          shariahList = await scrapeList()
+          scrapped = await scrapeList()
         }
 
         progressBar.increment(0.5, { stats: `Page ${pageNo}: scrapped` })
-        shariahList = await getCompanyName(shariahList)
+        const shariahList = await getCompanyName(scrapped)
         progressBar.increment(0.5, { stats: `Page ${pageNo}: done` })
 
         return shariahList
@@ -132,7 +130,7 @@ async function scrapBursaMalaysia() {
  * Main MYX scrape function
  * @returns {Promise<MAIN_DEFAULT_EXPORT>}
  * */
-export default async function () {
+export default async function (): Promise<{ human: [exchange: string, code: string, fullname: string]; data }> {
   try {
     const shariahList = await scrapBursaMalaysia()
 

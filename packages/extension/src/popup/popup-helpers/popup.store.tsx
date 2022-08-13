@@ -1,13 +1,15 @@
+import type { Flag } from '@app/type'
 import { getStorage } from '@src/helper'
-import { createSignal, createContext, useContext, Component, Accessor } from 'solid-js'
 
-type CurrentDataStore = [Accessor<TSI.Flag[]>, { setState?: (item: TSI.Flag[]) => void }]
+import { createSignal, createContext, useContext, Component, Accessor, JSX } from 'solid-js'
+
+type CurrentDataStore = [Accessor<Flag[]>, { setState?: (item: Flag[]) => void }]
 
 const CurrentDataContext = createContext<CurrentDataStore>([() => [], {}])
 
 export const useCurrentData = (): CurrentDataStore => useContext(CurrentDataContext)
 
-export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = (props) => {
+export const CurrentDataProvider: Component<{ value: Flag[]; children: JSX.Element }> = (props) => {
   const [state, setState] = createSignal(props.value || [])
   const store: CurrentDataStore = [
     state,
@@ -21,7 +23,7 @@ export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = (props) => 
   return <CurrentDataContext.Provider value={store}>{props.children}</CurrentDataContext.Provider>
 }
 
-export async function getStorageDetails(): Promise<TSI.Flag[]> {
+export async function getStorageDetails(): Promise<Flag[]> {
   try {
     const DETAILS = await getStorage('DETAILS')
 
