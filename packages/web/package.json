@@ -10,13 +10,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@analytics/google-analytics": "0.5.3",
     "analytics": "^0.8.1",
     "date-fns": "^2.29.1",
     "solid-app-router": "^0.4.2",
     "solid-js": "^1.4.8"
   },
   "devDependencies": {
+    "@analytics/google-analytics": "1.0.3",
     "@types/dlv": "^1.1.2",
     "@types/node": "^18.6.4",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
