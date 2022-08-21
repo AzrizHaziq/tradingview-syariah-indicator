@@ -1860,20 +1860,11 @@
     ["IDX", "ZYRX", "Zyrexindo Mandiri Buana Tbk."]
   ],
   "metadata": {
-<<<<<<< HEAD
-    "NYSE": null,
-    "NASDAQ": null,
-    "MYX": 1659752086705,
-    "SSE": 1659628800000,
-    "SZSE": 1659628800000,
-    "IDX": 1659752045781
-=======
     "NYSE": 1660838400000,
     "NASDAQ": 1660838400000,
     "MYX": 1660949051186,
     "SSE": 1660838400000,
     "SZSE": 1660838400000,
     "IDX": 1660949003951
->>>>>>> 8530e6e ( [STOCK_LIST] script_bot: Update with new changes)
   }
 }
