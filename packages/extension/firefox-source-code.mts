@@ -1,7 +1,8 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import fse from 'fs-extra'
 import pkg from './package.json'
+import child_process from 'node:child_process'
 
 /**
  * This script is for uploading source code to Firefox submission.
@@ -18,7 +19,6 @@ const files = [
   'src',
   '.babelrc',
   '.env.example',
-  'globals.d.ts',
   'manifest.firefox.json',
   'package.json',
   'postcss.config.js',
@@ -118,9 +118,6 @@ function updatePackageDevDependencies() {
 
 async function gzip() {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const child_process = require('child_process')
-
     child_process.execSync(`zip -r ./${outputZip} ./${sourceFolder}`)
     child_process.execSync(`rm -rf ./${sourceFolder}`)
     child_process.execSync(`mv ./${outputZip} ./web-ext-artifacts/`)

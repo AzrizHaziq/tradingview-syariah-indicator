@@ -9,14 +9,14 @@
   },
   "private": true,
   "scripts": {
-    "start:firefox": "BROWSER=firefox webpack --mode=development --watch",
+    "start:firefox": "NODE_OPTIONS='--loader tsx' BROWSER=firefox webpack --mode=development --watch",
     "build:firefox": "BROWSER=firefox npm run build",
-    "start:chrome": "BROWSER=chrome webpack --mode=development --watch",
+    "start:chrome": "NODE_OPTIONS='--loader tsx' BROWSER=chrome webpack --mode=development --watch",
     "build:chrome": "BROWSER=chrome npm run build",
-    "build": "NODE_ENV=production webpack --mode=production",
+    "build": "NODE_OPTIONS='--loader tsx' NODE_ENV=production webpack --mode=production",
     "build:BA": "ENABLE_BA=true npm run build",
     "build:all": "npm run build:firefox && npm run build:chrome || true && yarn generate-ff-doc",
-    "generate-ff-doc": "tsx  --tsconfig ./tsconfig.json firefox-source-code.ts",
+    "generate-ff-doc": "tsx  --tsconfig ./tsconfig.json firefox-source-code.mts",
     "lint": "eslint --fix .",
     "test": "playwright test --config=playwright.config.ts"
   },

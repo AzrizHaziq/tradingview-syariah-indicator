@@ -82,6 +82,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
           force: true,
           transform: function (content) {
             const manifestJson = JSON.parse(content.toString())
+            console.log(`Using URL ====> ${process.env.FETCH_URL}`)
 
             const output = {
               version: process.env.npm_package_version,
