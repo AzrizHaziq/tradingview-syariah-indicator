@@ -3,16 +3,17 @@ import { CONFIG } from './CONFIG.mts'
 import { delay, pipe } from './utils.mts'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
+import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/type'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
+type tempMYX = { [p: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }
+
 /**
- * @param {{s: 1, code: string, stockName: string}[]} stocks - Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
- * @returns {Promise<Object<string, {s: 1, code: string, stockName: string, fullname; string}>>} - {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
+ * Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
+ * output example: {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
  */
-async function getCompanyName(
-  stocks: { s: 0 | 1; code: string; stockName: string }[]
-): Promise<{ [p: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }> {
+async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: string }[]): Promise<tempMYX> {
   async function getCompanyFullname(code: string): Promise<string> {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
     const json = (await res.json()) as { data: { company_info: { name: string } } }
@@ -43,9 +44,7 @@ async function getCompanyName(
 const scrapUrl = ({ perPage, page }: { perPage: number; page: number }) =>
   `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
 
-async function scrapBursaMalaysia(): Promise<{
-  [p in string]: { s: 1 | 0; code: string; stockName: string; fullname: string }
-}> {
+async function scrapBursaMalaysia(): Promise<tempMYX> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
@@ -126,11 +125,8 @@ async function scrapBursaMalaysia(): Promise<{
   }
 }
 
-/**
- * Main MYX scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
- * */
-export default async function (): Promise<{ human: [exchange: string, code: string, fullname: string]; data }> {
+/** Main MYX scrape function */
+export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
     const shariahList = await scrapBursaMalaysia()
 
@@ -138,7 +134,7 @@ export default async function (): Promise<{ human: [exchange: string, code: stri
       shariahList
     )
 
-    const sortedList = pipe(
+    const sortedList: ExchangeDetail['list'] = pipe(
       Object.values,
       (entries) => entries.sort(({ stockName: keyA }, { stockName: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
       (items) =>
@@ -154,7 +150,7 @@ export default async function (): Promise<{ human: [exchange: string, code: stri
           shape: CONFIG.MYX.shape,
           market: CONFIG.MYX.market,
         },
-      },
+      } as RESPONSE_FROM_JSON,
     }
   } catch (e) {
     throw Error(`Error generating MYX`, { cause: e })

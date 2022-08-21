@@ -6,13 +6,13 @@ import extract from 'extract-zip'
 import { pipe } from './utils.mts'
 import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
+import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/type'
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
-/**
- * @returns {Promise<{stockCode: string, fullname: string}[]>}
- */
-async function fetchShariahList() {
+type tempIdx = { stockCode: string; fullname: string[] }
+
+async function fetchShariahList(): Promise<tempIdx[]> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
@@ -61,12 +61,8 @@ async function fetchShariahList() {
   }
 }
 
-/**
- * Return: string e.g. /tmp/file.xlsx
- * @param {string} filePath
- * @returns {Promise<string>}
- */
-async function getXlsxFile(filePath) {
+/** Return: string e.g. /tmp/file.xlsx */
+async function getXlsxFile(filePath: string): Promise<string> {
   // Unzip the file
   const extractionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tvidx'))
   await extract(filePath, { dir: extractionDir })
@@ -82,11 +78,7 @@ async function getXlsxFile(filePath) {
   return xlsxFile
 }
 
-/**
- * @param {string} xlsxFile
- * @returns {{stockCode: string, fullname: string}[]}
- */
-function extractFromXlsxFile(xlsxFile) {
+function extractFromXlsxFile(xlsxFile: string): Promise<tempIdx[]> {
   const workbook = xlsx.readFile(xlsxFile)
 
   const sheet = workbook.Sheets[workbook.SheetNames[0]]
@@ -112,19 +104,16 @@ function extractFromXlsxFile(xlsxFile) {
     .filter(Boolean)
 }
 
-/**
- * Main IDX scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
- */
-export default async function () {
+/** Main IDX scrape function */
+export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
     const shariahList = await fetchShariahList()
 
-    const human = pipe(Object.values, (values) => values.map((val) => ['IDX', val.stockCode, val.fullname]))(
-      shariahList
-    )
+    const human: MAIN_DEFAULT_EXPORT['human'] = pipe(Object.values, (values) =>
+      values.map((val) => ['IDX', val.stockCode, val.fullname])
+    )(shariahList)
 
-    const sortedList = pipe(
+    const sortedList: ExchangeDetail['list'] = pipe(
       Object.values,
       (entries) => entries.sort(({ stockCode: keyA }, { stockCode: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
       (items) =>
@@ -140,7 +129,7 @@ export default async function () {
           shape: CONFIG.IDX.shape,
           market: CONFIG.IDX.market,
         },
-      },
+      } as RESPONSE_FROM_JSON,
     }
   } catch (e) {
     throw Error(`Error generating IDX`, { cause: e })

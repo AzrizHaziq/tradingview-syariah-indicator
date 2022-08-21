@@ -18,7 +18,7 @@ export type Market = 'malaysia' | 'america' | 'indonesia' | 'china'
 export type Exchange = 'MYX' | 'NASDAQ' | 'NYSE' | 'AMAX' | 'OTC' | 'IDX'
 
 export interface ExchangeDetail {
-  updatedAt: string
+  updatedAt: number
   shape: SHAPE[]
   market: Market
   list: Record<string, KEYOF_SHAPE[]>
@@ -45,10 +45,6 @@ export type EVENT_MSG = { type: 'invalidate-cache' }
 
 /////////////////////////// USED_IN_DATA //////////////////////////////////
 export interface MAIN_DEFAULT_EXPORT {
-  human: [exchange: string, code: string, fullname: string] // ['MYX', '0012', 'Three-A Resource Berhad]
+  human: [exchange: string, code: string, fullname: string][] // ['MYX', '0012', 'Three-A Resource Berhad]
   data: RESPONSE_FROM_JSON
-}
-
-export const abc = (a: MAIN_DEFAULT_EXPORT) => {
-  return a
 }

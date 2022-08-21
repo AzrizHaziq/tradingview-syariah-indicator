@@ -1,4 +1,5 @@
 import { CONFIG } from './CONFIG.mts'
+import { Exchange, ExchangeDetail, MAIN_DEFAULT_EXPORT } from '@app/type'
 import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mts'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
@@ -7,7 +8,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 ;(async () => {
   try {
     const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
-    const ALL_SHARIAH_LIST = await Promise.all(
+    const ALL_SHARIAH_LIST: MAIN_DEFAULT_EXPORT[] = await Promise.all(
       INDEX_CODES.map((code) => import(`./ex_${code}.mts`).then((m) => m.default()))
     )
 
@@ -19,9 +20,12 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
         allHuman: acc.allHuman.concat(human),
       }),
       { allData: {}, allHuman: [] }
-    )
+    ) as unknown as {
+      allData: MAIN_DEFAULT_EXPORT['data']
+      allHuman: MAIN_DEFAULT_EXPORT['human']
+    }
 
-    CONFIG.whitelist.forEach(([exchange, code, fullname]) => {
+    CONFIG.whitelist.forEach(([exchange, code, fullname]: MAIN_DEFAULT_EXPORT['human'][0]) => {
       allHuman.push([exchange, code, fullname])
 
       // whitelist data will merge into stock-list.json according to exchange
@@ -59,10 +63,10 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
           data: sortedHuman,
 
           // pluck all updatedAt data from each exchanges
-          metadata: Object.entries(allData).reduce((acc, [exchange, detail]) => {
+          metadata: Object.entries(allData).reduce((acc, [exchange, detail]: [Exchange, ExchangeDetail]) => {
             acc[exchange] = detail.updatedAt
             return acc
-          }, {}),
+          }, {}) as Record<Exchange, ExchangeDetail['updatedAt']>,
         })
       )
     )

@@ -1,4 +1,5 @@
 import { CliProgress } from './utils.mts'
+import { MAIN_DEFAULT_EXPORT } from '@app/type'
 
 // 'market' is used in /screener > dom node in filter by country
 export const CONFIG = {
@@ -14,7 +15,7 @@ export const CONFIG = {
     ['FTSEMYX', 'FBMSHA', 'FTSE BURSA MALAYSIA EMAS SHARIAH INDEX'],
     ['FTSEMYX', 'FBMHIJRAH', 'FTSE BURSA MALAYSIA HIJRAH SHARIAH INDEX'],
     ['FTSEMYX', 'F4GBM', 'FTSE BURSA MALAYSIA MIDS CAP SHARIAH INDEX'],
-  ],
+  ] as MAIN_DEFAULT_EXPORT['human'],
   MYX: {
     market: 'malaysia',
     home_page:

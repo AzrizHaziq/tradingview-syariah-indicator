@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
 import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
+import { MAIN_DEFAULT_EXPORT } from '@app/type'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, delay } from './utils.mts'
 
@@ -10,8 +11,8 @@ const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 const CHINA_ETF = (companyCode = '0838EA', title = 'NET+ASSET+VALUE+%2F+INDICATIVE+OPTIMUM+PORTFOLIO+VALUE') =>
   `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&keyword=${title}`
 
-async function parsePdf(pdfUrl) {
-  const companyNames = new Set()
+async function parsePdf(pdfUrl): Promise<string[]> {
+  const companyNames = new Set<string>()
   const response = await fetch(pdfUrl)
   const buffer = await response.arrayBuffer()
 
@@ -48,7 +49,7 @@ async function parsePdf(pdfUrl) {
 }
 
 // click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
-async function getUpdatedAtAndPdfUrl() {
+async function getUpdatedAtAndPdfUrl(): Promise<{ updatedAt: string; pdfUrl: string }> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const page = await browser.newPage()
 
@@ -82,7 +83,7 @@ async function getUpdatedAtAndPdfUrl() {
     await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
     await page.click(latestReportSelector)
 
-    // have to put this, otherwise chrome will failed
+    // have to put this, otherwise chrome will fail
     await delay(1)
 
     const iframeUrl = await page.evaluate(
@@ -112,11 +113,11 @@ async function getUpdatedAtAndPdfUrl() {
  * @param {string[]} stockNames
  * @returns {Promise<*[]>}
  */
-async function getCompanyExchangeAndCode(stockNames) {
+async function getCompanyExchangeAndCode(stockNames: string[]): Promise<MAIN_DEFAULT_EXPORT['human']> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
 
-  const searchInGoogleFinance = async (name) => {
+  const searchInGoogleFinance = async (name: string): Promise<MAIN_DEFAULT_EXPORT['human'][0]> => {
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -171,11 +172,8 @@ async function getCompanyExchangeAndCode(stockNames) {
   }
 }
 
-/**
- * Main SSE & SZSE scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
- * */
-export default async function () {
+/** Main SSE & SZSE scrape function */
+export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
@@ -191,16 +189,12 @@ export default async function () {
 
     return {
       human,
-      data: human.reduce((acc, stock) => {
-        const [exchange, code] = stock
+      data: human.reduce((acc, [exchange, code]) => {
         // some stock failed to get exchange and code
-        if (exchange === '') {
-          return acc
-        }
+        if (exchange === '') return acc
 
         // eslint-disable-next-line no-prototype-builtins
         if (acc.hasOwnProperty(exchange)) {
-          // this will go to main data file
           acc[exchange].list[code] = [1]
         } else {
           acc = {
@@ -214,7 +208,7 @@ export default async function () {
           }
         }
         return acc
-      }, {}),
+      }, {}) as unknown as MAIN_DEFAULT_EXPORT['data'],
     }
   } catch (e) {
     throw Error(`Failed scrape CHINA`, { cause: e })

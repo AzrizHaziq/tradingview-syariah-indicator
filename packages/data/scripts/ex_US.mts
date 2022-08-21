@@ -1,11 +1,14 @@
 import fetch from 'node-fetch'
 import { pipe } from './utils.mts'
 import { CONFIG } from './CONFIG.mts'
+import { MAIN_DEFAULT_EXPORT } from '@app/type'
 import { PromisePool } from '@supercharge/promise-pool'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
-function transformToTickersAndSymbols(data) {
+type tempUS = { ticker: string; fullname: string }
+
+function transformToTickersAndSymbols(data: string[]): tempUS[] {
   return data // get tickers & symbols
     .reduce((acc, item) => {
       const [, , ticker, , fullname] = item.split(',')
@@ -19,7 +22,7 @@ function transformToTickersAndSymbols(data) {
     }, [])
 }
 
-function prettierCSV(csv) {
+function prettierCSV(csv: string): string[] {
   function isValidDate(d) {
     return d instanceof Date && !isNaN(d)
   }
@@ -38,7 +41,7 @@ function prettierCSV(csv) {
 }
 
 // https://www.tradingview.com/symbols/NYSE-A/
-const getExchange = (item) =>
+const getExchange = <T extends tempUS>(item: T): Promise<T & { exchange: string }> =>
   // eslint-disable-next-line no-async-promise-executor
   new Promise(async (resolve, reject) => {
     for (const exchange of CONFIG.US.exchanges) {
@@ -66,7 +69,7 @@ const getExchange = (item) =>
     }
   })
 
-async function runTaskSequentially(tasks) {
+async function runTaskSequentially(tasks: tempUS[]) {
   try {
     const { results, errors } = await PromisePool.for(tasks).process(async (item) => await getExchange(item))
 
@@ -74,7 +77,7 @@ async function runTaskSequentially(tasks) {
       throw Error(`failed runTaskSequentially`, { cause: errors })
     }
 
-    return results.reduce(
+    return results.reduce<MAIN_DEFAULT_EXPORT>(
       (acc, item) => {
         // shape final output
         acc.data[item.exchange][item.ticker] = [1]
@@ -88,7 +91,7 @@ async function runTaskSequentially(tasks) {
   }
 }
 
-const finalOutput = (updatedAt) => (p) => {
+const finalOutput = (updatedAt: number) => (p: Promise<MAIN_DEFAULT_EXPORT>) => {
   return p.then(({ data, human }) => ({
     human,
     data: Object.entries(data).reduce(
@@ -110,11 +113,8 @@ const finalOutput = (updatedAt) => (p) => {
   }))
 }
 
-/**
- * Main NYSE & NASDAQ & AMAX & OTC scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
- * */
-export default async function () {
+/** Main NYSE & NASDAQ & AMAX & OTC scrape function */
+export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
     const response = await fetch(CONFIG.US.wahedHoldingUrl)
     const responseText = await response.text()
