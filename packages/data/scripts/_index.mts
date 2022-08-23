@@ -34,9 +34,9 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       } else {
         // if not exist then create new
         allData[exchange] = {
-          list: { [code]: [1] },
-          shape: [],
           market: '',
+          list: { [code]: [1] },
+          shape: [{ 0: 'non-s', 1: 's', default: '' }],
           updatedAt: new Date().getTime(),
         }
       }

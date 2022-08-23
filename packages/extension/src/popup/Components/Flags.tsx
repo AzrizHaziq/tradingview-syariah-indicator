@@ -10,7 +10,7 @@ export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) =>
   return (
     <For each={currentData()}>
       {(flag) => {
-        const { updatedAt, id, counts } = flag
+        const { updatedAt, id, counts, market } = flag
         const popup_list_at = getMessage('popup_list_at', id)
 
         return (
@@ -19,12 +19,12 @@ export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) =>
             target='_blank'
             title={popup_list_at}
             rel='noopener noreferrer'
-            class='flex justify-between text-gray-300 cursor-pointer gap-x-2'>
-            <div class='flex gap-x-2'>
+            class='flex justify-between text-gray-300 cursor-pointer gap-x-2 items-center'>
+            <div class='flex gap-x-2 items-center'>
               <img
                 class='rounded-full'
-                alt={`Exchange: ${id}`}
-                src={`/assets/exchanges/${id}.svg`}
+                alt={`Exchange: ${market ? id : 'GLOBAL'}`}
+                src={`/assets/exchanges/${market ? id : 'GLOBAL'}.svg`}
                 style={{
                   width: '15px',
                   height: '15px',
