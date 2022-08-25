@@ -8,7 +8,24 @@ export default defineConfig({
   plugins: [
     Unocss({
       transformers: [transformerDirective({ throwOnMissing: true })],
-      presets: [presetTypography(), presetUno({ dark: 'class' })],
+      presets: [
+        presetTypography({
+          cssExtend: {
+            code: {
+              color: '#114f2d',
+              background: '#7ee2a8 !important',
+              'border-radius': '0.25rem',
+            },
+            'a:hover': {
+              color: '#7ee2a8',
+            },
+            'a:visited': {
+              color: '#14b8a6',
+            },
+          },
+        }),
+        presetUno({ dark: 'class' }),
+      ],
     }),
     // @ts-ignore
     {

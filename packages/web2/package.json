@@ -1,5 +1,5 @@
 {
-  "name": "packages",
+  "name": "web2",
   "version": "2.0.3",
   "scripts": {
     "dev": "solid-start dev",
@@ -14,6 +14,7 @@
     "@types/node": "^18.6.4",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
+    "@unocss/reset": "^0.45.12",
     "@unocss/transformer-directives": "^0.45.12",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",

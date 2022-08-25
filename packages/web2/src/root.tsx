@@ -3,13 +3,15 @@ import { Routes } from '@solidjs/router'
 import { Suspense } from 'solid-js'
 import { ErrorBoundary } from 'solid-start/error-boundary'
 import { Body, FileRoutes, Head, Html, Meta, Scripts, Title } from 'solid-start'
+
+import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import './root.scss'
 import { Footer, Header } from '~/components'
 
 export default function Root() {
   return (
-    <Html lang='en'>
+    <Html lang='en' class='dark'>
       <Head>
         <Meta charset='utf-8' />
         <Meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -43,11 +45,10 @@ export default function Root() {
         />
         <Meta name='twitter:image' content='https://tsi.azrizhaziq.com/tradingview-shariah-indicator.jpg' />
       </Head>
-      <Body>
+      <Body class='bg-gray-900 dark:prose-invert prose-zinc'>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <ErrorBoundary>
           <Header />
-          <a href='/'>Index</a>
           <Suspense>
             <main>
               <Routes>
