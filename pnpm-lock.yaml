@@ -242,6 +242,7 @@ importers:
       '@unocss/reset': ^0.45.12
       '@unocss/transformer-directives': ^0.45.12
       analytics: ^0.8.1
+      date-fns: ^2.29.1
       eslint: ^8.21.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-prettier: ^4.2.1
@@ -262,6 +263,7 @@ importers:
       '@solidjs/meta': 0.28.0_solid-js@1.4.7
       '@solidjs/router': 0.4.2_solid-js@1.4.7
       analytics: 0.8.1_@types+dlv@1.1.2
+      date-fns: 2.29.1
       solid-js: 1.4.7
       solid-mdx: 0.0.6_solid-js@1.4.7+vite@3.0.4
       solid-start: 0.1.0-alpha.99_qumfg53klmtpjvq4xmlsbh3yhy
