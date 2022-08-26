@@ -35,7 +35,10 @@ async function fetchShariahList() {
     // Download the first ISSI file
     const [download] = await Promise.all([
       page.waitForEvent('download'),
-      page.locator('table#indexConstituentTable tr a[href$="zip"]').first().click(), // find the first zip file in table
+      page.locator('table#indexConstituentTable tr', { hasText: new RegExp("Per\\s+\\d{1,2}\\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\\s+\\d{4}.", "i") })
+          .locator('a[href$="zip"]')
+           //.locator('table#indexConstituentTable tr a[href$="zip"]')
+          .first().click(), // find the first zip file in table
     ])
 
     // Wait for the download process to complete
@@ -71,7 +74,7 @@ async function getXlsxFile(filePath) {
   // Get the list file
   let xlsxFile = undefined
   fs.readdirSync(extractionDir)
-    .filter((file) => file.match(new RegExp(`.*\.(.xlsx)`, 'ig')))
+    .filter((file) => file.match(new RegExp('.*ISSI.*\.(.xlsx)', 'ig')))
     .forEach((file) => {
       xlsxFile = path.resolve(extractionDir, file) // Absolute path
     })
@@ -87,15 +90,21 @@ function extractFromXlsxFile(xlsxFile) {
   const workbook = xlsx.readFile(xlsxFile)
 
   const sheet = workbook.Sheets[workbook.SheetNames[0]]
-  const data = xlsx.utils.sheet_to_json(sheet)
-  // console.log(data, 222)
+  const data = xlsx.utils.sheet_to_json(sheet, {header: 1})
+
+  let codeColIdx = -1
 
   return data
-    .map((row) => {
-      const stockCode = row.__EMPTY
-      const fullname = row.__EMPTY_1
-      if (stockCode && stockCode.match(/^([A-Z]{4})$/)) {
-        return { s: 1, stockCode, fullname } // s:1 is Shariah
+    .flatMap((row) => {
+      if (codeColIdx != -1) {
+        const stockCode = row[codeColIdx]
+        const fullname = row[codeColIdx + 1]
+
+        if (stockCode && stockCode.match(/^([A-Z]{4})$/)) {
+          return { s: 1, stockCode, fullname } // s:1 is Shariah
+        }
+      } else {
+        codeColIdx = findCodeColumnIndex(row)
       }
 
       return null
@@ -136,4 +145,17 @@ export default async function () {
   } catch (e) {
     throw Error(`Error generating IDX`, { cause: e })
   }
+}
+
+// colValues: string[]
+// returns number
+function findCodeColumnIndex(colValues) {
+  for (let i = 0; i < colValues.length; i++) {
+    const value = colValues[i]
+    if (value && value.toString().toLowerCase().includes('kode')) {
+      return i
+    }
+  }
+
+  return -1
 }
