@@ -5,7 +5,7 @@ import { NavLink } from '@solidjs/router'
 export const Header = (): JSX.Element => {
   return (
     <header class='sticky top-0 z-10 text-gray-600 bg-gray-700 body-font'>
-      <div class='container flex flex-col items-center p-5 mx-auto md:flex-row'>
+      <div class='container flex flex-col md:flex-row items-center p-5 mx-auto md:flex-row'>
         <a href='/' class='flex items-center mb-4 font-medium text-gray-900 md:mb-0 title-font'>
           <img src={IMGS.logo} height={32} width={32} alt='logo' />
         </a>

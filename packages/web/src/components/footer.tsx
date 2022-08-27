@@ -74,7 +74,7 @@ export const Footer = (): JSX.Element => {
         <div class='px-4 mx-auto w-full max-w-8xl'>
           <div class='grid grid-cols-2 gap-12 md:grid-cols-5 xl:gap-24'>
             <div class='col-span-2'>
-              <a href='https://flowbite.com' class='flex mb-5'>
+              <a href='https://tsi.azrizhaziq.com' class='flex mb-5'>
                 <img src='/favicon.svg' class='mr-4 h-10' alt={rootPkg.name_display} />
                 <span class='self-center text-xl font-semibold dark:text-white whitespace-nowrap'>
                   {rootPkg.name_display}
@@ -132,7 +132,7 @@ export const Footer = (): JSX.Element => {
                     target='_blank'
                     rel='noreferrer nofollow'
                     class='font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline'>
-                    Release <b>({(pkg as any).version})</b>
+                    Release <b>({pkg.version})</b>
                   </a>
                 </li>
               </ul>
