@@ -1,5 +1,7 @@
 import { createSignal, JSX } from 'solid-js'
-import { useTrackOnLoad, copy, trackEvent } from '~/util'
+import { copy, trackEvent, useTrackOnLoad } from '~/util'
+import { Head, Title } from 'solid-start'
+import { MetaSeo } from '~/components'
 
 const [isCopy, setIsCopy] = createSignal(false)
 const images = [
@@ -214,14 +216,27 @@ const images = [
   )
 )
 
+const props = {
+  pageTittle: 'Wahed',
+  description: 'Guide on how to support TSI projects',
+  path: 'wahed',
+}
+
 export default function Guideline(): JSX.Element {
   useTrackOnLoad()
 
   return (
-    <div class='mx-auto bg-gray-900 prose'>
-      <h2>Below are the steps how to get started with Wahed Invest</h2>
-      <div class='grid grid-cols-2 gap-y-0 mx-auto max-w-md md:gap-y-2 md:max-w-full'>{images}</div>
-    </div>
+    <>
+      <Head>
+        <Title></Title>
+        <MetaSeo {...props} />
+      </Head>
+
+      <div class='mx-auto bg-gray-900 prose'>
+        <h2>Below are the steps how to get started with Wahed Invest</h2>
+        <div class='grid grid-cols-2 gap-y-0 mx-auto max-w-md md:gap-y-2 md:max-w-full'>{images}</div>
+      </div>
+    </>
   )
 }
 

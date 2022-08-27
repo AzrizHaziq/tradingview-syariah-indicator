@@ -2,55 +2,26 @@
 import { Routes } from '@solidjs/router'
 import { Suspense } from 'solid-js'
 import { ErrorBoundary } from 'solid-start/error-boundary'
-import { Body, FileRoutes, Head, Html, Meta, Scripts, Title } from 'solid-start'
+import { Body, FileRoutes, Head, Html, Scripts, Title } from 'solid-start'
 
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import './root.scss'
-import { Footer, Header } from '~/components'
+import { Footer, Header, MetaSeo } from '~/components'
 
 export default function Root() {
   return (
     <Html lang='en' class='dark'>
       <Head>
-        <Meta charset='utf-8' />
-        <Meta name='viewport' content='width=device-width, initial-scale=1' />
-        <Meta name='theme-color' content='#7ee2a8' />
-        <link rel='icon' href='/favicon.svg' />
-        <Title>Tradingview Shariah Indicator - TSI</Title>
-        <Meta
-          name='description'
-          content='Add a small green indicator in tradingview.com. At the moment, only cover Malaysia, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia'
-        />
-
-        <Meta property='og:title' content='Tradingview Shariah Indicator - TSI' />
-        <Meta property='og:type' content='website' />
-        <Meta property='og:url' content='https://tsi.azrizhaziq.com' />
-        <Meta property='og:image' content='https://tsi.azrizhaziq.com/tradingview-shariah-indicator.jpg' />
-        <Meta property='og:image:alt' content='tradingview shariah indicator' />
-        <Meta property='og:site_name' content='Tradingview Shariah Indicator - TSI' />
-        <Meta
-          property='og:description'
-          content='Add a small green indicator in tradingview.com. At the moment, only cover Malaysia, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia'
-        />
-        <Meta property='og:locale' content='en_us' />
-
-        <Meta name='twitter:title' content='Tradingview Shariah Indicator - TSI' />
-        <Meta property='twitter:url' content='https://tsi.azrizhaziq.com' />
-        <Meta name='twitter:card' content='@azrizhaziq' />
-        <Meta name='twitter:site' content='summary_large_image' />
-        <Meta
-          name='twitter:description'
-          content='Add a small green indicator in tradingview.com. At the moment, only cover Malaysian, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia'
-        />
-        <Meta name='twitter:image' content='https://tsi.azrizhaziq.com/tradingview-shariah-indicator.jpg' />
+        <Title></Title>
+        <MetaSeo />
       </Head>
-      <Body class='bg-gray-900 dark:prose-invert prose-zinc'>
+      <Body class='bg-gray-900 dark:prose-invert prose-zinc flex flex-col'>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <ErrorBoundary>
           <Header />
           <Suspense>
-            <main>
+            <main class='flex-grow'>
               <Routes>
                 <FileRoutes />
               </Routes>
