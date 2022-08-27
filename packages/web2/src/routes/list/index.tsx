@@ -1,20 +1,10 @@
 import './list.scss'
 import { MetaSeo } from '~/components'
 import { Head, Title } from 'solid-start'
-import { ShariahFetcher } from './fetcher'
+import { ShariahFetcher, PageProps } from './fetcher'
 import { createStore } from 'solid-js/store'
 import { debounce, IMGS, pipe, TArrayConcat, TFilter, useTrackOnLoad } from '~/util'
 import { createEffect, createMemo, createResource, For, JSX, Show } from 'solid-js'
-
-export type PageProps = {
-  data: [exchange: string, code: string, name: string][]
-  metadata: Record<string, Date>
-  exchangesList: string[]
-  queryParams: Partial<{
-    q: string
-    exchange: string | string[]
-  }>
-}
 
 const staticExchangeColors = [
   'text-red-600 bg-red-100 border-red-500',
