@@ -1,0 +1,45 @@
+name: Automate the update of stock list files
+
+#on:
+#  schedule:
+#    # Asia/Kuala_Lumpur around 6pm, weekdays only
+#    - cron: "0 10 * * 1,2,3,4,5"
+
+on: [push]
+
+jobs:
+  build-and-commit:
+    name: Rebuild list files then commit them
+    runs-on: ubuntu-22.04
+
+    defaults:
+      run:
+        working-directory: packages/data
+
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.9.0
+
+      - name: Install NPM modules
+        uses: bahmutov/npm-install@HEAD
+        with:
+          working-directory: packages/data
+          useLockFile: false
+
+      - name: Run script to update list files
+        run: npm run "update-data:skip-commit"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          author_name: GitHub Actions Bot
+          message: Update stock list files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

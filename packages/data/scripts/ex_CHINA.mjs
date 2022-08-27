@@ -217,7 +217,7 @@ export default async function () {
       }, {}),
     }
   } catch (e) {
-    throw Error(`Failed scrape CHINA`, { cause: e })
+    throw Error('Failed scrape CHINA: ' + e.message, { cause: e })
   }
 }
 
