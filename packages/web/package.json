@@ -1,7 +1,8 @@
 {
-  "name": "web2",
+  "name": "@app/web",
   "version": "2.0.3",
   "scripts": {
+    "lint": "eslint --fix .",
     "dev": "solid-start dev",
     "build": "solid-start build",
     "start": "solid-start start"
