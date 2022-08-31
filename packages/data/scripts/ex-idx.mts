@@ -1,18 +1,17 @@
 import xlsx from 'xlsx'
-import fs from 'node:fs'
-import path from 'node:path'
-import os from 'node:os'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import * as os from 'node:os'
 import extract from 'extract-zip'
 import { pipe } from './utils.mjs'
-import { CONFIG } from './CONFIG.mjs'
+import { CONFIG } from './config.mjs'
 import { chromium } from 'playwright-chromium'
+import 'error-cause/auto'
+import { ScrapResult } from './model.mjs'
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
-/**
- * @returns {Promise<{stockCode: string, fullname: string}[]>}
- */
-async function fetchShariahList() {
+async function fetchShariahList(): Promise<{stockCode: string, fullname: string}[]> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
@@ -45,6 +44,9 @@ async function fetchShariahList() {
     const zipPath = await download.path()
     progressBar.increment(1, { stats: 'Successfully retrieved zip file from Indonesian exchange official website' })
 
+    if (zipPath == null) {
+      throw new Error('Failed to get the zip file')
+    }
     const xlsxFile = await getXlsxFile(zipPath)
     progressBar.increment(1, { stats: 'Successfully found XLSX file containing the ISSI list' })
 
@@ -61,18 +63,13 @@ async function fetchShariahList() {
   }
 }
 
-/**
- * Return: string e.g. /tmp/file.xlsx
- * @param {string} filePath
- * @returns {Promise<string>}
- */
-async function getXlsxFile(filePath) {
+async function getXlsxFile(filePath: string): Promise<string> {
   // Unzip the file
   const extractionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tvidx'))
   await extract(filePath, { dir: extractionDir })
 
   // Get the list file
-  let xlsxFile = undefined
+  let xlsxFile = ''
   fs.readdirSync(extractionDir)
     .filter((file) => file.match(new RegExp('.*ISSI.*\.(.xlsx)', 'ig')))
     .forEach((file) => {
@@ -82,74 +79,33 @@ async function getXlsxFile(filePath) {
   return xlsxFile
 }
 
-/**
- * @param {string} xlsxFile
- * @returns {{stockCode: string, fullname: string}[]}
- */
-function extractFromXlsxFile(xlsxFile) {
+function extractFromXlsxFile(xlsxFile: string): {stockCode: string, fullname: string}[] {
   const workbook = xlsx.readFile(xlsxFile)
 
   const sheet = workbook.Sheets[workbook.SheetNames[0]]
-  const data = xlsx.utils.sheet_to_json(sheet, {header: 1})
+  const data = xlsx.utils.sheet_to_json<any>(sheet, {header: 1})
 
   let codeColIdx = -1
 
   return data
-    .flatMap((row) => {
+    .flatMap((row: any) => {
       if (codeColIdx != -1) {
         const stockCode = row[codeColIdx]
         const fullname = row[codeColIdx + 1]
 
         if (stockCode && stockCode.match(/^([A-Z]{4})$/)) {
-          return { s: 1, stockCode, fullname } // s:1 is Shariah
+          return [{ s: 1, stockCode, fullname }] // s:1 is Shariah
         }
       } else {
         codeColIdx = findCodeColumnIndex(row)
       }
 
-      return null
+      return []
     })
     .filter(Boolean)
 }
 
-/**
- * Main IDX scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
- */
-export default async function () {
-  try {
-    const shariahList = await fetchShariahList()
-
-    const human = pipe(Object.values, (values) => values.map((val) => ['IDX', val.stockCode, val.fullname]))(
-      shariahList
-    )
-
-    const sortedList = pipe(
-      Object.values,
-      (entries) => entries.sort(({ stockCode: keyA }, { stockCode: keyB }) => (keyA < keyB ? -1 : keyA > keyB ? 1 : 0)),
-      (items) =>
-        items.reduce((acc, { code, stockCode, fullname, ...res }) => ({ ...acc, [stockCode]: Object.values(res) }), {})
-    )(shariahList)
-
-    return {
-      human,
-      data: {
-        IDX: {
-          updatedAt: Date.now(),
-          list: sortedList,
-          shape: CONFIG.IDX.shape,
-          market: CONFIG.IDX.market,
-        },
-      },
-    }
-  } catch (e) {
-    throw Error(`Error generating IDX`, { cause: e })
-  }
-}
-
-// colValues: string[]
-// returns number
-function findCodeColumnIndex(colValues) {
+function findCodeColumnIndex(colValues: any[]): number {
   for (let i = 0; i < colValues.length; i++) {
     const value = colValues[i]
     if (value && value.toString().toLowerCase().includes('kode')) {
@@ -158,4 +114,20 @@ function findCodeColumnIndex(colValues) {
   }
 
   return -1
+}
+
+/**
+ * Main IDX scrape function
+ **/
+export default async function(): Promise<ScrapResult> {
+
+  try {
+    const shariahList = await fetchShariahList()
+    const stocks = shariahList.map(stock => {
+      return {code: stock.stockCode, name: stock.fullname}
+    })
+    return {IDX: { stocks, updatedAt: new Date()}}
+  } catch (e) {
+    throw new Error(`Error generating IDX`, { cause: e })
+  }
 }

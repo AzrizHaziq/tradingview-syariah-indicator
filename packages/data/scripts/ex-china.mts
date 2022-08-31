@@ -1,17 +1,19 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
-import { CONFIG } from './CONFIG.mjs'
+import { CONFIG } from './config.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, delay } from './utils.mjs'
+import 'error-cause/auto'
+import { ScrapResult } from './model.mjs'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
 const CHINA_ETF = (companyCode = '0838EA', title = 'NET+ASSET+VALUE+%2F+INDICATIVE+OPTIMUM+PORTFOLIO+VALUE') =>
   `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&keyword=${title}`
 
-async function parsePdf(pdfUrl) {
-  const companyNames = new Set()
+async function parsePdf(pdfUrl: string): Promise<string[]> {
+  const companyNames = new Set<string>()
   const response = await fetch(pdfUrl)
   const buffer = await response.arrayBuffer()
 
@@ -58,18 +60,23 @@ async function getUpdatedAtAndPdfUrl() {
     // get updatedAt at latest report
     const updatedAt = await page.evaluate(
       ([selector, util]) => {
-        let { pipe, map, pluck } = util
-        pipe = new Function(`return ${pipe}`)() // eslint-disable-line no-new-func
-        map = new Function(`return ${map}`)() // eslint-disable-line no-new-func
-        pluck = new Function(`return ${pluck}`)() // eslint-disable-line no-new-func
+        if (typeof util !== 'string') {
+          const { pipe, map, pluck } = util
+          const pipeFn = new Function(`return ${pipe}`)() // eslint-disable-line no-new-func
+          const mapFn = new Function(`return ${map}`)() // eslint-disable-line no-new-func
+          const pluckFn = new Function(`return ${pluck}`)() // eslint-disable-line no-new-func
 
-        return pipe(
-          (s) => document.querySelector(s),
-          pluck('textContent'),
-          map((text) => text.trim()),
-          map((date) => Date.parse(date)),
-          map((timeStamp) => Promise.resolve(timeStamp))
-        )(selector)
+          return pipeFn(
+            (s: any) => document.querySelector(s),
+            pluckFn('textContent'),
+            mapFn((text: string) => text.trim()),
+            mapFn((date: string) => Date.parse(date)),
+            mapFn((timeStamp: string) => Promise.resolve(timeStamp))
+          )(selector)
+        } else {
+          return null;
+        }
+
       },
       [
         '#table-announcements tbody td:nth-child(2) .d-none',
@@ -79,27 +86,30 @@ async function getUpdatedAtAndPdfUrl() {
 
     // process of finding pdfUrl
     const latestReportSelector = '#table-announcements tbody td:last-child a'
-    await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
+    await page.evaluate((s: string[]) => document.querySelector(s[0])?.removeAttribute('target'), [latestReportSelector])
     await page.click(latestReportSelector)
 
     // have to put this, otherwise chrome will failed
     await delay(1)
 
     const iframeUrl = await page.evaluate(
-      (s) => Promise.resolve(document.querySelector(s).getAttribute('src')),
+      (s) => Promise.resolve(document.querySelector(s)?.getAttribute('src')),
       '#bm_ann_detail_iframe'
     )
 
+    if (iframeUrl == null) {
+      throw new Error('Failed to get iFrameUrl')
+    }
     const iframeDomain = new URL(iframeUrl).origin
     await page.goto(iframeUrl)
     const pdfUrl = await page.evaluate(
-      (s) => Promise.resolve(document.querySelector(s).getAttribute('href')),
+      (s) => Promise.resolve(document.querySelector(s)?.getAttribute('href')),
       '.att_download_pdf a'
     )
 
     return { updatedAt, pdfUrl: `${iframeDomain}${pdfUrl}` }
   } catch (e) {
-    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
+    throw new Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
   } finally {
     await browser.close()
   }
@@ -109,14 +119,12 @@ async function getUpdatedAtAndPdfUrl() {
  * launch multi-tabs of pages and scrape company name in google.com/search?q={companyname}.
  * and then return Array<[exchange: string, code: string, companyName: string]>
  * remap(google exchange to TV exchange): SHE === 'SZSE', SHA === 'SSE'
- * @param {string[]} stockNames
- * @returns {Promise<*[]>}
  */
-async function getCompanyExchangeAndCode(stockNames) {
+async function getCompanyExchangeAndCode(stockNames: string[]): Promise<string[][]> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   const ctx = await browser.newContext()
 
-  const searchInGoogleFinance = async (name) => {
+  const searchInGoogleFinance = async (name: string) => {
     const noMatches = 'text=No matches...'
     const mainInputBox = `:nth-match([aria-label="Search for stocks, ETFs & more"], 2)`
 
@@ -127,6 +135,7 @@ async function getCompanyExchangeAndCode(stockNames) {
       let _name = name
       do {
         _name = _name.slice(0, _name.length - 1)
+
         if (_name.length < 8) {
           return ['', '', name] // failed to identify this stock and just return it as is.
         }
@@ -136,46 +145,53 @@ async function getCompanyExchangeAndCode(stockNames) {
         progressBar.update({ stats: `Searching: ${_name}` })
 
         // if "No matches..." not exist then press enter and get code and exchange
-        const bool = await page.isVisible(noMatches)
-        if (!bool) {
+        const missing = await page.isVisible(noMatches)
+        if (!missing) {
           await page.focus(mainInputBox)
           await page.keyboard.down('Enter')
           await delay(2)
 
           // getting stock code and exchange in url
           let [code, exchange] = await page.evaluate(async () => {
+            console.log('within')
             const split = location.pathname.split('/')
+            console.log('split', split)
             return Promise.resolve(split[split.length - 1].split(':'))
           })
+
           // eslint-disable-next-line no-prototype-builtins
           exchange = CONFIG.CHINA.remapExchangeFromGoogleToTV.hasOwnProperty(exchange)
             ? CONFIG.CHINA.remapExchangeFromGoogleToTV[exchange]
             : ''
 
           progressBar.increment(1, { stats: `Done: ${exchange}-${code}-${name}` })
+
           return [exchange, code, name]
         }
       } while (await page.isVisible(noMatches))
+    } catch (e) {
+      console.log(e)
     } finally {
       await page.close()
     }
+
+    return undefined
   }
 
   try {
     const { results } = await PromisePool.for(stockNames).process(searchInGoogleFinance)
-    return results
+    return results.flatMap(r => r ? [r] : []) // returns [exchange: string, code: string, name: string][]
   } catch (e) {
-    throw Error(`Error getCompanyExchangeAndCode`, { cause: e })
+    throw new Error(`Error getCompanyExchangeAndCode`, { cause: e })
   } finally {
     await browser.close()
   }
 }
 
 /**
- * Main SSE & SZSE scrape function
- * @returns {Promise<MAIN_DEFAULT_EXPORT>}
+ * Main SSE & SZSE scrap function
  * */
-export default async function () {
+export default async function(): Promise<ScrapResult> {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
@@ -189,35 +205,32 @@ export default async function () {
 
     const human = await getCompanyExchangeAndCode(companyNames)
 
-    return {
-      human,
-      data: human.reduce((acc, stock) => {
-        const [exchange, code] = stock
+    if (updatedAt === null) {
+
+    }
+    return human.reduce((acc, stock) => {
+        const [exchange, code, name] = stock
         // some stock failed to get exchange and code
         if (exchange === '') {
           return acc
         }
 
         // eslint-disable-next-line no-prototype-builtins
-        if (acc.hasOwnProperty(exchange)) {
-          // this will go to main data file
-          acc[exchange].list[code] = [1]
-        } else {
-          acc = {
-            ...acc,
-            [exchange]: {
-              updatedAt,
-              list: {},
-              shape: CONFIG.CHINA.shape,
-              market: CONFIG.CHINA.market,
-            },
+        if (!acc[exchange]) {
+          acc[exchange] = {
+            updatedAt: (updatedAt ? new Date(updatedAt) : new Date()),
+            stocks: [],
           }
         }
+
+        acc[exchange].stocks.push({code, name})
+
+        console.log(acc)
         return acc
-      }, {}),
-    }
+      }, {})
+
   } catch (e) {
-    throw Error('Failed scrape CHINA: ' + e.message, { cause: e })
+    throw new Error('Failed to scrap CHINA', { cause: e })
   }
 }
 

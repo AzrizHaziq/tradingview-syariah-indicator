@@ -1,4 +1,5 @@
-import { CONFIG } from './CONFIG.mjs'
+import { CONFIG } from './config.mjs'
+import { ScrapResult } from './model.mjs';
 import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
@@ -6,30 +7,30 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
-    const ALL_SHARIAH_LIST = await Promise.all(
-      INDEX_CODES.map((code) => import(`./ex_${code}.mjs`).then((m) => m.default()))
+    const INDEX_CODES = ['MYX', 'IDX']// ['US', 'MYX', 'CHINA', 'IDX']
+    const ALL_SHARIAH_LIST: ScrapResult[] = await Promise.all(
+      INDEX_CODES.map((code) => import(`./ex-${code.toLowerCase()}.mjs`)
+        .then(m => m.default()))
     )
 
     await delay(1)
 
-    const { allData, allHuman } = ALL_SHARIAH_LIST.reduce(
-      (acc, { human, data }) => ({
-        allData: { ...acc.allData, ...data },
-        allHuman: acc.allHuman.concat(human),
-      }),
-      { allData: {}, allHuman: [] }
-    )
+    const allData = ALL_SHARIAH_LIST.reduce((mergedData, data) => mergedData = {...mergedData, ...data}, {})
+    let allHuman: [exchange: string, code: string, name: string][] = []
 
-    CONFIG.whitelist.forEach(([exchange, code, fullname]) => {
-      allHuman.push([exchange, code, fullname])
+    Object.entries(allData).forEach(([exchangeCode, val]) => {
+        allHuman = allHuman.concat(val.stocks.map(s => {return [ exchangeCode, s.code, s.name ]}))
+      })
+
+    CONFIG.whitelist.forEach(([exchangeCode, code, fullname]) => {
+      allHuman.push([exchangeCode, code, fullname])
 
       // whitelist data will merge into stock-list.json according to exchange
-      if (Object.hasOwn(allData, exchange)) {
-        allData[exchange].list[code] = [1]
+      if (Object.keys(allData).includes(exchangeCode)) {
+        allData[exchangeCode].stocks.push({code, name: 'ABC'})
       } else {
         // if not exist then create new
-        allData[exchange] = { list: { [code]: [1] } }
+        allData[exchangeCode] = { stocks: [{code, name: 'ABC'}], updatedAt: new Date() }
       }
     })
 
@@ -49,7 +50,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    logCount(allData)
+    // logCount(allData)
 
     await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
     await writeToFile(
@@ -59,7 +60,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
           data: sortedHuman,
 
           // pluck all updatedAt data from each exchanges
-          metadata: Object.entries(allData).reduce((acc, [exchange, detail]) => {
+          metadata: Object.entries(allData).reduce((acc: any, [exchange, detail]) => {
             acc[exchange] = detail.updatedAt
             return acc
           }, {}),

@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Checkout the source
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -37,9 +35,7 @@ jobs:
         run: npm run "update-data:skip-commit"
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v5.1.0
+        uses: EndBug/add-and-commit@v9
         with:
-          author_name: GitHub Actions Bot
+          default_author: github_actions
           message: Update stock list files
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
