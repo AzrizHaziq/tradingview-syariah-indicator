@@ -22,6 +22,7 @@ export const ToggleDateAndCount: Component<{
           viewBox='0 0 16 16'
           height='1em'
           width='1em'
+          tabIndex={0}
           xmlns='http://www.w3.org/2000/svg'>
           <title>{popup_change_view_to_count}</title>
           <path
@@ -37,6 +38,7 @@ export const ToggleDateAndCount: Component<{
           stroke-width='0'
           viewBox='0 0 1024 1024'
           height='1em'
+          tabIndex={0}
           width='1em'
           xmlns='http://www.w3.org/2000/svg'>
           <title>{popup_change_view_to_date}</title>

@@ -1,27 +1,6 @@
 import type { Flag } from '@app/type'
 import { getStorage } from '@src/helper'
-
-import { createSignal, createContext, useContext, Component, Accessor, JSX } from 'solid-js'
-
-type CurrentDataStore = [Accessor<Flag[]>, { setState?: (item: Flag[]) => void }]
-
-const CurrentDataContext = createContext<CurrentDataStore>([() => [], {}])
-
-export const useCurrentData = (): CurrentDataStore => useContext(CurrentDataContext)
-
-export const CurrentDataProvider: Component<{ value: Flag[]; children: JSX.Element }> = (props) => {
-  const [state, setState] = createSignal(props.value || [])
-  const store: CurrentDataStore = [
-    state,
-    {
-      setState(item) {
-        setState(item)
-      },
-    },
-  ]
-
-  return <CurrentDataContext.Provider value={store}>{props.children}</CurrentDataContext.Provider>
-}
+import { createStore } from 'solid-js/store'
 
 export async function getStorageDetails(): Promise<Flag[]> {
   try {
@@ -39,3 +18,13 @@ export async function getStorageDetails(): Promise<Flag[]> {
     throw new Error('Failed to get data from browser storage in popup')
   }
 }
+
+// Data Store
+export const [tsiStore, setStore] = createStore<{ flags: Flag[]; dataSource: DataSource }>({
+  flags: [],
+  dataSource: 'own',
+})
+export const updateFlags = (flags: Flag[]) => setStore('flags', flags)
+
+type DataSource = 'default' | 'merge' | 'own'
+export const updateDataSource = (data: DataSource) => setStore('dataSource', data)

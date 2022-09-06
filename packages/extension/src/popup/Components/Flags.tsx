@@ -2,14 +2,13 @@ import pkg from '../../../package.json'
 import { getMessage } from '@src/helper'
 import type { Component } from 'solid-js'
 import { Accessor, For } from 'solid-js'
-import { useCurrentData } from '@popup/popup-helpers'
+import { tsiStore } from '@popup/popup-helpers'
 
 export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) => {
-  const [currentData] = useCurrentData()
-
   return (
-    <For each={currentData()}>
+    <For each={tsiStore.flags}>
       {(flag) => {
+        console.log(flag)
         const { updatedAt, id, counts, market } = flag
         const popup_list_at = getMessage('popup_list_at', id)
 

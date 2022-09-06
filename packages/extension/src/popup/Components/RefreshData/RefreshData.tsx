@@ -2,7 +2,7 @@ import './RefreshData.scss'
 import { getMessage } from '@src/helper'
 import browser from 'webextension-polyfill'
 import { Component, createSignal } from 'solid-js'
-import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
+import { getStorageDetails, updateFlags } from '@popup/popup-helpers'
 
 const delay = (ms = 1500): Promise<void> => new Promise((res) => setTimeout(res, ms))
 
@@ -10,7 +10,6 @@ const popup_refresh_icon = getMessage('popup_refresh_icon')
 const popup_loading_icon = getMessage('popup_loading_icon')
 
 export const RefreshData: Component = () => {
-  const [, { setState }] = useCurrentData()
   const [loading, setLoading] = createSignal(false)
 
   async function clickHandler() {
@@ -22,7 +21,7 @@ export const RefreshData: Component = () => {
     await delay()
 
     setLoading(false)
-    setState(currentDates)
+    updateFlags(currentDates)
   }
 
   return (
@@ -30,6 +29,7 @@ export const RefreshData: Component = () => {
       onClick={clickHandler}
       stroke='currentColor'
       fill='currentColor'
+      tabIndex={0}
       stroke-width='0'
       version='1.1'
       viewBox='0 0 16 16'
