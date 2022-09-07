@@ -15,6 +15,9 @@
   "popup_wahed_learnmore": { "message": "Ketahui lebih lanjut tentang kod rujukan ini" },
   "popup_change_view_to_date": { "message": "Klik untuk menukar kepada paparan tarikh" },
   "popup_change_view_to_count": { "message": "Klik untuk menukar kepada paparan kiraan" },
+  "popup_datasource_default": { "message": "Data lalai" },
+  "popup_datasource_merge": { "message": "Gabungkan data kami dengan data anda" },
+  "popup_datasource_own": { "message": "Guna data sendiri" },
   "popup_bug": { "message": "Jumpa pepijat" },
   "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
   "popup_list_at": {

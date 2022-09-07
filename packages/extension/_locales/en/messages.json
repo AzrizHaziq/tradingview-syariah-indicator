@@ -15,6 +15,9 @@
   "popup_wahed_learnmore": { "message": "Learn more about this referral code" },
   "popup_change_view_to_date": { "message": "Click to change into date view" },
   "popup_change_view_to_count": { "message": "Click to change into count view" },
+  "popup_datasource_default": { "message": "Default data provider" },
+  "popup_datasource_merge": { "message": "Merge our data with your data" },
+  "popup_datasource_own": { "message": "Using own data" },
   "popup_bug": { "message": "Found bug(s)" },
   "popup_interested_to_contribute": { "message": "Interested to contribute" },
   "popup_list_at": {

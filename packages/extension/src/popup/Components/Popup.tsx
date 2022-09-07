@@ -1,3 +1,4 @@
+import { getMessage } from '@src/helper'
 import { createSignal, onMount, Show } from 'solid-js'
 import { getStorageDetails, tsiStore, updateDataSource, updateFlags } from '@popup/popup-helpers'
 import { Footer, Header, Version, Flags, RefreshData, ToggleDateAndCount } from '@popup/Components'
@@ -37,7 +38,7 @@ export const Popup = () => {
               class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 focus:ring-blue-500 focus:ring-2'
             />
             <label for='default-radio' class='text-sm text-gray-200 select-none'>
-              Default data provider
+              {getMessage('popup_datasource_default')}
             </label>
           </div>
           <RefreshData />
@@ -64,7 +65,7 @@ export const Popup = () => {
             class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 focus:ring-blue-500 focus:ring-2'
           />
           <label for='merge-radio' class='text-sm text-gray-200 select-none'>
-            Merge our data with your data
+            {getMessage('popup_datasource_merge')}
           </label>
         </div>
         <div class='items-center'>
@@ -85,7 +86,7 @@ export const Popup = () => {
             class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 focus:ring-blue-500 focus:ring-2'
           />
           <label for='own-radio' class='text-sm text-gray-200 select-none'>
-            Using own data
+            {getMessage('popup_datasource_own')}
           </label>
         </div>
 
