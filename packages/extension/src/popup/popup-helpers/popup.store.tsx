@@ -1,9 +1,12 @@
-import type { Flag } from '@app/type'
 import { getStorage } from '@src/helper'
 import { createStore } from 'solid-js/store'
+import type { Flag, StorageMap } from '@app/type'
 
 export async function getStorageDetails(): Promise<Flag[]> {
   try {
+    const dataSource = (await getStorage('DATASOURCE')) ?? 'default'
+    await updateDataSource(dataSource)
+
     const DETAILS = await getStorage('DETAILS')
 
     if (process.env.NODE_ENV !== 'production') {
@@ -20,11 +23,10 @@ export async function getStorageDetails(): Promise<Flag[]> {
 }
 
 // Data Store
-export const [tsiStore, setStore] = createStore<{ flags: Flag[]; dataSource: DataSource }>({
+export const [tsiStore, setStore] = createStore<{ flags: Flag[]; dataSource: StorageMap['DATASOURCE'] }>({
   flags: [],
   dataSource: 'own',
 })
 export const updateFlags = (flags: Flag[]) => setStore('flags', flags)
 
-type DataSource = 'default' | 'merge' | 'own'
-export const updateDataSource = (data: DataSource) => setStore('dataSource', data)
+export const updateDataSource = (data: StorageMap['DATASOURCE']) => setStore('dataSource', data)

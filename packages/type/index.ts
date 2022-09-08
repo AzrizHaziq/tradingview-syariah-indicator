@@ -32,6 +32,7 @@ export interface StorageMap {
   LIST: [`${string}:${string}`, Record<string, number>][]
   LAST_FETCH_AT: string
   IS_FILTER_SHARIAH: boolean
+  DATASOURCE: 'default' | 'merge' | 'own'
 }
 
 export interface Flag {

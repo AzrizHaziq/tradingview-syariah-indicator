@@ -1,4 +1,4 @@
-import { getMessage } from '@src/helper'
+import { getMessage, setStorage } from '@src/helper'
 import { createSignal, onMount, Show } from 'solid-js'
 import { getStorageDetails, tsiStore, updateDataSource, updateFlags } from '@popup/popup-helpers'
 import { Footer, Header, Version, Flags, RefreshData, ToggleDateAndCount } from '@popup/Components'
@@ -14,6 +14,7 @@ export const Popup = () => {
   const onClickHandle = (e) => {
     if (e.target.checked) {
       updateDataSource(e.target.value)
+      setStorage('DATASOURCE', e.target.value)
     }
   }
 
@@ -29,14 +30,12 @@ export const Popup = () => {
         class='border bg-gray-800 border-1 border-green-300 rounded'
         classList={{ 'opacity-25': tsiStore.dataSource !== 'default' }}>
         <div class='flex items-center'>
-          <label for='default-radio' class='p-2 w-full flex items-center mr-auto'>
+          <label class='cursor-pointer p-2 w-full flex items-center mr-auto'>
             <input
               value='default'
               checked={tsiStore.dataSource === 'default'}
               onClick={onClickHandle}
               type='radio'
-              id='default-radio'
-              name='bordered-checkbox'
               class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 mr-2'
             />
             <span>{getMessage('popup_datasource_default')}</span>
@@ -57,14 +56,12 @@ export const Popup = () => {
       <div
         class='border bg-gray-800 border-1 border-green-300 rounded'
         classList={{ 'opacity-25': tsiStore.dataSource !== 'merge' }}>
-        <label for='merge-radio' class='p-2 w-full flex items-center'>
+        <label class='cursor-pointer p-2 w-full flex items-center'>
           <input
             value='merge'
             checked={tsiStore.dataSource === 'merge'}
             onClick={onClickHandle}
             type='radio'
-            id='merge-radio'
-            name='bordered-checkbox'
             class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 mr-2'
           />
           <span>{getMessage('popup_datasource_merge')}</span>
@@ -78,14 +75,12 @@ export const Popup = () => {
       <div
         class='border bg-gray-800 border-1 border-green-300 rounded'
         classList={{ 'opacity-25': tsiStore.dataSource !== 'own' }}>
-        <label for='own-radio' class='p-2 w-full flex items-center'>
+        <label class='cursor-pointer p-2 w-full flex items-center'>
           <input
             value='own'
             checked={tsiStore.dataSource === 'own'}
             onClick={onClickHandle}
             type='radio'
-            id='own-radio'
-            name='bordered-checkbox'
             class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 mr-2'
           />
           <span>{getMessage('popup_datasource_own')}</span>
