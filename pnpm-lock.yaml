@@ -93,6 +93,7 @@ importers:
       express: 4.17.2
       fs-extra: ^10.1.0
       html-webpack-plugin: ^5.5.0
+      lodash.merge: ^4.6.2
       mini-css-extract-plugin: ^2.6.1
       playwright-chromium: ^1.24.2
       postcss: ^8.4.16
@@ -119,6 +120,7 @@ importers:
       windicss-webpack-plugin: ^1.7.5
     dependencies:
       date-fns: 2.29.1
+      lodash.merge: 4.6.2
       solid-js: 1.4.8
     devDependencies:
       '@app/type': link:../type
@@ -5121,7 +5123,7 @@ packages:
     dependencies:
       fast-glob: 3.2.11
       postcss: 8.4.16
-      tailwindcss: 3.1.8
+      tailwindcss: 3.1.8_postcss@8.4.16
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -7168,7 +7170,6 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash.once/4.1.1:
     resolution: {integrity: sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=}
@@ -10326,10 +10327,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

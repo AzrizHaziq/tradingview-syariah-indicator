@@ -67,7 +67,14 @@ export const Popup = () => {
           <span>{getMessage('popup_datasource_merge')}</span>
         </label>
         <Show when={tsiStore.dataSource === 'merge'}>
-          <div class='p-2'>asdsdasd</div>
+          <div class='px-2 pb-2'>
+            <textarea
+              id='message'
+              rows='2'
+              class='p-2 block w-full text-gray-900 rounded border border-green-100'
+              placeholder=''
+            />
+          </div>
         </Show>
       </div>
 
@@ -87,7 +94,14 @@ export const Popup = () => {
         </label>
 
         <Show when={tsiStore.dataSource === 'own'}>
-          <div class='p-2'>asdsdasd</div>
+          <div class='px-2 pb-2'>
+            <textarea
+              id='message'
+              rows='2'
+              class='p-2 block w-full text-gray-900 rounded border border-green-100'
+              placeholder=''
+            />
+          </div>
         </Show>
       </div>
 
