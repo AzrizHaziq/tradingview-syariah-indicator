@@ -32,7 +32,11 @@ export interface StorageMap {
   LIST: [`${string}:${string}`, Record<string, number>][]
   LAST_FETCH_AT: string
   IS_FILTER_SHARIAH: boolean
+
+  // let end user manipulate how TSI datasource
   DATASOURCE: 'default' | 'merge' | 'own'
+  DATASOURCE_MERGE: StorageMap['LIST']
+  DATASOURCE_OWN: StorageMap['LIST']
 }
 
 export interface Flag {

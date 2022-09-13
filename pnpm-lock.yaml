@@ -93,6 +93,7 @@ importers:
       express: 4.17.2
       fs-extra: ^10.1.0
       html-webpack-plugin: ^5.5.0
+      lodash.debounce: ^4.0.8
       lodash.merge: ^4.6.2
       mini-css-extract-plugin: ^2.6.1
       playwright-chromium: ^1.24.2
@@ -120,6 +121,7 @@ importers:
       windicss-webpack-plugin: ^1.7.5
     dependencies:
       date-fns: 2.29.1
+      lodash.debounce: 4.0.8
       lodash.merge: 4.6.2
       solid-js: 1.4.8
     devDependencies:

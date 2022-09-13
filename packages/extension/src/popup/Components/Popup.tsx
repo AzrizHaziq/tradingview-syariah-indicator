@@ -1,7 +1,17 @@
+import debounce from 'lodash.debounce'
 import { getMessage, setStorage } from '@src/helper'
 import { createSignal, onMount, Show } from 'solid-js'
 import { getStorageDetails, tsiStore, updateDataSource, updateFlags } from '@popup/popup-helpers'
-import { Footer, Header, Version, Flags, RefreshData, ToggleDateAndCount, InputState } from '@popup/Components'
+import {
+  Footer,
+  Header,
+  Version,
+  Flags,
+  RefreshData,
+  ToggleDateAndCount,
+  InputState,
+  InputStateTypes,
+} from '@popup/Components'
 
 export const Popup = () => {
   onMount(() => {
@@ -66,7 +76,17 @@ const DefaultDataSource = (props) => {
   )
 }
 
+const validateJSON = debounce(() => {
+  console.log('asdasds')
+}, 300)
+
 const MergeDataSource = (props) => {
+  const [inputState, setInputState] = createSignal<InputStateTypes>('')
+  const onChangeHandler = (e) => {
+    setInputState('loading')
+    validateJSON()
+  }
+
   return (
     <div
       class='border bg-gray-800 border-1 border-green-300 rounded'
@@ -83,14 +103,15 @@ const MergeDataSource = (props) => {
           <span>{getMessage('popup_datasource_merge')}</span>
         </div>
         <div class='items-center flex'>
-          <InputState state={''} />
+          <InputState state={inputState()} />
         </div>
       </label>
       <Show when={tsiStore.dataSource === 'merge'}>
         <div class='px-2 pb-2'>
           <textarea
-            id='message'
+            id='merge-text-area'
             rows='2'
+            onInput={onChangeHandler}
             class='p-2 block w-full text-gray-900 rounded border border-green-100'
             placeholder=''
           />
@@ -101,6 +122,8 @@ const MergeDataSource = (props) => {
 }
 
 const OwnDataSource = (props) => {
+  const [inputState, setInputState] = createSignal<InputStateTypes>('')
+
   return (
     <div
       class='border bg-gray-800 border-1 border-green-300 rounded'
@@ -118,14 +141,14 @@ const OwnDataSource = (props) => {
         </span>
 
         <div class='items-center flex'>
-          <InputState state={''} />
+          <InputState state={inputState()} />
         </div>
       </label>
 
       <Show when={tsiStore.dataSource === 'own'}>
         <div class='px-2 pb-2'>
           <textarea
-            id='message'
+            id='own-text-area'
             rows='2'
             class='p-2 block w-full text-gray-900 rounded border border-green-100'
             placeholder=''

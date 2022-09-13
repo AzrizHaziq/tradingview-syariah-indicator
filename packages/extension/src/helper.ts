@@ -1,3 +1,4 @@
+import merge from 'lodash.merge'
 import type { StorageMap } from '@app/type'
 import browser from 'webextension-polyfill'
 
@@ -7,7 +8,16 @@ export const extensionName = 'tradingview-shariah-indicator'
 
 export async function setStockListInMap(): Promise<void> {
   try {
-    const LIST = await getStorage('LIST')
+    let LIST = await getStorage('LIST')
+    const DATA_SOURCE = await getStorage('DATASOURCE')
+
+    if (DATA_SOURCE === 'merge') {
+      const mergeDataSource = await getStorage('DATASOURCE_MERGE')
+      LIST = merge(LIST, mergeDataSource)
+    }
+
+    if (DATA_SOURCE === 'own') LIST = await getStorage('DATASOURCE_OWN')
+
     SHARIAH_LIST = new Map(LIST)
   } catch (e) {
     console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
