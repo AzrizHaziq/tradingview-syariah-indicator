@@ -8,7 +8,6 @@ export const Flags: Component<{ view: Accessor<'date' | 'count'> }> = (props) =>
   return (
     <For each={tsiStore.flags}>
       {(flag) => {
-        console.log(flag)
         const { updatedAt, id, counts, market } = flag
         const popup_list_at = getMessage('popup_list_at', id)
 

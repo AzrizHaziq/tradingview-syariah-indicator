@@ -8,17 +8,27 @@ export const extensionName = 'tradingview-shariah-indicator'
 
 export async function setStockListInMap(): Promise<void> {
   try {
-    let LIST = await getStorage('LIST')
+    const LIST = await getStorage('LIST')
     const DATA_SOURCE = await getStorage('DATASOURCE')
 
-    if (DATA_SOURCE === 'merge') {
-      const mergeDataSource = await getStorage('DATASOURCE_MERGE')
-      LIST = merge(LIST, mergeDataSource)
+    if (DATA_SOURCE === 'default') {
+      SHARIAH_LIST = new Map(LIST)
     }
 
-    if (DATA_SOURCE === 'own') LIST = await getStorage('DATASOURCE_OWN')
+    if (DATA_SOURCE === 'merge') {
+      const MERGE_LIST = (await getStorage('DATASOURCE_MERGE')) ?? []
+      SHARIAH_LIST = new Map([
+        ...MERGE_LIST,
+        ...LIST,
+        // ['MYX:MAYBANK', { s: 1 }]
+        // ['NASDAQ:GOOG', { s: 1 }],
+      ])
+    }
 
-    SHARIAH_LIST = new Map(LIST)
+    if (DATA_SOURCE === 'own') {
+      const OWN_LIST = await getStorage('DATASOURCE_OWN')
+      SHARIAH_LIST = new Map(OWN_LIST)
+    }
   } catch (e) {
     console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
   }
