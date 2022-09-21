@@ -14,6 +14,7 @@
     "noEmit": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "lib": ["es2022", "dom"],
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],

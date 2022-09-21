@@ -1,4 +1,3 @@
-import merge from 'lodash.merge'
 import type { StorageMap } from '@app/type'
 import browser from 'webextension-polyfill'
 
@@ -17,18 +16,22 @@ export async function setStockListInMap(): Promise<void> {
 
     if (DATA_SOURCE === 'merge') {
       const MERGE_LIST = (await getStorage('DATASOURCE_MERGE')) ?? []
-      SHARIAH_LIST = new Map([
-        ...MERGE_LIST,
-        ...LIST,
-        // ['MYX:MAYBANK', { s: 1 }]
-        // ['NASDAQ:GOOG', { s: 1 }],
-      ])
+      SHARIAH_LIST = new Map(
+        [].concat(LIST, MERGE_LIST, [
+          // for test
+          // ['MYX:MAYBANK', { s: 1 }], // my bank
+          // ['NASDAQ:GOOG', { s: 1 }], // nasdaq google
+          // ['TSX:RY', { s: 1 }], // canada bank
+        ])
+      )
     }
 
     if (DATA_SOURCE === 'own') {
       const OWN_LIST = await getStorage('DATASOURCE_OWN')
       SHARIAH_LIST = new Map(OWN_LIST)
     }
+
+    console.log('Tradingview Shariah  >>>', Object.fromEntries(SHARIAH_LIST))
   } catch (e) {
     console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
   }
@@ -65,12 +68,12 @@ export function addStyle(css: string): void {
   head.appendChild(style)
 }
 
-export function debounce(func: (...unknown) => void, wait: number, immediate: boolean): () => void {
+export function debounce<T>(func: (...unknown) => void, wait: number, immediate: boolean): (...args: T[]) => void {
   let timeout
 
-  return function executedFunction() {
+  return function executedFunction(...args: T[]) {
     const context = this // eslint-disable-line @typescript-eslint/no-this-alias
-    const args = arguments // eslint-disable-line prefer-rest-params
+    // const args = arguments // eslint-disable-line prefer-rest-params
 
     const later = function () {
       timeout = null
@@ -147,5 +150,39 @@ export async function getStorage<K extends keyof StorageMap>(key: K): Promise<St
     return data
   } catch (e) {
     console.error(`Error set ${key} in storage`, e)
+  }
+}
+
+export async function delay(ms = 1000): Promise<void> {
+  return new Promise((res) => setTimeout(res, ms))
+}
+
+export function required<T>(s): T {
+  if (s.length === 0) {
+    throw { msg: 'required input ' }
+  }
+
+  return s
+}
+
+export function isFormatCorrect<T>(s): T {
+  if (Array.isArray(s)) {
+    s.forEach(([stockCode, obj]) => {
+      const split = stockCode.split(':')
+
+      if (split.length !== 2) throw { msg: `${stockCode}: need to satisfy "market:stockCode"` }
+      if (!Object.hasOwn(obj, 's')) throw { msg: `${stockCode}: doesnt have "s = 0 or 1"` }
+      if (!(obj.s === 1 || obj.s === 0)) throw { msg: `${stockCode}: "s" valid is either 0 or 1` }
+    })
+  }
+
+  return s
+}
+
+export function isValidJson<T>(a: string): T {
+  try {
+    return JSON.parse(a)
+  } catch (e) {
+    throw { msg: 'wrong json format' }
   }
 }

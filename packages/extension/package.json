@@ -23,8 +23,6 @@
   "license": "MIT",
   "dependencies": {
     "date-fns": "^2.29.1",
-    "lodash.debounce": "^4.0.8",
-    "lodash.merge": "^4.6.2",
     "solid-js": "^1.4.8"
   },
   "peerDependencies": {

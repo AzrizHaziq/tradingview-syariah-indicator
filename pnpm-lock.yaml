@@ -93,8 +93,6 @@ importers:
       express: 4.17.2
       fs-extra: ^10.1.0
       html-webpack-plugin: ^5.5.0
-      lodash.debounce: ^4.0.8
-      lodash.merge: ^4.6.2
       mini-css-extract-plugin: ^2.6.1
       playwright-chromium: ^1.24.2
       postcss: ^8.4.16
@@ -121,8 +119,6 @@ importers:
       windicss-webpack-plugin: ^1.7.5
     dependencies:
       date-fns: 2.29.1
-      lodash.debounce: 4.0.8
-      lodash.merge: 4.6.2
       solid-js: 1.4.8
     devDependencies:
       '@app/type': link:../type
@@ -7100,6 +7096,7 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
 
   /lodash.once/4.1.1:
     resolution: {integrity: sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=}
