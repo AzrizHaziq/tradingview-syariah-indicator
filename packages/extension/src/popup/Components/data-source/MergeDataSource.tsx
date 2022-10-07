@@ -12,14 +12,13 @@ const [inputState, setInputState] = createSignal<InputStateTypes>('')
 const clickHandler = async (val) => {
   try {
     required(val)
-    const json = isValidJson(val)
+    const json: StorageMap['LIST'] = isValidJson(val)
     isFormatCorrect(json)
 
     setErrMsg('')
     setInputState('success')
-    await setStorage('DATASOURCE_MERGE', json as unknown as StorageMap['LIST'])
 
-    return json
+    await setStorage('DATASOURCE_MERGE', json)
   } catch (e) {
     setErrMsg(e.msg)
     console.error(e)

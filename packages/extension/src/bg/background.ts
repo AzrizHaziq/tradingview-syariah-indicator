@@ -17,7 +17,11 @@ browser.runtime.onInstalled.addListener(async () => {
   await setStorage('IS_FILTER_SHARIAH', false)
   await setStorage('DATASOURCE', 'default')
   await setStorage('DATASOURCE_MERGE', customDataSource)
-  await setStorage('DATASOURCE_OWN', customDataSource)
+  await setStorage(
+    'DATASOURCE_OWN',
+    customDataSource.filter(([name]) => name !== 'TSX:RY')
+  )
+
   await fetchData(true)
 })
 
