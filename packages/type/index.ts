@@ -29,11 +29,11 @@ export type RESPONSE_FROM_JSON = Record<Exchange, ExchangeDetail>
 /////////////////////////// USED_IN_EXTENSION  ///////////////////////////////////
 export interface StorageMap {
   DETAILS: Flag[]
-  LIST: [`${string}:${string}`, Record<string, number>][]
   LAST_FETCH_AT: string
   IS_FILTER_SHARIAH: boolean
 
   // let end user manipulate how TSI datasource
+  LIST: [`${string}:${string}`, Record<string, number>][] // original
   DATASOURCE: 'default' | 'merge' | 'own'
   DATASOURCE_MERGE: StorageMap['LIST']
   DATASOURCE_OWN: StorageMap['LIST']

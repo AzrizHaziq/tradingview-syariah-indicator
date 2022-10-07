@@ -1,10 +1,26 @@
-import type { ExchangeDetail, Flag, Exchange, EVENT_MSG, RESPONSE_FROM_JSON } from '@app/type'
+import type { ExchangeDetail, Flag, Exchange, EVENT_MSG, RESPONSE_FROM_JSON, StorageMap } from '@app/type'
 import browser from 'webextension-polyfill'
 import { differenceInDays, format, isDate } from 'date-fns'
 import { debounce, getStorage, setStorage } from '../helper'
 ;(async () => await fetchData())()
 
-browser.runtime.onInstalled.addListener(() => fetchData(true))
+browser.runtime.onInstalled.addListener(async () => {
+  const test = 1
+  const customDataSource: StorageMap['LIST'] = test
+    ? [
+        ['MYX:MAYBANK', { s: 1 }],
+        ['NASDAQ:GOOG', { s: 1 }],
+        ['TSX:RY', { s: 1 }],
+      ]
+    : []
+
+  await setStorage('IS_FILTER_SHARIAH', false)
+  await setStorage('DATASOURCE', 'default')
+  await setStorage('DATASOURCE_MERGE', customDataSource)
+  await setStorage('DATASOURCE_OWN', customDataSource)
+  await fetchData(true)
+})
+
 browser.tabs.onUpdated.addListener(
   debounce(
     async function listener(_, { status }, { url }): Promise<void> {
