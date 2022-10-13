@@ -19,8 +19,8 @@
   "popup_datasource_merge": { "message": "Merge our dataset with your data" },
   "popup_datasource_own": { "message": "Using own data" },
   "popup_bug": { "message": "Found bug(s)" },
-  "popup_thank_you": { "message": "Terima Kasih!!" },
-  "popup_copy": { "message": "salinan" },
+  "popup_thank_you": { "message": "Thank you!!" },
+  "popup_copy": { "message": "copy" },
   "popup_interested_to_contribute": { "message": "Interested to contribute" },
   "popup_list_at": {
     "message": "$URL$ current shariah list at",

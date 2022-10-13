@@ -20,8 +20,8 @@
   "popup_datasource_own": { "message": "Guna data sendiri" },
   "popup_bug": { "message": "Jumpa pepijat" },
   "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
-  "popup_thank_you": { "message": "Thank you!!" },
-  "popup_copy": { "message": "copy" },
+  "popup_thank_you": { "message": "Terima Kasih!!" },
+  "popup_copy": { "message": "salinan" },
   "popup_list_at": {
     "message": "Senarai syariah $URL$ terkini pada",
     "description": "Untuk tooltip",

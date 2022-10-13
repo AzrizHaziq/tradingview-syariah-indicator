@@ -5,7 +5,7 @@ import { debounce, getStorage, setStorage } from '../helper'
 ;(async () => await fetchData())()
 
 browser.runtime.onInstalled.addListener(async () => {
-  const test = 1
+  const test = 0
   const customDataSource: StorageMap['LIST'] = test
     ? [
         ['MYX:MAYBANK', { s: 1 }],
@@ -14,12 +14,13 @@ browser.runtime.onInstalled.addListener(async () => {
       ]
     : []
 
-  await setStorage('IS_FILTER_SHARIAH', false)
-  await setStorage('DATASOURCE', 'default')
-  await setStorage('DATASOURCE_MERGE', customDataSource)
+  // reset default storage values
+  await setStorage('IS_FILTER_SHARIAH', (await getStorage('IS_FILTER_SHARIAH')) ?? false)
+  await setStorage('DATASOURCE', (await getStorage('DATASOURCE')) ?? 'default')
+  await setStorage('DATASOURCE_MERGE', (await getStorage('DATASOURCE_MERGE')) ?? customDataSource)
   await setStorage(
     'DATASOURCE_OWN',
-    customDataSource.filter(([name]) => name !== 'TSX:RY')
+    (await getStorage('DATASOURCE_OWN')) ?? customDataSource.filter(([name]) => name !== 'TSX:RY')
   )
 
   await fetchData(true)
