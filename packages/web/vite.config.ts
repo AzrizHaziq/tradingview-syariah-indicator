@@ -1,6 +1,7 @@
+import Unocss from 'unocss/vite'
 import solid from 'solid-start/vite'
 import { defineConfig } from 'vite'
-import Unocss from 'unocss/vite'
+import vercel from 'solid-start-vercel'
 import { presetTypography, presetUno } from 'unocss'
 import transformerDirective from '@unocss/transformer-directives'
 
@@ -37,6 +38,7 @@ export default defineConfig({
       enforce: 'pre',
     },
     solid({
+      adapter: vercel({ edge: true }),
       extensions: ['.mdx', '.md'],
     }),
   ],
