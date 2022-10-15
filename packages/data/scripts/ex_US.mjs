@@ -118,10 +118,7 @@ export default async function () {
   try {
     const response = await fetch(CONFIG.US.wahedHoldingUrl)
     const responseText = await response.text()
-
-    let updatedAt = prettierCSV(responseText)[0].split(',')[0]
-    const [m, d, y] = updatedAt.split('/')
-    updatedAt = new Date(y, m - 1, d).getTime()
+    const updatedAt = new Date(prettierCSV(responseText)[0].split(',')[0]).getTime()
 
     return await pipe(
       prettierCSV,

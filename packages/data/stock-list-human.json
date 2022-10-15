@@ -1861,11 +1861,11 @@
     ["IDX", "ZYRX", "Zyrexindo Mandiri Buana Tbk."]
   ],
   "metadata": {
-    "NYSE": null,
-    "NASDAQ": null,
-    "MYX": 1665789702403,
-    "SZSE": 1665676800000,
+    "NYSE": 1662912000000,
+    "NASDAQ": 1662912000000,
+    "MYX": 1665795368686,
     "SSE": 1665676800000,
-    "IDX": 1665789680727
+    "SZSE": 1665676800000,
+    "IDX": 1665795345157
   }
 }
