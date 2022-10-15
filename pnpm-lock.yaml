@@ -84,6 +84,7 @@ importers:
       copy-webpack-plugin: ^11.0.0
       css-loader: ^6.7.1
       date-fns: ^2.29.1
+      dotenv: ^16.0.3
       dotenv-webpack: ^8.0.0
       download: 8.0.0
       eslint: ^8.21.0
@@ -144,6 +145,7 @@ importers:
       clean-webpack-plugin: 4.0.0_webpack@5.74.0
       copy-webpack-plugin: 11.0.0_webpack@5.74.0
       css-loader: 6.7.1_webpack@5.74.0
+      dotenv: 16.0.3
       dotenv-webpack: 8.0.0_webpack@5.74.0
       download: 8.0.0
       eslint: 8.21.0
@@ -4546,6 +4548,11 @@ packages:
       webpack: 5.74.0_webpack-cli@4.10.0
     dev: true
 
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
+
   /dotenv/8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
@@ -5123,7 +5130,7 @@ packages:
     dependencies:
       fast-glob: 3.2.11
       postcss: 8.4.16
-      tailwindcss: 3.1.8
+      tailwindcss: 3.1.8_postcss@8.4.16
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -10316,10 +10323,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
