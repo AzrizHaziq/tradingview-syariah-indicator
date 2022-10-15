@@ -7,7 +7,7 @@ import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
 import { chromium } from 'playwright-chromium'
 import 'error-cause/auto'
-import { ScrapResult } from './model.mjs'
+import { ScrapeResult } from './model.mjs'
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
@@ -119,14 +119,14 @@ function findCodeColumnIndex(colValues: any[]): number {
 /**
  * Main IDX scrape function
  **/
-export default async function(): Promise<ScrapResult> {
+export default async function(): Promise<ScrapeResult> {
 
   try {
     const shariahList = await fetchShariahList()
     const stocks = shariahList.map(stock => {
       return {code: stock.stockCode, name: stock.fullname}
     })
-    return {IDX: { stocks, updatedAt: new Date()}}
+    return {IDX: { stocks, updatedAt: new Date(), market: CONFIG.IDX.market}}
   } catch (e) {
     throw new Error(`Error generating IDX`, { cause: e })
   }

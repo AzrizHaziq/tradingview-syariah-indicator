@@ -5,7 +5,7 @@ import { chromium, Page } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import 'error-cause/auto'
 import { stringify } from 'querystring'
-import { ScrapResult } from './model.mjs'
+import { ScrapeResult as ScrapeResult } from './model.mjs'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 
@@ -43,7 +43,7 @@ async function getCompanyName(stocks: {s: 1, code: string, stockName: string}[])
   }
 }
 
-const scrapUrl = (p: { perPage: number, page: number }) =>
+const scrapeUrl = (p: { perPage: number, page: number }) =>
   `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${p.page}&per_page=${p.perPage}`
 
 
@@ -67,13 +67,13 @@ async function scrapeList(page: Page): Promise<{s: 1, code: string, stockName: s
   })
 }
 
-async function scrapBursaMalaysia(): Promise<{[p: string]: {s: 1, code: string, stockName: string, fullname: string}}> {
+async function scrapeBursaMalaysia(): Promise<{[p: string]: {s: 1, code: string, stockName: string, fullname: string}}> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
     const ctx = await browser.newContext()
     const initPage = await ctx.newPage()
-    await initPage.goto(scrapUrl({ page: 1, perPage: 50 }))
+    await initPage.goto(scrapeUrl({ page: 1, perPage: 50 }))
 
     await initPage.evaluate(() => console.log('This message is inside an alert box'))
 
@@ -99,7 +99,7 @@ async function scrapBursaMalaysia(): Promise<{[p: string]: {s: 1, code: string, 
       .process(async (_, i) => {
         const page = await ctx.newPage()
         const pageNo = `${i + 1}`.padStart(2, '0')
-        await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
+        await page.goto(scrapeUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
 
         // this does the work as of retry scrapping function
         // sometime scrape return 0 items
@@ -121,13 +121,13 @@ async function scrapBursaMalaysia(): Promise<{[p: string]: {s: 1, code: string, 
     // TODO: fixme if there is error in pool
     if (errors.length) {
       console.log(errors, 'MYX, promise pool scrape failed', errors, results)
-      throw new Error(`failed scrape stock in pages`, { cause: errors })
+      throw new Error(`failed to scrape stock in pages`, { cause: errors })
     }
 
     return results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {})
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.error('Error scrap MYX data', e)
+    console.error('Failed to scrape MYX data', e)
     process.exit(1)
   } finally {
     await browser.close()
@@ -137,9 +137,9 @@ async function scrapBursaMalaysia(): Promise<{[p: string]: {s: 1, code: string, 
 /**
  * Main MYX scrape function
  **/
-export default async function(): Promise<ScrapResult> {
+export default async function(): Promise<ScrapeResult> {
   try {
-    const stockList = await scrapBursaMalaysia()
+    const stockList = await scrapeBursaMalaysia()
     const stockSimplifiedList: {code: string, name: string}[] = pipe(Object.values,
                       (values: any) => values.map((val: any) => {
                         return {code: val.stockName, name: val.fullname}
@@ -147,7 +147,7 @@ export default async function(): Promise<ScrapResult> {
         stockList
     )
 
-    return {MYX: { stocks: stockSimplifiedList, updatedAt: new Date()}}
+    return {MYX: { stocks: stockSimplifiedList, updatedAt: new Date(), market: CONFIG.MYX.market}}
   } catch (e) {
     throw new Error(`Error generating MYX`, { cause: e })
   }

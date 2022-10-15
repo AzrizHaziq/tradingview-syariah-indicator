@@ -64,9 +64,16 @@ export class CliProgress {
   }
 }
 
-export function logCount(exchanges: {list: any}) {
-  const maxExchangeLength = Math.max(...Object.keys(exchanges).map((k) => k.length))
-  Object.entries(exchanges).forEach(([exchange, { list }]) => {
+export function logCount(data: {
+  [exchange: string]: {
+    updatedAt: number,
+    list: {
+      [code: string]: [1]
+    }
+  }
+}) {
+  const maxExchangeLength = Math.max(...Object.keys(data).map((k) => k.length))
+  Object.entries(data).forEach(([exchange, { list }]) => {
     console.log(`${exchange.padEnd(maxExchangeLength, ' ')} >> ${Object.keys(list).length}`)
   })
 }
@@ -85,7 +92,11 @@ export async function gitCommand(...command: any[]) {
   })
 }
 
-export function isSameWithPreviousData(newData: any, filePath = `${path.resolve()}/${CONFIG.humanOutput}`) {
+export function isSameWithPreviousData(newData: any, filePath = `${path.resolve()}/${CONFIG.humanOutput}`): boolean {
+  if (!fs.existsSync(filePath)) {
+    return false
+  }
+
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data: oldData } = JSON.parse(fileContent)
 

@@ -1,5 +1,6 @@
+import { disconnect } from 'process';
 import { CONFIG } from './config.mjs'
-import { ScrapResult } from './model.mjs';
+import { ScrapeResult } from './model.mjs';
 import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
@@ -7,8 +8,8 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    const INDEX_CODES = ['MYX', 'IDX']// ['US', 'MYX', 'CHINA', 'IDX']
-    const ALL_SHARIAH_LIST: ScrapResult[] = await Promise.all(
+    const INDEX_CODES = ['MYX'] // ['US', 'MYX', 'CHINA', 'IDX']
+    const ALL_SHARIAH_LIST: ScrapeResult[] = await Promise.all(
       INDEX_CODES.map((code) => import(`./ex-${code.toLowerCase()}.mjs`)
         .then(m => m.default()))
     )
@@ -30,7 +31,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
         allData[exchangeCode].stocks.push({code, name: 'ABC'})
       } else {
         // if not exist then create new
-        allData[exchangeCode] = { stocks: [{code, name: 'ABC'}], updatedAt: new Date() }
+        allData[exchangeCode] = { stocks: [{code, name: 'ABC'}], updatedAt: new Date(), market: 'unknown' }
       }
     })
 
@@ -50,9 +51,10 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
       process.exit()
     }
 
-    // logCount(allData)
+    const adaptedAllData = adapt(allData)
+    logCount(adaptedAllData)
 
-    await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
+    await writeToFile(CONFIG.mainOutput, JSON.stringify(adaptedAllData))
     await writeToFile(
       CONFIG.humanOutput,
       await prettierJSON(
@@ -74,7 +76,39 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 
     process.exit()
   } catch (e) {
-    console.error('Something wrong with the whole process', e)
+    console.log('Something wrong with the whole process', e)
     process.exit(1)
   }
 })()
+
+function adapt(allData: ScrapeResult) : {
+  [exchange: string]: {
+    updatedAt: number,
+    list: {
+      [code: string]: [1]
+    },
+    shape: any,
+    market: string
+  }
+} {
+  let adapted = {}
+  for (let [exchange, data] of Object.entries(allData)) {
+    adapted[exchange] = {
+      updatedAt: data.updatedAt.getTime(),
+      list: data.stocks.reduce((dic, stock) => {
+        dic[stock.code] = [1]
+        return dic
+      }, {}),
+      market: data.market,
+      shape: [
+        {
+          "0": "non-s",
+          "1": "s",
+          "default": ""
+        }
+      ]
+    }
+  }
+
+  return adapted
+}

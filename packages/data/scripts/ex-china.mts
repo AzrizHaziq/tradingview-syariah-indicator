@@ -5,7 +5,7 @@ import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, delay } from './utils.mjs'
 import 'error-cause/auto'
-import { ScrapResult } from './model.mjs'
+import { ScrapeResult } from './model.mjs'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
@@ -51,38 +51,40 @@ async function parsePdf(pdfUrl: string): Promise<string[]> {
 
 // click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
 async function getUpdatedAtAndPdfUrl() {
+  const userAgent =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
-  const page = await browser.newPage()
+  const ctx = await browser.newContext({ userAgent, extraHTTPHeaders: {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    // 'DNT': '1',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Pragma': 'no-cache',
+    'Cache-Control': 'no-cache',
+    // 'TE': 'trailers'
+  } })
+  const page = await ctx.newPage()
 
   try {
-    await page.goto(CHINA_ETF())
+    const scrapeUrl = (p: { perPage: number, page: number }) =>
+    `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${p.page}&per_page=${p.perPage}`
+    await page.goto(scrapeUrl({perPage: 10, page: 1}))
+    const buffer = await page.screenshot();
+    console.log('Browser screenshot after equities', buffer.toString('base64'));
+
+
+    await page.goto(CHINA_ETF(), { waitUntil: 'networkidle' })
 
     // get updatedAt at latest report
-    const updatedAt = await page.evaluate(
-      ([selector, util]) => {
-        if (typeof util !== 'string') {
-          const { pipe, map, pluck } = util
-          const pipeFn = new Function(`return ${pipe}`)() // eslint-disable-line no-new-func
-          const mapFn = new Function(`return ${map}`)() // eslint-disable-line no-new-func
-          const pluckFn = new Function(`return ${pluck}`)() // eslint-disable-line no-new-func
-
-          return pipeFn(
-            (s: any) => document.querySelector(s),
-            pluckFn('textContent'),
-            mapFn((text: string) => text.trim()),
-            mapFn((date: string) => Date.parse(date)),
-            mapFn((timeStamp: string) => Promise.resolve(timeStamp))
-          )(selector)
-        } else {
-          return null;
-        }
-
-      },
-      [
-        '#table-announcements tbody td:nth-child(2) .d-none',
-        { pipe: pipe.toString(), map: map.toString(), pluck: pluck.toString() },
-      ]
-    )
+    const updatedAt = await page.locator('#table-announcements tbody td:nth-child(2) .d-none').first().textContent()
+    // const updatedAt = new Date().getTime()
 
     // process of finding pdfUrl
     const latestReportSelector = '#table-announcements tbody td:last-child a'
@@ -109,6 +111,10 @@ async function getUpdatedAtAndPdfUrl() {
 
     return { updatedAt, pdfUrl: `${iframeDomain}${pdfUrl}` }
   } catch (e) {
+    const buffer = await page.screenshot();
+    console.log('Browser screenshot', buffer.toString('base64'));
+
+    console.log('getUpdatedAtAndPdfUrl error', e)
     throw new Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
   } finally {
     await browser.close()
@@ -191,7 +197,7 @@ async function getCompanyExchangeAndCode(stockNames: string[]): Promise<string[]
 /**
  * Main SSE & SZSE scrap function
  * */
-export default async function(): Promise<ScrapResult> {
+export default async function(): Promise<ScrapeResult> {
   try {
     const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
@@ -220,17 +226,17 @@ export default async function(): Promise<ScrapResult> {
           acc[exchange] = {
             updatedAt: (updatedAt ? new Date(updatedAt) : new Date()),
             stocks: [],
+            market: CONFIG.CHINA.market
           }
         }
 
         acc[exchange].stocks.push({code, name})
-
-        console.log(acc)
         return acc
       }, {})
 
   } catch (e) {
-    throw new Error('Failed to scrap CHINA', { cause: e })
+    console.log(e)
+    throw new Error('Failed to scrape CHINA', { cause: e })
   }
 }
 
