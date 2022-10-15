@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./build",
     "allowJs": true,
-    "target": "es6",
+    "target": "ESNext",
     "module": "ES2022",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
