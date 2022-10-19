@@ -7,6 +7,7 @@ import { pipe, pluck, map, delay } from './utils.mjs'
 import 'error-cause/auto'
 import { ScrapeResult } from './model.mjs'
 import { URLSearchParams } from 'url'
+import { parse as parseHtml } from 'node-html-parser'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
@@ -82,12 +83,14 @@ async function getUpdatedAtAndPdfUrl2(): Promise<{updatedAt: string | null, pdfU
 
   console.log('Response 2', response2)
 
-  const firstOccurrence = response2.indexOf('"');
-  const pdfPartUrl = response2.substring(firstOccurrence + 1, response2.indexOf('"', firstOccurrence + 1)).replace('&amp;', '&')
-  const pdfUrl = `https://disclosure.bursamalaysia.com/${pdfPartUrl}`
-
+  const pdfUrl = extractPdfUrl(response2)
   // console.log('final pdfUrl', pdfUrl)
   return { updatedAt: updatedAtHuman, pdfUrl }
+}
+
+function extractPdfUrl(htmlText: string) {
+  const pdfPartUrl = parseHtml(htmlText).querySelector('a')?.getAttribute('href')
+  return `https://disclosure.bursamalaysia.com${pdfPartUrl}`
 }
 
 // click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
@@ -216,6 +219,7 @@ async function getCompanyExchangeAndCode(stockNames: string[]): Promise<string[]
 export default async function(): Promise<ScrapeResult> {
   let gUpdatedAt = '' as (string | null)
   let gPdfUrl = ''
+  let maxRetry = 5
   do {
     try {
       const { updatedAt, pdfUrl } = await (CONFIG.useExternalWebscraper ? getUpdatedAtAndPdfUrl2() : getUpdatedAtAndPdfUrl())
@@ -224,7 +228,7 @@ export default async function(): Promise<ScrapeResult> {
     } catch (e) {
       console.log('Failed to extract first info. Retrying...', e)
     }
-  } while (gPdfUrl === '')
+  } while (gPdfUrl === '' && maxRetry-- > 0)
   console.log('gPdfUrl', gPdfUrl)
 
   try {
