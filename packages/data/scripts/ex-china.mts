@@ -50,7 +50,7 @@ async function parsePdf(pdfUrl: string): Promise<string[]> {
   })
 }
 
-async function getUpdatedAtAndPdfUrl2() {
+async function getUpdatedAtAndPdfUrl2(): Promise<{updatedAt: string | null, pdfUrl: string}> {
   const url = 'https://api.webscraping.ai/selected-multiple?' + new URLSearchParams({
     'url': CHINA_ETF(),
     'selectors': [
@@ -91,7 +91,7 @@ async function getUpdatedAtAndPdfUrl2() {
 }
 
 // click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
-async function getUpdatedAtAndPdfUrl() {
+async function getUpdatedAtAndPdfUrl(): Promise<{updatedAt: string | null, pdfUrl: string}> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
   let ctx = await browser.newContext()
   let page = await ctx.newPage()
@@ -214,11 +214,11 @@ async function getCompanyExchangeAndCode(stockNames: string[]): Promise<string[]
  * Main SSE & SZSE scrap function
  * */
 export default async function(): Promise<ScrapeResult> {
-  let gUpdatedAt = ''
+  let gUpdatedAt = '' as (string | null)
   let gPdfUrl = ''
   do {
     try {
-      const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl2()
+      const { updatedAt, pdfUrl } = await (CONFIG.useExternalWebscraper ? getUpdatedAtAndPdfUrl2() : getUpdatedAtAndPdfUrl())
       gUpdatedAt = updatedAt
       gPdfUrl = pdfUrl
     } catch (e) {

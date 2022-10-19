@@ -160,7 +160,7 @@ async function scrapeBursaMalaysia2(): Promise<{[p: string]: {code: string, stoc
 
   // console.log(stocks)
   const { results, errors } = await PromisePool.for(Array.from({ length: gMaxPageNumber - 1 }))
-    .withConcurrency(5) // 5 pages at a time
+    .withConcurrency(CONFIG.useExternalWebscraper ? 1 : 5) // 5 pages at a time
     .process(async (_, i) => {
       const i2 = i + 1 // Starts from 1 as 0 has been retrieved
       const pageNo = `${i2 + 1}`.padStart(2, '0')
@@ -261,7 +261,7 @@ async function scrapeBursaMalaysia(): Promise<{[p: string]: {code: string, stock
  **/
 export default async function(): Promise<ScrapeResult> {
   try {
-    const stockList = await scrapeBursaMalaysia2()
+    const stockList = await (CONFIG.useExternalWebscraper ? scrapeBursaMalaysia2() : scrapeBursaMalaysia())
     const stockSimplifiedList: {code: string, name: string}[] = pipe(Object.values,
                       (values: any) => values.map((val: any) => {
                         return {code: val.stockName, name: val.fullname}

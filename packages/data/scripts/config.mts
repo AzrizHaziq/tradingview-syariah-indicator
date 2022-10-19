@@ -4,6 +4,7 @@ import { CliProgress } from './utils.mjs'
 export const CONFIG = {
   isDev: 0,
   webscrapingApiKey: '6b76935a-810a-49ab-b832-552b2000f9ee',
+  useExternalWebscraper: true,
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
   progressBar: new CliProgress().getInstance(),
