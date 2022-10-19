@@ -1,11 +1,12 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
 import { CONFIG } from './config.mjs'
-import { chromium } from 'playwright-chromium'
+import { chromium, Page } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, delay } from './utils.mjs'
 import 'error-cause/auto'
 import { ScrapeResult } from './model.mjs'
+import { URLSearchParams } from 'url'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
@@ -49,42 +50,57 @@ async function parsePdf(pdfUrl: string): Promise<string[]> {
   })
 }
 
+async function getUpdatedAtAndPdfUrl2() {
+  const url = 'https://api.webscraping.ai/selected-multiple?' + new URLSearchParams({
+    'url': CHINA_ETF(),
+    'selectors': [
+                  '#table-announcements tbody tr:first-child td:nth-child(2) .d-none',
+                  '#table-announcements tbody tr:first-child td:last-child'
+                  ],
+    'api_key': CONFIG.webscrapingApiKey
+  })
+  // console.log('url', url)
+  const response = await fetch(url).then(v => v.json() as {})
+  const updatedAtHuman = (response[0][0] as string).trim().replace('\\n', '')
+  const aStr = (response[0][1] as string).trim().replace('\\n', '')
+  const docId = aStr.substring(aStr.indexOf('ann_id=') + 'ann_id='.length, aStr.indexOf('"', 26))
+
+  // console.log('updatedAtHuman', updatedAtHuman)
+  // console.log('docId', docId)
+
+  const pdfPageUrl = `https://disclosure.bursamalaysia.com/FileAccess/viewHtml?e=${docId}`
+
+  console.log('pdfPageUrl', pdfPageUrl)
+
+  const url2 = 'https://api.webscraping.ai/selected?' + new URLSearchParams({
+    'selector': '.att_download_pdf',
+    'url': pdfPageUrl,
+    'api_key': CONFIG.webscrapingApiKey
+  })
+  // console.log('url2', url2)
+  const response2 = await fetch(url2).then(v => v.text()) as string
+
+  console.log('Response 2', response2)
+
+  const firstOccurrence = response2.indexOf('"');
+  const pdfPartUrl = response2.substring(firstOccurrence + 1, response2.indexOf('"', firstOccurrence + 1)).replace('&amp;', '&')
+  const pdfUrl = `https://disclosure.bursamalaysia.com/${pdfPartUrl}`
+
+  // console.log('final pdfUrl', pdfUrl)
+  return { updatedAt: updatedAtHuman, pdfUrl }
+}
+
 // click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
 async function getUpdatedAtAndPdfUrl() {
-  const userAgent =
-  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
-
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
-  const ctx = await browser.newContext({ userAgent, extraHTTPHeaders: {
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate, br',
-    // 'DNT': '1',
-    'Connection': 'keep-alive',
-    'Upgrade-Insecure-Requests': '1',
-    'Sec-Fetch-Dest': 'document',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': 'none',
-    'Sec-Fetch-User': '?1',
-    'Pragma': 'no-cache',
-    'Cache-Control': 'no-cache',
-    // 'TE': 'trailers'
-  } })
-  const page = await ctx.newPage()
+  let ctx = await browser.newContext()
+  let page = await ctx.newPage()
 
   try {
-    const scrapeUrl = (p: { perPage: number, page: number }) =>
-    `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${p.page}&per_page=${p.perPage}`
-    await page.goto(scrapeUrl({perPage: 10, page: 1}))
-    const buffer = await page.screenshot();
-    console.log('Browser screenshot after equities', buffer.toString('base64'));
-
-
-    await page.goto(CHINA_ETF(), { waitUntil: 'networkidle' })
+    await page.goto(CHINA_ETF())
 
     // get updatedAt at latest report
     const updatedAt = await page.locator('#table-announcements tbody td:nth-child(2) .d-none').first().textContent()
-    // const updatedAt = new Date().getTime()
 
     // process of finding pdfUrl
     const latestReportSelector = '#table-announcements tbody td:last-child a'
@@ -198,11 +214,23 @@ async function getCompanyExchangeAndCode(stockNames: string[]): Promise<string[]
  * Main SSE & SZSE scrap function
  * */
 export default async function(): Promise<ScrapeResult> {
+  let gUpdatedAt = ''
+  let gPdfUrl = ''
+  do {
+    try {
+      const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl2()
+      gUpdatedAt = updatedAt
+      gPdfUrl = pdfUrl
+    } catch (e) {
+      console.log('Failed to extract first info. Retrying...', e)
+    }
+  } while (gPdfUrl === '')
+  console.log('gPdfUrl', gPdfUrl)
+
   try {
-    const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
     progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
 
-    let companyNames = await parsePdf(pdfUrl)
+    let companyNames = await parsePdf(gPdfUrl)
     progressBar.increment(1, { stats: 'Success parse pdf' })
 
     companyNames = CONFIG.isDev ? companyNames.slice(0, 30) : companyNames
@@ -211,9 +239,6 @@ export default async function(): Promise<ScrapeResult> {
 
     const human = await getCompanyExchangeAndCode(companyNames)
 
-    if (updatedAt === null) {
-
-    }
     return human.reduce((acc, stock) => {
         const [exchange, code, name] = stock
         // some stock failed to get exchange and code
@@ -224,7 +249,7 @@ export default async function(): Promise<ScrapeResult> {
         // eslint-disable-next-line no-prototype-builtins
         if (!acc[exchange]) {
           acc[exchange] = {
-            updatedAt: (updatedAt ? new Date(updatedAt) : new Date()),
+            updatedAt: (gUpdatedAt ? new Date(gUpdatedAt) : new Date()),
             stocks: [],
             market: CONFIG.CHINA.market
           }

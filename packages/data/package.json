@@ -53,10 +53,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.0.0-0",
-    "@types/colors": "^1.2.1",
     "@types/error-cause": "^1.0.1",
     "error-cause": "^1.0.4",
     "eslint-plugin-n": "^15.2.5",
+    "node-html-parser": "^6.1.1",
     "prettier": "2.7.1",
     "typescript": "^4.8.2"
   }

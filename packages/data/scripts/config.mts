@@ -3,6 +3,7 @@ import { CliProgress } from './utils.mjs'
 // 'market' is used in /screener > dom node in filter by country
 export const CONFIG = {
   isDev: 0,
+  webscrapingApiKey: '6b76935a-810a-49ab-b832-552b2000f9ee',
   mainOutput: 'stock-list.json',
   humanOutput: 'stock-list-human.json',
   progressBar: new CliProgress().getInstance(),
