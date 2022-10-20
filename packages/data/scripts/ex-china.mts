@@ -14,10 +14,39 @@ const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 const CHINA_ETF = (companyCode = '0838EA', title = 'NET+ASSET+VALUE+%2F+INDICATIVE+OPTIMUM+PORTFOLIO+VALUE') =>
   `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&keyword=${title}`
 
+async function fetchBufferByRapidApi(fileUrl: string): Promise<ArrayBuffer> {
+  const url = 'https://scrapeninja.p.rapidapi.com/scrape';
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': '4b9c4aac66msh8827ac6f3111b88p1e2611jsnb965ac9cd18a',
+      'X-RapidAPI-Host': 'scrapeninja.p.rapidapi.com'
+    },
+    body: `{"url":"${fileUrl}"}`
+  }
+
+  const json = await fetch(url, options)
+                .then(res => res.json() as any)
+  return Buffer.from(json.body, 'base64')
+}
+
 async function parsePdf(pdfUrl: string): Promise<string[]> {
   const companyNames = new Set<string>()
-  const response = await fetch(pdfUrl)
-  const buffer = await response.arrayBuffer()
+
+  let buffer: ArrayBuffer
+  if (CONFIG.useExternalWebscraper) {
+    try {
+      buffer = await fetchBufferByRapidApi(pdfUrl)
+    } catch (e) {
+      console.log('failed to use API', e)
+      throw e
+    }
+  } else {
+    const response = await fetch(pdfUrl)
+    buffer = await response.arrayBuffer()
+  }
 
   return new Promise((resolve, reject) => {
     let isSedol = false
