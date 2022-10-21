@@ -21,7 +21,7 @@ async function fetchBufferByRapidApi(fileUrl: string): Promise<ArrayBuffer> {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'X-RapidAPI-Key': '4b9c4aac66msh8827ac6f3111b88p1e2611jsnb965ac9cd18a',
+      'X-RapidAPI-Key': CONFIG.rapidApiKey,
       'X-RapidAPI-Host': 'scrapeninja.p.rapidapi.com'
     },
     body: `{"url":"${fileUrl}"}`

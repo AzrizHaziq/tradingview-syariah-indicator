@@ -33,6 +33,9 @@ jobs:
 
       - name: Run script to update list files
         run: npm run "update-data:skip-commit"
+        env:
+          WEB_SCRAPING_API_KEY: ${{ secrets.WebScrapingApiKey }}
+          RAPID_API_KEY: ${{ secrets.RapidApiKey }}
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
