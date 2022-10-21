@@ -5,7 +5,7 @@ name: Automate the update of stock list files
 #    # Asia/Kuala_Lumpur around 6pm, weekdays only
 #    - cron: "0 10 * * 1,2,3,4,5"
 
-on: [push]
+#on: [push]
 
 jobs:
   build-and-commit:
