@@ -1,19 +1,22 @@
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'fs'
+import * as path from 'path'
+
 import colors from 'colors'
-import prettier from 'prettier'
+
+import * as prettier from 'prettier'
 import { spawn } from 'child_process'
-import cliProgress from 'cli-progress'
-import { CONFIG } from './CONFIG.mjs'
+import { MultiBar } from 'cli-progress'
+import * as cliProgress from 'cli-progress'
+import { CONFIG } from './config.mjs'
 
 export const pipe =
-  (...fns) =>
-  (initialVal) =>
-    fns.reduce((acc, fn) => fn(acc), initialVal)
-export const pluck = (key) => (obj) => obj[key] || null
-export const map = (fn) => (item) => fn(item)
+  (...fns: any) =>
+  (initialVal: any) =>
+    fns.reduce((acc: any, fn: any) => fn(acc), initialVal)
+export const pluck = (key: string) => (obj: any) => obj[key] || null
+export const map = (fn: Function) => (item: any) => fn(item)
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
@@ -24,19 +27,11 @@ export function delay(delaySecond = getRandomInt(1, 2)) {
 }
 
 /**
- * @param {string} filename
- * @param {string} data
  * @returns {void}
  */
-export async function writeToFile(filename, data) {
+export async function writeToFile(filename: string, data: string): Promise<void> {
   try {
-    fs.writeFileSync(filename, data, { encoding: 'utf-8' }, function (e) {
-      if (e) {
-        console.log('Error writeToFile', e)
-        throw Error(`Unable to writeToFile`, { cause: e })
-      }
-    })
-
+    fs.writeFileSync(filename, data, { encoding: 'utf-8' })
     console.log(`Saved in: ${filename}`)
   } catch (e) {
     console.error('Error write data', e)
@@ -45,6 +40,8 @@ export async function writeToFile(filename, data) {
 }
 
 export class CliProgress {
+  static instance: MultiBar
+
   constructor() {
     if (!CliProgress.instance) {
       CliProgress.instance = new cliProgress.MultiBar(
@@ -54,6 +51,7 @@ export class CliProgress {
         },
         {
           format: colors.yellow(' {bar} ') + '{percentage}% | ETA: {eta}s | {value}/{total} {stats}',
+          // format: (' {bar} ') + '{percentage}% | ETA: {eta}s | {value}/{total} {stats}',
           barCompleteChar: '\u2588',
           barIncompleteChar: '\u2591',
         }
@@ -66,14 +64,21 @@ export class CliProgress {
   }
 }
 
-export function logCount(exchanges) {
-  const maxExchangeLength = Math.max(...Object.keys(exchanges).map((k) => k.length))
-  Object.entries(exchanges).forEach(([exchange, { list }]) => {
+export function logCount(data: {
+  [exchange: string]: {
+    updatedAt: number,
+    list: {
+      [code: string]: [1]
+    }
+  }
+}) {
+  const maxExchangeLength = Math.max(...Object.keys(data).map((k) => k.length))
+  Object.entries(data).forEach(([exchange, { list }]) => {
     console.log(`${exchange.padEnd(maxExchangeLength, ' ')} >> ${Object.keys(list).length}`)
   })
 }
 
-export async function gitCommand(...command) {
+export async function gitCommand(...command: any[]) {
   return new Promise(function (resolve, reject) {
     const process = spawn('git', [...command])
 
@@ -87,7 +92,11 @@ export async function gitCommand(...command) {
   })
 }
 
-export function isSameWithPreviousData(newData, filePath = `${path.resolve()}/${CONFIG.humanOutput}`) {
+export function isSameWithPreviousData(newData: any, filePath = `${path.resolve()}/${CONFIG.humanOutput}`): boolean {
+  if (!fs.existsSync(filePath)) {
+    return false
+  }
+
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data: oldData } = JSON.parse(fileContent)
 
@@ -104,12 +113,12 @@ export async function commitChangesIfAny() {
   }
 }
 
-export async function prettierJSON(str) {
+export async function prettierJSON(str: string): Promise<string> {
   return prettier.format(str, { semi: false, parser: 'json' })
 }
 
 // https://stackoverflow.com/a/43688599/3648961
-export function getElementByXPath(path) {
+export function getElementByXPath(path: string): Node | null {
   return new XPathEvaluator().evaluate(path, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)
     .singleNodeValue
 }

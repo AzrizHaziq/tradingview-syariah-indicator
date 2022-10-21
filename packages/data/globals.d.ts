@@ -5,3 +5,5 @@ interface ErrorConstructor {
 
 // overwrite  ErrorConstructor so that we can use Error cause
 // throw Error(`Failed scrape CHINA`, { cause: e })
+
+declare module 'pdfreader'
