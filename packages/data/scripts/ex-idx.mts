@@ -3,130 +3,151 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import extract from 'extract-zip'
-import { pipe } from './utils.mjs'
 import { CONFIG } from './config.mjs'
-import { chromium } from 'playwright-chromium'
+import { Browser, chromium } from 'playwright-chromium'
 import 'error-cause/auto'
 import { ScrapeResult } from './model.mjs'
+import { Retryable, BackOffPolicy } from 'typescript-retry-decorator';
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
-async function fetchShariahList(): Promise<{stockCode: string, fullname: string}[]> {
-  const browser = await chromium.launch({ headless: !CONFIG.isDev })
+class ListBuilder {
 
-  try {
-    const userAgent =
-      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+  private extractionDir: string
 
-    const ctx = await browser.newContext({ userAgent })
-    const page = await ctx.newPage()
-    await page.goto('https://www.idx.co.id/data-pasar/data-saham/indeks-saham/')
+  constructor() {
+    this.extractionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tvidx'))
+  }
 
-    // Download the latest ISSI (Indeks Saham Syariah Indonesia) zip file
-    await page.selectOption('select#indexCodeList', 'ISSI')
-    await page.locator('text=Cari').click({ timeout: 10000 })
+  async build(): Promise<ScrapeResult> {
+    const shariahList = await new ListBuilder().fetchShariahList()
+    const stocks = shariahList.map(stock => {
+      return {code: stock.stockCode, name: stock.fullname}
+    })
+    return {IDX: { stocks, updatedAt: new Date(), market: CONFIG.IDX.market}}
+  }
 
-    // Wait for the page to response and show the expected widgets
-    await page.waitForResponse(
-      (resp) => resp.status() < 400 && ['/GetStockIndex', 'code=ISSI'].every((str) => resp.url().includes(str))
-    )
-
-    // Download the first ISSI file
-    const [download] = await Promise.all([
-      page.waitForEvent('download'),
-      page.locator('table#indexConstituentTable tr', { hasText: new RegExp("Per\\s+\\d{1,2}\\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\\s+\\d{4}.", "i") })
-          .locator('a[href$="zip"]')
-           //.locator('table#indexConstituentTable tr a[href$="zip"]')
-          .first().click(), // find the first zip file in table
-    ])
-
-    // Wait for the download process to complete
-    const zipPath = await download.path()
-    progressBar.increment(1, { stats: 'Successfully retrieved zip file from Indonesian exchange official website' })
-
-    if (zipPath == null) {
-      throw new Error('Failed to get the zip file')
-    }
-    const xlsxFile = await getXlsxFile(zipPath)
+  private async fetchShariahList(): Promise<{stockCode: string, fullname: string}[]> {
+    const zipPath = await this.downloadIndexFile()
+    const xlsxFile = await this.getXlsxFileFromZipFile(zipPath)
     progressBar.increment(1, { stats: 'Successfully found XLSX file containing the ISSI list' })
 
-    const shariahList = extractFromXlsxFile(xlsxFile)
+    const shariahList = this.extractListFromXlsxFile(xlsxFile)
     progressBar.increment(1, { stats: 'Successfully extracted and parsed ISSI list' })
 
     return shariahList
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('Failed to fetch or extract the ISSI stock list', e)
-    process.exit(1)
-  } finally {
-    await browser.close()
   }
-}
 
-async function getXlsxFile(filePath: string): Promise<string> {
-  // Unzip the file
-  const extractionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tvidx'))
-  await extract(filePath, { dir: extractionDir })
+  @Retryable({ maxAttempts: 3 })
+  private async downloadIndexFile(): Promise<string> {
+    let browser: Browser | undefined = undefined
 
-  // Get the list file
-  let xlsxFile = ''
-  fs.readdirSync(extractionDir)
-    .filter((file) => file.match(new RegExp('.*ISSI.*\.(.xlsx)', 'ig')))
-    .forEach((file) => {
-      xlsxFile = path.resolve(extractionDir, file) // Absolute path
-    })
+    try {
+      browser = await chromium.launch({ headless: !CONFIG.isDev })
 
-  return xlsxFile
-}
+      const userAgent =
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
 
-function extractFromXlsxFile(xlsxFile: string): {stockCode: string, fullname: string}[] {
-  const workbook = xlsx.readFile(xlsxFile)
+      const ctx = await browser.newContext({ userAgent })
+      const page = await ctx.newPage()
+      await page.goto('https://www.idx.co.id/data-pasar/data-saham/indeks-saham/')
 
-  const sheet = workbook.Sheets[workbook.SheetNames[0]]
-  const data = xlsx.utils.sheet_to_json<any>(sheet, {header: 1})
+      // Download the latest ISSI (Indeks Saham Syariah Indonesia) zip file
+      await page.selectOption('select#indexCodeList', 'ISSI')
+      await page.locator('text=Cari').click({ timeout: 10000 })
 
-  let codeColIdx = -1
+      // Wait for the page to response and show the expected widgets
+      await page.waitForResponse(
+        (resp) => resp.status() < 400 && ['/GetStockIndex', 'code=ISSI'].every((str) => resp.url().includes(str))
+      )
 
-  return data
-    .flatMap((row: any) => {
-      if (codeColIdx != -1) {
-        const stockCode = row[codeColIdx]
-        const fullname = row[codeColIdx + 1]
+      // Download the first ISSI file
+      const [download] = await Promise.all([
+        page.waitForEvent('download'),
+        page.locator('table#indexConstituentTable tr', { hasText: new RegExp("Per\\s+\\d{1,2}\\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\\s+\\d{4}.", "i") })
+            .locator('a[href$="zip"]')
+              //.locator('table#indexConstituentTable tr a[href$="zip"]')
+            .first().click(), // find the first zip file in table
+      ])
 
-        if (stockCode && stockCode.match(/^([A-Z]{4})$/)) {
-          return [{ s: 1, stockCode, fullname }] // s:1 is Shariah
-        }
-      } else {
-        codeColIdx = findCodeColumnIndex(row)
+      // Wait for the download process to complete
+      const zipPath = `${this.extractionDir}/issi.zip`
+      await download.saveAs(zipPath)
+      progressBar.increment(1, { stats: 'Successfully retrieved zip file from Indonesian exchange official website' })
+
+      return zipPath
+
+    } catch (e) {
+      // console.error('Failed to fetch or extract the ISSI stock list', e)
+      throw new Error('Failed to fetch ISSI stock list', { cause: e })
+
+    } finally {
+      if (browser) {
+        await browser.close()
       }
-
-      return []
-    })
-    .filter(Boolean)
-}
-
-function findCodeColumnIndex(colValues: any[]): number {
-  for (let i = 0; i < colValues.length; i++) {
-    const value = colValues[i]
-    if (value && value.toString().toLowerCase().includes('kode')) {
-      return i
     }
   }
 
-  return -1
+  private async getXlsxFileFromZipFile(zipFilePath: string): Promise<string> {
+    // Unzip the file
+    await extract(zipFilePath, { dir: this.extractionDir })
+
+    // Get the list file
+    let xlsxFile = ''
+    fs.readdirSync(this.extractionDir)
+      .filter((file) => file.match(new RegExp('.*ISSI.*\.(.xlsx)', 'ig')))
+      .forEach((file) => {
+        xlsxFile = path.resolve(this.extractionDir, file) // Absolute path
+      })
+
+    return xlsxFile
+  }
+
+  private extractListFromXlsxFile(xlsxFile: string): {stockCode: string, fullname: string}[] {
+    const workbook = xlsx.readFile(xlsxFile)
+
+    const sheet = workbook.Sheets[workbook.SheetNames[0]]
+    const data = xlsx.utils.sheet_to_json<any>(sheet, {header: 1})
+
+    let codeColIdx = -1
+
+    return data
+      .flatMap((row: any) => {
+        if (codeColIdx != -1) {
+          const stockCode = row[codeColIdx]
+          const fullname = row[codeColIdx + 1]
+
+          if (stockCode && stockCode.match(/^([A-Z]{4})$/)) {
+            return [{ s: 1, stockCode, fullname }] // s:1 is Shariah
+          }
+        } else {
+          codeColIdx = this.findCodeColumnIndex(row)
+        }
+
+        return []
+      })
+      .filter(Boolean)
+  }
+
+  private findCodeColumnIndex(colValues: any[]): number {
+    for (let i = 0; i < colValues.length; i++) {
+      const value = colValues[i]
+      if (value && value.toString().toLowerCase().includes('kode')) {
+        return i
+      }
+    }
+
+    return -1
+  }
+
 }
 
 /**
  * Main IDX scrape function
  **/
 export default async function(): Promise<ScrapeResult> {
-
   try {
-    const shariahList = await fetchShariahList()
-    const stocks = shariahList.map(stock => {
-      return {code: stock.stockCode, name: stock.fullname}
-    })
-    return {IDX: { stocks, updatedAt: new Date(), market: CONFIG.IDX.market}}
+    return new ListBuilder().build()
   } catch (e) {
     throw new Error(`Error generating IDX`, { cause: e })
   }

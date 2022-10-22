@@ -8,7 +8,7 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
+    const INDEX_CODES = ['IDX']//['US', 'MYX', 'CHINA', 'IDX']
     const ALL_SHARIAH_LIST: ScrapeResult[] = await Promise.all(
       INDEX_CODES.map((code) => import(`./ex-${code.toLowerCase()}.mjs`)
         .then(m => m.default()))
