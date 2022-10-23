@@ -6,7 +6,7 @@ import extract from 'extract-zip'
 import { pipe } from './utils.mts'
 import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
-import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/type'
+import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'
 
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 

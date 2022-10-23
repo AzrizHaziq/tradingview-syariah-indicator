@@ -10,6 +10,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@app/shared": "workspace:*",
     "@mdx-js/rollup": "^2.0.0",
     "@types/dlv": "^1.1.2",
     "@types/node": "^18.6.4",

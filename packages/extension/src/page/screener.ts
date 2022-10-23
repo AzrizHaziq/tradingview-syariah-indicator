@@ -1,4 +1,4 @@
-import type { Market } from '@app/type'
+import type { Market } from '@app/shared'
 
 import {
   createIcon,

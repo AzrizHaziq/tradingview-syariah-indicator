@@ -1,6 +1,6 @@
 import { getStorage } from '@src/helper'
 import { createStore } from 'solid-js/store'
-import type { Flag, StorageMap } from '@app/type'
+import type { Flag, StorageMap } from '@app/shared'
 
 export async function getStorageDetails(): Promise<Flag[]> {
   try {

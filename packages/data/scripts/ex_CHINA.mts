@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
 import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
-import { MAIN_DEFAULT_EXPORT } from '@app/type'
+import { MAIN_DEFAULT_EXPORT } from '@app/shared'
 import { PromisePool } from '@supercharge/promise-pool'
 import { pipe, pluck, map, delay } from './utils.mts'
 

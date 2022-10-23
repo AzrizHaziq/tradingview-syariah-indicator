@@ -1,5 +1,5 @@
 import { CliProgress } from './utils.mts'
-import { MAIN_DEFAULT_EXPORT } from '@app/type'
+import { MAIN_DEFAULT_EXPORT } from '@app/shared'
 
 // 'market' is used in /screener > dom node in filter by country
 export const CONFIG = {

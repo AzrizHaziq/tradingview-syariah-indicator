@@ -15,6 +15,7 @@ export const trackOnLoad: typeof analytics.page = async (...args) => {
 
 export interface EventMap {
   referrer_code: { category: 'web::referrer_code'; label: string }
+  data_source_code: { category: 'web::data_source_code'; label: string }
 }
 
 export async function trackEvent<K extends keyof EventMap>(eventName: K, props: EventMap[K]): Promise<void> {

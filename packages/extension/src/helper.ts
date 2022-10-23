@@ -1,4 +1,4 @@
-import type { StorageMap } from '@app/type'
+import type { StorageMap } from '@app/shared'
 import browser from 'webextension-polyfill'
 
 let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()
@@ -68,28 +68,6 @@ export function addStyle(css: string): void {
   head.appendChild(style)
 }
 
-export function debounce<T>(func: (...unknown) => void, wait: number, immediate: boolean): (...args: T[]) => void {
-  let timeout
-
-  return function executedFunction(...args: T[]) {
-    const context = this // eslint-disable-line @typescript-eslint/no-this-alias
-    // const args = arguments // eslint-disable-line prefer-rest-params
-
-    const later = function () {
-      timeout = null
-      if (!immediate) func.apply(context, args)
-    }
-
-    const callNow = immediate && !timeout
-
-    clearTimeout(timeout)
-
-    timeout = setTimeout(later, (wait = 500))
-
-    if (callNow) func.apply(context, args)
-  }
-}
-
 export function observeNodeChanges(
   nodeToObserve: Element,
   cb: () => unknown,
@@ -155,34 +133,4 @@ export async function getStorage<K extends keyof StorageMap>(key: K): Promise<St
 
 export async function delay(ms = 1000): Promise<void> {
   return new Promise((res) => setTimeout(res, ms))
-}
-
-export function required<T>(s): T {
-  if (s.length === 0) {
-    throw { msg: 'required input ' }
-  }
-
-  return s
-}
-
-export function isFormatCorrect<T>(s): T {
-  if (Array.isArray(s)) {
-    s.forEach(([stockCode, obj]) => {
-      const split = stockCode.split(':')
-
-      if (split.length !== 2) throw { msg: `${stockCode}: need to satisfy "market:stockCode"` }
-      if (!Object.hasOwn(obj, 's')) throw { msg: `${stockCode}: doesnt have "s = 0 or 1"` }
-      if (!(obj.s === 1 || obj.s === 0)) throw { msg: `${stockCode}: "s" valid is either 0 or 1` }
-    })
-  }
-
-  return s
-}
-
-export function isValidJson<T>(a: string): T {
-  try {
-    return JSON.parse(a)
-  } catch (e) {
-    throw { msg: 'wrong json format' }
-  }
 }

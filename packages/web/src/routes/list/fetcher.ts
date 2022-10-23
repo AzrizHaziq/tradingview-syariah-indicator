@@ -11,7 +11,7 @@ export type PageProps = {
 }
 
 export const ShariahFetcher = async (): Promise<PageProps> => {
-  const res = await fetch(import.meta.env.VITE_FETCH_URL as string)
+  const res = await fetch(import.meta.env.VITE_FETCH_URL + '/stock-list-human.json')
   const { data, metadata } = await res.json()
 
   const m = Object.entries(metadata).reduce(

@@ -3,7 +3,7 @@ import { CONFIG } from './CONFIG.mts'
 import { delay, pipe } from './utils.mts'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
-import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/type'
+import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
 

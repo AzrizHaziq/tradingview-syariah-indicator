@@ -1,0 +1,16 @@
+{
+  "name": "@app/shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is to host Tradingview interfaces & types",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "npx -p typescript tsc -d ./index.ts --lib es2022,dom --outDir dist"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
+}

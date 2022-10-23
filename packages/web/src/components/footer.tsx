@@ -47,7 +47,7 @@ export const Footer = (): JSX.Element => {
               })
             })
           }>
-          <span class='py-2 px-4 text-xl font-medium text-white text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
+          <span class='py-2 px-4 text-xl font-medium text-gray-500 bg-gray-200 rounded-l-lg cursor-not-allowed'>
             azrjas3
           </span>
           <button

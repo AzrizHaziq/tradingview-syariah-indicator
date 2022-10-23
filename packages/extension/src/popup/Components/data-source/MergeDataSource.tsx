@@ -1,9 +1,10 @@
-import type { StorageMap } from '@app/type'
+import type { StorageMap } from '@app/shared'
 import { tsiStore } from '@popup/popup-helpers'
 import type { JSX } from 'solid-js/h/jsx-runtime'
 import { createSignal, onMount, Show } from 'solid-js'
 import { InputState, InputStateTypes } from '@popup/Components'
-import { debounce, getMessage, getStorage, isFormatCorrect, isValidJson, required, setStorage } from '@src/helper'
+import { getMessage, getStorage, setStorage } from '@src/helper'
+import { debounce, isValidJson, required, isFormatCorrect } from '@app/shared'
 
 const [value, setValue] = createSignal<string>('')
 const [errMsg, setErrMsg] = createSignal<string>('')

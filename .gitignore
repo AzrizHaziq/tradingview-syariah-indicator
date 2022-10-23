@@ -6,4 +6,4 @@ package-lock.json
 .vercel
 packages/web/.solid
 packages/web/.vercel/
-packages/type/dist
+packages/shared/dist

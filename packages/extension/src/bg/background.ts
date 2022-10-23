@@ -1,7 +1,8 @@
-import type { ExchangeDetail, Flag, Exchange, EVENT_MSG, RESPONSE_FROM_JSON, StorageMap } from '@app/type'
+import type { ExchangeDetail, Flag, Exchange, EVENT_MSG, RESPONSE_FROM_JSON, StorageMap } from '@app/shared'
 import browser from 'webextension-polyfill'
 import { differenceInDays, format, isDate } from 'date-fns'
-import { debounce, getStorage, setStorage } from '../helper'
+import { debounce, transformStockListResponse } from '@app/shared'
+import { getStorage, setStorage } from '../helper'
 ;(async () => await fetchData())()
 
 browser.runtime.onInstalled.addListener(async () => {
@@ -93,22 +94,7 @@ async function fetchData(shouldRefreshData = false): Promise<void> {
 
 async function setListInStorages(response: RESPONSE_FROM_JSON): Promise<void> {
   try {
-    const allExchanges = Object.entries(response).flatMap(([exchange, exchangeDetail]) => {
-      const { shape, list } = exchangeDetail as ExchangeDetail
-      return Object.entries(list).map(([symbol, symbolData]) => {
-        const val = symbolData.reduce(
-          (acc, value, index) => ({
-            ...acc,
-            [shape[index].hasOwnProperty(value) ? shape[index][value] : shape[index].default]: value,
-          }),
-          {} as Record<string, Record<string, number | boolean | string>>
-        )
-
-        return [`${exchange}:${symbol}`, val]
-      })
-    })
-
-    // @ts-ignore
+    const allExchanges = transformStockListResponse(response)
     await setStorage('LIST', allExchanges)
   } catch (e) {
     console.error(`Error set shariah storage`, e)

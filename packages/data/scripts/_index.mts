@@ -1,5 +1,5 @@
 import { CONFIG } from './CONFIG.mts'
-import { Exchange, ExchangeDetail, MAIN_DEFAULT_EXPORT } from '@app/type'
+import { Exchange, ExchangeDetail, MAIN_DEFAULT_EXPORT } from '@app/shared'
 import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mts'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
