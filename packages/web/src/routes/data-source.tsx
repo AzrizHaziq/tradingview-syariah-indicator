@@ -1,7 +1,7 @@
 import { MetaSeo } from '~/components'
 import { createStore } from 'solid-js/store'
 import { copy, trackEvent, useTrackOnLoad } from '~/util'
-import { createResource, createSignal, JSX, Show } from 'solid-js'
+import { createResource, createSignal, JSX, onMount, Show } from 'solid-js'
 import { debounce, isFormatCorrect, isValidJson, required, StorageMap, transformStockListResponse } from '@app/shared'
 
 const CopySourceExample = () => {
@@ -118,13 +118,15 @@ const [store, setStore] = createStore<{
 
 type Prop = { as: 'merge' | 'own' }
 export const DataSourceSelection = (props: Prop) => {
-  const clickHandler = async (val) => {
+  const clickHandler = async (value) => {
     try {
-      required(val)
-      const json: StorageMap['LIST'] = isValidJson(val)
+      required(value)
+      const json: StorageMap['LIST'] = isValidJson(value)
       isFormatCorrect(json)
 
-      setStore(`${props.as}`, {
+      localStorage.setItem(`tsi:datasource:${props.as}`, value)
+      setStore(props.as, {
+        value,
         state: 'success',
         errMsg: '',
         result: props.as === 'merge' ? new Map([].concat(response(), json)) : new Map([].concat(json)),
@@ -135,6 +137,12 @@ export const DataSourceSelection = (props: Prop) => {
       throw Error(e)
     }
   }
+
+  onMount(() => {
+    if (localStorage.getItem(`tsi:datasource:${props.as}`)) {
+      clickHandler(localStorage.getItem(`tsi:datasource:${props.as}`))
+    }
+  })
 
   const _clickHandler = debounce(clickHandler, 200, false)
   return (
@@ -199,9 +207,9 @@ export default function DataSource(): JSX.Element {
       <div class='p-5 mx-auto prose'>
         <div class='mx-auto max-w-md flex gap-2 flex-col'>
           <div class='text-white'>
-            <h2 id='notes'>
-              Notes
-              <a class='!ml-2' href='#notes'>
+            <h2 id='data-source'>
+              Datasource
+              <a class='!ml-2' href='#data-source'>
                 #
               </a>
             </h2>
@@ -228,8 +236,8 @@ export default function DataSource(): JSX.Element {
           <DataSourceSelection as={'own'} />
           <Show when={store[store.select].value && store[store.select].state === 'success'}>
             <div>
-              <div class='bg-white rounded-t p-2 text-center'>Output</div>
-              <pre class='text-white h-[400px] border rounded-b border-white p-2 overflow-auto'>
+              <div class='bg-white rounded-t p-2 text-center text-black'>Output</div>
+              <pre class='mt-0! text-white h-[400px] border rounded-b rounded-t-none! border-white p-2 overflow-auto'>
                 {
                   (console.log(store[store.select].result),
                   JSON.stringify(Object.fromEntries(store[store.select].result), null, 2))
