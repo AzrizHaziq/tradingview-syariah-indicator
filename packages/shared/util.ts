@@ -32,8 +32,8 @@ export function isValidJson<T>(a: string): T {
 
 export function debounce<T>(
   func: (...unknown: any[]) => void,
-  wait: number,
-  immediate: boolean
+  wait?: number,
+  immediate?: boolean
 ): (...args: T[]) => void {
   let timeout: number | undefined
 

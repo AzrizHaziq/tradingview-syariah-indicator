@@ -13,7 +13,7 @@ export default function Root() {
   return (
     <Html lang='en' class='dark'>
       <Head>
-        <Title></Title>
+        <Title>Tradingview Shariah Indicator(TSI)</Title>
         <MetaSeo />
       </Head>
       <Body class='bg-gray-900 dark:prose-invert prose-zinc flex flex-col'>

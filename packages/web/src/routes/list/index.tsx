@@ -154,7 +154,7 @@ export default function List(): JSX.Element {
             Loading
           </div>
         }>
-        <div class='mx-auto max-w-full md:max-w-3xl py-10'>
+        <div class='mx-auto max-w-3xl py-10 px-5'>
           <svg class='hidden'>
             <symbol
               id='link-icon'
@@ -198,7 +198,7 @@ export default function List(): JSX.Element {
 
           <Show
             when={store.data.length}
-            fallback={<div class='flex justify-center text-xl'>Please search or select new filter</div>}>
+            fallback={<div class='flex justify-center text-xl text-white'>Please search or select new filter</div>}>
             <ShariahList data={transducerFilter()} exchangeStyle={store.exchangeStyle} />
           </Show>
         </div>

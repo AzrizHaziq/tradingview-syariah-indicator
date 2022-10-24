@@ -1,5 +1,5 @@
 import { JSX, mergeProps } from 'solid-js'
-import { Meta, Title } from 'solid-start'
+import { Meta, Title } from '@solidjs/meta'
 import rootPkg from '../../../../package.json'
 
 type Props = {

@@ -1,10 +1,9 @@
 import { JSX } from 'solid-js'
 import { useTrackOnLoad } from '~/util'
-import { Head, Title } from 'solid-start'
 import { MetaSeo } from '~/components'
 
 const props = {
-  pageTittle: 'TSI: Guideline',
+  pageTittle: 'Guideline',
   description: 'Guide how to use TSI and few notes',
   path: 'guideline',
 }
@@ -14,11 +13,7 @@ export default function Guideline(): JSX.Element {
 
   return (
     <>
-      <Head>
-        <Title></Title>
-        <MetaSeo {...props} />
-      </Head>
-
+      <MetaSeo {...props} />
       <div class='mx-auto prose'>
         <p>
           This will be totally <b>free</b>. Reason being is that, I wanted to help those who want to trade individual

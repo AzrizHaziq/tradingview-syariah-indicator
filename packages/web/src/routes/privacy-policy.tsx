@@ -1,10 +1,9 @@
 import { JSX } from 'solid-js'
 import { useTrackOnLoad } from '~/util'
-import { Head, Title } from 'solid-start'
 import { MetaSeo } from '~/components'
 
 const props = {
-  pageTittle: 'TSI: Policy',
+  pageTittle: 'Policy',
   description: 'About tradingview shariah indicator(TSI) policies',
   path: 'privacy-policy',
 }
@@ -14,11 +13,7 @@ export default function PrivacyPolicy(): JSX.Element {
 
   return (
     <>
-      <Head>
-        <Title></Title>
-        <MetaSeo {...props} />
-      </Head>
-
+      <MetaSeo {...props} />
       <div class='mx-auto prose'>
         <div class='p-2 text-green-700 bg-green-50 rounded border-green-600 border-dashed border-3'>
           <ul class='!m-0'>
