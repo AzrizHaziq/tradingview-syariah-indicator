@@ -217,7 +217,7 @@ const images = [
 )
 
 const props = {
-  pageTittle: 'Wahed',
+  pageTittle: 'TSI: Wahed',
   description: 'Guide on how to support TSI projects',
   path: 'wahed',
 }

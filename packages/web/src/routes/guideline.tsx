@@ -4,7 +4,7 @@ import { Head, Title } from 'solid-start'
 import { MetaSeo } from '~/components'
 
 const props = {
-  pageTittle: 'Guideline',
+  pageTittle: 'TSI: Guideline',
   description: 'Guide how to use TSI and few notes',
   path: 'guideline',
 }

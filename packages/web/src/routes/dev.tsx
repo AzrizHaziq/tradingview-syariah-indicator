@@ -4,7 +4,7 @@ import { Head, Title } from 'solid-start'
 import { MetaSeo } from '~/components'
 
 const props = {
-  pageTittle: 'Developer',
+  pageTittle: 'TSI: Developer Guideline',
   description: 'Guide how to start TSI for developers',
   path: 'dev',
 }
@@ -139,8 +139,3 @@ export default function Dev(): JSX.Element {
     </>
   )
 }
-
-// export const documentProps = {
-//   title: 'TSI: Developer Guideline',
-//   description: 'For Devs who interested to contribute this project please read few guideline here',
-// }

@@ -4,8 +4,8 @@ import { Head, Title } from 'solid-start'
 import { MetaSeo } from '~/components'
 
 const props = {
-  pageTittle: 'Policy',
-  description: 'TSI policy',
+  pageTittle: 'TSI: Policy',
+  description: 'About tradingview shariah indicator(TSI) policies',
   path: 'privacy-policy',
 }
 
