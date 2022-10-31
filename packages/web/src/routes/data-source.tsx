@@ -129,7 +129,7 @@ export const DataSourceSelection = (props: Prop) => {
         value,
         state: 'success',
         errMsg: '',
-        result: props.as === 'merge' ? new Map([].concat(response(), json)) : new Map([].concat(json)),
+        result: props.as === 'merge' ? new Map([].concat(response() ?? [], json)) : new Map([].concat(json)),
       })
     } catch (e) {
       setStore(`${props.as}`, { state: 'error', errMsg: e.msg })
@@ -234,7 +234,7 @@ export default function DataSource(): JSX.Element {
           </div>
           <DataSourceSelection as={'merge'} />
           <DataSourceSelection as={'own'} />
-          <Show when={store[store.select].value && store[store.select].state === 'success'}>
+          <Show when={store[store.select].value && store[store.select].state === 'success' && res.state === 'ready'}>
             <div>
               <div class='bg-white rounded-t p-2 text-center text-black'>Output</div>
               <pre class='mt-0! text-white h-[400px] border rounded-b rounded-t-none! border-white p-2 overflow-auto'>
