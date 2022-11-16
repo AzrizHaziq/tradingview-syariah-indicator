@@ -9,30 +9,27 @@ import {
 } from '../helper'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-let obs = () => {}
+const obs = () => {}
 const selectors = {
-  mainChartStockNameEl: '[data-name="legend-series-item"] [data-name="legend-source-title"]',
-  mainChartStockSeriesEl: '[data-name="legend-series-item"]',
-  mainChartEl:
+  mainChartStockSeriesEl: '[data-name="legend-series-item"]', // dom that contain every item (name, country, OHLC)
+  mainChartStockNameEl: '[data-name="legend-series-item"] [data-name="legend-source-title"]', // dom that only contain stock name
+
+  // the whole chart
+  rootChartEl:
     'body > div.js-rootresizer__contents.layout-with-border-radius > div.layout__area--center > div.chart-container.single-visible.top-full-width-chart.active > div.chart-container-border',
 }
 
 waitForElm(selectors.mainChartStockSeriesEl)
   .then(setStockListInMap)
-  .then(() => waitForElm(selectors.mainChartEl))
-  .then((rootChartElement) => {
+  .then(() => waitForElm(selectors.rootChartEl)) // need to wait, due to network and spinner
+  .then((rootChartEl) => {
     obs()
-    observeNodeChanges(rootChartElement, mainScript)
+    observeNodeChanges(rootChartEl, chartScript) // anytime rootChart changes
   })
 
-function mainScript() {
-  // have to target dom like below since this is the most top parent
-  const symbolNode = document.querySelector(selectors.mainChartStockSeriesEl)
-  obs = observeNodeChanges(symbolNode, chartScript)
-}
-
 async function chartScript(): Promise<void> {
-  const { parentElement } = document.querySelector(selectors.mainChartStockNameEl)
+  const parentElement = document.querySelector(selectors.mainChartStockNameEl)?.parentElement
+  if (!parentElement) return
 
   // getting cssInJS hash like titleWrapper-1WIwNaDF -> 1WIwNaDF
   const cssInJsHash = parentElement.className
