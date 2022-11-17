@@ -1,6 +1,6 @@
 {
   "name": "@app/extension",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "homepage": "https://tsi.azrizhaziq.com",
   "description": "Display small shariah indicator to stock list in Tradingview(Malaysia, China, Indonesia, US)",
   "bugs": {
