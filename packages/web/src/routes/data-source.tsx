@@ -213,40 +213,73 @@ export default function DataSource(): JSX.Element {
                 #
               </a>
             </h2>
-
             <ul class='list-disc'>
               <li>
-                New feature that you can customise your data and our data. There is 2 options which is `merge` and `own`
+                New feature that you can customise your data and our data. There is 2 options which is{' '}
+                <code>merge</code> and <code>own</code>
               </li>
-              <li>{`Output data also print in devtool > console`}</li>
+              <li>Output data also print in devtool {`>`} console. Please reload TSI after make changes</li>
+            </ul>
+            Use below data as your starting point.
+            <CopySourceExample />
+            <h2 id='validate'>
+              Ways to Validate your data
+              <a class='!ml-2' href='#validate'>
+                #
+              </a>
+            </h2>
+            <ul class='list-disc'>
               <li>
+                <h3>Use typescript playground</h3>
+                link:{' '}
                 <a
                   target='_blank'
                   href='https://www.typescriptlang.org/play?#code/C4TwDgpgBAhgbjAlgGxgI2RAKgZQJICiAHgMYAWMAdgOYQDOUAvFAOQCyAmgBotQA+rAHIBBHABFhARV4CWgjjgIzWORcpY4AWmv6s8YnlAD0RqAHtKyEFGBl60RAzoBXMGDMAnYBAAmUCKQUNBAAdFAcZs6wyHRmUCRUUGDOwLCU1gHkVLQMMAwA7hDIyGEAShAAZhAeUGhFZvmsuFwAXKUcLABQoJBQdMBmJADWAMJmPtDMAAYAJADe8EioGNj4xFnBdHz9Hog0AL4t8zt71PtTxqYgkfGJyanIiEPQto6smUG0Lf2DQyTjEBYABpuuBoLg8EwoABtH7DMYTIFQOZ9FpQAAMugAjPsALrQ3GXPp9YBUPwVTx9Ci7GBkNJ+RDABgIR5+FnOaAWayYylYzqdf6UfpQAC2IB8MFJaIhUM6JnlCsVSuVKsVctMYEweWgG1oUD2dEQE1q9Uaj0o9HMlhAIXVqvtDpVnWhUE6UBhACJOK02MIOAAhYSCADSHqRcw9dA9aJxuKRbs9InEUhaAHEAPLp1Nh5GR6MYvHx93Qj3NNocHMRqNo9F4zq4oA'>
                   You can also validate your data in typescript playground.
                 </a>
+                <details>
+                  <summary>In case website doesnt work you can play around with this TS code to validate it</summary>
+                  <pre>{abc}</pre>
+                </details>
               </li>
+              <li>Use JSON schema (WIP)</li>
               <li>
-                Use below data as your starting point.
-                <CopySourceExample />
+                Use our custom validate
+                <DataSourceSelection as={'merge'} />
+                <DataSourceSelection as={'own'} />
+                <Show
+                  when={store[store.select].value && store[store.select].state === 'success' && res.state === 'ready'}>
+                  <div>
+                    <div class='bg-white rounded-t p-2 text-center text-black'>Output</div>
+                    <pre class='mt-0! text-white h-[400px] border rounded-b rounded-t-none! border-white p-2 overflow-auto'>
+                      {
+                        (console.log(store[store.select].result),
+                        JSON.stringify(Object.fromEntries(store[store.select].result), null, 2))
+                      }
+                    </pre>
+                  </div>
+                </Show>
               </li>
             </ul>
           </div>
-          <DataSourceSelection as={'merge'} />
-          <DataSourceSelection as={'own'} />
-          <Show when={store[store.select].value && store[store.select].state === 'success' && res.state === 'ready'}>
-            <div>
-              <div class='bg-white rounded-t p-2 text-center text-black'>Output</div>
-              <pre class='mt-0! text-white h-[400px] border rounded-b rounded-t-none! border-white p-2 overflow-auto'>
-                {
-                  (console.log(store[store.select].result),
-                  JSON.stringify(Object.fromEntries(store[store.select].result), null, 2))
-                }
-              </pre>
-            </div>
-          </Show>
         </div>
       </div>
     </>
   )
 }
+
+const abc = `
+type availableTSIExchanges = 'MYX' | 'NASDAQ' | 'NYSE' | 'SSE' | 'SZSE' | 'IDX' // only these is supported exchange. You also can put any exchanges as well. Refer below 'TSX:RY'
+type stockCode = \`\${availableTSIExchanges | string}:\${string}\` // you can put like this 'exchange:stockcode',
+type TSI = [stockCode, { s: 0 | 1}][] // s stand for shariah and its valid value ony 0 or 1
+
+const mydata: TSI = 
+////////////////////////////////////////
+// please change inside below lines only.
+////////////////////////////////////////
+[ 
+  ["MYX:MAYBANK", {"s": 1}], 
+  ["NASDAQ:GOOG", {"s": 0}], 
+  ["TSX:RY", {"s": 0}]
+]
+                    `
