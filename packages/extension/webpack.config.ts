@@ -1,4 +1,5 @@
 import * as path from 'path'
+import { config } from 'dotenv'
 import * as webpack from 'webpack'
 import Dotenv from 'dotenv-webpack'
 import SizePlugin from 'size-plugin'
@@ -14,7 +15,7 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
 const isProd = () => process.env.NODE_ENV === 'production'
 const dotEnvPath = isProd() ? './.env.production' : './.env'
-require('dotenv').config({ path: dotEnvPath }) // eslint-disable-line @typescript-eslint/no-var-requires
+config({ path: dotEnvPath }) // eslint-disable-line @typescript-eslint/no-var-requires
 
 const currentBrowser = process.env.BROWSER
 const isChrome = process.env.BROWSER === 'chrome'
@@ -82,6 +83,7 @@ module.exports = (_environment: string, _: Record<string, boolean | number | str
           force: true,
           transform: function (content) {
             const manifestJson = JSON.parse(content.toString())
+            console.log(`Using URL ====> ${process.env.FETCH_URL}`)
 
             const output = {
               version: process.env.npm_package_version,

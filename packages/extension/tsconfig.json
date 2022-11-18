@@ -14,12 +14,13 @@
     "noEmit": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "lib": ["es2022", "dom"],
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
       "@popup/*": ["./src/popup/*"]
     }
   },
-  "include": ["src/**/*", "globals.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["dist", "node_modules"]
 }

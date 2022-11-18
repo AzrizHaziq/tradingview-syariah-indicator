@@ -4,6 +4,8 @@ import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 
 const popup_or = getMessage('popup_or')
+const popup_tq = getMessage('popup_thank_you')
+const popup_copy = getMessage('popup_copy')
 const popup_bug = getMessage('popup_bug')
 const popup_bug_alt = getMessage('popup_bug_alt')
 const popup_github_repo = getMessage('popup_github_repo')
@@ -67,7 +69,7 @@ export const Footer: Component = () => {
           <button
             type='button'
             class='px-2 text-sm font-medium text-green-700 bg-green-100 py-0.5 rounded-r-md hover:text-green-900'>
-            {isCopy() ? 'thank you !!' : 'copy'}
+            {isCopy() ? popup_tq : popup_copy}
           </button>
         </div>
       </div>

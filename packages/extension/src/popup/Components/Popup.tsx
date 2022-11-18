@@ -1,48 +1,34 @@
-import browser from 'webextension-polyfill'
-import { createSignal, onMount } from 'solid-js'
-import { getStorageDetails, useCurrentData } from '@popup/popup-helpers'
-import { Footer, Header, Version, Flags, RefreshData, ToggleDateAndCount } from '@popup/Components'
-
-const { author } = browser.runtime.getManifest()
+import { onMount } from 'solid-js'
+import { setStorage } from '@src/helper'
+import { getStorageDetails, updateDataSource, updateFlags } from '@popup/popup-helpers'
+import { Footer, Header, DefaultDataSource, MergeDataSource, OwnDataSource } from '@popup/Components'
 
 export const Popup = () => {
-  const [, { setState }] = useCurrentData()
-  const [view, setView] = createSignal<'date' | 'count'>('date')
-
   onMount(() => {
     document.body.focus()
-    getStorageDetails().then(setState)
+    getStorageDetails().then(updateFlags)
   })
 
-  return (
-    <div class='flex h-full p-2 space-x-2'>
-      <img
-        class='self-start mt-2'
-        src='/assets/shariah-icon.svg'
-        alt='Tradingview shariah icon'
-        width='25px'
-        height='25px'
-      />
+  const onClickHandle = (e) => {
+    if (e.target.checked) {
+      updateDataSource(e.target.value)
+      setStorage('DATASOURCE', e.target.value)
+    }
+  }
 
-      <div class='flex flex-col w-full'>
+  return (
+    <div class='h-full p-2 text-white space-y-3'>
+      <div class='flex align-center justify-center gap-2'>
+        <img src='/assets/shariah-icon.svg' alt='Tradingview shariah icon' width='25px' height='25px' />
         <Header />
-        <div class='flex items-center justify-between h-6'>
-          <p class='text-xs text-gray-300'>{author}</p>
-          <div class='flex items-center'>
-            <RefreshData />
-            <div class='mr-2' />
-            <ToggleDateAndCount view={view} setView={setView} />
-            <div class='mr-2' />
-            <Version />
-          </div>
-        </div>
-        <div class='mt-2 text-white grid grid-cols-2 gap-x-2'>
-          <Flags view={view} />
-        </div>
-        <hr class='my-2 border-gray-400 opacity-30' />
-        <div class='flex flex-col justify-start text-xs gap-1'>
-          <Footer />
-        </div>
+      </div>
+
+      <DefaultDataSource onClickHandle={onClickHandle} />
+      <MergeDataSource onClickHandle={onClickHandle} />
+      <OwnDataSource onClickHandle={onClickHandle} />
+
+      <div class='flex flex-col justify-start text-xs gap-1'>
+        <Footer />
       </div>
     </div>
   )

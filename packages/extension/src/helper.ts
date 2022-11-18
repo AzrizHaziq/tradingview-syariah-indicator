@@ -1,3 +1,4 @@
+import type { StorageMap } from '@app/shared'
 import browser from 'webextension-polyfill'
 
 let SHARIAH_LIST: Map<`${string}:${string}`, Record<string, number>> = new Map()
@@ -7,7 +8,30 @@ export const extensionName = 'tradingview-shariah-indicator'
 export async function setStockListInMap(): Promise<void> {
   try {
     const LIST = await getStorage('LIST')
-    SHARIAH_LIST = new Map(LIST)
+    const DATA_SOURCE = await getStorage('DATASOURCE')
+
+    if (DATA_SOURCE === 'default') {
+      SHARIAH_LIST = new Map(LIST)
+    }
+
+    if (DATA_SOURCE === 'merge') {
+      const MERGE_LIST = (await getStorage('DATASOURCE_MERGE')) ?? []
+      SHARIAH_LIST = new Map(
+        [].concat(LIST, MERGE_LIST, [
+          // for test
+          // ['MYX:MAYBANK', { s: 1 }], // my bank
+          // ['NASDAQ:GOOG', { s: 1 }], // nasdaq google
+          // ['TSX:RY', { s: 1 }], // canada bank
+        ])
+      )
+    }
+
+    if (DATA_SOURCE === 'own') {
+      const OWN_LIST = await getStorage('DATASOURCE_OWN')
+      SHARIAH_LIST = new Map(OWN_LIST)
+    }
+
+    console.log('Tradingview Shariah  >>>', Object.fromEntries(SHARIAH_LIST))
   } catch (e) {
     console.warn(`Tradingview Shariah Indicator: Please refresh the browser, Error:`, e)
   }
@@ -44,33 +68,11 @@ export function addStyle(css: string): void {
   head.appendChild(style)
 }
 
-export function debounce(func: (...unknown) => void, wait: number, immediate: boolean): () => void {
-  let timeout
-
-  return function executedFunction() {
-    const context = this // eslint-disable-line @typescript-eslint/no-this-alias
-    const args = arguments // eslint-disable-line prefer-rest-params
-
-    const later = function () {
-      timeout = null
-      if (!immediate) func.apply(context, args)
-    }
-
-    const callNow = immediate && !timeout
-
-    clearTimeout(timeout)
-
-    timeout = setTimeout(later, (wait = 500))
-
-    if (callNow) func.apply(context, args)
-  }
-}
-
 export function observeNodeChanges(
   nodeToObserve: Element,
   cb: () => unknown,
   options: Partial<MutationObserverInit> = { childList: true, subtree: true }
-): MutationObserver {
+): () => void {
   // eslint-disable-next-line prefer-const
   let observer: MutationObserver
 
@@ -83,17 +85,19 @@ export function observeNodeChanges(
 
   observer.observe(nodeToObserve, options)
 
-  return observer
+  return () => observer.disconnect()
 }
 
-export function waitForElm(selector: string): Promise<Element> {
+export function waitForElm<T = Element>(selector: string): Promise<T> {
   return new Promise((resolve) => {
     if (document.querySelector(selector)) {
+      // @ts-ignore
       return resolve(document.querySelector(selector))
     }
 
     const observer = new MutationObserver(() => {
       if (document.querySelector(selector)) {
+        // @ts-ignore
         resolve(document.querySelector(selector))
         observer.disconnect()
       }
@@ -106,11 +110,11 @@ export function waitForElm(selector: string): Promise<Element> {
   })
 }
 
-export function getMessage(messageName: string, substitutions?: unknown): string {
+export function getMessage(messageName: string, substitutions?: Parameters<typeof browser.i18n.getMessage>[1]): string {
   return browser.i18n.getMessage(messageName, substitutions)
 }
 
-export async function setStorage<K extends keyof TSI.StorageMap>(key: K, payload: TSI.StorageMap[K]): Promise<void> {
+export async function setStorage<K extends keyof StorageMap>(key: K, payload: StorageMap[K]): Promise<void> {
   try {
     await browser.storage.local.set({ [key]: payload })
   } catch (e) {
@@ -118,11 +122,15 @@ export async function setStorage<K extends keyof TSI.StorageMap>(key: K, payload
   }
 }
 
-export async function getStorage<K extends keyof TSI.StorageMap>(key: K): Promise<TSI.StorageMap[K]> {
+export async function getStorage<K extends keyof StorageMap>(key: K): Promise<StorageMap[K]> {
   try {
     const { [key]: data } = await browser.storage.local.get(key)
     return data
   } catch (e) {
     console.error(`Error set ${key} in storage`, e)
   }
+}
+
+export async function delay(ms = 1000): Promise<void> {
+  return new Promise((res) => setTimeout(res, ms))
 }

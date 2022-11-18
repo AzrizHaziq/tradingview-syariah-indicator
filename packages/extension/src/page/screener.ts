@@ -1,3 +1,5 @@
+import type { Market } from '@app/shared'
+
 import {
   createIcon,
   waitForElm,
@@ -13,7 +15,7 @@ import {
   getStorage,
 } from '../helper'
 
-let markets: TSI.Market[]
+let markets: Market[]
 const screenerTableSelector = '.tv-screener__content-pane table tbody.tv-data-table__tbody' // this should target <tbody>
 
 const css = {
@@ -247,7 +249,7 @@ function isCountryValid(): boolean {
 
   if (flagDom) {
     // getting [data-market]="malaysia" in dome
-    const currentFlag = flagDom.parentElement.dataset.market as string as TSI.Market
+    const currentFlag = flagDom.parentElement.dataset.market as string as Market
     return markets.includes(currentFlag)
   }
 

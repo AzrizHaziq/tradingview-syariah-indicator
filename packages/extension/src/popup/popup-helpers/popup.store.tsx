@@ -1,28 +1,12 @@
 import { getStorage } from '@src/helper'
-import { createSignal, createContext, useContext, Component, Accessor } from 'solid-js'
+import { createStore } from 'solid-js/store'
+import type { Flag, StorageMap } from '@app/shared'
 
-type CurrentDataStore = [Accessor<TSI.Flag[]>, { setState?: (item: TSI.Flag[]) => void }]
-
-const CurrentDataContext = createContext<CurrentDataStore>([() => [], {}])
-
-export const useCurrentData = (): CurrentDataStore => useContext(CurrentDataContext)
-
-export const CurrentDataProvider: Component<{ value: TSI.Flag[] }> = (props) => {
-  const [state, setState] = createSignal(props.value || [])
-  const store: CurrentDataStore = [
-    state,
-    {
-      setState(item) {
-        setState(item)
-      },
-    },
-  ]
-
-  return <CurrentDataContext.Provider value={store}>{props.children}</CurrentDataContext.Provider>
-}
-
-export async function getStorageDetails(): Promise<TSI.Flag[]> {
+export async function getStorageDetails(): Promise<Flag[]> {
   try {
+    const dataSource = (await getStorage('DATASOURCE')) ?? 'default'
+    await updateDataSource(dataSource)
+
     const DETAILS = await getStorage('DETAILS')
 
     if (process.env.NODE_ENV !== 'production') {
@@ -37,3 +21,12 @@ export async function getStorageDetails(): Promise<TSI.Flag[]> {
     throw new Error('Failed to get data from browser storage in popup')
   }
 }
+
+// Data Store
+export const [tsiStore, setStore] = createStore<{ flags: Flag[]; dataSource: StorageMap['DATASOURCE'] }>({
+  flags: [],
+  dataSource: 'own',
+})
+export const updateFlags = (flags: Flag[]) => setStore('flags', flags)
+
+export const updateDataSource = (data: StorageMap['DATASOURCE']) => setStore('dataSource', data)

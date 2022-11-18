@@ -1,7 +1,9 @@
 {
   "i18n": { "message": "en" },
   "ext_extension_name": { "message": "Tradingview Shariah Indicator" },
-  "ext_extension_description": { "message": "Display small shariah indicator to stock list in Tradingview(MY)" },
+  "ext_extension_description": {
+    "message": "Display small shariah indicator to stock list in Tradingview(Malaysia, China, Indonesia, US)"
+  },
   "screener_filter_btn_shariah_on": { "message": "Shariah: ON" },
   "screener_filter_btn_shariah_off": { "message": "Shariah: OFF" },
   "popup_version": { "message": "Current version" },
@@ -13,7 +15,13 @@
   "popup_wahed_learnmore": { "message": "Learn more about this referral code" },
   "popup_change_view_to_date": { "message": "Click to change into date view" },
   "popup_change_view_to_count": { "message": "Click to change into count view" },
+  "popup_datasource_default": { "message": "Default dataset" },
+  "popup_datasource_merge": { "message": "Merge our dataset with your data" },
+  "popup_datasource_own": { "message": "Using own data" },
   "popup_bug": { "message": "Found bug(s)" },
+  "popup_thank_you": { "message": "Thank you!!" },
+  "popup_copy": { "message": "copy" },
+  "popup_info": { "message": "More info about custom data source" },
   "popup_interested_to_contribute": { "message": "Interested to contribute" },
   "popup_list_at": {
     "message": "$URL$ current shariah list at",

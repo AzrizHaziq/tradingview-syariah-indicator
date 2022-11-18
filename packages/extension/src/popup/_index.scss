@@ -1,6 +1,6 @@
 body {
   width: 350px;
-  @apply grid p-1 from-green-200 to-green-500 bg-gradient-to-tr;
+  @apply p-1 from-green-200 to-green-500 bg-gradient-to-tr;
 
   > div {
     background: #1a202c;
