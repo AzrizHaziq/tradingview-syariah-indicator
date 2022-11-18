@@ -1,4 +1,5 @@
 import { MetaSeo } from '~/components'
+import { Type } from '@sinclair/typebox'
 import { createStore } from 'solid-js/store'
 import { copy, trackEvent, useTrackOnLoad } from '~/util'
 import { createResource, createSignal, JSX, onMount, Show } from 'solid-js'
@@ -230,21 +231,29 @@ export default function DataSource(): JSX.Element {
             </h2>
             <ul class='list-disc'>
               <li>
-                <h3>Use typescript playground</h3>
-                link:{' '}
-                <a
-                  target='_blank'
-                  href='https://www.typescriptlang.org/play?#code/C4TwDgpgBAhgbjAlgGxgI2RAKgZQJICiAHgMYAWMAdgOYQDOUAvFAOQCyAmgBotQA+rAHIBBHABFhARV4CWgjjgIzWORcpY4AWmv6s8YnlAD0RqAHtKyEFGBl60RAzoBXMGDMAnYBAAmUCKQUNBAAdFAcZs6wyHRmUCRUUGDOwLCU1gHkVLQMMAwA7hDIyGEAShAAZhAeUGhFZvmsuFwAXKUcLABQoJBQdMBmJADWAMJmPtDMAAYAJADe8EioGNj4xFnBdHz9Hog0AL4t8zt71PtTxqYgkfGJyanIiEPQto6smUG0Lf2DQyTjEBYABpuuBoLg8EwoABtH7DMYTIFQOZ9FpQAAMugAjPsALrQ3GXPp9YBUPwVTx9Ci7GBkNJ+RDABgIR5+FnOaAWayYylYzqdf6UfpQAC2IB8MFJaIhUM6JnlCsVSuVKsVctMYEweWgG1oUD2dEQE1q9Uaj0o9HMlhAIXVqvtDpVnWhUE6UBhACJOK02MIOAAhYSCADSHqRcw9dA9aJxuKRbs9InEUhaAHEAPLp1Nh5GR6MYvHx93Qj3NNocHMRqNo9F4zq4oA'>
-                  You can also validate your data in typescript playground.
-                </a>
+                <h3>
+                  Use typescript playground
+                  <a
+                    target='_blank'
+                    href='https://www.typescriptlang.org/play?#code/C4TwDgpgBAhgbjAlgGxgI2RAKgZQJICiAHgMYAWMAdgOYQDOUAvFAOQCyAmgBotQA+rAHIBBHABFhARV4CWgjjgIzWORcpY4AWmv6s8YnlAD0RqAHtKyEFGBl60RAzoBXMGDMAnYBAAmUCKQUNBAAdFAcZs6wyHRmUCRUUGDOwLCU1gHkVLQMMAwA7hDIyGEAShAAZhAeUGhFZvmsuFwAXKUcLABQoJBQdMBmJADWAMJmPtDMAAYAJADe8EioGNj4xFnBdHz9Hog0AL4t8zt71PtTxqYgkfGJyanIiEPQto6smUG0Lf2DQyTjEBYABpuuBoLg8EwoABtH7DMYTIFQOZ9FpQAAMugAjPsALrQ3GXPp9YBUPwVTx9Ci7GBkNJ+RDABgIR5+FnOaAWayYylYzqdf6UfpQAC2IB8MFJaIhUM6JnlCsVSuVKsVctMYEweWgG1oUD2dEQE1q9Uaj0o9HMlhAIXV+oqNjsHmglDiJGcHisUGdfnNECRtklLAYIogiUKsGdUGoZnGds1Ybo0GcSagLKNUAAUjgAPKCPogSikohWqzq1UVysqzrQqCdKAwgBEnFabGEHAAQsJBABpRtIuaNuiNtE43FI+tNkTiKQtADiOZzc-7yKHI4xeInDehjeabQ4K8Hw7R6LxnVxQA'>
+                    link
+                  </a>
+                  (recommended)
+                </h3>
                 <details>
                   <summary>In case website doesnt work you can play around with this TS code to validate it</summary>
-                  <pre>{abc}</pre>
+                  <pre>{validateWithTS}</pre>
                 </details>
               </li>
-              <li>Use JSON schema (WIP)</li>
               <li>
-                Use our custom validate
+                <h3>Use JSON schema</h3>
+                <details>
+                  <summary>Use this json schema and validate this in any json schema validator</summary>
+                  <pre>{validateWithJSonSchema}</pre>
+                </details>
+              </li>
+              <li>
+                <h3>Use our custom validate</h3>
                 <DataSourceSelection as={'merge'} />
                 <DataSourceSelection as={'own'} />
                 <Show
@@ -268,7 +277,26 @@ export default function DataSource(): JSX.Element {
   )
 }
 
-const abc = `
+// [
+//   ["MYX:MAYBANK", { s: 1 }],
+//   ["NASDAQ:GOOG", { s: 1 }],
+//   ["TSX:RY", { s: 1 }],
+// ]
+enum ShariahEnum {
+  nonShariah,
+  Shariah,
+}
+
+const T = Type.Array(
+  Type.Tuple([
+    Type.RegEx(/(MYX|NASDAQ|IDX|NYSE|SZSE|SSE|[A-Z]+):\w+([&-]?\w+)+/), // re stock name is same in chart.ts
+    Type.Object({ s: Type.Enum(ShariahEnum) }),
+  ])
+)
+
+const validateWithJSonSchema = JSON.stringify(T, null, 2)
+
+const validateWithTS = `
 type availableTSIExchanges = 'MYX' | 'NASDAQ' | 'NYSE' | 'SSE' | 'SZSE' | 'IDX' // only these is supported exchange. You also can put any exchanges as well. Refer below 'TSX:RY'
 type stockCode = \`\${availableTSIExchanges | string}:\${string}\` // you can put like this 'exchange:stockcode',
 type TSI = [stockCode, { s: 0 | 1}][] // s stand for shariah and its valid value ony 0 or 1
@@ -282,4 +310,4 @@ const mydata: TSI =
   ["NASDAQ:GOOG", {"s": 0}], 
   ["TSX:RY", {"s": 0}]
 ]
-                    `
+`

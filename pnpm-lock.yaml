@@ -190,6 +190,7 @@ importers:
       '@analytics/google-analytics': 1.0.3
       '@app/shared': workspace:*
       '@mdx-js/rollup': ^2.1.5
+      '@sinclair/typebox': ^0.25.8
       '@solidjs/meta': ^0.28.1
       '@solidjs/router': ^0.5.0
       '@types/dlv': ^1.1.2
@@ -218,6 +219,7 @@ importers:
       vite: ^3.1.8
     dependencies:
       '@analytics/google-analytics': 1.0.3
+      '@sinclair/typebox': 0.25.8
       '@solidjs/meta': 0.28.1_solid-js@1.6.0
       '@solidjs/router': 0.5.0_solid-js@1.6.0
       analytics: 0.8.1_@types+dlv@1.1.2
@@ -3063,6 +3065,10 @@ packages:
 
   /@sideway/pinpoint/2.0.0:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+
+  /@sinclair/typebox/0.25.8:
+    resolution: {integrity: sha512-/7GXgMOCfnxpIov52cPetqQ7bxRBaTBJAgp04Se2UQB1J0vUfEOIMpn63cLc3S5JXDUflCWxELKDV8eiPpmUTQ==}
+    dev: false
 
   /@sindresorhus/is/0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
