@@ -252,11 +252,12 @@ export default function DataSource(): JSX.Element {
                   <pre>{validateWithJSonSchema}</pre>
                 </details>
               </li>
-              <li>
+              <li class='space-y-2'>
                 <h3>Use our custom validate</h3>
                 <DataSourceSelection as={'merge'} />
                 <DataSourceSelection as={'own'} />
                 <Show
+                  keyed
                   when={store[store.select].value && store[store.select].state === 'success' && res.state === 'ready'}>
                   <div>
                     <div class='bg-white rounded-t p-2 text-center text-black'>Output</div>

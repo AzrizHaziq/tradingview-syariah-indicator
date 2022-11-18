@@ -5,12 +5,6 @@
   "name": "__MSG_ext_extension_name__",
   "description": "__MSG_ext_extension_description__",
   "homepage_url": "https://github.com/AzrizHaziq/tradingview-syariah-indicator",
-  "applications": {
-    "gecko": {
-      "id": "{f8ef05be-4a95-4265-b6ee-66eaafe0fcef}",
-      "strict_min_version": "78.0"
-    }
-  },
   "background": {
     "scripts": ["bg/background.js"],
     "persistent": true
