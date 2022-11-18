@@ -1,11 +1,13 @@
+import pkg from '../../../../package.json'
 import type { StorageMap } from '@app/shared'
 import { tsiStore } from '@popup/popup-helpers'
 import type { JSX } from 'solid-js/h/jsx-runtime'
-import { createSignal, onMount, Show } from 'solid-js'
 import { InputState, InputStateTypes } from '@popup/Components'
 import { getMessage, getStorage, setStorage } from '@src/helper'
+import { createEffect, createSignal, onMount, Show } from 'solid-js'
 import { debounce, isValidJson, required, isFormatCorrect } from '@app/shared'
 
+const popup_info = getMessage('popup_info')
 const [value, setValue] = createSignal<string>('')
 const [errMsg, setErrMsg] = createSignal<string>('')
 const [inputState, setInputState] = createSignal<InputStateTypes>('')
@@ -40,26 +42,51 @@ export const MergeDataSource = (props: Prop) => {
     }
   })
 
+  createEffect(() => {
+    // if user change to other source and if currently error
+    if (tsiStore.dataSource !== 'merge') {
+      setValue('')
+      setErrMsg('')
+      setInputState('')
+    }
+  })
+
   return (
     <div
       class='border bg-gray-800 border-1 border-green-300 rounded'
       classList={{ 'opacity-25': tsiStore.dataSource !== 'merge' }}>
-      <label class='cursor-pointer p-2 w-full flex items-center'>
-        <div class='flex items-center mr-auto'>
-          <input
-            value='merge'
-            checked={tsiStore.dataSource === 'merge'}
-            onClick={props.onClickHandle}
-            type='radio'
-            class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300 mr-2'
-          />
-          <span>{getMessage('popup_datasource_merge')}</span>
-        </div>
+      <div class='flex items-center p-2 w-full'>
+        <label class='cursor-pointer flex items-center mr-auto w-full' for='datasource-merge'>
+          <div class='flex items-center mr-auto gap-2'>
+            <input
+              id='datasource-merge'
+              value='merge'
+              checked={tsiStore.dataSource === 'merge'}
+              onClick={props.onClickHandle}
+              type='radio'
+              class='w-3 h-3 text-blue-600 bg-green-100 rounded border-green-300'
+            />
+            <span>{getMessage('popup_datasource_merge')}</span>
+          </div>
+        </label>
 
-        <div class='items-center flex'>
+        <div class='items-center flex gap-2'>
           <InputState state={inputState()} />
+          <a
+            href={pkg.homepage + '/data-source'}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='cursor-pointer hover:border-red-400'
+            title={popup_info}>
+            <svg width='15px' height='15px' viewBox='0 0 24 24'>
+              <path
+                fill='currentColor'
+                d='M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z'
+              />
+            </svg>
+          </a>
         </div>
-      </label>
+      </div>
 
       <Show when={tsiStore.dataSource === 'merge'}>
         <div class='px-2 pb-2'>

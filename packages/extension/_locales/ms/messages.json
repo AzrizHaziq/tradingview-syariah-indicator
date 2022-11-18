@@ -19,9 +19,10 @@
   "popup_datasource_merge": { "message": "Gabungkan data kami dengan data anda" },
   "popup_datasource_own": { "message": "Guna data sendiri" },
   "popup_bug": { "message": "Jumpa pepijat" },
-  "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
   "popup_thank_you": { "message": "Terima Kasih!!" },
   "popup_copy": { "message": "salinan" },
+  "popup_info": { "message": "Maklumat lebih lanjut mengenai sumber data tersuai" },
+  "popup_interested_to_contribute": { "message": "Berminat untuk menyumbang" },
   "popup_list_at": {
     "message": "Senarai syariah $URL$ terkini pada",
     "description": "Untuk tooltip",
