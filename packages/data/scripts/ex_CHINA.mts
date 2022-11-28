@@ -1,15 +1,56 @@
 import fetch from 'node-fetch'
 import { PdfReader } from 'pdfreader'
-import { CONFIG } from './CONFIG.mts'
 import { chromium } from 'playwright-chromium'
 import { MAIN_DEFAULT_EXPORT } from '@app/shared'
 import { PromisePool } from '@supercharge/promise-pool'
-import { pipe, pluck, map, delay } from './utils.mts'
+
+import { CONFIG } from './CONFIG.mts'
+import { pipe, map, delay } from './utils.mts'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 
-const CHINA_ETF = (companyCode = '0838EA', title = 'NET+ASSET+VALUE+%2F+INDICATIVE+OPTIMUM+PORTFOLIO+VALUE') =>
-  `https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=${companyCode}&keyword=${title}`
+/** Main SSE & SZSE scrape function */
+export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
+  try {
+    const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
+    progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
+
+    let companyNames = await parsePdf(pdfUrl)
+    progressBar.increment(1, { stats: 'Success parse pdf' })
+
+    companyNames = CONFIG.isDev ? companyNames.slice(0, 30) : companyNames
+    progressBar.update(0)
+    progressBar.setTotal(companyNames.length)
+
+    const human = await getCompanyExchangeAndCode(companyNames)
+
+    return {
+      human,
+      data: human.reduce((acc, [exchange, code]) => {
+        // some stock failed to get exchange and code
+        if (exchange === '') return acc
+
+        // eslint-disable-next-line no-prototype-builtins
+        if (acc.hasOwnProperty(exchange)) {
+          acc[exchange].list[code] = [1]
+        } else {
+          acc = {
+            ...acc,
+            [exchange]: {
+              updatedAt,
+              list: {},
+              shape: CONFIG.CHINA.shape,
+              market: CONFIG.CHINA.market,
+            },
+          }
+        }
+        return acc
+      }, {}) as unknown as MAIN_DEFAULT_EXPORT['data'],
+    }
+  } catch (e) {
+    throw Error(`Failed scrape CHINA`, { cause: e })
+  }
+}
 
 async function parsePdf(pdfUrl): Promise<string[]> {
   const companyNames = new Set<string>()
@@ -46,64 +87,6 @@ async function parsePdf(pdfUrl): Promise<string[]> {
       }
     })
   })
-}
-
-// click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
-async function getUpdatedAtAndPdfUrl(): Promise<{ updatedAt: string; pdfUrl: string }> {
-  const browser = await chromium.launch({ headless: !CONFIG.isDev })
-  const page = await browser.newPage()
-
-  try {
-    await page.goto(CHINA_ETF())
-
-    // get updatedAt at latest report
-    const updatedAt = await page.evaluate(
-      ([selector, util]: [string, any]) => {
-        let { pipe, map, pluck } = util
-        pipe = new Function(`return ${pipe}`)() // eslint-disable-line no-new-func
-        map = new Function(`return ${map}`)() // eslint-disable-line no-new-func
-        pluck = new Function(`return ${pluck}`)() // eslint-disable-line no-new-func
-
-        return pipe(
-          (s) => document.querySelector(s),
-          pluck('textContent'),
-          map((text) => text.trim()),
-          map((date) => Date.parse(date)),
-          map((timeStamp) => Promise.resolve(timeStamp))
-        )(selector)
-      },
-      [
-        '#table-announcements tbody td:nth-child(2) .d-none',
-        { pipe: pipe.toString(), map: map.toString(), pluck: pluck.toString() },
-      ]
-    )
-
-    // process of finding pdfUrl
-    const latestReportSelector = '#table-announcements tbody td:last-child a'
-    await page.evaluate((s) => document.querySelector(s).removeAttribute('target'), [latestReportSelector])
-    await page.click(latestReportSelector)
-
-    // have to put this, otherwise chrome will fail
-    await delay(1)
-
-    const iframeUrl = await page.evaluate(
-      (s) => Promise.resolve(document.querySelector(s).getAttribute('src')),
-      '#bm_ann_detail_iframe'
-    )
-
-    const iframeDomain = new URL(iframeUrl).origin
-    await page.goto(iframeUrl)
-    const pdfUrl = await page.evaluate(
-      (s) => Promise.resolve(document.querySelector(s).getAttribute('href')),
-      '.att_download_pdf a'
-    )
-
-    return { updatedAt, pdfUrl: `${iframeDomain}${pdfUrl}` }
-  } catch (e) {
-    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
-  } finally {
-    await browser.close()
-  }
 }
 
 /**
@@ -172,45 +155,30 @@ async function getCompanyExchangeAndCode(stockNames: string[]): Promise<MAIN_DEF
   }
 }
 
-/** Main SSE & SZSE scrape function */
-export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
+// click the first "NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE" row at 4th columns.
+async function getUpdatedAtAndPdfUrl(): Promise<{ updatedAt: string; pdfUrl: string }> {
+  const browser = await chromium.launch({ headless: !CONFIG.isDev })
+  const page = await browser.newPage()
+
   try {
-    const { updatedAt, pdfUrl } = await getUpdatedAtAndPdfUrl()
-    progressBar.increment(1, { stats: 'Success retrieved updatedAt and pdfUrl' })
+    await page.goto(CONFIG.CHINA.home_page3)
 
-    let companyNames = await parsePdf(pdfUrl)
-    progressBar.increment(1, { stats: 'Success parse pdf' })
+    const firstAnnouncement = await page.getByText('NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE').first()
+    await page.goto(await firstAnnouncement.evaluate((el: HTMLAnchorElement) => el.href))
 
-    companyNames = CONFIG.isDev ? companyNames.slice(0, 30) : companyNames
-    progressBar.update(0)
-    progressBar.setTotal(companyNames.length)
+    const dateTextEl = await page.getByText('Date Announced')
 
-    const human = await getCompanyExchangeAndCode(companyNames)
+    const dateEl = await dateTextEl.evaluate((td: HTMLElement) => td.nextElementSibling.textContent)
+    const updatedAt = pipe(
+      map((text) => text.trim()),
+      map((date) => Date.parse(date))
+    )(dateEl)
 
-    return {
-      human,
-      data: human.reduce((acc, [exchange, code]) => {
-        // some stock failed to get exchange and code
-        if (exchange === '') return acc
-
-        // eslint-disable-next-line no-prototype-builtins
-        if (acc.hasOwnProperty(exchange)) {
-          acc[exchange].list[code] = [1]
-        } else {
-          acc = {
-            ...acc,
-            [exchange]: {
-              updatedAt,
-              list: {},
-              shape: CONFIG.CHINA.shape,
-              market: CONFIG.CHINA.market,
-            },
-          }
-        }
-        return acc
-      }, {}) as unknown as MAIN_DEFAULT_EXPORT['data'],
-    }
+    const pdfUrl = await page.locator('.att_download_pdf a').getAttribute('href')
+    return { updatedAt, pdfUrl }
   } catch (e) {
-    throw Error(`Failed scrape CHINA`, { cause: e })
+    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
+  } finally {
+    await browser.close()
   }
 }

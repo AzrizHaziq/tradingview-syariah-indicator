@@ -14,7 +14,7 @@ type tempMYX = { [p: string]: { s: 1 | 0; code: string; stockName: string; fulln
  * output example: {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
  */
 async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: string }[]): Promise<tempMYX> {
-  async function getCompanyFullname(code: string): Promise<string> {
+  async function getCompanyFullName(code: string): Promise<string> {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
     const json = (await res.json()) as { data: { company_info: { name: string } } }
     return json?.data?.company_info?.name
@@ -24,7 +24,7 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
     const { results, errors } = await PromisePool.for(stocks) // mostly stocks will have 50 items based on per_page
       .withConcurrency(25) // fetch company fullname 25 items at a time
       .process(async (stock) => {
-        const fullname = await getCompanyFullname(stock.code)
+        const fullname = await getCompanyFullName(stock.code)
         return { ...stock, fullname }
       })
 
@@ -42,7 +42,7 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
 }
 
 const scrapUrl = ({ perPage, page }: { perPage: number; page: number }) =>
-  `https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]&sort_by=short_name&sort_dir=asc&page=${page}&per_page=${perPage}`
+  `https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&per_page=${perPage}&page=${page}`
 
 async function scrapBursaMalaysia(): Promise<tempMYX> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
@@ -55,14 +55,13 @@ async function scrapBursaMalaysia(): Promise<tempMYX> {
     // getting max size of syariah list by grabbing the value in pagination btn
     const maxPageNumbers = await (CONFIG.isDev
       ? Promise.resolve(1)
-      : initPage.evaluate(() => {
-          const paginationBtn = Array.from(document.querySelectorAll('.pagination li [data-val]'))
-            .map((i) => i.textContent)
-            .filter(Boolean)
-            .map(parseFloat)
+      : initPage.evaluate(
+          () => parseFloat((document.querySelector('#total_page[data-val]') as HTMLElement).dataset.val) ?? 0
+        ))
 
-          return Math.max(...paginationBtn)
-        }))
+    if (maxPageNumbers === 0 && typeof maxPageNumbers !== 'number') {
+      throw Error(`maxPageNumber error`, { cause: errors })
+    }
 
     progressBar.setTotal(maxPageNumbers)
     await initPage.close()
