@@ -6,7 +6,8 @@
   "scripts": {
     "test": "ava",
     "update-data": "tsx scripts/_index.mts",
-    "update-data:skip-commit": "npm run update-data -- skip-commit"
+    "update-data:skip-commit": "npm run update-data -- skip-commit",
+    "debug": "DEBUG=pw:* npm run update-data:skip-commit"
   },
   "devDependencies": {
     "@app/shared": "workspace:*",

@@ -161,23 +161,29 @@ async function getUpdatedAtAndPdfUrl(): Promise<{ updatedAt: string; pdfUrl: str
   const page = await browser.newPage()
 
   try {
-    await page.goto(CONFIG.CHINA.home_page3)
+    await page.goto(CONFIG.CHINA.home_page)
+    await page.getByText('CHINA100-MYR [S]').first().click()
 
     const firstAnnouncement = await page.getByText('NET ASSET VALUE / INDICATIVE OPTIMUM PORTFOLIO VALUE').first()
     await page.goto(await firstAnnouncement.evaluate((el: HTMLAnchorElement) => el.href))
 
-    const dateTextEl = await page.getByText('Date Announced')
+    let iframeUrl = await page.locator('iframe#bm_ann_detail_iframe').evaluate((el: HTMLIFrameElement) => el.src)
+    iframeUrl = iframeUrl.split('#')[0]
 
+    const iframePage = await browser.newPage()
+    await iframePage.goto(iframeUrl)
+
+    const dateTextEl = await iframePage.getByText('Date Announced')
     const dateEl = await dateTextEl.evaluate((td: HTMLElement) => td.nextElementSibling.textContent)
     const updatedAt = pipe(
       map((text) => text.trim()),
       map((date) => Date.parse(date))
     )(dateEl)
 
-    const pdfUrl = await page.locator('.att_download_pdf a').getAttribute('href')
+    const pdfUrl = await iframePage.locator('.att_download_pdf a').evaluate((a: HTMLAnchorElement) => a.href)
     return { updatedAt, pdfUrl }
   } catch (e) {
-    throw Error(`Error getUpdatedAtAndPdfUrl`, { cause: e })
+    throw Error(`Error (getUpdatedAtAndPdfUrl)`, { cause: e })
   } finally {
     await browser.close()
   }

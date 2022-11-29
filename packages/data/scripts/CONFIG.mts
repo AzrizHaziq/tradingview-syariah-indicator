@@ -26,9 +26,9 @@ export const CONFIG = {
   CHINA: {
     market: 'china',
     // will be based on VP-DJ Shariah China A-Shares 100 ETF (0838EA)
-    home_page: 'https://www.valuepartners-group.com.my/en/shariah-china/',
+    home_page:
+      'https://www.bursamalaysia.com/market_information/equities_prices?keyword=VP-DJ+SHARIAH+CHINA+A-SHARES+100+ETF+-+MYR&top_stock=&board=&alphabetical=&sector=&legend%5B%5D=%5BS%5D&sub_sector=',
     home_page2: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=0838EA',
-    home_page3: 'https://www.klsescreener.com/v2/stocks/view/0838EA/vp-dj-shariah-china-a-shares-100-etf-myr',
     exchanges: ['SSE', 'SZSE'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
     blackListItems: ['CHINA100-MYR', 'MYL0838EA002'],
@@ -49,7 +49,7 @@ export const CONFIG = {
   IDX: {
     market: 'indonesia',
     // will be based on Indonesian exchange official website
-    home_page: 'https://www.idx.co.id/data-pasar/data-saham/indeks-saham/',
+    home_page: 'https://www.idx.co.id/en/market-data/stocks-data/stock-index',
     exchanges: ['IDX'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },

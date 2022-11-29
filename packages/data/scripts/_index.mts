@@ -3,7 +3,7 @@ import { Exchange, ExchangeDetail, MAIN_DEFAULT_EXPORT } from '@app/shared'
 import { CONFIG } from './CONFIG.mts'
 import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mts'
 
-const isCommitSKip = process.argv.slice(2).includes('skip-commit') // for github-action cron
+const isCommitSKip = process.argv.slice(2).includes('skip-commit')
 
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
