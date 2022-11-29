@@ -17,7 +17,7 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
   async function getCompanyFullName(code: string): Promise<string> {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
     const json = (await res.json()) as { data: { company_info: { name: string } } }
-    return json?.data?.company_info?.name
+    return json?.data?.company_info?.name ?? ''
   }
 
   try {
@@ -37,7 +37,7 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
       return acc
     }, {})
   } catch (e) {
-    throw Error(`Failed at getCompanyName`, { cause: e })
+    throw Error(`Failed at (getCompanyName)`, { cause: e })
   }
 }
 

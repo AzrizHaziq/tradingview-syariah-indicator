@@ -66,7 +66,7 @@ export class CliProgress {
     }
   }
 
-  getInstance() {
+  getInstance(): CliProgress {
     return CliProgress.instance
   }
 }
