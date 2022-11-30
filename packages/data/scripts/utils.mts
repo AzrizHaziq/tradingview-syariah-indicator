@@ -4,7 +4,7 @@ import colors from 'colors'
 import prettier from 'prettier'
 import { spawn } from 'child_process'
 import cliProgress from 'cli-progress'
-import { CONFIG } from './CONFIG.mts'
+import { CONFIG } from './CONFIG.mjs'
 
 export const pipe =
   (...fns) =>
@@ -48,7 +48,7 @@ export async function writeToFile(filename: string, data: string) {
 }
 
 export class CliProgress {
-  static instance: CliProgress
+  static instance
 
   constructor() {
     if (!CliProgress.instance) {
@@ -66,7 +66,7 @@ export class CliProgress {
     }
   }
 
-  getInstance(): CliProgress {
+  getInstance() {
     return CliProgress.instance
   }
 }

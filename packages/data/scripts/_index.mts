@@ -1,7 +1,7 @@
 import { Exchange, ExchangeDetail, MAIN_DEFAULT_EXPORT } from '@app/shared'
 
-import { CONFIG } from './CONFIG.mts'
-import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mts'
+import { CONFIG } from './CONFIG.mjs'
+import { delay, logCount, writeToFile, prettierJSON, commitChangesIfAny, isSameWithPreviousData } from './utils.mjs'
 
 const isCommitSKip = process.argv.slice(2).includes('skip-commit')
 

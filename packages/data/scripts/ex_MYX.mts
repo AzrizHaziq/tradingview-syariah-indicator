@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import { CONFIG } from './CONFIG.mts'
-import { delay, pipe } from './utils.mts'
+import { CONFIG } from './CONFIG.mjs'
+import { delay, pipe } from './utils.mjs'
 import { chromium } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'

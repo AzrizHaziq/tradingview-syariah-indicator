@@ -4,8 +4,8 @@ import { chromium } from 'playwright-chromium'
 import { MAIN_DEFAULT_EXPORT } from '@app/shared'
 import { PromisePool } from '@supercharge/promise-pool'
 
-import { CONFIG } from './CONFIG.mts'
-import { pipe, map, delay } from './utils.mts'
+import { CONFIG } from './CONFIG.mjs'
+import { pipe, map, delay } from './utils.mjs'
 
 const progressBar = CONFIG.progressBar.create(2, 0, { stats: '' })
 

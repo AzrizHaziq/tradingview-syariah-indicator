@@ -6,8 +6,8 @@ import extract from 'extract-zip'
 import { chromium } from 'playwright-chromium'
 import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'
 
-import { pipe } from './utils.mts'
-import { CONFIG } from './CONFIG.mts'
+import { pipe } from './utils.mjs'
+import { CONFIG } from './CONFIG.mjs'
 
 type tempIdx = { stockCode: string; fullname: string[] }
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
