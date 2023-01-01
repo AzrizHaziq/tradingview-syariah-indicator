@@ -12,6 +12,8 @@ import { CONFIG } from './CONFIG.mjs'
 type tempIdx = { stockCode: string; fullname: string[] }
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
+// fetch('https://www.idx.co.id/primary/StockData/GetStockIndex?lang=en&start=0&length=9999&code=ISSI&year=2022').then((r) => r.json()).then(console.log)
+
 /** Main IDX scrape function */
 export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
@@ -55,37 +57,26 @@ async function fetchShariahList(): Promise<tempIdx[]> {
     const page = await ctx.newPage()
     await page.goto(CONFIG.IDX.home_page)
 
-    // Download the latest ISSI (Indeks Saham Syariah Indonesia) zip file
-    const temp = async () => {
-      if (!(await page.locator('#vs1__combobox').isVisible())) {
-        await page.waitForTimeout(1000)
-        await page.reload()
-        progressBar.increment(1, { stats: 'IDX reloading' })
-        await temp()
-      }
-    }
-    await temp() // have to do this because they just update the UI and break few stuff
-
-    await page.locator('#vs1__combobox').click()
-    await page.locator('#vs1__listbox').getByText('ISSI').click()
-
-    // Wait for the page to response and show the expected widgets
-    await page.waitForResponse(
-      (resp) => resp.status() < 400 && ['/GetStockIndex', 'code=ISSI'].every((str) => resp.url().includes(str))
+    const response = await page.evaluate(
+      async () =>
+        await fetch(
+          'https://www.idx.co.id/primary/StockData/GetStockIndex?lang=en&start=0&length=9999&code=ISSI&year=2022'
+        ).then((r) => r.json())
     )
+
+    const filePath = response.data[1].file
+
+    await page.evaluate((href) => {
+      const aHref = document.createElement('a')
+      aHref.textContent = href
+      aHref.setAttribute('href', href)
+      aHref.setAttribute('data-tsi', 'true')
+      ;(document.querySelector('#app') || document.body).append(aHref)
+    }, filePath)
 
     const [download] = await Promise.all([
       page.waitForEvent('download'),
-      page
-        .locator('#vgt-table > tbody', {
-          hasText: new RegExp(
-            'As\\s+of\\s+\\d{1,2}\\s+(January|February|March|April|Mei|Jun|July|August|September|October|November|December)\\s+\\d{4}',
-            'i'
-          ),
-        })
-        .locator('a[href$="zip"]')
-        .first()
-        .click(), // find the first zip file in table
+      page.locator('[data-tsi=true]').click({ force: true }), // find the first zip file in table
     ])
 
     // Wait for the download process to complete
