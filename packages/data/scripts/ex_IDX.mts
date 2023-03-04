@@ -47,7 +47,7 @@ export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
 }
 
 async function fetchShariahList(): Promise<tempIdx[]> {
-  const browser = await chromium.launch({ headless: false })
+  const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
     const userAgent =
