@@ -50,6 +50,7 @@ export const CONFIG = {
     market: 'indonesia',
     // will be based on Indonesian exchange official website
     home_page: 'https://www.idx.co.id/en/market-data/stocks-data/stock-index',
+    fetchUrl: 'https://www.idx.co.id/primary/StockData/GetStockIndex?lang=en&start=0&length=9999&code=ISSI&year=2023',
     exchanges: ['IDX'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },

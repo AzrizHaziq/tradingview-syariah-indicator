@@ -12,8 +12,6 @@ import { CONFIG } from './CONFIG.mjs'
 type tempIdx = { stockCode: string; fullname: string[] }
 const progressBar = CONFIG.progressBar.create(3, 0, { stats: '' })
 
-// fetch('https://www.idx.co.id/primary/StockData/GetStockIndex?lang=en&start=0&length=9999&code=ISSI&year=2022').then((r) => r.json()).then(console.log)
-
 /** Main IDX scrape function */
 export default async function (): Promise<MAIN_DEFAULT_EXPORT> {
   try {
@@ -57,12 +55,7 @@ async function fetchShariahList(): Promise<tempIdx[]> {
     const page = await ctx.newPage()
     await page.goto(CONFIG.IDX.home_page)
 
-    const response = await page.evaluate(
-      async () =>
-        await fetch(
-          'https://www.idx.co.id/primary/StockData/GetStockIndex?lang=en&start=0&length=9999&code=ISSI&year=2022'
-        ).then((r) => r.json())
-    )
+    const response = await page.evaluate(async (url) => await fetch(url).then((r) => r.json()), CONFIG.IDX.fetchUrl)
 
     const filePath = response.data[1].file
 
