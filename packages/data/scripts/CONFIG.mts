@@ -18,8 +18,7 @@ export const CONFIG = {
   ] as MAIN_DEFAULT_EXPORT['human'],
   MYX: {
     market: 'malaysia',
-    home_page:
-      'https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&per_page=50&page=1',
+    home_page: 'https://www.bursamalaysia.com/market_information/equities_prices',
     exchanges: ['MYX'],
     shape: [{ 0: 'non-s', 1: 's', default: '' }],
   },

@@ -1,19 +1,19 @@
 import fetch from 'node-fetch'
 import { CONFIG } from './CONFIG.mjs'
 import { delay, pipe } from './utils.mjs'
-import { chromium } from 'playwright-chromium'
+import { chromium, Page } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
-
 type tempMYX = { [p: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }
+type InterimMyxType = { s: 0 | 1; code: string; stockName: string }
 
 /**
  * Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
  * output example: {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
  */
-async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: string }[]): Promise<tempMYX> {
+async function getCompanyName(stocks: InterimMyxType[]): Promise<tempMYX> {
   async function getCompanyFullName(code: string): Promise<string> {
     const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
     const json = (await res.json()) as { data: { company_info: { name: string } } }
@@ -29,6 +29,7 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
       })
 
     if (errors.length) {
+      console.log('>>>>', errors)
       throw Error(`failed fetch getCompanyFullName`, { cause: errors })
     }
 
@@ -41,8 +42,34 @@ async function getCompanyName(stocks: { s: 0 | 1; code: string; stockName: strin
   }
 }
 
-const scrapUrl = ({ perPage, page }: { perPage: number; page: number }) =>
-  `https://www.bursamalaysia.com/market_information/equities_prices?legend%5B%5D=%5BS%5D&per_page=${perPage}&page=${page}`
+const bursaScrapeUrl = async (
+  pwPage: Page,
+  page: number
+): Promise<{ recordsTotal: string; data: [row: number, symbolDom: string, symbolCode: string][] }> => {
+  return await pwPage.evaluate(async (page) => {
+    const params: Record<string, string> = {
+      inMarket: 'all',
+      category: 'top_active',
+      sort_dir: 'asc',
+      page: page + '',
+      'legend[]': '[S]',
+      per_page: '50',
+      alphabetical: '',
+      keyword: '',
+      board: '',
+      sector: '',
+      sub_sector: '',
+      sort_by: '',
+    }
+
+    const res = await fetch(
+      `https://www.bursamalaysia.com/api/v1/equities_prices/equities_prices?${new URLSearchParams(params)}`,
+      { headers: { accept: 'application/json, text/javascript, */*; q=0.01' } }
+    )
+
+    return (await res.json()) as unknown as ReturnType<typeof bursaScrapeUrl>
+  }, page)
+}
 
 async function scrapBursaMalaysia(): Promise<tempMYX> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
@@ -50,14 +77,13 @@ async function scrapBursaMalaysia(): Promise<tempMYX> {
   try {
     const ctx = await browser.newContext()
     const initPage = await ctx.newPage()
-    await initPage.goto(scrapUrl({ page: 1, perPage: 50 }))
+
+    await initPage.goto(CONFIG.MYX.home_page)
 
     // getting max size of syariah list by grabbing the value in pagination btn
     const maxPageNumbers = await (CONFIG.isDev
       ? Promise.resolve(1)
-      : initPage.evaluate(
-          () => parseFloat((document.querySelector('#total_page[data-val]') as HTMLElement).dataset.val) ?? 0
-        ))
+      : Math.ceil(parseFloat((await bursaScrapeUrl(initPage, 1)).recordsTotal) / 50))
 
     if (maxPageNumbers === 0 && typeof maxPageNumbers !== 'number') {
       throw Error(`maxPageNumber error`, { cause: errors })
@@ -71,30 +97,28 @@ async function scrapBursaMalaysia(): Promise<tempMYX> {
       .process(async (_, i) => {
         const page = await ctx.newPage()
         const pageNo = `${i + 1}`.padStart(2, '0')
-        await page.goto(scrapUrl({ page: i + 1, perPage: 50 }), { waitUntil: 'networkidle' })
+        const res = await bursaScrapeUrl(page, i + 1)
 
-        const scrapeList = async (): Promise<{ s: 1 | 0; code: string; stockName: string }[]> =>
-          await page.evaluate(() => {
-            const pipe =
-              (...fn) =>
-              (initialVal) =>
-                fn.reduce((acc, fn) => fn(acc), initialVal)
-            const removeSpaces = pipe((name) => name.replace(/\s/gm, ''))
-            const removeSpacesAndShariah = pipe(removeSpaces, (name) => name.replace(/\[S\]/gim, ''))
+        const scrapeList = async (): Promise<InterimMyxType[]> =>
+          await page.evaluate((symbols) => {
+            // symbolDom = <div class='stock_change' style='margin-left: 7px;'><span class="up"></span>ECOWLD [S]</div>
+            const parser = new DOMParser()
 
-            return Array.from(document.querySelectorAll('.dataTables_scrollBody table tbody tr')).reduce((acc, tr) => {
-              const s = tr.querySelector(':nth-child(2)').textContent
-              const stockCode = tr.querySelector(':nth-child(3)').textContent
+            return symbols.map(([, symbolDom, symbolCode]) => {
+              const doc = parser.parseFromString(symbolDom, 'text/html')
 
-              const code = removeSpaces(stockCode)
-              const stockName = removeSpacesAndShariah(s)
-              return [...acc, { s: 1, code, stockName }]
-            }, [])
-          })
+              return {
+                s: 1,
+                code: symbolCode,
+                stockName: /\w+([&-]?\w+)+/.exec(doc.querySelector('.stock_change').textContent)[0].trim(),
+              }
+            }) as unknown as ReturnType<Awaited<typeof scrapeList>>
+          }, res.data)
 
         // this does the work as of retry scrapping function
         // sometime scrape return 0 items
         let scrapped = await scrapeList()
+
         while (scrapped.length <= 0) {
           await delay(1)
           progressBar.increment(0, { stats: `Page ${pageNo}: retry` })
