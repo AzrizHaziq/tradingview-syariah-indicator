@@ -98,7 +98,7 @@ async function getXlsxFile(filePath: string): Promise<string> {
   const extractionDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tvidx'))
   await extract(filePath, { dir: extractionDir })
 
-  const xlsxFile = fs.readdirSync(extractionDir).find((file) => new RegExp('.*ISSI.*.(.xlsx)', 'ig').test(file)) ?? ''
+  const xlsxFile = fs.readdirSync(extractionDir).find((file) => new RegExp('(.*)?ISSI(.*)?xlsx', 'ig').test(file)) ?? ''
 
   if (!xlsxFile) throw Error('IDX xlsx file empty')
   return path.resolve(extractionDir, xlsxFile)
