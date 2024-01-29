@@ -55,7 +55,10 @@ async function fetchShariahList(): Promise<tempIdx[]> {
     const page = await ctx.newPage()
     await page.goto(CONFIG.IDX.home_page)
 
-    const response = await page.evaluate(async (url) => await fetch(url).then((r) => r.json()), CONFIG.IDX.fetchUrl)
+    const response = await page.evaluate(
+      async (url) => await fetch(url + new Date().getFullYear()).then((r) => r.json()),
+      CONFIG.IDX.fetchUrl
+    )
 
     const filePath = response.data[1].file
 
@@ -114,6 +117,7 @@ function extractFromXlsxFile(xlsxFile: string): Promise<tempIdx[]> {
 
   return data
     .flatMap((row) => {
+      console.log(row)
       if (codeColIdx != -1) {
         const stockCode = row[codeColIdx]
         const fullname = row[codeColIdx + 1]
