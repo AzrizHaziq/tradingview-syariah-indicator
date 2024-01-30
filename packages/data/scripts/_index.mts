@@ -8,7 +8,14 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit')
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   try {
-    const INDEX_CODES = ['US', 'MYX', 'CHINA', 'IDX']
+    // prettier-ignore
+    const INDEX_CODES = [
+      'US',
+      'MYX',
+      'CHINA',
+      'IDX'
+    ]
+
     const ALL_SHARIAH_LIST: MAIN_DEFAULT_EXPORT[] = await Promise.all(
       INDEX_CODES.map((code) => import(`./ex_${code}.mts`).then((m) => m.default()))
     )
@@ -61,21 +68,23 @@ const isCommitSKip = process.argv.slice(2).includes('skip-commit')
 
     logCount(allData)
 
-    await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
-    await writeToFile(
-      CONFIG.humanOutput,
-      await prettierJSON(
-        JSON.stringify({
-          data: sortedHuman,
+    if (!CONFIG.isDev) {
+      await writeToFile(CONFIG.mainOutput, JSON.stringify(allData))
+      await writeToFile(
+        CONFIG.humanOutput,
+        await prettierJSON(
+          JSON.stringify({
+            data: sortedHuman,
 
-          // pluck all updatedAt data from each exchanges
-          metadata: Object.entries(allData).reduce((acc, [exchange, detail]: [Exchange, ExchangeDetail]) => {
-            acc[exchange] = detail.updatedAt
-            return acc
-          }, {}) as Record<Exchange, ExchangeDetail['updatedAt']>,
-        })
+            // pluck all updatedAt data from each exchanges
+            metadata: Object.entries(allData).reduce((acc, [exchange, detail]: [Exchange, ExchangeDetail]) => {
+              acc[exchange] = detail.updatedAt
+              return acc
+            }, {}) as Record<Exchange, ExchangeDetail['updatedAt']>,
+          })
+        )
       )
-    )
+    }
 
     if (!isCommitSKip) {
       await commitChangesIfAny()

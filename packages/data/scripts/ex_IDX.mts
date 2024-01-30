@@ -117,7 +117,6 @@ function extractFromXlsxFile(xlsxFile: string): Promise<tempIdx[]> {
 
   return data
     .flatMap((row) => {
-      console.log(row)
       if (codeColIdx != -1) {
         const stockCode = row[codeColIdx]
         const fullname = row[codeColIdx + 1]

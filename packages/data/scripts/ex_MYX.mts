@@ -1,46 +1,22 @@
 import fetch from 'node-fetch'
 import { CONFIG } from './CONFIG.mjs'
-import { delay, pipe } from './utils.mjs'
+import { delay, getRandomInt, pipe } from './utils.mjs'
 import { chromium, Page } from 'playwright-chromium'
 import { PromisePool } from '@supercharge/promise-pool'
 import { ExchangeDetail, MAIN_DEFAULT_EXPORT, RESPONSE_FROM_JSON } from '@app/shared'
+// @ts-ignore
+import currentStockListHumanJson from './../stock-list-human.json'
 
 const progressBar = CONFIG.progressBar.create(100, 0, { stats: '' })
-type tempMYX = { [p: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }
+type tempMYX = { [code: string]: { s: 1 | 0; code: string; stockName: string; fullname: string } }
 type InterimMyxType = { s: 0 | 1; code: string; stockName: string }
 
-/**
- * Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
- * output example: {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
- */
-async function getCompanyName(stocks: InterimMyxType[]): Promise<tempMYX> {
-  async function getCompanyFullName(code: string): Promise<string> {
-    const res = await fetch(`https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${code}`)
-    const json = (await res.json()) as { data: { company_info: { name: string } } }
-    return json?.data?.company_info?.name ?? ''
-  }
-
-  try {
-    const { results, errors } = await PromisePool.for(stocks) // mostly stocks will have 50 items based on per_page
-      .withConcurrency(25) // fetch company fullname 25 items at a time
-      .process(async (stock) => {
-        const fullname = await getCompanyFullName(stock.code)
-        return { ...stock, fullname }
-      })
-
-    if (errors.length) {
-      console.log('>>>>', errors)
-      throw Error(`failed fetch getCompanyFullName`, { cause: errors })
-    }
-
-    return results.reduce((acc, curr) => {
-      acc[curr.code] = curr
-      return acc
-    }, {})
-  } catch (e) {
-    throw Error(`Failed at (getCompanyName)`, { cause: e })
-  }
-}
+const userAgentStrings = [
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.2227.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.2228.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.3497.92 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+]
 
 const bursaScrapeUrl = async (
   pwPage: Page,
@@ -75,9 +51,12 @@ async function scrapBursaMalaysia(): Promise<tempMYX> {
   const browser = await chromium.launch({ headless: !CONFIG.isDev })
 
   try {
-    const ctx = await browser.newContext()
-    const initPage = await ctx.newPage()
+    const ctx = await browser.newContext({
+      userAgent: userAgentStrings[Math.floor(Math.random() * userAgentStrings.length)],
+    })
 
+    await ctx.addInitScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    const initPage = await ctx.newPage()
     await initPage.goto(CONFIG.MYX.home_page)
 
     // getting max size of syariah list by grabbing the value in pagination btn
@@ -121,24 +100,51 @@ async function scrapBursaMalaysia(): Promise<tempMYX> {
 
         while (scrapped.length <= 0) {
           await delay(1)
-          progressBar.increment(0, { stats: `Page ${pageNo}: retry` })
+          progressBar.increment(0, { stats: `[MYX]: ${pageNo} page retry` })
           scrapped = await scrapeList()
         }
 
-        progressBar.increment(0.5, { stats: `Page ${pageNo}: scrapped` })
-        const shariahList = await getCompanyName(scrapped)
-        progressBar.increment(0.5, { stats: `Page ${pageNo}: done` })
+        progressBar.increment(0.5, { stats: `[MYX]: ${pageNo} page scrapped` })
+        await page.close()
 
-        return shariahList
+        return scrapped
       })
 
-    // TODO: fixme if there is error in pool
-    if (errors.length) {
-      console.log(errors, 'MYX, promise pool scrape failed', errors)
-      throw Error(`failed scrape stock in pages`, { cause: errors })
+    //  * Fetching company fullname in a page(50 items) {s:1, code: '0012', '3A' }[]
+    //  * output example: {'0012': {s:1, code: '0012', '3A', fullName: 'Three-A Resources Berhad' }}
+    const { results: _r, errors: _e } = await PromisePool.for(results.flat())
+      .withConcurrency(5) // 5 stock at a time
+      .process(async (stock, i) => {
+        try {
+          await delay(getRandomInt(3, 7)) // 3-7s. cloudflare detect us being bot
+          const url = `https://www.bursamalaysia.com/api/v1/equities_prices/sneak_peek?stock_id=${stock.code}`
+          const res = await fetch(url, {
+            headers: { 'User-Agent': userAgentStrings[Math.floor(Math.random() * userAgentStrings.length)] },
+          })
+
+          const json = (await res.json()) as { data: { company_info: { name: string } } }
+          progressBar.increment(0.02, { stats: `[MYX]: ${stock.stockName} fullname fetched` }) // 50 item per page === 1 increment,
+
+          return { ...stock, fullname: json?.data?.company_info?.name ?? 'na' }
+        } catch (e) {
+          progressBar.increment(0.02, { stats: `[MYX]: ${stock.stockName} use previous fullname` })
+          const found = currentStockListHumanJson.data.find(
+            ([exchange, stockShortName, stockFullname]) => exchange === 'MYX' && stockShortName === stock.code
+          )
+
+          return { ...stock, fullname: found?.[2] ?? 'na' }
+        }
+      })
+
+    if (_e.length) {
+      console.log(errors, 'MYX, promise pool scrape failed', _e)
+      throw Error(`MYX, promise pool scrape failed`, { cause: _e })
     }
 
-    return results.reduce((acc, chunk) => ({ ...acc, ...chunk }), {})
+    return _r.reduce((acc, chunk) => {
+      acc[chunk.code] = chunk
+      return acc
+    }, {})
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('Error scrap MYX data', e)
