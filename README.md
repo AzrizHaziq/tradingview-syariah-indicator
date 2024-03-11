@@ -1,4 +1,5 @@
 # Tradingview Shariah Indicator 
+I regret to inform you that I was unable to dedicate more time to updating the extension. Consequently, there may be some bugs present. However, I will endeavor to update the data side in my free time, provided that the scraping process functions properly. You can access the updated data at https://tsi.azrizhaziq.com/list.
 
 ## What it does
 Add a small green indicator in tradingview.com. At the moment, only cover Malaysia, NYSE, Nasdaq, Shenzhen, Shanghai, Indonesia.
