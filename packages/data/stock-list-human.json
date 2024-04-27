@@ -175,11 +175,10 @@
     ["NYSE", "BILL", "BILL COM HLDGS INC"],
     ["MYX", "BDB", "BINA DARULAMAN BERHAD"],
     ["MYX", "BPURI", "BINA PURI HOLDINGS BHD"],
-    ["MYX", "BPURI-WB", "BINA PURI HOLDINGS BHD"],
+    ["MYX", "BPURI-WB", "BINA PURI HOLDINGS BHD - WARRANTS 2023/2028"],
     ["MYX", "BINACOM", "BINASAT COMMUNICATIONS BERHAD"],
     ["MYX", "BINACOM-WA", "BINASAT COMMUNICATIONS BERHAD"],
     ["MYX", "BNASTRA", "BINASTRA CORPORATION BERHAD"],
-    ["MYX", "BNASTRA-OR", "BINASTRA CORPORATION BERHAD - ORDINARY RIGHTS"],
     ["MYX", "BINTAI", "BINTAI KINDEN CORPORATION BERHAD"],
     ["MYX", "BIPORT", "BINTULU PORT HOLDINGS BHD"],
     ["NYSE", "BIO", "BIO RAD LABS INC"],
@@ -227,7 +226,7 @@
     ["SSE", "688111", "Beijing Kingsoft Office Software Inc A"],
     ["SZSE", "000786", "Beijing New Building Materials Public Co., "],
     ["SSE", "600161", "Beijing Tiantan Bi A"],
-    ["SSE", "600085", "Beijing Tong Ren Tang Co., Ltd. A"],
+    ["", "3613", "Beijing Tong Ren Tang Co., Ltd. A"],
     ["SSE", "603392", "Beijing Wantai Biological Pharmacy Enterpr"],
     ["SSE", "601816", "Beijing-Shanghai High Speed Railway Co Ltd"],
     ["IDX", "BAPA", "Bekasi Asri Pemula Tbk."],
@@ -310,6 +309,7 @@
     ["MYX", "CLASSITA", "CLASSITA HOLDINGS BERHAD"],
     ["MYX", "CLASSITA-WC", "CLASSITA HOLDINGS BERHAD"],
     ["MYX", "CLASSITA-WB", "CLASSITA HOLDINGS BERHAD - WARRANTS 2021/2024"],
+    ["MYX", "CLOUD", "CLOUDARON GROUP BERHAD"],
     ["MYX", "CLOUDPT", "CLOUDPOINT TECHNOLOGY BERHAD"],
     ["MYX", "CME", "CME GROUP BERHAD"],
     ["MYX", "CME-WA", "CME GROUP BERHAD - WARRANTS 2018/2028"],
@@ -678,6 +678,7 @@
     ["MYX", "HAILY", "HAILY GROUP BERHAD"],
     ["NYSE", "HAL", "HALLIBURTON CO"],
     ["MYX", "HANDAL", "HANDAL ENERGY BERHAD"],
+    ["MYX", "HANDAL-WB", "HANDAL ENERGY BERHAD"],
     ["MYX", "HSPLANT", "HAP SENG PLANTATIONS HOLDINGS"],
     ["MYX", "HARBOUR", "HARBOUR-LINK GROUP BERHAD"],
     ["MYX", "HARNLEN", "HARN LEN CORPORATION BHD"],
@@ -758,6 +759,7 @@
     ["MYX", "ICON-WA", "ICON OFFSHORE BERHAD"],
     ["NASDAQ", "ICLR", "ICON PLC"],
     ["MYX", "ICONIC", "ICONIC WORLDWIDE BERHAD"],
+    ["MYX", "ICONIC-WA", "ICONIC WORLDWIDE BERHAD"],
     ["MYX", "ICTZONE", "ICT ZONE ASIA BERHAD"],
     ["IDX", "KARW", "ICTSI Jasa Prima Tbk."],
     ["MYX", "IDEAL", "IDEAL CAPITAL BERHAD"],
@@ -1977,16 +1979,15 @@
     ["SZSE", "002001", "Zhejiang NHU Co. Ltd. A"],
     ["SZSE", "002050", "Zhejiang Sanhua Intelligent Controls Co Lt"],
     ["SZSE", "300308", "Zhongji Innolight Co Ltd A"],
-    ["IDX", "ZYRX", "Zyrexindo Mandiri Buana Tbk."],
-    ["MYX", "CLOUD", "na"]
+    ["IDX", "ZYRX", "Zyrexindo Mandiri Buana Tbk."]
   ],
   "metadata": {
     "NYSE": 1662912000000,
     "NASDAQ": 1662912000000,
-    "MYX": 1713677728089,
-    "SSE": 1713456000000,
-    "SZSE": 1713456000000,
-    "IDX": 1713676756875,
-    "FTSEMYX": 1713677729092
+    "MYX": 1714238466776,
+    "SZSE": 1714060800000,
+    "SSE": 1714060800000,
+    "IDX": 1714237482003,
+    "FTSEMYX": 1714238467779
   }
 }
