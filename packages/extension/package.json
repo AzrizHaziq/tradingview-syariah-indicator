@@ -85,7 +85,7 @@
     "web-ext-plugin": "^1.8.0",
     "web-ext-submit": "^6.8.0",
     "webextension-polyfill": "^0.9.0",
-    "webpack": "^5.74.0",
+    "webpack": "^5.76.0",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.10.0",
     "windicss": "^3.5.6",
